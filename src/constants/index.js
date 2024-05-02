@@ -166,7 +166,40 @@ export const navLinks = [
         title: "Sanitary Wares",
         links: [
             {
-
+                name: "Toilets",
+                route: "",
+            },
+            {
+                name: "Basins/Sinks",
+                route: "",
+            },
+            {
+                name: "Showers",
+                route: "",
+            },
+            {
+                name: "Bidets",
+                route: "",
+            },
+            {
+                name: "Urinals",
+                route: "",
+            },
+            {
+                name: "Faucets and Taps",
+                route: "",
+            },
+            {
+                name: "Accessories",
+                route: "",
+            },
+            {
+                name: "Drainage and Plumbing Fittings",
+                route: "",
+            },
+            {
+                name: "Water Filtration/Purification Systems",
+                route: "",
             },
         ],
     },
@@ -175,7 +208,28 @@ export const navLinks = [
         title: "More Products",
         links: [
             {
-
+                name: "Marble Slabs",
+                route: "",
+            },
+            {
+                name: "Granite Slabs",
+                route: "",
+            },
+            {
+                name: "Wall and Floor Materials",
+                route: "",
+            },
+            {
+                name: "Doors",
+                route: "",
+            },
+            {
+                name: "Installation Services",
+                route: "",
+            },
+            {
+                name: "Consultation",
+                route: "",
             },
         ],
     },
@@ -184,7 +238,24 @@ export const navLinks = [
         title: "Company",
         links: [
             {
-
+                name: "About Us",
+                route: "/about",
+            },
+            {
+                name: "Contact Us",
+                route: "/contact",
+            },
+            {
+                name: "Careers",
+                route: "/careers",
+            },
+            {
+                name: "Terms of Usage",
+                route: "/terms",
+            },
+            {
+                name: "Privacy Policy",
+                route: "/privacypolicy",
             },
         ],
     },
