@@ -31,3 +31,59 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
   }
+
+  
+.navsmooth {
+  transition: all 0.2s ease-in-out;
+}
+
+.box-shadow {
+  box-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
+}
+
+.sidebar {
+  -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.hash-span {
+  margin-top: -70px;
+  padding-bottom: 70px;
+  display: block;
+}
+
+.grow {
+  transition: all .2s ease-in-out;
+}
+.grow:hover {
+  transform: scale(0.98);
+  background-color: #021b2c;
+}
+
+.grow2 {
+  transition: all .2s ease-in-out;
+}
+.grow2:hover {
+  transform: scale(0.98);
+}
+
+.grow3 {
+  transition: all .2s ease-in-out;
+}
+.grow3:hover {
+  transform: scale(1.05);
+}
+
+.grow4 {
+  transition: all .2s ease-in-out;
+}
+.grow4:hover {
+  transform: scale(1.02);
+}
+
+.grow5 {
+  transition: all .2s ease-in-out;
+}
+.grow5:hover {
+  transform: scale(1.01);
+}
