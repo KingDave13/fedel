@@ -4,6 +4,7 @@ import styles from '../styles';
 import { HiOutlineMenuAlt3 } from 'react-icons/hi';
 import { navLinks } from '../constants';
 import { logo } from '../assets';
+import { TiArrowSortedDown } from "react-icons/ti";
 import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
@@ -34,20 +35,26 @@ const Navbar = () => {
       <div className="w-full flex justify-between items-center 
       max-w-[86rem] mx-auto">
         <div className="flex items-center w-full hidden md:flex">
-          <ul className="list-none flex flex-row gap-14">
+          <ul className="list-none flex flex-row gap-8">
             {navLinks.map((link) => (
               <li
                 key={link.id}
-                className='text-main hover:text-textalt grow3 
-                text-[17px] text-decoration-none cursor-pointer 
-                font-medium'
+                className='grow3 text-decoration-none cursor-pointer
+                flex flex-row gap-2 items-center'
                 // onClick={() => {
                 //   if (link.special) {
                 //     navigate(link.route);
                 //   }
                 // }}
               >
-                {link.title}
+                <h3 className='text-main hover:text-textalt text-[16px]
+                font-medium'>
+                    {link.title}
+                </h3>
+                
+                <TiArrowSortedDown 
+                    className='text-main text-[20px]'
+                />
               </li>
             ))}
           </ul>
