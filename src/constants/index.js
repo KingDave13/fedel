@@ -116,7 +116,48 @@ export const navLinks = [
         title: "Granite",
         links: [
             {
-
+                name: "Absolute Black Granite",
+                route: "",
+            },
+            {
+                name: "Tan Brown Granite",
+                route: "",
+            },
+            {
+                name: "Giallo Ornamental Granite",
+                route: "",
+            },
+            {
+                name: "Santa Cecilia Granite",
+                route: "",
+            },
+            {
+                name: "Ubatuba Granite",
+                route: "",
+            },
+            {
+                name: "Kashmir White Granite",
+                route: "",
+            },
+            {
+                name: "Baltic Brown Granite",
+                route: "",
+            },
+            {
+                name: "Black Galaxy Granite",
+                route: "",
+            },
+            {
+                name: "Blue Pearl Granite",
+                route: "",
+            },
+            {
+                name: "Tiger Skin Granite",
+                route: "",
+            },
+            {
+                name: "All and Others(Granites)",
+                route: "",
             },
         ],
     },
