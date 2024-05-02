@@ -5,19 +5,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#1A1A1A",
-        secondary: "#fea335",
-        main: "#021e31",
-        mainRed: "#E30613",
-        main2: "#dfdfdf",
-        primaryalt: "#f7f6f6",
-        textalt: "#898989",
-        maintext: "#575656",
-        mainalt: "#dddddd",
+        primary: "#050759",
+        secondary: "#FED33C",
+        primaryalt: "#DAD9D9",
+        mainalt: "#7D7D7D",
+        main: "#434344",
       },
       fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
-        'instrument-sans': ["Instrument Sans", "sans-serif"],
+        'encode-sans': ["Encode Sans", "sans-serif"],
       },
     },
     screens: {
