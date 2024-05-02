@@ -7,26 +7,10 @@ import { logo } from '../assets';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
-  const [active, setActive] = useState('Home');
   const [toggle, setToggle] = useState(false);
   const menuRef = useRef(null);
   const navigate = useNavigate();
 
-  const [isScrolled, setIsScrolled] = useState(false);
-
-
-  // Add an event listener to detect scrolling
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -45,14 +29,12 @@ const Navbar = () => {
 
   return (
     <nav className={`${styles.paddingX} w-full flex items-center fixed 
-      md:py-4 ss:py-4 py-3 top-0 z-20 navsmooth backdrop-blur-md bg-opacity-90
-      ${ isScrolled ? 'bg-primaryalt shadow-lg' : '' }`}
+      md:py-4 ss:py-4 py-3 top-0 z-20 navsmooth backdrop-blur-md bg-opacity-90`}
     >
       <div className="w-full flex justify-between items-center 
       max-w-[82rem] mx-auto">
         <Link to='/'
           onClick={() => {
-          setActive('Home');
           window.scrollTo(0, 0);
           }}>
           <img src={logo} alt='logo'
@@ -65,20 +47,16 @@ const Navbar = () => {
             {navLinks.map((link) => (
               <li
                 key={link.id}
-                className={`${
-                  active === link.title
-                    ? 'text-secondary'
-                    : 'text-primary'
-                } hover:text-textalt grow3 text-[18px] text-decoration-none 
-                cursor-pointer font-medium`}
-                onClick={() => {
-                  setActive(link.title);
-                  if (link.special) {
-                    navigate(link.route);
-                  }
-                }}
+                className='text-primary hover:text-textalt grow3 
+                text-[18px] text-decoration-none cursor-pointer 
+                font-medium'
+                // onClick={() => {
+                //   if (link.special) {
+                //     navigate(link.route);
+                //   }
+                // }}
               >
-                <a href={`#${link.id}`}>{link.title}</a>
+                {link.title}
               </li>
             ))}
           </ul>
@@ -86,8 +64,7 @@ const Navbar = () => {
 
         <button className='hidden md:flex bg-main grow justify-center
           text-[16px] py-3 w-[20%] text-white font-medium rounded-full'
-          onClick={() => scrollToSection('newsletter')}
-          >
+        >
             Our Newsletter
         </button>
 
@@ -100,14 +77,14 @@ const Navbar = () => {
               <BsX
                 size={40}
                 className="object-contain cursor-pointer"
-                style={{ color: isScrolled ? '#000' : '#021e31' }}
+                style={{ color: '#021e31' }}
                 onClick={() => setToggle(!toggle)}
               />
             ) : (
               <HiOutlineMenuAlt3
                 size={40}
                 className="object-contain cursor-pointer"
-                style={{ color: isScrolled ? '#000' : '#021e31' }}
+                style={{ color: '#021e31' }}
                 onClick={() => setToggle(!toggle)}
               />
             )}
@@ -125,22 +102,16 @@ const Navbar = () => {
               {navLinks.map((link, index) => (
                 <li
                   key={link.id}
-                  className={`${
-                    active === link.title
-                      ? 'text-secondary'
-                      : 'text-primary'
-                  } font-medium cursor-pointer ss:text-[20px] text-[17px] 
-                  w-full
-                  ${index !== navLinks.length - 1 ? 'border-b-[1px] pb-1.5 pt-1.5' : 'pt-1.5'}`}
+                  className='text-primary font-medium cursor-pointer ss:text-[20px] 
+                  text-[17px] w-full'
                   onClick={() => {
                     setToggle(!toggle);
-                    setActive(link.title);
-                    if (link.special) {
-                      navigate(link.route);
-                    }
+                    // if (link.special) {
+                    //   navigate(link.route);
+                    // }
                   }}
                 >
-                  <a href={`#${link.id}`}>{link.title}</a>
+                  {link.title}
                 </li>
               ))}
             </ul>
@@ -149,7 +120,6 @@ const Navbar = () => {
               text-white rounded-[5px] mt-5 ss:text-[20px] text-[14px]'
               onClick={() => {
                 setToggle(!toggle);
-                scrollToSection('newsletter');
               }}
               >
                 Our Newsletter
