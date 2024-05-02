@@ -29,26 +29,17 @@ const Navbar = () => {
 
   return (
     <nav className={`${styles.paddingX} w-full flex items-center fixed 
-      md:py-4 ss:py-4 py-3 top-0 z-20 navsmooth backdrop-blur-md bg-opacity-90`}
+      md:py-3 ss:py-4 py-3 top-0 z-20 navsmooth bg-main2`}
     >
       <div className="w-full flex justify-between items-center 
-      max-w-[82rem] mx-auto">
-        <Link to='/'
-          onClick={() => {
-          window.scrollTo(0, 0);
-          }}>
-          <img src={logo} alt='logo'
-          className='md:w-[80px] ss:w-[60px] w-[45px] h-auto'/>
-        </Link>
-
-        <div className="flex items-center justify-center w-full hidden 
-        md:flex">
-          <ul className="list-none flex flex-row gap-16">
+      max-w-[86rem] mx-auto">
+        <div className="flex items-center w-full hidden md:flex">
+          <ul className="list-none flex flex-row gap-14">
             {navLinks.map((link) => (
               <li
                 key={link.id}
-                className='text-primary hover:text-textalt grow3 
-                text-[18px] text-decoration-none cursor-pointer 
+                className='text-main hover:text-textalt grow3 
+                text-[17px] text-decoration-none cursor-pointer 
                 font-medium'
                 // onClick={() => {
                 //   if (link.special) {
@@ -132,3 +123,12 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+{/* <Link to='/'
+    onClick={() => {
+    window.scrollTo(0, 0);
+    }}>
+    <img src={logo} alt='logo'
+    className='md:w-[80px] ss:w-[60px] w-[45px] h-auto'/>
+</Link> */}
