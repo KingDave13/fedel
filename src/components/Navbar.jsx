@@ -7,6 +7,7 @@ import { logo } from '../assets';
 import { TiArrowSortedDown } from "react-icons/ti";
 import { RiWhatsappLine } from "react-icons/ri";
 import { PiLineVerticalThin } from "react-icons/pi";
+import { MdOutlineShoppingCart } from "react-icons/md";
 import { FiMail } from "react-icons/fi";
 
 import { useNavigate } from 'react-router-dom';
@@ -105,33 +106,24 @@ return () => {
                         
                     </div>
 
-                    <div className='hidden md:flex justify-center gap-8 flex-row
+                    <div className='hidden md:flex justify-end gap-8 flex-row
                     items-center'
                     >
-                        <div className='flex justify-center gap-6 flex-row
-                        items-center'>
-                            <PiLineVerticalThin className='text-main text-[25px]'/>
+                        <div className='flex justify-center items-center'>
 
-                            <HiOutlineChat
-                                className='text-main text-[24px] grow4 cursor-pointer'
-                            />
-
-                            <FiMail 
-                                className='text-main text-[24px] grow4 cursor-pointer'
-                            />
-
-                            <RiWhatsappLine 
-                                className='text-main text-[24px] grow4 cursor-pointer'
+                            <MdOutlineShoppingCart 
+                                className='text-primary text-[24px] grow4 
+                                cursor-pointer'
                             />
                         </div>
 
-                        <button className='bg-primary text-[16px] py-2 px-4
-                        text-white rounded-[5px]'
+                        <button className='bg-primary text-[16px] py-3 px-5
+                        text-white rounded-[10px] grow4 cursor-pointer w-[150px]'
                         // onClick={() => {
                         //     setToggle(!toggle);
                         // }}
                         >
-                            Get
+                            Get a Quote
                         </button>
                     </div>
 
