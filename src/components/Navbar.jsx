@@ -9,7 +9,7 @@ import { RiWhatsappLine } from "react-icons/ri";
 import { PiLineVerticalThin } from "react-icons/pi";
 import { FiMail } from "react-icons/fi";
 
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
 const [toggle, setToggle] = useState(false);
@@ -36,7 +36,7 @@ return () => {
     <nav className='w-full flex items-center fixed 
        top-0 z-20 navsmooth'
     >
-        <div className='flex flex-col w-full items-center gap-2'>
+        <div className='flex flex-col w-full items-center'>
             <div className={`w-full md:bg-main2 ${styles.paddingX}
             hidden md:flex`}>
                 <div className='w-full flex justify-between items-center 
@@ -97,29 +97,12 @@ return () => {
             <div className={`w-full flex ${styles.paddingX}`}>
                 <div className='w-full flex justify-between items-center 
                 max-w-[86rem] mx-auto md:py-3 ss:py-4 py-3'>
+                    <img src={logo} alt='logo'
+                        className='md:w-[150px] ss:w-[60px] w-[45px] h-auto'
+                    />
+
                     <div className="flex items-center w-full hidden md:flex">
-                        <ul className="list-none flex flex-row gap-8">
-                            {navLinks.map((link) => (
-                            <li
-                                key={link.id}
-                                className='text-decoration-none cursor-pointer
-                                flex flex-row gap-2 items-center'
-                                // onClick={() => {
-                                //   if (link.special) {
-                                //     navigate(link.route);
-                                //   }
-                                // }}
-                            >
-                                <h3 className='text-main text-[16px] font-medium'>
-                                    {link.title}
-                                </h3>
-                                
-                                <TiArrowSortedDown 
-                                    className='text-main text-[19px]'
-                                />
-                            </li>
-                            ))}
-                        </ul>
+                        
                     </div>
 
                     <div className='hidden md:flex justify-center gap-8 flex-row
@@ -142,10 +125,14 @@ return () => {
                             />
                         </div>
 
-                        <div className='bg-main text-[16px] py-2 px-4
-                        text-white rounded-[5px]'>
-                            GOOGLE
-                        </div>
+                        <button className='bg-primary text-[16px] py-2 px-4
+                        text-white rounded-[5px]'
+                        // onClick={() => {
+                        //     setToggle(!toggle);
+                        // }}
+                        >
+                            Get
+                        </button>
                     </div>
 
                     {/* FOR MOBILE */}
@@ -176,24 +163,31 @@ return () => {
                             ${toggle ? 'menu-slide-enter menu-slide-enter-active' 
                             : 'menu-slide-exit menu-slide-exit-active'}`}
                         >
-                            <ul className="list-none flex justify-end 
-                            flex-col">
-                            {navLinks.map((link, index) => (
-                                <li
+                            <ul className="list-none flex flex-row 
+                            ss:gap-8 gap-6">
+                            {navLinks.map((link) => (
+                            <li
                                 key={link.id}
-                                className='text-primary font-medium cursor-pointer ss:text-[20px] 
-                                text-[17px] w-full'
-                                onClick={() => {
-                                    setToggle(!toggle);
-                                    // if (link.special) {
-                                    //   navigate(link.route);
-                                    // }
-                                }}
-                                >
-                                {link.title}
-                                </li>
+                                className='text-decoration-none cursor-pointer
+                                flex flex-row ss:gap-2 gap-1 items-center'
+                                // onClick={() => {
+                                //   if (link.special) {
+                                //     navigate(link.route);
+                                //   }
+                                // }}
+                            >
+                                <h3 className='text-main ss:text-[16px] text-[14px] 
+                                font-medium'>
+                                    {link.title}
+                                </h3>
+                                
+                                <TiArrowSortedDown 
+                                    className='text-main ss:text-[18px]
+                                    text-[16px]'
+                                />
+                            </li>
                             ))}
-                            </ul>
+                        </ul>
 
                             <button className='bg-main text-[16px] py-2 px-4
                             text-white rounded-[5px] mt-5 ss:text-[20px] text-[14px]'
@@ -214,12 +208,3 @@ return () => {
 };
 
 export default Navbar;
-
-
-{/* <Link to='/'
-    onClick={() => {
-    window.scrollTo(0, 0);
-    }}>
-    <img src={logo} alt='logo'
-    className='md:w-[80px] ss:w-[60px] w-[45px] h-auto'/>
-</Link> */}
