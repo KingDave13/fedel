@@ -43,7 +43,7 @@ const Navbar = () => {
             {navLinks.map((link) => (
               <li
                 key={link.id}
-                className='grow4 text-decoration-none cursor-pointer
+                className='text-decoration-none cursor-pointer
                 flex flex-row gap-2 items-center'
                 // onClick={() => {
                 //   if (link.special) {
@@ -51,8 +51,7 @@ const Navbar = () => {
                 //   }
                 // }}
               >
-                <h3 className='text-main hover:text-textalt text-[16px]
-                font-medium'>
+                <h3 className='text-main text-[16px] font-medium'>
                     {link.title}
                 </h3>
                 
@@ -64,22 +63,30 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div className='hidden md:flex justify-center gap-5 flex-row
+        <div className='hidden md:flex justify-center gap-8 flex-row
         items-center'
         >
-            <PiLineVerticalThin className='text-main text-[25px]'/>
+            <div className='flex justify-center gap-6 flex-row
+            items-center'>
+                <PiLineVerticalThin className='text-main text-[25px]'/>
 
-            <HiOutlineChat
-                className='text-main text-[24px] grow4 cursor-pointer'
-            />
+                <HiOutlineChat
+                    className='text-main text-[24px] grow4 cursor-pointer'
+                />
 
-            <FiMail 
-                className='text-main text-[24px] grow4 cursor-pointer'
-            />
+                <FiMail 
+                    className='text-main text-[24px] grow4 cursor-pointer'
+                />
 
-            <RiWhatsappLine 
-                className='text-main text-[24px] grow4 cursor-pointer'
-            />
+                <RiWhatsappLine 
+                    className='text-main text-[24px] grow4 cursor-pointer'
+                />
+            </div>
+
+            <div className='bg-main text-[16px] py-2 px-4
+            text-white rounded-[5px]'>
+                GOOGLE
+            </div>
         </div>
 
         {/* FOR MOBILE */}
