@@ -1,10 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
 import { BsX } from 'react-icons/bs';
 import styles from '../styles';
-import { HiOutlineMenuAlt3 } from 'react-icons/hi';
+import { HiOutlineMenuAlt3, HiOutlineChat } from 'react-icons/hi';
 import { navLinks } from '../constants';
 import { logo } from '../assets';
 import { TiArrowSortedDown } from "react-icons/ti";
+import { RiWhatsappLine } from "react-icons/ri";
+import { PiLineVerticalThin } from "react-icons/pi";
+import { FiMail } from "react-icons/fi";
+
 import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
@@ -39,7 +43,7 @@ const Navbar = () => {
             {navLinks.map((link) => (
               <li
                 key={link.id}
-                className='grow3 text-decoration-none cursor-pointer
+                className='grow4 text-decoration-none cursor-pointer
                 flex flex-row gap-2 items-center'
                 // onClick={() => {
                 //   if (link.special) {
@@ -53,18 +57,30 @@ const Navbar = () => {
                 </h3>
                 
                 <TiArrowSortedDown 
-                    className='text-main text-[20px]'
+                    className='text-main text-[19px]'
                 />
               </li>
             ))}
           </ul>
         </div>
 
-        <button className='hidden md:flex bg-main grow justify-center
-          text-[16px] py-3 w-[20%] text-white font-medium rounded-full'
+        <div className='hidden md:flex justify-center gap-5 flex-row
+        items-center'
         >
-            Our Newsletter
-        </button>
+            <PiLineVerticalThin className='text-main text-[25px]'/>
+
+            <HiOutlineChat
+                className='text-main text-[24px] grow4 cursor-pointer'
+            />
+
+            <FiMail 
+                className='text-main text-[24px] grow4 cursor-pointer'
+            />
+
+            <RiWhatsappLine 
+                className='text-main text-[24px] grow4 cursor-pointer'
+            />
+        </div>
 
         {/* FOR MOBILE */}
         
