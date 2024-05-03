@@ -7,7 +7,7 @@ import { logo } from '../assets';
 import { TiArrowSortedDown } from "react-icons/ti";
 import { RiWhatsappLine } from "react-icons/ri";
 import { PiLineVerticalThin } from "react-icons/pi";
-import { IoCartOutline } from "react-icons/io5";
+import { IoCartOutline, IoSearchOutline } from "react-icons/io5";
 import { FiMail } from "react-icons/fi";
 
 import { useNavigate } from 'react-router-dom';
@@ -97,34 +97,50 @@ return () => {
 
             <div className={`w-full flex ${styles.paddingX}`}>
                 <div className='w-full flex justify-between items-center 
-                max-w-[86rem] mx-auto md:py-3 ss:py-4 py-3'>
+                max-w-[86rem] mx-auto md:py-4 ss:py-4 py-3'>
                     <img src={logo} alt='logo'
                         className='md:w-[150px] ss:w-[60px] w-[45px] h-auto'
                     />
 
-                    <div className="flex items-center w-full hidden md:flex">
-                        
-                    </div>
+                    <div className="hidden md:flex items-center w-full
+                    gap-12 ml-12">
+                        <div className='flex w-full justify-center'>
+                            <div className='flex flex-row bg-main2 w-full
+                            rounded-[10px] border-[1px] border-primaryalt 
+                            py-2 px-3 gap-3 justify-between items-center'>
+                                <IoSearchOutline
+                                    className='text-main text-[22px]'
+                                />
 
-                    <div className='hidden md:flex gap-10 flex-row
-                    items-center'
-                    >
-                        <div className='flex justify-center items-center'>
-
-                            <IoCartOutline
-                                className='text-primary text-[38px] grow4 
+                                <button className='bg-primary text-[15px] 
+                                py-1.5 px-5 text-white rounded-[5px] grow4 
                                 cursor-pointer'
-                            />
+                                // onClick={() => {
+                                //     setToggle(!toggle);
+                                // }}
+                                >
+                                    Search
+                                </button>
+                            </div>
                         </div>
 
-                        <button className='bg-primary text-[15px] py-3 px-5
-                        text-white rounded-[10px] grow4 cursor-pointer w-[150px]'
-                        // onClick={() => {
-                        //     setToggle(!toggle);
-                        // }}
-                        >
-                            Get a Quote
-                        </button>
+                        <div className='flex gap-12 items-center'>
+                            <div className='flex justify-center items-center'>
+                                <IoCartOutline
+                                    className='text-primary text-[35px] grow4 
+                                    cursor-pointer'
+                                />
+                            </div>
+
+                            <button className='bg-primary text-[15px] py-3 px-5
+                            text-white rounded-[10px] grow4 cursor-pointer w-[150px]'
+                            // onClick={() => {
+                            //     setToggle(!toggle);
+                            // }}
+                            >
+                                Get a Quote
+                            </button>
+                        </div>
                     </div>
 
                     {/* FOR MOBILE */}
