@@ -239,7 +239,7 @@ return () => {
                             </div>
 
                             <button className='bg-primary ss:py-4 py-3 
-                            px-4 w-full text-white rounded-[8px] mt-5 
+                            px-4 w-full text-white rounded-[8px] mt-4 
                             ss:text-[20px] text-[14px]'
                             onClick={() => {
                                 setToggle(!toggle);
@@ -247,10 +247,37 @@ return () => {
                             >
                                 Get a Quote
                             </button>
+
+                            <div className='flex justify-center ss:gap-8
+                            gap-4 items-center mt-12 bg-main2 rounded-[8px]
+                            ss:py-3 py-2'
+                            >
+                                <div className='flex justify-center 
+                                ss:gap-6 gap-5 items-center'>
+                                    <HiOutlineChat
+                                        className='text-main 
+                                        ss:text-[23px] text-[20px]'
+                                    />
+
+                                    <FiMail 
+                                        className='text-main
+                                        ss:text-[23px] text-[20px]'
+                                    />
+
+                                    <RiWhatsappLine 
+                                        className='text-main
+                                        ss:text-[23px] text-[20px]'
+                                    />
+                                </div>
+
+                                <div className='bg-main text-[14px] py-1 px-4
+                                text-white rounded-[5px]'>
+                                    GOOGLE
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
             </div>
         </div>
     </nav>
