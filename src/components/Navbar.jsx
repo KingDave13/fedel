@@ -7,7 +7,7 @@ import { logo } from '../assets';
 import { TiArrowSortedDown } from "react-icons/ti";
 import { RiWhatsappLine } from "react-icons/ri";
 import { PiLineVerticalThin } from "react-icons/pi";
-import { IoCartOutline, IoSearchOutline } from "react-icons/io5";
+import { IoCartOutline, IoSearchOutline, IoMenu } from "react-icons/io5";
 import { FiMail } from "react-icons/fi";
 
 import { useNavigate } from 'react-router-dom';
@@ -158,7 +158,7 @@ return () => {
                         gap-6">
                             <IoCartOutline
                                 className='text-primary ss:text-[35px] 
-                                text-[35px]'
+                                text-[33px]'
                             />
 
                             {toggle ? (
@@ -169,8 +169,8 @@ return () => {
                                 onClick={() => setToggle(!toggle)}
                             />
                             ) : (
-                            <HiOutlineMenuAlt3
-                                size={40}
+                            <IoMenu
+                                size={42}
                                 className="object-contain cursor-pointer"
                                 style={{ color: '#050759' }}
                                 onClick={() => setToggle(!toggle)}
