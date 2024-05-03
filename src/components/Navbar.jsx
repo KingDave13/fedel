@@ -97,9 +97,9 @@ return () => {
 
             <div className={`w-full flex ${styles.paddingX}`}>
                 <div className='w-full flex justify-between items-center 
-                max-w-[86rem] mx-auto md:py-4 ss:py-4 py-4'>
+                max-w-[86rem] mx-auto md:py-3 ss:py-4 py-4'>
                     <img src={logo} alt='logo'
-                        className='md:w-[150px] ss:w-[120px] w-[120px] h-auto'
+                        className='md:w-[150px] ss:w-[150px] w-[120px] h-auto'
                     />
 
                     <div className="hidden md:flex items-center w-full
@@ -163,14 +163,14 @@ return () => {
 
                             {toggle ? (
                             <BsX
-                                size={38}
+                                size={40}
                                 className="object-contain cursor-pointer"
                                 style={{ color: '#050759' }}
                                 onClick={() => setToggle(!toggle)}
                             />
                             ) : (
                             <HiOutlineMenuAlt3
-                                size={38}
+                                size={40}
                                 className="object-contain cursor-pointer"
                                 style={{ color: '#050759' }}
                                 onClick={() => setToggle(!toggle)}
@@ -179,25 +179,26 @@ return () => {
                         </div>
                     
                         <div ref={menuRef}
-                            className={`p-6 ss:mt-24 mt-20 absolute top-0 right-0 
+                            className={`p-6 mt-20 absolute top-0 right-0 
                             z-10 flex-col w-full
                             ${toggle ? 'menu-slide-enter menu-slide-enter-active' 
                             : 'menu-slide-exit menu-slide-exit-active'}`}
                         >
                             <ul className="list-none flex flex-col 
-                            ss:gap-8 gap-4 ss:mb-14 mb-12">
+                            ss:gap-6 gap-4 ss:mb-14 mb-12">
                                 {navLinks.map((link) => (
                                     <li
                                         key={link.id}
-                                        className='text-decoration-none cursor-pointer
-                                        flex flex-row ss:gap-2 gap-1 items-center'
+                                        className='text-decoration-none
+                                        flex flex-row ss:gap-2 gap-1 
+                                        items-center'
                                         // onClick={() => {
                                         //   if (link.special) {
                                         //     navigate(link.route);
                                         //   }
                                         // }}
                                     >
-                                        <h3 className='text-main ss:text-[16px] text-[15px] 
+                                        <h3 className='text-main ss:text-[17px] text-[15px] 
                                         font-medium'>
                                             {link.title}
                                         </h3>
@@ -240,7 +241,7 @@ return () => {
 
                             <button className='bg-primary ss:py-4 py-3 
                             px-4 w-full text-white rounded-[8px] mt-4 
-                            ss:text-[20px] text-[14px]'
+                            ss:text-[17px] text-[14px]'
                             onClick={() => {
                                 setToggle(!toggle);
                             }}
