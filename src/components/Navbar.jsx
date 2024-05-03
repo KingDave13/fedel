@@ -97,9 +97,9 @@ return () => {
 
             <div className={`w-full flex ${styles.paddingX}`}>
                 <div className='w-full flex justify-between items-center 
-                max-w-[86rem] mx-auto md:py-4 ss:py-4 py-3'>
+                max-w-[86rem] mx-auto md:py-4 ss:py-4 py-4'>
                     <img src={logo} alt='logo'
-                        className='md:w-[150px] ss:w-[120px] w-[110px] h-auto'
+                        className='md:w-[150px] ss:w-[120px] w-[120px] h-auto'
                     />
 
                     <div className="hidden md:flex items-center w-full
@@ -153,8 +153,7 @@ return () => {
 
                     {/* FOR MOBILE */}
                     
-                    <div className="md:hidden flex justify-end flex-1 items-center
-                    mt-3">
+                    <div className="md:hidden flex justify-end flex-1 items-center">
                         <div className="flex items-center z-20 ss:gap-8
                         gap-6">
                             <IoCartOutline
@@ -164,14 +163,14 @@ return () => {
 
                             {toggle ? (
                             <BsX
-                                size={40}
+                                size={38}
                                 className="object-contain cursor-pointer"
                                 style={{ color: '#050759' }}
                                 onClick={() => setToggle(!toggle)}
                             />
                             ) : (
                             <HiOutlineMenuAlt3
-                                size={40}
+                                size={38}
                                 className="object-contain cursor-pointer"
                                 style={{ color: '#050759' }}
                                 onClick={() => setToggle(!toggle)}
@@ -180,7 +179,7 @@ return () => {
                         </div>
                     
                         <div ref={menuRef}
-                            className={`p-6 ss:mt-28 mt-24 absolute top-0 right-0 
+                            className={`p-6 ss:mt-24 mt-20 absolute top-0 right-0 
                             z-10 flex-col w-full
                             ${toggle ? 'menu-slide-enter menu-slide-enter-active' 
                             : 'menu-slide-exit menu-slide-exit-active'}`}
