@@ -7,7 +7,7 @@ import { logo } from '../assets';
 import { TiArrowSortedDown } from "react-icons/ti";
 import { RiWhatsappLine } from "react-icons/ri";
 import { PiLineVerticalThin } from "react-icons/pi";
-import { MdOutlineShoppingCart } from "react-icons/md";
+import { IoCartOutline } from "react-icons/io5";
 import { FiMail } from "react-icons/fi";
 
 import { useNavigate } from 'react-router-dom';
@@ -106,18 +106,18 @@ return () => {
                         
                     </div>
 
-                    <div className='hidden md:flex justify-end gap-8 flex-row
+                    <div className='hidden md:flex gap-10 flex-row
                     items-center'
                     >
                         <div className='flex justify-center items-center'>
 
-                            <MdOutlineShoppingCart 
-                                className='text-primary text-[24px] grow4 
+                            <IoCartOutline
+                                className='text-primary text-[38px] grow4 
                                 cursor-pointer'
                             />
                         </div>
 
-                        <button className='bg-primary text-[16px] py-3 px-5
+                        <button className='bg-primary text-[15px] py-3 px-5
                         text-white rounded-[10px] grow4 cursor-pointer w-[150px]'
                         // onClick={() => {
                         //     setToggle(!toggle);
