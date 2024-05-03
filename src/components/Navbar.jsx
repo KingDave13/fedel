@@ -107,7 +107,7 @@ return () => {
                         <div className='flex w-full justify-center'>
                             <div className='flex flex-row bg-main2 w-full
                             rounded-[10px] border-[1px] border-primaryalt 
-                            py-2 px-3 gap-3 justify-between items-center'>
+                            py-2 px-2 gap-3 justify-between items-center'>
                                 <IoSearchOutline
                                     className='text-main text-[22px]'
                                 />
