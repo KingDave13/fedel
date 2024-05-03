@@ -33,11 +33,11 @@ return () => {
 
 
   return (
-    <nav className={`${styles.paddingX} w-full flex items-center fixed 
-       top-0 z-20 navsmooth`}
+    <nav className='w-full flex items-center fixed 
+       top-0 z-20 navsmooth'
     >
         <div className='flex flex-col w-full items-center gap-2'>
-            <div className="w-full flex md:bg-main2">
+            <div className={`w-full flex md:bg-main2 ${styles.paddingX}`}>
                 <div className='w-full flex justify-between items-center 
                 max-w-[86rem] mx-auto md:py-3 ss:py-4 py-3'>
                     <div className="flex items-center w-full hidden md:flex">
