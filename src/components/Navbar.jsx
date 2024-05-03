@@ -41,7 +41,7 @@ return () => {
             <div className={`w-full md:bg-main2 ${styles.paddingX}
             hidden md:flex`}>
                 <div className='w-full flex justify-between items-center 
-                max-w-[86rem] mx-auto md:py-3 ss:py-4 py-3'>
+                max-w-[86rem] mx-auto md:py-2 ss:py-4 py-3'>
                     <div className="flex items-center w-full">
                         <ul className="list-none flex flex-row gap-8">
                             {navLinks.map((link) => (
@@ -75,15 +75,15 @@ return () => {
                             <PiLineVerticalThin className='text-main text-[25px]'/>
 
                             <HiOutlineChat
-                                className='text-main text-[24px] grow4 cursor-pointer'
+                                className='text-main text-[23px] grow4 cursor-pointer'
                             />
 
                             <FiMail 
-                                className='text-main text-[24px] grow4 cursor-pointer'
+                                className='text-main text-[23px] grow4 cursor-pointer'
                             />
 
                             <RiWhatsappLine 
-                                className='text-main text-[24px] grow4 cursor-pointer'
+                                className='text-main text-[23px] grow4 cursor-pointer'
                             />
                         </div>
 
