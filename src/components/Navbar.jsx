@@ -41,7 +41,7 @@ return () => {
             <div className={`w-full md:bg-main2 ${styles.paddingX}
             hidden md:flex`}>
                 <div className='w-full flex justify-between items-center 
-                max-w-[86rem] mx-auto md:py-2 ss:py-4 py-3'>
+                max-w-[86rem] mx-auto md:py-3 ss:py-4 py-3'>
                     <div className="flex items-center w-full">
                         <ul className="list-none flex flex-row gap-8">
                             {navLinks.map((link) => (
@@ -112,9 +112,17 @@ return () => {
                                     className='text-main text-[22px]'
                                 />
 
+                                <input
+                                    type='search'
+                                    placeholder='Search for products'
+                                    className='w-full text-black text-[15px]
+                                    placeholder:text-mainalt outline-none
+                                    border-none bg-transparent'
+                                />
+
                                 <button className='bg-primary text-[15px] 
                                 py-1.5 px-5 text-white rounded-[5px] grow4 
-                                cursor-pointer'
+                                cursor-pointer justify-end'
                                 // onClick={() => {
                                 //     setToggle(!toggle);
                                 // }}
