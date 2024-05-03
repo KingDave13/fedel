@@ -166,14 +166,14 @@ return () => {
                             <BsX
                                 size={40}
                                 className="object-contain cursor-pointer"
-                                style={{ color: '#021e31' }}
+                                style={{ color: '#050759' }}
                                 onClick={() => setToggle(!toggle)}
                             />
                             ) : (
                             <HiOutlineMenuAlt3
                                 size={40}
                                 className="object-contain cursor-pointer"
-                                style={{ color: '#021e31' }}
+                                style={{ color: '#050759' }}
                                 onClick={() => setToggle(!toggle)}
                             />
                             )}
@@ -186,7 +186,7 @@ return () => {
                             : 'menu-slide-exit menu-slide-exit-active'}`}
                         >
                             <ul className="list-none flex flex-col 
-                            ss:gap-8 gap-5 ss:mb-14 mb-12">
+                            ss:gap-8 gap-4 ss:mb-14 mb-12">
                                 {navLinks.map((link) => (
                                     <li
                                         key={link.id}
@@ -198,7 +198,7 @@ return () => {
                                         //   }
                                         // }}
                                     >
-                                        <h3 className='text-main ss:text-[16px] text-[14px] 
+                                        <h3 className='text-main ss:text-[16px] text-[15px] 
                                         font-medium'>
                                             {link.title}
                                         </h3>

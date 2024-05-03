@@ -87,3 +87,21 @@
 .grow5:hover {
   transform: scale(1.01);
 }
+
+.menu-slide-enter {
+  transform: translateX(100%);
+}
+
+.menu-slide-enter-active {
+  transform: translateX(0);
+  transition: transform 0.4s ease-in-out;
+}
+
+.menu-slide-exit {
+  transform: translateX(0);
+}
+
+.menu-slide-exit-active {
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in-out;
+}
