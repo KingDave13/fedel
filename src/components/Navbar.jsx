@@ -99,7 +99,7 @@ return () => {
                 <div className='w-full flex justify-between items-center 
                 max-w-[86rem] mx-auto md:py-4 ss:py-4 py-3'>
                     <img src={logo} alt='logo'
-                        className='md:w-[150px] ss:w-[60px] w-[45px] h-auto'
+                        className='md:w-[150px] ss:w-[120px] w-[110px] h-auto'
                     />
 
                     <div className="hidden md:flex items-center w-full
@@ -155,7 +155,13 @@ return () => {
                     
                     <div className="md:hidden flex justify-end flex-1 items-center
                     mt-3">
-                        <div className="flex items-center z-20">
+                        <div className="flex items-center z-20 ss:gap-8
+                        gap-6">
+                            <IoCartOutline
+                                className='text-primary ss:text-[35px] 
+                                text-[35px]'
+                            />
+
                             {toggle ? (
                             <BsX
                                 size={40}
@@ -174,44 +180,73 @@ return () => {
                         </div>
                     
                         <div ref={menuRef}
-                            className={`p-6 ss:mt-28 mt-24 bg-primaryalt absolute top-0 right-0 
-                            z-10 flex-col w-full shadow-xl
+                            className={`p-6 ss:mt-28 mt-24 absolute top-0 right-0 
+                            z-10 flex-col w-full
                             ${toggle ? 'menu-slide-enter menu-slide-enter-active' 
                             : 'menu-slide-exit menu-slide-exit-active'}`}
                         >
-                            <ul className="list-none flex flex-row 
-                            ss:gap-8 gap-6">
-                            {navLinks.map((link) => (
-                            <li
-                                key={link.id}
-                                className='text-decoration-none cursor-pointer
-                                flex flex-row ss:gap-2 gap-1 items-center'
-                                // onClick={() => {
-                                //   if (link.special) {
-                                //     navigate(link.route);
-                                //   }
-                                // }}
-                            >
-                                <h3 className='text-main ss:text-[16px] text-[14px] 
-                                font-medium'>
-                                    {link.title}
-                                </h3>
-                                
-                                <TiArrowSortedDown 
-                                    className='text-main ss:text-[18px]
-                                    text-[16px]'
-                                />
-                            </li>
-                            ))}
-                        </ul>
+                            <ul className="list-none flex flex-col 
+                            ss:gap-8 gap-5 ss:mb-14 mb-12">
+                                {navLinks.map((link) => (
+                                    <li
+                                        key={link.id}
+                                        className='text-decoration-none cursor-pointer
+                                        flex flex-row ss:gap-2 gap-1 items-center'
+                                        // onClick={() => {
+                                        //   if (link.special) {
+                                        //     navigate(link.route);
+                                        //   }
+                                        // }}
+                                    >
+                                        <h3 className='text-main ss:text-[16px] text-[14px] 
+                                        font-medium'>
+                                            {link.title}
+                                        </h3>
+                                        
+                                        <TiArrowSortedDown 
+                                            className='text-main ss:text-[18px]
+                                            text-[16px]'
+                                        />
+                                    </li>
+                                ))}
+                            </ul>
 
-                            <button className='bg-main text-[16px] py-2 px-4
-                            text-white rounded-[5px] mt-5 ss:text-[20px] text-[14px]'
+                            <div className='flex flex-row bg-main2 w-full
+                            rounded-[8px] border-[1px] border-primaryalt 
+                            py-2 px-2 gap-3 justify-between items-center'>
+                                <IoSearchOutline
+                                    className='text-main ss:text-[28px]
+                                    text-[27px]'
+                                />
+
+                                <input
+                                    type='search'
+                                    placeholder='Search for products'
+                                    className='w-full text-black 
+                                    ss:text-[15px] text-[14px]
+                                    placeholder:text-mainalt outline-none
+                                    border-none bg-transparent'
+                                />
+
+                                <button className='bg-primary ss:text-[15px]
+                                text-[13px] justify-end
+                                py-1.5 px-5 text-white rounded-[5px]'
+                                // onClick={() => {
+                                //     setToggle(!toggle);
+                                // }}
+                                >
+                                    Search
+                                </button>
+                            </div>
+
+                            <button className='bg-primary ss:py-4 py-3 
+                            px-4 w-full text-white rounded-[8px] mt-5 
+                            ss:text-[20px] text-[14px]'
                             onClick={() => {
                                 setToggle(!toggle);
                             }}
                             >
-                                Our Newsletter
+                                Get a Quote
                             </button>
                         </div>
                     </div>
