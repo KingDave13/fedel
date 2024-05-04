@@ -65,72 +65,52 @@ const TargetedSearch = () => {
 
   return (
     <div className='items-center w-full flex flex-col'>
-        <div className='w-full'>
-            <div className="w-full flex justify-center items-center">
-                <p className='text-main font-medium md:text-[20px] ss:text-[20px] 
-                text-[15px]'>
-                    <span className='font-bold'>EMAIL: </span> 
-                    <a href='mailto:contact@epjournals.com' 
-                    className='hover:text-secondary'>
-                        contact@epjournals.com
-                    </a>
-                </p>
+        <div className='flex flex-col bg-white md:p-8 ss:p-8 p-5 
+        rounded-[20px] md:gap-3'>
+            <h2 className='text-primary font-bold md:text-[20px]
+            ss:text-[20px] text-[20px] tracking-tight'>
+                Let us know exactly what you want
+            </h2>
+
+            <p className='text-main md:leading-[20px] ss:leading-[19px] 
+            leading-[19px] md:text-[15px] ss:text-[15px] text-[14px]'>
+                Is there a particular style, pattern or brand of tile you're 
+                looking for? We can find it quickly and also mail you some 
+                samples!
+            </p>
+
+            <div className='flex flex-row w-full md:mt-3 ss:mt-3 mt-2'>
+                <h2 className='font-bold text-primary md:text-[15px]'>
+                    Targeted Search
+                </h2>
             </div>
-        </div>
-
-        <div className='w-full md:mt-10 ss:mt-8 mt-6'>
-            <div className='bg-main2 md:p-12 ss:p-8 p-5 rounded-xl'>
             <form ref={formRef} onSubmit={formik.handleSubmit}
-            className="grid grid-cols-2 md:gap-6 ss:gap-6 gap-4">
+            className="flex flex-col md:gap-3 ss:gap-3 md:mt-5 ss:mt-5
+            mt-3 gap-2">
                 <div className="flex flex-col">
-                    <label className="text-main md:mb-3 ss:mb-2 mb-2 
-                    md:text-[18px] ss:text-[16px] text-[14px] font-bold">
-                        First Name
-                    </label>
-                    <input
+                    <select
                     type="text"
-                    name="firstname"
-                    value={formik.values.firstname}
+                    name="product"
+                    value={formik.values.mode}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    placeholder="Enter your first name"
-                    className="md:py-3 ss:py-3 py-2 px-4 border-none 
-                    outline-none text-maintext md:rounded-[5px]
-                    ss:rounded-[5px] rounded-[5px]
-                    md:placeholder:text-[15px] font-medium
-                    ss:placeholder:text-[13px] 
-                    placeholder:text-[12px] bg-primaryalt"
-                    />
-                    <p className="text-mainRed md:text-[13px] 
+                    placeholder="Select a product"
+                    className="md:py-3 ss:py-2 py-2 px-4 border-main 
+                    text-main md:rounded-[3px]
+                    ss:rounded-[3px] rounded-[3px] cursor-pointer
+                    md:placeholder:text-[14px] 
+                    ss:placeholder:text-[12px] 
+                    placeholder:text-[12px] bg-transparent"
+                    >
+                        <option>Select a product</option>
+                        <option>Social Media</option>
+                        <option>From a friend</option>
+                        <option>Other</option>
+                    </select>
+                    <p className="text-mainRed md:text-[12px] 
                     ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1"
                     >
-                        {formik.touched.firstname && formik.errors.firstname}
-                    </p>
-                </div>
-
-                <div className="flex flex-col">
-                    <label className="text-main md:mb-3 ss:mb-2 mb-2 
-                    md:text-[18px] ss:text-[16px] text-[14px] font-bold">
-                        Last Name
-                    </label>
-                    <input
-                    type="text"
-                    name="lastname"
-                    value={formik.values.lastname}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    placeholder="Enter your last name"
-                    className="md:py-3 ss:py-3 py-2 px-4 border-none 
-                    outline-none text-maintext md:rounded-[5px]
-                    ss:rounded-[5px] rounded-[5px]
-                    md:placeholder:text-[15px] font-medium
-                    ss:placeholder:text-[13px] 
-                    placeholder:text-[12px] bg-primaryalt"
-                    />
-                    <p className="text-mainRed md:text-[13px] 
-                    ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1"
-                    >
-                        {formik.touched.lastname && formik.errors.lastname}
+                        {formik.touched.mode && formik.errors.mode}
                     </p>
                 </div>
 
@@ -224,7 +204,6 @@ const TargetedSearch = () => {
                     </button>
                 </div>
             </form>
-            </div>
         </div>
     </div>
   )

@@ -17,9 +17,10 @@ const Hero = () => {
         <div className='relative items-center w-full max-w-[86rem] hero
         md:mt-28 ss:mt-56 mt-44 rounded-[30px] flex md:p-12'>
             <div className='relative items-center justify-between w-full
-            flex md:flex-row flex-col gap-24'>
+            flex md:flex-row flex-col gap-28'>
                 <motion.div variants={textVariant()}
-                className={`${layout.sectionInfo} md:gap-8`}
+                className='flex justify-center items-start md:gap-6
+                flex-col'
                 >
                     <h1 className='text-white font-bold md:text-[60px]
                     ss:text-[50px] text-[40px] md:leading-[73px] 
@@ -31,8 +32,9 @@ const Hero = () => {
                         and lots more.
                     </h1>
 
-                    <p className='text-white md:text-[20px]
-                    ss:text-[20px] text-[14px] md:max-w-[600px] ss:max-w-[620px]
+                    <p className='text-white md:text-[20px] md:leading-[30px] 
+                    ss:leading-[55px] leading-[45px] ss:text-[20px] 
+                    text-[14px] md:max-w-[630px] ss:max-w-[620px]
                     max-w-[320px]'>
                         Buy your desired tiles, marble, granite, sanitary
                         wares, doors, wall and flooring materials. We've
@@ -70,8 +72,8 @@ const Hero = () => {
                     </div>     
                 </motion.div>
 
-                <motion.div variants={fadeIn('right', 'spring', 0.3)}
-                className='flex'>
+                <motion.div variants={fadeIn('left', 'spring', 0.3)}
+                className='flex flex-1'>
                     <TargetedSearch />
                 </motion.div>          
             </div>
