@@ -39,9 +39,8 @@
 
 .hero {
   background-image: url('./assets/heroImage.jpg');
-  object-fit: cover;
-  width: auto;
-  height: 100vh;
+  object-fit: contain;
+  height: 80vh;
 }
 
 .box-shadow {

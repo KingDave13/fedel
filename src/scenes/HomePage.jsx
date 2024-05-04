@@ -1,4 +1,5 @@
 import {
+    Hero,
     Navbar
 } from '../components';
 
@@ -14,6 +15,7 @@ const HomePage = () => {
             </Helmet>
 
             <Navbar />
+            <Hero />
         </div>
     )
 };

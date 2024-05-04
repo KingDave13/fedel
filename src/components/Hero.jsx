@@ -12,15 +12,16 @@ const Hero = () => {
   const navigate = useNavigate();
 
   return (
-    <section className='relative w-full md:min-h-[890px] ss:min-h-[800px] 
+    <section className='relative w-full md:min-h-[700px] ss:min-h-[800px] 
     items-center flex overflow-hidden'>
-        <div className='relative items-center w-full max-w-[86rem] hero'>
+        <div className='relative items-center w-full max-w-[86rem] hero
+        md:mt-28 ss:mt-56 mt-44 rounded-[30px] flex'>
             <div className='relative items-center justify-between w-full
             flex md:flex-row flex-col gap-5'>
                 <motion.div variants={textVariant()}
                 className={`${layout.sectionInfo}`}
                 >
-                    <h1 className='text-secondary font-bold md:text-[65px]
+                    <h1 className='text-white font-bold md:text-[65px]
                     ss:text-[50px] text-[40px] md:leading-[78px] 
                     ss:leading-[55px] leading-[45px]
                     tracking-tight md:max-w-[750px]'>

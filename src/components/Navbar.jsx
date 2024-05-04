@@ -95,7 +95,7 @@ return () => {
                 </div>
             </div>
 
-            <div className={`w-full flex ${styles.paddingX}`}>
+            <div className={`w-full flex bg-white ${styles.paddingX}`}>
                 <div className='w-full flex justify-between items-center 
                 max-w-[86rem] mx-auto md:py-3 ss:py-4 py-4'>
                     <img src={logo} alt='logo'
