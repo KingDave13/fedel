@@ -39,7 +39,8 @@
 
 .hero {
   background-image: url('./assets/heroImage.jpg');
-  object-fit: contain;
+  object-fit: cover;
+  background-position: center;
   height: 80vh;
 }
 
