@@ -31,7 +31,7 @@ const Hero = () => {
                         and lots more.
                     </h1>
 
-                    <p className='text-white md:text-[19px]
+                    <p className='text-white md:text-[20px]
                     ss:text-[20px] text-[14px] md:max-w-[600px] ss:max-w-[620px]
                     max-w-[320px]'>
                         Buy your desired tiles, marble, granite, sanitary
