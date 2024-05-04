@@ -15,23 +15,23 @@ const Hero = () => {
     <section className='relative w-full md:min-h-[700px] ss:min-h-[800px] 
     items-center flex overflow-hidden'>
         <div className='relative items-center w-full max-w-[86rem] hero
-        md:mt-28 ss:mt-56 mt-44 rounded-[30px] flex'>
+        md:mt-28 ss:mt-56 mt-44 rounded-[30px] flex md:p-12'>
             <div className='relative items-center justify-between w-full
             flex md:flex-row flex-col gap-5'>
                 <motion.div variants={textVariant()}
-                className={`${layout.sectionInfo}`}
+                className={`${layout.sectionInfo} md:gap-8`}
                 >
-                    <h1 className='text-white font-bold md:text-[65px]
-                    ss:text-[50px] text-[40px] md:leading-[78px] 
+                    <h1 className='text-white font-bold md:text-[60px]
+                    ss:text-[50px] text-[40px] md:leading-[73px] 
                     ss:leading-[55px] leading-[45px]
-                    tracking-tight md:max-w-[750px]'>
+                    md:max-w-[650px]'>
                         Buy your <span className='text-secondary'>
                         tiles, marble, granite, sanitary wares,
                         floor materials </span> 
                         and lots more.
                     </h1>
 
-                    <p className='md:mt-8 ss:mt-8 mt-5 text-white md:text-[19px]
+                    <p className='text-white md:text-[19px]
                     ss:text-[20px] text-[14px] md:max-w-[600px] ss:max-w-[620px]
                     max-w-[320px]'>
                         Buy your desired tiles, marble, granite, sanitary
