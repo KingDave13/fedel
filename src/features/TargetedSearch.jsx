@@ -72,7 +72,7 @@ const TargetedSearch = () => {
                 Let us know exactly what you want
             </h2>
 
-            <p className='text-main md:leading-[20px] ss:leading-[19px] 
+            <p className='text-main md:leading-[19px] ss:leading-[19px] 
             leading-[19px] md:text-[15px] ss:text-[15px] text-[14px]'>
                 Is there a particular style, pattern or brand of tile you're 
                 looking for? We can find it quickly and also mail you some 
@@ -94,8 +94,8 @@ const TargetedSearch = () => {
                         value={formik.values.mode}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        className="md:py-3 ss:py-2 py-2 px-4 border-search 
-                        text-main rounded-lg cursor-pointer 
+                        className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
+                        text-main3 rounded-lg cursor-pointer md:text-[15px] 
                         bg-transparent w-full"
                     >
                         <option value="" disabled selected hidden>Select a product</option>
