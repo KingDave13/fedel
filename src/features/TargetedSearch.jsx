@@ -179,6 +179,32 @@ const TargetedSearch = () => {
                         {Loading ? 'Submitting...' : 'Search'}
                     </button>
                 </div>
+
+                <div className='flex w-full gap-2 md:mt-8 ss:mt-8 mt-6'>
+
+
+
+                    <h3 className='text-main3 md:text-[13px] ss:text-[12px]
+                    text-[11px] md:leading-[18px] ss:leading-[17px]
+                    leading-[15px] tracking-tight'>
+                        If you have any special requests or orders you may
+                        want to place, do well to switch to the "Message
+                        Us" tab to send an email or WhatsApp message 
+                        directly.
+                    </h3>
+                </div>
+
+                <div className='flex w-full gap-2 mt-1'>
+
+
+                    
+                    <h3 className='text-primary md:text-[13px] ss:text-[12px]
+                    text-[11px] font-bold md:leading-[18px] ss:leading-[17px]
+                    leading-[15px] tracking-tight'>
+                        Click here to watch our help video if you want to
+                        know how to use our website better.
+                    </h3>
+                </div>
             </form>
         </div>
     </div>
