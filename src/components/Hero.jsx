@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
 import { IoSearchOutline } from "react-icons/io5";
 import { SectionWrapper } from '../hoc';
-// import { hero } from '../assets';
+import { TargetedSearch } from '../features';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -70,12 +70,10 @@ const Hero = () => {
                     </div>     
                 </motion.div>
 
-                {/* <motion.div variants={fadeIn('right', 'spring', 0.3)}
-                className='md:flex hidden'>
-                    <img src={hero} alt='hero'
-                    className=' h-[600px] w-auto'
-                    />
-                </motion.div>           */}
+                <motion.div variants={fadeIn('right', 'spring', 0.3)}
+                className='flex'>
+                    <TargetedSearch />
+                </motion.div>          
             </div>
             
         </div>
