@@ -13,7 +13,7 @@ const Hero = () => {
 
   return (
     <section className='relative w-full md:min-h-[700px] ss:min-h-[800px] 
-    items-center flex overflow-hidden'>
+    items-center flex'>
         <div className='relative items-center w-full max-w-[86rem] hero
         md:mt-28 ss:mt-56 mt-44 rounded-[30px] flex md:p-12'>
             <div className='relative items-center justify-between w-full
@@ -72,10 +72,11 @@ const Hero = () => {
                     </div>     
                 </motion.div>
 
-                <motion.div variants={fadeIn('left', 'spring', 0.3)}
-                className='flex flex-1'>
+                <motion.div variants={fadeIn('left', 'spring', 0.3)} className='flex flex-1 relative'>
+                    <div className="absolute -top-56 z-10">
                     <TargetedSearch />
-                </motion.div>          
+                    </div>
+                </motion.div>         
             </div>
             
         </div>

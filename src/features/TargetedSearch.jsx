@@ -66,7 +66,7 @@ const TargetedSearch = () => {
   return (
     <div className='items-center w-full flex flex-col'>
         <div className='flex flex-col bg-white md:p-8 ss:p-8 p-5 
-        rounded-[20px] md:gap-3'>
+        rounded-[20px] md:gap-3 border-[1px] border-main3'>
             <h2 className='text-primary font-bold md:text-[22px]
             ss:text-[20px] text-[20px] tracking-tight'>
                 Let us know exactly what you want
