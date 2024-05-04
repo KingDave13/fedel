@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { BsX } from 'react-icons/bs';
 import styles from '../styles';
-import { HiOutlineMenuAlt3, HiOutlineChat } from 'react-icons/hi';
+import { HiOutlineChat } from 'react-icons/hi';
 import { navLinks } from '../constants';
 import { logo } from '../assets';
 import { TiArrowSortedDown } from "react-icons/ti";
