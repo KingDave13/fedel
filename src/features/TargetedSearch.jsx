@@ -87,29 +87,24 @@ const TargetedSearch = () => {
             <form ref={formRef} onSubmit={formik.handleSubmit}
             className="flex flex-col md:gap-3 ss:gap-3 md:mt-5 ss:mt-5
             mt-3 gap-2">
-                <div className="flex flex-col">
+                <div className="relative">
                     <select
-                    type="text"
-                    name="product"
-                    value={formik.values.mode}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    placeholder="Select a product"
-                    className="md:py-3 ss:py-2 py-2 px-4 border-main 
-                    text-main md:rounded-[3px]
-                    ss:rounded-[3px] rounded-[3px] cursor-pointer
-                    md:placeholder:text-[14px] 
-                    ss:placeholder:text-[12px] 
-                    placeholder:text-[12px] bg-transparent"
+                        type="text"
+                        name="product"
+                        value={formik.values.mode}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        className="md:py-3 ss:py-2 py-2 px-4 border-search 
+                        text-main rounded-lg cursor-pointer 
+                        bg-transparent w-full"
                     >
-                        <option>Select a product</option>
-                        <option>Social Media</option>
-                        <option>From a friend</option>
-                        <option>Other</option>
+                        <option value="" disabled selected hidden>Select a product</option>
+                        <option value="social_media">Social Media</option>
+                        <option value="from_friend">From a friend</option>
+                        <option value="other">Other</option>
                     </select>
                     <p className="text-mainRed md:text-[12px] 
-                    ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1"
-                    >
+                    ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
                         {formik.touched.mode && formik.errors.mode}
                     </p>
                 </div>

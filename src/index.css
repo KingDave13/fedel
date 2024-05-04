@@ -44,6 +44,11 @@
   height: 80vh;
 }
 
+.border-search {
+  border: 1px solid #7D7D7D;
+  outline: none;
+}
+
 .box-shadow {
   box-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
 }
