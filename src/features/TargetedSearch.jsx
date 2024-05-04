@@ -10,19 +10,17 @@ const TargetedSearch = () => {
 
     const formik = useFormik({
         initialValues: {
-            firstname: '',
-            lastname: '',
-            email: '',
-            subject: '',
-            message: '',
+            product: '',
+            category: '',
+            price: '',
+            numbermail: '',
         },
 
         validationSchema: Yup.object({
-            firstname: Yup.string().required('First Name is required.'),
-            lastname: Yup.string().required('Last Name is required.'),
-            email: Yup.string().email('Invalid email address.').required('Email is required.'),
-            subject: Yup.string().required('Subject is required.'),
-            message: Yup.string().required('Message is required.'),
+            product: Yup.string().required('Product is required.'),
+            category: Yup.string().required('Category is required.'),
+            price: Yup.string().required('Price is required.'),
+            numbermail: Yup.string().required('Phone Number or Email is required.'),
         }),
 
         // onSubmit: (values) => {
@@ -91,11 +89,11 @@ const TargetedSearch = () => {
                     <select
                         type="text"
                         name="product"
-                        value={formik.values.mode}
+                        value={formik.values.product}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
-                        text-main3 rounded-lg cursor-pointer md:text-[15px] 
+                        text-main3 rounded-lg cursor-pointer md:text-[14px] 
                         bg-transparent w-full"
                     >
                         <option value="" disabled selected hidden>Select a product</option>
@@ -105,97 +103,80 @@ const TargetedSearch = () => {
                     </select>
                     <p className="text-mainRed md:text-[12px] 
                     ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
-                        {formik.touched.mode && formik.errors.mode}
+                        {formik.touched.product && formik.errors.product}
                     </p>
                 </div>
 
-                <div className="col-span-2 flex flex-col">
-                    <label className="text-main md:mb-3 ss:mb-2 mb-2 
-                    md:text-[18px] ss:text-[16px] text-[14px] font-bold">
-                        Email Address
-                    </label>
+                <div className="relative">
+                    <select
+                        type="text"
+                        name="category"
+                        value={formik.values.category}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
+                        text-main3 rounded-lg cursor-pointer md:text-[14px] 
+                        bg-transparent w-full"
+                    >
+                        <option value="" disabled selected hidden>Select a category</option>
+                        <option value="social_media">Social Media</option>
+                        <option value="from_friend">From a friend</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <p className="text-mainRed md:text-[12px] 
+                    ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                        {formik.touched.category && formik.errors.category}
+                    </p>
+                </div>
+
+                <div className="relative">
+                    <select
+                        type="text"
+                        name="price"
+                        value={formik.values.price}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
+                        text-main3 rounded-lg cursor-pointer md:text-[14px] 
+                        bg-transparent w-full"
+                    >
+                        <option value="" disabled selected hidden>Select a price range</option>
+                        <option value="social_media">Social Media</option>
+                        <option value="from_friend">From a friend</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <p className="text-mainRed md:text-[12px] 
+                    ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                        {formik.touched.price && formik.errors.price}
+                    </p>
+                </div>
+
+                <div className="relative">
                     <input
-                    type="email"
-                    name="email"
-                    value={formik.values.email}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    placeholder="Enter your email address"
-                    className="md:py-3 ss:py-3 py-2 px-4 border-none 
-                    outline-none text-maintext md:rounded-[5px]
-                    ss:rounded-[5px] rounded-[5px]
-                    md:placeholder:text-[15px] font-medium
-                    ss:placeholder:text-[13px] 
-                    placeholder:text-[12px] bg-primaryalt"
-                    />
-                    <p className="text-mainRed md:text-[13px] 
-                    ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1"
-                    >
-                        {formik.touched.email && formik.errors.email}
+                        type="text"
+                        name="numbermail"
+                        placeholder='Enter your phone number or email'
+                        value={formik.values.numbermail}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
+                        text-black rounded-lg md:text-[14px] 
+                        bg-transparent w-full placeholder:text-main3"
+                   />
+                    <p className="text-mainRed md:text-[12px] 
+                    ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                        {formik.touched.numbermail && formik.errors.numbermail}
                     </p>
                 </div>
 
-                <div className="col-span-2 flex flex-col">
-                    <label className="text-main md:mb-3 ss:mb-2 mb-2 
-                    md:text-[18px] ss:text-[16px] text-[14px] font-bold">
-                        Subject
-                    </label>
-                    <input
-                    type="text"
-                    name="subject"
-                    value={formik.values.subject}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    placeholder="Enter a subject"
-                    className="md:py-3 ss:py-3 py-2 px-4 border-none 
-                    outline-none text-maintext md:rounded-[5px]
-                    ss:rounded-[5px] rounded-[5px]
-                    md:placeholder:text-[15px] font-medium
-                    ss:placeholder:text-[13px] 
-                    placeholder:text-[12px] bg-primaryalt"
-                    />
-                    <p className="text-mainRed md:text-[13px] 
-                    ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1"
-                    >
-                        {formik.touched.subject && formik.errors.subject}
-                    </p>
-                </div>
-
-                <div className="col-span-2 flex flex-col">
-                    <label className="text-main md:mb-3 ss:mb-2 mb-2 
-                    md:text-[18px] ss:text-[16px] text-[14px] font-bold">
-                        Message
-                    </label>
-                    <textarea
-                    rows="6"
-                    name="message"
-                    value={formik.values.message}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    placeholder="How may we assist you?"
-                    className="md:py-3 ss:py-3 py-2 px-4 border-none 
-                    outline-none text-maintext md:rounded-[5px]
-                    ss:rounded-[5px] rounded-[5px]
-                    md:placeholder:text-[15px] font-medium
-                    ss:placeholder:text-[13px] 
-                    placeholder:text-[12px] bg-primaryalt"
-                    />
-                    <p className="text-mainRed md:text-[13px] 
-                    ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1"
-                    >
-                        {formik.touched.message ? formik.errors.message : ''}
-                    </p>
-                </div>
-
-                <div className="col-span-2 md:mt-0 ss:mt-0 mt-5">
+                <div className="w-full md:mt-3 ss:mt-3 mt-2">
                     <button
                     type="submit"
-                    className="bg-main grow md:text-[16px] 
+                    className="bg-primary grow md:text-[15px] w-full
                     ss:text-[16px] text-[14px] md:py-3 ss:py-3 py-2 
-                    md:px-20 ss:px-14 px-10 text-white rounded-lg
-                    font-medium border-none"
+                    text-white rounded-lg border-none"
                     >
-                        {Loading ? 'Submitting...' : 'Submit'}
+                        {Loading ? 'Submitting...' : 'Search'}
                     </button>
                 </div>
             </form>
