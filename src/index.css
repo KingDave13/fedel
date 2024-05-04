@@ -37,6 +37,13 @@
   transition: all 0.2s ease-in-out;
 }
 
+.hero {
+  background-image: url('./assets/heroImage.jpg');
+  object-fit: cover;
+  width: auto;
+  height: 100vh;
+}
+
 .box-shadow {
   box-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
 }
