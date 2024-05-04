@@ -17,7 +17,7 @@ const Hero = () => {
         <div className='relative items-center w-full max-w-[86rem] hero
         md:mt-28 ss:mt-56 mt-44 rounded-[30px] flex md:p-12'>
             <div className='relative items-center justify-between w-full
-            flex md:flex-row flex-col gap-5'>
+            flex md:flex-row flex-col gap-24'>
                 <motion.div variants={textVariant()}
                 className={`${layout.sectionInfo} md:gap-8`}
                 >
