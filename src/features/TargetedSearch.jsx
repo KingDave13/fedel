@@ -1,6 +1,8 @@
 import { useState, useRef } from 'react';
 // import emailjs from '@emailjs/browser';
 import { useFormik } from "formik";
+import { RiInformationFill } from "react-icons/ri";
+import { ImPlay } from "react-icons/im";
 import * as Yup from 'yup';
 
 const TargetedSearch = () => {
@@ -77,13 +79,21 @@ const TargetedSearch = () => {
                 samples!
             </p>
 
-            <div className='flex flex-row w-full md:mt-3 ss:mt-3 mt-2'>
-                <h2 className='font-bold text-primary md:text-[15px]'>
+            <div className='flex flex-row w-full md:mt-3 ss:mt-3 mt-2
+            justify-center items-center'>
+                <h2 className='font-bold text-primary md:text-[15px]
+                border-b-primary border-b-[3px] md:pb-2 text-center
+                w-full cursor-pointer'>
                     Targeted Search
+                </h2>
+
+                <h2 className='text-main md:text-[15px] text-center
+                md:pb-2 w-full cursor-pointer'>
+                    Message Us
                 </h2>
             </div>
             <form ref={formRef} onSubmit={formik.handleSubmit}
-            className="flex flex-col md:gap-3 ss:gap-3 md:mt-5 ss:mt-5
+            className="flex flex-col md:gap-3 ss:gap-3 md:mt-4 ss:mt-4
             mt-3 gap-2">
                 <div className="relative">
                     <select
@@ -180,9 +190,12 @@ const TargetedSearch = () => {
                     </button>
                 </div>
 
-                <div className='flex w-full gap-2 md:mt-8 ss:mt-8 mt-6'>
-
-
+                <div className='flex w-full gap-3 md:mt-8 ss:mt-8 mt-6
+                items-center'>
+                    <RiInformationFill 
+                        className='text-main3 ss:text-[57px]
+                        text-[27px]'
+                    />
 
                     <h3 className='text-main3 md:text-[13px] ss:text-[12px]
                     text-[11px] md:leading-[18px] ss:leading-[17px]
@@ -194,12 +207,13 @@ const TargetedSearch = () => {
                     </h3>
                 </div>
 
-                <div className='flex w-full gap-2 mt-1'>
-
-
-                    
+                <div className='flex w-full gap-3 mt-1 items-center
+                cursor-pointer grow5'>
+                    <ImPlay className='text-secondary ss:text-[27px] 
+                        md:ml-1 text-[27px]'
+                    />
                     <h3 className='text-primary md:text-[13px] ss:text-[12px]
-                    text-[11px] font-bold md:leading-[18px] ss:leading-[17px]
+                    text-[11px] font-bold md:leading-[17px] ss:leading-[17px]
                     leading-[15px] tracking-tight'>
                         Click here to watch our help video if you want to
                         know how to use our website better.
