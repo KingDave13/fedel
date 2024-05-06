@@ -2,6 +2,7 @@ import { SectionWrapper } from '../hoc';
 import { motion } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
 import { steps } from '../constants';
+import { arrowRight } from '../assets';
 
 const StepCard = ({ index, title, image, description }) => {
     return (
@@ -29,12 +30,13 @@ const StepCard = ({ index, title, image, description }) => {
                         {description}
                     </p>
 
-                    <div className='flex gap-2 cursor-pointer'>
+                    <div className='flex gap-3 cursor-pointer grow5'>
                         <p className='text-primary md:text-[15px] ss:text-[15px]
                         text-[13px] font-medium'>
                             Browse products
                         </p>
-
+                        
+                        <img src={arrowRight}/>
                     </div>
                 </div>
             </div>
