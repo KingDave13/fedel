@@ -24,7 +24,7 @@ const Discover = () => {
                         Safe and secure delivery to wherever you are!
                         </h1>
 
-                        <p className='text-main md:text-[20px] ss:text-[17px] 
+                        <p className='text-main md:text-[19px] ss:text-[17px] 
                         text-[14px] md:max-w-[700px] ss:max-w-[400px]  
                         md:leading-[28px] font-medium tracking-tight'>
                         Ensuring your satisfaction from start to finish, 

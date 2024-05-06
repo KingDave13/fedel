@@ -56,9 +56,9 @@ const Steps = () => {
                     Find and order from us in 4 easy steps
                 </h1>
                 
-                <p className='text-main font-medium md:text-[20px]
+                <p className='text-main font-medium md:text-[19px]
                 ss:text-[17px] text-[15px] tracking-tight md:max-w-[950px]
-                ss:max-w-[300px]'>
+                ss:max-w-[300px] md:leading-[28px] ss:leading-[26px]'>
                     You do not need to go through too much stress to find 
                     exactly what you're looking for on our website. We've 
                     outlined these simple steps to understand how to 

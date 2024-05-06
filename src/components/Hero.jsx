@@ -32,7 +32,7 @@ const Hero = () => {
                         and lots more.
                     </h1>
 
-                    <p className='text-white md:text-[20px] md:leading-[30px] 
+                    <p className='text-white md:text-[19px] md:leading-[28px] 
                     ss:leading-[55px] leading-[45px] ss:text-[20px] 
                     text-[14px] md:max-w-[630px] ss:max-w-[620px]
                     max-w-[320px]'>
