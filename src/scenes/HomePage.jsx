@@ -2,7 +2,8 @@ import {
     Hero,
     Navbar,
     Discover,
-    Steps
+    Steps,
+    Help
 } from '../components';
 
 import { Helmet } from 'react-helmet';
@@ -20,6 +21,7 @@ const HomePage = () => {
             <Hero />
             <Discover />
             <Steps />
+            <Help />
         </div>
     )
 };
