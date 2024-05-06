@@ -250,7 +250,7 @@ const TargetedSearch = () => {
 
                     <div className="relative">
                         <textarea
-                            rows="6"
+                            rows="5"
                             name="message"
                             value={formik.values.message}
                             onChange={formik.handleChange}
@@ -268,7 +268,7 @@ const TargetedSearch = () => {
                     </>
                 )}
 
-                <div className="w-full mt-2">
+                <div className="w-full mt-1">
                     <button
                     type="submit"
                     className="bg-primary grow md:text-[15px] w-full
@@ -279,7 +279,7 @@ const TargetedSearch = () => {
                     </button>
                 </div>
 
-                <div className='flex w-full gap-3 md:mt-5 ss:mt-5 mt-4
+                <div className='flex w-full gap-3 md:mt-4 ss:mt-4 mt-3
                 items-center'>
                     <RiInformationFill 
                         className='text-main3 ss:text-[57px]
