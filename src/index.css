@@ -44,6 +44,12 @@
   height: 80vh;
 }
 
+.cta {
+  background-image: url('./assets/cta.jpg');
+  object-fit: cover;
+  background-position: center;
+}
+
 .help {
   background-image: url('./assets/helpImg.png');
   background-size: 49vw 100%;

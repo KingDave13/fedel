@@ -3,6 +3,7 @@ import Hero from './Hero';
 import Discover from "./Discover";
 import Steps from './Steps';
 import Help from './Help';
+import CTA from './CTA';
 
 export {
     Navbar,
@@ -10,4 +11,5 @@ export {
     Discover,
     Steps,
     Help,
+    CTA,
 }

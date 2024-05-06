@@ -3,7 +3,8 @@ import {
     Navbar,
     Discover,
     Steps,
-    Help
+    Help,
+    CTA
 } from '../components';
 
 import { Helmet } from 'react-helmet';
@@ -26,6 +27,7 @@ const HomePage = () => {
                 <Help />
             </div>
             
+            <CTA />
         </div>
     )
 };

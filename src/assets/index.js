@@ -7,6 +7,7 @@ import place from './place.png';
 import speed from './speed.png';
 import arrowRight from './arrowRight.png';
 import helpImg from './helpImg.png';
+import cta from './cta.jpg';
 
 
 export {
@@ -19,4 +20,5 @@ export {
     place,
     arrowRight,
     helpImg,
+    cta,
 }
