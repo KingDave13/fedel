@@ -191,6 +191,17 @@ const TargetedSearch = () => {
                             {formik.touched.numbermail && formik.errors.numbermail}
                         </p>
                     </div>
+
+                    <div className="w-full mt-1">
+                        <button
+                        type="submit"
+                        className="bg-primary grow md:text-[15px] w-full
+                        ss:text-[16px] text-[14px] md:py-3 ss:py-3 py-2 
+                        text-white rounded-lg border-none"
+                        >
+                            {Loading ? 'Searching...' : 'Search'}
+                        </button>
+                    </div>
                     </>
                 ) : (
                     <>
@@ -265,19 +276,29 @@ const TargetedSearch = () => {
                             {formik.touched.message && formik.errors.message}
                         </p>
                     </div>
+
+                    <div className="flex gap-1 w-full mt-1">
+                        <button
+                        type="submit"
+                        className="bg-primary grow md:text-[15px] w-full
+                        ss:text-[16px] text-[14px] md:py-3 ss:py-3 py-2 
+                        text-white rounded-lg border-none"
+                        >
+                            {Loading ? 'Searching...' : 'Search'}
+                        </button>
+
+                        <button
+                        type="submit"
+                        className="bg-primary grow md:text-[15px] w-full
+                        ss:text-[16px] text-[14px] md:py-3 ss:py-3 py-2 
+                        text-white rounded-lg border-none"
+                        >
+                            {Loading ? 'Searching...' : 'Search'}
+                        </button>
+                    </div>
                     </>
                 )}
 
-                <div className="w-full mt-1">
-                    <button
-                    type="submit"
-                    className="bg-primary grow md:text-[15px] w-full
-                    ss:text-[16px] text-[14px] md:py-3 ss:py-3 py-2 
-                    text-white rounded-lg border-none"
-                    >
-                        {Loading ? 'Submitting...' : 'Search'}
-                    </button>
-                </div>
 
                 <div className='flex w-full gap-3 md:mt-4 ss:mt-4 mt-3
                 items-center'>
