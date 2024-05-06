@@ -105,6 +105,13 @@ const TargetedSearch = () => {
             <form ref={formRef} onSubmit={formik.handleSubmit}
             className="flex flex-col md:gap-3 ss:gap-3 md:mt-4 ss:mt-4
             mt-3 gap-2">
+                {selectedTab === 'targetedSearch' ? (
+                    <>
+                    </>
+                ) : (
+                    <>
+                    </>
+                )}
                 <div className="relative">
                     <select
                         type="text"
