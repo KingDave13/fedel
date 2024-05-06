@@ -9,6 +9,7 @@ const TargetedSearch = () => {
 
     const formRef = useRef();
     const [Loading, setLoading] = useState(false);
+    const [selectedTab, setSelectedtab] = useState('targetedSearch');
 
     const formik = useFormik({
         initialValues: {
@@ -62,6 +63,10 @@ const TargetedSearch = () => {
         //     );
         // },
     });
+
+    const handleTabChange = (tab) => {
+        setSelectedTab(tab);
+    };
 
   return (
     <div className='items-center w-full flex flex-col'>
