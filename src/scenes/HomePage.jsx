@@ -29,7 +29,10 @@ const HomePage = () => {
             </div>
             
             <CTA />
-            <Footer />
+
+            <div className='footer'>
+                <Footer />
+            </div>
         </div>
     )
 };
