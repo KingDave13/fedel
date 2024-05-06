@@ -197,9 +197,9 @@ const TargetedSearch = () => {
                     <div className="relative">
                         <input
                             type="text"
-                            name="numbermail"
-                            placeholder='Enter your phone number or email'
-                            value={formik.values.numbermail}
+                            name="name"
+                            placeholder='Enter your name'
+                            value={formik.values.name}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
@@ -208,16 +208,16 @@ const TargetedSearch = () => {
                         />
                         <p className="text-mainRed md:text-[12px] 
                         ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
-                            {formik.touched.numbermail && formik.errors.numbermail}
+                            {formik.touched.name && formik.errors.name}
                         </p>
                     </div>
 
                     <div className="relative">
                         <input
                             type="text"
-                            name="numbermail"
-                            placeholder='Enter your phone number or email'
-                            value={formik.values.numbermail}
+                            name="email"
+                            placeholder='Enter your email'
+                            value={formik.values.email}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
@@ -226,15 +226,15 @@ const TargetedSearch = () => {
                         />
                         <p className="text-mainRed md:text-[12px] 
                         ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
-                            {formik.touched.numbermail && formik.errors.numbermail}
+                            {formik.touched.email && formik.errors.email}
                         </p>
                     </div>
 
                     <div className="relative">
                         <input
                             type="text"
-                            name="numbermail"
-                            placeholder='Enter your phone number or email'
+                            name="subject"
+                            placeholder='Enter a subject (e.g. Inquiry for Glass Marble Tile)'
                             value={formik.values.numbermail}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
@@ -244,7 +244,7 @@ const TargetedSearch = () => {
                         />
                         <p className="text-mainRed md:text-[12px] 
                         ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
-                            {formik.touched.numbermail && formik.errors.numbermail}
+                            {formik.touched.subject && formik.errors.subject}
                         </p>
                     </div>
 
@@ -255,17 +255,14 @@ const TargetedSearch = () => {
                             value={formik.values.message}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            placeholder="How may we assist you?"
-                            className="md:py-3 ss:py-3 py-2 px-4 border-none 
-                            outline-none text-maintext md:rounded-[5px]
-                            ss:rounded-[5px] rounded-[5px]
-                            md:placeholder:text-[15px] font-medium
-                            ss:placeholder:text-[13px] 
-                            placeholder:text-[12px] bg-primaryalt"
+                            placeholder="Enter your message"
+                            className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
+                            text-black rounded-lg md:text-[14px] 
+                            bg-transparent w-full placeholder:text-main3"
                         />
                         <p className="text-mainRed md:text-[12px] 
                         ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
-                            {formik.touched.numbermail && formik.errors.numbermail}
+                            {formik.touched.message && formik.errors.message}
                         </p>
                     </div>
                     </>
