@@ -6,6 +6,7 @@ import select from './select.png';
 import place from './place.png';
 import speed from './speed.png';
 import arrowRight from './arrowRight.png';
+import helpImg from './helpImg.png';
 
 export {
     logo,
@@ -16,4 +17,5 @@ export {
     speed,
     place,
     arrowRight,
+    helpImg,
 }

@@ -75,7 +75,7 @@ const Help = () => {
                 className="flex md:flex-row ss:flex-row flex-col md:gap-20 
                 ss:gap-10 gap-12 w-full">
                     <motion.div variants={textVariant()}
-                    className={`${layout.sectionInfo} md:gap-8 ss:gap-8
+                    className={`${layout.sectionInfo} md:gap-6 ss:gap-6
                     gap-6`}>
                         <h1 className="text-primary font-bold md:text-[45px]
                         ss:text-[45px] text-[33px] md:leading-[52px] 
@@ -94,8 +94,8 @@ const Help = () => {
                         </p>
 
                         <form ref={formRef} onSubmit={formik.handleSubmit}
-                        className="flex flex-col md:gap-2.5 ss:gap-2.5 md:mt-4 ss:mt-4
-                        mt-3 gap-2">
+                        className="flex flex-col md:gap-2.5 ss:gap-2.5 
+                        md:mt-4 ss:mt-4 mt-3 gap-2 md:w-2/3">
                             <div className="relative">
                                 <input
                                     type="text"
@@ -192,8 +192,7 @@ const Help = () => {
                     className="flex-1 w-full">
                         <img src={helpImg} 
                             alt='Help Image'
-                            className='md:h-full ss:h-full h-[200px] w-full
-                            rounded-3xl'
+                            className='md:h-full ss:h-full h-[200px] w-full'
                         />
                     </motion.div>
                 </motion.div>
