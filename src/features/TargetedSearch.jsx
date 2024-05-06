@@ -94,8 +94,11 @@ const TargetedSearch = () => {
                     Targeted Search
                 </h2>
 
-                <h2 className='text-main md:text-[15px] text-center
-                md:pb-2 w-full cursor-pointer'>
+                <h2 className={`text-main md:text-[15px] text-center
+                    w-full cursor-pointer ${selectedTab === 'messageUs' 
+                    ? 'font-bold border-b-primary border-b-[3px]' : ''}`} 
+                    onClick={() => handleTabChange('messageUs')}
+                >
                     Message Us
                 </h2>
             </div>
