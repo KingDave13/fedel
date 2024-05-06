@@ -14,7 +14,7 @@ const Discover = () => {
             <div className='relative items-center w-full max-w-[86rem]'>
             <motion.div variants={fadeIn('down', 'spring', 0.3)}
                 className="flex md:flex-row ss:flex-row flex-col md:gap-20 
-                ss:gap-10 gap-12 w-full aboutimage">
+                ss:gap-10 gap-12 w-full">
                     <motion.div variants={textVariant()}
                     className={`${layout.sectionInfo} md:gap-8 ss:gap-8
                     gap-6`}>
