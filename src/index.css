@@ -46,8 +46,8 @@
 
 .cta {
   background-image: url('./assets/cta.jpg');
-  object-fit: cover;
   background-position: center;
+  background-size: cover;
 }
 
 .help {

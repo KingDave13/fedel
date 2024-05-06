@@ -21,8 +21,7 @@ const CTA = () => {
                 md:leading-[35px] ss:leading-[30px] leading-[24px]'>
                     What are you waiting for? Begin exploring our 
                     exquisite array of 
-                    <span className='text-secondary'>
-                    premium and durable tiles and 
+                    <span className='text-secondary'> premium and durable tiles and 
                     coverings!
                     </span>
                 </h2>
