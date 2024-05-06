@@ -51,14 +51,14 @@ const Steps = () => {
         <div className='max-w-[86rem] mx-auto flex flex-col'
         >
             <motion.div variants={textVariant()}
-            className='flex flex-col md:gap-3 ss:gap-3 gap-2'>
-                <h1 className='text-primary font-bold md:text-[55px]
-                ss:text-[50px] text-[35px] tracking-tight'>
+            className='flex flex-col gap-2'>
+                <h1 className='text-primary font-bold md:text-[45px]
+                ss:text-[45px] text-[33px] tracking-tight'>
                     Find and order from us in 4 easy steps
                 </h1>
                 
                 <p className='text-main font-medium md:text-[20px]
-                ss:text-[20px] text-[15px] tracking-tight md:max-w-[300px]
+                ss:text-[20px] text-[15px] tracking-tight md:max-w-[950px]
                 ss:max-w-[300px]'>
                     You do not need to go through too much stress to find 
                     exactly what you're looking for on our website. We've 
@@ -67,8 +67,8 @@ const Steps = () => {
                 </p>                
             </motion.div>
 
-            <div className='flex gap-14 flex-wrap justify-center md:mt-20
-            ss:mt-20 mt-10'>
+            <div className='flex gap-6 flex-wrap justify-center md:mt-12
+            ss:mt-12 mt-8'>
                 {steps.map((step, index) => (
                     <StepCard 
                         key={step.name} 
@@ -78,8 +78,9 @@ const Steps = () => {
                 ))}
             </div>
 
-            <p className='text-main md:text-[17px] ss:text-[17px] 
-            text-[13px] tracking-tight w-full'>
+            <p className='text-mainalt md:text-[16px] ss:text-[17px] 
+            text-[13px] tracking-tight w-full font-medium md:text-center
+            md:mt-8 ss:mt-8 mt-6'>
                 Note that some items may have their prices displayed, 
                 some may not but not to worry, you can request for 
                 their prices directly and you'll be responded to 
