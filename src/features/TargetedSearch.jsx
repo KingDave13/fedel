@@ -86,8 +86,8 @@ const TargetedSearch = () => {
 
             <div className='flex flex-row w-full md:mt-3 ss:mt-3 mt-2
             justify-center items-center'>
-                <h2 className={`text-primary md:text-[15px] ${selectedTab === 'targetedSearch' 
-                ? 'font-bold border-b-primary border-b-[3px]' : ''} 
+                <h2 className={`text-main md:text-[15px] ${selectedTab === 'targetedSearch' 
+                ? 'text-primary font-bold border-b-primary border-b-[3px]' : ''} 
                     md:pb-2 text-center w-full cursor-pointer`} 
                     onClick={() => handleTabChange('targetedSearch')}
                 >
@@ -96,7 +96,8 @@ const TargetedSearch = () => {
 
                 <h2 className={`text-main md:text-[15px] text-center
                     w-full cursor-pointer ${selectedTab === 'messageUs' 
-                    ? 'font-bold border-b-primary border-b-[3px]' : ''}`} 
+                    ? 'text-primary font-bold border-b-primary border-b-[3px]' : ''}
+                    md:pb-2`} 
                     onClick={() => handleTabChange('messageUs')}
                 >
                     Message Us
@@ -184,7 +185,7 @@ const TargetedSearch = () => {
                             className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
                             text-black rounded-lg md:text-[14px] 
                             bg-transparent w-full placeholder:text-main3"
-                    />
+                        />
                         <p className="text-mainRed md:text-[12px] 
                         ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
                             {formik.touched.numbermail && formik.errors.numbermail}
@@ -194,68 +195,20 @@ const TargetedSearch = () => {
                 ) : (
                     <>
                     <div className="relative">
-                        <select
+                        <input
                             type="text"
-                            name="product"
-                            value={formik.values.product}
+                            name="numbermail"
+                            placeholder='Enter your phone number or email'
+                            value={formik.values.numbermail}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
-                            text-main3 rounded-lg cursor-pointer md:text-[14px] 
-                            bg-transparent w-full"
-                        >
-                            <option value="" disabled selected hidden>Select a product</option>
-                            <option value="social_media">Social Media</option>
-                            <option value="from_friend">From a friend</option>
-                            <option value="other">Other</option>
-                        </select>
+                            text-black rounded-lg md:text-[14px] 
+                            bg-transparent w-full placeholder:text-main3"
+                        />
                         <p className="text-mainRed md:text-[12px] 
                         ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
-                            {formik.touched.product && formik.errors.product}
-                        </p>
-                    </div>
-
-                    <div className="relative">
-                        <select
-                            type="text"
-                            name="category"
-                            value={formik.values.category}
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
-                            text-main3 rounded-lg cursor-pointer md:text-[14px] 
-                            bg-transparent w-full"
-                        >
-                            <option value="" disabled selected hidden>Select a category</option>
-                            <option value="social_media">Social Media</option>
-                            <option value="from_friend">From a friend</option>
-                            <option value="other">Other</option>
-                        </select>
-                        <p className="text-mainRed md:text-[12px] 
-                        ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
-                            {formik.touched.category && formik.errors.category}
-                        </p>
-                    </div>
-
-                    <div className="relative">
-                        <select
-                            type="text"
-                            name="price"
-                            value={formik.values.price}
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
-                            text-main3 rounded-lg cursor-pointer md:text-[14px] 
-                            bg-transparent w-full"
-                        >
-                            <option value="" disabled selected hidden>Select a price range</option>
-                            <option value="social_media">Social Media</option>
-                            <option value="from_friend">From a friend</option>
-                            <option value="other">Other</option>
-                        </select>
-                        <p className="text-mainRed md:text-[12px] 
-                        ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
-                            {formik.touched.price && formik.errors.price}
+                            {formik.touched.numbermail && formik.errors.numbermail}
                         </p>
                     </div>
 
@@ -270,7 +223,46 @@ const TargetedSearch = () => {
                             className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
                             text-black rounded-lg md:text-[14px] 
                             bg-transparent w-full placeholder:text-main3"
-                    />
+                        />
+                        <p className="text-mainRed md:text-[12px] 
+                        ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                            {formik.touched.numbermail && formik.errors.numbermail}
+                        </p>
+                    </div>
+
+                    <div className="relative">
+                        <input
+                            type="text"
+                            name="numbermail"
+                            placeholder='Enter your phone number or email'
+                            value={formik.values.numbermail}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
+                            text-black rounded-lg md:text-[14px] 
+                            bg-transparent w-full placeholder:text-main3"
+                        />
+                        <p className="text-mainRed md:text-[12px] 
+                        ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                            {formik.touched.numbermail && formik.errors.numbermail}
+                        </p>
+                    </div>
+
+                    <div className="relative">
+                        <textarea
+                            rows="6"
+                            name="message"
+                            value={formik.values.message}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            placeholder="How may we assist you?"
+                            className="md:py-3 ss:py-3 py-2 px-4 border-none 
+                            outline-none text-maintext md:rounded-[5px]
+                            ss:rounded-[5px] rounded-[5px]
+                            md:placeholder:text-[15px] font-medium
+                            ss:placeholder:text-[13px] 
+                            placeholder:text-[12px] bg-primaryalt"
+                        />
                         <p className="text-mainRed md:text-[12px] 
                         ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
                             {formik.touched.numbermail && formik.errors.numbermail}
