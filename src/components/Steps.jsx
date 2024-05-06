@@ -14,7 +14,7 @@ const StepCard = ({ index, title, image, description }) => {
             md:gap-6 ss:gap-6 gap-4'>
                 <img 
                     src={image}
-                    alt='name'
+                    alt='product step'
                     className='w-25 h-25 object-cover'
                 />
 
@@ -36,7 +36,7 @@ const StepCard = ({ index, title, image, description }) => {
                             Browse products
                         </p>
                         
-                        <img src={arrowRight}/>
+                        <img src={arrowRight} alt='arrow'/>
                     </div>
                 </div>
             </div>
