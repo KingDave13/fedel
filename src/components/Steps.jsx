@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
 import { steps } from '../constants';
 
-const StepCard = ({ index, testimonial, image, name, designation }) => {
+const StepCard = ({ index, title, image, description }) => {
     return (
         <motion.div
         variants={fadeIn('', 'spring', index * 0.5, 0.75)}
@@ -11,32 +11,32 @@ const StepCard = ({ index, testimonial, image, name, designation }) => {
         whileHover={{ boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.2)', 
         transition: { duration: 0.2, ease: 'easeInOut' } }}
         >
-            <div className=''>
-                <p className='text-primary md:text-[16px] ss:text-[16px] 
-                text-[13px] font-normal'>
-                    {testimonial}
-                </p>
+            <div className='w-full flex items-center justify-center
+            md:gap-6 ss:gap-6 gap-4'>
+                <img 
+                    src={image}
+                    alt='name'
+                    className='w-10 h-10 object-cover'
+                />
 
-                <div className='md:mt-5 ss:mt-5 mt-4 flex justify-between 
-                items-center'>
-                    <img 
-                        src={image}
-                        alt='name'
-                        className='w-10 h-10 mr-5 rounded-full 
-                        object-cover'
-                    />
-                    <div className='flex relative mr-5'>
-                        <div className='bg-primary w-[1px]
-                        h-[45px] bg-opacity-40' />
-                    </div> 
-                    <div className='flex-1 flex flex-col'>
-                        <p className='text-primary font-bold 
-                        md:text-[16px] ss:text-[16px] text-[14px]'>
-                            {name}
+                <div className='flex flex-col w-full md:gap-3 ss:gap-3
+                gap-2'>
+                    <h1 className='text-primary md:text-[17px] ss:text-[16px] 
+                    text-[13px] font-bold'>
+                        {title}
+                    </h1>
+
+                    <p className='text-main font-medium 
+                    md:text-[16px] ss:text-[16px] text-[14px]'>
+                        {description}
+                    </p>
+
+                    <div className='flex gap-2'>
+                        <p className='text-primary md:text-[15px] ss:text-[15px]
+                        text-[13px]'>
+                            Browse products
                         </p>
-                        <p className='text-primary text-[12px]'>
-                            {designation}
-                        </p>
+
                     </div>
                 </div>
             </div>
@@ -69,7 +69,7 @@ const Steps = () => {
 
             <div className='flex gap-14 flex-wrap justify-center md:mt-20
             ss:mt-20 mt-10'>
-                {testimonials.map((step, index) => (
+                {steps.map((step, index) => (
                     <StepCard 
                         key={step.name} 
                         index={index} 
@@ -77,6 +77,14 @@ const Steps = () => {
                     />
                 ))}
             </div>
+
+            <p className='text-main md:text-[17px] ss:text-[17px] 
+            text-[13px] tracking-tight w-full'>
+                Note that some items may have their prices displayed, 
+                some may not but not to worry, you can request for 
+                their prices directly and you'll be responded to 
+                appropriately and swiftly.
+            </p>       
         </div>
     </section>
   )

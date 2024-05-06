@@ -260,3 +260,26 @@ export const navLinks = [
         ],
     },
 ];
+
+export const steps = [
+    {
+      image: pic1,
+      title: "Search for products",
+      description: "Click on the button below to search for whatever product you're looking for or have in mind and you'll find exact/related products.",
+    },
+    {
+        image: pic1,
+        title: "Select a product",
+        description: "After finding the type or style of tile/other item you're looking for, select to show more details about the product and make your order/inquiry.",
+      },
+      {
+        image: pic1,
+        title: "Place your order",
+        description: "After selecting an available item, you can place your order via WhatsApp or Email and you'll be responded to swiftly and how to move forward.",
+      },
+      {
+        image: pic1,
+        title: "We will be with you speedily!",
+        description: "After making your order via WhatsApp or Email, you will be contacted by us immediately on how to take the next steps.",
+      },
+  ];
