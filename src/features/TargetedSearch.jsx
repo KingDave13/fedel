@@ -277,23 +277,23 @@ const TargetedSearch = () => {
                         </p>
                     </div>
 
-                    <div className="flex gap-1 w-full mt-1">
+                    <div className="flex gap-2 w-full mt-1">
                         <button
                         type="submit"
-                        className="bg-primary grow md:text-[15px] w-full
-                        ss:text-[16px] text-[14px] md:py-3 ss:py-3 py-2 
+                        className="bg-primary grow5 md:text-[14px] w-full
+                        ss:text-[14px] text-[14px] md:py-3 ss:py-3 py-2 
                         text-white rounded-lg border-none"
                         >
-                            {Loading ? 'Searching...' : 'Search'}
+                            {Loading ? 'Sending...' : 'Send Email'}
                         </button>
 
                         <button
                         type="submit"
-                        className="bg-primary grow md:text-[15px] w-full
-                        ss:text-[16px] text-[14px] md:py-3 ss:py-3 py-2 
+                        className="bg-green grow5 md:text-[14px] w-full
+                        ss:text-[14px] text-[14px] md:py-3 ss:py-3 py-2 
                         text-white rounded-lg border-none"
                         >
-                            {Loading ? 'Searching...' : 'Search'}
+                            {Loading ? 'Sending...' : 'Send via WhatsApp'}
                         </button>
                     </div>
                     </>
