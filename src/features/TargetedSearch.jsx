@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 // import emailjs from '@emailjs/browser';
 import { useFormik } from "formik";
 import { RiInformationFill } from "react-icons/ri";
+import { GrAttachment } from "react-icons/gr";
 import { ImPlay } from "react-icons/im";
 import * as Yup from 'yup';
 
@@ -104,7 +105,7 @@ const TargetedSearch = () => {
                 </h2>
             </div>
             <form ref={formRef} onSubmit={formik.handleSubmit}
-            className="flex flex-col md:gap-3 ss:gap-3 md:mt-4 ss:mt-4
+            className="flex flex-col md:gap-2.5 ss:gap-2.5 md:mt-4 ss:mt-4
             mt-3 gap-2">
                 {selectedTab === 'targetedSearch' ? (
                     <>
@@ -275,6 +276,22 @@ const TargetedSearch = () => {
                         ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
                             {formik.touched.message && formik.errors.message}
                         </p>
+                    </div>
+
+                    <div className='flex w-full flex-col gap-0.5'>
+                        <div className='flex w-full gap-2 cursor-pointer'>
+                            <GrAttachment />
+
+                            <h4 className='text-main font-medium tracking-tight
+                            md:text-[13px] ss:text-[13px] text-[12px]'>
+                                Attach Images
+                            </h4>
+                        </div>
+
+                        <h4 className='text-mainalt md:text-[12px] ss:text-[12px] 
+                        text-[12px] tracking-tight'>
+                            Only JPEG, JPG and PNG less than 2MB allowed
+                        </h4>
                     </div>
 
                     <div className="flex gap-2 w-full mt-1">
