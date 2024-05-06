@@ -268,7 +268,7 @@ const TargetedSearch = () => {
                     </>
                 )}
 
-                <div className="w-full md:mt-3 ss:mt-3 mt-2">
+                <div className="w-full mt-2">
                     <button
                     type="submit"
                     className="bg-primary grow md:text-[15px] w-full
@@ -279,7 +279,7 @@ const TargetedSearch = () => {
                     </button>
                 </div>
 
-                <div className='flex w-full gap-3 md:mt-8 ss:mt-8 mt-6
+                <div className='flex w-full gap-3 md:mt-5 ss:mt-5 mt-4
                 items-center'>
                     <RiInformationFill 
                         className='text-main3 ss:text-[57px]
