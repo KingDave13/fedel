@@ -75,7 +75,7 @@ const Help = () => {
                 className="flex md:flex-row ss:flex-row flex-col md:gap-20 
                 ss:gap-10 gap-12 md:w-1/2 ss:w-1/2 w-full">
                     <motion.div variants={textVariant()}
-                    className={`${layout.sectionInfo} md:gap-4 ss:gap-4
+                    className={`${layout.sectionInfo} md:gap-6 ss:gap-4
                     gap-3`}>
                         <h1 className="text-primary font-bold md:text-[43px]
                         ss:text-[40px] text-[30px] tracking-tight">
@@ -83,7 +83,7 @@ const Help = () => {
                         </h1>
 
                         <p className='text-main md:text-[18px] ss:text-[17px] 
-                        text-[14px] md:max-w-[600px] ss:max-w-[400px]  
+                        text-[14px] md:max-w-[550px] ss:max-w-[400px]  
                         md:leading-[25px] font-medium tracking-tight'>
                             Is there still something we haven't made 
                             clear or you're still not sure about us 
