@@ -4,6 +4,7 @@ import Discover from "./Discover";
 import Steps from './Steps';
 import Help from './Help';
 import CTA from './CTA';
+import Footer from './Footer';
 
 export {
     Navbar,
@@ -12,4 +13,5 @@ export {
     Steps,
     Help,
     CTA,
+    Footer,
 }

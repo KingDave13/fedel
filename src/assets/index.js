@@ -8,6 +8,13 @@ import speed from './speed.png';
 import arrowRight from './arrowRight.png';
 import helpImg from './helpImg.png';
 import cta from './cta.jpg';
+import footer from './footer.jpg';
+import facebook from './facebook.png';
+import whatsapp from './whatsapp.png';
+import twitter from './twitter.png';
+import tiktok from './tiktok.png';
+import youtube from './youtube.png';
+import instagram from './instagram.png';
 
 
 export {
@@ -21,4 +28,11 @@ export {
     arrowRight,
     helpImg,
     cta,
+    footer,
+    facebook,
+    tiktok,
+    twitter,
+    instagram,
+    youtube,
+    whatsapp,
 }

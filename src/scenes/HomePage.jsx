@@ -4,7 +4,8 @@ import {
     Discover,
     Steps,
     Help,
-    CTA
+    CTA,
+    Footer
 } from '../components';
 
 import { Helmet } from 'react-helmet';
@@ -28,6 +29,7 @@ const HomePage = () => {
             </div>
             
             <CTA />
+            <Footer />
         </div>
     )
 };
