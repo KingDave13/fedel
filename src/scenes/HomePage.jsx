@@ -21,7 +21,11 @@ const HomePage = () => {
             <Hero />
             <Discover />
             <Steps />
-            <Help />
+
+            <div className='help'>
+                <Help />
+            </div>
+            
         </div>
     )
 };

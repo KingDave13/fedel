@@ -73,7 +73,7 @@ const Help = () => {
             <div className='relative items-center w-full max-w-[86rem]'>
             <motion.div variants={fadeIn('down', 'spring', 0.3)}
                 className="flex md:flex-row ss:flex-row flex-col md:gap-20 
-                ss:gap-10 gap-12 w-full">
+                ss:gap-10 gap-12 md:w-1/2 ss:w-1/2 w-full">
                     <motion.div variants={textVariant()}
                     className={`${layout.sectionInfo} md:gap-6 ss:gap-6
                     gap-6`}>
@@ -166,7 +166,7 @@ const Help = () => {
                                 </h4>
                             </div>
 
-                            <div className="flex flex-col gap-2 mt-1">
+                            <div className="flex flex-col gap-2.5 mt-1">
                                 <button
                                 type="submit"
                                 className="bg-primary grow5 md:text-[14px] md:px-3 ss:px-3
@@ -189,7 +189,7 @@ const Help = () => {
                     </motion.div>
 
                     <motion.div variants={fadeIn('left', 'spring', 0.3)}
-                    className="flex-1 w-full">
+                    className="flex-1 w-full md:hidden ss:hidden flex">
                         <img src={helpImg} 
                             alt='Help Image'
                             className='md:h-full ss:h-full h-[200px] w-full'
