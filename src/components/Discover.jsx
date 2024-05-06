@@ -18,21 +18,21 @@ const Discover = () => {
                     <motion.div variants={textVariant()}
                     className={`${layout.sectionInfo} md:gap-8 ss:gap-8
                     gap-6`}>
-                        <h1 className="text-primary font-bold md:text-[45px]
-                        ss:text-[45px] text-[33px] md:leading-[52px] 
-                        ss:leading-[52px] leading-[40px] tracking-tight">
-                        Safe and secure delivery to wherever you are!
+                        <h1 className="text-primary font-bold md:text-[43px]
+                        ss:text-[40px] text-[30px] md:leading-[50px] 
+                        ss:leading-[45px] leading-[40px] tracking-tight">
+                            Safe and secure delivery to wherever you are!
                         </h1>
 
-                        <p className='text-main md:text-[19px] ss:text-[17px] 
+                        <p className='text-main md:text-[18px] ss:text-[17px] 
                         text-[14px] md:max-w-[700px] ss:max-w-[400px]  
-                        md:leading-[28px] font-medium tracking-tight'>
-                        Ensuring your satisfaction from start to finish, 
-                        Fedel Tiles Limited offers safe and secure 
-                        delivery services, no matter where you are. 
-                        Our dedicated logistics team meticulously 
-                        handles every order, ensuring that your products
-                        arrive on time and in pristine condition.
+                        md:leading-[25px] font-medium tracking-tight'>
+                            Ensuring your satisfaction from start to finish, 
+                            Fedel Tiles Limited offers safe and secure 
+                            delivery services, no matter where you are. 
+                            Our dedicated logistics team meticulously 
+                            handles every order, ensuring that your products
+                            arrive on time and in pristine condition.
                         </p>
 
                         <div className="">
