@@ -9,7 +9,7 @@ const TargetedSearch = () => {
 
     const formRef = useRef();
     const [Loading, setLoading] = useState(false);
-    const [selectedTab, setSelectedtab] = useState('targetedSearch');
+    const [selectedTab, setSelectedTab] = useState('targetedSearch');
 
     const formik = useFormik({
         initialValues: {
@@ -86,9 +86,11 @@ const TargetedSearch = () => {
 
             <div className='flex flex-row w-full md:mt-3 ss:mt-3 mt-2
             justify-center items-center'>
-                <h2 className='font-bold text-primary md:text-[15px]
-                border-b-primary border-b-[3px] md:pb-2 text-center
-                w-full cursor-pointer'>
+                <h2 className={`text-primary md:text-[15px] ${selectedTab === 'targetedSearch' 
+                ? 'font-bold border-b-primary border-b-[3px]' : ''} 
+                    md:pb-2 text-center w-full cursor-pointer`} 
+                    onClick={() => handleTabChange('targetedSearch')}
+                >
                     Targeted Search
                 </h2>
 
