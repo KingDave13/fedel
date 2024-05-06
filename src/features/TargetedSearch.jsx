@@ -247,7 +247,7 @@ const TargetedSearch = () => {
                             type="text"
                             name="subject"
                             placeholder='Enter a subject (e.g. Inquiry for Glass Marble Tile)'
-                            value={formik.values.numbermail}
+                            value={formik.values.subject}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
@@ -315,7 +315,6 @@ const TargetedSearch = () => {
                     </div>
                     </>
                 )}
-
 
                 <div className='flex w-full gap-3 md:mt-4 ss:mt-4 mt-3
                 items-center'>
