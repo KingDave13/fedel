@@ -15,6 +15,7 @@ import twitter from './twitter.png';
 import tiktok from './tiktok.png';
 import youtube from './youtube.png';
 import instagram from './instagram.png';
+import logoalt from './logoalt.png';
 
 
 export {
@@ -35,4 +36,5 @@ export {
     instagram,
     youtube,
     whatsapp,
+    logoalt,
 }
