@@ -107,94 +107,177 @@ const TargetedSearch = () => {
             mt-3 gap-2">
                 {selectedTab === 'targetedSearch' ? (
                     <>
+                    <div className="relative">
+                        <select
+                            type="text"
+                            name="product"
+                            value={formik.values.product}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
+                            text-main3 rounded-lg cursor-pointer md:text-[14px] 
+                            bg-transparent w-full"
+                        >
+                            <option value="" disabled selected hidden>Select a product</option>
+                            <option value="social_media">Social Media</option>
+                            <option value="from_friend">From a friend</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <p className="text-mainRed md:text-[12px] 
+                        ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                            {formik.touched.product && formik.errors.product}
+                        </p>
+                    </div>
+
+                    <div className="relative">
+                        <select
+                            type="text"
+                            name="category"
+                            value={formik.values.category}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
+                            text-main3 rounded-lg cursor-pointer md:text-[14px] 
+                            bg-transparent w-full"
+                        >
+                            <option value="" disabled selected hidden>Select a category</option>
+                            <option value="social_media">Social Media</option>
+                            <option value="from_friend">From a friend</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <p className="text-mainRed md:text-[12px] 
+                        ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                            {formik.touched.category && formik.errors.category}
+                        </p>
+                    </div>
+
+                    <div className="relative">
+                        <select
+                            type="text"
+                            name="price"
+                            value={formik.values.price}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
+                            text-main3 rounded-lg cursor-pointer md:text-[14px] 
+                            bg-transparent w-full"
+                        >
+                            <option value="" disabled selected hidden>Select a price range</option>
+                            <option value="social_media">Social Media</option>
+                            <option value="from_friend">From a friend</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <p className="text-mainRed md:text-[12px] 
+                        ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                            {formik.touched.price && formik.errors.price}
+                        </p>
+                    </div>
+
+                    <div className="relative">
+                        <input
+                            type="text"
+                            name="numbermail"
+                            placeholder='Enter your phone number or email'
+                            value={formik.values.numbermail}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
+                            text-black rounded-lg md:text-[14px] 
+                            bg-transparent w-full placeholder:text-main3"
+                    />
+                        <p className="text-mainRed md:text-[12px] 
+                        ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                            {formik.touched.numbermail && formik.errors.numbermail}
+                        </p>
+                    </div>
                     </>
                 ) : (
                     <>
+                    <div className="relative">
+                        <select
+                            type="text"
+                            name="product"
+                            value={formik.values.product}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
+                            text-main3 rounded-lg cursor-pointer md:text-[14px] 
+                            bg-transparent w-full"
+                        >
+                            <option value="" disabled selected hidden>Select a product</option>
+                            <option value="social_media">Social Media</option>
+                            <option value="from_friend">From a friend</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <p className="text-mainRed md:text-[12px] 
+                        ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                            {formik.touched.product && formik.errors.product}
+                        </p>
+                    </div>
+
+                    <div className="relative">
+                        <select
+                            type="text"
+                            name="category"
+                            value={formik.values.category}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
+                            text-main3 rounded-lg cursor-pointer md:text-[14px] 
+                            bg-transparent w-full"
+                        >
+                            <option value="" disabled selected hidden>Select a category</option>
+                            <option value="social_media">Social Media</option>
+                            <option value="from_friend">From a friend</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <p className="text-mainRed md:text-[12px] 
+                        ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                            {formik.touched.category && formik.errors.category}
+                        </p>
+                    </div>
+
+                    <div className="relative">
+                        <select
+                            type="text"
+                            name="price"
+                            value={formik.values.price}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
+                            text-main3 rounded-lg cursor-pointer md:text-[14px] 
+                            bg-transparent w-full"
+                        >
+                            <option value="" disabled selected hidden>Select a price range</option>
+                            <option value="social_media">Social Media</option>
+                            <option value="from_friend">From a friend</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <p className="text-mainRed md:text-[12px] 
+                        ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                            {formik.touched.price && formik.errors.price}
+                        </p>
+                    </div>
+
+                    <div className="relative">
+                        <input
+                            type="text"
+                            name="numbermail"
+                            placeholder='Enter your phone number or email'
+                            value={formik.values.numbermail}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
+                            text-black rounded-lg md:text-[14px] 
+                            bg-transparent w-full placeholder:text-main3"
+                    />
+                        <p className="text-mainRed md:text-[12px] 
+                        ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                            {formik.touched.numbermail && formik.errors.numbermail}
+                        </p>
+                    </div>
                     </>
                 )}
-                <div className="relative">
-                    <select
-                        type="text"
-                        name="product"
-                        value={formik.values.product}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
-                        text-main3 rounded-lg cursor-pointer md:text-[14px] 
-                        bg-transparent w-full"
-                    >
-                        <option value="" disabled selected hidden>Select a product</option>
-                        <option value="social_media">Social Media</option>
-                        <option value="from_friend">From a friend</option>
-                        <option value="other">Other</option>
-                    </select>
-                    <p className="text-mainRed md:text-[12px] 
-                    ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
-                        {formik.touched.product && formik.errors.product}
-                    </p>
-                </div>
-
-                <div className="relative">
-                    <select
-                        type="text"
-                        name="category"
-                        value={formik.values.category}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
-                        text-main3 rounded-lg cursor-pointer md:text-[14px] 
-                        bg-transparent w-full"
-                    >
-                        <option value="" disabled selected hidden>Select a category</option>
-                        <option value="social_media">Social Media</option>
-                        <option value="from_friend">From a friend</option>
-                        <option value="other">Other</option>
-                    </select>
-                    <p className="text-mainRed md:text-[12px] 
-                    ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
-                        {formik.touched.category && formik.errors.category}
-                    </p>
-                </div>
-
-                <div className="relative">
-                    <select
-                        type="text"
-                        name="price"
-                        value={formik.values.price}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
-                        text-main3 rounded-lg cursor-pointer md:text-[14px] 
-                        bg-transparent w-full"
-                    >
-                        <option value="" disabled selected hidden>Select a price range</option>
-                        <option value="social_media">Social Media</option>
-                        <option value="from_friend">From a friend</option>
-                        <option value="other">Other</option>
-                    </select>
-                    <p className="text-mainRed md:text-[12px] 
-                    ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
-                        {formik.touched.price && formik.errors.price}
-                    </p>
-                </div>
-
-                <div className="relative">
-                    <input
-                        type="text"
-                        name="numbermail"
-                        placeholder='Enter your phone number or email'
-                        value={formik.values.numbermail}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
-                        text-black rounded-lg md:text-[14px] 
-                        bg-transparent w-full placeholder:text-main3"
-                   />
-                    <p className="text-mainRed md:text-[12px] 
-                    ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
-                        {formik.touched.numbermail && formik.errors.numbermail}
-                    </p>
-                </div>
 
                 <div className="w-full md:mt-3 ss:mt-3 mt-2">
                     <button
