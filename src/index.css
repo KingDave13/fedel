@@ -45,10 +45,10 @@
 }
 
 .help {
-  background-image: url('./assets/helpImg.png');
-  background-size: auto 100%;
+  background-image: url('./assets/helpImg.jpg');
+  background-size: 50vw 100%;
   background-repeat: no-repeat;
-  background-position: right center;
+  background-position: right top;
 }
 
 .border-search {
