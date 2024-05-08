@@ -66,7 +66,7 @@ return () => {
 
                                 {openMenuId === link.id && (
                                     <div className="absolute top-full left-1/2 transform 
-                                    -translate-x-1/2 w-auto mt-3 fade-in">
+                                    -translate-x-1/2 fade-in border-[1px] border-main2">
                                         <div className="bg-white shadow-lg p-6
                                         flex flex-col gap-2"
                                         style={{whiteSpace: 'nowrap'}}
@@ -76,7 +76,7 @@ return () => {
                                                     key={index}
                                                     href={subLink.route}
                                                     className="flex text-[15px] text-main 
-                                                    hover:text-secondary"
+                                                    hover:font-medium"
                                                 >
                                                     {subLink.name}
                                                 </a>
@@ -84,7 +84,7 @@ return () => {
                                         </div>
                                         <div className="absolute top-0 left-1/2 
                                         transform -translate-x-1/2 w-10 h-10 
-                                        bg-white rotate-45 z-[-10]"></div>
+                                        bg-white rotate-45 z-[-10] border-[1px] border-main2"></div>
                                     </div>
                                 )}
                             </li>
