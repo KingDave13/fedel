@@ -14,11 +14,11 @@ export const navLinks = [
                 route: "",
             },
             {
-                name: "Wall Tiles",
+                name: "Floor Tiles",
                 route: "",
             },
             {
-                name: "Floor Tiles",
+                name: "Wall Tiles",
                 route: "",
             },
             {
@@ -218,11 +218,11 @@ export const navLinks = [
                 route: "",
             },
             {
-                name: "Wall and Floor Materials",
+                name: "Doors",
                 route: "",
             },
             {
-                name: "Doors",
+                name: "Other Products",
                 route: "",
             },
             {
@@ -565,7 +565,7 @@ export const steps = [
           },
           {
               name: "Privacy Policy",
-              route: "/privacy",
+              route: "/privacypolicy",
           },
         ],
       },
