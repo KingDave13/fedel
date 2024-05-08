@@ -34,7 +34,8 @@ const Footer = () => {
             </div>
           </div>
           
-          <div className='w-full flex md:mt-8'>
+          <div className='w-full flex md:flex-row ss:flex-row flex-col 
+          md:mt-8'>
             {footerLinks.map((footerLink, index) => (
               <div key={index} className='flex flex-col my-4 w-full'>
                 <h4 className={`font-bold md:text-[18px] ss:text-[15px] 
