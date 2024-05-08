@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { layout } from '../styles';
 import { motion } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
 import { IoSearchOutline } from "react-icons/io5";
@@ -15,16 +14,16 @@ const Hero = () => {
     <section className='relative w-full md:min-h-[700px] ss:min-h-[800px] 
     items-center flex'>
         <div className='relative items-center w-full max-w-[86rem] hero
-        md:mt-28 ss:mt-56 mt-44 rounded-[30px] flex md:p-12'>
+        md:mt-28 ss:mt-56 mt-16 rounded-[30px] flex md:p-12 ss:p-10 p-6'>
             <div className='relative items-center justify-between w-full
             flex md:flex-row flex-col gap-44'>
                 <motion.div variants={textVariant()}
                 className='flex justify-center items-start md:gap-6
-                flex-col'
+                ss:gap-6 gap-4 flex-col'
                 >
                     <h1 className='text-white font-bold md:text-[60px]
-                    ss:text-[50px] text-[40px] md:leading-[73px] 
-                    ss:leading-[55px] leading-[45px]
+                    ss:text-[50px] text-[33px] md:leading-[73px] 
+                    ss:leading-[55px] leading-[40px]
                     md:max-w-[650px]'>
                         Buy your <span className='text-secondary'>
                         tiles, marble, granite, sanitary wares,
@@ -33,7 +32,7 @@ const Hero = () => {
                     </h1>
 
                     <p className='text-white md:text-[19px] md:leading-[28px] 
-                    ss:leading-[55px] leading-[45px] ss:text-[20px] 
+                    ss:leading-[55px] leading-[18px] ss:text-[20px] 
                     text-[14px] md:max-w-[630px] ss:max-w-[620px]
                     max-w-[320px]'>
                         Buy your desired tiles, marble, granite, sanitary
@@ -44,10 +43,11 @@ const Hero = () => {
                     </p>
 
                     <div className='flex flex-row bg-main2 w-full
-                    rounded-[10px] border-[1px] border-primaryalt 
-                    py-2 px-2 gap-3 justify-between items-center'>
+                    rounded-[10px] border-[1px] border-primaryalt py-2 
+                    px-2 gap-3 justify-between items-center'>
                         <IoSearchOutline
-                            className='text-main text-[22px]'
+                            className='text-main md:text-[22px]
+                            ss:text-[22px] text-[25px]'
                         />
 
                         <input
@@ -60,7 +60,8 @@ const Hero = () => {
                             placeholder:text-[13px]'
                         />
 
-                        <button className='bg-primary text-[15px] 
+                        <button className='bg-primary md:text-[15px]
+                        ss:text-[15px] text-[12px] 
                         py-1.5 px-5 text-white rounded-[5px] grow4 
                         cursor-pointer justify-end'
                         // onClick={() => {
@@ -73,7 +74,8 @@ const Hero = () => {
                 </motion.div>
 
                 <motion.div variants={fadeIn('left', 'spring', 0.3)} className='flex flex-1 relative'>
-                    <div className="absolute -top-56 z-10">
+                    <div className="absolute md:-top-56 ss:-top-56 -top-40 
+                    z-10">
                     <TargetedSearch />
                     </div>
                 </motion.div>         
