@@ -221,7 +221,7 @@ const TargetedSearch = () => {
                     <div className="w-full mt-1">
                         <button
                         type="submit"
-                        className="bg-primary grow md:text-[15px] w-full
+                        className="bg-primary grow5 md:text-[15px] w-full
                         ss:text-[16px] text-[14px] md:py-3 ss:py-3 py-2 
                         text-white rounded-lg border-none"
                         >
