@@ -42,6 +42,14 @@ body, html {
   scroll-behavior: smooth;
 }
 
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.fade-in {
+  animation: fadeIn ease 0.4s;
+}
   
 .navsmooth {
   transition: all 0.2s ease-in-out;

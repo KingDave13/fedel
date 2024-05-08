@@ -16,6 +16,11 @@ const Navbar = () => {
 const [toggle, setToggle] = useState(false);
 const menuRef = useRef(null);
 const navigate = useNavigate();
+const [openMenuId, setOpenMenuId] = useState(null);
+
+  const toggleMenu = (id) => {
+    setOpenMenuId((prevId) => (prevId === id ? null : id));
+  };
 
 
 useEffect(() => {
@@ -47,13 +52,9 @@ return () => {
                             {navLinks.map((link) => (
                             <li
                                 key={link.id}
-                                className='text-decoration-none cursor-pointer
-                                flex flex-row gap-2 items-center'
-                                // onClick={() => {
-                                //   if (link.special) {
-                                //     navigate(link.route);
-                                //   }
-                                // }}
+                                className='text-decoration-none cursor-pointer flex flex-row gap-2 items-center relative'
+                                onMouseEnter={() => toggleMenu(link.id)}
+                                onMouseLeave={() => toggleMenu(null)}
                             >
                                 <h3 className='text-main text-[16px] font-medium'>
                                     {link.title}
@@ -62,6 +63,29 @@ return () => {
                                 <TiArrowSortedDown 
                                     className='text-main text-[19px]'
                                 />
+
+                                {openMenuId === link.id && (
+                                    <div className="absolute top-full left-1/2 transform 
+                                    -translate-x-1/2 w-auto mt-3 fade-in">
+                                        <div className="absolute top-0 left-0 w-full h-3 z-20 pointer-events-auto"></div>
+                                        <div className="bg-white shadow-lg p-6 rounded-md
+                                        flex flex-col gap-1">
+                                            {link.links.map((subLink, index) => (
+                                                <a
+                                                    key={index}
+                                                    href={subLink.route}
+                                                    className="block text-[15px] text-main 
+                                                    hover:text-secondary"
+                                                >
+                                                    {subLink.name}
+                                                </a>
+                                            ))}
+                                        </div>
+                                        <div className="absolute top-0 left-1/2 
+                                        transform -translate-x-1/2 w-10 h-10 
+                                        bg-white rotate-45 z-[-10]"></div>
+                                    </div>
+                                )}
                             </li>
                             ))}
                         </ul>
