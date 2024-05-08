@@ -49,7 +49,7 @@ return () => {
                 max-w-[86rem] mx-auto md:py-3 ss:py-4 py-3'>
                     <div className="flex items-center w-full">
                         <ul className="list-none flex flex-row gap-6">
-                            {navLinks.map((link) => (
+                            {navLinks.map((link, index) => (
                             <li
                                 key={link.id}
                                 className='text-decoration-none cursor-pointer 
@@ -66,8 +66,10 @@ return () => {
                                 />
 
                                 {openMenuId === link.id && (
-                                    <div className="absolute top-full left-1/2 transform 
-                                    -translate-x-1/2 fade-in border-[1px] border-main2">
+                                    <div className={`absolute top-full ${index === 0 ? 
+                                    'left-0 transform-none' 
+                                    : 'left-1/2 transform -translate-x-1/2'} 
+                                    fade-in border-[1px] border-main2`}>
                                         <div className="bg-white shadow-xl p-6
                                         flex flex-col gap-2"
                                         style={{whiteSpace: 'nowrap'}}
