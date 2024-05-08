@@ -67,14 +67,15 @@ return () => {
                                 {openMenuId === link.id && (
                                     <div className="absolute top-full left-1/2 transform 
                                     -translate-x-1/2 w-auto mt-3 fade-in">
-                                        <div className="absolute top-0 left-0 w-full h-3 z-20 pointer-events-auto"></div>
-                                        <div className="bg-white shadow-lg p-6 rounded-md
-                                        flex flex-col gap-1">
+                                        <div className="bg-white shadow-lg p-6
+                                        flex flex-col gap-2"
+                                        style={{whiteSpace: 'nowrap'}}
+                                        >
                                             {link.links.map((subLink, index) => (
                                                 <a
                                                     key={index}
                                                     href={subLink.route}
-                                                    className="block text-[15px] text-main 
+                                                    className="flex text-[15px] text-main 
                                                     hover:text-secondary"
                                                 >
                                                     {subLink.name}
