@@ -55,7 +55,7 @@ const Hero = () => {
                             placeholder='Search for tiles, marble, granite,
                             floor and wall materials, etc.'
                             className='w-full text-black text-[15px]
-                            placeholder:text-mainalt outline-none
+                            placeholder:text-main3 outline-none
                             border-none bg-transparent
                             placeholder:text-[13px]'
                         />
