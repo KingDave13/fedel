@@ -58,7 +58,7 @@ export const navLinks = [
                 route: "",
             },
             {
-                name: "All and Others(Tiles)",
+                name: "All and Others (Tiles)",
                 route: "",
             },
         ],
@@ -108,7 +108,7 @@ export const navLinks = [
                 route: "",
             },
             {
-                name: "All and Others(Marble)",
+                name: "All and Others (Marble)",
                 route: "",
             },
         ],
@@ -158,7 +158,7 @@ export const navLinks = [
                 route: "",
             },
             {
-                name: "All and Others(Granites)",
+                name: "All and Others (Granites)",
                 route: "",
             },
         ],

@@ -48,11 +48,12 @@ return () => {
                 <div className='w-full flex justify-between items-center 
                 max-w-[86rem] mx-auto md:py-3 ss:py-4 py-3'>
                     <div className="flex items-center w-full">
-                        <ul className="list-none flex flex-row gap-8">
+                        <ul className="list-none flex flex-row gap-6">
                             {navLinks.map((link) => (
                             <li
                                 key={link.id}
-                                className='text-decoration-none cursor-pointer flex flex-row gap-2 items-center relative'
+                                className='text-decoration-none cursor-pointer 
+                                py-2 flex flex-row gap-2 items-center relative'
                                 onMouseEnter={() => toggleMenu(link.id)}
                                 onMouseLeave={() => toggleMenu(null)}
                             >
@@ -61,13 +62,13 @@ return () => {
                                 </h3>
                                 
                                 <TiArrowSortedDown 
-                                    className='text-main text-[19px]'
+                                    className='text-main text-[18px]'
                                 />
 
                                 {openMenuId === link.id && (
                                     <div className="absolute top-full left-1/2 transform 
                                     -translate-x-1/2 fade-in border-[1px] border-main2">
-                                        <div className="bg-white shadow-lg p-6
+                                        <div className="bg-white shadow-xl p-6
                                         flex flex-col gap-2"
                                         style={{whiteSpace: 'nowrap'}}
                                         >
@@ -75,7 +76,7 @@ return () => {
                                                 <a
                                                     key={index}
                                                     href={subLink.route}
-                                                    className="flex text-[15px] text-main 
+                                                    className="flex text-[15px] text-main
                                                     hover:font-medium"
                                                 >
                                                     {subLink.name}
