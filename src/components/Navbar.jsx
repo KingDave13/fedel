@@ -87,7 +87,8 @@ return () => {
                                         </div>
                                         <div className="absolute top-0 left-1/2 
                                         transform -translate-x-1/2 w-10 h-10 
-                                        bg-white rotate-45 z-[-10] border-[1px] border-main2"></div>
+                                        bg-white rotate-45 z-[-10] border-[1px] border-main2">
+                                        </div>
                                     </div>
                                 )}
                             </li>
