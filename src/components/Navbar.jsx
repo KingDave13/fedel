@@ -40,8 +40,7 @@ return () => {
 
   return (
     <nav className='w-full flex items-center fixed 
-       top-0 z-20 navsmooth'
-    >
+       top-0 z-20 navsmooth'>
         <div className='flex flex-col w-full items-center'>
             <div className={`w-full md:bg-main2 ${styles.paddingX}
             hidden md:flex`}>

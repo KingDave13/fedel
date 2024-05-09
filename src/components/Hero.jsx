@@ -15,8 +15,9 @@ const Hero = () => {
     items-center flex'>
         <div className='relative items-center w-full max-w-[86rem] hero
         md:mt-28 ss:mt-56 mt-16 rounded-[30px] flex md:p-12 ss:p-10 p-6'>
-            <div className='relative items-center justify-between w-full
-            flex md:flex-row flex-col md:gap-44 ss:gap-40 gap-6'>
+            <div className='relative md:items-center ss:items-center 
+            justify-between w-full flex md:flex-row flex-col md:gap-44 
+            ss:gap-40 gap-6'>
                 <motion.div variants={textVariant()}
                 className='flex justify-center items-start md:gap-6
                 ss:gap-6 gap-4 flex-col'
@@ -74,9 +75,9 @@ const Hero = () => {
                 </motion.div>
 
                 <motion.div variants={fadeIn('left', 'spring', 0.3)} className='flex flex-1 relative'>
-                    <div className="absolute md:-top-56 ss:-top-56 top-8 
+                    <div className="absolute md:-top-56 ss:-top-56 top-6 
                     z-10">
-                    <TargetedSearch />
+                        <TargetedSearch />
                     </div>
                 </motion.div>         
             </div>
