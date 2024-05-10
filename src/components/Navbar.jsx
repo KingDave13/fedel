@@ -216,36 +216,40 @@ return () => {
                         >
                             <ul className="list-none flex flex-col 
                             ss:gap-6 gap-4 ss:mb-14 mb-12">
-                                {navLinks.map((link, index) => (
+                                {navLinks.map((link) => (
                                     <li
                                         key={link.id}
                                         className='text-decoration-none
-                                        flex flex-row ss:gap-2 gap-1 
-                                        items-center'
+                                        flex flex-col'
                                         onClick={() => toggleMenu(link.id)}
                                     >
-                                        <h3 className='text-main ss:text-[17px] text-[15px] 
-                                        font-medium'>
-                                            {link.title}
-                                        </h3>
+                                        <div className='flex flex-row items-center
+                                         ss:gap-2 gap-1'>
+                                            <h3 className='text-main ss:text-[17px] text-[15px] 
+                                            font-medium'>
+                                                {link.title}
+                                            </h3>
+                                            
+                                            <TiArrowSortedDown 
+                                                className='text-main ss:text-[18px]
+                                                text-[16px]'
+                                            />
+                                        </div>
                                         
-                                        <TiArrowSortedDown 
-                                            className='text-main ss:text-[18px]
-                                            text-[16px]'
-                                        />
 
                                         {openMenuId === link.id && (
                                         <div
-                                            className={`absolute top-full ${index === 0 ? 'left-0 transform-none' : 'left-1/2 transform -translate-x-1/2'} fade-in border-[1px] border-main2 z-10`}
-                                            style={{ maxHeight: 'calc(100vh - 70px)', overflowY: 'auto' }}
-                                            ref={menuRef}
+                                            className='mt-2 fade-in'
+                                            
                                         >
-                                            <div className="bg-white shadow-xl p-6 flex flex-col gap-2 z-20" style={{ whiteSpace: 'nowrap' }}>
+                                            <div
+                                            className='flex flex-col ss:gap-2 gap-1'
+                                            style={{ maxHeight: 'calc(100vh - 70px)', overflowY: 'auto' }}>
                                             {link.links.map((subLink, index) => (
                                                 <a
                                                 key={index}
                                                 href={subLink.route}
-                                                className="flex text-[15px] text-main"
+                                                className="ss:text-[15px] text-[15px] text-main"
                                                 >
                                                     {subLink.name}
                                                 </a>
