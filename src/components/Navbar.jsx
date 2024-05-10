@@ -215,7 +215,7 @@ return () => {
                             : 'menu-slide-exit menu-slide-exit-active'}`}
                         >
                             <ul className="list-none flex flex-col 
-                            ss:gap-6 gap-4 ss:mb-14 mb-12">
+                            ss:gap-6 gap-3 ss:mb-14 mb-12">
                                 {navLinks.map((link) => (
                                     <li
                                         key={link.id}
@@ -225,7 +225,7 @@ return () => {
                                     >
                                         <div className='flex flex-row items-center
                                          ss:gap-2 gap-1'>
-                                            <h3 className='text-main ss:text-[17px] text-[15px] 
+                                            <h3 className='text-main ss:text-[18px] text-[17px] 
                                             font-medium'>
                                                 {link.title}
                                             </h3>
@@ -291,7 +291,7 @@ return () => {
 
                             <button className='bg-primary ss:py-4 py-3 
                             px-4 w-full text-white rounded-[8px] mt-4 
-                            ss:text-[17px] text-[14px]'
+                            ss:text-[17px] text-[15px]'
                             onClick={() => {
                                 setToggle(!toggle);
                             }}
