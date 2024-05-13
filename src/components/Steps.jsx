@@ -13,22 +13,25 @@ const StepCard = ({ index, title, image, description }) => {
                 <img 
                     src={image}
                     alt='product step'
-                    className='w-[170px] h-[170px] object-cover'
+                    className='md:w-[170px] ss:w-[160px] w-[140px] 
+                    md:h-[170px] ss:h-[160px] h-[140px] object-cover'
                 />
 
                 <div className='flex flex-col md:gap-3 ss:gap-3
                 gap-2 tracking-tight'>
                     <h1 className='text-primary md:text-[22px] ss:text-[20px] 
-                    text-[17px] font-bold'>
+                    text-[16px] font-bold'>
                         {title}
                     </h1>
 
                     <p className='text-main font-medium md:leading-[25px]
-                    md:text-[18px] ss:text-[15px] text-[14px]'>
+                    ss:leading-[25px] leading-[18px] md:text-[18px] 
+                    ss:text-[15px] text-[13px]'>
                         {description}
                     </p>
 
-                    <div className='flex gap-3 cursor-pointer grow5'>
+                    <div className='flex gap-3 cursor-pointer grow5
+                    items-center'>
                         <p className='text-primary md:text-[15px] ss:text-[15px]
                         text-[13px] font-medium'>
                             Browse products
@@ -48,15 +51,17 @@ const Steps = () => {
     items-center'>
         <div className='max-w-[86rem] mx-auto flex flex-col'>
             <motion.div variants={textVariant()}
-            className='flex flex-col gap-2'>
+            className='flex flex-col md:gap-2 ss:gap-2 gap-5'>
                 <h1 className='text-primary font-bold md:text-[43px]
-                ss:text-[40px] text-[30px] tracking-tight'>
+                ss:text-[40px] text-[30px] tracking-tight md:leading-[60px] 
+                ss:leading-[45px] leading-[35px]'>
                     Find and order from us in 4 easy steps
                 </h1>
                 
                 <p className='text-main font-medium md:text-[18px]
                 ss:text-[17px] text-[15px] tracking-tight md:max-w-[950px]
-                ss:max-w-[300px] md:leading-[25px] ss:leading-[26px]'>
+                ss:max-w-[300px] md:leading-[25px] ss:leading-[26px]
+                leading-[20px]'>
                     You do not need to go through too much stress to find 
                     exactly what you're looking for on our website. We've 
                     outlined these simple steps to understand how to 
@@ -64,8 +69,8 @@ const Steps = () => {
                 </p>                
             </motion.div>
 
-            <div className='grid gap-16 md:mt-20 grid-cols-2 ss:mt-12 
-            mt-8 w-full'>
+            <div className='grid md:gap-16 ss:gap-14 gap-10 md:mt-20 
+            md:grid-cols-2 ss:mt-12 mt-8 w-full'>
                 {steps.map((step, index) => (
                     <StepCard 
                         key={step.name} 
