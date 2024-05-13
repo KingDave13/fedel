@@ -39,7 +39,7 @@ return () => {
 
 
   return (
-    <nav className='w-full flex items-center fixed 
+    <nav className='w-full flex items-center fixed
        top-0 z-20 navsmooth'>
         <div className='flex flex-col w-full items-center'>
             <div className={`w-full md:bg-main2 ${styles.paddingX}
@@ -183,7 +183,7 @@ return () => {
 
                     {/* FOR MOBILE */}
                     
-                    <div className="md:hidden flex justify-end flex-1 items-center">
+                    <div className="md:hidden flex items-center">
                         <div className="flex items-center z-20 ss:gap-8
                         gap-6">
                             <IoCartOutline
