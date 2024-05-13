@@ -12,22 +12,22 @@ const Footer = () => {
     min-h-[450px] flex items-center flex-col'>
       <div className='flex items-center w-full relative'>
         <motion.div variants={textVariant()} className='flex flex-col w-full'>
-          <div className='flex flex-col w-full md:gap-6 ss:gap-5'>
-            <img src={logoalt} alt='logo' className='md:w-[200px] h-auto' />
+          <div className='flex flex-col w-full md:gap-6 ss:gap-5 gap-5'>
+            <img src={logoalt} alt='logo' className='md:w-[200px] 
+            ss:w-[180px] w-[160px] h-auto' />
 
             <p className='text-white md:text-[15px] ss:text-[14px] 
-            text-[14px] md:mt-0 ss:mt-3 mt-6 md:leading-[25px] 
-            ss:leading-[22px] leading-[20px]'>
+            text-[13px] md:leading-[25px] ss:leading-[22px] leading-[20px]'>
               Fedel Tiles Limited is a registered company and certified
               retailer of tiles and other home/sanitation materials in
               Nigeria.
             </p>
             
-            <div className='flex md:gap-5 items-center'>
+            <div className='flex md:gap-5 ss:gap-5 gap-3 items-center'>
                 {socialMedia.map((social, index) => (
                     <a target='_blank' href={social.link} rel="noreferrer" key={index}>
                         <img src={social.image} 
-                            className='md:w-6 h-auto'
+                            className='md:w-6 ss:w-5 w-5 h-auto'
                         />
                     </a>
                 ))}
@@ -35,7 +35,7 @@ const Footer = () => {
           </div>
           
           <div className='w-full flex md:flex-row ss:flex-row flex-col 
-          md:mt-8'>
+          md:mt-8 ss:mt-8 mt-6'>
             {footerLinks.map((footerLink, index) => (
               <div key={index} className='flex flex-col my-4 w-full'>
                 <h4 className={`font-bold md:text-[18px] ss:text-[15px] 
