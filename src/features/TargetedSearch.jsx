@@ -73,14 +73,15 @@ const TargetedSearch = () => {
   return (
     <div className='items-center w-full flex flex-col'>
         <div className='flex flex-col bg-white md:p-8 ss:p-8 p-5 
-        rounded-[20px] md:gap-3 border-[1px] border-main3'>
+        rounded-[20px] md:gap-3 ss:gap-3 gap-2 border-[1px] border-main3'>
             <h2 className='text-primary font-bold md:text-[22px]
-            ss:text-[20px] text-[20px] tracking-tight'>
+            ss:text-[20px] text-[18px] tracking-tight  md:leading-[30px] 
+            ss:leading-[25px] leading-[25px]'>
                 Let us know exactly what you want
             </h2>
 
             <p className='text-main md:leading-[19px] ss:leading-[19px] 
-            leading-[19px] md:text-[15px] ss:text-[15px] text-[14px]'>
+            leading-[18px] md:text-[15px] ss:text-[15px] text-[13px]'>
                 Is there a particular style, pattern or brand of tile you're 
                 looking for? We can find it quickly and also mail you some 
                 samples!
@@ -88,18 +89,20 @@ const TargetedSearch = () => {
 
             <div className='flex flex-row w-full md:mt-3 ss:mt-3 mt-2
             justify-center items-center'>
-                <h2 className={`text-main md:text-[15px] ${selectedTab === 'targetedSearch' 
+                <h2 className={`text-main md:text-[15px] ss:text-[14px] text-[14px]
+                ${selectedTab === 'targetedSearch' 
                 ? 'text-primary font-bold border-b-primary border-b-[3px]' : ''} 
-                    md:pb-2 text-center w-full cursor-pointer`} 
+                    md:pb-2 ss:pb-2 pb-1 text-center w-full cursor-pointer`} 
                     onClick={() => handleTabChange('targetedSearch')}
                 >
                     Targeted Search
                 </h2>
 
-                <h2 className={`text-main md:text-[15px] text-center
+                <h2 className={`text-main md:text-[15px] ss:text-[14px] text-[14px]
+                text-center
                     w-full cursor-pointer ${selectedTab === 'messageUs' 
                     ? 'text-primary font-bold border-b-primary border-b-[3px]' : ''}
-                    md:pb-2`} 
+                    md:pb-2 ss:pb-2 pb-1`} 
                     onClick={() => handleTabChange('messageUs')}
                 >
                     Message Us
@@ -118,8 +121,10 @@ const TargetedSearch = () => {
                                 value={formik.values.product}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
-                                className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
-                                text-main3 rounded-lg cursor-pointer md:text-[14px] 
+                                className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
+                                ss:px-3 px-2 border-search 
+                                text-main3 rounded-lg cursor-pointer md:text-[14px]
+                                ss:text-[14px] text-[12px] 
                                 bg-transparent w-full custom-select"
                             >
                                 <option value="" disabled selected hidden>Select a product</option>
@@ -127,9 +132,11 @@ const TargetedSearch = () => {
                                 <option value="from_friend">From a friend</option>
                                 <option value="other">Other</option>
                             </select>
-                            <div className='absolute right-3'>
+                            <div className='absolute md:right-3 
+                            ss:right-3 right-2'>
                                 <TiArrowSortedDown 
-                                    className='text-main text-[18px]'
+                                    className='text-main md:text-[18px]
+                                    ss:text-[18px] text-[16px]'
                                 />
                             </div>
                         </div>
@@ -148,8 +155,10 @@ const TargetedSearch = () => {
                                 value={formik.values.category}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
-                                className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
-                                text-main3 rounded-lg cursor-pointer md:text-[14px] 
+                                className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
+                                ss:px-3 px-2 border-search 
+                                text-main3 rounded-lg cursor-pointer md:text-[14px]
+                                ss:text-[14px] text-[12px] 
                                 bg-transparent w-full custom-select"
                             >
                                 <option value="" disabled selected hidden>Select a category</option>
@@ -157,9 +166,11 @@ const TargetedSearch = () => {
                                 <option value="from_friend">From a friend</option>
                                 <option value="other">Other</option>
                             </select>
-                            <div className='absolute right-3'>
+                            <div className='absolute md:right-3 
+                            ss:right-3 right-2'>
                                 <TiArrowSortedDown 
-                                    className='text-main text-[18px]'
+                                    className='text-main md:text-[18px]
+                                    ss:text-[18px] text-[16px]'
                                 />
                             </div>
                         </div>
@@ -178,8 +189,10 @@ const TargetedSearch = () => {
                                 value={formik.values.price}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
-                                className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
-                                text-main3 rounded-lg cursor-pointer md:text-[14px] 
+                                className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
+                                ss:px-3 px-2 border-search 
+                                text-main3 rounded-lg cursor-pointer md:text-[14px]
+                                ss:text-[14px] text-[12px] 
                                 bg-transparent w-full custom-select"
                             >
                                 <option value="" disabled selected hidden>Select a price range</option>
@@ -187,9 +200,11 @@ const TargetedSearch = () => {
                                 <option value="from_friend">From a friend</option>
                                 <option value="other">Other</option>
                             </select>
-                            <div className='absolute right-3'>
+                            <div className='absolute md:right-3 
+                            ss:right-3 right-2'>
                                 <TiArrowSortedDown 
-                                    className='text-main text-[18px]'
+                                    className='text-main md:text-[18px]
+                                    ss:text-[18px] text-[16px]'
                                 />
                             </div>
                         </div>
@@ -208,8 +223,10 @@ const TargetedSearch = () => {
                             value={formik.values.numbermail}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
-                            text-black rounded-lg md:text-[14px] 
+                            className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
+                            ss:px-3 px-2 border-search 
+                            text-black rounded-lg md:text-[14px]
+                            ss:text-[14px] text-[12px]
                             bg-transparent w-full placeholder:text-main3"
                         />
                         <p className="text-mainRed md:text-[12px] 
@@ -239,8 +256,10 @@ const TargetedSearch = () => {
                             value={formik.values.name}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
-                            text-black rounded-lg md:text-[14px] 
+                            className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
+                            ss:px-3 px-2 border-search 
+                            text-black rounded-lg md:text-[14px]
+                            ss:text-[14px] text-[12px]
                             bg-transparent w-full placeholder:text-main3"
                         />
                         <p className="text-mainRed md:text-[12px] 
@@ -257,8 +276,10 @@ const TargetedSearch = () => {
                             value={formik.values.email}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
-                            text-black rounded-lg md:text-[14px] 
+                            className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
+                            ss:px-3 px-2 border-search 
+                            text-black rounded-lg md:text-[14px]
+                            ss:text-[14px] text-[12px]
                             bg-transparent w-full placeholder:text-main3"
                         />
                         <p className="text-mainRed md:text-[12px] 
@@ -275,8 +296,10 @@ const TargetedSearch = () => {
                             value={formik.values.subject}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
-                            text-black rounded-lg md:text-[14px] 
+                            className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
+                            ss:px-3 px-2 border-search 
+                            text-black rounded-lg md:text-[14px]
+                            ss:text-[14px] text-[12px]
                             bg-transparent w-full placeholder:text-main3"
                         />
                         <p className="text-mainRed md:text-[12px] 
@@ -293,8 +316,10 @@ const TargetedSearch = () => {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             placeholder="Enter your message"
-                            className="md:py-2.5 ss:py-2 py-2 md:px-3 border-search 
-                            text-black rounded-lg md:text-[14px] 
+                            className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
+                            ss:px-3 px-2 border-search 
+                            text-black rounded-lg md:text-[14px]
+                            ss:text-[14px] text-[12px]
                             bg-transparent w-full placeholder:text-main3"
                         />
                         <p className="text-mainRed md:text-[12px] 
