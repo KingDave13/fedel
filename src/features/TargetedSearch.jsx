@@ -339,7 +339,7 @@ const TargetedSearch = () => {
                         </div>
 
                         <h4 className='text-mainalt md:text-[12px] ss:text-[12px] 
-                        text-[12px] tracking-tight'>
+                        text-[11px] tracking-tight'>
                             Only JPEG, JPG and PNG less than 2MB allowed
                         </h4>
                     </div>
@@ -348,8 +348,8 @@ const TargetedSearch = () => {
                         <button
                         type="submit"
                         className="bg-primary grow5 md:text-[14px] w-full
-                        ss:text-[14px] text-[14px] md:py-3 ss:py-3 py-2 
-                        text-white rounded-lg border-none"
+                        ss:text-[14px] text-[12px] md:py-3 ss:py-3 py-2 
+                        text-white md:rounded-lg rounded-md border-none"
                         >
                             {Loading ? 'Sending...' : 'Send Email'}
                         </button>
@@ -357,8 +357,8 @@ const TargetedSearch = () => {
                         <button
                         type="submit"
                         className="bg-green grow5 md:text-[14px] w-full
-                        ss:text-[14px] text-[14px] md:py-3 ss:py-3 py-2 
-                        text-white rounded-lg border-none"
+                        ss:text-[14px] text-[12px] md:py-3 ss:py-3 py-2 
+                        text-white md:rounded-lg rounded-md border-none"
                         >
                             {Loading ? 'Sending...' : 'Send via WhatsApp'}
                         </button>
@@ -370,7 +370,7 @@ const TargetedSearch = () => {
                 items-center'>
                     <RiInformationFill 
                         className='text-main3 ss:text-[57px]
-                        text-[27px]'
+                        text-[55px]'
                     />
 
                     <h3 className='text-main3 md:text-[13px] ss:text-[12px]
