@@ -37,19 +37,20 @@ const Footer = () => {
           <div className='w-full flex md:flex-row ss:flex-row flex-col 
           md:mt-8 ss:mt-8 mt-6'>
             {footerLinks.map((footerLink, index) => (
-              <div key={index} className='flex flex-col my-4 w-full'>
+              <div key={index} className='flex flex-col md:my-4 ss:my-4
+              my-3 w-full'>
                 <h4 className={`font-bold md:text-[18px] ss:text-[15px] 
-                text-[13px] text-white 
+                text-[15px] text-white 
                   ${index !== footerLinks.length - 1 ? 'md:mr-10 ss:mr-8 mr-8' : 'mr-12'}`}>
                   {footerLink.title}
                 </h4>
 
-                <ul className='list-none md:mt-5 ss:mt-3 mt-1 w-full 
+                <ul className='list-none md:mt-5 ss:mt-3 mt-2 w-full 
                 justify-between flex flex-col'>
                   {footerLink.links.map((Link, index) => (
                     <a target='blank' href={Link.route} key={Link.name}>
                       <li className={`md:text-[15px] ss:text-[15px] grow2
-                      text-[14px] md:leading-[23px] ss:leading-[15px] leading-[14px]
+                      text-[13px] md:leading-[23px] ss:leading-[15px] leading-[12px]
                       text-white hover:text-secondary cursor-pointer 
                       ${index !== footerLink.links.length - 1 ? 'md:mb-2.5 ss:mb-2 mb-2' : 'mb-0'}`}>
                         {Link.name}
@@ -65,11 +66,11 @@ const Footer = () => {
 
       <motion.div variants={textVariant()} className='flex flex-col w-full'>
         <div className='flex md:mt-16 ss:mt-10 mt-8 border-t-[1px] 
-        border-main md:pt-10'>
+        border-main md:pt-10 ss:pt-8 pt-6 items-center'>
           <BiCopyright className='sm:mr-2 mr-1 md:text-[20px] 
           ss:text-[18px] text-[15px] md:mt-1 ss:mt-1 mt-0 text-white' />
 
-          <p className='md:text-[14px] ss:text-[16px] text-[14px] 
+          <p className='md:text-[14px] ss:text-[16px] text-[13px] 
           text-white md:mt-1 ss:mt-1 mt-0.5'>
             2024 Fedel Tiles Limited. All Rights Reserved.
           </p>
