@@ -1,5 +1,8 @@
 import logo from './logo.png';
 import heroImage1 from './heroImage1.jpg';
+import heroImage2 from './heroImage2.jpg';
+import heroImage3 from './heroImage3.jpg';
+import heroImage4 from './heroImage4.jpg';
 import heroImageMobile1 from './heroImageMobile1.jpg';
 import discoverImg from './discoverImg.jpg';
 import search from './search.png';
@@ -22,6 +25,9 @@ import logoalt from './logoalt.png';
 export {
     logo,
     heroImage1,
+    heroImage2,
+    heroImage3,
+    heroImage4,
     discoverImg,
     search,
     select,
@@ -42,9 +48,9 @@ export {
 }
 
 export const heroImages = [
-
+    heroImage1, heroImage2, heroImage3, heroImage4,
 ];
 
 export const heroImagesMobile = [
-
+    heroImageMobile1,
 ];
