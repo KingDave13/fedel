@@ -85,11 +85,13 @@ body, html {
   background-size: cover;
 }
 
-.help {
-  background-image: url('./assets/helpImg.png');
-  background-size: 49vw 100%;
-  background-repeat: no-repeat;
-  background-position: right top;
+@media (min-width: 1060px) {
+  .help {
+    background-image: url('./assets/helpImg.png');
+    background-size: 49vw 100%;
+    background-repeat: no-repeat;
+    background-position: right top;
+  }
 }
 
 .footer {

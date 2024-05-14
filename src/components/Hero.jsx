@@ -24,7 +24,7 @@ const Hero = () => {
                 >
                     <h1 className='text-white font-bold md:text-[60px]
                     ss:text-[50px] text-[33px] md:leading-[73px] 
-                    ss:leading-[55px] leading-[40px]
+                    ss:leading-[55px] leading-[38px]
                     md:max-w-[650px]'>
                         Buy your <span className='text-secondary'>
                         tiles, marble, granite, sanitary wares,

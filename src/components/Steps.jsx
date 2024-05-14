@@ -51,7 +51,7 @@ const Steps = () => {
     items-center'>
         <div className='max-w-[86rem] mx-auto flex flex-col'>
             <motion.div variants={textVariant()}
-            className='flex flex-col md:gap-2 ss:gap-2 gap-5'>
+            className='flex flex-col md:gap-2 ss:gap-2 gap-4'>
                 <h1 className='text-primary font-bold md:text-[43px]
                 ss:text-[40px] text-[30px] tracking-tight md:leading-[60px] 
                 ss:leading-[45px] leading-[35px]'>
@@ -59,7 +59,7 @@ const Steps = () => {
                 </h1>
                 
                 <p className='text-main font-medium md:text-[18px]
-                ss:text-[17px] text-[15px] tracking-tight md:max-w-[950px]
+                ss:text-[17px] text-[14px] tracking-tight md:max-w-[950px]
                 ss:max-w-[300px] md:leading-[25px] ss:leading-[26px]
                 leading-[20px]'>
                     You do not need to go through too much stress to find 

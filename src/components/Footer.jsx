@@ -40,7 +40,7 @@ const Footer = () => {
               <div key={index} className='flex flex-col md:my-4 ss:my-4
               my-3 w-full'>
                 <h4 className={`font-bold md:text-[18px] ss:text-[15px] 
-                text-[15px] text-white 
+                text-[14px] text-white 
                   ${index !== footerLinks.length - 1 ? 'md:mr-10 ss:mr-8 mr-8' : 'mr-12'}`}>
                   {footerLink.title}
                 </h4>
@@ -70,7 +70,7 @@ const Footer = () => {
           <BiCopyright className='sm:mr-2 mr-1 md:text-[20px] 
           ss:text-[18px] text-[15px] md:mt-1 ss:mt-1 mt-0 text-white' />
 
-          <p className='md:text-[14px] ss:text-[16px] text-[13px] 
+          <p className='md:text-[14px] ss:text-[16px] text-[12px] 
           text-white md:mt-1 ss:mt-1 mt-0.5'>
             2024 Fedel Tiles Limited. All Rights Reserved.
           </p>

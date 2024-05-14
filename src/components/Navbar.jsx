@@ -39,7 +39,7 @@ return () => {
 
 
   return (
-    <nav className='w-full flex items-center fixed
+    <nav className='w-full flex items-center fixed 
        top-0 z-20 navsmooth'>
         <div className='flex flex-col w-full items-center'>
             <div className={`w-full md:bg-main2 ${styles.paddingX}
@@ -183,24 +183,24 @@ return () => {
 
                     {/* FOR MOBILE */}
                     
-                    <div className="md:hidden flex items-center">
+                    <div className="md:hidden flex justify-end flex-1 items-center">
                         <div className="flex items-center z-20 ss:gap-8
                         gap-6">
                             <IoCartOutline
                                 className='text-primary ss:text-[35px] 
-                                text-[33px]'
+                                text-[30px]'
                             />
 
                             {toggle ? (
                             <BsX
-                                size={40}
+                                size={38}
                                 className="object-contain cursor-pointer"
                                 style={{ color: '#050759' }}
                                 onClick={() => setToggle(!toggle)}
                             />
                             ) : (
                             <IoMenu
-                                size={42}
+                                size={38}
                                 className="object-contain cursor-pointer"
                                 style={{ color: '#050759' }}
                                 onClick={() => setToggle(!toggle)}
@@ -215,7 +215,7 @@ return () => {
                             : 'menu-slide-exit menu-slide-exit-active'}`}
                         >
                             <ul className="list-none flex flex-col 
-                            ss:gap-6 gap-3 ss:mb-14 mb-12">
+                            ss:gap-6 gap-3 ss:mb-14 mb-10">
                                 {navLinks.map((link) => (
                                     <li
                                         key={link.id}
@@ -224,8 +224,8 @@ return () => {
                                         onClick={() => toggleMenu(link.id)}
                                     >
                                         <div className='flex flex-row items-center
-                                         ss:gap-2 gap-1'>
-                                            <h3 className='text-main ss:text-[18px] text-[17px] 
+                                         ss:gap-2 gap-2'>
+                                            <h3 className='text-main ss:text-[18px] text-[15px] 
                                             font-medium'>
                                                 {link.title}
                                             </h3>
@@ -238,10 +238,8 @@ return () => {
                                         
 
                                         {openMenuId === link.id && (
-                                        <div
-                                            className='mt-2 fade-in'
-                                            
-                                        >
+                                        <div className='mt-2 fade-in
+                                        ml-2'>
                                             <div
                                             className='flex flex-col ss:gap-2 gap-1'
                                             style={{ maxHeight: 'calc(100vh - 70px)', overflowY: 'auto' }}>
@@ -249,7 +247,7 @@ return () => {
                                                 <a
                                                 key={index}
                                                 href={subLink.route}
-                                                className="ss:text-[15px] text-[15px] text-main"
+                                                className="ss:text-[15px] text-[14px] text-main"
                                                 >
                                                     {subLink.name}
                                                 </a>
@@ -273,13 +271,13 @@ return () => {
                                     type='search'
                                     placeholder='Search for products'
                                     className='w-full text-black 
-                                    ss:text-[15px] text-[14px]
+                                    ss:text-[15px] text-[13px]
                                     placeholder:text-mainalt outline-none
                                     border-none bg-transparent'
                                 />
 
                                 <button className='bg-primary ss:text-[15px]
-                                text-[13px] justify-end
+                                text-[12px] justify-end
                                 py-1.5 px-5 text-white rounded-[5px]'
                                 // onClick={() => {
                                 //     setToggle(!toggle);
@@ -291,7 +289,7 @@ return () => {
 
                             <button className='bg-primary ss:py-4 py-3 
                             px-4 w-full text-white rounded-[8px] mt-4 
-                            ss:text-[17px] text-[15px]'
+                            ss:text-[17px] text-[13px]'
                             onClick={() => {
                                 setToggle(!toggle);
                             }}
