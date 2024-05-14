@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { heroImages, heroImagesMobile } from '../constants';
 import { motion } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
 import { IoSearchOutline } from "react-icons/io5";
@@ -10,11 +11,31 @@ import { useNavigate } from 'react-router-dom';
 const Hero = () => {
   const navigate = useNavigate();
 
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const isMobile = window.innerWidth <= 1060;
+
+  const images = isMobile ? heroImagesMobile : heroImages;
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <section className='relative w-full md:min-h-[700px] ss:min-h-[800px] 
     items-center flex md:mb-0 ss:mb-0 mb-36'>
-        <div className='relative items-center w-full max-w-[86rem] hero
-        md:mt-28 ss:mt-56 mt-16 rounded-[30px] flex md:p-12 ss:p-10 p-6'>
+        <div className='relative items-center w-full max-w-[86rem]
+        md:mt-28 ss:mt-56 mt-16 rounded-[30px] flex md:p-12 ss:p-10 p-6'
+            style={{
+                backgroundImage: `url(${images[currentImageIndex]})`,
+                objectFit: 'cover',
+                backgroundPosition: isMobile ? 'bottom' : 'center',
+                height: isMobile ? '65vh' : '80vh',
+            }}
+          >
             <div className='relative md:items-center ss:items-center 
             justify-between w-full flex md:flex-row flex-col md:gap-44 
             ss:gap-40 gap-6'>

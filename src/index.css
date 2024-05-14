@@ -63,7 +63,7 @@ body, html {
   transition: all 0.2s ease-in-out;
 }
 
-.hero {
+/* .hero {
   background-image: url('./assets/heroImage.jpg');
   object-fit: cover;
   background-position: center;
@@ -77,7 +77,7 @@ body, html {
     background-position: bottom;
     max-height: 65vh;
   }
-}
+} */
 
 .cta {
   background-image: url('./assets/cta.jpg');
