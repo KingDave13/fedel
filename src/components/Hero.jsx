@@ -74,7 +74,7 @@ const Hero = () => {
                     </div>     
                 </motion.div>
 
-                <motion.div variants={fadeIn('left', 'spring', 0.3)} 
+                <motion.div variants={fadeIn('down', 'spring', 0.3)} 
                 className='flex flex-1 relative'>
                     <div className="absolute md:-top-56 ss:-top-56 top-6 
                     z-10">

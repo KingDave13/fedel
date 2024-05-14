@@ -47,7 +47,7 @@ const Discover = () => {
                         </div>
                     </motion.div>
 
-                    <motion.div variants={fadeIn('left', 'spring', 0.3)}
+                    <motion.div variants={fadeIn('down', 'spring', 0.3)}
                     className="flex-1 w-full">
                         <img src={discoverImg} 
                             alt='Discover Image'

@@ -20,13 +20,13 @@ const HomePage = () => {
             </Helmet>
 
             <Navbar />
-            {/* <Hero /> */}
-            {/* <Discover /> */}
+            <Hero />
+            <Discover />
             <Steps />
 
-            {/* <div className='help'>
+            <div className='help'>
                 <Help />
-            </div> */}
+            </div>
             
             <CTA />
 
