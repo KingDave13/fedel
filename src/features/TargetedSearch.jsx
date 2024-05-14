@@ -73,7 +73,8 @@ const TargetedSearch = () => {
   return (
     <div className='items-center w-full flex flex-col'>
         <div className='flex flex-col bg-white md:p-8 ss:p-8 p-5 
-        rounded-[20px] md:gap-3 ss:gap-3 gap-2 border-[1px] border-main3'>
+        md:rounded-[20px] rounded-[12px] md:gap-3 ss:gap-3 gap-2 
+        border-[1px] border-main3'>
             <h2 className='text-primary font-bold md:text-[22px]
             ss:text-[20px] text-[18px] tracking-tight  md:leading-[30px] 
             ss:leading-[25px] leading-[25px]'>
@@ -89,7 +90,7 @@ const TargetedSearch = () => {
 
             <div className='flex flex-row w-full md:mt-3 ss:mt-3 mt-2
             justify-center items-center'>
-                <h2 className={`text-main md:text-[15px] ss:text-[14px] text-[14px]
+                <h2 className={`text-main md:text-[15px] ss:text-[14px] text-[13px]
                 ${selectedTab === 'targetedSearch' 
                 ? 'text-primary font-bold border-b-primary border-b-[3px]' : ''} 
                     md:pb-2 ss:pb-2 pb-1 text-center w-full cursor-pointer`} 
@@ -98,7 +99,7 @@ const TargetedSearch = () => {
                     Targeted Search
                 </h2>
 
-                <h2 className={`text-main md:text-[15px] ss:text-[14px] text-[14px]
+                <h2 className={`text-main md:text-[15px] ss:text-[14px] text-[13px]
                 text-center
                     w-full cursor-pointer ${selectedTab === 'messageUs' 
                     ? 'text-primary font-bold border-b-primary border-b-[3px]' : ''}
@@ -123,7 +124,8 @@ const TargetedSearch = () => {
                                 onBlur={formik.handleBlur}
                                 className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
                                 ss:px-3 px-2 border-search 
-                                text-main3 rounded-lg cursor-pointer md:text-[14px]
+                                text-main3 md:rounded-lg rounded-md 
+                                cursor-pointer md:text-[14px]
                                 ss:text-[14px] text-[12px] 
                                 bg-transparent w-full custom-select"
                             >
@@ -157,7 +159,8 @@ const TargetedSearch = () => {
                                 onBlur={formik.handleBlur}
                                 className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
                                 ss:px-3 px-2 border-search 
-                                text-main3 rounded-lg cursor-pointer md:text-[14px]
+                                text-main3 md:rounded-lg rounded-md 
+                                cursor-pointer md:text-[14px]
                                 ss:text-[14px] text-[12px] 
                                 bg-transparent w-full custom-select"
                             >
@@ -191,7 +194,8 @@ const TargetedSearch = () => {
                                 onBlur={formik.handleBlur}
                                 className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
                                 ss:px-3 px-2 border-search 
-                                text-main3 rounded-lg cursor-pointer md:text-[14px]
+                                text-main3 md:rounded-lg rounded-md 
+                                cursor-pointer md:text-[14px]
                                 ss:text-[14px] text-[12px] 
                                 bg-transparent w-full custom-select"
                             >
@@ -225,7 +229,7 @@ const TargetedSearch = () => {
                             onBlur={formik.handleBlur}
                             className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
                             ss:px-3 px-2 border-search 
-                            text-black rounded-lg md:text-[14px]
+                            text-black md:rounded-lg rounded-md md:text-[14px]
                             ss:text-[14px] text-[12px]
                             bg-transparent w-full placeholder:text-main3"
                         />
@@ -239,8 +243,8 @@ const TargetedSearch = () => {
                         <button
                         type="submit"
                         className="bg-primary grow5 md:text-[15px] w-full
-                        ss:text-[16px] text-[14px] md:py-3 ss:py-3 py-2 
-                        text-white rounded-lg border-none"
+                        ss:text-[16px] text-[12px] md:py-3 ss:py-3 py-2.5 
+                        text-white md:rounded-lg rounded-md border-none"
                         >
                             {Loading ? 'Searching...' : 'Search'}
                         </button>
@@ -258,7 +262,7 @@ const TargetedSearch = () => {
                             onBlur={formik.handleBlur}
                             className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
                             ss:px-3 px-2 border-search 
-                            text-black rounded-lg md:text-[14px]
+                            text-black md:rounded-lg rounded-md md:text-[14px]
                             ss:text-[14px] text-[12px]
                             bg-transparent w-full placeholder:text-main3"
                         />
@@ -278,7 +282,7 @@ const TargetedSearch = () => {
                             onBlur={formik.handleBlur}
                             className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
                             ss:px-3 px-2 border-search 
-                            text-black rounded-lg md:text-[14px]
+                            text-black md:rounded-lg rounded-md md:text-[14px]
                             ss:text-[14px] text-[12px]
                             bg-transparent w-full placeholder:text-main3"
                         />
@@ -298,7 +302,7 @@ const TargetedSearch = () => {
                             onBlur={formik.handleBlur}
                             className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
                             ss:px-3 px-2 border-search 
-                            text-black rounded-lg md:text-[14px]
+                            text-black md:rounded-lg rounded-md md:text-[14px]
                             ss:text-[14px] text-[12px]
                             bg-transparent w-full placeholder:text-main3"
                         />
@@ -318,7 +322,7 @@ const TargetedSearch = () => {
                             placeholder="Enter your message"
                             className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
                             ss:px-3 px-2 border-search 
-                            text-black rounded-lg md:text-[14px]
+                            text-black md:rounded-lg rounded-md md:text-[14px]
                             ss:text-[14px] text-[12px]
                             bg-transparent w-full placeholder:text-main3"
                         />
@@ -348,7 +352,7 @@ const TargetedSearch = () => {
                         <button
                         type="submit"
                         className="bg-primary grow5 md:text-[14px] w-full
-                        ss:text-[14px] text-[12px] md:py-3 ss:py-3 py-2 
+                        ss:text-[14px] text-[11px] md:py-3 ss:py-3 py-2 
                         text-white md:rounded-lg rounded-md border-none"
                         >
                             {Loading ? 'Sending...' : 'Send Email'}
@@ -357,7 +361,7 @@ const TargetedSearch = () => {
                         <button
                         type="submit"
                         className="bg-green grow5 md:text-[14px] w-full
-                        ss:text-[14px] text-[12px] md:py-3 ss:py-3 py-2 
+                        ss:text-[14px] text-[11px] md:py-3 ss:py-3 py-2 
                         text-white md:rounded-lg rounded-md border-none"
                         >
                             {Loading ? 'Sending...' : 'Send via WhatsApp'}
@@ -375,7 +379,7 @@ const TargetedSearch = () => {
 
                     <h3 className='text-main3 md:text-[13px] ss:text-[12px]
                     text-[11px] md:leading-[18px] ss:leading-[17px]
-                    leading-[15px] tracking-tight'>
+                    leading-[14px] tracking-tight'>
                         If you have any special requests or orders you may
                         want to place, do well to switch to the "Message
                         Us" tab to send an email or WhatsApp message 
@@ -390,7 +394,7 @@ const TargetedSearch = () => {
                     />
                     <h3 className='text-primary md:text-[13px] ss:text-[12px]
                     text-[11px] font-bold md:leading-[17px] ss:leading-[17px]
-                    leading-[15px] tracking-tight'>
+                    leading-[14px] tracking-tight'>
                         Click here to watch our help video if you want to
                         know how to use our website better.
                     </h3>
