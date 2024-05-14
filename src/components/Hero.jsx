@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { heroImages, heroImagesMobile } from '../constants';
+import { heroImages, heroImagesMobile } from '../assets';
 import { motion } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
 import { IoSearchOutline } from "react-icons/io5";

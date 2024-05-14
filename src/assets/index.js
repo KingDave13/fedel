@@ -1,6 +1,6 @@
 import logo from './logo.png';
-import heroImage from './heroImage.jpg';
-import heroImageMobile from './heroImageMobile.jpg';
+import heroImage1 from './heroImage1.jpg';
+import heroImageMobile1 from './heroImageMobile1.jpg';
 import discoverImg from './discoverImg.jpg';
 import search from './search.png';
 import select from './select.png';
@@ -21,7 +21,7 @@ import logoalt from './logoalt.png';
 
 export {
     logo,
-    heroImage,
+    heroImage1,
     discoverImg,
     search,
     select,
@@ -38,5 +38,13 @@ export {
     youtube,
     whatsapp,
     logoalt,
-    heroImageMobile,
+    heroImageMobile1,
 }
+
+export const heroImages = [
+
+];
+
+export const heroImagesMobile = [
+
+];

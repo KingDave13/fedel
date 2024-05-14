@@ -263,14 +263,6 @@ export const navLinks = [
     },
 ];
 
-export const heroImages = [
-
-];
-
-export const heroImagesMobile = [
-
-];
-
 export const steps = [
     {
       image: search,
