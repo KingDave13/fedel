@@ -9,7 +9,7 @@ const StepCard = ({ index, title, image, description }) => {
         <motion.div
         variants={fadeIn('', 'spring', index * 0.5, 0.75)}>
             <div className='flex items-center justify-center
-            md:gap-10 ss:gap-8 gap-4'>
+            md:gap-10 ss:gap-8 gap-6'>
                 <img 
                     src={image}
                     alt='product step'
@@ -81,8 +81,9 @@ const Steps = () => {
             </div>
 
             <p className='text-mainalt md:text-[16px] ss:text-[15px] 
-            text-[13px] tracking-tight w-full font-medium md:text-center
-            md:mt-16 ss:mt-10 mt-6'>
+            text-[12px] tracking-tight w-full font-medium md:text-center
+            md:mt-16 ss:mt-10 mt-6  md:leading-[25px] ss:leading-[26px]
+            leading-[16px]'>
                 Note that some items may have their prices displayed, 
                 some may not but not to worry, you can request for 
                 their prices directly and you'll be responded to 
