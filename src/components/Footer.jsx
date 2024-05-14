@@ -17,7 +17,7 @@ const Footer = () => {
             ss:w-[180px] w-[160px] h-auto' />
 
             <p className='text-white md:text-[15px] ss:text-[14px] 
-            text-[13px] md:leading-[25px] ss:leading-[22px] leading-[20px]'>
+            text-[12px] md:leading-[25px] ss:leading-[22px] leading-[18px]'>
               Fedel Tiles Limited is a registered company and certified
               retailer of tiles and other home/sanitation materials in
               Nigeria.
@@ -45,14 +45,14 @@ const Footer = () => {
                   {footerLink.title}
                 </h4>
 
-                <ul className='list-none md:mt-5 ss:mt-3 mt-2 w-full 
+                <ul className='list-none md:mt-5 ss:mt-3 mt-3 w-full 
                 justify-between flex flex-col'>
                   {footerLink.links.map((Link, index) => (
                     <a target='blank' href={Link.route} key={Link.name}>
                       <li className={`md:text-[15px] ss:text-[15px] grow2
-                      text-[13px] md:leading-[23px] ss:leading-[15px] leading-[12px]
+                      text-[12px] md:leading-[23px] ss:leading-[15px] leading-[12px]
                       text-white hover:text-secondary cursor-pointer 
-                      ${index !== footerLink.links.length - 1 ? 'md:mb-2.5 ss:mb-2 mb-2' : 'mb-0'}`}>
+                      ${index !== footerLink.links.length - 1 ? 'md:mb-2.5 ss:mb-2 mb-2.5' : 'mb-0'}`}>
                         {Link.name}
                       </li>
                     </a>
