@@ -1,5 +1,6 @@
 import logo from './logo.png';
 import heroImage from './heroImage.jpg';
+import heroImageMobile from './heroImageMobile.jpg';
 import discoverImg from './discoverImg.jpg';
 import search from './search.png';
 import select from './select.png';
@@ -37,4 +38,5 @@ export {
     youtube,
     whatsapp,
     logoalt,
+    heroImageMobile,
 }

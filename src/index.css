@@ -72,7 +72,7 @@ body, html {
 
 @media (max-width: 1060px) {
   .hero {
-    background-image: url('./assets/heroImage.jpg');
+    background-image: url('./assets/heroImageMobile.jpg');
     object-fit: cover;
     background-position: bottom;
     max-height: 65vh;
