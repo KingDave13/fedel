@@ -19,6 +19,7 @@ const ProductsPage = () => {
 
             <Navbar />
             <HeroProducts />
+            
             <div className='help'>
                 <Help />
             </div>
