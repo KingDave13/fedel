@@ -34,7 +34,7 @@ const Hero = () => {
                 objectFit: 'cover',
                 backgroundPosition: isMobile ? 'bottom' : 'center',
                 height: isMobile ? '65vh' : '80vh',
-                animation: 'slide 1s ease-in-out forwards',
+                transition: 'background-image 1s ease-in-out',
             }}
           >
             <div className='relative md:items-center ss:items-center 
