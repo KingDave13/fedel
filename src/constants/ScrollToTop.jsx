@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { IoArrowUp } from "react-icons/io5";
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -21,14 +22,15 @@ const ScrollToTopButton = () => {
   };
 
   return (
-    <button
-    className={`bg-blue-500 text-white py-2 px-4 fixed bottom-5 
-    right-5 rounded-lg transition-opacity duration-300 
-    ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+    <div className={`bg-main py-3 px-3 fixed md:bottom-10
+    ss:bottom-8 bottom-6 md:right-10 ss:right-8 right-6 rounded-full 
+    transition-opacity duration-400 cursor-pointer grow2
+    ${isVisible ? 'opacity-90' : 'opacity-0 pointer-events-none'}`}
     onClick={scrollToTop}
     >
-      Scroll to Top
-    </button>
+        <IoArrowUp className='text-white md:text-[22px] ss:text-[20px]
+        text-[16px]'/>
+    </div>
   );
 };
 
