@@ -24,8 +24,8 @@ const StepCard = ({ index, title, image, description }) => {
                         {title}
                     </h1>
 
-                    <p className='text-main font-medium md:leading-[25px]
-                    ss:leading-[25px] leading-[18px] md:text-[18px] 
+                    <p className='text-main font-medium md:leading-[23px]
+                    ss:leading-[25px] leading-[18px] md:text-[17px] 
                     ss:text-[15px] text-[13px]'>
                         {description}
                     </p>
@@ -73,7 +73,7 @@ const Steps = () => {
             md:grid-cols-2 ss:mt-12 mt-8 w-full'>
                 {steps.map((step, index) => (
                     <StepCard 
-                        key={step.name} 
+                        key={index} 
                         index={index} 
                         {...step}
                     />
