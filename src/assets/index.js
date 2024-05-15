@@ -23,6 +23,7 @@ import tiktok from './tiktok.png';
 import youtube from './youtube.png';
 import instagram from './instagram.png';
 import logoalt from './logoalt.png';
+import productsHeroImage from './productsHeroImage.jpg';
 
 
 export {
@@ -51,6 +52,7 @@ export {
     heroImageMobile2,
     heroImageMobile3,
     heroImageMobile4,
+    productsHeroImage,
 }
 
 export const heroImages = [

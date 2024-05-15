@@ -110,7 +110,7 @@ body, html {
 }
 
 .heroProducts {
-  background-image: url('./assets/cta.jpg');
+  background-image: url('./assets/productsHeroImage.jpg');
   background-position: center;
   background-size: cover;
 }
