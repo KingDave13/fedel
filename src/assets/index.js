@@ -4,6 +4,9 @@ import heroImage2 from './heroImage2.jpg';
 import heroImage3 from './heroImage3.jpg';
 import heroImage4 from './heroImage4.jpg';
 import heroImageMobile1 from './heroImageMobile1.jpg';
+import heroImageMobile2 from './heroImageMobile2.jpg';
+import heroImageMobile3 from './heroImageMobile3.jpg';
+import heroImageMobile4 from './heroImageMobile4.jpg';
 import discoverImg from './discoverImg.jpg';
 import search from './search.png';
 import select from './select.png';
@@ -45,6 +48,9 @@ export {
     whatsapp,
     logoalt,
     heroImageMobile1,
+    heroImageMobile2,
+    heroImageMobile3,
+    heroImageMobile4,
 }
 
 export const heroImages = [
@@ -52,5 +58,5 @@ export const heroImages = [
 ];
 
 export const heroImagesMobile = [
-    heroImageMobile1,
+    heroImageMobile1, heroImageMobile2, heroImageMobile3, heroImageMobile4,
 ];
