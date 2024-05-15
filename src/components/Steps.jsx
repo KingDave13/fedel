@@ -3,10 +3,8 @@ import { motion } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
 import { steps } from '../constants';
 import { arrowRight } from '../assets';
-import { useNavigate } from 'react-router-dom';
 
 const StepCard = ({ index, title, image, description }) => {
-    const navigate = useNavigate();
     
     return (
         <motion.div
@@ -33,16 +31,16 @@ const StepCard = ({ index, title, image, description }) => {
                         {description}
                     </p>
 
-                    <div className='flex gap-3 cursor-pointer grow5
+                    <a href='/products' 
+                    className='flex gap-3 cursor-pointer grow5
                     items-center'>
-                        <p className='text-primary md:text-[15px] ss:text-[15px]
-                        text-[13px] font-medium'
-                        onClick={() => navigate('/products')}>
+                        <h1 className='text-primary md:text-[15px] 
+                        ss:text-[15px] text-[13px] font-medium'>
                             Browse products
-                        </p>
+                        </h1>
                         
                         <img src={arrowRight} alt='arrow'/>
-                    </div>
+                    </a>
                 </div>
             </div>
         </motion.div>

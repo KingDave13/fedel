@@ -198,7 +198,7 @@ const Help = () => {
                     <motion.div variants={fadeIn('down', 'spring', 0.3)}
                     className="flex-1 w-full md:hidden flex">
                         <img src={helpImg} 
-                            alt='Help Image'
+                            alt='Help'
                             className='md:h-full ss:h-full h-[200px] w-full
                             rounded-[15px]'
                         />
