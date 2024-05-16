@@ -39,7 +39,7 @@ const Footer = () => {
             {footerLinks.map((footerLink, index) => (
               <div key={index} className='flex flex-col md:my-4 ss:my-4
               my-3 w-full'>
-                <h4 className={`font-bold md:text-[18px] ss:text-[15px] 
+                <h4 className={`font-bold md:text-[17px] ss:text-[15px] 
                 text-[14px] text-white 
                   ${index !== footerLinks.length - 1 ? 'md:mr-10 ss:mr-8 mr-8' : 'mr-12'}`}>
                   {footerLink.title}
@@ -49,8 +49,8 @@ const Footer = () => {
                 justify-between flex flex-col'>
                   {footerLink.links.map((Link, index) => (
                     <a target='blank' href={Link.route} key={Link.name}>
-                      <li className={`md:text-[15px] ss:text-[15px] grow2
-                      text-[12px] md:leading-[23px] ss:leading-[15px] leading-[12px]
+                      <li className={`md:text-[14px] ss:text-[15px] grow2
+                      text-[12px] md:leading-[22px] ss:leading-[15px] leading-[12px]
                       text-white hover:text-secondary cursor-pointer 
                       ${index !== footerLink.links.length - 1 ? 'md:mb-2.5 ss:mb-2 mb-2.5' : 'mb-0'}`}>
                         {Link.name}
