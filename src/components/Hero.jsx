@@ -37,7 +37,6 @@ const Hero = () => {
                 transition: 'background-image 1s ease-in-out',
             }}
         >
-            
             <div className='relative md:items-center ss:items-center 
             justify-between w-full flex md:flex-row flex-col md:gap-44 
             ss:gap-40 gap-6'>
