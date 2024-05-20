@@ -53,7 +53,7 @@ const Categories = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        const query = '*[_type == "categories"]';
+        const query = '*[_type == "category"]';
 
         client.fetch(query)
             .then((data) => setCategories(data))
@@ -76,7 +76,7 @@ const Categories = () => {
                 {categories.map((category, index) => (
                     <CatCard 
                         key={index} 
-                        index={index} 
+                        index={index}
                         {...category}
                     />
                 ))}

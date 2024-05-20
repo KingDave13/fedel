@@ -5,7 +5,8 @@ import {
     Steps,
     Help,
     CTA,
-    Footer
+    Footer,
+    Categories
 } from '../components';
 
 import { Helmet } from 'react-helmet';
@@ -21,6 +22,7 @@ const HomePage = () => {
 
             <Navbar />
             <Hero />
+            <Categories />
             <Discover />
             <Steps />
 
