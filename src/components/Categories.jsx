@@ -16,11 +16,13 @@ const CatCard = (category, index) => {
                     src={urlFor(category.image)}
                     alt={category.name}
                     className='md:h-[230px] w-full object-cover
-                    rounded-2xl'
+                    rounded-xl'
                 />
 
-                <div className='rounded-full bg-white p-2 top-0 right-0'>
-                    {category.productCount}
+                <div className='rounded-full bg-white p-1.5 top-6 right-6
+                absolute text-primary md:text-[13px] ss:text-[13px] 
+                text-[12px] font-bold'>
+                    {category.productCount}+
                 </div>
 
                 <div className='flex flex-col md:gap-1 ss:gap-1
