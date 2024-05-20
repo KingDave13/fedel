@@ -16,18 +16,19 @@ const CatCard = (category, index) => {
                 <img 
                     src={urlFor(category.image)}
                     alt={category.name}
-                    className='h-full w-full object-cover'
+                    className='md:h-[220px] w-full object-cover
+                    rounded-2xl'
                 />
 
                 <div className='flex flex-col md:gap-2 ss:gap-3
-                gap-2 tracking-tight absolute'>
-                    <h1 className='text-primary md:text-[19px] ss:text-[18px] 
+                gap-2 tracking-tight absolute md:p-6 ss:p-6 p-4 bottom-0'>
+                    <h1 className='text-secondary md:text-[19px] ss:text-[18px] 
                     text-[15px] font-bold'>
                         {category.name}
                     </h1>
 
-                    <p className='text-main font-medium md:leading-[20px]
-                    ss:leading-[19px] leading-[15px] md:text-[15px] 
+                    <p className='text-white md:leading-[19px]
+                    ss:leading-[19px] leading-[15px] md:text-[14px] 
                     ss:text-[14px] text-[12px]'>
                         {category.description}
                     </p>
@@ -35,7 +36,7 @@ const CatCard = (category, index) => {
                     <a href='/' 
                     className='flex gap-3 cursor-pointer grow5
                     items-center'>
-                        <h1 className='text-primary md:text-[14px] 
+                        <h1 className='text-white md:text-[14px] 
                         ss:text-[14px] text-[12px] font-medium'>
                             See products
                         </h1>
@@ -61,10 +62,11 @@ const Categories = () => {
     }, []);
 
   return (
-    <section className='relative w-full min-h-[700px] mx-auto flex
+    <section className='relative w-full min-h-[1000px] mx-auto flex
     items-center'>
-        <div className='max-w-[86rem] mx-auto flex flex-col'>
-            <motion.div variants={textVariant()}>
+        <div className='max-w-[86rem] mx-auto flex flex-col w-full'>
+            <motion.div variants={textVariant()}
+            className=''>
                 <h1 className='text-primary font-bold md:text-[43px]
                 ss:text-[40px] text-[30px] tracking-tight md:leading-[60px] 
                 ss:leading-[45px] leading-[35px]'>
@@ -72,8 +74,8 @@ const Categories = () => {
                 </h1>  
             </motion.div>
 
-            <div className='grid md:gap-16 ss:gap-14 gap-10 md:mt-20 
-            md:grid-cols-3 ss:mt-12 mt-8 w-full'>
+            <div className='grid md:gap-14 ss:gap-12 gap-10 md:mt-16 
+            md:grid-cols-3 ss:mt-12 mt-8'>
                 {categories.map((category, index) => (
                     <CatCard 
                         key={index} 
