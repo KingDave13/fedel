@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { SectionWrapper } from '../hoc';
 import { motion } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
-import { client } from '../sanity';
+import { client, urlFor } from '../sanity';
 import { arrowRight } from '../assets';
 
 const CatCard = (category, index) => {
@@ -14,7 +14,7 @@ const CatCard = (category, index) => {
             md:gap-10 ss:gap-8 gap-6 relative'
             >
                 <img 
-                    src={category.image}
+                    src={urlFor(category.image)}
                     alt={category.name}
                     className='h-full w-full object-cover'
                 />
