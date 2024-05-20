@@ -6,7 +6,8 @@ import {
     Help,
     CTA,
     Footer,
-    Categories
+    Categories,
+    Top
 } from '../components';
 
 import { Helmet } from 'react-helmet';
@@ -23,6 +24,11 @@ const HomePage = () => {
             <Navbar />
             <Hero />
             <Categories />
+
+            <div className='footer'>
+                <Top />
+            </div>
+
             <Discover />
             <Steps />
 
