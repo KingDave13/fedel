@@ -9,15 +9,20 @@ const CatCard = (category, index) => {
     
     return (
         <motion.div
-        variants={fadeIn('', 'spring', index * 0.5, 0.75)}>
+        variants={fadeIn('', 'spring', index * 0.5, 0.75)}
+        className='hover:shadow-xl'>
             <div className='flex items-center justify-center relative'
             >
                 <img 
                     src={urlFor(category.image)}
                     alt={category.name}
-                    className='md:h-[230px] w-full object-cover
+                    className='h-[230px] w-full object-cover
                     rounded-xl'
                 />
+
+                <div className='absolute inset-0 bg-gradient-to-b 
+                    from-transparent to-black opacity-100 rounded-xl'>
+                </div>
 
                 <div className='rounded-full bg-white p-1.5 top-6 right-6
                 absolute text-primary md:text-[13px] ss:text-[13px] 
@@ -25,22 +30,22 @@ const CatCard = (category, index) => {
                     {category.productCount}+
                 </div>
 
-                <div className='flex flex-col md:gap-1 ss:gap-1
-                gap-1 tracking-tight absolute md:p-6 ss:p-6 p-4 bottom-0'>
+                <div className='flex flex-col md:gap-1 ss:gap-1 gap-1 
+                tracking-tight absolute md:p-6 ss:p-6 p-4 bottom-0'>
                     <h1 className='text-secondary md:text-[19px] ss:text-[18px] 
                     text-[15px] font-bold'>
                         {category.name}
                     </h1>
 
                     <p className='text-white md:leading-[19px]
-                    ss:leading-[19px] leading-[15px] md:text-[14px] 
+                    ss:leading-[19px] leading-[16px] md:text-[14px] 
                     ss:text-[14px] text-[12px]'>
                         {category.description}
                     </p>
 
                     <a href='/' 
-                    className='flex gap-3 cursor-pointer grow5
-                    items-center'>
+                    className='flex gap-3 cursor-pointer grow2
+                    items-center mt-1.5'>
                         <h1 className='text-white md:text-[14px] 
                         ss:text-[14px] text-[12px] font-medium'>
                             See products
@@ -74,8 +79,8 @@ const Categories = () => {
     }, []);
 
   return (
-    <section className='relative w-full min-h-[1000px] mx-auto flex
-    items-center'>
+    <section className='relative w-full md:min-h-[1000px] ss:min-h-[1000px] 
+    min-h-[2500px] mx-auto flex items-center md:mt-0 ss:mt-0 mt-80'>
         <div className='max-w-[86rem] mx-auto flex flex-col w-full'>
             <motion.div variants={textVariant()}
             className=''>
@@ -86,7 +91,7 @@ const Categories = () => {
                 </h1>  
             </motion.div>
 
-            <div className='grid md:gap-14 ss:gap-12 gap-10 md:mt-16 
+            <div className='grid md:gap-14 ss:gap-12 gap-8 md:mt-16 
             md:grid-cols-3 ss:mt-12 mt-8'>
                 {categories.map((category, index) => (
                     <CatCard 
