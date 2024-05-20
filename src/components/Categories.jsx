@@ -10,18 +10,21 @@ const CatCard = (category, index) => {
     return (
         <motion.div
         variants={fadeIn('', 'spring', index * 0.5, 0.75)}>
-            <div className='flex items-center justify-center
-            md:gap-10 ss:gap-8 gap-6 relative'
+            <div className='flex items-center justify-center relative'
             >
                 <img 
                     src={urlFor(category.image)}
                     alt={category.name}
-                    className='md:h-[220px] w-full object-cover
+                    className='md:h-[230px] w-full object-cover
                     rounded-2xl'
                 />
 
-                <div className='flex flex-col md:gap-2 ss:gap-3
-                gap-2 tracking-tight absolute md:p-6 ss:p-6 p-4 bottom-0'>
+                <div className='rounded-full bg-white p-2 top-0 right-0'>
+                    {category.productCount}
+                </div>
+
+                <div className='flex flex-col md:gap-1 ss:gap-1
+                gap-1 tracking-tight absolute md:p-6 ss:p-6 p-4 bottom-0'>
                     <h1 className='text-secondary md:text-[19px] ss:text-[18px] 
                     text-[15px] font-bold'>
                         {category.name}
@@ -55,8 +58,15 @@ const Categories = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        const query = '*[_type == "category"]';
-
+        const query = `
+          *[_type == "category"] | order(_createdAt asc) {
+            name,
+            description,
+            image,
+            "productCount": count(*[_type == "product" && references(^._id)])
+          }
+        `;
+    
         client.fetch(query)
             .then((data) => setCategories(data))
     }, []);
