@@ -5,26 +5,22 @@ import { fadeIn, textVariant } from '../utils/motion';
 import { client, urlFor } from '../sanity';
 import { GoArrowRight } from "react-icons/go";
 
-const CatCard = (category, index) => {
+const TopCard = (top, index) => {
     
     return (
         <motion.div
         variants={fadeIn('', 'spring', index * 0.5, 0.75)}
-        className='hover:shadow-xl'>
+        className='hover:shadow-xl cursor-pointer grow4'>
             <div className='flex items-center justify-center relative'
             >
                 <img 
-                    src={urlFor(category.image)}
-                    alt={category.name}
-                    className='h-[230px] w-full object-cover
-                    rounded-xl'
+                    src={urlFor(top.image)}
+                    alt={top.name}
+                    className='h-[210px] w-full object-cover
+                    rounded-lg'
                 />
 
-                <div className='absolute inset-0 bg-gradient-to-b 
-                    from-transparent to-black opacity-100 rounded-xl'>
-                </div>
-
-                <div className='rounded-full bg-white p-1.5 top-6 right-6
+                {/* <div className='rounded-full bg-white p-1.5 top-6 right-6
                 absolute text-primary md:text-[13px] ss:text-[13px] 
                 text-[12px] font-bold'>
                     {category.productCount}+
@@ -51,7 +47,7 @@ const CatCard = (category, index) => {
                             See products
                         </h1>
                     </a>
-                </div>
+                </div> */}
             </div>
         </motion.div>
     )
@@ -59,25 +55,23 @@ const CatCard = (category, index) => {
 
 const Top = () => {
 
-    const [categories, setCategories] = useState([]);
+    const [top, setTop] = useState([]);
 
     useEffect(() => {
         const query = `
-          *[_type == "category"] | order(_createdAt asc) {
+          *[_type == "top"] | order(_createdAt asc) {
             name,
-            description,
-            image,
-            "productCount": count(*[_type == "product" && references(^._id)])
+            image
           }
         `;
     
         client.fetch(query)
-            .then((data) => setCategories(data))
+            .then((data) => setTop(data))
     }, []);
 
   return (
     <section className='relative w-full md:min-h-[1100px] ss:min-h-[1000px] 
-    min-h-[2500px] mx-auto flex items-center md:mt-0 ss:mt-0 mt-80'>
+    min-h-[800px] mx-auto flex items-center'>
         <div className='max-w-[86rem] mx-auto flex flex-col w-full'>
             <motion.div variants={textVariant()}
             className='md:gap-4 ss:gap-3 gap-3 flex flex-col items-center'>
@@ -98,12 +92,12 @@ const Top = () => {
             </motion.div>
 
             <div className='grid md:gap-14 ss:gap-12 gap-8 md:mt-16 
-            md:grid-cols-3 ss:mt-12 mt-8'>
-                {categories.map((category, index) => (
-                    <CatCard 
+            md:grid-cols-4 ss:mt-12 mt-8'>
+                {top.map((top, index) => (
+                    <TopCard 
                         key={index} 
                         index={index}
-                        {...category}
+                        {...top}
                     />
                 ))}
             </div>
