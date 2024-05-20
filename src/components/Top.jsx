@@ -110,6 +110,14 @@ const Top = () => {
                     />
                 ))}
             </div>
+
+            <div className='flex gap-3 md:mt-14 ss:mt-14 mt-10 
+            items-center justify-center w-full'>
+                <p className='text-white md:text-[16px] ss:text-[15px] 
+                text-[12px]'>
+                    See all products
+                </p>   
+            </div>
         </div>
     </section>
   )
