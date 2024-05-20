@@ -9,7 +9,7 @@ const Discover = () => {
     const navigate = useNavigate();
 
     return (
-        <section className="w-full md:min-h-[550px] ss:min-h-[550px] 
+        <section className="w-full md:min-h-[500px] ss:min-h-[550px] 
         min-h-[650px] flex items-center">
             <div className='relative items-center w-full max-w-[86rem]'>
             <motion.div variants={fadeIn('down', 'spring', 0.3)}

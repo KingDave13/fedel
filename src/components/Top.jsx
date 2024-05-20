@@ -3,7 +3,7 @@ import { SectionWrapper } from '../hoc';
 import { motion } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
 import { client, urlFor } from '../sanity';
-import { arrowRight } from '../assets';
+import { GoArrowRight } from "react-icons/go";
 
 const CatCard = (category, index) => {
     
@@ -50,9 +50,6 @@ const CatCard = (category, index) => {
                         ss:text-[14px] text-[12px] font-medium'>
                             See products
                         </h1>
-                        
-                        <img src={arrowRight} alt='arrow' 
-                        className='w-5 h-5'/>
                     </a>
                 </div>
             </div>
@@ -79,7 +76,7 @@ const Top = () => {
     }, []);
 
   return (
-    <section className='relative w-full md:min-h-[1000px] ss:min-h-[1000px] 
+    <section className='relative w-full md:min-h-[1100px] ss:min-h-[1000px] 
     min-h-[2500px] mx-auto flex items-center md:mt-0 ss:mt-0 mt-80'>
         <div className='max-w-[86rem] mx-auto flex flex-col w-full'>
             <motion.div variants={textVariant()}
@@ -111,13 +108,19 @@ const Top = () => {
                 ))}
             </div>
 
-            <div className='flex gap-3 md:mt-14 ss:mt-14 mt-10 
-            items-center justify-center w-full'>
+            <a href='/products'
+            className='flex gap-3 md:mt-14 ss:mt-14 mt-10 
+            items-center justify-center grow4'>
                 <p className='text-white md:text-[16px] ss:text-[15px] 
                 text-[12px]'>
                     See all products
-                </p>   
-            </div>
+                </p>
+
+                <GoArrowRight
+                    className='text-white md:text-[18px]
+                    ss:text-[18px] text-[20px]'
+                />
+            </a>
         </div>
     </section>
   )
