@@ -11,36 +11,37 @@ const CatCard = (category, index) => {
         <motion.div
         variants={fadeIn('', 'spring', index * 0.5, 0.75)}>
             <div className='flex items-center justify-center
-            md:gap-10 ss:gap-8 gap-6'>
+            md:gap-10 ss:gap-8 gap-6 relative'
+            >
                 <img 
                     src={category.image}
-                    alt='Category'
-                    className='md:w-[170px] ss:w-[160px] w-[140px] 
-                    md:h-[170px] ss:h-[160px] h-[140px] object-cover'
+                    alt={category.name}
+                    className='h-full w-full object-cover'
                 />
 
-                <div className='flex flex-col md:gap-3 ss:gap-3
-                gap-2 tracking-tight'>
-                    <h1 className='text-primary md:text-[22px] ss:text-[20px] 
-                    text-[16px] font-bold'>
-                        {category.title}
+                <div className='flex flex-col md:gap-2 ss:gap-3
+                gap-2 tracking-tight absolute'>
+                    <h1 className='text-primary md:text-[19px] ss:text-[18px] 
+                    text-[15px] font-bold'>
+                        {category.name}
                     </h1>
 
-                    <p className='text-main font-medium md:leading-[23px]
-                    ss:leading-[25px] leading-[18px] md:text-[17px] 
-                    ss:text-[15px] text-[13px]'>
+                    <p className='text-main font-medium md:leading-[20px]
+                    ss:leading-[19px] leading-[15px] md:text-[15px] 
+                    ss:text-[14px] text-[12px]'>
                         {category.description}
                     </p>
 
-                    <a href='' 
+                    <a href='/' 
                     className='flex gap-3 cursor-pointer grow5
                     items-center'>
-                        <h1 className='text-primary md:text-[15px] 
-                        ss:text-[15px] text-[13px] font-medium'>
+                        <h1 className='text-primary md:text-[14px] 
+                        ss:text-[14px] text-[12px] font-medium'>
                             See products
                         </h1>
                         
-                        <img src={arrowRight} alt='arrow'/>
+                        <img src={arrowRight} alt='arrow' 
+                        className='w-5 h-5'/>
                     </a>
                 </div>
             </div>
