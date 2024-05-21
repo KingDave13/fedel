@@ -8,7 +8,8 @@ const HeroProducts = () => {
     <section className='relative w-full md:min-h-[100px] ss:min-h-[100px] 
     items-center flex'>
         <div className='relative items-center w-full max-w-[86rem] heroProducts
-        md:mt-28 ss:mt-56 mt-16 rounded-[25px] flex md:p-12 ss:p-10 p-6'
+        md:mt-28 ss:mt-56 mt-12 md:rounded-[25px] ss:rounded-[25px] 
+        rounded-[12px] flex md:p-12 ss:p-10 p-6'
         >
             <div className='w-full flex flex-col gap-1'>
                 <motion.div variants={textVariant()}

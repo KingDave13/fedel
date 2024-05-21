@@ -3,7 +3,8 @@ import {
     HeroProducts,
     Help,
     CTA,
-    Footer
+    Footer,
+    CategoriesProduct
 } from '../components';
 
 import { Helmet } from 'react-helmet';
@@ -19,6 +20,7 @@ const ProductsPage = () => {
 
             <Navbar />
             <HeroProducts />
+            <CategoriesProduct />
             
             <div className='help'>
                 <Help />
