@@ -24,7 +24,8 @@ const CategoryPage = () => {
         description,
         "products": *[_type == "product" && references(^._id)] {
           _id,
-          name
+          name,
+          images,
         }
       }
     `;
