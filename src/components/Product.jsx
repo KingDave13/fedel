@@ -48,19 +48,20 @@ const Product = ({ products }) => {
     }
   
     const renderPageNumbers = pageNumbers.map((number) => {
-      let buttonClasses = 'pagination-button';
-      if (number === currentPage) {
-        buttonClasses += ' bg-blue-500 text-white';
-      }
-      return (
-        <button
-          key={number}
-          className={`border px-3 py-1 ${buttonClasses}`}
-          onClick={() => setCurrentPage(number)}
-        >
-          {number}
-        </button>
-      );
+        const isActive = number === currentPage;
+        const buttonClasses = `px-3 py-1 text-white rounded-lg ${
+          isActive ? 'bg-primary' : 'bg-main3'
+        }`;
+      
+        return (
+          <button
+            key={number}
+            className={buttonClasses}
+            onClick={() => setCurrentPage(number)}
+          >
+            {number}
+          </button>
+        );
     });
   
     const handlePreviousPage = () => {
@@ -161,14 +162,14 @@ const Product = ({ products }) => {
                             cursor-pointer'
                         >
                             <MdOutlineKeyboardArrowLeft 
-                                className={`text-[27px] text-white p-1
+                                className={`text-[25px] text-white p-1
                                 rounded-lg font-semibold
                                 ${currentPage === 1 
                                 ? 'bg-main3' 
                                 : 'bg-primary'}`}
                             />
 
-                            <p className={`text-[15px]
+                            <p className={`text-[14px]
                             ${currentPage === 1 
                                 ? 'text-main3' 
                                 : 'text-primary'}`}>
@@ -183,7 +184,7 @@ const Product = ({ products }) => {
                             className='flex items-center gap-3
                             cursor-pointer'
                         >
-                            <p className={`text-[15px]
+                            <p className={`text-[14px]
                             ${currentPage === 1 
                                 ? 'text-main3' 
                                 : 'text-primary'}`}>
@@ -191,7 +192,7 @@ const Product = ({ products }) => {
                             </p>
 
                             <MdOutlineKeyboardArrowRight
-                                className={`text-[27px] text-white p-1
+                                className={`text-[25px] text-white p-1
                                 rounded-lg font-semibold
                                 ${currentPage === 1 
                                 ? 'bg-main3' 
