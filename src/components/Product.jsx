@@ -4,18 +4,26 @@ import { client, urlFor } from '../sanity';
 import { SectionWrapper } from "../hoc";
 
 const ItemCard = (item) => {
-    
+    const [imageUrl, setImageUrl] = useState(null);
+
+    useEffect(() => {
+        if (item.images && item.images.length > 0) {
+            const assetId = item.images[0].asset._ref;
+            const imageUrl = urlFor(assetId).url();
+            setImageUrl(imageUrl);
+        }
+    }, [item.images]);
+
     return (
-        <div
-        className='cursor-pointer grow2'>
-            <div className='flex items-center justify-center relative'
-            >
-                <img 
-                    src={urlFor(item.images)}
-                    alt={item.name}
-                    className='h-[250px] w-full object-cover
-                    rounded-lg'
-                />
+        <div className='cursor-pointer grow2'>
+            <div className='flex items-center justify-center relative'>
+                {imageUrl && (
+                    <img
+                        src={imageUrl}
+                        alt={item.name}
+                        className='h-[250px] w-full object-cover rounded-lg'
+                    />
+                )}
 
                 {/* <div className='rounded-full bg-white p-1.5 top-6 right-6
                 absolute text-primary md:text-[13px] ss:text-[13px] 
@@ -52,7 +60,7 @@ const ItemCard = (item) => {
 
 const Product = ({ products }) => {
   return (
-    <section className='relative w-full md:min-h-[2000px] ss:min-h-[2000px] 
+    <section className='relative w-full md:min-h-[500px] ss:min-h-[2000px] 
     min-h-[800px] mx-auto flex items-center'>
         <div className='max-w-[86rem] mx-auto flex flex-col w-full'>
             <div className="flex w-full items-center justify-between">
