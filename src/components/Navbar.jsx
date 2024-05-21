@@ -128,9 +128,13 @@ return () => {
             <div className={`w-full flex bg-white ${styles.paddingX}`}>
                 <div className='w-full flex justify-between items-center 
                 max-w-[86rem] mx-auto md:py-3 ss:py-4 py-4'>
-                    <img src={logo} alt='logo'
-                        className='md:w-[150px] ss:w-[150px] w-[120px] h-auto'
-                    />
+                    <a href='/'>
+                        <img
+                            src={logo} alt='logo'
+                            className='md:w-[170px] ss:w-[150px] w-[120px] 
+                            h-auto cursor-pointer'
+                        />
+                    </a>
 
                     <div className="hidden md:flex items-center w-full
                     gap-12 ml-12">
