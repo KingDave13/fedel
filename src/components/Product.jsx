@@ -80,25 +80,27 @@ const Product = ({ products }) => {
     min-h-[800px] mx-auto flex items-center'>
         <div className='max-w-[86rem] mx-auto flex flex-col w-full'>
             <div className="flex w-full items-center justify-between
-            mb-4">
-                <div className="flex-start flex gap-3 items-center">
-                    <div className="flex gap-2 items-center cursor-pointer
-                    bg-mainalt rounded-md p-2">
+            mb-8">
+                <div className="flex-start flex gap-8 items-center">
+                    <div className="flex gap-4 items-center cursor-pointer
+                    bg-main2 rounded-md px-4 py-2">
                         <img 
                             src={filter}
                             alt="filter"
+                            className="w-5"
                         />
-                        <p className="text-main font-bold text-[12px]">
+                        <p className="text-main font-semibold text-[14px]">
                             Filters
                         </p>
                     </div>
 
-                    <div className="flex gap-2 items-center cursor-pointer">
+                    <div className="flex gap-4 items-center cursor-pointer">
                         <img 
                             src={refresh}
                             alt="refresh"
+                            className="w-5"
                         />
-                        <p className="text-main font-bold text-[12px]">
+                        <p className="text-main font-semibold text-[14px]">
                             Refresh results
                         </p>
                     </div>
