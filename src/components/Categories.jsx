@@ -16,7 +16,7 @@ const CatCard = (category, index) => {
                 <img 
                     src={urlFor(category.image)}
                     alt={category.name}
-                    className='h-[230px] w-full object-cover
+                    className='md:h-[250px] h-[230px] w-full object-cover
                     rounded-xl'
                 />
 
