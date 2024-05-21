@@ -16,7 +16,7 @@ const TopCard = (top, index) => {
                 <img 
                     src={urlFor(top.image)}
                     alt={top.name}
-                    className='h-[210px] w-full object-cover
+                    className='h-[250px] w-full object-cover
                     rounded-lg'
                 />
 
@@ -91,7 +91,7 @@ const Top = () => {
                 </p>
             </motion.div>
 
-            <div className='grid md:gap-14 ss:gap-12 gap-8 md:mt-16 
+            <div className='grid md:gap-12 ss:gap-12 gap-8 md:mt-16 
             md:grid-cols-4 ss:mt-12 mt-8'>
                 {top.map((top, index) => (
                     <TopCard 
