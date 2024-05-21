@@ -8,8 +8,7 @@ import { arrowRight } from '../assets';
 const CatCard = (category, index) => {
     
     return (
-        <motion.div
-        variants={fadeIn('', 'spring', index * 0.5, 0.75)}
+        <div
         className='hover:shadow-xl'>
             <div className='flex items-center justify-center relative'
             >
@@ -56,7 +55,7 @@ const CatCard = (category, index) => {
                     </a>
                 </div>
             </div>
-        </motion.div>
+        </div>
     )
 };
 
@@ -79,8 +78,8 @@ const CategoriesProduct = () => {
     }, []);
 
   return (
-    <section className='relative w-full md:min-h-[1000px] ss:min-h-[1000px] 
-    min-h-[2500px] mx-auto flex items-center'>
+    <section className='relative w-full md:min-h-[900px] ss:min-h-[1000px] 
+    min-h-[2400px] mx-auto flex items-center md:mb-8'>
         <div className='max-w-[86rem] mx-auto flex flex-col w-full'>
             <motion.div variants={textVariant()}
             className=''>

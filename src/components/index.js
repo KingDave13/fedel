@@ -10,6 +10,8 @@ import Help from './Help';
 import CTA from './CTA';
 import Footer from './Footer';
 
+import Product from './Product';
+
 export {
     Navbar,
     Hero,
@@ -22,4 +24,5 @@ export {
     CTA,
     Footer,
     HeroProducts,
+    Product,
 }
