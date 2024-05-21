@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { textVariant } from '../utils/motion';
 import { SectionWrapper } from '../hoc';
 
-const HeroProductEach = ( {products} ) => {
+const HeroProductEach = ( {category} ) => {
   
   return (
     <section className='relative w-full md:min-h-[100px] ss:min-h-[100px] 
@@ -17,7 +17,7 @@ const HeroProductEach = ( {products} ) => {
                 >
                     <h1 className='text-secondary font-bold md:text-[40px]
                     ss:text-[40px] text-[30px]'>
-                        {products.name}
+                        {category.name}
                     </h1>
                 </motion.div> 
 
@@ -29,7 +29,7 @@ const HeroProductEach = ( {products} ) => {
                     <p> {'>'} </p>
                     <p>Products</p>
                     <p> {'>'} </p>
-                    <p>{products.name}</p>
+                    <p>{category.name}</p>
                 </motion.div>           
             </div>
         </div>
