@@ -24,6 +24,8 @@ import youtube from './youtube.png';
 import instagram from './instagram.png';
 import logoalt from './logoalt.png';
 import productsHeroImage from './productsHeroImage.jpg';
+import filter from './filter.png';
+import refresh from './refresh.png';
 
 
 export {
@@ -53,6 +55,8 @@ export {
     heroImageMobile3,
     heroImageMobile4,
     productsHeroImage,
+    filter,
+    refresh,
 }
 
 export const heroImages = [

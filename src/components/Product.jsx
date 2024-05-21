@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Filter } from '../features';
 import { client, urlFor } from '../sanity';
+import { TiArrowSortedDown } from "react-icons/ti";
+import { filter, refresh } from "../assets";
 import { SectionWrapper } from "../hoc";
 
 const ItemCard = (item) => {
@@ -34,8 +36,54 @@ const Product = ({ products }) => {
     <section className='relative w-full md:min-h-[500px] ss:min-h-[2000px] 
     min-h-[800px] mx-auto flex items-center'>
         <div className='max-w-[86rem] mx-auto flex flex-col w-full'>
-            <div className="flex w-full items-center justify-between">
+            <div className="flex w-full items-center justify-between
+            mb-4">
+                <div className="flex-start flex gap-3 items-center">
+                    <div className="flex gap-2 items-center cursor-pointer
+                    bg-mainalt rounded-md p-2">
 
+                        <p className="text-main font-bold text-[12px]">
+                            Filters
+                        </p>
+                    </div>
+
+                    <div className="flex gap-2 items-center cursor-pointer">
+
+                        <p className="text-main font-bold text-[12px]">
+                            Refresh results
+                        </p>
+                    </div>
+                </div>
+
+                <div className="flex-end flex gap-3 items-center">
+                    <p className="text-mainalt font-medium text-[12px]">
+                        {count} results
+                    </p>
+
+                    <div className="flex gap-2">
+                        <p className="text-mainalt text-[12px]">
+                            Showing:
+                        </p>
+
+                        <div className='relative flex items-center'>
+                            <select
+                                type="text"
+                                className="py-1 px-2 border-search 
+                                text-main3 cursor-pointer text-[12px] 
+                                bg-transparent w-full custom-select
+                                font-bold"
+                            >
+                                <option value="" disabled selected hidden>Most Popular</option>
+                                <option value="social_media">Most Relevant</option>
+                            </select>
+                            <div className='absolute right-2'>
+                                <TiArrowSortedDown 
+                                    className='text-main text-[15px]'
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div className="flex w-full">
