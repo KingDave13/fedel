@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Filter } from '../features';
 import { client, urlFor } from '../sanity';
 import { TiArrowSortedDown } from "react-icons/ti";
+import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { filter, refresh } from "../assets";
 import { SectionWrapper } from "../hoc";
 
@@ -152,20 +153,51 @@ const Product = ({ products }) => {
                         ))}
                     </div>
 
-                    <div className="mt-4">
-                        <button
+                    <div className="flex justify- mt-6 items-center\
+                    gap-5">
+                        <div
                             onClick={handlePreviousPage}
-                            className={`border px-3 py-1 ${currentPage === 1 ? 'bg-gray-300 text-gray-600' : 'bg-blue-500 text-white'}`}
+                            className='flex items-center gap-3
+                            cursor-pointer'
                         >
-                            Previous
-                        </button>
+                            <MdOutlineKeyboardArrowLeft 
+                                className={`text-[27px] text-white p-1
+                                rounded-lg font-semibold
+                                ${currentPage === 1 
+                                ? 'bg-main3' 
+                                : 'bg-primary'}`}
+                            />
+
+                            <p className={`text-[15px]
+                            ${currentPage === 1 
+                                ? 'text-main3' 
+                                : 'text-primary'}`}>
+                                Previous
+                            </p>
+                        </div>
+
                         {renderPageNumbers}
-                        <button
+
+                        <div
                             onClick={handleNextPage}
-                            className={`border px-3 py-1 ${currentPage === pageNumbers.length ? 'bg-gray-300 text-gray-600' : 'bg-blue-500 text-white'}`}
+                            className='flex items-center gap-3
+                            cursor-pointer'
                         >
-                            Next
-                        </button>
+                            <p className={`text-[15px]
+                            ${currentPage === 1 
+                                ? 'text-main3' 
+                                : 'text-primary'}`}>
+                                Next
+                            </p>
+
+                            <MdOutlineKeyboardArrowRight
+                                className={`text-[27px] text-white p-1
+                                rounded-lg font-semibold
+                                ${currentPage === 1 
+                                ? 'bg-main3' 
+                                : 'bg-primary'}`}
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
