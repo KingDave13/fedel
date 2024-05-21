@@ -32,6 +32,49 @@ const ItemCard = (item) => {
 };
 
 const Product = ({ products }) => {
+    const [currentPage, setCurrentPage] = useState(1);
+    const productsPerPage = 28;
+  
+    // Logic for pagination
+    const indexOfLastProduct = currentPage * productsPerPage;
+    const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+    const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
+  
+    // Logic for page numbers
+    const pageNumbers = [];
+    for (let i = 1; i <= Math.ceil(products.length / productsPerPage); i++) {
+      pageNumbers.push(i);
+    }
+  
+    const renderPageNumbers = pageNumbers.map((number) => {
+      let buttonClasses = 'pagination-button';
+      if (number === currentPage) {
+        buttonClasses += ' bg-blue-500 text-white';
+      }
+      return (
+        <button
+          key={number}
+          className={`border px-3 py-1 ${buttonClasses}`}
+          onClick={() => setCurrentPage(number)}
+        >
+          {number}
+        </button>
+      );
+    });
+  
+    const handlePreviousPage = () => {
+      if (currentPage > 1) {
+        setCurrentPage(currentPage - 1);
+      }
+    };
+  
+    const handleNextPage = () => {
+      if (currentPage < pageNumbers.length) {
+        setCurrentPage(currentPage + 1);
+      }
+    };
+  
+
   return (
     <section className='relative w-full md:min-h-[500px] ss:min-h-[2000px] 
     min-h-[800px] mx-auto flex items-center'>
@@ -41,14 +84,20 @@ const Product = ({ products }) => {
                 <div className="flex-start flex gap-3 items-center">
                     <div className="flex gap-2 items-center cursor-pointer
                     bg-mainalt rounded-md p-2">
-
+                        <img 
+                            src={filter}
+                            alt="filter"
+                        />
                         <p className="text-main font-bold text-[12px]">
                             Filters
                         </p>
                     </div>
 
                     <div className="flex gap-2 items-center cursor-pointer">
-
+                        <img 
+                            src={refresh}
+                            alt="refresh"
+                        />
                         <p className="text-main font-bold text-[12px]">
                             Refresh results
                         </p>
@@ -57,7 +106,7 @@ const Product = ({ products }) => {
 
                 <div className="flex-end flex gap-3 items-center">
                     <p className="text-mainalt font-medium text-[12px]">
-                        {count} results
+                        {`${products.length} results`}
                     </p>
 
                     <div className="flex gap-2">
@@ -89,31 +138,34 @@ const Product = ({ products }) => {
             <div className="flex w-full">
                 <Filter />
 
-                <div className='grid md:gap-8 ss:gap-12 gap-8 
-                md:grid-cols-4'>
-                    {products.map((item) => (
-                        <ItemCard 
-                            key={item._id}
-                            {...item}
-                        />
-                    ))}
+                <div className="flex w-full flex-col">
+                    <div className='grid md:gap-8 ss:gap-12 gap-8 
+                    md:grid-cols-4'>
+                        {currentProducts.map((item) => (
+                            <ItemCard 
+                                key={item._id}
+                                {...item}
+                            />
+                        ))}
+                    </div>
+
+                    <div className="mt-4">
+                        <button
+                            onClick={handlePreviousPage}
+                            className={`border px-3 py-1 ${currentPage === 1 ? 'bg-gray-300 text-gray-600' : 'bg-blue-500 text-white'}`}
+                        >
+                            Previous
+                        </button>
+                        {renderPageNumbers}
+                        <button
+                            onClick={handleNextPage}
+                            className={`border px-3 py-1 ${currentPage === pageNumbers.length ? 'bg-gray-300 text-gray-600' : 'bg-blue-500 text-white'}`}
+                        >
+                            Next
+                        </button>
+                    </div>
                 </div>
             </div>
-            
-
-            <a href='/products'
-            className='flex gap-3 md:mt-16 ss:mt-14 mt-10 
-            items-center justify-center grow4'>
-                <p className='text-white md:text-[16px] ss:text-[15px] 
-                text-[12px]'>
-                    See all products
-                </p>
-
-                {/* <GoArrowRight
-                    className='text-white md:text-[18px]
-                    ss:text-[18px] text-[20px]'
-                /> */}
-            </a>
         </div>
     </section>
   )
