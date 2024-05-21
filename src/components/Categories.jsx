@@ -43,7 +43,7 @@ const CatCard = (category, index) => {
                         {category.description}
                     </p>
 
-                    <a href={`/categories/${category.slug.current}`} 
+                    <a href={`/products/${category.slug.current}`} 
                     className='flex gap-3 cursor-pointer grow2
                     items-center mt-1.5'>
                         <h1 className='text-white md:text-[14px] 
@@ -70,6 +70,7 @@ const Categories = () => {
             name,
             description,
             image,
+            slug,
             "productCount": count(*[_type == "product" && references(^._id)])
           }
         `;

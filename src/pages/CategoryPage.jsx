@@ -5,15 +5,17 @@ import {
 } from '../components';
 
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { client } from '../sanity';
 
 import { Helmet } from 'react-helmet';
 
 const CategoryPage = ({ match }) => {
+
+    const { slug } = useParams();
     const [category, setCategory] = useState(null);
 
   useEffect(() => {
-    const slug = match.params.slug;
 
     const query = `
       *[_type == "category" && slug.current == $slug][0] {
@@ -28,7 +30,7 @@ const CategoryPage = ({ match }) => {
     client.fetch(query, { slug })
       .then((data) => setCategory(data))
       .catch((error) => console.error('Error fetching category:', error));
-  }, [match.params.slug]);
+  }, [slug]);
 
   if (!category) {
     return <div>Loading...</div>;
