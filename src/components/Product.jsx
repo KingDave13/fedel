@@ -81,9 +81,9 @@ const Product = ({ products }) => {
         <div className='max-w-[86rem] mx-auto flex flex-col w-full'>
             <div className="flex w-full items-center justify-between
             mb-8">
-                <div className="flex-start flex gap-8 items-center">
+                <div className="flex-start flex gap-10 items-center">
                     <div className="flex gap-4 items-center cursor-pointer
-                    bg-main2 rounded-md px-4 py-2">
+                    bg-main2 rounded-md px-4 py-2.5 hover:bg-main3 navsmooth">
                         <img 
                             src={filter}
                             alt="filter"
@@ -94,7 +94,8 @@ const Product = ({ products }) => {
                         </p>
                     </div>
 
-                    <div className="flex gap-4 items-center cursor-pointer">
+                    <div className="flex gap-3 items-center grow4
+                    cursor-pointer">
                         <img 
                             src={refresh}
                             alt="refresh"
@@ -106,30 +107,30 @@ const Product = ({ products }) => {
                     </div>
                 </div>
 
-                <div className="flex-end flex gap-3 items-center">
-                    <p className="text-mainalt font-medium text-[12px]">
+                <div className="flex-end flex gap-10 items-center">
+                    <p className="text-main3 font-semibold text-[14px]">
                         {`${products.length} results`}
                     </p>
 
-                    <div className="flex gap-2">
-                        <p className="text-mainalt text-[12px]">
+                    <div className="flex gap-1 items-center">
+                        <p className="text-main3 font-medium text-[14px]">
                             Showing:
                         </p>
 
                         <div className='relative flex items-center'>
                             <select
                                 type="text"
-                                className="py-1 px-2 border-search 
-                                text-main3 cursor-pointer text-[12px] 
+                                className="py-1 px-2 mr-3
+                                text-main cursor-pointer text-[14px] 
                                 bg-transparent w-full custom-select
                                 font-bold"
                             >
                                 <option value="" disabled selected hidden>Most Popular</option>
                                 <option value="social_media">Most Relevant</option>
                             </select>
-                            <div className='absolute right-2'>
+                            <div className='absolute right-0'>
                                 <TiArrowSortedDown 
-                                    className='text-main text-[15px]'
+                                    className='text-main text-[18px]'
                                 />
                             </div>
                         </div>
