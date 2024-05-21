@@ -2,6 +2,7 @@ import {
     Navbar,
     Footer,
     Product,
+    HeroProductEach,
 } from '../components';
 
 import { useEffect, useState } from 'react';
@@ -10,7 +11,7 @@ import { client } from '../sanity';
 
 import { Helmet } from 'react-helmet';
 
-const CategoryPage = ({ match }) => {
+const CategoryPage = () => {
 
     const { slug } = useParams();
     const [category, setCategory] = useState(null);
@@ -44,6 +45,7 @@ const CategoryPage = ({ match }) => {
             </Helmet>
 
             <Navbar />
+            <HeroProductEach products={category.products} />
 
             <Product products={category.products} />
             <div className='footer'>
