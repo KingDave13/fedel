@@ -39,12 +39,10 @@ const Product = ({ products }) => {
     const [filteredProducts, setFilteredProducts] = useState([...products]); // Initialize with all products
     const productsPerPage = 28;
   
-    // Logic for pagination
     const indexOfLastProduct = currentPage * productsPerPage;
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
     const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
   
-    // Logic for page numbers
     const pageNumbers = [];
     for (let i = 1; i <= Math.ceil(filteredProducts.length / productsPerPage); i++) {
       pageNumbers.push(i);
@@ -78,10 +76,9 @@ const Product = ({ products }) => {
       }
     };
 
-    // Function to update filtered products
     const updateFilteredProducts = (filtered) => {
         setFilteredProducts(filtered);
-        setCurrentPage(1); // Reset to first page when filter changes
+        setCurrentPage(1);
     };
   
 

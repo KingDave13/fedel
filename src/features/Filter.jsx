@@ -20,7 +20,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
     client.fetch(query).then((data) => {
       setAttributes(data);
     });
-  }, []);
+  }, []); // Empty dependency array to ensure this effect runs only once
 
   const handleFilterChange = (attribute, value) => {
     setFilterValues((prevValues) => ({ ...prevValues, [attribute]: value }));
@@ -39,13 +39,13 @@ const Filter = ({ products, updateFilteredProducts }) => {
       });
     });
     updateFilteredProducts(filteredProducts);
-  }, [products, filterValues, updateFilteredProducts]);
+  }, [products, filterValues]); // Depend on products and filterValues
 
   return (
     <section>
       <div className="flex flex-col w-full">
         {attributes.map((attribute) => (
-          <div key={attribute.name} className="mb-6">
+          <div key={attribute._id} className="mb-6">
             <h3 className="text-main font-bold text-lg">{attribute.name}</h3>
             {attribute.type === "array" ? (
               <div className="flex flex-wrap">
