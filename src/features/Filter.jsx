@@ -1,6 +1,16 @@
 import { useState, useEffect } from "react";
 import { client } from "../sanity";
 
+const FilterCard = ({ attribute, filterValues, handleFilterChange }) => {
+  return (
+    <div className="max-h-80 overflow-y-auto mb-6">
+      <h3 className="text-main font-bold text-lg">{attribute.name}</h3>
+      
+    </div>
+  );
+};
+
+
 const Filter = ({ products, updateFilteredProducts }) => {
   const [attributes, setAttributes] = useState([]);
   const [filterValues, setFilterValues] = useState({});
@@ -10,7 +20,6 @@ const Filter = ({ products, updateFilteredProducts }) => {
       try {
         const query = `*[_type == "attribute"] {
           _id,
-          name,
           type,
           material,
           application,
@@ -59,38 +68,12 @@ const Filter = ({ products, updateFilteredProducts }) => {
     <section>
       <div className="flex flex-col w-full">
         {attributes.map((attribute) => (
-          <div key={attribute._id} className="mb-6">
-            <h3 className="text-main font-bold text-lg">{attribute.name}</h3>
-            {attribute.type === "array" ? (
-              <div className="flex flex-wrap">
-                {attribute.color.map((value) => (
-                  <div key={value} className="mr-4">
-                    <input
-                      type="checkbox"
-                      id={value}
-                      name={attribute.name}
-                      value={value}
-                      onChange={(e) =>
-                        handleFilterChange(attribute._id, e.target.checked ? value : "")
-                      }
-                    />
-                    <label htmlFor={value} className="text-main text-sm">
-                      {value}
-                    </label>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <input
-                type="text"
-                id={attribute.name}
-                name={attribute.name}
-                value={filterValues[attribute._id] || ""}
-                onChange={(e) => handleFilterChange(attribute._id, e.target.value)}
-                className="w-full text-main text-sm"
-              />
-            )}
-          </div>
+          <FilterCard 
+            key={attribute._id} 
+            attribute={attribute} 
+            filterValues={filterValues} 
+            handleFilterChange={handleFilterChange} 
+          />
         ))}
       </div>
     </section>

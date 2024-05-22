@@ -146,8 +146,13 @@ const Product = ({ products }) => {
             </div>
 
             <div className="flex w-full">
-                <Filter products={products} updateFilteredProducts={updateFilteredProducts} />
-
+                <div className="flex w-1/4">
+                    <Filter 
+                        products={products} 
+                        updateFilteredProducts={updateFilteredProducts} 
+                    />
+                </div>
+                
                 <div className="flex w-full flex-col">
                     <div className='grid md:gap-8 ss:gap-12 gap-8 
                     md:grid-cols-4'>
