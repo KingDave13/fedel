@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Filter } from '../features';
-import { client, urlFor } from '../sanity';
+import { urlFor } from '../sanity';
 import { TiArrowSortedDown } from "react-icons/ti";
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { filter, refresh } from "../assets";
@@ -36,16 +36,17 @@ const ItemCard = (item) => {
 
 const Product = ({ products }) => {
     const [currentPage, setCurrentPage] = useState(1);
+    const [filteredProducts, setFilteredProducts] = useState([...products]); // Initialize with all products
     const productsPerPage = 28;
   
     // Logic for pagination
     const indexOfLastProduct = currentPage * productsPerPage;
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-    const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
+    const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
   
     // Logic for page numbers
     const pageNumbers = [];
-    for (let i = 1; i <= Math.ceil(products.length / productsPerPage); i++) {
+    for (let i = 1; i <= Math.ceil(filteredProducts.length / productsPerPage); i++) {
       pageNumbers.push(i);
     }
   
@@ -75,6 +76,12 @@ const Product = ({ products }) => {
       if (currentPage < pageNumbers.length) {
         setCurrentPage(currentPage + 1);
       }
+    };
+
+    // Function to update filtered products
+    const updateFilteredProducts = (filtered) => {
+        setFilteredProducts(filtered);
+        setCurrentPage(1); // Reset to first page when filter changes
     };
   
 
@@ -112,7 +119,7 @@ const Product = ({ products }) => {
 
                 <div className="flex-end flex gap-10 items-center">
                     <p className="text-main3 font-semibold text-[14px]">
-                        {`${products.length} results`}
+                        {`${filteredProducts.length} results`}
                     </p>
 
                     <div className="flex gap-1 items-center">
@@ -142,7 +149,7 @@ const Product = ({ products }) => {
             </div>
 
             <div className="flex w-full">
-                <Filter />
+                <Filter products={products} updateFilteredProducts={updateFilteredProducts} />
 
                 <div className="flex w-full flex-col">
                     <div className='grid md:gap-8 ss:gap-12 gap-8 
