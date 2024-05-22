@@ -81,7 +81,7 @@ const Product = ({ products }) => {
     min-h-[800px] mx-auto flex items-center'>
         <div className='max-w-[86rem] mx-auto flex flex-col w-full'>
             <div className="flex w-full items-center justify-between
-            mb-8">
+            mb-6">
                 <div className="flex-start flex gap-10 items-center">
                     <div className="flex gap-4 items-center cursor-pointer
                     bg-main2 rounded-md px-4 py-2.5 hover:bg-main3 navsmooth">
