@@ -88,7 +88,7 @@ const Product = ({ products }) => {
         <div className='max-w-[86rem] mx-auto flex flex-col w-full'>
             <div className="flex w-full items-center justify-between
             mb-6">
-                <div className="flex-start flex gap-10 items-center">
+                <div className="flex-start flex gap-8 items-center">
                     <div className="flex gap-4 items-center cursor-pointer
                     bg-main2 rounded-md px-4 py-2.5 hover:bg-main3 navsmooth">
                         <img 
@@ -114,7 +114,7 @@ const Product = ({ products }) => {
                     </div>
                 </div>
 
-                <div className="flex-end flex gap-10 items-center">
+                <div className="flex-end flex gap-8 items-center">
                     <p className="text-main3 font-semibold text-[14px]">
                         {`${filteredProducts.length} results`}
                     </p>

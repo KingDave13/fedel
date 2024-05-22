@@ -3,8 +3,19 @@ import { client } from "../sanity";
 
 const FilterCard = ({ attribute, filterValues, handleFilterChange }) => {
   return (
-    <div className="max-h-80 overflow-y-auto mb-6">
-      <h3 className="text-main font-bold text-lg">{attribute.name}</h3>
+    <div className="mb-6 flex flex-col gap-2">
+      <h3 className="text-main font-bold text-lg">
+        Types
+      </h3>
+
+      <div className="max-h-80 overflow-y-auto flex gap-2">
+          <input
+            type="checkbox"
+          />
+          <label htmlFor="" className="text-main">
+            {attribute.types}
+          </label>
+      </div>
       
     </div>
   );
