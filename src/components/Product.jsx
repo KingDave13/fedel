@@ -25,7 +25,7 @@ const ItemCard = (item) => {
                         <img
                             src={imageUrl}
                             alt={item.name}
-                            className="h-auto w-auto object-cover rounded-lg"
+                            className="rounded-lg"
                         />
                 </div>
                 )}
