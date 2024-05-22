@@ -49,10 +49,9 @@ const Product = ({ products }) => {
   
     const renderPageNumbers = pageNumbers.map((number) => {
         const isActive = number === currentPage;
-        const buttonClasses = `px-3 py-1 text-white rounded-lg ${
-          isActive ? 'bg-primary' : 'bg-main3'
-        }`;
-      
+        const buttonClasses = `px-4 py-1 text-white text-[14px] rounded-md 
+        ${ isActive ? 'bg-primary' : 'bg-main3'}`;
+
         return (
           <button
             key={number}
@@ -154,7 +153,7 @@ const Product = ({ products }) => {
                         ))}
                     </div>
 
-                    <div className="flex justify- mt-6 items-center\
+                    <div className="flex justify-end mt-8 items-center\
                     gap-5">
                         <div
                             onClick={handlePreviousPage}
