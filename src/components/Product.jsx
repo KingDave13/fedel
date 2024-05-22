@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Filter } from '../features';
 import { urlFor } from '../sanity';
 import { TiArrowSortedDown } from "react-icons/ti";
@@ -36,7 +36,7 @@ const ItemCard = (item) => {
 
 const Product = ({ products }) => {
     const [currentPage, setCurrentPage] = useState(1);
-    const [filteredProducts, setFilteredProducts] = useState([...products]); // Initialize with all products
+    const [filteredProducts, setFilteredProducts] = useState([...products]);
     const productsPerPage = 28;
   
     const indexOfLastProduct = currentPage * productsPerPage;
@@ -76,10 +76,10 @@ const Product = ({ products }) => {
       }
     };
 
-    const updateFilteredProducts = (filtered) => {
+    const updateFilteredProducts = useCallback((filtered) => {
         setFilteredProducts(filtered);
         setCurrentPage(1);
-    };
+    }, []);
   
 
   return (
@@ -159,7 +159,7 @@ const Product = ({ products }) => {
                         ))}
                     </div>
 
-                    <div className="flex justify-end mt-8 items-center\
+                    <div className="flex justify-end mt-8 items-center
                     gap-5">
                         <div
                             onClick={handlePreviousPage}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { client } from "../sanity";
 
 const Filter = ({ products, updateFilteredProducts }) => {
@@ -6,40 +6,54 @@ const Filter = ({ products, updateFilteredProducts }) => {
   const [filterValues, setFilterValues] = useState({});
 
   useEffect(() => {
-    const query = `*[_type == "attribute"] {
-      name,
-      type,
-      material,
-      application,
-      styleAndPattern,
-      color,
-      dimensions,
-      manufacturer,
-      price
-    }`;
-    client.fetch(query).then((data) => {
-      setAttributes(data);
-    });
-  }, []); // Empty dependency array to ensure this effect runs only once
+    const fetchAttributes = async () => {
+      try {
+        const query = `*[_type == "attribute"] {
+          _id,
+          name,
+          type,
+          material,
+          application,
+          styleAndPattern,
+          color,
+          dimensions,
+          manufacturer,
+          price
+        }`;
+        const data = await client.fetch(query);
+        setAttributes(data);
+      } catch (error) {
+        console.error("Error fetching attributes:", error);
+        // Handle error - Show error message or retry fetching
+      }
+    };
+
+    fetchAttributes();
+  }, []);
 
   const handleFilterChange = (attribute, value) => {
     setFilterValues((prevValues) => ({ ...prevValues, [attribute]: value }));
   };
 
   useEffect(() => {
-    const filteredProducts = products.filter((product) => {
-      return Object.keys(filterValues).every((attribute) => {
-        if (filterValues[attribute] === "") return true;
-        if (product.attributes.find((attr) => attr._ref === attribute) === undefined) return false;
-        if (Array.isArray(product.attributes.find((attr) => attr._ref === attribute).color)) {
-          return product.attributes.find((attr) => attr._ref === attribute).color.includes(filterValues[attribute]);
-        } else {
-          return product.attributes.find((attr) => attr._ref === attribute)[attribute] === filterValues[attribute];
-        }
+    const applyFilters = () => {
+      const filteredProducts = products.filter((product) => {
+        return Object.keys(filterValues).every((attribute) => {
+          if (filterValues[attribute] === "") return true;
+          const attributeValue = product.attributes.find((attr) => attr._ref === attribute);
+          if (!attributeValue) return false;
+          if (Array.isArray(attributeValue.color)) {
+            return attributeValue.color.includes(filterValues[attribute]);
+          } else {
+            return attributeValue[attribute] === filterValues[attribute];
+          }
+        });
       });
-    });
-    updateFilteredProducts(filteredProducts);
-  }, [products, filterValues]); // Depend on products and filterValues
+      updateFilteredProducts(filteredProducts);
+    };
+
+    applyFilters();
+  }, [products, filterValues, updateFilteredProducts]);
 
   return (
     <section>
@@ -57,7 +71,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
                       name={attribute.name}
                       value={value}
                       onChange={(e) =>
-                        handleFilterChange(attribute.name, e.target.checked ? value : "")
+                        handleFilterChange(attribute._id, e.target.checked ? value : "")
                       }
                     />
                     <label htmlFor={value} className="text-main text-sm">
@@ -71,8 +85,8 @@ const Filter = ({ products, updateFilteredProducts }) => {
                 type="text"
                 id={attribute.name}
                 name={attribute.name}
-                value={filterValues[attribute.name] || ""}
-                onChange={(e) => handleFilterChange(attribute.name, e.target.value)}
+                value={filterValues[attribute._id] || ""}
+                onChange={(e) => handleFilterChange(attribute._id, e.target.value)}
                 className="w-full text-main text-sm"
               />
             )}
