@@ -21,11 +21,13 @@ const ItemCard = (item) => {
         <div className='cursor-pointer grow2'>
             <div className='flex items-center justify-center relative'>
                 {imageUrl && (
-                    <img
-                        src={imageUrl}
-                        alt={item.name}
-                        className='h-[300px] w-full object-cover rounded-lg'
-                    />
+                    <div className="square-container">
+                        <img
+                            src={imageUrl}
+                            alt={item.name}
+                            className="h-auto w-auto object-cover rounded-lg"
+                        />
+                </div>
                 )}
             </div>
         </div>
