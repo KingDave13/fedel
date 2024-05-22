@@ -94,7 +94,7 @@ const Product = ({ products }) => {
                         <img 
                             src={filter}
                             alt="filter"
-                            className="w-5"
+                            className="w-4"
                         />
                         <p className="text-main font-semibold text-[14px]">
                             Filters
@@ -106,7 +106,7 @@ const Product = ({ products }) => {
                         <img 
                             src={refresh}
                             alt="refresh"
-                            className="w-5"
+                            className="w-4"
                         />
                         <p className="text-main font-semibold text-[14px]">
                             Refresh results
@@ -127,7 +127,7 @@ const Product = ({ products }) => {
                         <div className='relative flex items-center'>
                             <select
                                 type="text"
-                                className="py-1 px-2 mr-3
+                                className="py-1 px-2 mr-2
                                 text-main cursor-pointer text-[14px] 
                                 bg-transparent w-full custom-select
                                 font-bold"
@@ -137,7 +137,7 @@ const Product = ({ products }) => {
                             </select>
                             <div className='absolute right-0'>
                                 <TiArrowSortedDown 
-                                    className='text-main text-[18px]'
+                                    className='text-main text-[17px]'
                                 />
                             </div>
                         </div>
