@@ -7,7 +7,7 @@ import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-i
 import { filter, refresh } from "../assets";
 import { SectionWrapper } from "../hoc";
 
-const ItemCard = (item) => {
+const ItemCard = ({ item }) => {
     const [imageUrl, setImageUrl] = useState(null);
 
     useEffect(() => {
@@ -34,8 +34,10 @@ const ItemCard = (item) => {
                 </div>
             </div>
         </Link>
-    )
+    );
 };
+
+
 
 const Product = ({ products }) => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -162,7 +164,7 @@ const Product = ({ products }) => {
                         {currentProducts.map((item) => (
                             <ItemCard 
                                 key={item._id}
-                                {...item}
+                                item={item}
                             />
                         ))}
                     </div>

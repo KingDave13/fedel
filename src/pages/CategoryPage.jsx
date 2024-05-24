@@ -1,8 +1,8 @@
 import {
-    Navbar,
-    Footer,
-    Product,
-    HeroProductEach,
+  Navbar,
+  Footer,
+  Product,
+  HeroProductEach,
 } from '../components';
 
 import { useEffect, useState } from 'react';
@@ -26,6 +26,7 @@ const CategoryPage = () => {
           _id,
           name,
           images,
+          slug
         }
       }
     `;

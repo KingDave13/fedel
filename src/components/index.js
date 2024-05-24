@@ -1,6 +1,7 @@
 import Navbar from "./Navbar";
 import Hero from './Hero';
 import HeroProducts from './HeroProducts';
+import HeroProduct from './HeroProduct';
 import HeroProductEach from './HeroProductEach';
 import Discover from "./Discover";
 import Steps from './Steps';
@@ -25,6 +26,7 @@ export {
     CTA,
     Footer,
     HeroProducts,
+    HeroProduct,
     HeroProductEach,
     Product,
 }
