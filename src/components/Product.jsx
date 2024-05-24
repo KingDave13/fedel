@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { Filter } from '../features';
 import { urlFor } from '../sanity';
+import { Link } from 'react-router-dom';
 import { TiArrowSortedDown } from "react-icons/ti";
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { filter, refresh } from "../assets";
@@ -18,19 +19,21 @@ const ItemCard = (item) => {
     }, [item.images]);
 
     return (
-        <div className='cursor-pointer grow2'>
-            <div className='flex items-center justify-center relative'>
-                {imageUrl && (
-                    <div className="square-container">
-                        <img
-                            src={imageUrl}
-                            alt={item.name}
-                            className="rounded-lg"
-                        />
+        <Link to={`/product/${item.slug.current}`}>
+            <div className='cursor-pointer grow2'>
+                <div className='flex items-center justify-center relative'>
+                    {imageUrl && (
+                        <div className="square-container">
+                            <img
+                                src={imageUrl}
+                                alt={item.name}
+                                className="rounded-lg"
+                            />
+                        </div>
+                    )}
                 </div>
-                )}
             </div>
-        </div>
+        </Link>
     )
 };
 

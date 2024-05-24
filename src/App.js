@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HomePage, ProductsPage } from './scenes';
 import ScrollToTopButton from './constants/ScrollToTop';
-import { CategoryPage } from './pages';
+import { CategoryPage, ProductPage } from './pages';
 
 
 const App = () => {
@@ -13,6 +13,7 @@ const App = () => {
           <Route path='/' element={<HomePage />} />
           <Route path='/products' element={<ProductsPage />} />
           <Route path='/products/:slug' element={<CategoryPage />} />
+          <Route path='/product/:slug' element={<ProductPage />} />
           {/* <Route path='/journals' element={<JournalsPage />} />
           <Route path='/contact' element={<ContactPage />} /> */}
         </Routes>
