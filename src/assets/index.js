@@ -26,6 +26,8 @@ import logoalt from './logoalt.png';
 import productsHeroImage from './productsHeroImage.jpg';
 import filter from './filter.png';
 import refresh from './refresh.png';
+import warranty from './warranty.png';
+import delivery from './delivery.png';
 
 
 export {
@@ -57,6 +59,8 @@ export {
     productsHeroImage,
     filter,
     refresh,
+    warranty,
+    delivery,
 }
 
 export const heroImages = [

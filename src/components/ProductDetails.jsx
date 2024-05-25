@@ -4,6 +4,7 @@ import { fadeIn, textVariant } from '../utils/motion';
 import { steps } from '../constants';
 import { arrowRight } from '../assets';
 import { IoCartOutline } from "react-icons/io5";
+import { TbWorldCheck, TbShieldCheck  } from "react-icons/tb";
 
 const StepCard = ({ index, title, image, description }) => {
     
@@ -61,19 +62,27 @@ const ProductDetails = ({ product }) => {
                     </div>
 
                     <div className='flex items-center gap-3'>
-                        <div className='flex flex-col border-main3
-                        border-[1px] rounded-xl p-2.5 gap-2'>
+                        <div className='flex flex-col border-primaryalt
+                        border-[1px] rounded-xl gap-2 items-center
+                        w-[150px] py-3'>
+                            <TbWorldCheck 
+                                className='text-primary text-[40px]'
+                            />
 
-                            <p className='text-primary font-bold
+                            <p className='text-primary font-semibold
                             text-[12px]'>
                                 Worldwide Delivery
                             </p>
                         </div>
 
-                        <div className='flex flex-col border-main3
-                        border-[1px] rounded-xl p-2.5 gap-2'>
+                        <div className='flex flex-col border-primaryalt
+                        border-[1px] rounded-xl gap-2 items-center
+                        w-[150px] py-3'>
+                            <TbShieldCheck 
+                                className='text-primary text-[40px]'
+                            />
 
-                            <p className='text-primary font-bold
+                            <p className='text-primary font-semibold
                             text-[12px]'>
                                 1-Year Warranty
                             </p>
