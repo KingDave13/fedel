@@ -1,50 +1,23 @@
 import { SectionWrapper } from '../hoc';
 import { motion } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
-import { steps } from '../constants';
 import { arrowRight, warranty } from '../assets';
 import { IoCartOutline } from "react-icons/io5";
+import { urlFor } from '../sanity';
 import { TbWorldCheck, TbShieldCheck  } from "react-icons/tb";
 
-const StepCard = ({ index, title, image, description }) => {
-    
+const ImageCard = ({ index, image, product }) => {
+    const imageUrl = urlFor(image).url();
+
     return (
-        <motion.div
-        variants={fadeIn('', 'spring', index * 0.5, 0.75)}>
-            <div className='flex items-center justify-center
-            md:gap-10 ss:gap-8 gap-6'>
-                <img 
-                    src={image}
-                    alt='product step'
-                    className='md:w-[170px] ss:w-[160px] w-[140px] 
-                    md:h-[170px] ss:h-[160px] h-[140px] object-cover'
-                />
-
-                <div className='flex flex-col md:gap-3 ss:gap-3
-                gap-2 tracking-tight'>
-                    <h1 className='text-primary md:text-[22px] ss:text-[20px] 
-                    text-[16px] font-bold'>
-                        {title}
-                    </h1>
-
-                    <p className='text-main font-medium md:leading-[23px]
-                    ss:leading-[25px] leading-[18px] md:text-[17px] 
-                    ss:text-[15px] text-[13px]'>
-                        {description}
-                    </p>
-
-                    <a href='/products' 
-                    className='flex gap-3 cursor-pointer grow5
-                    items-center'>
-                        <h1 className='text-primary md:text-[15px] 
-                        ss:text-[15px] text-[13px] font-medium'>
-                            Browse products
-                        </h1>
-                        
-                        <img src={arrowRight} alt='arrow'/>
-                    </a>
-                </div>
-            </div>
+      <motion.div variants={fadeIn('', 'spring', index * 0.5, 0.75)}>
+        <div className='square-container'>
+            <img
+                src={imageUrl}
+                alt={product.name}
+                className='w-[300px] h-auto rounded-xl'
+            />
+        </div>
         </motion.div>
     )
 };
@@ -57,9 +30,21 @@ const ProductDetails = ({ product }) => {
             <div className='flex items-center w-full bg-main2
             rounded-[20px] flex md:p-8 ss:p-8 p-6'>
                 <div className='w-full flex flex-col gap-5'>
-                    <div className='w-full flex gap-10'>
-                        <div className='w-full flex flex-col gap-5
-                        items-center'>
+                    <div className='w-full flex gap-16'>
+                        <div className='grid md:gap-6 ss:gap-6 gap-4
+                        md:grid-cols-2 w-full'>
+                            {product.images.map((item, index) => (
+                                <ImageCard 
+                                    key={index} 
+                                    index={index} 
+                                    {...item}
+                                    image={item}
+                                    product={product}
+                                />
+                            ))}
+                        </div>
+
+                        <div className='w-full flex flex-col gap-5'>
                             <h1 className='text-main font-bold md:text-[30px]
                             ss:text-[30px] text-[20px]'>
                                 {product.name}
@@ -141,6 +126,7 @@ const ProductDetails = ({ product }) => {
                         w-[150px] py-3'>
                             <img
                                 src={warranty}
+                                alt='warranty'
                                 className='text-primary text-[40px]
                                 w-8 h-8'
                             />
@@ -167,13 +153,13 @@ const ProductDetails = ({ product }) => {
                         <div className='bg-main w-full h-[1px]' />
                     </div>
                     
-                    <p className='text-main md:text-[18px] ss:text-[17px] 
+                    <p className='text-main md:text-[17px] ss:text-[17px] 
                     text-[14px] tracking-tight md:leading-[25px] 
                     ss:leading-[26px] leading-[20px] font-medium'>
                         {product.description}
                     </p>
 
-                    <p className='text-main md:text-[18px] ss:text-[17px] 
+                    <p className='text-main md:text-[17px] ss:text-[17px] 
                     text-[14px] tracking-tight md:leading-[25px] 
                     ss:leading-[26px] leading-[20px] font-medium'>
                         {product.description}
@@ -199,17 +185,6 @@ const ProductDetails = ({ product }) => {
                         </p>
                     </div>
                 </motion.div>
-            </div>
-
-            <div className='grid md:gap-16 ss:gap-14 gap-10 md:mt-20 
-            md:grid-cols-2 ss:mt-12 mt-8 w-full'>
-                {steps.map((step, index) => (
-                    <StepCard 
-                        key={index} 
-                        index={index} 
-                        {...step}
-                    />
-                ))}
             </div>
         </div>
     </section>
