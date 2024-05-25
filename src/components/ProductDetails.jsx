@@ -2,7 +2,7 @@ import { SectionWrapper } from '../hoc';
 import { motion } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
 import { steps } from '../constants';
-import { arrowRight } from '../assets';
+import { arrowRight, warranty } from '../assets';
 import { IoCartOutline } from "react-icons/io5";
 import { TbWorldCheck, TbShieldCheck  } from "react-icons/tb";
 
@@ -58,10 +58,20 @@ const ProductDetails = ({ product }) => {
             rounded-[20px] flex md:p-8 ss:p-8 p-6'>
                 <div className='w-full flex flex-col gap-5'>
                     <div className='w-full flex gap-10'>
+                        <div className='w-full flex flex-col gap-5
+                        items-center'>
+                            <h1 className='text-main font-bold md:text-[30px]
+                            ss:text-[30px] text-[20px]'>
+                                {product.name}
+                            </h1>
 
+                            <div className="items-center">
+                                <div className='bg-main w-full h-[1px]' />
+                            </div>
+                        </div>
                     </div>
 
-                    <div className='flex items-center gap-3'>
+                    <div className='flex items-center gap-6'>
                         <div className='flex flex-col border-primaryalt
                         border-[1px] rounded-xl gap-2 items-center
                         w-[150px] py-3'>
@@ -78,8 +88,10 @@ const ProductDetails = ({ product }) => {
                         <div className='flex flex-col border-primaryalt
                         border-[1px] rounded-xl gap-2 items-center
                         w-[150px] py-3'>
-                            <TbShieldCheck 
-                                className='text-primary text-[40px]'
+                            <img
+                                src={warranty}
+                                className='text-primary text-[40px]
+                                w-8 h-8'
                             />
 
                             <p className='text-primary font-semibold
