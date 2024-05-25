@@ -49,7 +49,7 @@ const CategoryPage = () => {
             <Navbar />
             <HeroProductEach category={category} />
 
-            <Product products={category.products} />
+            <Product products={category.products} category={category} />
             <div className='footer'>
                 <Footer />
             </div>

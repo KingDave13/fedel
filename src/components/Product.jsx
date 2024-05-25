@@ -7,7 +7,7 @@ import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-i
 import { filter, refresh } from "../assets";
 import { SectionWrapper } from "../hoc";
 
-const ItemCard = ({ item }) => {
+const ItemCard = ({ item, category }) => {
     const [imageUrl, setImageUrl] = useState(null);
 
     useEffect(() => {
@@ -19,7 +19,7 @@ const ItemCard = ({ item }) => {
     }, [item.images]);
 
     return (
-        <Link to={`/product/${item.slug.current}`}>
+        <Link to={`/${category}/${item.slug.current}`}>
             <div className='cursor-pointer grow2'>
                 <div className='flex items-center justify-center relative'>
                     {imageUrl && (
@@ -39,7 +39,7 @@ const ItemCard = ({ item }) => {
 
 
 
-const Product = ({ products }) => {
+const Product = ({ products, category }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [filteredProducts, setFilteredProducts] = useState([...products]);
     const productsPerPage = 28;
@@ -165,6 +165,7 @@ const Product = ({ products }) => {
                             <ItemCard 
                                 key={item._id}
                                 item={item}
+                                category={category}
                             />
                         ))}
                     </div>
