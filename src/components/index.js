@@ -5,6 +5,7 @@ import HeroProduct from './HeroProduct';
 import HeroProductEach from './HeroProductEach';
 import Discover from "./Discover";
 import Steps from './Steps';
+import ProductDetails from './ProductDetails';
 import Categories from './Categories';
 import CategoriesProduct from './CategoriesProduct';
 import Top from './Top';
@@ -27,6 +28,7 @@ export {
     Footer,
     HeroProducts,
     HeroProduct,
+    ProductDetails,
     HeroProductEach,
     Product,
 }

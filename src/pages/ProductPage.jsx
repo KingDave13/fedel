@@ -2,7 +2,7 @@ import {
     Navbar,
     Footer,
     // RelatedProducts,
-    // ProductDetails,
+    ProductDetails,
     // ImageGallery,
     HeroProduct,
 } from '../components';
@@ -52,9 +52,11 @@ const ProductPage = () => {
 
             <Navbar />
             <HeroProduct category={product.category} product={product} />
+            
+            <ProductDetails product={product} />
             {/* <div className="container mx-auto px-4 py-8">
                 <ImageGallery images={product.images} />
-                <ProductDetails product={product} />
+                
                 <RelatedProducts categoryId={product.category._id} />
             </div> */}
 
