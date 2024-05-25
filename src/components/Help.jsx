@@ -156,14 +156,16 @@ const Help = () => {
                                 </p>
                             </div>
 
-                            <div className='flex w-full flex-col gap-0.5'>
-                                <div className='flex w-full gap-2 cursor-pointer'>
-                                    <GrAttachment />
+                            <div className='flex flex-col'>
+                                <div>
+                                    <div className='inline-flex gap-2 cursor-pointer'>
+                                        <GrAttachment />
 
-                                    <h4 className='text-main font-medium tracking-tight
-                                    md:text-[13px] ss:text-[13px] text-[12px]'>
-                                        Attach Images
-                                    </h4>
+                                        <h4 className='text-main font-medium tracking-tight
+                                        md:text-[13px] ss:text-[13px] text-[12px]'>
+                                            Attach Images
+                                        </h4>
+                                    </div>
                                 </div>
 
                                 <h4 className='text-mainalt md:text-[12px] ss:text-[12px] 

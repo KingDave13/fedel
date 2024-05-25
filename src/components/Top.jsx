@@ -72,7 +72,8 @@ const Top = () => {
   return (
     <section className='relative w-full md:min-h-[900px] ss:min-h-[1000px] 
     min-h-[800px] mx-auto flex items-center'>
-        <div className='max-w-[86rem] mx-auto flex flex-col w-full'>
+        <div className='max-w-[86rem] mx-auto flex flex-col w-full
+        items-center'>
             <motion.div variants={textVariant()}
             className='md:gap-4 ss:gap-3 gap-3 flex flex-col items-center'>
                 <h1 className='text-secondary font-bold md:text-[43px]
@@ -101,20 +102,22 @@ const Top = () => {
                     />
                 ))}
             </div>
+            
+            <div>
+                <a href='/products'
+                className='inline-flex gap-3 md:mt-16 ss:mt-14 mt-10 
+                items-center justify-center grow4'>
+                    <p className='text-white md:text-[16px] ss:text-[15px] 
+                    text-[12px]'>
+                        See all products
+                    </p>
 
-            <a href='/products'
-            className='flex gap-3 md:mt-16 ss:mt-14 mt-10 
-            items-center justify-center grow4'>
-                <p className='text-white md:text-[16px] ss:text-[15px] 
-                text-[12px]'>
-                    See all products
-                </p>
-
-                <GoArrowRight
-                    className='text-white md:text-[18px]
-                    ss:text-[18px] text-[20px]'
-                />
-            </a>
+                    <GoArrowRight
+                        className='text-white md:text-[18px]
+                        ss:text-[18px] text-[20px]'
+                    />
+                </a>
+            </div>
         </div>
     </section>
   )
