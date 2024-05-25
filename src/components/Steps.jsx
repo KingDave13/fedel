@@ -31,16 +31,18 @@ const StepCard = ({ index, title, image, description }) => {
                         {description}
                     </p>
 
-                    <a href='/products' 
-                    className='flex gap-3 cursor-pointer grow5
-                    items-center'>
-                        <h1 className='text-primary md:text-[15px] 
-                        ss:text-[15px] text-[13px] font-medium'>
-                            Browse products
-                        </h1>
-                        
-                        <img src={arrowRight} alt='arrow'/>
-                    </a>
+                    <div>
+                        <a href='/products' 
+                        className='inline-flex gap-3 cursor-pointer grow5
+                        items-center'>
+                            <h1 className='text-primary md:text-[15px] 
+                            ss:text-[15px] text-[13px] font-medium'>
+                                Browse products
+                            </h1>
+                            
+                            <img src={arrowRight} alt='arrow'/>
+                        </a>
+                    </div>
                 </div>
             </div>
         </motion.div>

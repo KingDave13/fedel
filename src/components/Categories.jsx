@@ -43,17 +43,19 @@ const CatCard = (category, index) => {
                         {category.description}
                     </p>
 
-                    <a href={`/products/${category.slug.current}`} 
-                    className='flex gap-3 cursor-pointer grow2
-                    items-center mt-1.5'>
-                        <h1 className='text-white md:text-[14px] 
-                        ss:text-[14px] text-[12px] font-medium'>
-                            See products
-                        </h1>
-                        
-                        <img src={arrowRight} alt='arrow' 
-                        className='w-5 h-5'/>
-                    </a>
+                    <div>
+                        <a href={`/products/${category.slug.current}`} 
+                        className='inline-flex gap-3 cursor-pointer grow2
+                        items-center mt-1.5'>
+                            <h1 className='text-white md:text-[14px] 
+                            ss:text-[14px] text-[12px] font-medium'>
+                                See products
+                            </h1>
+                            
+                            <img src={arrowRight} alt='arrow' 
+                            className='w-5 h-5'/>
+                        </a>
+                    </div>
                 </div>
             </div>
         </motion.div>
