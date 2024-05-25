@@ -57,12 +57,12 @@ const ProductDetails = ({ product }) => {
             rounded-[20px] flex md:p-8 ss:p-8 p-6'>
                 <div className='w-full flex flex-col gap-5'>
                     <div className='w-full flex gap-10'>
-                    
+
                     </div>
 
                     <div className='flex items-center gap-3'>
                         <div className='flex flex-col border-main3
-                        border-[1px] rounded-xl p-2 gap-2'>
+                        border-[1px] rounded-xl p-2.5 gap-2'>
 
                             <p className='text-primary font-bold
                             text-[12px]'>
@@ -71,7 +71,7 @@ const ProductDetails = ({ product }) => {
                         </div>
 
                         <div className='flex flex-col border-main3
-                        border-[1px] rounded-xl p-2 gap-2'>
+                        border-[1px] rounded-xl p-2.5 gap-2'>
 
                             <p className='text-primary font-bold
                             text-[12px]'>
@@ -97,13 +97,13 @@ const ProductDetails = ({ product }) => {
                     
                     <p className='text-main md:text-[18px] ss:text-[17px] 
                     text-[14px] tracking-tight md:leading-[25px] 
-                    ss:leading-[26px] leading-[20px]'>
+                    ss:leading-[26px] leading-[20px] font-medium'>
                         {product.description}
                     </p>
 
                     <p className='text-main md:text-[18px] ss:text-[17px] 
                     text-[14px] tracking-tight md:leading-[25px] 
-                    ss:leading-[26px] leading-[20px]'>
+                    ss:leading-[26px] leading-[20px] font-medium'>
                         {product.description}
                     </p>
 
