@@ -54,12 +54,12 @@ const ProductDetails = ({ product }) => {
     items-center'>
         <div className='max-w-[86rem] mx-auto flex flex-col gap-10'>
             <div className='flex items-center w-full bg-main2
-            rounded-[30px] flex md:p-8 ss:p-8 p-6'>
+            rounded-[20px] flex md:p-8 ss:p-8 p-6'>
 
             </div>
 
             <div className='flex items-center w-full bg-main2
-            rounded-[30px] flex md:p-8 ss:p-8 p-6'>
+            rounded-[20px] flex md:p-8 ss:p-8 p-6'>
                 <motion.div variants={textVariant()}
                 className='flex flex-col md:gap-6 ss:gap-5 gap-4'>
                     <h1 className='text-main font-bold md:text-[20px]
