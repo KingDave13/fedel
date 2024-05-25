@@ -88,7 +88,8 @@ const ProductDetails = ({ product }) => {
                                     </h1>
 
                                     <h1 className='text-mainalt font-medium
-                                    md:text-[25px] ss:text-[25px] text-[17px]'>
+                                    md:text-[25px] ss:text-[25px] text-[17px]
+                                    line-through'>
                                         N
                                     </h1>
                                 </div>

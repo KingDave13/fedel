@@ -14,7 +14,7 @@ module.exports = {
         main2: "#F3F3F3",
         main3: "#B5B5B5",
         green: "#4CA735",
-        greedDeep: "#11AD21"
+        greenDeep: "#11AD21"
       },
       fontFamily: {
         'encode-sans': ["Encode Sans", "sans-serif"],
