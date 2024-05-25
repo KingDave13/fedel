@@ -18,22 +18,31 @@ const ProductPage = () => {
 
     useEffect(() => {
         const query = `
-            *[_type == "product" && slug.current == $productSlug][0] {
+        *[_type == "product" && slug.current == $productSlug][0] {
+            _id,
+            name,
+            description,
+            images,
+            attributes[]->{
+                price,
+                isDiscounted,
+                OriginalPrice,
+                variations,
+                dimensions,
+                manufacturer,
+                type,
+                application,
+                material,
+                styleAndPattern,
+                color
+            },
+            category->{
                 _id,
                 name,
-                description,
-                images,
-                attributes[]->{
-                    name,
-                    value
-                },
-                category->{
-                    _id,
-                    name,
-                    "slug": slug.current
-                }
+                "slug": slug.current
             }
-        `;
+        }
+    `;
         client.fetch(query, { productSlug })
             .then((data) => setProduct(data))
             .catch((error) => console.error('Error fetching product:', error));

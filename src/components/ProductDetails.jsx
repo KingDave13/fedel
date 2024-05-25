@@ -1,7 +1,7 @@
 import { SectionWrapperAlt } from '../hoc';
 import { motion } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
-import { arrowRight, warranty } from '../assets';
+import { delivery, warranty } from '../assets';
 import { IoCartOutline } from "react-icons/io5";
 import { urlFor } from '../sanity';
 import { TbWorldCheck, TbShieldCheck  } from "react-icons/tb";
@@ -55,7 +55,20 @@ const ProductDetails = ({ product }) => {
                             </div>
 
                             <div className='flex flex-col gap-3'>
-
+                                {product.attributes.map((attribute, index) => (
+                                    <div 
+                                    className='md:text-[15px]
+                                    ss:text-[15px] text-[13px]'
+                                    key={index}>
+                                        {attribute.type && 
+                                        <div><strong>Type:</strong> {attribute.type}</div>}
+                                        {attribute.material && <div><strong>Material:</strong> {attribute.material}</div>}
+                                        {attribute.dimensions && <div><strong>Dimensions:</strong> {attribute.dimensions}</div>}
+                                        {attribute.application && <div><strong>Application:</strong> {attribute.application}</div>}
+                                        {attribute.styleAndPattern && <div><strong>Style and Pattern:</strong> {attribute.styleAndPattern}</div>}
+                                        {attribute.manufacturer && <div><strong>Manufacturer:</strong> {attribute.manufacturer}</div>}
+                                    </div>
+                                ))}
                             </div>
 
                             <div className="items-center">
