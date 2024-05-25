@@ -55,7 +55,31 @@ const ProductDetails = ({ product }) => {
         <div className='max-w-[86rem] mx-auto flex flex-col gap-10'>
             <div className='flex items-center w-full bg-main2
             rounded-[20px] flex md:p-8 ss:p-8 p-6'>
+                <div className='w-full flex flex-col gap-5'>
+                    <div className='w-full flex gap-10'>
+                    
+                    </div>
 
+                    <div className='flex items-center gap-3'>
+                        <div className='flex flex-col border-main3
+                        border-[1px] rounded-xl p-2 gap-2'>
+
+                            <p className='text-primary font-bold
+                            text-[12px]'>
+                                Worldwide Delivery
+                            </p>
+                        </div>
+
+                        <div className='flex flex-col border-main3
+                        border-[1px] rounded-xl p-2 gap-2'>
+
+                            <p className='text-primary font-bold
+                            text-[12px]'>
+                                1-Year Warranty
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div className='flex items-center w-full bg-main2
