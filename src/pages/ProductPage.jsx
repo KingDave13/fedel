@@ -57,7 +57,10 @@ const ProductPage = () => {
                 <ProductDetails product={product} />
                 <RelatedProducts categoryId={product.category._id} />
             </div> */}
-            <Footer />
+
+           <div className='footer'>
+                <Footer />
+            </div>
         </div>
     );
 };
