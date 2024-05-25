@@ -52,7 +52,7 @@ const ProductDetails = ({ product }) => {
   return (
     <section className='relative w-full min-h-[700px] mx-auto flex
     items-center'>
-        <div className='max-w-[86rem] mx-auto flex flex-col'>
+        <div className='max-w-[86rem] mx-auto flex flex-col gap-10'>
             <div className='flex items-center w-full bg-main2
             rounded-[30px] flex md:p-8 ss:p-8 p-6'>
 
@@ -60,45 +60,50 @@ const ProductDetails = ({ product }) => {
 
             <div className='flex items-center w-full bg-main2
             rounded-[30px] flex md:p-8 ss:p-8 p-6'>
+                <motion.div variants={textVariant()}
+                className='flex flex-col md:gap-6 ss:gap-5 gap-4'>
+                    <h1 className='text-main font-bold md:text-[20px]
+                    ss:text-[20px] text-[18px] tracking-tight'>
+                        Product Description
+                    </h1>
 
-            </div>
-            <motion.div variants={textVariant()}
-            className='flex flex-col md:gap-6 ss:gap-5 gap-4'>
-                <h1 className='text-main font-bold md:text-[20px]
-                ss:text-[20px] text-[18px] tracking-tight'>
-                    Product Description
-                </h1>
-
-                <div className="items-center justify-center">
-                    <div className='bg-main w-full h-[1px]' />
-                </div>
-                
-                <p className='text-main md:text-[18px] ss:text-[17px] 
-                text-[14px] tracking-tight md:leading-[25px] 
-                ss:leading-[26px] leading-[20px]'>
-                   {product.description}
-                </p>
-
-                <div className="items-center justify-center">
-                    <div className='bg-main w-full h-[1px]' />
-                </div>
-
-                <div className='bg-primary flex items-center grow4 py-3 
-                rounded-lg cursor-pointer justify-center gap-2'
-                // onClick={() => {
-                //     setToggle(!toggle);
-                // }}
-                >
-                    <IoCartOutline
-                        className='text-white text-[25px]'
-                    />
-
-                    <p className='text-white md:text-[14px] ss:text-[14px] 
-                    text-[12px]'>
-                        Add to Cart
+                    <div className="items-center justify-center">
+                        <div className='bg-main w-full h-[1px]' />
+                    </div>
+                    
+                    <p className='text-main md:text-[18px] ss:text-[17px] 
+                    text-[14px] tracking-tight md:leading-[25px] 
+                    ss:leading-[26px] leading-[20px]'>
+                        {product.description}
                     </p>
-                </div>
-            </motion.div>
+
+                    <p className='text-main md:text-[18px] ss:text-[17px] 
+                    text-[14px] tracking-tight md:leading-[25px] 
+                    ss:leading-[26px] leading-[20px]'>
+                        {product.description}
+                    </p>
+
+                    <div className="items-center justify-center">
+                        <div className='bg-main w-full h-[1px]' />
+                    </div>
+
+                    <div className='bg-primary flex items-center grow5 py-3 
+                    rounded-lg cursor-pointer justify-center gap-3'
+                    // onClick={() => {
+                    //     setToggle(!toggle);
+                    // }}
+                    >
+                        <IoCartOutline
+                            className='text-white text-[25px]'
+                        />
+
+                        <p className='text-white md:text-[14px] ss:text-[14px] 
+                        text-[12px]'>
+                            Add to Cart
+                        </p>
+                    </div>
+                </motion.div>
+            </div>
 
             <div className='grid md:gap-16 ss:gap-14 gap-10 md:mt-20 
             md:grid-cols-2 ss:mt-12 mt-8 w-full'>
