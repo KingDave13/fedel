@@ -10,7 +10,8 @@ const ImageCard = ({ index, image, product }) => {
     const imageUrl = urlFor(image).url();
 
     return (
-      <motion.div variants={fadeIn('', 'spring', index * 0.5, 0.75)}>
+      <motion.div variants={fadeIn('', 'spring', index * 0.5, 0.75)}
+      className='cursor-pointer'>
         <div className='square-container'>
             <img
                 src={imageUrl}
@@ -180,7 +181,7 @@ const ProductDetails = ({ product }) => {
                     </h1>
 
                     <div className="items-center justify-center">
-                        <div className='bg-main w-full h-[1px]' />
+                        <div className='bg-primaryalt w-full h-[1px]' />
                     </div>
                     
                     <p className='text-main md:text-[17px] ss:text-[17px] 
@@ -196,7 +197,7 @@ const ProductDetails = ({ product }) => {
                     </p>
 
                     <div className="items-center justify-center">
-                        <div className='bg-main w-full h-[1px]' />
+                        <div className='bg-primaryalt w-full h-[1px]' />
                     </div>
 
                     <div className='bg-primary flex items-center grow5 py-3 
