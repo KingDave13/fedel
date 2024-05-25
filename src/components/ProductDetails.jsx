@@ -1,4 +1,4 @@
-import { SectionWrapper } from '../hoc';
+import { SectionWrapperAlt } from '../hoc';
 import { motion } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
 import { arrowRight, warranty } from '../assets';
@@ -15,7 +15,7 @@ const ImageCard = ({ index, image, product }) => {
             <img
                 src={imageUrl}
                 alt={product.name}
-                className='w-[300px] h-auto rounded-xl'
+                className='rounded-xl'
             />
         </div>
         </motion.div>
@@ -24,15 +24,14 @@ const ImageCard = ({ index, image, product }) => {
 
 const ProductDetails = ({ product }) => {
   return (
-    <section className='relative w-full min-h-[700px] mx-auto flex
+    <section className='relative w-full min-h-[600px] mx-auto flex
     items-center'>
         <div className='max-w-[86rem] mx-auto flex flex-col gap-10'>
             <div className='flex items-center w-full bg-main2
             rounded-[20px] flex md:p-8 ss:p-8 p-6'>
                 <div className='w-full flex flex-col gap-5'>
                     <div className='w-full flex gap-16'>
-                        <div className='grid md:gap-6 ss:gap-6 gap-4
-                        md:grid-cols-2 w-full'>
+                        <div className='grid md:grid-cols-2 w-full gap-5'>
                             {product.images.map((item, index) => (
                                 <ImageCard 
                                     key={index} 
@@ -191,4 +190,4 @@ const ProductDetails = ({ product }) => {
   )
 };
 
-export default SectionWrapper(ProductDetails, '');
+export default SectionWrapperAlt(ProductDetails, '');
