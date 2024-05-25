@@ -13,12 +13,12 @@ import { client } from '../sanity';
 import { Helmet } from 'react-helmet';
 
 const ProductPage = () => {
-    const { slug } = useParams();
+    const { categorySlug, productSlug } = useParams();
     const [product, setProduct] = useState(null);
 
     useEffect(() => {
         const query = `
-            *[_type == "product" && slug.current == $slug][0] {
+            *[_type == "product" && slug.current == $productSlug][0] {
                 _id,
                 name,
                 description,
@@ -29,14 +29,15 @@ const ProductPage = () => {
                 },
                 category->{
                     _id,
-                    name
+                    name,
+                    "slug": slug.current
                 }
             }
         `;
-        client.fetch(query, { slug })
+        client.fetch(query, { productSlug })
             .then((data) => setProduct(data))
             .catch((error) => console.error('Error fetching product:', error));
-    }, [slug]);
+    }, [categorySlug, productSlug]);
 
     if (!product) {
         return <div>Loading...</div>;
