@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
 import { steps } from '../constants';
 import { arrowRight } from '../assets';
+import { IoCartOutline } from "react-icons/io5";
 
 const StepCard = ({ index, title, image, description }) => {
     
@@ -47,28 +48,56 @@ const StepCard = ({ index, title, image, description }) => {
     )
 };
 
-const ProductDetails = () => {
+const ProductDetails = ({ product }) => {
   return (
     <section className='relative w-full min-h-[700px] mx-auto flex
     items-center'>
         <div className='max-w-[86rem] mx-auto flex flex-col'>
+            <div className='flex items-center w-full bg-main2
+            rounded-[30px] flex md:p-8 ss:p-8 p-6'>
+
+            </div>
+
+            <div className='flex items-center w-full bg-main2
+            rounded-[30px] flex md:p-8 ss:p-8 p-6'>
+
+            </div>
             <motion.div variants={textVariant()}
-            className='flex flex-col md:gap-2 ss:gap-2 gap-4'>
-                <h1 className='text-primary font-bold md:text-[43px]
-                ss:text-[40px] text-[30px] tracking-tight md:leading-[60px] 
-                ss:leading-[45px] leading-[35px]'>
-                    Find and order from us in 4 easy steps
+            className='flex flex-col md:gap-6 ss:gap-5 gap-4'>
+                <h1 className='text-main font-bold md:text-[20px]
+                ss:text-[20px] text-[18px] tracking-tight'>
+                    Product Description
                 </h1>
+
+                <div className="items-center justify-center">
+                    <div className='bg-main w-full h-[1px]' />
+                </div>
                 
-                <p className='text-main font-medium md:text-[18px]
-                ss:text-[17px] text-[14px] tracking-tight md:max-w-[950px]
-                ss:max-w-[300px] md:leading-[25px] ss:leading-[26px]
-                leading-[20px]'>
-                    You do not need to go through too much stress to find 
-                    exactly what you're looking for on our website. We've 
-                    outlined these simple steps to understand how to 
-                    discover and order tiles.
-                </p>                
+                <p className='text-main md:text-[18px] ss:text-[17px] 
+                text-[14px] tracking-tight md:leading-[25px] 
+                ss:leading-[26px] leading-[20px]'>
+                   {product.description}
+                </p>
+
+                <div className="items-center justify-center">
+                    <div className='bg-main w-full h-[1px]' />
+                </div>
+
+                <div className='bg-primary flex items-center grow4 py-3 
+                rounded-lg cursor-pointer justify-center gap-2'
+                // onClick={() => {
+                //     setToggle(!toggle);
+                // }}
+                >
+                    <IoCartOutline
+                        className='text-white text-[25px]'
+                    />
+
+                    <p className='text-white md:text-[14px] ss:text-[14px] 
+                    text-[12px]'>
+                        Add to Cart
+                    </p>
+                </div>
             </motion.div>
 
             <div className='grid md:gap-16 ss:gap-14 gap-10 md:mt-20 
@@ -81,16 +110,6 @@ const ProductDetails = () => {
                     />
                 ))}
             </div>
-
-            <p className='text-mainalt md:text-[16px] ss:text-[15px] 
-            text-[12px] tracking-tight w-full font-medium md:text-center
-            md:mt-16 ss:mt-10 mt-6  md:leading-[25px] ss:leading-[26px]
-            leading-[16px]'>
-                Note that some items may have their prices displayed, 
-                some may not but not to worry, you can request for 
-                their prices directly and you'll be responded to 
-                appropriately and swiftly.
-            </p>       
         </div>
     </section>
   )
