@@ -66,7 +66,57 @@ const ProductDetails = ({ product }) => {
                             </h1>
 
                             <div className="items-center">
-                                <div className='bg-main w-full h-[1px]' />
+                                <div className='bg-primaryalt w-full 
+                                h-[1px]' />
+                            </div>
+
+                            <div className='flex flex-col gap-3'>
+
+                            </div>
+
+                            <div className="items-center">
+                                <div className='bg-primaryalt w-full 
+                                h-[1px]' />
+                            </div>
+
+                            <div className='flex flex-col gap-5'>
+                                <div className='flex gap-3'>
+                                    <h1 className='text-greenDeep
+                                    md:text-[30px] ss:text-[30px] text-[20px]
+                                    font-bold'>
+                                        N
+                                    </h1>
+
+                                    <h1 className='text-mainalt font-medium
+                                    md:text-[25px] ss:text-[25px] text-[17px]'>
+                                        N
+                                    </h1>
+                                </div>
+                                
+                                <p className='text-main font-bold
+                                md:text-[15px ss:text-[15px] text-[13px]'>
+                                    Select Variation
+                                </p>
+
+                                <div className='flex flex-wrap gap-3'>
+
+                                </div>
+
+                                <div className='bg-primary flex items-center grow5 py-3 
+                                rounded-lg cursor-pointer justify-center gap-3'
+                                // onClick={() => {
+                                //     setToggle(!toggle);
+                                // }}
+                                >
+                                    <IoCartOutline
+                                        className='text-white text-[25px]'
+                                    />
+
+                                    <p className='text-white md:text-[14px] ss:text-[14px] 
+                                    text-[12px]'>
+                                        Add to Cart
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
