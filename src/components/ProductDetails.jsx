@@ -44,7 +44,7 @@ const ProductDetails = ({ product }) => {
                             ))}
                         </div>
 
-                        <div className='w-full flex flex-col gap-5'>
+                        <div className='w-full flex flex-col gap-4'>
                             <h1 className='text-main font-bold md:text-[30px]
                             ss:text-[30px] text-[20px]'>
                                 {product.name}
@@ -78,37 +78,38 @@ const ProductDetails = ({ product }) => {
                             </div>
 
                             <div className='flex flex-col gap-5'>
-                                <div className='flex gap-3'>
-                                    {product.attributes.map((attribute, index) => (
-                                        <h1 className='text-greenDeep
-                                        md:text-[32px] ss:text-[30px] text-[20px]
-                                        font-bold'
-                                        key={index}>
-                                            {attribute.price && 
+                                {product.attributes.map((attribute, index) => (
+                                    <div 
+                                        className='flex gap-4 items-center' 
+                                        key={index}
+                                    >
+                                        {attribute.price && (
+                                            <h1 
+                                            className='text-greenDeep 
+                                            md:text-[32px] 
+                                            ss:text-[30px] text-[20px] 
+                                            font-bold'>
                                                 <div>
-                                                    <span 
-                                                    className='line-through'>
+                                                    <span className='line-through'>
                                                         N
-                                                    </span> 
+                                                    </span>
                                                     {attribute.price}.00
                                                 </div>
-                                            }
-                                        </h1>
-                                    ))}
-
-                                    {product.attributes.map((attribute, index) => (
-                                        <h1 className='text-mainalt font-medium
-                                        md:text-[20px] ss:text-[20px] text-[15px]
-                                        line-through bottom-0'
-                                        key={index}>
-                                            {attribute.OriginalPrice && 
+                                            </h1>
+                                        )}
+                                        
+                                        {attribute.OriginalPrice && (
+                                            <h1 className='text-main3 
+                                            font-medium md:text-[22px] 
+                                            ss:text-[20px] text-[15px] 
+                                            line-through'>
                                                 <div>
-                                                N{attribute.OriginalPrice}.00
+                                                    N{attribute.OriginalPrice}.00
                                                 </div>
-                                            }
-                                        </h1>
-                                    ))}
-                                </div>
+                                            </h1>
+                                        )}
+                                    </div>
+                                ))}
                                 
                                 <p className='text-main font-bold
                                 md:text-[16px ss:text-[15px] text-[13px]'>
@@ -116,7 +117,12 @@ const ProductDetails = ({ product }) => {
                                 </p>
 
                                 <div className='flex flex-wrap gap-3'>
-
+                                    {product.attributes.map((attribute, index) => (
+                                        <Variation 
+                                            key={index}
+                                            var={attribute}
+                                        />
+                                    ))}
                                 </div>
 
                                 <div className='bg-primary flex items-center grow5 py-3 
