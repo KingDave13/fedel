@@ -27,7 +27,7 @@ const Variation = ({ variation, index }) => {
     return (
       <motion.div variants={fadeIn('', 'spring', index * 0.5, 0.75)} 
       className='cursor-pointer'>
-        <div className='border-[1px] border-primaryalt rounded-lg px-3
+        <div className='border-[1px] border-primaryalt rounded-lg px-3.5
         py-2'>
             <p className='text-main md:text-[14px] ss:text-[14px] 
             text-[12px] font-medium'>
@@ -135,7 +135,8 @@ const ProductDetails = ({ product }) => {
                                 <div>
                                     {product.attributes.map((attribute, index) => (
                                         <div
-                                        className='flex flex-wrap gap-3'
+                                        className='flex flex-wrap gap-3
+                                        md:max-w-[400px] ss:max-w-[300px]'
                                         key={index}>
                                             {attribute.variations && attribute.variations.map((variation, varIndex) => (
                                                 <Variation 
