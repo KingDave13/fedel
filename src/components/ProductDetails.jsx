@@ -23,6 +23,21 @@ const ImageCard = ({ index, image, product }) => {
     )
 };
 
+const Variation = ({ variation, index }) => {
+    return (
+      <motion.div variants={fadeIn('', 'spring', index * 0.5, 0.75)} 
+      className='cursor-pointer'>
+        <div className='border-[1px] border-main3 rounded-lg p-3'>
+            <p className='text-main md:text-[14px] ss:text-[14px] 
+            text-[12px]'>
+                {variation}
+            </p>
+        </div>
+      </motion.div>
+    );
+};
+
+
 const ProductDetails = ({ product }) => {
   return (
     <section className='relative w-full min-h-[600px] mx-auto flex
@@ -112,16 +127,21 @@ const ProductDetails = ({ product }) => {
                                 ))}
                                 
                                 <p className='text-main font-bold
-                                md:text-[16px ss:text-[15px] text-[13px]'>
+                                md:text-[16px] ss:text-[15px] text-[13px]'>
                                     Select Variation
                                 </p>
 
                                 <div className='flex flex-wrap gap-3'>
                                     {product.attributes.map((attribute, index) => (
-                                        <Variation 
-                                            key={index}
-                                            var={attribute}
-                                        />
+                                        <div key={index}>
+                                            {attribute.variations && attribute.variations.map((variation, varIndex) => (
+                                                <Variation 
+                                                    key={varIndex}
+                                                    variation={variation}
+                                                    index={varIndex}
+                                                />
+                                            ))}
+                                        </div>
                                     ))}
                                 </div>
 
