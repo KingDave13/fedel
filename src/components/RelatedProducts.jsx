@@ -11,16 +11,15 @@ const ImageCard = ({ image, name, slug, categorySlug }) => {
     return (
         <div className='cursor-pointer grow2'>
             <Link to={`/products/${categorySlug}/${slug}`}>
-                <div className=''>
+                <div className='square-container'>
                     {imageUrl ? (
                         <img 
                         src={imageUrl}
                         alt={name}
                         className='rounded-lg'
-                        style={{ width: '100%', height: '100%' }} // Temporary inline styles
                     />
                     ) : (
-                        <div className='square-image flex items-center 
+                        <div className='flex items-center 
                         justify-center bg-gray-200 rounded-lg'>
                             <span>No Image</span>
                         </div>
