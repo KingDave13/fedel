@@ -79,12 +79,12 @@ const RelatedProducts = ({ categoryId, categorySlug }) => {
                 </div>
                 
                 <div className='w-full flex items-center justify-center'>
-                    <button className='bg-primary text-[14px] py-3.5 
-                    text-white rounded-lg grow4 cursor-pointer w-[180px]'
-                    onClick={() => Navigate(`/products/${categorySlug}`)}
-                    >
-                        See more products
-                    </button>
+                        <Link to={`/products/${categorySlug}`}
+                        className='bg-primary text-[14px] py-3.5 text-center
+                        text-white rounded-lg grow4 cursor-pointer w-[180px]'
+                        >
+                            See more products
+                        </Link>
                 </div>
             </div>
         </section>
