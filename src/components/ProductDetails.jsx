@@ -241,6 +241,7 @@ const ProductDetails = ({ product }) => {
                                                 gap-3'
                                                 >
                                                     <img src={shopping} 
+                                                        alt='cart'
                                                         className='text-white 
                                                         w-[20px] h-auto' 
                                                     />
@@ -355,6 +356,7 @@ const ProductDetails = ({ product }) => {
                                     gap-3'
                                     >
                                         <img src={shopping} 
+                                        alt='cart'
                                             className='text-white 
                                             w-[20px] h-auto' 
                                         />
