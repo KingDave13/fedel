@@ -217,12 +217,6 @@ const ProductDetails = ({ product }) => {
                         {product.description}
                     </p>
 
-                    <p className='text-main md:text-[17px] ss:text-[17px] 
-                    text-[14px] tracking-tight md:leading-[25px] 
-                    ss:leading-[26px] leading-[20px] font-medium'>
-                        {product.description}
-                    </p>
-
                     <div className="items-center justify-center">
                         <div className='bg-primaryalt w-full h-[1px]' />
                     </div>
