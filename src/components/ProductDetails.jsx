@@ -308,35 +308,54 @@ const ProductDetails = ({ product }) => {
                     </div>
 
                     {product.attributes.map((attribute) => (
-                        <div className='bg-primary flex items-center grow5 py-3.5 
-                        rounded-lg cursor-pointer justify-center gap-3'
-                        // onClick={() => {
-                        //     setToggle(!toggle);
-                        // }}
-                        >
-                            {attribute.price === null ? (
-                                <p className='text-white 
-                                md:text-[14px] ss:text-[14px]
-                                text-[12px]'>
-                                    Request Price
-                                </p>
-                            ) : (
-                                <div className='flex items-center
-                                gap-3'
-                                >
-                                    <img src={shopping} 
-                                        className='text-white 
-                                        w-[20px] h-auto' 
-                                    />
-                                    <p className='text-white
-                                        md:text-[14px] 
-                                        ss:text-[14px] 
+                        <div>
+                            <div className='bg-primary flex items-center grow5 py-3.5 
+                            rounded-lg cursor-pointer justify-center gap-3'
+                            // onClick={() => {
+                            //     setToggle(!toggle);
+                            // }}
+                            >
+                                {attribute.price === null ? (
+                                    <div className='flex items center gap-3'>
+                                        <p className='text-white 
+                                        md:text-[14px] ss:text-[14px]
                                         text-[12px]'>
-                                        Add to Cart
-                                    </p>
-                                </div>
-                            )}
+                                            Request Price
+                                        </p>
+                                        
+                                    </div>
+                                    
+                                ) : (
+                                    <div className='flex items-center
+                                    gap-3'
+                                    >
+                                        <img src={shopping} 
+                                            className='text-white 
+                                            w-[20px] h-auto' 
+                                        />
+                                        <p className='text-white
+                                            md:text-[14px] 
+                                            ss:text-[14px] 
+                                            text-[12px]'>
+                                            Add to Cart
+                                        </p>
+                                    </div>
+                                )}
+                            </div>
+
+                            <div className={`text-mainalt md:text-[13px]
+                            ss:text-[13px] text-[12px] mt-5
+                            ${attribute.price === null ? 'block'
+                            : 'hidden'}`}>
+                                To get the price for this product, 
+                                select your desired variation and 
+                                click on the request quote button 
+                                above, fill in the contact form and 
+                                we'll get back to you in light's 
+                                speed.
+                            </div>
                         </div>
+                        
                     ))}
                 </motion.div>
             </div>
