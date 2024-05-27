@@ -10,15 +10,15 @@ const ImageCard = ({ index, image, product }) => {
     const imageUrl = urlFor(image).url();
 
     return (
-      <motion.div variants={fadeIn('', 'spring', index * 0.5, 0.75)}
-      className='cursor-pointer'>
-        <div className='square-container'>
-            <img
-                src={imageUrl}
-                alt={product.name}
-                className='rounded-xl'
-            />
-        </div>
+        <motion.div variants={fadeIn('', 'spring', index * 0.5, 0.75)}
+        className='cursor-pointer'>
+            <div className='square-container'>
+                <img
+                    src={imageUrl}
+                    alt={product.name}
+                    className='rounded-xl'
+                />
+            </div>
         </motion.div>
     )
 };
