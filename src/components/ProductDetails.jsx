@@ -307,23 +307,37 @@ const ProductDetails = ({ product }) => {
                         <div className='bg-primaryalt w-full h-[1px]' />
                     </div>
 
-                    <div className='bg-primary flex items-center grow5 py-3.5 
-                    rounded-lg cursor-pointer justify-center gap-3'
-                    // onClick={() => {
-                    //     setToggle(!toggle);
-                    // }}
-                    >
-                        <img
-                            src={shopping}
-                            className='text-white
-                            w-[20px] h-auto'
-                        />
-
-                        <p className='text-white md:text-[14px] ss:text-[14px] 
-                        text-[12px]'>
-                            Add to Cart
-                        </p>
-                    </div>
+                    {product.attributes.map((attribute) => (
+                        <div className='bg-primary flex items-center grow5 py-3.5 
+                        rounded-lg cursor-pointer justify-center gap-3'
+                        // onClick={() => {
+                        //     setToggle(!toggle);
+                        // }}
+                        >
+                            {attribute.price === null ? (
+                                <p className='text-white 
+                                md:text-[14px] ss:text-[14px]
+                                text-[12px]'>
+                                    Request Price
+                                </p>
+                            ) : (
+                                <div className='flex items-center
+                                gap-3'
+                                >
+                                    <img src={shopping} 
+                                        className='text-white 
+                                        w-[20px] h-auto' 
+                                    />
+                                    <p className='text-white
+                                        md:text-[14px] 
+                                        ss:text-[14px] 
+                                        text-[12px]'>
+                                        Add to Cart
+                                    </p>
+                                </div>
+                            )}
+                        </div>
+                    ))}
                 </motion.div>
             </div>
         </div>
