@@ -45,10 +45,9 @@ const RelatedProducts = () => {
     min-h-[800px] mx-auto flex items-center'>
         <div className='max-w-[86rem] mx-auto flex flex-col w-full'>
             <motion.div variants={textVariant()}>
-                <h1 className='text-primary font-bold md:text-[43px]
-                ss:text-[40px] text-[30px] tracking-tight md:leading-[60px] 
-                ss:leading-[45px] leading-[35px]'>
-                    Related Products
+                <h1 className='text-primary font-bold md:text-[30px]
+                ss:text-[30px] text-[20px] tracking-tight'>
+                    Explore related products
                 </h1>
             </motion.div>
 
@@ -62,21 +61,17 @@ const RelatedProducts = () => {
                 ))}
             </div>
             
-            <div>
-                <a href='/products'
-                className='inline-flex gap-3 md:mt-16 ss:mt-14 mt-10 
-                items-center justify-center grow4'>
-                    <p className='text-primary md:text-[16px] ss:text-[15px] 
-                    text-[12px]'>
-                        See more products
-                    </p>
-
-                    <GoArrowRight
-                        className='text-white md:text-[18px]
-                        ss:text-[18px] text-[20px]'
-                    />
-                </a>
+            <div className='w-full flex items-center justify-center'>
+                <button className='bg-primary text-[14px] py-3.5
+                text-white rounded-lg grow4 cursor-pointer w-[180px]'
+                // onClick={() => {
+                //     setToggle(!toggle);
+                // }}
+                >
+                    See more products
+                </button>
             </div>
+            
         </div>
     </section>
   )
