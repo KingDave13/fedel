@@ -6,6 +6,7 @@ import { shopping } from '../assets';
 import { urlFor } from '../sanity';
 import { TbWorldCheck, TbShieldCheck  } from "react-icons/tb";
 import { HiChevronLeft, HiChevronRight, HiX } from 'react-icons/hi';
+import { HiOutlineInformationCircle } from "react-icons/hi2";
 import { useSwipeable } from 'react-swipeable';
 
 
@@ -56,8 +57,6 @@ const ProductDetails = ({ product }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [scrollPosition, setScrollPosition] = useState(0);
-
-    const hasPrice = product.attributes.some(attribute => attribute.price !== undefined);
 
     const openModal = (index) => {
         setScrollPosition(window.pageYOffset);
@@ -220,34 +219,60 @@ const ProductDetails = ({ product }) => {
                                 </div>
 
                                 {product.attributes.map((attribute) => (
-                                    <div className='bg-primary flex items-center grow5 py-3.5 
-                                    rounded-lg cursor-pointer justify-center gap-3'
-                                    // onClick={() => {
-                                    //     setToggle(!toggle);
-                                    // }}
-                                    >
-                                       {attribute.price === null ? (
-                                            <p className='text-white 
-                                            md:text-[14px] ss:text-[14px]
-                                            text-[12px]'>
-                                                Request Price
+                                    <div>
+                                        <div className='bg-primary flex items-center grow5 py-3.5 
+                                        rounded-lg cursor-pointer justify-center gap-3'
+                                        // onClick={() => {
+                                        //     setToggle(!toggle);
+                                        // }}
+                                        >
+                                            {attribute.price === null ? (
+                                                <div className='flex items center gap-3'>
+                                                    <p className='text-white 
+                                                    md:text-[14px] ss:text-[14px]
+                                                    text-[12px]'>
+                                                        Request Price
+                                                    </p>
+                                                    
+                                                </div>
+                                                
+                                            ) : (
+                                                <div className='flex items-center
+                                                gap-3'
+                                                >
+                                                    <img src={shopping} 
+                                                        className='text-white 
+                                                        w-[20px] h-auto' 
+                                                    />
+                                                    <p className='text-white
+                                                        md:text-[14px] 
+                                                        ss:text-[14px] 
+                                                        text-[12px]'>
+                                                        Add to Cart
+                                                    </p>
+                                                </div>
+                                            )}
+                                        </div>
+
+                                        <div className={` mt-5 gap-3
+                                        ${attribute.price === null 
+                                        ? 'flex'
+                                        : 'hidden'}`}>
+                                            <HiOutlineInformationCircle 
+                                                className='text-mainalt text-[35px]'
+                                            />
+
+                                            <p className='text-mainalt md:text-[13px]
+                                            ss:text-[13px] text-[12px] md:leading-[18px]
+                                            ss:leading-[18px] leading-[16px]'>
+                                                To get the price for this product, 
+                                                select your desired variation and 
+                                                click on the request quote button 
+                                                above, fill in the contact form and 
+                                                we'll get back to you in light's 
+                                                speed.
                                             </p>
-                                        ) : (
-                                            <div className='flex items-center
-                                            gap-3'
-                                            >
-                                                <img src={shopping} 
-                                                    className='text-white 
-                                                    w-[20px] h-auto' 
-                                                />
-                                                <p className='text-white
-                                                 md:text-[14px] 
-                                                 ss:text-[14px] 
-                                                 text-[12px]'>
-                                                    Add to Cart
-                                                </p>
-                                            </div>
-                                        )}
+                                        </div>
                                     </div>
                                 ))}
                             </div>
@@ -343,19 +368,25 @@ const ProductDetails = ({ product }) => {
                                 )}
                             </div>
 
-                            <div className={`text-mainalt md:text-[13px]
-                            ss:text-[13px] text-[12px] mt-5
-                            ${attribute.price === null ? 'block'
+                            <div className={` mt-5 gap-3 items-center
+                            ${attribute.price === null 
+                            ? 'flex'
                             : 'hidden'}`}>
-                                To get the price for this product, 
-                                select your desired variation and 
-                                click on the request quote button 
-                                above, fill in the contact form and 
-                                we'll get back to you in light's 
-                                speed.
+                                <HiOutlineInformationCircle 
+                                    className='text-mainalt text-[20px]'
+                                />
+
+                                <p className='text-mainalt md:text-[14px]
+                                ss:text-[13px] text-[12px]'>
+                                    To get the price for this product, 
+                                    select your desired variation and 
+                                    click on the request quote button 
+                                    above, fill in the contact form and 
+                                    we'll get back to you in light's 
+                                    speed.
+                                </p>
                             </div>
                         </div>
-                        
                     ))}
                 </motion.div>
             </div>
