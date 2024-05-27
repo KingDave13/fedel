@@ -63,7 +63,7 @@ const ProductPage = () => {
             
             <ProductDetails product={product} />
            
-            <RelatedProducts categoryId={product.category._id} />
+            <RelatedProducts categoryId={product.category._id} categorySlug={categorySlug} />
 
            <div className='footer'>
                 <Footer />

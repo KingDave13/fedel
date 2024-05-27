@@ -1,42 +1,39 @@
 import { useState, useEffect } from 'react';
 import { SectionWrapper } from '../hoc';
 import { motion } from 'framer-motion';
-import { fadeIn, textVariant } from '../utils/motion';
+import { textVariant } from '../utils/motion';
 import { client, urlFor } from '../sanity';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-const ImageCard = ({ image, name, index, slug, categorySlug }) => {
+const ImageCard = ({ image, name, slug, categorySlug }) => {
     const imageUrl = image ? urlFor(image).url() : '';
 
     return (
-        <motion.div
-            variants={fadeIn('', 'spring', index * 0.2, 0.75)}
-            className='cursor-pointer grow2'
-        >
+        <div className='cursor-pointer grow2'>
             <Link to={`/products/${categorySlug}/${slug}`}>
-                <div className='flex items-center justify-center 
-                relative'>
+                <div className=''>
                     {imageUrl ? (
                         <img 
-                            src={imageUrl}
-                            alt={name}
-                            className='h-[250px] w-full object-cover 
-                            rounded-lg'
-                        />
+                        src={imageUrl}
+                        alt={name}
+                        className='rounded-lg'
+                        style={{ width: '100%', height: '100%' }} // Temporary inline styles
+                    />
                     ) : (
-                        <div className='h-[250px] w-full flex 
-                        items-center justify-center bg-gray-200 
-                        rounded-lg'>
+                        <div className='square-image flex items-center 
+                        justify-center bg-gray-200 rounded-lg'>
                             <span>No Image</span>
                         </div>
                     )}
                 </div>
             </Link>
-        </motion.div>
+        </div>
     );
 };
 
-const RelatedProducts = ({ categoryId }) => {
+const RelatedProducts = ({ categoryId, categorySlug }) => {
+
+    const Navigate = useNavigate();
     const [relatedProducts, setRelatedProducts] = useState([]);
 
     useEffect(() => {
@@ -70,10 +67,9 @@ const RelatedProducts = ({ categoryId }) => {
                 </motion.div>
 
                 <div className='flex md:gap-8 ss:gap-12 gap-8'>
-                    {relatedProducts.map((item, index) => (
+                    {relatedProducts.map((item) => (
                         <ImageCard 
-                            key={item._id} 
-                            index={index}
+                            key={item._id}
                             image={item.images && item.images[0]}
                             name={item.name}
                             slug={item.slug.current}
@@ -84,7 +80,9 @@ const RelatedProducts = ({ categoryId }) => {
                 
                 <div className='w-full flex items-center justify-center'>
                     <button className='bg-primary text-[14px] py-3.5 
-                    text-white rounded-lg grow4 cursor-pointer w-[180px]'>
+                    text-white rounded-lg grow4 cursor-pointer w-[180px]'
+                    onClick={() => Navigate(`/products/${categorySlug}`)}
+                    >
                         See more products
                     </button>
                 </div>
