@@ -25,8 +25,10 @@ const ImageCard = ({ index, image, product, handleImageClick, remaining }) => {
                     className='rounded-xl'
                 />
                 {remaining > 0 && index === 3 && (
-                    <div className='absolute inset-0 bg-black bg-opacity-60 rounded-xl flex items-center justify-center text-white font-bold text-2xl'>
-                        +{remaining}
+                    <div className='absolute inset-0 bg-black 
+                    bg-opacity-70 rounded-xl flex items-center 
+                    justify-center text-white font-bold md:text-[30px]'>
+                        + {remaining}
                     </div>
                 )}
             </div>
