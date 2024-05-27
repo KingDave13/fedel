@@ -87,7 +87,7 @@ const RelatedProducts = ({ categoryId, categorySlug }) => {
 
                 <div className='relative flex items-center'>
                     <button 
-                        className='absolute left-0 z-10 bg-main 
+                        className='absolute left-6 z-10 bg-main 
                         text-white p-3 rounded-full opacity-90 
                         hover:opacity-100 navsmooth'
                         onClick={scrollLeft}
@@ -111,12 +111,14 @@ const RelatedProducts = ({ categoryId, categorySlug }) => {
                         </div>
                     </div>
                     <button 
-                        className='absolute right-0 z-10 bg-main 
+                        className='absolute right-6 z-10 bg-main 
                         text-white p-3 rounded-full opacity-90 
                         hover:opacity-100 navsmooth'
                         onClick={scrollRight}
                     >
-                        <CgArrowLeft size={24} />
+                        <CgArrowLeft size={18} 
+                            className="transform rotate-180"
+                        />
                     </button>
                 </div>
                 
