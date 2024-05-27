@@ -14,7 +14,7 @@ const ImageCard = ({ index, image, product, handleImageClick, remaining }) => {
 
     return (
         <motion.div
-            variants={fadeIn('', 'spring', index * 0.5, 0.75)}
+            variants={fadeIn('', 'spring', index * 0.2, 0.75)}
             className='cursor-pointer relative'
             onClick={() => handleImageClick(index)}
         >

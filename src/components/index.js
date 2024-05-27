@@ -8,6 +8,7 @@ import Steps from './Steps';
 import ProductDetails from './ProductDetails';
 import Categories from './Categories';
 import CategoriesProduct from './CategoriesProduct';
+import RelatedProducts from './RelatedProducts';
 import Top from './Top';
 import Help from './Help';
 import CTA from './CTA';
@@ -31,4 +32,5 @@ export {
     ProductDetails,
     HeroProductEach,
     Product,
+    RelatedProducts,
 }
