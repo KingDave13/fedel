@@ -309,31 +309,57 @@ const ProductDetails = ({ product }) => {
         </div>
 
         {isModalOpen && (
-            <div className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75'>
-                <div className='relative w-full max-w-5xl' {...handlers} ref={modalRef}>
+            <div className='fixed inset-0 z-50 flex items-center 
+            justify-center bg-black bg-opacity-80'>
+                <div className='relative w-full max-w-3xl' {...handlers} ref={modalRef}>
                     <button
-                        className='absolute top-2 right-2 text-white text-3xl'
+                        className='absolute top-6 right-6 text-white 
+                        md:text-[20px] hover:bg-main3 rounded-full p-3
+                        hover:bg-opacity-50 navsmooth'
                         onClick={closeModal}
                     >
                         <HiX />
                     </button>
+
                     <button
-                        className='absolute left-2 top-1/2 transform -translate-y-1/2 text-white text-3xl'
+                        className='absolute left-2 top-1/2 transform 
+                        -translate-y-1/2 md:text-[23px] bg-main3 ml-6
+                        rounded-full p-3 bg-opacity-50 navsmooth
+                        text-white hover:bg-opacity-80'
                         onClick={() => navigateImage('prev')}
                     >
                         <HiChevronLeft />
                     </button>
+
                     <button
-                        className='absolute right-2 top-1/2 transform -translate-y-1/2 text-white text-3xl'
+                        className='absolute right-2 top-1/2 transform 
+                        -translate-y-1/2 md:text-[23px] bg-main3 mr-6
+                        rounded-full p-3 bg-opacity-50 navsmooth
+                        text-white hover:bg-opacity-80'
                         onClick={() => navigateImage('next')}
                     >
                         <HiChevronRight />
                     </button>
+
                     <img
                         src={urlFor(product.images[currentImageIndex]).url()}
-                        alt={`Image ${currentImageIndex + 1}`}
+                        alt={`${currentImageIndex + 1}`}
                         className='w-full h-auto max-h-[90vh] object-contain rounded-lg'
                     />
+
+                    <div className='absolute bottom-4 left-1/2 
+                    transform -translate-x-1/2 flex gap-2'>
+                        {product.images.map((_, index) => (
+                            <span
+                                key={index}
+                                className={`w-3 h-3 rounded-full 
+                                ${index === currentImageIndex ? 
+                                    'bg-secondary' : 
+                                    'bg-main2'} cursor-pointer navsmooth`}
+                                onClick={() => setCurrentImageIndex(index)}
+                            />
+                        ))}
+                    </div>
                 </div>
             </div>
         )}
