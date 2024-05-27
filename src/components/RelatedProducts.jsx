@@ -11,7 +11,7 @@ const ImageCard = ({ image, name, slug, categorySlug }) => {
 
     return (
         <div className='cursor-pointer grow2'>
-            <Link to={`/products/${categorySlug}/${slug}`}>
+            <a href={`/products/${categorySlug}/${slug}`}>
                 {imageUrl ? (
                     <div className='w-[200px] h-[200px]'>
                         <img 
@@ -27,7 +27,7 @@ const ImageCard = ({ image, name, slug, categorySlug }) => {
                         <span>No Image</span>
                     </div>
                 )}
-            </Link>
+            </a>
         </div>
     );
 };
