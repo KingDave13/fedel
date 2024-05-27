@@ -2,7 +2,6 @@ import { SectionWrapperAlt } from '../hoc';
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
-import { IoCartOutline } from "react-icons/io5";
 import { shopping } from '../assets';
 import { urlFor } from '../sanity';
 import { TbWorldCheck, TbShieldCheck  } from "react-icons/tb";
@@ -57,6 +56,8 @@ const ProductDetails = ({ product }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [scrollPosition, setScrollPosition] = useState(0);
+
+    const hasPrice = product.attributes.some(attribute => attribute.price !== undefined);
 
     const openModal = (index) => {
         setScrollPosition(window.pageYOffset);
@@ -218,23 +219,37 @@ const ProductDetails = ({ product }) => {
                                     ))}
                                 </div>
 
-                                <div className='bg-primary flex items-center grow5 py-3.5 
-                                rounded-lg cursor-pointer justify-center gap-3'
-                                // onClick={() => {
-                                //     setToggle(!toggle);
-                                // }}
-                                >
-                                    <img
-                                        src={shopping}
-                                        className='text-white
-                                        w-[20px] h-auto'
-                                    />
-
-                                    <p className='text-white md:text-[14px] ss:text-[14px] 
-                                    text-[12px]'>
-                                        Add to Cart
-                                    </p>
-                                </div>
+                                {product.attributes.map((attribute) => (
+                                    <div className='bg-primary flex items-center grow5 py-3.5 
+                                    rounded-lg cursor-pointer justify-center gap-3'
+                                    // onClick={() => {
+                                    //     setToggle(!toggle);
+                                    // }}
+                                    >
+                                       {attribute.price === null ? (
+                                            <p className='text-white 
+                                            md:text-[14px] ss:text-[14px]
+                                            text-[12px]'>
+                                                Request Price
+                                            </p>
+                                        ) : (
+                                            <div className='flex items-center
+                                            gap-3'
+                                            >
+                                                <img src={shopping} 
+                                                    className='text-white 
+                                                    w-[20px] h-auto' 
+                                                />
+                                                <p className='text-white
+                                                 md:text-[14px] 
+                                                 ss:text-[14px] 
+                                                 text-[12px]'>
+                                                    Add to Cart
+                                                </p>
+                                            </div>
+                                        )}
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
