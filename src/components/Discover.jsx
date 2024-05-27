@@ -37,13 +37,13 @@ const Discover = () => {
                         </p>
 
                         <div className="">
-                            <button className='bg-primary grow5 md:text-[15px] 
+                            <a href="/products" 
+                            className='bg-primary grow5 md:text-[15px] 
                             ss:text-[15px] text-[13px] md:py-4 ss:py-3 py-3 
                             md:px-10 ss:px-10 px-8 text-white rounded-lg'
-                            onClick={() => navigate('/products')}
                             >
                                 Discover Products
-                            </button>
+                            </a>
                         </div>
                     </motion.div>
 
