@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
 import { IoCartOutline } from "react-icons/io5";
+import { shopping } from '../assets';
 import { urlFor } from '../sanity';
 import { TbWorldCheck, TbShieldCheck  } from "react-icons/tb";
 import { HiChevronLeft, HiChevronRight, HiX } from 'react-icons/hi';
@@ -217,14 +218,16 @@ const ProductDetails = ({ product }) => {
                                     ))}
                                 </div>
 
-                                <div className='bg-primary flex items-center grow5 py-3 
+                                <div className='bg-primary flex items-center grow5 py-3.5 
                                 rounded-lg cursor-pointer justify-center gap-3'
                                 // onClick={() => {
                                 //     setToggle(!toggle);
                                 // }}
                                 >
-                                    <IoCartOutline
-                                        className='text-white text-[25px]'
+                                    <img
+                                        src={shopping}
+                                        className='text-white
+                                        w-[20px] h-auto'
                                     />
 
                                     <p className='text-white md:text-[14px] ss:text-[14px] 
@@ -289,14 +292,16 @@ const ProductDetails = ({ product }) => {
                         <div className='bg-primaryalt w-full h-[1px]' />
                     </div>
 
-                    <div className='bg-primary flex items-center grow5 py-3 
+                    <div className='bg-primary flex items-center grow5 py-3.5 
                     rounded-lg cursor-pointer justify-center gap-3'
                     // onClick={() => {
                     //     setToggle(!toggle);
                     // }}
                     >
-                        <IoCartOutline
-                            className='text-white text-[25px]'
+                        <img
+                            src={shopping}
+                            className='text-white
+                            w-[20px] h-auto'
                         />
 
                         <p className='text-white md:text-[14px] ss:text-[14px] 

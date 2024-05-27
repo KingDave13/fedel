@@ -28,6 +28,7 @@ import filter from './filter.png';
 import refresh from './refresh.png';
 import warranty from './warranty.png';
 import delivery from './delivery.png';
+import shopping from './shopping.png';
 
 
 export {
@@ -61,6 +62,7 @@ export {
     refresh,
     warranty,
     delivery,
+    shopping,
 }
 
 export const heroImages = [
