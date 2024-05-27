@@ -12,11 +12,12 @@ const ImageCard = ({ image, name, slug, categorySlug }) => {
         <div className='cursor-pointer grow2'>
             <Link to={`/products/${categorySlug}/${slug}`}>
                     {imageUrl ? (
-                        <div className='square-container2'>
+                        <div className='w-[200px] h-[200px]'>
                             <img 
                             src={imageUrl}
                             alt={name}
-                            className='rounded-lg'
+                            className='rounded-lg object-cover w-full
+                            h-full'
                         />
                         </div>
                     ) : (
