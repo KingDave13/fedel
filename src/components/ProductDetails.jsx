@@ -1,10 +1,10 @@
 import { SectionWrapperAlt } from '../hoc';
 import { motion } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
-import { delivery, warranty } from '../assets';
 import { IoCartOutline } from "react-icons/io5";
 import { urlFor } from '../sanity';
 import { TbWorldCheck, TbShieldCheck  } from "react-icons/tb";
+
 
 const ImageCard = ({ index, image, product }) => {
     const imageUrl = urlFor(image).url();
@@ -185,11 +185,8 @@ const ProductDetails = ({ product }) => {
                         <div className='flex flex-col border-primaryalt
                         border-[1px] rounded-xl gap-2 items-center
                         w-[150px] py-3'>
-                            <img
-                                src={warranty}
-                                alt='warranty'
-                                className='text-primary text-[40px]
-                                w-8 h-8'
+                            <TbShieldCheck 
+                                className='text-primary text-[40px]'
                             />
 
                             <p className='text-primary font-semibold
