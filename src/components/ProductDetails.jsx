@@ -1,26 +1,37 @@
 import { SectionWrapperAlt } from '../hoc';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
 import { IoCartOutline } from "react-icons/io5";
 import { urlFor } from '../sanity';
 import { TbWorldCheck, TbShieldCheck  } from "react-icons/tb";
+import { HiChevronLeft, HiChevronRight, HiX } from 'react-icons/hi';
+import { useSwipeable } from 'react-swipeable';
 
 
-const ImageCard = ({ index, image, product }) => {
+const ImageCard = ({ index, image, product, handleImageClick, remaining }) => {
     const imageUrl = urlFor(image).url();
 
     return (
-        <motion.div variants={fadeIn('', 'spring', index * 0.5, 0.75)}
-        className='cursor-pointer'>
+        <motion.div
+            variants={fadeIn('', 'spring', index * 0.5, 0.75)}
+            className='cursor-pointer relative'
+            onClick={() => handleImageClick(index)}
+        >
             <div className='square-container'>
                 <img
                     src={imageUrl}
                     alt={product.name}
                     className='rounded-xl'
                 />
+                {remaining > 0 && index === 3 && (
+                    <div className='absolute inset-0 bg-black bg-opacity-60 rounded-xl flex items-center justify-center text-white font-bold text-2xl'>
+                        +{remaining}
+                    </div>
+                )}
             </div>
         </motion.div>
-    )
+    );
 };
 
 const Variation = ({ variation, index }) => {
@@ -40,6 +51,60 @@ const Variation = ({ variation, index }) => {
 
 
 const ProductDetails = ({ product }) => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [scrollPosition, setScrollPosition] = useState(0);
+
+    const openModal = (index) => {
+        setScrollPosition(window.pageYOffset);
+        setCurrentImageIndex(index);
+        setIsModalOpen(true);
+        document.body.style.overflow = 'hidden';
+        document.body.style.top = `-${scrollPosition}px`;
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+        document.body.style.overflow = 'auto';
+        document.body.style.top = '0';
+    };
+
+    const navigateImage = (direction) => {
+        if (direction === 'prev') {
+            setCurrentImageIndex((prevIndex) =>
+                prevIndex === 0 ? product.images.length - 1 : prevIndex - 1
+            );
+        } else if (direction === 'next') {
+            setCurrentImageIndex((prevIndex) =>
+                prevIndex === product.images.length - 1 ? 0 : prevIndex + 1
+            );
+        }
+    };
+
+    const handlers = useSwipeable({
+        onSwipedLeft: () => navigateImage('next'),
+        onSwipedRight: () => navigateImage('prev'),
+    });
+
+    const modalRef = useRef(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (modalRef.current && !modalRef.current.contains(event.target)) {
+                closeModal();
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
+    const imagesToShow = product.images.slice(0, 4);
+    const remainingImages = product.images.length - 4;
+
   return (
     <section className='relative w-full min-h-[600px] mx-auto flex
     items-center'>
@@ -49,13 +114,14 @@ const ProductDetails = ({ product }) => {
                 <div className='w-full flex flex-col gap-8'>
                     <div className='w-full flex gap-16'>
                         <div className='grid md:grid-cols-2 w-full gap-5'>
-                            {product.images.map((item, index) => (
-                                <ImageCard 
-                                    key={index} 
-                                    index={index} 
-                                    {...item}
+                            {imagesToShow.map((item, index) => (
+                                <ImageCard
+                                    key={index}
+                                    index={index}
                                     image={item}
                                     product={product}
+                                    handleImageClick={openModal}
+                                    remaining={index === 3 ? remainingImages : 0}
                                 />
                             ))}
                         </div>
@@ -239,6 +305,36 @@ const ProductDetails = ({ product }) => {
                 </motion.div>
             </div>
         </div>
+
+        {isModalOpen && (
+            <div className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75'>
+                <div className='relative w-full max-w-5xl' {...handlers} ref={modalRef}>
+                    <button
+                        className='absolute top-2 right-2 text-white text-3xl'
+                        onClick={closeModal}
+                    >
+                        <HiX />
+                    </button>
+                    <button
+                        className='absolute left-2 top-1/2 transform -translate-y-1/2 text-white text-3xl'
+                        onClick={() => navigateImage('prev')}
+                    >
+                        <HiChevronLeft />
+                    </button>
+                    <button
+                        className='absolute right-2 top-1/2 transform -translate-y-1/2 text-white text-3xl'
+                        onClick={() => navigateImage('next')}
+                    >
+                        <HiChevronRight />
+                    </button>
+                    <img
+                        src={urlFor(product.images[currentImageIndex]).url()}
+                        alt={`Image ${currentImageIndex + 1}`}
+                        className='w-full h-auto max-h-[90vh] object-contain rounded-lg'
+                    />
+                </div>
+            </div>
+        )}
     </section>
   )
 };
