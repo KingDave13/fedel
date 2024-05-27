@@ -41,9 +41,9 @@ const Variation = ({ variation, index }) => {
       <motion.div variants={fadeIn('', 'spring', index * 0.5, 0.75)} 
       className='cursor-pointer'>
         <div className='border-[1px] border-primaryalt rounded-lg px-3.5
-        py-2'>
-            <p className='text-main md:text-[14px] ss:text-[14px] 
-            text-[12px] font-medium'>
+        py-2 hover:bg-primary text-main md:text-[14px] ss:text-[14px] 
+        text-[12px] font-medium hover:text-white navsmooth'>
+            <p className=''>
                 {variation}
             </p>
         </div>
@@ -239,9 +239,9 @@ const ProductDetails = ({ product }) => {
                     <div className='flex items-center gap-6'>
                         <div className='flex flex-col border-primaryalt
                         border-[1px] rounded-xl gap-2 items-center
-                        w-[150px] py-3'>
+                        w-[150px] py-3.5'>
                             <TbWorldCheck 
-                                className='text-primary text-[40px]'
+                                className='text-primary text-[35px]'
                             />
 
                             <p className='text-primary font-semibold
@@ -252,9 +252,9 @@ const ProductDetails = ({ product }) => {
 
                         <div className='flex flex-col border-primaryalt
                         border-[1px] rounded-xl gap-2 items-center
-                        w-[150px] py-3'>
+                        w-[150px] py-3.5'>
                             <TbShieldCheck 
-                                className='text-primary text-[40px]'
+                                className='text-primary text-[35px]'
                             />
 
                             <p className='text-primary font-semibold
