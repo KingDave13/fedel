@@ -19,35 +19,6 @@ const TopCard = (top, index) => {
                     className='h-[250px] w-full object-cover
                     rounded-lg'
                 />
-
-                {/* <div className='rounded-full bg-white p-1.5 top-6 right-6
-                absolute text-primary md:text-[13px] ss:text-[13px] 
-                text-[12px] font-bold'>
-                    {category.productCount}+
-                </div>
-
-                <div className='flex flex-col md:gap-1 ss:gap-1 gap-1 
-                tracking-tight absolute md:p-6 ss:p-6 p-4 bottom-0'>
-                    <h1 className='text-secondary md:text-[19px] ss:text-[18px] 
-                    text-[15px] font-bold'>
-                        {category.name}
-                    </h1>
-
-                    <p className='text-white md:leading-[19px]
-                    ss:leading-[19px] leading-[16px] md:text-[14px] 
-                    ss:text-[14px] text-[12px]'>
-                        {category.description}
-                    </p>
-
-                    <a href='/' 
-                    className='flex gap-3 cursor-pointer grow2
-                    items-center mt-1.5'>
-                        <h1 className='text-white md:text-[14px] 
-                        ss:text-[14px] text-[12px] font-medium'>
-                            See products
-                        </h1>
-                    </a>
-                </div> */}
             </div>
         </motion.div>
     )

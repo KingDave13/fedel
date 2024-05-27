@@ -11,20 +11,21 @@ const ImageCard = ({ image, name, slug, categorySlug }) => {
     return (
         <div className='cursor-pointer grow2'>
             <Link to={`/products/${categorySlug}/${slug}`}>
-                <div className='square-container'>
                     {imageUrl ? (
-                        <img 
-                        src={imageUrl}
-                        alt={name}
-                        className='rounded-lg'
-                    />
+                        <div className='square-container2'>
+                            <img 
+                            src={imageUrl}
+                            alt={name}
+                            className='rounded-lg'
+                        />
+                        </div>
                     ) : (
                         <div className='flex items-center 
                         justify-center bg-gray-200 rounded-lg'>
                             <span>No Image</span>
                         </div>
                     )}
-                </div>
+                
             </Link>
         </div>
     );
@@ -47,7 +48,6 @@ const RelatedProducts = ({ categoryId, categorySlug }) => {
         `;
         client.fetch(query, { categoryId })
             .then((data) => {
-                console.log('Fetched related products:', data);
                 setRelatedProducts(data);
             })
             .catch((error) => console.error('Error fetching related products:', error));
