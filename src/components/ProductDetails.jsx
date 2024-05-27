@@ -46,7 +46,7 @@ const ProductDetails = ({ product }) => {
         <div className='max-w-[86rem] mx-auto flex flex-col gap-10'>
             <div className='flex items-center w-full bg-main2
             rounded-[20px] flex md:p-8 ss:p-8 p-6'>
-                <div className='w-full flex flex-col gap-5'>
+                <div className='w-full flex flex-col gap-8'>
                     <div className='w-full flex gap-16'>
                         <div className='grid md:grid-cols-2 w-full gap-5'>
                             {product.images.map((item, index) => (
