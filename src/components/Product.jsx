@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { TiArrowSortedDown } from "react-icons/ti";
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { filter, refresh } from "../assets";
+import { MdMailOutline, MdOutlineWhatsapp } from 'react-icons/md';
 import { SectionWrapper } from "../hoc";
 
 
@@ -23,8 +24,8 @@ const ItemCard = ({ item, categorySlug, attributes }) => {
     return (
       <Link to={`/products/${categorySlug}/${item.slug.current}`}>
         <div 
-          className='cursor-pointer grow2'
-          onMouseEnter={() => setShowAttributes(true)}
+          className='relative cursor-pointer ' 
+          onMouseEnter={() => setShowAttributes(true)} 
           onMouseLeave={() => setShowAttributes(false)}
         >
           <div className='flex items-center justify-center relative'>
@@ -38,25 +39,35 @@ const ItemCard = ({ item, categorySlug, attributes }) => {
               </div>
             )}
             {showAttributes && (
-              <div className="absolute inset-0 bg-white bg-opacity-90 p-4 rounded-lg overflow-auto">
-                {attributes && attributes.map((attribute, index) => (
-                  <div key={index} className='text-sm mb-2'>
-                    {attribute.type && <div><span className='font-semibold mr-1'>Type:</span> {attribute.type}</div>}
-                    {attribute.material && <div><span className='font-semibold mr-1'>Material:</span> {attribute.material}</div>}
-                    {attribute.dimensions && <div><span className='font-semibold mr-1'>Dimensions:</span> {attribute.dimensions}</div>}
-                    {attribute.application && <div><span className='font-semibold mr-1'>Application:</span> {attribute.application}</div>}
-                    {attribute.styleAndPattern && <div><span className='font-semibold mr-1'>Style:</span> {attribute.styleAndPattern}</div>}
-                    {attribute.manufacturer && <div><span className='font-semibold mr-1'>Manufacturer:</span> {attribute.manufacturer}</div>}
-                  </div>
-                ))}
+              <div className="absolute inset-0 bg-black bg-opacity-90 
+              p-4 rounded-lg overflow-auto">
+                <div className='text-white'>
+                  <h3 className="text-lg font-semibold mb-2">{item.name}</h3>
+                  {attributes && attributes.map((attribute, index) => (
+                    <div key={index} className='text-sm mb-2'>
+                      {attribute.dimensions && <div>{attribute.dimensions}</div>}
+                      {attribute.material && <div>{attribute.material}</div>}
+                      {attribute.manufacturer && <div>{attribute.manufacturer}</div>}
+                    </div>
+                  ))}
+                  {item.price ? (
+                    <div className="text-lg font-bold text-green-500">{item.price}</div>
+                  ) : (
+                    <div className="flex items-center mt-2">
+                      <button className="bg-blue-500 text-white px-3 py-1 rounded-full mr-2">REQUEST PRICE</button>
+                      <MdMailOutline className="text-white text-2xl mr-2" />
+                      <MdOutlineWhatsapp className="text-green-500 text-2xl" />
+                    </div>
+                  )}
+                </div>
+                <div className="text-sm text-white mt-2">Click for more details &rarr;</div>
               </div>
             )}
           </div>
         </div>
       </Link>
     );
-};  
-
+};
 
 
 const Product = ({ products, categorySlug }) => {
