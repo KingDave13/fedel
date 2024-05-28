@@ -39,28 +39,52 @@ const ItemCard = ({ item, categorySlug, attributes }) => {
               </div>
             )}
             {showAttributes && (
-              <div className="absolute inset-0 bg-black bg-opacity-90 
-              p-4 rounded-lg overflow-auto">
-                <div className='text-white'>
-                  <h3 className="text-lg font-semibold mb-2">{item.name}</h3>
-                  {attributes && attributes.map((attribute, index) => (
-                    <div key={index} className='text-sm mb-2'>
-                      {attribute.dimensions && <div>{attribute.dimensions}</div>}
-                      {attribute.material && <div>{attribute.material}</div>}
-                      {attribute.manufacturer && <div>{attribute.manufacturer}</div>}
+              <div className="absolute inset-0 bg-black bg-opacity-80 
+              p-4 rounded-lg flex flex-col w-full">
+                <div className='text-white absolute bottom-4 w-full'>
+                    <h3 className="text-[20px] font-bold mb-1">
+                        {item.name}
+                    </h3>
+
+                    {attributes && attributes.map((attribute, index) => (
+                        <div key={index} className='text-[14px] flex flex-col 
+                        gap-1 mb-2'>
+                            {attribute.dimensions && <div>{attribute.dimensions}</div>}
+
+                            <div className="flex gap-2">
+                                {attribute.material && <div>{attribute.material}</div>} •
+                                {attribute.manufacturer && <div>{attribute.manufacturer}</div>}
+                            </div>
+                            
+                        </div>
+                    ))}
+
+                    {item.price ? (
+                        <div className="text-lg font-bold text-green-500">
+                            {item.price}
+                        </div>
+                    ) : (
+                        <div className="bg-white rounded-md px-3 py-2 flex 
+                        items-center gap-2 mt-2 w-full">
+                            <p className="text-primary font-bold
+                            text-[16px]">
+                                REQUEST PRICE
+                            </p>
+
+                            <MdMailOutline 
+                                className="text-main text-2xl" 
+                            />
+
+                            <MdOutlineWhatsapp 
+                                className="text-main text-2xl" 
+                            />
+                        </div>
+                    )}
+
+                    <div className="text-[13px] text-white mt-2">
+                        Click for more details &rarr;
                     </div>
-                  ))}
-                  {item.price ? (
-                    <div className="text-lg font-bold text-green-500">{item.price}</div>
-                  ) : (
-                    <div className="flex items-center mt-2">
-                      <button className="bg-blue-500 text-white px-3 py-1 rounded-full mr-2">REQUEST PRICE</button>
-                      <MdMailOutline className="text-white text-2xl mr-2" />
-                      <MdOutlineWhatsapp className="text-green-500 text-2xl" />
-                    </div>
-                  )}
                 </div>
-                <div className="text-sm text-white mt-2">Click for more details &rarr;</div>
               </div>
             )}
           </div>
