@@ -5,9 +5,9 @@ import { SectionWrapperAlt } from '../hoc';
 const HeroText = ({ text }) => {
   
   return (
-    <section className='relative w-full md:min-h-[50px] ss:min-h-[50px] 
-    items-center flex'>
-        <div className='relative items-center w-full max-w-[86rem]'>
+    <section className='w-full md:min-h-[50px] ss:min-h-[50px] 
+    items-center flex md:pt-6'>
+        <div className='items-center w-full max-w-[86rem]'>
             <motion.div variants={textVariant()}
             className='flex text-main md:text-[16px] ss:text-[15px] 
             text-[13px] font-medium md:max-w-[800px]'

@@ -64,7 +64,6 @@ const Product = ({ products, categorySlug }) => {
             </button>
         );
 
-        // Show the next two pages after the current page
         for (let i = 1; i <= 2; i++) {
             const nextPage = currentPage + i;
             if (nextPage <= totalPages - 1) {
