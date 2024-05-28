@@ -227,12 +227,14 @@ const Product = ({ products, categorySlug }) => {
                         </p>
                     </div>
 
-                    <div className="flex gap-3 items-center grow4
-                    cursor-pointer">
+                    <div className="flex gap-3 items-center cursor-pointer"
+                        onMouseEnter={(e) => e.currentTarget.querySelector('img').style.transform = 'rotate(180deg)'}
+                        onMouseLeave={(e) => e.currentTarget.querySelector('img').style.transform = 'rotate(0deg)'}
+                    >
                         <img 
                             src={refresh}
                             alt="refresh"
-                            className="w-4"
+                            className="w-4 transition-transform duration-300"
                         />
                         <p className="text-main font-semibold text-[14px]">
                             Refresh results
