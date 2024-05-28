@@ -291,7 +291,7 @@ const Product = ({ products, categorySlug }) => {
 
             <div className="flex w-full">
                 {isFilterVisible && (
-                    <div className="flex w-1/4 pr-1 mr-4 border-r-[1.5px]
+                    <div className="flex w-1/4 pr-1 mr-5 border-r-[1.5px]
                     border-main3">
                         <Filter 
                             products={products} 
