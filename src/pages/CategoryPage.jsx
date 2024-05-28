@@ -28,7 +28,18 @@ const CategoryPage = () => {
           _id,
           name,
           images,
-          slug
+          slug,
+          attributes[]->{
+            price,
+            isDiscounted,
+            OriginalPrice,
+            dimensions,
+            manufacturer,
+            type,
+            application,
+            material,
+            styleAndPattern,
+          },
         }
       }
     `;

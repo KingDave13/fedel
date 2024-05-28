@@ -7,35 +7,55 @@ import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-i
 import { filter, refresh } from "../assets";
 import { SectionWrapper } from "../hoc";
 
-const ItemCard = ({ item, categorySlug }) => {
+
+const ItemCard = ({ item, categorySlug, attributes }) => {
     const [imageUrl, setImageUrl] = useState(null);
-
+    const [showAttributes, setShowAttributes] = useState(false);
+  
     useEffect(() => {
-        if (item.images && item.images.length > 0) {
-            const assetId = item.images[0].asset._ref;
-            const imageUrl = urlFor(assetId).url();
-            setImageUrl(imageUrl);
-        }
+      if (item.images && item.images.length > 0) {
+        const assetId = item.images[0].asset._ref;
+        const imageUrl = urlFor(assetId).url();
+        setImageUrl(imageUrl);
+      }
     }, [item.images]);
-
+  
     return (
-        <Link to={`/products/${categorySlug}/${item.slug.current}`}>
-            <div className='cursor-pointer grow2'>
-                <div className='flex items-center justify-center relative'>
-                    {imageUrl && (
-                        <div className="square-container">
-                            <img
-                                src={imageUrl}
-                                alt={item.name}
-                                className="rounded-lg"
-                            />
-                        </div>
-                    )}
-                </div>
-            </div>
-        </Link>
+      <Link to={`/products/${categorySlug}/${item.slug.current}`}>
+        <div 
+          className='cursor-pointer grow2'
+          onMouseEnter={() => setShowAttributes(true)}
+          onMouseLeave={() => setShowAttributes(false)}
+        >
+          <div className='flex items-center justify-center relative'>
+            {imageUrl && (
+              <div className="square-container">
+                <img
+                  src={imageUrl}
+                  alt={item.name}
+                  className="rounded-lg"
+                />
+              </div>
+            )}
+            {showAttributes && (
+              <div className="absolute inset-0 bg-white bg-opacity-90 p-4 rounded-lg overflow-auto">
+                {attributes && attributes.map((attribute, index) => (
+                  <div key={index} className='text-sm mb-2'>
+                    {attribute.type && <div><span className='font-semibold mr-1'>Type:</span> {attribute.type}</div>}
+                    {attribute.material && <div><span className='font-semibold mr-1'>Material:</span> {attribute.material}</div>}
+                    {attribute.dimensions && <div><span className='font-semibold mr-1'>Dimensions:</span> {attribute.dimensions}</div>}
+                    {attribute.application && <div><span className='font-semibold mr-1'>Application:</span> {attribute.application}</div>}
+                    {attribute.styleAndPattern && <div><span className='font-semibold mr-1'>Style:</span> {attribute.styleAndPattern}</div>}
+                    {attribute.manufacturer && <div><span className='font-semibold mr-1'>Manufacturer:</span> {attribute.manufacturer}</div>}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      </Link>
     );
-};
+};  
 
 
 
@@ -199,6 +219,7 @@ const Product = ({ products, categorySlug }) => {
                                 key={item._id}
                                 item={item}
                                 categorySlug={categorySlug}
+                                attributes={item.attributes}
                             />
                         ))}
                     </div>
