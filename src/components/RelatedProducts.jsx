@@ -35,10 +35,11 @@ const ImageCard = ({ image, name, slug, categorySlug }) => {
 const RelatedProducts = ({ categoryId, categorySlug }) => {
     const [relatedProducts, setRelatedProducts] = useState([]);
     const carouselRef = useRef(null);
+    const itemRef = useRef(null);
 
     useEffect(() => {
         const query = `
-            *[_type == "product" && references($categoryId)] {
+            *[_type == "product" && references($categoryId)] | order(_createdAt desc) [0...10] {
                 _id,
                 name,
                 images,
@@ -54,20 +55,20 @@ const RelatedProducts = ({ categoryId, categorySlug }) => {
     }, [categoryId]);
 
     const scrollLeft = () => {
-        if (carouselRef.current) {
-            const scrollAmount = carouselRef.current.clientWidth;
+        if (carouselRef.current && itemRef.current) {
+            const itemWidth = itemRef.current.clientWidth + 24;
             carouselRef.current.scrollBy({
-                left: -scrollAmount,
+                left: -itemWidth,
                 behavior: 'smooth'
             });
         }
     };
 
     const scrollRight = () => {
-        if (carouselRef.current) {
-            const scrollAmount = carouselRef.current.clientWidth;
+        if (carouselRef.current && itemRef.current) {
+            const itemWidth = itemRef.current.clientWidth + 24;
             carouselRef.current.scrollBy({
-                left: scrollAmount,
+                left: itemWidth,
                 behavior: 'smooth'
             });
         }
@@ -99,14 +100,15 @@ const RelatedProducts = ({ categoryId, categorySlug }) => {
                         ref={carouselRef}
                     >
                         <div className='flex gap-6'>
-                            {relatedProducts.map((item) => (
-                                <ImageCard 
-                                    key={item._id}
-                                    image={item.images && item.images[0]}
-                                    name={item.name}
-                                    slug={item.slug.current}
-                                    categorySlug={item.categorySlug}
-                                />
+                            {relatedProducts.map((item, index) => (
+                                <div key={item._id} ref={index === 0 ? itemRef : null}>
+                                    <ImageCard 
+                                        image={item.images && item.images[0]}
+                                        name={item.name}
+                                        slug={item.slug.current}
+                                        categorySlug={item.categorySlug}
+                                    />
+                                </div>
                             ))}
                         </div>
                     </div>
@@ -124,7 +126,9 @@ const RelatedProducts = ({ categoryId, categorySlug }) => {
                 
                 <div className='w-full flex items-center justify-center'>
                     <Link to={`/products/${categorySlug}`}
-                        className='bg-primary text-[14px] py-3.5 text-center text-white rounded-lg grow4 cursor-pointer w-[180px]'
+                        className='bg-primary text-[14px] py-3.5 
+                        text-center text-white rounded-lg grow4 
+                        cursor-pointer w-[180px]'
                     >
                         See more products
                     </Link>
