@@ -4,17 +4,16 @@ import { motion } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
 import { client, urlFor } from '../sanity';
 import { GoArrowRight } from "react-icons/go";
-import { Link } from 'react-router-dom';
 
 const TopCard = ({ product, index }) => {
     const imageUrl = product.images && product.images[0] ? urlFor(product.images[0]).url() : '';
 
     return (
         <motion.div
-            variants={fadeIn('', 'spring', index * 0.5, 0.75)}
+            variants={fadeIn('', 'spring', index * 0.3, 0.75)}
             className='cursor-pointer grow2'
         >
-            <Link to={`/products/${product.categorySlug}/${product.slug.current}`}>
+            <a href={`/products/${product.categorySlug}/${product.slug.current}`}>
                 <div className='flex items-center justify-center relative'>
                     {imageUrl ? (
                         <img
@@ -30,7 +29,7 @@ const TopCard = ({ product, index }) => {
                         </div>
                     )}
                 </div>
-            </Link>
+            </a>
         </motion.div>
     );
 };
@@ -54,7 +53,6 @@ const Top = () => {
 
         client.fetch(query)
             .then((data) => {
-                console.log('Fetched data:', data); // Log the fetched data
                 setTopProducts(data[0]?.products || []);
             })
             .catch((error) => console.error('Error fetching top products:', error));
