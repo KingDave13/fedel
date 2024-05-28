@@ -53,7 +53,10 @@ const Top = () => {
         `;
 
         client.fetch(query)
-            .then((data) => setTopProducts(data[0]?.products || []))
+            .then((data) => {
+                console.log('Fetched data:', data); // Log the fetched data
+                setTopProducts(data[0]?.products || []);
+            })
             .catch((error) => console.error('Error fetching top products:', error));
     }, []);
 
@@ -68,7 +71,7 @@ const Top = () => {
                     md:text-[43px] ss:text-[40px] text-[30px] 
                     tracking-tight md:leading-[60px] ss:leading-[45px] 
                     leading-[35px]'>
-                        Top Floor and Wall Tiles for You
+                        Top Floor and Wall Tiles for you
                     </h1>
                     <p className='text-white md:text-[18px] 
                     ss:text-[17px] text-[14px] md:leading-[25px] 
