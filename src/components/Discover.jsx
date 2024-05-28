@@ -2,11 +2,9 @@ import { SectionWrapper } from "../hoc";
 import { layout } from '../styles';
 import { motion } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
-import { useNavigate } from 'react-router-dom';
 import { discoverImg } from '../assets';
 
 const Discover = () => {
-    const navigate = useNavigate();
 
     return (
         <section className="w-full md:min-h-[500px] ss:min-h-[550px] 

@@ -238,7 +238,8 @@ const Product = ({ products, categorySlug }) => {
                         </p>
                     </div>
 
-                    <div className="flex gap-3 items-center cursor-pointer"
+                    <div className="flex gap-3 items-center cursor-pointer
+                    hover:bg-main2"
                         onMouseEnter={(e) => e.currentTarget.querySelector('img').style.transform = 'rotate(270deg)'}
                         onMouseLeave={(e) => e.currentTarget.querySelector('img').style.transform = 'rotate(0deg)'}
                     >
