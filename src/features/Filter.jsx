@@ -85,34 +85,38 @@ const Filter = ({ products, updateFilteredProducts }) => {
   }, [filterValues, products, updateFilteredProducts]);
 
   return (
-    <div className="flex flex-col w-full space-y-6">
-      <div className="mb-6">
-        <h3 className="text-lg font-semibold mb-2">Type</h3>
+    <div className="flex flex-col w-full gap-6">
+      <div className="">
+        <h3 className="text-[17px] font-bold mb-4 text-main">
+          Type
+        </h3>
         <div className="overflow-y-auto max-h-52">
           {attributes.types.map(type => (
-            <label key={type} className="flex items-center mb-1">
+            <label key={type} className="flex items-center gap-1">
               <input
                 type="checkbox"
                 checked={filterValues.types.includes(type)}
                 onChange={() => handleFilterChange('types', type)}
-                className="mr-2"
+                className="mr-2 cursor-pointer"
               />
-              {type}
+              <span className="">{type}</span>
             </label>
           ))}
         </div>
       </div>
 
-      <div className="mb-6">
-        <h3 className="text-lg font-semibold mb-2">Material</h3>
+      <div className="">
+        <h3 className="text-[17px] font-bold mb-4 text-main">
+          Material
+        </h3>
         <div className="overflow-y-auto max-h-52">
           {attributes.materials.map(material => (
-            <label key={material} className="flex items-center mb-1">
+            <label key={material} className="flex items-center gap-1">
               <input
                 type="checkbox"
                 checked={filterValues.materials.includes(material)}
                 onChange={() => handleFilterChange('materials', material)}
-                className="mr-2"
+                className="mr-2 cursor-pointer"
               />
               {material}
             </label>
@@ -120,16 +124,18 @@ const Filter = ({ products, updateFilteredProducts }) => {
         </div>
       </div>
 
-      <div className="mb-6">
-        <h3 className="text-lg font-semibold mb-2">Application</h3>
+      <div className="">
+        <h3 className="text-[17px] font-bold mb-4 text-main">
+          Application
+        </h3>
         <div className="overflow-y-auto max-h-52">
           {attributes.applications.map(application => (
-            <label key={application} className="flex items-center mb-1">
+            <label key={application} className="flex items-center gap-1">
               <input
                 type="checkbox"
                 checked={filterValues.applications.includes(application)}
                 onChange={() => handleFilterChange('applications', application)}
-                className="mr-2"
+                className="mr-2 cursor-pointer"
               />
               {application}
             </label>
@@ -137,16 +143,20 @@ const Filter = ({ products, updateFilteredProducts }) => {
         </div>
       </div>
 
-      <div className="mb-6">
-        <h3 className="text-lg font-semibold mb-2">Price</h3>
-        <div className="flex flex-col">
-          <Slider
-            range
-            min={0}
-            max={275000}
-            defaultValue={[filterValues.price.min, filterValues.price.max]}
-            onChange={(values) => handleFilterChange("price", { min: values[0], max: values[1] })}
-          />
+      <div className="">
+        <h3 className="text-[17px] font-bold mb-4 text-main">
+          Price
+        </h3>
+        <div className="flex flex-col bg-main2 p-4 rounded-lg">
+          <div className="">
+            <Slider
+              range
+              min={0}
+              max={275000}
+              defaultValue={[filterValues.price.min, filterValues.price.max]}
+              onChange={(values) => handleFilterChange("price", { min: values[0], max: values[1] })}
+            />
+          </div>
           <div className="flex justify-between text-[14px] mt-2">
             <span>{`N${filterValues.price.min}`}</span>
             <span>{`N${filterValues.price.max}`}</span>
@@ -154,16 +164,18 @@ const Filter = ({ products, updateFilteredProducts }) => {
         </div>
       </div>
 
-      <div className="mb-6">
-        <h3 className="text-lg font-semibold mb-2">Color</h3>
+      <div className="">
+        <h3 className="text-[17px] font-bold mb-4 text-main">
+          Color
+        </h3>
         <div className="overflow-y-auto max-h-52">
           {attributes.colors.map(color => (
-            <label key={color} className="flex items-center mb-1">
+            <label key={color} className="flex items-center gap-1">
               <input
                 type="checkbox"
                 checked={filterValues.colors.includes(color)}
                 onChange={() => handleFilterChange('colors', color)}
-                className="mr-2"
+                className="mr-2 cursor-pointer"
               />
               {color}
             </label>
@@ -171,16 +183,18 @@ const Filter = ({ products, updateFilteredProducts }) => {
         </div>
       </div>
 
-      <div className="mb-6">
-        <h3 className="text-lg font-semibold mb-2">Size</h3>
+      <div className="">
+        <h3 className="text-[17px] font-bold mb-4 text-main">
+          Size
+        </h3>
         <div className="overflow-y-auto max-h-52">
           {attributes.sizes.map(size => (
-            <label key={size} className="flex items-center mb-1">
+            <label key={size} className="flex items-center gap-1">
               <input
                 type="checkbox"
                 checked={filterValues.sizes.includes(size)}
                 onChange={() => handleFilterChange('sizes', size)}
-                className="mr-2"
+                className="mr-2 cursor-pointer"
               />
               {size}
             </label>
@@ -188,16 +202,18 @@ const Filter = ({ products, updateFilteredProducts }) => {
         </div>
       </div>
 
-      <div className="mb-6">
-        <h3 className="text-lg font-semibold mb-2">Style and Pattern</h3>
+      <div className="">
+        <h3 className="text-[17px] font-bold mb-4 text-main">
+          Style and Pattern
+        </h3>
         <div className="overflow-y-auto max-h-52">
           {attributes.stylesAndPatterns.map(styleAndPattern => (
-            <label key={styleAndPattern} className="flex items-center mb-1">
+            <label key={styleAndPattern} className="flex items-center gap-1">
               <input
                 type="checkbox"
                 checked={filterValues.stylesAndPatterns.includes(styleAndPattern)}
                 onChange={() => handleFilterChange('stylesAndPatterns', styleAndPattern)}
-                className="mr-2"
+                className="mr-2 cursor-pointer"
               />
               {styleAndPattern}
             </label>
