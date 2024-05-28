@@ -48,7 +48,7 @@ const ItemCard = ({ item, categorySlug, attributes }) => {
 
                     {attributes && attributes.map((attribute, index) => (
                         <div key={index} className='text-[14px] flex flex-col 
-                        gap-1 mb-2'>
+                        gap-1 mb-1'>
                             {attribute.dimensions && <div>{attribute.dimensions}</div>}
 
                             <div className="flex gap-2">
@@ -59,29 +59,53 @@ const ItemCard = ({ item, categorySlug, attributes }) => {
                         </div>
                     ))}
 
-                    {attributes.price ? (
-                        <div className="text-lg font-bold text-green-500">
-                            {item.price}
+                    {attributes && attributes.map((attribute, index) => (
+                        <div key={index}>
+                            {attribute.price !== null ? (
+                                <div className='flex gap-2 items-center'>
+                                    {attribute.price && (
+                                        <h1 
+                                        className='text-greenBright text-[20px]
+                                        font-bold'>
+                                            <div>
+                                                <span className='line-through'>
+                                                    N
+                                                </span>
+                                                {attribute.price}.00
+                                            </div>
+                                        </h1>
+                                    )}
+                                    
+                                    {attribute.OriginalPrice && (
+                                        <h1 className='text-main3 text-[14px]
+                                        font-medium line-through'>
+                                            <div>
+                                                N{attribute.OriginalPrice}.00
+                                            </div>
+                                        </h1>
+                                    )}
+                                </div>
+                            ) : (
+                                <div className="bg-white rounded-md px-3 py-1.5 flex 
+                                items-center gap-2 mt-2 justify-between">
+                                    <p className="text-primary font-bold
+                                    text-[15px]">
+                                        REQUEST PRICE
+                                    </p>
+
+                                    <MdMailOutline 
+                                        className="text-main text-2xl" 
+                                    />
+
+                                    <MdOutlineWhatsapp 
+                                        className="text-main text-2xl" 
+                                    />
+                                </div>
+                            )}
                         </div>
-                    ) : (
-                        <div className="bg-white rounded-md px-3 py-1.5 flex 
-                        items-center gap-2 mt-2 justify-between">
-                            <p className="text-primary font-bold
-                            text-[15px]">
-                                REQUEST PRICE
-                            </p>
+                    ))}
 
-                            <MdMailOutline 
-                                className="text-main text-2xl" 
-                            />
-
-                            <MdOutlineWhatsapp 
-                                className="text-main text-2xl" 
-                            />
-                        </div>
-                    )}
-
-                    <div className="text-[13px] text-white mt-2">
+                    <div className="text-[13px] text-white mt-1">
                         Click for more details &rarr;
                     </div>
                 </div>
