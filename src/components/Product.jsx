@@ -50,12 +50,12 @@ const ItemCard = ({ item, categorySlug, attributes }) => {
                     className="absolute inset-0 bg-black bg-opacity-80 
                     p-4 rounded-lg flex flex-col">
                         <div className='text-white absolute bottom-4'>
-                            <h3 className="text-[20px] font-bold mb-1">
+                            <h3 className="text-[19px] font-bold mb-1">
                                 {item.name}
                             </h3>
 
                             {attributes && attributes.map((attribute, index) => (
-                                <div key={index} className='text-[14px] flex flex-col 
+                                <div key={index} className='text-[13px] flex flex-col 
                                 gap-1 mb-1'>
                                     {attribute.dimensions && <div>{attribute.dimensions}</div>}
 
@@ -73,7 +73,7 @@ const ItemCard = ({ item, categorySlug, attributes }) => {
                                         <div className='flex gap-2 items-center'>
                                             {attribute.price && (
                                                 <h1 
-                                                className='text-greenBright text-[20px]
+                                                className='text-greenBright text-[19px]
                                                 font-bold'>
                                                     <div>
                                                         <span className='line-through'>
@@ -97,7 +97,7 @@ const ItemCard = ({ item, categorySlug, attributes }) => {
                                         <div className="bg-white rounded-md px-3 py-1.5 flex 
                                         items-center gap-2 mt-2 justify-between">
                                             <p className="text-primary font-bold
-                                            text-[15px]">
+                                            text-[14px]">
                                                 REQUEST PRICE
                                             </p>
 
@@ -113,7 +113,7 @@ const ItemCard = ({ item, categorySlug, attributes }) => {
                                 </div>
                             ))}
 
-                            <div className="text-[13px] text-white mt-1">
+                            <div className="text-[12px] text-white mt-1.5">
                                 Click for more details &rarr;
                             </div>
                         </div>
@@ -130,7 +130,7 @@ const ItemCard = ({ item, categorySlug, attributes }) => {
 const Product = ({ products, categorySlug }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [filteredProducts, setFilteredProducts] = useState([...products]);
-    const [isFilterVisible, setIsFilterVisible] = useState(false);
+    const [isFilterVisible, setIsFilterVisible] = useState(true);
 
     const productsPerPage = 28;
   
