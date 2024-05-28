@@ -40,8 +40,8 @@ const ItemCard = ({ item, categorySlug, attributes }) => {
             )}
             {showAttributes && (
               <div className="absolute inset-0 bg-black bg-opacity-80 
-              p-4 rounded-lg flex flex-col w-full">
-                <div className='text-white absolute bottom-4 w-full'>
+              p-4 rounded-lg flex flex-col">
+                <div className='text-white absolute bottom-4'>
                     <h3 className="text-[20px] font-bold mb-1">
                         {item.name}
                     </h3>
@@ -59,15 +59,15 @@ const ItemCard = ({ item, categorySlug, attributes }) => {
                         </div>
                     ))}
 
-                    {item.price ? (
+                    {attributes.price ? (
                         <div className="text-lg font-bold text-green-500">
                             {item.price}
                         </div>
                     ) : (
-                        <div className="bg-white rounded-md px-3 py-2 flex 
-                        items-center gap-2 mt-2 w-full">
+                        <div className="bg-white rounded-md px-3 py-1.5 flex 
+                        items-center gap-2 mt-2 justify-between">
                             <p className="text-primary font-bold
-                            text-[16px]">
+                            text-[15px]">
                                 REQUEST PRICE
                             </p>
 
