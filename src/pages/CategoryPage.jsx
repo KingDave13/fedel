@@ -3,6 +3,7 @@ import {
   Footer,
   Product,
   HeroProductEach,
+  HeroText,
 } from '../components';
 
 import { useEffect, useState } from 'react';
@@ -22,6 +23,7 @@ const CategoryPage = () => {
       *[_type == "category" && slug.current == $slug][0] {
         name,
         description,
+        herotext,
         "products": *[_type == "product" && references(^._id)] {
           _id,
           name,
@@ -48,7 +50,8 @@ const CategoryPage = () => {
 
             <Navbar />
             <HeroProductEach category={category} />
-
+            <HeroText text={category.herotext} />
+            
             <Product products={category.products} categorySlug={slug} />
             <div className='footer'>
                 <Footer />

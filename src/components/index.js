@@ -9,6 +9,7 @@ import ProductDetails from './ProductDetails';
 import Categories from './Categories';
 import CategoriesProduct from './CategoriesProduct';
 import RelatedProducts from './RelatedProducts';
+import HeroText from './HeroText';
 import Top from './Top';
 import Help from './Help';
 import CTA from './CTA';
@@ -29,6 +30,7 @@ export {
     Footer,
     HeroProducts,
     HeroProduct,
+    HeroText,
     ProductDetails,
     HeroProductEach,
     Product,
