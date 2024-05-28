@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom';
 import { TiArrowSortedDown } from "react-icons/ti";
 import { motion, AnimatePresence } from 'framer-motion';
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
-import { filter, refresh } from "../assets";
-import { MdMailOutline, MdOutlineWhatsapp } from 'react-icons/md';
+import { filter, refresh, whatsapplogo, gmaillogo } from "../assets";
 import { SectionWrapper } from "../hoc";
 
 
@@ -101,12 +100,14 @@ const ItemCard = ({ item, categorySlug, attributes }) => {
                                                 REQUEST PRICE
                                             </p>
 
-                                            <MdMailOutline 
-                                                className="text-main text-2xl" 
+                                            <img src={gmaillogo}
+                                                alt="gmail"
+                                                className="w-5 h-auto" 
                                             />
 
-                                            <MdOutlineWhatsapp 
-                                                className="text-main text-2xl" 
+                                            <img src={whatsapplogo}
+                                                alt="whatsapp"
+                                                className="w-4 h-auto" 
                                             />
                                         </div>
                                     )}

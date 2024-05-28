@@ -29,6 +29,8 @@ import refresh from './refresh.png';
 import warranty from './warranty.png';
 import delivery from './delivery.png';
 import shopping from './shopping.png';
+import whatsapplogo from './whatsapplogo.png';
+import gmaillogo from './gmaillogo.png';
 
 
 export {
@@ -63,6 +65,8 @@ export {
     warranty,
     delivery,
     shopping,
+    whatsapplogo,
+    gmaillogo,
 }
 
 export const heroImages = [

@@ -3,7 +3,7 @@ import { SectionWrapper } from '../hoc';
 import { motion, AnimatePresence } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
 import { client, urlFor } from '../sanity';
-import { MdMailOutline, MdOutlineWhatsapp } from 'react-icons/md';
+import { whatsapplogo, gmaillogo } from "../assets";
 import { GoArrowRight } from "react-icons/go";
 
 const TopCard = ({ product, index }) => {
@@ -97,12 +97,14 @@ const TopCard = ({ product, index }) => {
                                                             REQUEST PRICE
                                                         </p>
 
-                                                        <MdMailOutline 
-                                                            className="text-main text-2xl" 
+                                                        <img src={gmaillogo}
+                                                            alt="gmail"
+                                                            className="w-5 h-auto" 
                                                         />
 
-                                                        <MdOutlineWhatsapp 
-                                                            className="text-main text-2xl" 
+                                                        <img src={whatsapplogo}
+                                                            alt="whatsapp"
+                                                            className="w-4 h-auto" 
                                                         />
                                                     </div>
                                                 )}
