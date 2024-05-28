@@ -48,38 +48,72 @@ const Product = ({ products, categorySlug }) => {
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
     const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
   
-    const pageNumbers = [];
-    for (let i = 1; i <= Math.ceil(filteredProducts.length / productsPerPage); i++) {
-      pageNumbers.push(i);
-    }
+    const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
   
-    const renderPageNumbers = pageNumbers.map((number) => {
-        const isActive = number === currentPage;
-        const buttonClasses = `px-4 py-1 text-white text-[14px] rounded-md 
-        ${ isActive ? 'bg-primary' : 'bg-main3'}`;
+    const renderPageNumbers = () => {
+        const pageButtons = [];
 
-        return (
-          <button
-            key={number}
-            className={buttonClasses}
-            onClick={() => setCurrentPage(number)}
-          >
-            {number}
-          </button>
+        // Always show the current page
+        pageButtons.push(
+            <button
+                key={currentPage}
+                className={`px-4 py-1 text-white text-[14px] rounded-md 
+                    bg-primary`}
+            >
+                {currentPage}
+            </button>
         );
-    });
+
+        // Show the next two pages after the current page
+        for (let i = 1; i <= 2; i++) {
+            const nextPage = currentPage + i;
+            if (nextPage <= totalPages - 1) {
+                pageButtons.push(
+                    <button
+                        key={nextPage}
+                        className={`px-4 py-1 text-white text-[14px] rounded-md 
+                            ${currentPage === nextPage ? 'bg-primary' : 'bg-main3'}`}
+                        onClick={() => setCurrentPage(nextPage)}
+                    >
+                        {nextPage}
+                    </button>
+                );
+            }
+        }
+
+        if (currentPage + 2 < totalPages - 1) {
+            // Show ellipsis if there are more pages
+            pageButtons.push(<span key="ellipsis">...</span>);
+        }
+
+        // Always show the last page
+        if (totalPages > 1) {
+            pageButtons.push(
+                <button
+                    key={totalPages}
+                    className={`px-4 py-1 text-white text-[14px] rounded-md 
+                        ${currentPage === totalPages ? 'bg-primary' : 'bg-main3'}`}
+                    onClick={() => setCurrentPage(totalPages)}
+                >
+                    {totalPages}
+                </button>
+            );
+        }
+
+        return pageButtons;
+    };
   
     const handlePreviousPage = () => {
-      if (currentPage > 1) {
-        setCurrentPage(currentPage - 1);
-      }
-    };
-  
-    const handleNextPage = () => {
-      if (currentPage < pageNumbers.length) {
-        setCurrentPage(currentPage + 1);
-      }
-    };
+        if (currentPage > 1) {
+          setCurrentPage(currentPage - 1);
+        }
+      };
+    
+      const handleNextPage = () => {
+        if (currentPage < totalPages) {
+          setCurrentPage(currentPage + 1);
+        }
+      };
 
     const updateFilteredProducts = useCallback((filtered) => {
         setFilteredProducts(filtered);
@@ -159,7 +193,7 @@ const Product = ({ products, categorySlug }) => {
                 </div>
                 
                 <div className="flex w-full flex-col">
-                    <div className='grid md:gap-8 ss:gap-12 gap-8 
+                    <div className='grid md:gap-6 ss:gap-12 gap-8 
                     md:grid-cols-4'>
                         {currentProducts.map((item) => (
                             <ItemCard 
@@ -193,7 +227,7 @@ const Product = ({ products, categorySlug }) => {
                             </p>
                         </div>
 
-                        {renderPageNumbers}
+                        {renderPageNumbers()}
 
                         <div
                             onClick={handleNextPage}
