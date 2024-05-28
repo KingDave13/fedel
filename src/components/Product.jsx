@@ -130,6 +130,8 @@ const ItemCard = ({ item, categorySlug, attributes }) => {
 const Product = ({ products, categorySlug }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [filteredProducts, setFilteredProducts] = useState([...products]);
+    const [isFilterVisible, setIsFilterVisible] = useState(false);
+
     const productsPerPage = 28;
   
     const indexOfLastProduct = currentPage * productsPerPage;
@@ -138,6 +140,10 @@ const Product = ({ products, categorySlug }) => {
   
     const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
   
+    const toggleFilterVisibility = () => {
+        setIsFilterVisible(prev => !prev);
+    };
+
     const renderPageNumbers = () => {
         const pageButtons = [];
 
@@ -215,8 +221,12 @@ const Product = ({ products, categorySlug }) => {
             <div className="flex w-full items-center justify-between
             mb-6">
                 <div className="flex-start flex gap-8 items-center">
-                    <div className="flex gap-4 items-center cursor-pointer
-                    bg-main2 rounded-md px-4 py-2.5 hover:bg-main3 navsmooth">
+                    <div className={`${isFilterVisible ? 'bg-main3' 
+                    : 'bg-main2'}
+                    flex gap-4 items-center cursor-pointer rounded-md 
+                    px-4 py-2.5 hover:bg-main3 navsmooth`}
+                    onClick={toggleFilterVisibility}
+                    >
                         <img 
                             src={filter}
                             alt="filter"
@@ -274,12 +284,14 @@ const Product = ({ products, categorySlug }) => {
             </div>
 
             <div className="flex w-full">
-                <div className="flex w-1/4">
-                    <Filter 
-                        products={products} 
-                        updateFilteredProducts={updateFilteredProducts} 
-                    />
-                </div>
+                {isFilterVisible && (
+                    <div className="flex w-1/4">
+                        <Filter 
+                            products={products} 
+                            updateFilteredProducts={updateFilteredProducts} 
+                        />
+                    </div>
+                )}
                 
                 <div className="flex w-full flex-col">
                     <div className='grid md:gap-6 ss:gap-12 gap-8 
