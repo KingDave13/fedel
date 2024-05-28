@@ -55,7 +55,7 @@ const ItemCard = ({ item, categorySlug, attributes }) => {
 
                             {attributes && attributes.map((attribute, index) => (
                                 <div key={index} className='text-[13px] flex flex-col 
-                                gap-1 mb-1'>
+                                gap-0.5 mb-0.5'>
                                     {attribute.dimensions && <div>{attribute.dimensions}</div>}
 
                                     <div className="flex gap-2">

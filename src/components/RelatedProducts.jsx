@@ -127,7 +127,7 @@ const RelatedProducts = ({ categoryId, categorySlug }) => {
                 <div className='w-full flex items-center justify-center'>
                     <Link to={`/products/${categorySlug}`}
                         className='bg-primary text-[14px] py-3.5 
-                        text-center text-white rounded-lg grow4 
+                        text-center text-white rounded-lg grow2 
                         cursor-pointer w-[180px]'
                     >
                         See more products

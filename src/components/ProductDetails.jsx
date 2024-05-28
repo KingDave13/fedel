@@ -220,7 +220,7 @@ const ProductDetails = ({ product }) => {
 
                                 {product.attributes.map((attribute) => (
                                     <div>
-                                        <div className='bg-primary flex items-center grow5 py-3.5 
+                                        <div className='bg-primary flex items-center grow2 py-3.5 
                                         rounded-lg cursor-pointer justify-center gap-3'
                                         // onClick={() => {
                                         //     setToggle(!toggle);
@@ -335,7 +335,7 @@ const ProductDetails = ({ product }) => {
 
                     {product.attributes.map((attribute) => (
                         <div>
-                            <div className='bg-primary flex items-center grow5 py-3.5 
+                            <div className='bg-primary flex items-center grow2 py-3.5 
                             rounded-lg cursor-pointer justify-center gap-3'
                             // onClick={() => {
                             //     setToggle(!toggle);
