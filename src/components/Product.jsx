@@ -209,10 +209,14 @@ const Product = ({ products, categorySlug }) => {
         }
       };
 
-    const updateFilteredProducts = useCallback((filtered) => {
-        setFilteredProducts(filtered);
+    const updateFilteredProducts = useCallback((filteredProducts) => {
+        setFilteredProducts(filteredProducts);
         setCurrentPage(1);
     }, []);
+    
+    useEffect(() => {
+        setFilteredProducts([...products]);
+    }, [products]);
   
 
   return (
