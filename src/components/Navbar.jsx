@@ -125,7 +125,7 @@ useEffect(() => {
                             />
                         </div>
 
-                        <div className='bg-main text-[16px] py-2 px-4
+                        <div id="google_translate_element" className='bg-main text-[16px] py-2 px-4
                         text-white rounded-[5px]'>
                             GOOGLE
                         </div>
