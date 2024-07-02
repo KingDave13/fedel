@@ -10,33 +10,41 @@ import { PiLineVerticalThin } from "react-icons/pi";
 import { IoCartOutline, IoSearchOutline, IoMenu } from "react-icons/io5";
 import { FiMail } from "react-icons/fi";
 
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
 const [toggle, setToggle] = useState(false);
 const menuRef = useRef(null);
-const navigate = useNavigate();
+// const navigate = useNavigate();
 const [openMenuId, setOpenMenuId] = useState(null);
 
 const toggleMenu = (id) => {
-setOpenMenuId((prevId) => (prevId === id ? null : id));
+    setOpenMenuId((prevId) => (prevId === id ? null : id));
 };
 
 
 useEffect(() => {
-const handleClickOutside = (event) => {
-    if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setToggle(false);
-    }
-};
+    const handleClickOutside = (event) => {
+        if (menuRef.current && !menuRef.current.contains(event.target)) {
+            setToggle(false);
+        }
+    };
 
-document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
 
-return () => {
-    document.removeEventListener('mousedown', handleClickOutside);
-};
+    return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+    };
 }, []);
 
+useEffect(() => {
+    if (window.google && window.google.translate) {
+      new window.google.translate.TranslateElement(
+        { pageLanguage: 'en' },
+        'google_translate_element'
+      );
+    }
+}, []);
 
   return (
     <nav className='w-full flex items-center fixed 
