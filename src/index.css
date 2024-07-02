@@ -27,6 +27,15 @@ body, html {
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+
+
+.goog-te-combo {
+ padding: 5px;
+}
+
+.goog-te-gadget span a {
+  flex-direction: row; 
+}
   
 .custom-select {
   -webkit-appearance: none;
