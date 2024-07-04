@@ -33,12 +33,8 @@ body, html {
  padding: 5px;
 }
 
-.skip-translate {
-  display: flex;
-}
-
-.goog-te-gadget span a {
-  display: flex; 
+.goog-te-gadget span {
+  display: none; 
 }
   
 .custom-select {
