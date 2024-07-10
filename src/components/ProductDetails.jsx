@@ -52,6 +52,20 @@ const Variation = ({ variation, index }) => {
     );
 };
 
+const Variation2 = ({ variation, index }) => {
+    return (
+      <div className='cursor-pointer'>
+        <div className='border-[1px] border-primaryalt rounded-lg px-3.5
+        py-2 hover:bg-primary text-main md:text-[13px] ss:text-[13px] 
+        text-[12px] font-medium hover:text-white navsmooth'>
+            <p className=''>
+                {variation}
+            </p>
+        </div>
+      </div>
+    );
+};
+
 
 const RequestModal = ({ onClose, product }) => {
 
@@ -85,20 +99,24 @@ const RequestModal = ({ onClose, product }) => {
                         <HiX />
                     </button>
 
-                    <div className='flex flex-col w-full gap-5'>
-                        <h1 className='text-primary md:text-[20px]
-                        ss:text-[20px] text-[18px] font-medium'>
+                    <div className='flex flex-col w-full gap-6'>
+                        <h1 className='text-primary md:text-[22px]
+                        ss:text-[20px] text-[18px] font-semibold'>
                             Request Price
                         </h1>
 
                         <div className='flex w-full justify-between gap-5'>
-                            <div className='flex flex-col gap-5'>
-                                <div className='bg-main3 p-3 flex'>
+                            <div className='flex flex-col gap-6'>
+                                <div className='bg-main2 p-3 flex items-center
+                                gap-3 rounded-lg w-auto'>
                                     <HiOutlineInformationCircle 
-                                        className='text-mainalt text-[20px]'
+                                        className='text-mainalt text-[22px]'
                                     />
 
-                                    <p className='text-mainalt text-[20px]'>
+                                    <p className='text-mainalt text-[14px]
+                                    md:leading-[19px] ss:leading-[19px]
+                                    leading-[18px] font-medium
+                                    md:max-w-[550px]'>
                                         Fill in the form to request a quote
                                         for the selected product. Confirm
                                         your variation settings, submit the
@@ -108,8 +126,8 @@ const RequestModal = ({ onClose, product }) => {
                                 </div>
 
                                 <div className='flex flex-col gap-3'>
-                                    <h1 className='text-main text-[17px]
-                                    font-medium'>
+                                    <h1 className='text-main text-[16px]
+                                    font-semibold'>
                                         Select Variation
                                     </h1>
 
@@ -120,7 +138,7 @@ const RequestModal = ({ onClose, product }) => {
                                             md:max-w-[400px] ss:max-w-[300px]'
                                             key={index}>
                                                 {attribute.variations && attribute.variations.map((variation, varIndex) => (
-                                                    <Variation 
+                                                    <Variation2 
                                                         key={varIndex}
                                                         variation={variation}
                                                         index={varIndex}
