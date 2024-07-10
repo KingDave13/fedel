@@ -55,8 +55,17 @@ const Variation = ({ variation, index }) => {
 
 const ProductDetails = ({ product }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isRequestModalOpen, setIsRequestModalOpen] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [scrollPosition, setScrollPosition] = useState(0);
+
+    const handleRequestPriceClick = () => {
+        setIsRequestModalOpen(true);
+    };
+
+    const handleAddToCartClick = () => {
+        console.log('Added to Cart');
+    };
 
     const openModal = (index) => {
         setScrollPosition(window.pageYOffset);
