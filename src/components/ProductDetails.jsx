@@ -8,6 +8,9 @@ import { TbWorldCheck, TbShieldCheck  } from "react-icons/tb";
 import { HiChevronLeft, HiChevronRight, HiX } from 'react-icons/hi';
 import { HiOutlineInformationCircle } from "react-icons/hi2";
 import { useSwipeable } from 'react-swipeable';
+import { useFormik } from "formik";
+import { TiArrowSortedDown } from "react-icons/ti";
+import * as Yup from 'yup';
 
 
 const ImageCard = ({ index, image, product, handleImageClick, remaining }) => {
@@ -75,6 +78,24 @@ const RequestModal = ({ onClose, product, image }) => {
         document.body.style.overflow = 'auto';
         document.body.style.top = '0';
     }
+
+    const formik = useFormik({
+        initialValues: {
+            product: '',
+            category: '',
+            price: '',
+            numbermail: '',
+        },
+
+        validationSchema: Yup.object({
+            product: Yup.string().required('Product is required.'),
+            category: Yup.string().required('Category is required.'),
+            price: Yup.string().required('Price is required.'),
+            numbermail: Yup.string().required('Phone Number or Email is required.'),
+        }),
+
+
+    });
 
     return (
         <AnimatePresence>
@@ -169,6 +190,14 @@ const RequestModal = ({ onClose, product, image }) => {
                                     </h1>
                                 </div>
                             </div>
+                        </div>
+                        
+                        <div className='w-3/4'>
+                            <form onSubmit={formik.handleSubmit}
+                            className='grid grid-cols-2 md:gap-6 ss:gap-6 
+                            gap-4'>
+
+                            </form>
                         </div>
                     </div>
                 </motion.div>
