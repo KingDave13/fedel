@@ -122,13 +122,13 @@ const RequestModal = ({ onClose, product, image }) => {
                         <HiX />
                     </button>
 
-                    <div className='flex flex-col w-full gap-6'>
+                    <div className='flex flex-col w-full gap-8'>
                         <h1 className='text-primary md:text-[20px]
                         ss:text-[20px] text-[18px] font-semibold'>
                             Request Price
                         </h1>
 
-                        <div className='flex w-full justify-between gap-14'>
+                        <div className='flex w-full justify-between gap-36'>
                             <div className='flex flex-col gap-6'>
                                 <div className='bg-main2 p-3 flex items-center
                                 gap-3 rounded-lg w-auto'>
@@ -192,14 +192,14 @@ const RequestModal = ({ onClose, product, image }) => {
                             </div>
                         </div>
                         
-                        <div className='w-3/4'>
+                        <div className='w-4/5'>
                             <form onSubmit={formik.handleSubmit}
                             className='grid grid-cols-2 md:gap-5 ss:gap-5 
                             gap-4'>
                                 <div className="flex flex-col">
                                     <label className="text-main mb-2 
-                                    md:text-[15px] font-semibold
-                                    ss:text-[15px] text-[14px]">
+                                    md:text-[14px] font-semibold
+                                    ss:text-[14px] text-[13px]">
                                         State
                                     </label>
 
@@ -213,8 +213,8 @@ const RequestModal = ({ onClose, product, image }) => {
                                             className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
                                             ss:px-3 px-2 border-search 
                                             text-main3 md:rounded-lg rounded-md 
-                                            cursor-pointer md:text-[14px]
-                                            ss:text-[14px] text-[12px] 
+                                            cursor-pointer md:text-[13px]
+                                            ss:text-[13px] text-[11px] 
                                             bg-transparent w-full custom-select"
                                         >
                                             <option value="" disabled selected hidden>Select your state of residence</option>
@@ -239,8 +239,8 @@ const RequestModal = ({ onClose, product, image }) => {
 
                                 <div className="flex flex-col">
                                     <label className="text-main mb-2 
-                                    md:text-[15px] font-semibold
-                                    ss:text-[15px] text-[14px]">
+                                    md:text-[14px] font-semibold
+                                    ss:text-[14px] text-[13px]">
                                         Enter your name
                                     </label>
 
@@ -253,8 +253,8 @@ const RequestModal = ({ onClose, product, image }) => {
                                         onBlur={formik.handleBlur}
                                         className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
                                         ss:px-3 px-2 border-search 
-                                        text-black md:rounded-lg rounded-md md:text-[14px]
-                                        ss:text-[14px] text-[12px]
+                                        text-black md:rounded-lg rounded-md md:text-[13px]
+                                        ss:text-[13px] text-[11px]
                                         bg-transparent w-full placeholder:text-main3"
                                     />
 
@@ -266,8 +266,8 @@ const RequestModal = ({ onClose, product, image }) => {
 
                                 <div className="flex flex-col">
                                     <label className="text-main mb-2 
-                                    md:text-[15px] font-semibold
-                                    ss:text-[15px] text-[14px]">
+                                    md:text-[14px] font-semibold
+                                    ss:text-[14px] text-[13px]">
                                         Enter your email
                                     </label>
 
@@ -280,8 +280,8 @@ const RequestModal = ({ onClose, product, image }) => {
                                         onBlur={formik.handleBlur}
                                         className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
                                         ss:px-3 px-2 border-search 
-                                        text-black md:rounded-lg rounded-md md:text-[14px]
-                                        ss:text-[14px] text-[12px]
+                                        text-black md:rounded-lg rounded-md md:text-[13px]
+                                        ss:text-[13px] text-[11px]
                                         bg-transparent w-full placeholder:text-main3"
                                     />
 
@@ -293,8 +293,8 @@ const RequestModal = ({ onClose, product, image }) => {
 
                                 <div className="flex flex-col">
                                     <label className="text-main mb-2 
-                                    md:text-[15px] font-semibold
-                                    ss:text-[15px] text-[14px]">
+                                    md:text-[14px] font-semibold
+                                    ss:text-[14px] text-[13px]">
                                         Enter your WhatsApp phone number
                                     </label>
 
@@ -307,8 +307,8 @@ const RequestModal = ({ onClose, product, image }) => {
                                         onBlur={formik.handleBlur}
                                         className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
                                         ss:px-3 px-2 border-search 
-                                        text-black md:rounded-lg rounded-md md:text-[14px]
-                                        ss:text-[14px] text-[12px]
+                                        text-black md:rounded-lg rounded-md md:text-[13px]
+                                        ss:text-[13px] text-[11px]
                                         bg-transparent w-full placeholder:text-main3"
                                     />
 
