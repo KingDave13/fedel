@@ -461,6 +461,12 @@ const ProductDetails = ({ product }) => {
                 </div>
             </div>
         )}
+
+        {isRequestModalOpen && (
+            <div>
+                Hello
+            </div>
+        )}
     </section>
   )
 };
