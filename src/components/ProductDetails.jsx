@@ -85,6 +85,16 @@ const RequestModal = ({ onClose }) => {
                         <HiX />
                     </button>
 
+                    <div className='flex flex-col w-full gap-5'>
+                        <h1 className='text-primary md:text-[20px]
+                        ss:text-[20px] text-[18px] font-medium'>
+                            Request Price
+                        </h1>
+
+                        <div className='flex w-full justify-between gap-5'>
+                            
+                        </div>
+                    </div>
                 </motion.div>
             </motion.div>
         </AnimatePresence>
