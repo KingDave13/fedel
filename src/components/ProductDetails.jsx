@@ -1,6 +1,6 @@
 import { SectionWrapperAlt } from '../hoc';
 import React, { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
 import { shopping } from '../assets';
 import { urlFor } from '../sanity';
@@ -53,6 +53,46 @@ const Variation = ({ variation, index }) => {
 };
 
 
+const RequestModal = ({ onClose }) => {
+
+    const closeRequestModal = () => {
+        onClose();
+        document.body.style.overflow = 'auto';
+        document.body.style.top = '0';
+    }
+
+    return (
+        <AnimatePresence>
+            <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 flex items-center justify-center
+            bg-black bg-opacity-80 z-50">
+                <motion.div 
+                initial={{ y: 0, opacity: 0.7 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: 10, opacity: 0 }}
+                transition={{ duration: 0.1 }}
+                className="bg-primaryalt md:p-14 ss:p-10 p-4 rounded-md shadow-xl 
+                flex flex-col justify-center w-auto h-auto font-manierRegular
+                items-center">
+                    <button
+                        className='absolute top-6 right-6 text-white 
+                        md:text-[20px] hover:bg-main3 rounded-full p-3
+                        hover:bg-opacity-50 navsmooth'
+                        onClick={closeRequestModal}
+                    >
+                        <HiX />
+                    </button>
+
+                </motion.div>
+            </motion.div>
+        </AnimatePresence>
+    );
+};
+
+
 const ProductDetails = ({ product }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isRequestModalOpen, setIsRequestModalOpen] = useState(false);
@@ -61,6 +101,9 @@ const ProductDetails = ({ product }) => {
 
     const handleRequestPriceClick = () => {
         setIsRequestModalOpen(true);
+        setScrollPosition(window.pageYOffset);
+        document.body.style.overflow = 'hidden';
+        document.body.style.top = `-${scrollPosition}px`;
     };
 
     const handleAddToCartClick = () => {
@@ -463,9 +506,7 @@ const ProductDetails = ({ product }) => {
         )}
 
         {isRequestModalOpen && (
-            <div>
-                Hello
-            </div>
+            <RequestModal onClose={() => setIsRequestModalOpen(false)}/>
         )}
     </section>
   )
