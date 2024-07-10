@@ -233,7 +233,6 @@ const ProductDetails = ({ product }) => {
                                                     text-[12px]'>
                                                         Request Price
                                                     </p>
-                                                    
                                                 </div>
                                                 
                                             ) : (
