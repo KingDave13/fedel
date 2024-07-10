@@ -196,7 +196,73 @@ const RequestModal = ({ onClose, product, image }) => {
                             <form onSubmit={formik.handleSubmit}
                             className='grid grid-cols-2 md:gap-6 ss:gap-6 
                             gap-4'>
+                                <div className="flex flex-col">
+                                    <label className="text-main md:mb-3 
+                                    ss:mb-2 mb-2 md:text-[15px] font-medium
+                                    ss:text-[15px] text-[14px]">
+                                        State
+                                    </label>
 
+                                    <div className='relative flex items-center'>
+                                        <select
+                                            type="text"
+                                            name="state"
+                                            value={formik.values.state}
+                                            onChange={formik.handleChange}
+                                            onBlur={formik.handleBlur}
+                                            className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
+                                            ss:px-3 px-2 border-search 
+                                            text-main3 md:rounded-lg rounded-md 
+                                            cursor-pointer md:text-[14px]
+                                            ss:text-[14px] text-[12px] 
+                                            bg-transparent w-full custom-select"
+                                        >
+                                            <option value="" disabled selected hidden>Select your state of residence</option>
+                                            <option value="social_media">Social Media</option>
+                                            <option value="from_friend">From a friend</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                        <div className='absolute md:right-3 
+                                        ss:right-3 right-2'>
+                                            <TiArrowSortedDown 
+                                                className='text-main md:text-[18px]
+                                                ss:text-[18px] text-[16px]'
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <p className="text-mainRed md:text-[12px] 
+                                    ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                                        {formik.touched.state && formik.errors.state}
+                                    </p>
+                                </div>
+
+                                <div className="flex flex-col">
+                                    <label className="text-main md:mb-3 
+                                    ss:mb-2 mb-2 md:text-[15px] font-medium
+                                    ss:text-[15px] text-[14px]">
+                                        Enter your name
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        placeholder='Enter your full name'
+                                        value={formik.values.name}
+                                        onChange={formik.handleChange}
+                                        onBlur={formik.handleBlur}
+                                        className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
+                                        ss:px-3 px-2 border-search 
+                                        text-black md:rounded-lg rounded-md md:text-[14px]
+                                        ss:text-[14px] text-[12px]
+                                        bg-transparent w-full placeholder:text-main3"
+                                    />
+
+                                    <p className="text-mainRed md:text-[12px] 
+                                    ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                                        {formik.touched.name && formik.errors.name}
+                                    </p>
+                                </div>
                             </form>
                         </div>
                     </div>
