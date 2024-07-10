@@ -231,9 +231,11 @@ const ProductDetails = ({ product }) => {
                                     <div>
                                         <div className='bg-primary flex items-center grow2 py-3.5 
                                         rounded-lg cursor-pointer justify-center gap-3'
-                                        // onClick={() => {
-                                        //     setToggle(!toggle);
-                                        // }}
+                                        onClick={
+                                            attribute.price === null ?
+                                            handleRequestPriceClick : 
+                                            handleAddToCartClick
+                                        }
                                         >
                                             {attribute.price === null ? (
                                                 <div className='flex items center gap-3'>
