@@ -53,7 +53,7 @@ const Variation = ({ variation, index }) => {
 };
 
 
-const RequestModal = ({ onClose }) => {
+const RequestModal = ({ onClose, product }) => {
 
     const closeRequestModal = () => {
         onClose();
@@ -112,6 +112,23 @@ const RequestModal = ({ onClose }) => {
                                     font-medium'>
                                         Select Variation
                                     </h1>
+
+                                    <div>
+                                        {product.attributes.map((attribute, index) => (
+                                            <div
+                                            className='flex flex-wrap gap-3
+                                            md:max-w-[400px] ss:max-w-[300px]'
+                                            key={index}>
+                                                {attribute.variations && attribute.variations.map((variation, varIndex) => (
+                                                    <Variation 
+                                                        key={varIndex}
+                                                        variation={variation}
+                                                        index={varIndex}
+                                                    />
+                                                ))}
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -536,7 +553,10 @@ const ProductDetails = ({ product }) => {
         )}
 
         {isRequestModalOpen && (
-            <RequestModal onClose={() => setIsRequestModalOpen(false)}/>
+            <RequestModal 
+                onClose={() => setIsRequestModalOpen(false)}
+                product={product}
+            />
         )}
     </section>
   )
