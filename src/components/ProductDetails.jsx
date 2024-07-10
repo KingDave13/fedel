@@ -263,6 +263,60 @@ const RequestModal = ({ onClose, product, image }) => {
                                         {formik.touched.name && formik.errors.name}
                                     </p>
                                 </div>
+
+                                <div className="flex flex-col">
+                                    <label className="text-main md:mb-3 
+                                    ss:mb-2 mb-2 md:text-[15px] font-medium
+                                    ss:text-[15px] text-[14px]">
+                                        Enter your email
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        name="email"
+                                        placeholder='Enter your email'
+                                        value={formik.values.email}
+                                        onChange={formik.handleChange}
+                                        onBlur={formik.handleBlur}
+                                        className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
+                                        ss:px-3 px-2 border-search 
+                                        text-black md:rounded-lg rounded-md md:text-[14px]
+                                        ss:text-[14px] text-[12px]
+                                        bg-transparent w-full placeholder:text-main3"
+                                    />
+
+                                    <p className="text-mainRed md:text-[12px] 
+                                    ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                                        {formik.touched.email && formik.errors.email}
+                                    </p>
+                                </div>
+
+                                <div className="flex flex-col">
+                                    <label className="text-main md:mb-3 
+                                    ss:mb-2 mb-2 md:text-[15px] font-medium
+                                    ss:text-[15px] text-[14px]">
+                                        Enter your WhatsApp phone number
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        name="phone"
+                                        placeholder='Enter WhatsApp phone number'
+                                        value={formik.values.phone}
+                                        onChange={formik.handleChange}
+                                        onBlur={formik.handleBlur}
+                                        className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
+                                        ss:px-3 px-2 border-search 
+                                        text-black md:rounded-lg rounded-md md:text-[14px]
+                                        ss:text-[14px] text-[12px]
+                                        bg-transparent w-full placeholder:text-main3"
+                                    />
+
+                                    <p className="text-mainRed md:text-[12px] 
+                                    ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                                        {formik.touched.phone && formik.errors.phone}
+                                    </p>
+                                </div>
                             </form>
                         </div>
                     </div>
