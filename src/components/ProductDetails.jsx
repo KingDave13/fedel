@@ -81,17 +81,17 @@ const RequestModal = ({ onClose, product, image }) => {
 
     const formik = useFormik({
         initialValues: {
-            product: '',
-            category: '',
-            price: '',
-            numbermail: '',
+            state: '',
+            name: '',
+            email: '',
+            phone: '',
         },
 
         validationSchema: Yup.object({
-            product: Yup.string().required('Product is required.'),
-            category: Yup.string().required('Category is required.'),
-            price: Yup.string().required('Price is required.'),
-            numbermail: Yup.string().required('Phone Number or Email is required.'),
+            state: Yup.string().required('State is required.'),
+            name: Yup.string().required('Name is required.'),
+            email: Yup.string().email('Invalid email address.').required('Email is required.'),
+            phone: Yup.string().required('WhatsApp phone number is required.'),
         }),
 
 
@@ -194,11 +194,11 @@ const RequestModal = ({ onClose, product, image }) => {
                         
                         <div className='w-3/4'>
                             <form onSubmit={formik.handleSubmit}
-                            className='grid grid-cols-2 md:gap-6 ss:gap-6 
+                            className='grid grid-cols-2 md:gap-5 ss:gap-5 
                             gap-4'>
                                 <div className="flex flex-col">
-                                    <label className="text-main md:mb-3 
-                                    ss:mb-2 mb-2 md:text-[15px] font-medium
+                                    <label className="text-main mb-2 
+                                    md:text-[15px] font-semibold
                                     ss:text-[15px] text-[14px]">
                                         State
                                     </label>
@@ -238,8 +238,8 @@ const RequestModal = ({ onClose, product, image }) => {
                                 </div>
 
                                 <div className="flex flex-col">
-                                    <label className="text-main md:mb-3 
-                                    ss:mb-2 mb-2 md:text-[15px] font-medium
+                                    <label className="text-main mb-2 
+                                    md:text-[15px] font-semibold
                                     ss:text-[15px] text-[14px]">
                                         Enter your name
                                     </label>
@@ -265,8 +265,8 @@ const RequestModal = ({ onClose, product, image }) => {
                                 </div>
 
                                 <div className="flex flex-col">
-                                    <label className="text-main md:mb-3 
-                                    ss:mb-2 mb-2 md:text-[15px] font-medium
+                                    <label className="text-main mb-2 
+                                    md:text-[15px] font-semibold
                                     ss:text-[15px] text-[14px]">
                                         Enter your email
                                     </label>
@@ -292,8 +292,8 @@ const RequestModal = ({ onClose, product, image }) => {
                                 </div>
 
                                 <div className="flex flex-col">
-                                    <label className="text-main md:mb-3 
-                                    ss:mb-2 mb-2 md:text-[15px] font-medium
+                                    <label className="text-main mb-2 
+                                    md:text-[15px] font-semibold
                                     ss:text-[15px] text-[14px]">
                                         Enter your WhatsApp phone number
                                     </label>
