@@ -319,6 +319,32 @@ const RequestModal = ({ onClose, product, image }) => {
                                 </div>
                             </form>
                         </div>
+
+                        <div className='w-full flex justify-between'>
+                            <div className='flex items-center gap-2'>
+                                <input
+                                    type='checkbox'
+                                    className='cursor-pointer'
+                                />
+                                <p className='text-main md:text-[12px]
+                                ss:text-[12px] text-[11px]'>
+                                    I have read and agreed to Fedel Tiles 
+                                    Limited's <a href='/privacypolicy' 
+                                    className='font-bold cursor-pointer'>
+                                    Privacy Policy
+                                    </a> and <a href='/terms' 
+                                    className='font-bold cursor-pointer'>
+                                    Terms of Usage
+                                    </a>
+                                </p>
+                            </div>
+
+                            <button className='bg-primary text-[14px] py-3.5 
+                            text-center text-white rounded-lg grow2 
+                            cursor-pointer w-[180px]'>
+                                Request Price
+                            </button>
+                        </div>
                     </div>
                 </motion.div>
             </motion.div>
