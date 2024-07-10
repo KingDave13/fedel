@@ -102,12 +102,12 @@ const RequestModal = ({ onClose, product, image }) => {
                     </button>
 
                     <div className='flex flex-col w-full gap-6'>
-                        <h1 className='text-primary md:text-[22px]
-                        ss:text-[20px] text-[18px] font-bold'>
+                        <h1 className='text-primary md:text-[20px]
+                        ss:text-[20px] text-[18px] font-semibold'>
                             Request Price
                         </h1>
 
-                        <div className='flex w-full justify-between gap-6'>
+                        <div className='flex w-full justify-between gap-14'>
                             <div className='flex flex-col gap-6'>
                                 <div className='bg-main2 p-3 flex items-center
                                 gap-3 rounded-lg w-auto'>
@@ -117,7 +117,7 @@ const RequestModal = ({ onClose, product, image }) => {
 
                                     <p className='text-mainalt text-[14px]
                                     md:leading-[19px] ss:leading-[19px]
-                                    leading-[18px] font-medium
+                                    leading-[18px] font
                                     md:max-w-[550px]'>
                                         Fill in the form to request a quote
                                         for the selected product. Confirm
@@ -128,7 +128,7 @@ const RequestModal = ({ onClose, product, image }) => {
                                 </div>
 
                                 <div className='flex flex-col gap-3'>
-                                    <h1 className='text-main text-[16px]
+                                    <h1 className='text-main text-[15px]
                                     font-semibold'>
                                         Select Variation
                                     </h1>
@@ -163,7 +163,7 @@ const RequestModal = ({ onClose, product, image }) => {
                                 <div className='absolute bg-main2 w-full
                                 bottom-0 flex items-center justify-center
                                 md:p-3 rounded-b-xl'>
-                                    <h1 className='text-main text-[16px]
+                                    <h1 className='text-main text-[15px]
                                     font-bold'>
                                         {product.name}
                                     </h1>
