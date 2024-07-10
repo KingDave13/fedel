@@ -68,6 +68,7 @@ const Variation2 = ({ variation, index }) => {
 
 
 const RequestModal = ({ onClose, product }) => {
+    const imageUrl = urlFor(product.image).url();
 
     const closeRequestModal = () => {
         onClose();
@@ -88,11 +89,12 @@ const RequestModal = ({ onClose, product }) => {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: 10, opacity: 0 }}
                 transition={{ duration: 0.1 }}
-                className="bg-white md:p-14 ss:p-10 p-4 rounded-2xl 
+                className="bg-white md:p-8 ss:p-8 p-6 rounded-2xl 
                 shadow-xl flex flex-col justify-center w-auto h-auto 
                 items-center relative">
                     <button
-                        className='absolute top-6 right-6 text-main 
+                        className='absolute md:top-8 ss:top-8 top-6 
+                        md:right-8 ss:right-8 right-6 text-main 
                         md:text-[20px] cursor-pointer'
                         onClick={closeRequestModal}
                     >
@@ -101,11 +103,11 @@ const RequestModal = ({ onClose, product }) => {
 
                     <div className='flex flex-col w-full gap-6'>
                         <h1 className='text-primary md:text-[22px]
-                        ss:text-[20px] text-[18px] font-semibold'>
+                        ss:text-[20px] text-[18px] font-bold'>
                             Request Price
                         </h1>
 
-                        <div className='flex w-full justify-between gap-5'>
+                        <div className='flex w-full justify-between gap-6'>
                             <div className='flex flex-col gap-6'>
                                 <div className='bg-main2 p-3 flex items-center
                                 gap-3 rounded-lg w-auto'>
@@ -148,6 +150,14 @@ const RequestModal = ({ onClose, product }) => {
                                         ))}
                                     </div>
                                 </div>
+                            </div>
+
+                            <div>
+                                <img
+                                    src={imageUrl}
+                                    alt={product.name}
+                                    className='rounded-xl'
+                                />
                             </div>
                         </div>
                     </div>
