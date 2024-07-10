@@ -52,7 +52,7 @@ const Variation = ({ variation, index }) => {
     );
 };
 
-const Variation2 = ({ variation, index }) => {
+const Variation2 = ({ variation }) => {
     return (
       <div className='cursor-pointer'>
         <div className='border-[1px] border-primaryalt rounded-lg px-3.5
@@ -152,12 +152,22 @@ const RequestModal = ({ onClose, product, image }) => {
                                 </div>
                             </div>
 
-                            <div>
+                            <div className='relative'>
                                 <img
                                     src={imageUrl}
                                     alt={product.name}
-                                    className='rounded-xl'
+                                    className='rounded-xl md:h-[200px]
+                                    w-[200px] object-cover'
                                 />
+
+                                <div className='absolute bg-main2 w-full
+                                bottom-0 flex items-center justify-center
+                                md:p-3 rounded-b-xl'>
+                                    <h1 className='text-main text-[16px]
+                                    font-bold'>
+                                        {product.name}
+                                    </h1>
+                                </div>
                             </div>
                         </div>
                     </div>
