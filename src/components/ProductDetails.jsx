@@ -67,8 +67,8 @@ const Variation2 = ({ variation, index }) => {
 };
 
 
-const RequestModal = ({ onClose, product }) => {
-    const imageUrl = urlFor(product.image).url();
+const RequestModal = ({ onClose, product, image }) => {
+    const imageUrl = urlFor(image).url();
 
     const closeRequestModal = () => {
         onClose();
@@ -584,6 +584,7 @@ const ProductDetails = ({ product }) => {
             <RequestModal 
                 onClose={() => setIsRequestModalOpen(false)}
                 product={product}
+                image={product.images[0]}
             />
         )}
     </section>
