@@ -74,13 +74,12 @@ const RequestModal = ({ onClose }) => {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: 10, opacity: 0 }}
                 transition={{ duration: 0.1 }}
-                className="bg-primaryalt md:p-14 ss:p-10 p-4 rounded-md shadow-xl 
-                flex flex-col justify-center w-auto h-auto font-manierRegular
-                items-center">
+                className="bg-white md:p-14 ss:p-10 p-4 rounded-2xl 
+                shadow-xl flex flex-col justify-center w-auto h-auto 
+                items-center relative">
                     <button
-                        className='absolute top-6 right-6 text-white 
-                        md:text-[20px] hover:bg-main3 rounded-full p-3
-                        hover:bg-opacity-50 navsmooth'
+                        className='absolute top-6 right-6 text-main 
+                        md:text-[20px] cursor-pointer'
                         onClick={closeRequestModal}
                     >
                         <HiX />
