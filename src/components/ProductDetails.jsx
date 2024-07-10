@@ -92,7 +92,28 @@ const RequestModal = ({ onClose }) => {
                         </h1>
 
                         <div className='flex w-full justify-between gap-5'>
-                            
+                            <div className='flex flex-col gap-5'>
+                                <div className='bg-main3 p-3 flex'>
+                                    <HiOutlineInformationCircle 
+                                        className='text-mainalt text-[20px]'
+                                    />
+
+                                    <p className='text-mainalt text-[20px]'>
+                                        Fill in the form to request a quote
+                                        for the selected product. Confirm
+                                        your variation settings, submit the
+                                        form and we'll get back to you in 
+                                        light's speed.
+                                    </p>
+                                </div>
+
+                                <div className='flex flex-col gap-3'>
+                                    <h1 className='text-main text-[17px]
+                                    font-medium'>
+                                        Select Variation
+                                    </h1>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </motion.div>
