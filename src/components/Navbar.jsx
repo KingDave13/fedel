@@ -3,7 +3,7 @@ import { BsX } from 'react-icons/bs';
 import styles from '../styles';
 import { HiOutlineChat } from 'react-icons/hi';
 import { navLinks } from '../constants';
-import { logo } from '../assets';
+import { google, logo } from '../assets';
 import { TiArrowSortedDown } from "react-icons/ti";
 import { RiWhatsappLine } from "react-icons/ri";
 import { PiLineVerticalThin } from "react-icons/pi";
@@ -124,8 +124,24 @@ useEffect(() => {
                                 className='text-main text-[23px] grow4 cursor-pointer'
                             />
                         </div>
+                        
+                        <div className='relative'>
+                            <div id="google_translate_element" />
 
-                        <div id="google_translate_element" />
+                            <div className='absolute right-0 bottom-0
+                            flex gap-1 items-center'>
+                                <img
+                                    src={google}
+                                    alt='google'
+                                    className='md:w-10 ss:w-10 w-8'
+                                />
+                                <p className='font-semibold text-brightRed
+                                md:text-[11px] ss:text-[10px] text-[9px]'>
+                                    Translate
+                                </p>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
