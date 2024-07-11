@@ -399,7 +399,12 @@ const ProductDetails = ({ product }) => {
     const [isRequestModalOpen, setIsRequestModalOpen] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [scrollPosition, setScrollPosition] = useState(0);
+    const [selectedVariation, setSelectedVariation] = useState(null);
 
+    const handleSelectVariation = (index) => {
+        setSelectedVariation((prev) => (prev === index ? null : index));
+    };
+      
     const handleRequestPriceClick = () => {
         setIsRequestModalOpen(true);
         setScrollPosition(window.pageYOffset);
@@ -565,6 +570,8 @@ const ProductDetails = ({ product }) => {
                                                     key={varIndex}
                                                     variation={variation}
                                                     index={varIndex}
+                                                    selected={selectedVariation === varIndex}
+                                                    onSelect={handleSelectVariation}
                                                 />
                                             ))}
                                         </div>
