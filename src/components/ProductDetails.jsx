@@ -40,13 +40,20 @@ const ImageCard = ({ index, image, product, handleImageClick, remaining }) => {
     );
 };
 
-const Variation = ({ variation, index }) => {
+const Variation = ({ variation, index, selected, onSelect }) => {
+    const handleClick = () => {
+        onSelect(index);
+    };
+    
     return (
       <motion.div variants={fadeIn('', 'spring', index * 0.5, 0.75)} 
       className='cursor-pointer'>
-        <div className='border-[1px] border-primaryalt rounded-lg px-3.5
+        <div className={`border-[1px] border-primaryalt rounded-lg px-3.5
         py-2 hover:bg-primary text-main md:text-[14px] ss:text-[14px] 
-        text-[12px] font-medium hover:text-white navsmooth'>
+        text-[12px] font-medium hover:text-white navsmooth
+        ${selected ? 'bg-primary text-white' : ''}`}
+        onClick={handleClick}
+        >
             <p className=''>
                 {variation}
             </p>
