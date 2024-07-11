@@ -129,11 +129,11 @@ useEffect(() => {
                             <div id="google_translate_element" />
 
                             <div className='absolute right-0 bottom-0
-                            flex gap-1 items-center'>
+                            flex gap-1.5 items-center'>
                                 <img
                                     src={google}
                                     alt='google'
-                                    className='md:w-10 ss:w-10 w-8'
+                                    className='md:w-9 ss:w-10 w-8'
                                 />
                                 <p className='font-semibold text-brightRed
                                 md:text-[11px] ss:text-[10px] text-[9px]'>
