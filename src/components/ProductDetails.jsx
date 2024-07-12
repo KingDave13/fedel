@@ -85,10 +85,12 @@ const Variation2 = ({ variation, index, selected, onSelect }) => {
 
 
 const RequestModal = ({ onClose, product, image }) => {
-    const [selectedVariation, setSelectedVariation] = useState(null);
+    const [selectedVariations, setSelectedVariations] = useState(null);
 
     const handleSelectVariation = (index) => {
-        setSelectedVariation((prev) => (prev === index ? null : index));
+        setSelectedVariations((prev) =>
+          prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+        );
     };
 
     const imageUrl = urlFor(image).url();
@@ -185,7 +187,7 @@ const RequestModal = ({ onClose, product, image }) => {
                                                         key={varIndex}
                                                         variation={variation}
                                                         index={varIndex}
-                                                        selected={selectedVariation === varIndex}
+                                                        selected={selectedVariations.includes(varIndex)}
                                                         onSelect={handleSelectVariation}
                                                     />
                                                 ))}
@@ -414,10 +416,12 @@ const ProductDetails = ({ product }) => {
     const [isRequestModalOpen, setIsRequestModalOpen] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [scrollPosition, setScrollPosition] = useState(0);
-    const [selectedVariation, setSelectedVariation] = useState(null);
+    const [selectedVariations, setSelectedVariations] = useState(null);
 
     const handleSelectVariation = (index) => {
-        setSelectedVariation((prev) => (prev === index ? null : index));
+        setSelectedVariations((prev) =>
+          prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+        );
     };
       
     const handleRequestPriceClick = () => {
@@ -585,7 +589,7 @@ const ProductDetails = ({ product }) => {
                                                     key={varIndex}
                                                     variation={variation}
                                                     index={varIndex}
-                                                    selected={selectedVariation === varIndex}
+                                                    selected={selectedVariations.includes(varIndex)}
                                                     onSelect={handleSelectVariation}
                                                 />
                                             ))}
