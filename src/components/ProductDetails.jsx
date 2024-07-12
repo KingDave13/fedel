@@ -62,12 +62,19 @@ const Variation = ({ variation, index, selected, onSelect }) => {
     );
 };
 
-const Variation2 = ({ variation }) => {
+const Variation2 = ({ variation, index, selected, onSelect }) => {
+    const handleClick = () => {
+        onSelect(index);
+    };
+
     return (
       <div className='cursor-pointer'>
-        <div className='border-[1px] border-primaryalt rounded-lg px-3.5
+        <div className={`border-[1px] border-primaryalt rounded-lg px-3.5
         py-2 hover:bg-primary text-main md:text-[13px] ss:text-[13px] 
-        text-[12px] font-medium hover:text-white navsmooth'>
+        text-[12px] font-medium hover:text-white navsmooth
+        ${selected ? 'bg-primary text-white' : ''}`}
+        onClick={handleClick}
+        >
             <p className=''>
                 {variation}
             </p>
@@ -78,6 +85,12 @@ const Variation2 = ({ variation }) => {
 
 
 const RequestModal = ({ onClose, product, image }) => {
+    const [selectedVariation, setSelectedVariation] = useState(null);
+
+    const handleSelectVariation = (index) => {
+        setSelectedVariation((prev) => (prev === index ? null : index));
+    };
+
     const imageUrl = urlFor(image).url();
 
     const closeRequestModal = () => {
@@ -172,6 +185,8 @@ const RequestModal = ({ onClose, product, image }) => {
                                                         key={varIndex}
                                                         variation={variation}
                                                         index={varIndex}
+                                                        selected={selectedVariation === varIndex}
+                                                        onSelect={handleSelectVariation}
                                                     />
                                                 ))}
                                             </div>
