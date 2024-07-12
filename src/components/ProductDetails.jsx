@@ -85,7 +85,7 @@ const Variation2 = ({ variation, index, selected, onSelect }) => {
 
 
 const RequestModal = ({ onClose, product, image }) => {
-    const [selectedVariations, setSelectedVariations] = useState(null);
+    const [selectedVariations, setSelectedVariations] = useState([]);
 
     const handleSelectVariation = (index) => {
         setSelectedVariations((prev) =>
@@ -416,7 +416,7 @@ const ProductDetails = ({ product }) => {
     const [isRequestModalOpen, setIsRequestModalOpen] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [scrollPosition, setScrollPosition] = useState(0);
-    const [selectedVariations, setSelectedVariations] = useState(null);
+    const [selectedVariations, setSelectedVariations] = useState([]);
 
     const handleSelectVariation = (index) => {
         setSelectedVariations((prev) =>
