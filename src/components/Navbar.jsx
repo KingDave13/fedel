@@ -157,7 +157,7 @@ useEffect(() => {
                     </a>
 
                     <div className="hidden md:flex items-center w-full
-                    gap-12 ml-12">
+                    gap-10 ml-12">
                         <div className='flex w-full justify-center'>
                             <div className='flex flex-row bg-main2 w-full
                             rounded-[10px] border-[1px] border-primaryalt 
@@ -186,7 +186,7 @@ useEffect(() => {
                             </div>
                         </div>
 
-                        <div className='flex gap-12 items-center'>
+                        <div className='flex gap-10 items-center'>
                             <div className='flex justify-center items-center'>
                                 <IoCartOutline
                                     className='text-primary text-[35px] grow4 
@@ -195,7 +195,7 @@ useEffect(() => {
                             </div>
 
                             <button className='bg-primary text-[15px] py-3 px-5
-                            text-white rounded-[10px] grow4 cursor-pointer w-[150px]'
+                            text-white rounded-[10px] grow4 cursor-pointer w-[160px]'
                             // onClick={() => {
                             //     setToggle(!toggle);
                             // }}
