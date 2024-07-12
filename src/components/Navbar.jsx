@@ -133,15 +133,14 @@ useEffect(() => {
                                 <img
                                     src={google}
                                     alt='google'
-                                    className='md:w-9 ss:w-10 w-8'
+                                    className='w-9'
                                 />
                                 <p className='font-semibold text-brightRed
-                                md:text-[11px] ss:text-[10px] text-[9px]'>
+                                text-[11px]'>
                                     Translate
                                 </p>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
             </div>
@@ -342,11 +341,23 @@ useEffect(() => {
                                         className='text-main
                                         ss:text-[23px] text-[20px]'
                                     />
-                                </div>
 
-                                <div className='bg-main text-[14px] py-1 px-4
-                                text-white rounded-[5px]'>
-                                    GOOGLE
+                                    <div className='relative'>
+                                        <div id="google_translate_element" />
+
+                                        <div className='absolute right-0 bottom-0
+                                        flex gap-1.5 items-center'>
+                                            <img
+                                                src={google}
+                                                alt='google'
+                                                className='ss:w-10 w-8'
+                                            />
+                                            <p className='font-semibold text-brightRed
+                                            ss:text-[10px] text-[9px]'>
+                                                Translate
+                                            </p>
+                                        </div>  
+                                    </div>
                                 </div>
                             </div>
                         </div>
