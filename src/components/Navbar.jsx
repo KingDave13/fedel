@@ -38,13 +38,18 @@ useEffect(() => {
 }, []);
 
 useEffect(() => {
-    if (window.google && window.google.translate) {
-      new window.google.translate.TranslateElement(
-        { pageLanguage: 'en' },
-        'google_translate_element'
-      );
-    }
-}, []);
+    const intervalId = setInterval(() => {
+      if (window.google && window.google.translate && window.google.translate.TranslateElement) {
+        new window.google.translate.TranslateElement(
+          { pageLanguage: 'en' },
+          'google_translate_element'
+        );
+        clearInterval(intervalId); // Clear the interval once TranslateElement is initialized
+      }
+    }, 1000); // Check every 1 second
+
+    return () => clearInterval(intervalId); // Cleanup interval on unmount
+  }, []);
 
   return (
     <nav className='w-full flex items-center fixed 
