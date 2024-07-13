@@ -2,7 +2,7 @@ import { SectionWrapperAlt } from '../hoc';
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
-import { shopping } from '../assets';
+import { shopping, shoppingCheck } from '../assets';
 import { urlFor } from '../sanity';
 import { TbWorldCheck, TbShieldCheck  } from "react-icons/tb";
 import { HiChevronLeft, HiChevronRight, HiX } from 'react-icons/hi';
@@ -11,6 +11,7 @@ import { useSwipeable } from 'react-swipeable';
 import { useFormik } from "formik";
 import { TiArrowSortedDown } from "react-icons/ti";
 import * as Yup from 'yup';
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/cartSlice';
 
@@ -434,34 +435,36 @@ const CartModal = ({ onClose }) => {
                 transition={{ duration: 0.1 }}
                 className="bg-white md:p-8 ss:p-8 p-6 rounded-2xl 
                 shadow-xl flex flex-col justify-center w-auto h-auto 
-                items-center relative">
+                items-center">
                     <button
-                        className='absolute md:top-8 ss:top-8 top-6 
-                        md:right-8 ss:right-8 right-6 text-main 
-                        md:text-[20px] cursor-pointer'
+                        className='text-main md:text-[20px] cursor-pointer
+                        flex justify-end w-full'
                         onClick={closeCartModal}
                     >
                         <HiX />
                     </button>
 
-                    <div className='flex flex-col w-full md:gap-8
-                    ss:gap-8 gap-5 items-center'>
+                    <div className='flex flex-col w-full items-center'>
+                        <img src={shoppingCheck} 
+                            alt='cartCheck'
+                            className='w-[60px] h-auto md:mb-6 ss:mb-6 mb-5' 
+                        />
 
-                        
-                        <h1 className='font-medium text-primary md:text-[20px]
-                        ss:text-[18px] text-[15px]'>
+                        <h1 className='font-semibold text-primary md:text-[27px]
+                        ss:text-[20px] text-[15px] mb-2'>
                             Product added to cart!
                         </h1>
 
-                        <p className='text-main md:text-[13px]
-                        ss:text-[13px] text-[11px]'>
+                        <p className='text-main md:text-[14px] ss:text-[13px] 
+                        text-[11px] font-medium md:mb-8 ss:mb-8 mb-6'>
                             The product you selected has been added to your
                             cart successfully.
                         </p>
 
-                        <Link className='bg-primary text-[14px] py-3.5 
-                        items-center text-white rounded-lg grow2 
-                        cursor-pointer w-[180px] flex gap-2'>
+                        <Link to='/cart' 
+                        className='bg-primary text-[13px] py-3.5 flex
+                        items-center justify-center text-white rounded-lg grow2 
+                        cursor-pointer w-[150px] gap-3'>
                             <img src={shopping} 
                                 alt='cart'
                                 className='text-white 
@@ -923,6 +926,12 @@ const ProductDetails = ({ product }) => {
                 onClose={() => setIsRequestModalOpen(false)}
                 product={product}
                 image={product.images[0]}
+            />
+        )}
+
+        {isCartModalOpen && (
+            <CartModal
+                onClose={() => setIsCartModalOpen(false)}
             />
         )}
     </section>
