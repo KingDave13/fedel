@@ -207,7 +207,7 @@ useEffect(() => {
                                     {itemCount > 0 && (
                                         <span className='absolute top-0 
                                         right-0 bg-greenDeep text-white 
-                                        rounded-full text-[11px] w-5 h-5 
+                                        rounded-full text-[11px] w-[18px] h-[18px] 
                                         flex items-center justify-center'>
                                             {itemCount}
                                         </span>
@@ -241,7 +241,7 @@ useEffect(() => {
                                     {itemCount > 0 && (
                                         <span className='absolute top-0 
                                         right-0 bg-greenDeep text-white 
-                                        rounded-full text-[11px] w-5 h-5 
+                                        rounded-full text-[10px] w-4 h-4 
                                         flex items-center justify-center'>
                                             {itemCount}
                                         </span>

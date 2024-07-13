@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { persistStore, persistReducer } from 'redux-persist';
+import { persistStore, persistReducer, REHYDRATE, PERSIST } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import cartReducer from './cartSlice';
 
@@ -14,6 +14,11 @@ const store = configureStore({
     reducer: {
         cart: persistedReducer,
     },
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+        serializableCheck: {
+          ignoredActions: [REHYDRATE, PERSIST]
+        }
+      })
 });
 
 const persistor = persistStore(store);
