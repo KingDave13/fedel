@@ -276,7 +276,7 @@ const Product = ({ products, categorySlug }) => {
                                 bg-transparent w-full custom-select
                                 font-bold"
                             >
-                                <option value="" disabled selected hidden>Most Popular</option>
+                                <option value="" disabled hidden>Most Popular</option>
                                 <option value="social_media">Most Relevant</option>
                             </select>
                             <div className='absolute right-0'>

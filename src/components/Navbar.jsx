@@ -218,10 +218,12 @@ useEffect(() => {
                     <div className="md:hidden flex justify-end flex-1 items-center">
                         <div className="flex items-center z-20 ss:gap-8
                         gap-6">
-                            <IoCartOutline
-                                className='text-primary ss:text-[35px] 
-                                text-[30px]'
-                            />
+                            <Link to='/cart'>
+                                <IoCartOutline
+                                    className='text-primary ss:text-[35px] 
+                                    text-[30px]'
+                                />
+                            </Link>
 
                             {toggle ? (
                             <BsX
