@@ -9,6 +9,7 @@ import { RiWhatsappLine } from "react-icons/ri";
 import { PiLineVerticalThin } from "react-icons/pi";
 import { IoCartOutline, IoSearchOutline, IoMenu } from "react-icons/io5";
 import { FiMail } from "react-icons/fi";
+import { Link } from 'react-router-dom';
 
 // import { useNavigate } from 'react-router-dom';
 
@@ -48,7 +49,7 @@ useEffect(() => {
       }
     }, 1000); // Check every 1 second
 
-    return () => clearInterval(intervalId); // Cleanup interval on unmount
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
@@ -193,10 +194,12 @@ useEffect(() => {
 
                         <div className='flex gap-10 items-center'>
                             <div className='flex justify-center items-center'>
-                                <IoCartOutline
-                                    className='text-primary text-[35px] grow4 
-                                    cursor-pointer'
-                                />
+                                <Link to='/cart'>
+                                    <IoCartOutline
+                                        className='text-primary text-[35px] grow4 
+                                        cursor-pointer'
+                                    />
+                                </Link>
                             </div>
 
                             <button className='bg-primary text-[15px] py-3 px-5
