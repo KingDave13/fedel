@@ -10,6 +10,7 @@ import { PiLineVerticalThin } from "react-icons/pi";
 import { IoCartOutline, IoSearchOutline, IoMenu } from "react-icons/io5";
 import { FiMail } from "react-icons/fi";
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 // import { useNavigate } from 'react-router-dom';
 
@@ -18,6 +19,9 @@ const [toggle, setToggle] = useState(false);
 const menuRef = useRef(null);
 // const navigate = useNavigate();
 const [openMenuId, setOpenMenuId] = useState(null);
+
+const cartItems = useSelector((state) => state.cart.items);
+const itemCount = cartItems.length;
 
 const toggleMenu = (id) => {
     setOpenMenuId((prevId) => (prevId === id ? null : id));
@@ -193,12 +197,21 @@ useEffect(() => {
                         </div>
 
                         <div className='flex gap-10 items-center'>
-                            <div className='flex justify-center items-center'>
+                            <div className='flex justify-center items-center
+                            relative'>
                                 <Link to='/cart'>
                                     <IoCartOutline
                                         className='text-primary text-[35px] grow4 
                                         cursor-pointer'
                                     />
+                                    {itemCount > 0 && (
+                                        <span className='absolute top-0 
+                                        right-0 bg-greenDeep text-white 
+                                        rounded-full text-[11px] w-5 h-5 
+                                        flex items-center justify-center'>
+                                            {itemCount}
+                                        </span>
+                                    )}
                                 </Link>
                             </div>
 
@@ -218,12 +231,24 @@ useEffect(() => {
                     <div className="md:hidden flex justify-end flex-1 items-center">
                         <div className="flex items-center z-20 ss:gap-8
                         gap-6">
-                            <Link to='/cart'>
-                                <IoCartOutline
-                                    className='text-primary ss:text-[35px] 
-                                    text-[30px]'
-                                />
-                            </Link>
+                            <div className='flex justify-center items-center
+                            relative'>
+                                <Link to='/cart'>
+                                    <IoCartOutline
+                                        className='text-primary ss:text-[35px] 
+                                        text-[30px]'
+                                    />
+                                    {itemCount > 0 && (
+                                        <span className='absolute top-0 
+                                        right-0 bg-greenDeep text-white 
+                                        rounded-full text-[11px] w-5 h-5 
+                                        flex items-center justify-center'>
+                                            {itemCount}
+                                        </span>
+                                    )}
+                                </Link>
+                            </div>
+                            
 
                             {toggle ? (
                             <BsX
