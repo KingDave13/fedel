@@ -421,6 +421,21 @@ const ProductDetails = ({ product }) => {
     const [selectedVariations, setSelectedVariations] = useState([]);
     const dispatch = useDispatch();
 
+    const handleAddToCartClick = () => {
+        const cartItem = {
+            id: product._id,
+            name: product.name,
+            image: product.images[0],
+            type: product.attributes.type,
+            manufacturer: product.attributes.manufacturer,
+            variations: selectedVariations,
+            price: product.attributes.price,
+            OriginalPrice: product.attributes.OriginalPrice,
+            quantity: 1,
+        };
+        dispatch(addToCart(cartItem));
+    };
+
     const handleSelectVariation = (index) => {
         setSelectedVariations((prev) =>
           prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
@@ -432,10 +447,6 @@ const ProductDetails = ({ product }) => {
         setScrollPosition(window.pageYOffset);
         document.body.style.overflow = 'hidden';
         document.body.style.top = `-${scrollPosition}px`;
-    };
-
-    const handleAddToCartClick = () => {
-        console.log('Added to Cart');
     };
 
     const openModal = (index) => {
