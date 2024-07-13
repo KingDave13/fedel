@@ -2,7 +2,6 @@ import { SectionWrapper } from "../hoc";
 import { layout } from '../styles';
 import { motion } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
-import { useNavigate } from 'react-router-dom';
 import { helpImg } from '../assets';
 import { useState, useRef } from 'react';
 // import emailjs from '@emailjs/browser';
@@ -11,8 +10,6 @@ import { GrAttachment } from "react-icons/gr";
 import * as Yup from 'yup';
 
 const Help = () => {
-    const navigate = useNavigate();
-
     const formRef = useRef();
     const [Loading, setLoading] = useState(false);
 

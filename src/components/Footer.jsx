@@ -26,7 +26,7 @@ const Footer = () => {
             <div className='flex md:gap-5 ss:gap-5 gap-3 items-center'>
                 {socialMedia.map((social, index) => (
                     <a target='_blank' href={social.link} rel="noreferrer" key={index}>
-                        <img src={social.image} 
+                        <img src={social.image} alt='social'
                             className='md:w-6 ss:w-5 w-5 h-auto'
                         />
                     </a>
