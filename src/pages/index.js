@@ -1,9 +1,9 @@
 import CategoryPage from './CategoryPage';
 import ProductPage from './ProductPage';
-import Cart from './Cart';
+import CartPage from './CartPage';
 
 export {
     CategoryPage,
     ProductPage,
-    Cart,
+    CartPage,
 }

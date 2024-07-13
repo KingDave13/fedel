@@ -3,6 +3,7 @@ import Hero from './Hero';
 import HeroProducts from './HeroProducts';
 import HeroProduct from './HeroProduct';
 import HeroProductEach from './HeroProductEach';
+import HeroCart from './HeroCart';
 import Discover from "./Discover";
 import Steps from './Steps';
 import ProductDetails from './ProductDetails';
@@ -16,6 +17,7 @@ import CTA from './CTA';
 import Footer from './Footer';
 
 import Product from './Product';
+import Cart from './Cart';
 
 export {
     Navbar,
@@ -33,6 +35,8 @@ export {
     HeroText,
     ProductDetails,
     HeroProductEach,
+    HeroCart,
     Product,
     RelatedProducts,
+    Cart,
 }
