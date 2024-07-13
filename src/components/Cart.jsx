@@ -11,7 +11,7 @@ const Cart = () => {
     const dispatch = useDispatch();
 
     return (
-        <section className='relative w-full min-h-[600px] mx-auto flex
+        <section className='relative w-full min-h-[60px] mx-auto flex
         items-center'>
             <div className='max-w-[86rem] mx-auto flex flex-col md:gap-8
             ss:gap-8 gap-6 w-full'>
@@ -27,7 +27,17 @@ const Cart = () => {
                 ) : (
                     <div className='w-full flex gap-5'>
                         <div className='flex flex-col w-3/4 gap-5'>
-
+                            {cartItems.map(item => (
+                                <ItemCard 
+                                    key={item.id}
+                                    item={item}
+                                    // <img src={item.image} alt={item.name} />
+                                    // <p>{item.name}</p>
+                                    // <p>Price: {item.price}</p>
+                                    // <p>Quantity: {item.quantity}</p>
+                                    // <button onClick={() => dispatch(removeFromCart(item.id))}>Remove</button>
+                                />
+                            ))}
                         </div>
                         
                         <div className='bg-main2 p-6 flex flex-col gap-3
@@ -57,26 +67,15 @@ const Cart = () => {
                             </p>
 
                             <Link to='/cart/checkout' 
-                            className='bg-primary text-[13px] py-3.5 flex
+                            className='bg-primary text-[14px] py-3.5 flex
                             items-center justify-center text-white rounded-lg 
-                            grow2 cursor-pointer w-full mt-2'>
+                            grow2 cursor-pointer w-full mt-3'>
                                 <p>
                                     Checkout
                                 </p>
                             </Link>
                         </div>
                     </div>
-                    // <ul>
-                    //     {cartItems.map(item => (
-                    //         <li key={item.id}>
-                    //             <img src={item.image} alt={item.name} />
-                    //             <p>{item.name}</p>
-                    //             <p>Price: {item.price}</p>
-                    //             <p>Quantity: {item.quantity}</p>
-                    //             <button onClick={() => dispatch(removeFromCart(item.id))}>Remove</button>
-                    //         </li>
-                    //     ))}
-                    // </ul>
                 )}
                 <button onClick={() => dispatch(clearCart())}>Clear Cart</button>
             </div>
