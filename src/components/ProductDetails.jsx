@@ -504,6 +504,7 @@ const ProductDetails = ({ product }) => {
             OriginalPrice: product.attributes.OriginalPrice,
             quantity: 1,
         };
+        
         dispatch(addToCart(cartItem));
         setIsCartModalOpen(true);
         setScrollPosition(window.pageYOffset);

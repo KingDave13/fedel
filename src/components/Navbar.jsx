@@ -21,7 +21,7 @@ const menuRef = useRef(null);
 const [openMenuId, setOpenMenuId] = useState(null);
 
 const cartItems = useSelector((state) => state.cart.items);
-const itemCount = cartItems.length;
+const itemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
 const toggleMenu = (id) => {
     setOpenMenuId((prevId) => (prevId === id ? null : id));
