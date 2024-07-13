@@ -412,10 +412,78 @@ const RequestModal = ({ onClose, product, image }) => {
     );
 };
 
+const CartModal = ({ onClose }) => {
+    const closeCartModal = () => {
+        onClose();
+        document.body.style.overflow = 'auto';
+        document.body.style.top = '0';
+    }
+
+    return (
+        <AnimatePresence>
+            <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 flex items-center justify-center
+            bg-black bg-opacity-80 z-50">
+                <motion.div 
+                initial={{ y: 0, opacity: 0.7 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: 10, opacity: 0 }}
+                transition={{ duration: 0.1 }}
+                className="bg-white md:p-8 ss:p-8 p-6 rounded-2xl 
+                shadow-xl flex flex-col justify-center w-auto h-auto 
+                items-center relative">
+                    <button
+                        className='absolute md:top-8 ss:top-8 top-6 
+                        md:right-8 ss:right-8 right-6 text-main 
+                        md:text-[20px] cursor-pointer'
+                        onClick={closeCartModal}
+                    >
+                        <HiX />
+                    </button>
+
+                    <div className='flex flex-col w-full md:gap-8
+                    ss:gap-8 gap-5 items-center'>
+
+                        
+                        <h1 className='font-medium text-primary md:text-[20px]
+                        ss:text-[18px] text-[15px]'>
+                            Product added to cart!
+                        </h1>
+
+                        <p className='text-main md:text-[13px]
+                        ss:text-[13px] text-[11px]'>
+                            The product you selected has been added to your
+                            cart successfully.
+                        </p>
+
+                        <Link className='bg-primary text-[14px] py-3.5 
+                        items-center text-white rounded-lg grow2 
+                        cursor-pointer w-[180px] flex gap-2'>
+                            <img src={shopping} 
+                                alt='cart'
+                                className='text-white 
+                                w-[20px] h-auto' 
+                            />
+
+                            <p>
+                                See cart
+                            </p>
+                        </Link>
+                    </div>
+                </motion.div>
+            </motion.div>
+        </AnimatePresence>
+    );
+};
+
 
 const ProductDetails = ({ product }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isRequestModalOpen, setIsRequestModalOpen] = useState(false);
+    const [isCartModalOpen, setIsCartModalOpen] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [scrollPosition, setScrollPosition] = useState(0);
     const [selectedVariations, setSelectedVariations] = useState([]);
@@ -434,6 +502,10 @@ const ProductDetails = ({ product }) => {
             quantity: 1,
         };
         dispatch(addToCart(cartItem));
+        setIsCartModalOpen(true);
+        setScrollPosition(window.pageYOffset);
+        document.body.style.overflow = 'hidden';
+        document.body.style.top = `-${scrollPosition}px`;
     };
 
     const handleSelectVariation = (index) => {
