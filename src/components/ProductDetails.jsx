@@ -11,6 +11,8 @@ import { useSwipeable } from 'react-swipeable';
 import { useFormik } from "formik";
 import { TiArrowSortedDown } from "react-icons/ti";
 import * as Yup from 'yup';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../redux/cartSlice';
 
 
 const ImageCard = ({ index, image, product, handleImageClick, remaining }) => {
@@ -417,6 +419,7 @@ const ProductDetails = ({ product }) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [scrollPosition, setScrollPosition] = useState(0);
     const [selectedVariations, setSelectedVariations] = useState([]);
+    const dispatch = useDispatch();
 
     const handleSelectVariation = (index) => {
         setSelectedVariations((prev) =>
