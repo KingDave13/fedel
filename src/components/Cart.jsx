@@ -32,8 +32,13 @@ const ItemCard = ({ item, index, image }) => {
                             <p className='text-mainalt text-[16px]'>
                                 {item.manufacturer}
                             </p>
-                            <p className='text-main font-bold text-[14px]'>
-                                {item.variations}
+                            <p className='text-main font-semibold 
+                            text-[14px] flex flex-wrap gap-3'>
+                                {item.variations.map((variation, index) => (
+                                    <span key={index}>
+                                        {variation}
+                                    </span>
+                                ))}
                             </p>
                         </div>
                     </div>

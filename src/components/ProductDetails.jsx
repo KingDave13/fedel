@@ -505,7 +505,7 @@ const ProductDetails = ({ product }) => {
                 image: product.images[0],
                 type: attribute.type,
                 manufacturer: attribute.manufacturer,
-                variations: selectedVariations,
+                variations: selectedVariations.map(index => attribute.variations[index]),
                 price: attribute.price,
                 OriginalPrice: attribute.OriginalPrice,
                 quantity: 1,
