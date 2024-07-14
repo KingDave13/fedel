@@ -30,12 +30,50 @@ const ItemCard = ({ item, index }) => {
                     </div>
 
                     <div className='flex flex-col gap-3'>
+                        <h1 className='text-greenDeep text-[20px] 
+                        font-bold'>
+                            <div>
+                                <span className='line-through'>
+                                    N
+                                </span>
+                                {item.price}.00
+                            </div>
+                        </h1>
 
+                        <h1 className='text-main3 font-medium text-[18px] 
+                        line-through'>
+                            <div>
+                                N{item.OriginalPrice}.00
+                            </div>
+                        </h1>
+                    </div>
+                </div>
+
+                <div className='flex w-full justify-between items-center'>
+                    <div className='flex items-center gap-2'>
+
+                        <p className='text-main text-[13px]'>
+                            Remove Item
+                        </p>
+                    </div>
+
+                    <div className='flex items-center gap-2'>
+                        <div className='bg-primary rounded-md p-2
+                        text-[14px] cursor-pointer grow2'>
+                            +
+                        </div>
+
+                        <p className='text-main text-[14px]'>
+                            1
+                        </p>
+
+                        <div className='bg-primary rounded-md p-2
+                        text-[14px] cursor-pointer grow2'>
+                            -
+                        </div>
                     </div>
                 </div>
             </div>
-            {item.name}
-            {item.image[0]}
         </motion.div>
     );
 };
