@@ -12,6 +12,8 @@ import CategoriesProduct from './CategoriesProduct';
 import RelatedProducts from './RelatedProducts';
 import MoreProducts from './MoreProducts';
 import HeroText from './HeroText';
+import Checkout from "./Checkout";
+import HeroCheckout from './HeroCheckout';
 import Top from './Top';
 import Help from './Help';
 import CTA from './CTA';
@@ -41,4 +43,6 @@ export {
     RelatedProducts,
     MoreProducts,
     Cart,
+    Checkout,
+    HeroCheckout,
 }
