@@ -33,6 +33,7 @@ import whatsapplogo from './whatsapplogo.png';
 import gmaillogo from './gmaillogo.png';
 import google from './google.png';
 import shoppingCheck from './shoppingCheck.png';
+import trash from './trash.png';
 
 export {
     logo,
@@ -70,6 +71,7 @@ export {
     gmaillogo,
     google,
     shoppingCheck,
+    trash,
 }
 
 export const heroImages = [

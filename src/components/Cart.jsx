@@ -4,8 +4,11 @@ import { SectionWrapper } from '../hoc';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart, clearCart } from '../redux/cartSlice';
 import { Link } from 'react-router-dom';
+import { trash } from '../assets';
 
 const ItemCard = ({ item, index }) => {
+    const dispatch = useDispatch();
+
     return (
         <motion.div variants={fadeIn('', 'spring', index * 0.5, 0.75)}>
             <div className='bg-main2 rounded-2xl p-6 flex flex-col gap-3'>
@@ -51,7 +54,11 @@ const ItemCard = ({ item, index }) => {
 
                 <div className='flex w-full justify-between items-center'>
                     <div className='flex items-center gap-2'>
-
+                        <img
+                            src={trash}
+                            className='text-brightRed text-[15px]'
+                            onClick={() => dispatch(removeFromCart(item.id))}
+                        />
                         <p className='text-main text-[13px]'>
                             Remove Item
                         </p>
