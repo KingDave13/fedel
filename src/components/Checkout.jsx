@@ -14,6 +14,8 @@ const Checkout = () => {
     const cartItems = useSelector((state) => state.cart.items);
     const itemCount = cartItems.length;
     const totalAmount = cartItems.reduce((total, item) => total + (parseFloat(item.price.replace(',', '')) * item.quantity), 0);
+    const vat = totalAmount * 0.075;
+    const subtotal = totalAmount + vat;
 
     const formik = useFormik({
         initialValues: {
@@ -277,7 +279,7 @@ const Checkout = () => {
                                         </p>
 
                                         <p className='text-main md:text-[18px] 
-                                        font-bold'>
+                                        font-semibold'>
                                             <span className='line-through'>
                                                 N
                                             </span>
@@ -288,15 +290,15 @@ const Checkout = () => {
                                     <div className='flex w-full justify-between
                                     items-center'>
                                         <p className='text-mainalt text-[16px]'>
-                                            VAT (7.5%):
+                                            VAT (7.5%)
                                         </p>
 
                                         <p className='text-main md:text-[18px] 
-                                        font-bold'>
+                                        font-semibold'>
                                             <span className='line-through'>
                                                 N
                                             </span>
-                                            {totalAmount.toLocaleString()}.00
+                                            {vat.toLocaleString()}.00
                                         </p>
                                     </div>
 
@@ -311,7 +313,7 @@ const Checkout = () => {
                                             <span className='line-through'>
                                                 N
                                             </span>
-                                            {totalAmount.toLocaleString()}.00
+                                            {subtotal.toLocaleString()}.00
                                         </p>
                                     </div>
                                 </div>
