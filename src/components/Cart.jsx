@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { fadeIn } from '../utils/motion';
 import { SectionWrapperAlt } from '../hoc';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeFromCart, clearCart } from '../redux/cartSlice';
+import { removeFromCart, clearCart, incrementQuantity, decrementQuantity } from '../redux/cartSlice';
 import { Link } from 'react-router-dom';
 import { add, subtract, trash } from '../assets';
 import { urlFor } from '../sanity';
@@ -78,16 +78,18 @@ const ItemCard = ({ item, index, image }) => {
                             src={add}
                             alt='add'
                             className='cursor-pointer grow2 w-7 h-7'
+                            onClick={() => dispatch(incrementQuantity(item.id))}
                         />
 
                         <p className='text-main text-[14px]'>
-                            1
+                            {item.quantity}
                         </p>
 
                         <img
                             src={subtract}
                             alt='subtract'
                             className='cursor-pointer grow2 w-7 h-7'
+                            onClick={() => dispatch(decrementQuantity(item.id))}
                         />
                     </div>
                 </div>
@@ -174,8 +176,8 @@ const Cart = () => {
 
                 <div className='mt-6 mb-14'>
                     <button onClick={() => dispatch(clearCart())}
-                    className='text-white font-medium bg-primary py-3 px-10
-                    rounded-lg grow2'>
+                    className='text-white bg-primary py-2 px-10 grow2
+                    rounded-lg text-[14px]'>
                         Clear Cart
                     </button>
                 </div>
