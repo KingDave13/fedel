@@ -55,7 +55,7 @@ const Checkout = () => {
                             <div className='bg-main2 rounded-xl p-5 
                             flex gap-3 items-center'>
                                 <HiOutlineInformationCircle
-                                    className='text-mainalt text-[25px]'
+                                    className='text-mainalt text-[30px]'
                                 />
 
                                 <p className='text-mainalt text-[14px]
