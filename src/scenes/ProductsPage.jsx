@@ -14,7 +14,7 @@ const ProductsPage = () => {
     return (
         <div className='font-encode-sans'>
             <Helmet>
-                <title>Products | Fedel Tiles Limited</title>
+                <title>Products | Shoptiles.ng</title>
                 <meta name="description" content="The best tile and building materials dealer." />
             </Helmet>
 

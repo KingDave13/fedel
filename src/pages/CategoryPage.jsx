@@ -55,7 +55,7 @@ const CategoryPage = () => {
     return (
         <div className='font-encode-sans'>
             <Helmet>
-                <title>{category.name} | Fedel Tiles Limited</title>
+                <title>{category.name} | Shoptiles.ng</title>
                 <meta name="description" content="The best tile and building materials dealer." />
             </Helmet>
 

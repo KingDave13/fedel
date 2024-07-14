@@ -54,7 +54,7 @@ const ProductPage = () => {
     return (
         <div className='font-encode-sans'>
             <Helmet>
-                <title>{product.name} | Fedel Tiles Limited</title>
+                <title>{product.name} | Shoptiles.ng</title>
                 <meta name="description" content={product.description} />
             </Helmet>
 

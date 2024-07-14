@@ -13,7 +13,7 @@ const CartPage = () => {
     return (
         <div className='font-encode-sans'>
             <Helmet>
-                <title>Cart | Fedel Tiles Limited</title>
+                <title>Cart | Shoptiles.ng</title>
                 <meta name="description" content="View your cart" />
             </Helmet>
 
