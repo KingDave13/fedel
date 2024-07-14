@@ -3,6 +3,7 @@ import {
     Footer,
     Cart,
     HeroCart,
+    MoreProducts,
 } from '../components';
 
 import { Helmet } from 'react-helmet';
@@ -20,6 +21,8 @@ const CartPage = () => {
             <HeroCart />
             
             <Cart />
+
+            <MoreProducts />
 
            <div className='footer'>
                 <Footer />

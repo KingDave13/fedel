@@ -10,6 +10,7 @@ import ProductDetails from './ProductDetails';
 import Categories from './Categories';
 import CategoriesProduct from './CategoriesProduct';
 import RelatedProducts from './RelatedProducts';
+import MoreProducts from './MoreProducts';
 import HeroText from './HeroText';
 import Top from './Top';
 import Help from './Help';
@@ -38,5 +39,6 @@ export {
     HeroCart,
     Product,
     RelatedProducts,
+    MoreProducts,
     Cart,
 }

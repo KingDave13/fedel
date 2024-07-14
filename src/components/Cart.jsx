@@ -179,7 +179,7 @@ const Cart = () => {
                     </div>
                 )}
 
-                <div className='mt-6 mb-14'>
+                <div className='mt-6'>
                     <button onClick={() => dispatch(clearCart())}
                     className='text-white bg-primary py-2 px-10 grow2
                     rounded-lg text-[14px]'>
