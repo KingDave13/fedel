@@ -17,11 +17,13 @@ const ImageCard = ({ image, name, slug, categorySlug }) => {
                         <img 
                             src={imageUrl}
                             alt={name}
-                            className='rounded-lg object-cover w-full h-full'
+                            className='rounded-lg object-cover w-full
+                             h-full'
                         />
                     </div>
                 ) : (
-                    <div className='flex items-center justify-center bg-gray-200 rounded-lg w-[200px] h-[200px]'>
+                    <div className='flex items-center justify-center 
+                    bg-gray-200 rounded-lg w-[200px] h-[200px]'>
                         <span>No Image</span>
                     </div>
                 )}
@@ -37,7 +39,7 @@ const MoreProducts = () => {
 
     useEffect(() => {
         const query = `
-            *[_type == "product"] | order(rand()) [0...10] {
+            *[_type == "product"] | order(_createdAt desc) [0...50] {
                 _id,
                 name,
                 images,
@@ -45,9 +47,11 @@ const MoreProducts = () => {
                 "categorySlug": category->slug.current
             }
         `;
+        
         client.fetch(query)
             .then((data) => {
-                setMoreProducts(data);
+                const shuffledProducts = data.sort(() => 0.5 - Math.random()).slice(0, 10); // Take 10 random products
+                setMoreProducts(shuffledProducts);
             })
             .catch((error) => console.error('Error fetching random products:', error));
     }, []);
@@ -75,8 +79,8 @@ const MoreProducts = () => {
     return (
         <section className='relative w-full md:min-h-[300px] 
         ss:min-h-[300px] min-h-[800px] mx-auto flex items-center'>
-            <div className='max-w-[86rem] mx-auto flex flex-col w-full
-             md:gap-10'>
+            <div className='max-w-[86rem] mx-auto flex flex-col w-full 
+            md:gap-10'>
                 <motion.div variants={textVariant()}>
                     <h1 className='text-primary font-bold md:text-[30px] 
                     ss:text-[30px] text-[20px] tracking-tight'>
@@ -88,13 +92,12 @@ const MoreProducts = () => {
                     <button 
                         className='absolute left-6 z-10 bg-main 
                         text-white p-3 rounded-full opacity-90 
-                        hover:opacity-100 navsmooth'
+                        hover:opacity-100'
                         onClick={scrollLeft}
                     >
                         <CgArrowLeft size={18} />
                     </button>
-                    <div className='overflow-hidden w-full flex' 
-                    ref={carouselRef}>
+                    <div className='overflow-hidden w-full flex' ref={carouselRef}>
                         <div className='flex gap-6'>
                             {moreProducts.map((item, index) => (
                                 <div key={item._id} ref={index === 0 ? itemRef : null}>
@@ -111,7 +114,7 @@ const MoreProducts = () => {
                     <button 
                         className='absolute right-6 z-10 bg-main 
                         text-white p-3 rounded-full opacity-90 
-                        hover:opacity-100 navsmooth'
+                        hover:opacity-100'
                         onClick={scrollRight}
                     >
                         <CgArrowLeft size={18} className="transform 
