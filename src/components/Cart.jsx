@@ -5,8 +5,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart, clearCart } from '../redux/cartSlice';
 import { Link } from 'react-router-dom';
 import { add, subtract, trash } from '../assets';
+import { urlFor } from '../sanity';
 
-const ItemCard = ({ item, index }) => {
+const ItemCard = ({ item, index, image }) => {
+    const imageUrl = urlFor(image).url();
     const dispatch = useDispatch();
 
     return (
@@ -14,7 +16,10 @@ const ItemCard = ({ item, index }) => {
             <div className='bg-main2 rounded-2xl p-6 flex flex-col gap-3'>
                 <div className='flex w-full justify-between'>
                     <div className='flex gap-4'>
-                        <img />
+                        <img 
+                            src={imageUrl}
+                            alt={item.name}
+                        />
 
                         <div className='flex flex-col gap-2'>
                             <h2 className='text-main font-bold text-[18px]'>
@@ -117,6 +122,7 @@ const Cart = () => {
                                     key={item.id}
                                     item={item}
                                     index={index}
+                                    image={item.image}
                                 />
                             ))}
                         </div>
