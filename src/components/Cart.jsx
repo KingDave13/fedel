@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { fadeIn } from '../utils/motion';
-import { SectionWrapper } from '../hoc';
+import { SectionWrapperAlt } from '../hoc';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart, clearCart } from '../redux/cartSlice';
 import { Link } from 'react-router-dom';
@@ -110,24 +110,19 @@ const Cart = () => {
                         No items in cart
                     </p>
                 ) : (
-                    <div className='w-full flex gap-5'>
-                        <div className='flex flex-col w-3/4 gap-5'>
+                    <div className='w-full flex gap-6'>
+                        <div className='flex flex-col w-full gap-6'>
                             {cartItems.map((item, index) => (
                                 <ItemCard 
                                     key={item.id}
                                     item={item}
                                     index={index}
-                                    // <img src={item.image} alt={item.name} />
-                                    // <p>{item.name}</p>
-                                    // <p>Price: {item.price}</p>
-                                    // <p>Quantity: {item.quantity}</p>
-                                    // <button onClick={() => dispatch(removeFromCart(item.id))}>Remove</button>
                                 />
                             ))}
                         </div>
                         
                         <div className='bg-main2 p-6 flex flex-col gap-3
-                        rounded-2xl w-full'>
+                        rounded-2xl'>
                             <h2 className='text-main font-bold 
                             text-[18px]'>
                                 Cart Summary
@@ -169,4 +164,4 @@ const Cart = () => {
     );
 };
 
-export default SectionWrapper(Cart, '');
+export default SectionWrapperAlt(Cart, '');
