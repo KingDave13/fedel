@@ -81,7 +81,7 @@ const ItemCard = ({ item, index, image }) => {
                             onClick={() => dispatch(incrementQuantity(item.id))}
                         />
 
-                        <p className='text-main text-[14px]'>
+                        <p className='text-primary font-semibold text-[14px]'>
                             {item.quantity}
                         </p>
 
@@ -100,7 +100,7 @@ const ItemCard = ({ item, index, image }) => {
 
 const Cart = () => {
     const cartItems = useSelector((state) => state.cart.items);
-    const itemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+    const itemCount = cartItems.length;
     const totalAmount = cartItems.reduce((total, item) => total + (parseFloat(item.price.replace(',', '')) * item.quantity), 0);
     const dispatch = useDispatch();
 
