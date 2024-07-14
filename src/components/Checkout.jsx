@@ -35,7 +35,7 @@ const Checkout = () => {
 
     return (
         <section className='relative w-full min-h-[60px] mx-auto flex
-        items-center'>
+        items-center md:mb-14'>
             <div className='max-w-[86rem] mx-auto flex flex-col md:gap-8
             ss:gap-8 gap-6 w-full'>
                 <h1 className='text-primary font-bold md:text-[22px]
@@ -50,15 +50,15 @@ const Checkout = () => {
                 ) : (
                     <div className='w-full flex gap-6'>
                         <div className='flex flex-col w-full gap-6'>
-                            <div className='bg-main2 rounded-2xl p-7 
+                            <div className='bg-main2 rounded-xl p-5 
                             flex gap-3 items-center'>
                                 <HiOutlineInformationCircle
-                                    className='text-mainalt text-[22px]'
+                                    className='text-mainalt text-[25px]'
                                 />
 
                                 <p className='text-mainalt text-[14px]
                                 md:leading-[19px] ss:leading-[19px]
-                                leading-[18px]'>
+                                leading-[18px] font-medium'>
                                     Fill in the form to complete your 
                                     order for the selected product(s). 
                                     Confirm your orders, submit the form
@@ -72,7 +72,7 @@ const Checkout = () => {
                             gap-4 w-full'>
                                 <div className="flex flex-col">
                                     <label className="text-main mb-2 
-                                    md:text-[14px] font-semibold
+                                    md:text-[15px] font-semibold
                                     ss:text-[14px] text-[13px]">
                                         State
                                     </label>
@@ -147,7 +147,7 @@ const Checkout = () => {
 
                                 <div className="flex flex-col">
                                     <label className="text-main mb-2 
-                                    md:text-[14px] font-semibold
+                                    md:text-[15px] font-semibold
                                     ss:text-[14px] text-[13px]">
                                         Enter your name
                                     </label>
@@ -174,7 +174,7 @@ const Checkout = () => {
 
                                 <div className="flex flex-col">
                                     <label className="text-main mb-2 
-                                    md:text-[14px] font-semibold
+                                    md:text-[15px] font-semibold
                                     ss:text-[14px] text-[13px]">
                                         Enter your email
                                     </label>
@@ -201,7 +201,7 @@ const Checkout = () => {
 
                                 <div className="flex flex-col">
                                     <label className="text-main mb-2 
-                                    md:text-[14px] font-semibold
+                                    md:text-[15px] font-semibold
                                     ss:text-[14px] text-[13px]">
                                         Enter your WhatsApp phone number
                                     </label>
@@ -227,7 +227,7 @@ const Checkout = () => {
                                 </div>
                             </form>
 
-                            <div className='w-full flex flex-col gap-3'>
+                            <div className='w-full flex flex-col gap-4'>
                                 <div className='flex items-center gap-2'>
                                     <input
                                         type='checkbox'
@@ -252,7 +252,7 @@ const Checkout = () => {
                                     Place Order
                                 </button>
 
-                                <button className='bg-greenBright text-[14px]
+                                <button className='bg-greenDeep text-[14px]
                                 text-center text-white rounded-lg grow2 
                                 cursor-pointer w-[200px] py-3.5'>
                                     Place via WhatsApp
@@ -262,22 +262,22 @@ const Checkout = () => {
                         
                         <div>
                             <div className='bg-main2 p-7 flex flex-col gap-3
-                            rounded-2xl'>
+                            rounded-xl'>
                                 <h2 className='text-main font-bold 
                                 text-[18px]'>
                                     Order Summary
                                 </h2>
 
                                 <div className='flex flex-col w-full
-                                gap-3'>
+                                gap-2'>
                                     <div className='flex w-full justify-between
                                     items-center'>
                                         <p className='text-mainalt text-[16px]'>
                                             Items total {`(${itemCount})`}:
                                         </p>
 
-                                        <p className='text-main md:text-[20px] 
-                                        font-semibold'>
+                                        <p className='text-main md:text-[18px] 
+                                        font-bold'>
                                             <span className='line-through'>
                                                 N
                                             </span>
@@ -288,11 +288,11 @@ const Checkout = () => {
                                     <div className='flex w-full justify-between
                                     items-center'>
                                         <p className='text-mainalt text-[16px]'>
-                                            VAT (7.5%) {`(${itemCount})`}:
+                                            VAT (7.5%):
                                         </p>
 
-                                        <p className='text-main md:text-[20px] 
-                                        font-semibold'>
+                                        <p className='text-main md:text-[18px] 
+                                        font-bold'>
                                             <span className='line-through'>
                                                 N
                                             </span>
@@ -325,11 +325,11 @@ const Checkout = () => {
                             </div>
 
                             <Link to='/cart'
-                            className='flex flex-end gap-2 mt-3
-                            cursor-pointer'
+                            className='flex justify-end gap-2 mt-4
+                            cursor-pointer items-center'
                             >
                                 <p className='text-primary font-semibold
-                                text-[13px]'>
+                                text-[14px]'>
                                     Go back to cart to review items
                                 </p>
 
