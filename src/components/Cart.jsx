@@ -121,40 +121,42 @@ const Cart = () => {
                             ))}
                         </div>
                         
-                        <div className='bg-main2 p-6 flex flex-col gap-3
-                        rounded-2xl'>
-                            <h2 className='text-main font-bold 
-                            text-[18px]'>
-                                Cart Summary
-                            </h2>
+                        <div>
+                            <div className='bg-main2 p-6 flex flex-col gap-3
+                            rounded-2xl'>
+                                <h2 className='text-main font-bold 
+                                text-[18px]'>
+                                    Cart Summary
+                                </h2>
 
-                            <div className='flex w-full justify-between
-                            items-center'>
-                                <p className='text-mainalt text-[15px]'>
-                                    Subtotal:
+                                <div className='flex w-full justify-between
+                                items-center'>
+                                    <p className='text-mainalt text-[15px]'>
+                                        Subtotal:
+                                    </p>
+
+                                    <p className='text-greenDeep md:text-[17px] 
+                                    font-bold'>
+                                        Total Amount
+                                    </p>
+                                </div>
+                                
+                                <p className='text-main3 text-[14px]
+                                border-t-[1px] border-primaryalt pt-4 mt-2'>
+                                    This figure does not include any other 
+                                    extra fees that may be incurred via 
+                                    logistics, etc.
                                 </p>
 
-                                <p className='text-greenDeep md:text-[17px] 
-                                font-bold'>
-                                    Total Amount
-                                </p>
+                                <Link to='/cart/checkout' 
+                                className='bg-primary text-[14px] py-3.5 flex
+                                items-center justify-center text-white rounded-lg 
+                                grow2 cursor-pointer w-full mt-3'>
+                                    <p>
+                                        Checkout
+                                    </p>
+                                </Link>
                             </div>
-                            
-                            <p className='text-main3 text-[14px]
-                            border-t-[1px] border-primaryalt pt-4 mt-2'>
-                                This figure does not include any other 
-                                extra fees that may be incurred via 
-                                logistics, etc.
-                            </p>
-
-                            <Link to='/cart/checkout' 
-                            className='bg-primary text-[14px] py-3.5 flex
-                            items-center justify-center text-white rounded-lg 
-                            grow2 cursor-pointer w-full mt-3'>
-                                <p>
-                                    Checkout
-                                </p>
-                            </Link>
                         </div>
                     </div>
                 )}
