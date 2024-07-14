@@ -161,7 +161,7 @@ useEffect(() => {
                     <a href='/'>
                         <img
                             src={logo} alt='logo'
-                            className='md:w-[170px] ss:w-[150px] w-[120px] 
+                            className='md:w-[150px] ss:w-[130px] w-[100px] 
                             h-auto cursor-pointer'
                         />
                     </a>

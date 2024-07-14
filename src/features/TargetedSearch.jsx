@@ -131,9 +131,9 @@ const TargetedSearch = () => {
                                 bg-transparent w-full custom-select"
                             >
                                 <option value="" disabled hidden>Select a product</option>
-                                <option value="social_media">Social Media</option>
+                                {/* <option value="social_media">Social Media</option>
                                 <option value="from_friend">From a friend</option>
-                                <option value="other">Other</option>
+                                <option value="other">Other</option> */}
                             </select>
                             <div className='absolute md:right-3 
                             ss:right-3 right-2'>
@@ -166,9 +166,9 @@ const TargetedSearch = () => {
                                 bg-transparent w-full custom-select"
                             >
                                 <option value="" disabled hidden>Select a category</option>
-                                <option value="social_media">Social Media</option>
+                                {/* <option value="social_media">Social Media</option>
                                 <option value="from_friend">From a friend</option>
-                                <option value="other">Other</option>
+                                <option value="other">Other</option> */}
                             </select>
                             <div className='absolute md:right-3 
                             ss:right-3 right-2'>
@@ -201,9 +201,9 @@ const TargetedSearch = () => {
                                 bg-transparent w-full custom-select"
                             >
                                 <option value="" disabled hidden>Select a price range</option>
-                                <option value="social_media">Social Media</option>
+                                {/* <option value="social_media">Social Media</option>
                                 <option value="from_friend">From a friend</option>
-                                <option value="other">Other</option>
+                                <option value="other">Other</option> */}
                             </select>
                             <div className='absolute md:right-3 
                             ss:right-3 right-2'>
