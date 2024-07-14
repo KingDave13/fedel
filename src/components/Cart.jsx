@@ -15,31 +15,31 @@ const ItemCard = ({ item, index, image }) => {
         <motion.div variants={fadeIn('', 'spring', index * 0.5, 0.75)}>
             <div className='bg-main2 rounded-2xl p-7 flex flex-col gap-3'>
                 <div className='flex w-full justify-between'>
-                    <div className='flex gap-4'>
+                    <div className='flex gap-6'>
                         <img 
                             src={imageUrl}
                             alt={item.name}
                             className='rounded-xl w-32 h-32 object-cover'
                         />
 
-                        <div className='flex flex-col gap-2'>
+                        <div className='flex flex-col gap-1'>
                             <h2 className='text-main font-bold text-[20px]'>
                                 {item.name}
                             </h2>
-                            <p className='text-main text-[14px]'>
+                            <p className='text-mainalt text-[16px]'>
                                 {item.type}
                             </p>
-                            <p className='text-main text-[14px]'>
+                            <p className='text-mainalt text-[16px]'>
                                 {item.manufacturer}
                             </p>
-                            <p className='text-main font-semibold text-[14px]'>
+                            <p className='text-main font-bold text-[14px]'>
                                 {item.variations}
                             </p>
                         </div>
                     </div>
 
                     <div className='flex flex-col gap-1 text-right'>
-                        <h1 className='text-greenDeep text-[21px] 
+                        <h1 className='text-greenDeep text-[22px] 
                         font-bold'>
                             <div>
                                 <span className='line-through'>
@@ -49,7 +49,7 @@ const ItemCard = ({ item, index, image }) => {
                             </div>
                         </h1>
 
-                        <h1 className='text-main3 font-medium text-[17px] 
+                        <h1 className='text-main3 font-medium text-[18px] 
                         line-through'>
                             <div>
                                 N{item.OriginalPrice}.00

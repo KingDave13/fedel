@@ -493,24 +493,30 @@ const ProductDetails = ({ product }) => {
     const dispatch = useDispatch();
 
     const handleAddToCartClick = () => {
-        const cartItem = {
-            id: product._id,
-            name: product.name,
-            image: product.images[0],
-            type: product.attributes.type,
-            manufacturer: product.attributes.manufacturer,
-            variations: selectedVariations,
-            price: product.attributes.price,
-            OriginalPrice: product.attributes.OriginalPrice,
-            quantity: 1,
-        };
+        const attribute = product.attributes[0];
 
-        dispatch(addToCart(cartItem));
-        setIsCartModalOpen(true);
-        setScrollPosition(window.pageYOffset);
-        console.log(cartItem);
-        document.body.style.overflow = 'hidden';
-        document.body.style.top = `-${scrollPosition}px`;
+        if (attribute) {
+            const cartItem = {
+                id: product._id,
+                name: product.name,
+                image: product.images[0],
+                type: attribute.type,
+                manufacturer: attribute.manufacturer,
+                variations: selectedVariations,
+                price: attribute.price,
+                OriginalPrice: attribute.OriginalPrice,
+                quantity: 1,
+            };
+
+            dispatch(addToCart(cartItem));
+            setIsCartModalOpen(true);
+            setScrollPosition(window.pageYOffset);
+            console.log(cartItem);
+            document.body.style.overflow = 'hidden';
+            document.body.style.top = `-${scrollPosition}px`;
+        } else {
+            console.error('No attributes found for the product.');
+        }
     };
 
     const handleSelectVariation = (index) => {
