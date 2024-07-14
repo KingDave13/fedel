@@ -8,8 +8,31 @@ import { Link } from 'react-router-dom';
 const ItemCard = ({ item, index }) => {
     return (
         <motion.div variants={fadeIn('', 'spring', index * 0.5, 0.75)}>
-            <div className='bg-main2 rounded-2xl p-6'>
+            <div className='bg-main2 rounded-2xl p-6 flex flex-col gap-3'>
+                <div className='flex w-full justify-between'>
+                    <div className='flex gap-4'>
+                        <img />
 
+                        <div className='flex flex-col gap-2'>
+                            <h2 className='text-main font-bold text-[18px]'>
+                                {item.name}
+                            </h2>
+                            <p className='text-main text-[14px]'>
+                                {item.type}
+                            </p>
+                            <p className='text-main text-[14px]'>
+                                {item.manufacturer}
+                            </p>
+                            <p className='text-main font-semibold text-[14px]'>
+                                {item.variations}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className='flex flex-col gap-3'>
+
+                    </div>
+                </div>
             </div>
             {item.name}
             {item.image[0]}
