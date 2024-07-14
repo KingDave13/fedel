@@ -48,8 +48,8 @@ const Checkout = () => {
                         No items in cart
                     </p>
                 ) : (
-                    <div className='w-full flex gap-6'>
-                        <div className='flex flex-col w-full gap-6'>
+                    <div className='w-full flex justify-between gap-24'>
+                        <div className='flex flex-col w-3/5 gap-6'>
                             <div className='bg-main2 rounded-xl p-5 
                             flex gap-3 items-center'>
                                 <HiOutlineInformationCircle
@@ -260,7 +260,7 @@ const Checkout = () => {
                             </div>
                         </div>
                         
-                        <div>
+                        <div className='w-1/4'>
                             <div className='bg-main2 p-7 flex flex-col gap-3
                             rounded-xl'>
                                 <h2 className='text-main font-bold 
