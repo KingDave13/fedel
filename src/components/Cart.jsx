@@ -1,9 +1,21 @@
 import { motion } from 'framer-motion';
-import { textVariant } from '../utils/motion';
+import { fadeIn } from '../utils/motion';
 import { SectionWrapper } from '../hoc';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart, clearCart } from '../redux/cartSlice';
 import { Link } from 'react-router-dom';
+
+const ItemCard = ({ item, index }) => {
+    return (
+        <motion.div variants={fadeIn('', 'spring', index * 0.5, 0.75)}>
+            <div className='bg-main2 rounded-2xl p-6'>
+
+            </div>
+            {item.name}
+            {item.image[0]}
+        </motion.div>
+    );
+};
 
 const Cart = () => {
     const cartItems = useSelector((state) => state.cart.items);
@@ -27,10 +39,11 @@ const Cart = () => {
                 ) : (
                     <div className='w-full flex gap-5'>
                         <div className='flex flex-col w-3/4 gap-5'>
-                            {cartItems.map(item => (
+                            {cartItems.map((item, index) => (
                                 <ItemCard 
                                     key={item.id}
                                     item={item}
+                                    index={index}
                                     // <img src={item.image} alt={item.name} />
                                     // <p>{item.name}</p>
                                     // <p>Price: {item.price}</p>
@@ -41,7 +54,7 @@ const Cart = () => {
                         </div>
                         
                         <div className='bg-main2 p-6 flex flex-col gap-3
-                        rounded-lg w-full'>
+                        rounded-2xl w-full'>
                             <h2 className='text-main font-bold 
                             text-[18px]'>
                                 Cart Summary
