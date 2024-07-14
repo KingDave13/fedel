@@ -4,7 +4,7 @@ import { SectionWrapper } from '../hoc';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart, clearCart } from '../redux/cartSlice';
 import { Link } from 'react-router-dom';
-import { trash } from '../assets';
+import { add, subtract, trash } from '../assets';
 
 const ItemCard = ({ item, index }) => {
     const dispatch = useDispatch();
@@ -32,8 +32,8 @@ const ItemCard = ({ item, index }) => {
                         </div>
                     </div>
 
-                    <div className='flex flex-col gap-3'>
-                        <h1 className='text-greenDeep text-[20px] 
+                    <div className='flex flex-col gap-1 text-right'>
+                        <h1 className='text-greenDeep text-[21px] 
                         font-bold'>
                             <div>
                                 <span className='line-through'>
@@ -43,7 +43,7 @@ const ItemCard = ({ item, index }) => {
                             </div>
                         </h1>
 
-                        <h1 className='text-main3 font-medium text-[18px] 
+                        <h1 className='text-main3 font-medium text-[17px] 
                         line-through'>
                             <div>
                                 N{item.OriginalPrice}.00
@@ -53,31 +53,36 @@ const ItemCard = ({ item, index }) => {
                 </div>
 
                 <div className='flex w-full justify-between items-center'>
-                    <div className='flex items-center gap-2'>
+                    <div className='flex items-center gap-1 cursor-pointer
+                    grow2'
+                    onClick={() => dispatch(removeFromCart(item.id))}
+                    >
                         <img
                             src={trash}
-                            className='text-brightRed text-[15px]'
-                            onClick={() => dispatch(removeFromCart(item.id))}
+                            alt='delete'
+                            className='text-brightRed w-6 h-6'
                         />
-                        <p className='text-main text-[13px]'>
+                        <p className='text-main text-[13px] mt-1'>
                             Remove Item
                         </p>
                     </div>
 
-                    <div className='flex items-center gap-2'>
-                        <div className='bg-primary rounded-md p-2
-                        text-[14px] cursor-pointer grow2'>
-                            +
-                        </div>
+                    <div className='flex items-center gap-3'>
+                        <img
+                            src={add}
+                            alt='add'
+                            className='cursor-pointer grow2 w-6 h-6'
+                        />
 
                         <p className='text-main text-[14px]'>
                             1
                         </p>
 
-                        <div className='bg-primary rounded-md p-2
-                        text-[14px] cursor-pointer grow2'>
-                            -
-                        </div>
+                        <img
+                            src={subtract}
+                            alt='subtract'
+                            className='cursor-pointer grow2 w-6 h-6'
+                        />
                     </div>
                 </div>
             </div>

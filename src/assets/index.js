@@ -34,6 +34,8 @@ import gmaillogo from './gmaillogo.png';
 import google from './google.png';
 import shoppingCheck from './shoppingCheck.png';
 import trash from './trash.png';
+import add from './add.png';
+import subtract from './subtract.png';
 
 export {
     logo,
@@ -72,6 +74,8 @@ export {
     google,
     shoppingCheck,
     trash,
+    add,
+    subtract,
 }
 
 export const heroImages = [
