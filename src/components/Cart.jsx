@@ -71,7 +71,7 @@ const ItemCard = ({ item, index }) => {
                         <img
                             src={add}
                             alt='add'
-                            className='cursor-pointer grow2 w-6 h-6'
+                            className='cursor-pointer grow2 w-7 h-7'
                         />
 
                         <p className='text-main text-[14px]'>
@@ -81,7 +81,7 @@ const ItemCard = ({ item, index }) => {
                         <img
                             src={subtract}
                             alt='subtract'
-                            className='cursor-pointer grow2 w-6 h-6'
+                            className='cursor-pointer grow2 w-7 h-7'
                         />
                     </div>
                 </div>
