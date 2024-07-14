@@ -18,7 +18,7 @@ const Footer = () => {
 
             <p className='text-white md:text-[15px] ss:text-[14px] 
             text-[12px] md:leading-[25px] ss:leading-[22px] leading-[18px]'>
-              Fedel Tiles Limited is a registered company and certified
+              Shoptiles.ng is a registered company and certified
               retailer of tiles and other home/sanitation materials in
               Nigeria.
             </p>
@@ -72,7 +72,7 @@ const Footer = () => {
 
           <p className='md:text-[14px] ss:text-[16px] text-[12px] 
           text-white md:mt-1 ss:mt-1 mt-0.5'>
-            2024 Fedel Tiles Limited. All Rights Reserved.
+            2024 Shoptiles.ng. All Rights Reserved.
           </p>
         </div>
       </motion.div>

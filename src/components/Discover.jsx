@@ -27,7 +27,7 @@ const Discover = () => {
                         md:leading-[25px] ss:leading-[25px] leading-[20px] 
                         font-medium tracking-tight'>
                             Ensuring your satisfaction from start to finish, 
-                            Fedel Tiles Limited offers safe and secure 
+                            Shoptiles.ng offers safe and secure 
                             delivery services, no matter where you are. 
                             Our dedicated logistics team meticulously 
                             handles every order, ensuring that your products
