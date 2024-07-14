@@ -14,6 +14,7 @@ import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/cartSlice';
+import { useSelector } from 'react-redux';
 
 
 const ImageCard = ({ index, image, product, handleImageClick, remaining }) => {
@@ -413,7 +414,7 @@ const RequestModal = ({ onClose, product, image }) => {
     );
 };
 
-const CartModal = ({ onClose }) => {
+const CartModal = ({ onClose, cartModalMessage }) => {
     const closeCartModal = () => {
         onClose();
         document.body.style.overflow = 'auto';
@@ -452,7 +453,7 @@ const CartModal = ({ onClose }) => {
 
                         <h1 className='font-semibold text-primary md:text-[27px]
                         ss:text-[20px] text-[15px] mb-2'>
-                            Product added to cart!
+                            {cartModalMessage}
                         </h1>
 
                         <p className='text-main md:text-[14px] ss:text-[13px] 
@@ -490,6 +491,8 @@ const ProductDetails = ({ product }) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [scrollPosition, setScrollPosition] = useState(0);
     const [selectedVariations, setSelectedVariations] = useState([]);
+    const [cartModalMessage, setCartModalMessage] = useState("");
+    const cart = useSelector((state) => state.cart.items);
     const dispatch = useDispatch();
 
     const handleAddToCartClick = () => {
@@ -508,7 +511,15 @@ const ProductDetails = ({ product }) => {
                 quantity: 1,
             };
 
-            dispatch(addToCart(cartItem));
+            const isInCart = cart.some(item => item.id === product._id);
+
+            if (isInCart) {
+                setCartModalMessage("Product is already in cart!");
+            } else {
+                dispatch(addToCart(cartItem));
+                setCartModalMessage("Product added to cart!");
+            }
+
             setIsCartModalOpen(true);
             setScrollPosition(window.pageYOffset);
             console.log(cartItem);
@@ -940,6 +951,7 @@ const ProductDetails = ({ product }) => {
         {isCartModalOpen && (
             <CartModal
                 onClose={() => setIsCartModalOpen(false)}
+                cartModalMessage={cartModalMessage}
             />
         )}
     </section>
