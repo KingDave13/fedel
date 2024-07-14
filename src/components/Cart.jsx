@@ -99,6 +99,7 @@ const ItemCard = ({ item, index, image }) => {
 const Cart = () => {
     const cartItems = useSelector((state) => state.cart.items);
     const itemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+    const totalAmount = cartItems.reduce((total, item) => total + (parseFloat(item.price.replace(',', '')) * item.quantity), 0);
     const dispatch = useDispatch();
 
     return (
@@ -138,13 +139,16 @@ const Cart = () => {
 
                                 <div className='flex w-full justify-between
                                 items-center'>
-                                    <p className='text-mainalt text-[15px]'>
+                                    <p className='text-mainalt text-[16px]'>
                                         Subtotal:
                                     </p>
 
-                                    <p className='text-greenDeep md:text-[17px] 
+                                    <p className='text-greenDeep md:text-[20px] 
                                     font-bold'>
-                                        Total Amount
+                                        <span className='line-through'>
+                                            N
+                                        </span>
+                                        {totalAmount.toLocaleString()}.00
                                     </p>
                                 </div>
                                 
@@ -167,7 +171,15 @@ const Cart = () => {
                         </div>
                     </div>
                 )}
-                <button onClick={() => dispatch(clearCart())}>Clear Cart</button>
+
+                <div className='mt-6 mb-14'>
+                    <button onClick={() => dispatch(clearCart())}
+                    className='text-white font-medium bg-primary py-3 px-10
+                    rounded-lg grow2'>
+                        Clear Cart
+                    </button>
+                </div>
+                
             </div>
         </section>
     );
