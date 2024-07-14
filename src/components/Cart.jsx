@@ -13,16 +13,17 @@ const ItemCard = ({ item, index, image }) => {
 
     return (
         <motion.div variants={fadeIn('', 'spring', index * 0.5, 0.75)}>
-            <div className='bg-main2 rounded-2xl p-6 flex flex-col gap-3'>
+            <div className='bg-main2 rounded-2xl p-7 flex flex-col gap-3'>
                 <div className='flex w-full justify-between'>
                     <div className='flex gap-4'>
                         <img 
                             src={imageUrl}
                             alt={item.name}
+                            className='rounded-xl w-32 h-32 object-cover'
                         />
 
                         <div className='flex flex-col gap-2'>
-                            <h2 className='text-main font-bold text-[18px]'>
+                            <h2 className='text-main font-bold text-[20px]'>
                                 {item.name}
                             </h2>
                             <p className='text-main text-[14px]'>
@@ -128,7 +129,7 @@ const Cart = () => {
                         </div>
                         
                         <div>
-                            <div className='bg-main2 p-6 flex flex-col gap-3
+                            <div className='bg-main2 p-7 flex flex-col gap-3
                             rounded-2xl'>
                                 <h2 className='text-main font-bold 
                                 text-[18px]'>

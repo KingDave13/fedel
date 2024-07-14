@@ -504,10 +504,11 @@ const ProductDetails = ({ product }) => {
             OriginalPrice: product.attributes.OriginalPrice,
             quantity: 1,
         };
-        
+
         dispatch(addToCart(cartItem));
         setIsCartModalOpen(true);
         setScrollPosition(window.pageYOffset);
+        console.log(cartItem);
         document.body.style.overflow = 'hidden';
         document.body.style.top = `-${scrollPosition}px`;
     };
