@@ -164,8 +164,7 @@ const RequestModal = ({ onClose, product, image }) => {
 
                                     <p className='text-mainalt text-[14px]
                                     md:leading-[19px] ss:leading-[19px]
-                                    leading-[18px] font
-                                    md:max-w-[550px]'>
+                                    leading-[18px] md:max-w-[550px]'>
                                         Fill in the form to request a quote
                                         for the selected product. Confirm
                                         your variation settings, submit the
@@ -245,7 +244,7 @@ const RequestModal = ({ onClose, product, image }) => {
                                             ss:text-[13px] text-[11px] 
                                             bg-transparent w-full custom-select"
                                         >
-                                            <option value="" disabled selected hidden>Select your state of residence</option>
+                                            <option value="" disabled hidden>Select your state of residence</option>
                                             <option value="fct">FCT</option>
                                             <option value="abia">Abia</option>
                                             <option value="adamawa">Adamawa</option>
