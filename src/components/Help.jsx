@@ -65,12 +65,12 @@ const Help = () => {
     });
 
     return (
-        <section className="w-full md:min-h-[550px] ss:min-h-[550px] 
+        <section className="w-full md:min-h-[550px] ss:min-h-[600px] 
         min-h-[900px] flex items-center">
             <div className='relative items-center w-full max-w-[86rem]'>
             <motion.div variants={fadeIn('down', 'spring', 0.3)}
-                className="flex md:flex-row ss:flex-row flex-col md:gap-20 
-                ss:gap-10 gap-12 md:w-1/2 ss:w-1/2 w-full">
+                className="flex md:flex-row flex-col md:gap-20 
+                ss:gap-16 gap-12 md:w-1/2 w-full">
                     <motion.div variants={textVariant()}
                     className={`${layout.sectionInfo} md:gap-6 ss:gap-4
                     gap-4`}>
@@ -80,9 +80,9 @@ const Help = () => {
                         </h1>
 
                         <p className='text-main md:text-[18px] ss:text-[17px] 
-                        text-[14px] md:max-w-[550px] ss:max-w-[400px]  
-                        md:leading-[25px] ss:leading-[25px] leading-[20px] 
-                        font-medium tracking-tight'>
+                        text-[14px] md:max-w-[550px] md:leading-[25px] 
+                        ss:leading-[25px] leading-[20px] font-medium 
+                        tracking-tight'>
                             Is there still something we haven't made 
                             clear or you're still not sure about us 
                             concerning our products, services or 
@@ -92,7 +92,7 @@ const Help = () => {
 
                         <form ref={formRef} onSubmit={formik.handleSubmit}
                         className="flex flex-col md:gap-2.5 ss:gap-2.5 
-                        md:mt-4 ss:mt-4 mt-3 gap-2 md:w-3/5 ss:w-1/3 w-full">
+                        md:mt-4 ss:mt-4 mt-3 gap-2 md:w-3/5 ss:w-2/3 w-full">
                             <div className="relative">
                                 <input
                                     type="text"
@@ -198,7 +198,7 @@ const Help = () => {
                     className="flex-1 w-full md:hidden flex">
                         <img src={helpImg} 
                             alt='Help'
-                            className='md:h-full ss:h-full h-[200px] w-full
+                            className='md:h-full ss:h-[300px] h-[200px] w-full
                             rounded-[15px]'
                         />
                     </motion.div>
