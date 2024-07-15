@@ -14,8 +14,8 @@ const StepCard = ({ index, title, image, description }) => {
                 <img 
                     src={image}
                     alt='product step'
-                    className='md:w-[170px] ss:w-[160px] w-[140px] 
-                    md:h-[170px] ss:h-[160px] h-[140px] object-cover'
+                    className='md:w-[170px] ss:w-[150px] w-[140px] 
+                    md:h-[170px] ss:h-[150px] h-[140px] object-cover'
                 />
 
                 <div className='flex flex-col md:gap-3 ss:gap-3
@@ -26,7 +26,7 @@ const StepCard = ({ index, title, image, description }) => {
                     </h1>
 
                     <p className='text-main font-medium md:leading-[23px]
-                    ss:leading-[25px] leading-[18px] md:text-[17px] 
+                    ss:leading-[20px] leading-[18px] md:text-[17px] 
                     ss:text-[15px] text-[13px]'>
                         {description}
                     </p>
@@ -55,7 +55,7 @@ const Steps = () => {
     items-center'>
         <div className='max-w-[86rem] mx-auto flex flex-col'>
             <motion.div variants={textVariant()}
-            className='flex flex-col md:gap-2 ss:gap-2 gap-4'>
+            className='flex flex-col md:gap-2 ss:gap-4 gap-4'>
                 <h1 className='text-primary font-bold md:text-[43px]
                 ss:text-[40px] text-[30px] tracking-tight md:leading-[60px] 
                 ss:leading-[45px] leading-[35px]'>
@@ -64,8 +64,7 @@ const Steps = () => {
                 
                 <p className='text-main font-medium md:text-[18px]
                 ss:text-[17px] text-[14px] tracking-tight md:max-w-[950px]
-                ss:max-w-[300px] md:leading-[25px] ss:leading-[26px]
-                leading-[20px]'>
+                md:leading-[25px] ss:leading-[23px] leading-[20px]'>
                     You do not need to go through too much stress to find 
                     exactly what you're looking for on our website. We've 
                     outlined these simple steps to understand how to 
@@ -86,7 +85,7 @@ const Steps = () => {
 
             <p className='text-mainalt md:text-[16px] ss:text-[15px] 
             text-[12px] tracking-tight w-full font-medium md:text-center
-            md:mt-16 ss:mt-10 mt-6  md:leading-[25px] ss:leading-[26px]
+            md:mt-16 ss:mt-10 mt-6 md:leading-[25px] ss:leading-[23px]
             leading-[16px]'>
                 Note that some items may have their prices displayed, 
                 some may not but not to worry, you can request for 
