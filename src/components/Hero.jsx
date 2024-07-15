@@ -3,7 +3,7 @@ import { heroImages, heroImagesMobile } from '../assets';
 import { motion } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
 import { IoSearchOutline } from "react-icons/io5";
-import { SectionWrapper } from '../hoc';
+import { SectionWrapper2 } from '../hoc';
 import { TargetedSearch } from '../features';
 import { useNavigate } from 'react-router-dom';
 
@@ -28,7 +28,7 @@ const Hero = () => {
     <section className='relative w-full md:min-h-[700px] ss:min-h-[800px] 
     items-center flex md:mb-0 ss:mb-0 mb-36'>
         <div className='relative items-center w-full max-w-[86rem]
-        md:mt-28 ss:mt-56 mt-16 rounded-[30px] flex md:p-12 ss:p-10 p-6'
+        md:mt-28 ss:mt-56 mt-16 md:rounded-[30px] flex md:p-12 ss:p-10 p-6'
             style={{
                 backgroundImage: `url(${images[currentImageIndex]})`,
                 objectFit: 'cover',
@@ -110,4 +110,4 @@ const Hero = () => {
   )
 };
 
-export default SectionWrapper(Hero, 'hero');
+export default SectionWrapper2(Hero, 'hero');
