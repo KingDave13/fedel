@@ -29,7 +29,7 @@ const CatCard = (category) => {
                 </div>
 
                 <div className='flex flex-col md:gap-1 ss:gap-1 gap-1 
-                tracking-tight absolute md:p-6 ss:p-6 p-4 bottom-0'>
+                absolute md:p-6 ss:p-6 p-4 bottom-0'>
                     <h1 className='text-secondary md:text-[19px] ss:text-[18px] 
                     text-[15px] font-bold'>
                         {category.name}
