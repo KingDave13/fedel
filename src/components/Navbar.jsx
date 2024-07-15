@@ -273,7 +273,7 @@ useEffect(() => {
                             ${toggle 
                                 ? 'menu-slide-enter menu-slide-enter-active' 
                                 : 'menu-slide-exit menu-slide-exit-active'}`}
-                            style={{ height: 'auto', overflowY: 'auto' }} 
+                            style={{ maxHeight: '90vh', overflowY: 'auto' }} 
                         >
                             <ul className="list-none flex flex-col 
                             ss:gap-6 gap-3 ss:mb-14 mb-10">
@@ -300,7 +300,7 @@ useEffect(() => {
                                     
                                     {openMenuId === link.id && (
                                         <div className='mt-2 fade-in ml-2' 
-                                        style={{ maxHeight: '50vh', 
+                                        style={{ maxHeight: '30vh', 
                                         overflowY: 'auto' }}>
                                             <div className='flex flex-col 
                                             ss:gap-2 gap-1'>
