@@ -230,7 +230,7 @@ const Product = ({ products, categorySlug }) => {
                     : 'bg-main2'}
                     flex gap-4 items-center cursor-pointer rounded-md 
                     px-4 py-2.5 hover:bg-main3 navsmooth`}
-                    onClick={toggleFilterVisibility}
+                    // onClick={toggleFilterVisibility}
                     >
                         <img 
                             src={filter}
