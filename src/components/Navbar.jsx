@@ -228,171 +228,146 @@ useEffect(() => {
 
                     {/* FOR MOBILE */}
                     
-                    <div className="md:hidden flex justify-end flex-1 items-center">
-                        <div className="flex items-center z-20 ss:gap-8
-                        gap-6">
-                            <div className='flex justify-center items-center
-                            relative'>
+                    <div className="md:hidden flex justify-end flex-1 
+                    items-center">
+                        <div className="flex items-center z-20 ss:gap-8 
+                        gap-5">
+                            <div className='flex justify-center 
+                            items-center relative'>
                                 <Link to='/cart'>
                                     <IoCartOutline
-                                        className='text-primary ss:text-[35px] 
-                                        text-[30px]'
+                                    className='text-primary ss:text-[35px] 
+                                    text-[30px]'
                                     />
                                     {itemCount > 0 && (
-                                        <span className='absolute top-0 
-                                        right-0 bg-greenDeep text-white 
-                                        rounded-full text-[10px] w-4 h-4 
-                                        flex items-center justify-center'>
-                                            {itemCount}
-                                        </span>
+                                    <span className='absolute top-0 right-0
+                                    bg-greenDeep text-white rounded-full 
+                                    text-[10px] w-4 h-4 flex items-center 
+                                    justify-center'>
+                                        {itemCount}
+                                    </span>
                                     )}
                                 </Link>
                             </div>
                             
-
                             {toggle ? (
-                            <BsX
-                                size={38}
-                                className="object-contain cursor-pointer"
-                                style={{ color: '#050759' }}
-                                onClick={() => setToggle(!toggle)}
-                            />
-                            ) : (
-                            <IoMenu
-                                size={38}
-                                className="object-contain cursor-pointer"
-                                style={{ color: '#050759' }}
-                                onClick={() => setToggle(!toggle)}
-                            />
+                                <BsX
+                                    size={38}
+                                    className="object-contain cursor-pointer"
+                                    style={{ color: '#050759' }}
+                                    onClick={() => setToggle(!toggle)}
+                                />
+                                ) : (
+                                <IoMenu
+                                    size={38}
+                                    className="object-contain cursor-pointer"
+                                    style={{ color: '#050759' }}
+                                    onClick={() => setToggle(!toggle)}
+                                />
                             )}
                         </div>
-                    
+
                         <div ref={menuRef}
                             className={`p-6 mt-16 absolute top-0 right-0 
-                            z-10 flex-col w-full bg-white shadow-lg
-                            ${toggle ? 'menu-slide-enter menu-slide-enter-active' 
-                            : 'menu-slide-exit menu-slide-exit-active'}`}
+                            z-10 flex-col w-full bg-white shadow-lg 
+                            ${toggle 
+                                ? 'menu-slide-enter menu-slide-enter-active' 
+                                : 'menu-slide-exit menu-slide-exit-active'}`}
+                            style={{ height: 'auto', overflowY: 'auto' }} 
                         >
                             <ul className="list-none flex flex-col 
                             ss:gap-6 gap-3 ss:mb-14 mb-10">
-                                {navLinks.map((link) => (
-                                    <li
-                                        key={link.id}
-                                        className='text-decoration-none
-                                        flex flex-col'
-                                        onClick={() => toggleMenu(link.id)}
-                                    >
-                                        <div className='flex flex-row items-center
-                                         ss:gap-2 gap-2'>
-                                            <h3 className='text-main ss:text-[18px] text-[15px] 
-                                            font-medium'>
-                                                {link.title}
-                                            </h3>
-                                            
-                                            <TiArrowSortedDown 
-                                                className='text-main ss:text-[18px]
-                                                text-[16px]'
-                                            />
-                                        </div>
-                                        
+                            {navLinks.map((link) => (
+                                <li
+                                key={link.id}
+                                className='text-decoration-none flex 
+                                flex-col'
+                                onClick={() => toggleMenu(link.id)}
+                                >
+                                    <div className='flex flex-row 
+                                    items-center ss:gap-2 gap-2'>
+                                        <h3 className='text-main 
+                                        ss:text-[18px] text-[15px] 
+                                        font-medium'>
+                                            {link.title}
+                                        </h3>
 
-                                        {openMenuId === link.id && (
-                                        <div className='mt-2 fade-in
-                                        ml-2'>
-                                            <div
-                                            className='flex flex-col ss:gap-2 gap-1'
-                                            style={{ maxHeight: 'calc(100vh - 70px)', overflowY: 'auto' }}>
-                                            {link.links.map((subLink, index) => (
+                                        <TiArrowSortedDown 
+                                            className='text-main ss:text-[18px]
+                                            text-[16px]' 
+                                        />
+                                    </div>
+                                    
+                                    {openMenuId === link.id && (
+                                        <div className='mt-2 fade-in ml-2' 
+                                        style={{ maxHeight: '50vh', 
+                                        overflowY: 'auto' }}>
+                                            <div className='flex flex-col 
+                                            ss:gap-2 gap-1'>
+                                                {link.links.map((subLink, index) => (
                                                 <a
-                                                key={index}
-                                                href={subLink.route}
-                                                className="ss:text-[15px] text-[14px] text-main"
+                                                    key={index}
+                                                    href={subLink.route}
+                                                    className="ss:text-[15px] 
+                                                    text-[14px] text-main"
                                                 >
                                                     {subLink.name}
                                                 </a>
-                                            ))}
+                                                ))}
                                             </div>
                                         </div>
-                                        )}
-                                    </li>
-                                ))}
+                                    )}
+                                </li>
+                            ))}
                             </ul>
 
-                            <div className='flex flex-row bg-main2 w-full
+                            <div className='flex flex-row bg-main2 w-full 
                             rounded-[8px] border-[1px] border-primaryalt 
-                            py-2 px-2 gap-3 justify-between items-center'>
-                                <IoSearchOutline
-                                    className='text-main ss:text-[28px]
-                                    text-[27px]'
+                            py-2 px-2 gap-3 justify-between items-center'
+                            >
+                                <IoSearchOutline className='text-main 
+                                    ss:text-[28px] text-[27px]' 
                                 />
-
                                 <input
                                     type='search'
                                     placeholder='Search for products'
                                     className='w-full text-black 
-                                    ss:text-[15px] text-[13px]
-                                    placeholder:text-mainalt outline-none
+                                    ss:text-[15px] text-[13px] 
+                                    placeholder:text-mainalt outline-none 
                                     border-none bg-transparent'
                                 />
 
-                                <button className='bg-primary ss:text-[15px]
-                                text-[12px] justify-end
-                                py-1.5 px-5 text-white rounded-[5px]'
-                                // onClick={() => {
-                                //     setToggle(!toggle);
-                                // }}
-                                >
+                                <button className='bg-primary 
+                                ss:text-[15px] text-[12px] justify-end 
+                                py-1.5 px-5 text-white rounded-[5px]'>
                                     Search
                                 </button>
                             </div>
 
-                            <button className='bg-primary ss:py-4 py-3 
-                            px-4 w-full text-white rounded-[8px] mt-4 
-                            ss:text-[17px] text-[13px]'
-                            onClick={() => {
-                                setToggle(!toggle);
-                            }}
-                            >
+                            <button className='bg-primary ss:py-4 
+                            py-3 px-4 w-full text-white rounded-[8px] 
+                            mt-4 ss:text-[17px] text-[13px]' 
+                            onClick={() => setToggle(!toggle)}>
                                 Get a Quote
                             </button>
 
-                            <div className='flex justify-center ss:gap-8
-                            gap-4 items-center mt-12 bg-main2 rounded-[8px]
-                            ss:py-3 py-2'
-                            >
+                            <div className='flex justify-center 
+                            ss:gap-8 gap-4 items-center mt-12 bg-main2 
+                            rounded-[8px] ss:py-3 py-2'>
                                 <div className='flex justify-center 
                                 ss:gap-6 gap-5 items-center'>
-                                    <HiOutlineChat
-                                        className='text-main 
-                                        ss:text-[23px] text-[20px]'
+                                    <HiOutlineChat className='text-main
+                                        ss:text-[23px] text-[20px]' 
                                     />
 
-                                    <FiMail 
-                                        className='text-main
-                                        ss:text-[23px] text-[20px]'
+                                    <FiMail className='text-main 
+                                        ss:text-[23px] text-[20px]' 
                                     />
 
                                     <RiWhatsappLine 
-                                        className='text-main
-                                        ss:text-[23px] text-[20px]'
+                                        className='text-main ss:text-[23px] 
+                                        text-[20px]' 
                                     />
-
-                                    <div className='relative'>
-                                        <div id="google_translate_element" />
-
-                                        <div className='absolute right-0 bottom-0
-                                        flex gap-1.5 items-center'>
-                                            <img
-                                                src={google}
-                                                alt='google'
-                                                className='ss:w-10 w-8'
-                                            />
-                                            <p className='font-semibold text-brightRed
-                                            ss:text-[10px] text-[9px]'>
-                                                Translate
-                                            </p>
-                                        </div>  
-                                    </div>
                                 </div>
                             </div>
                         </div>
