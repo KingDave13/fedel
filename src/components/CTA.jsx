@@ -13,10 +13,10 @@ const CTA = () => {
             <motion.div variants={textVariant()}
             className='flex flex-col items-center justify-center
             md:gap-6 ss:gap-5 gap-4'>
-                <h2 className='text-white md:text-[28px] ss:text-[20px]
+                <h2 className='text-white md:text-[28px] ss:text-[22px]
                 text-[18px] tracking-tight font-bold text-center
-                md:max-w-[550px] ss:max-w-[350px] max-w-[250px]
-                md:leading-[35px] ss:leading-[30px] leading-[23px]'>
+                md:max-w-[550px] ss:max-w-[500px] max-w-[250px]
+                md:leading-[35px] ss:leading-[32px] leading-[23px]'>
                     What are you waiting for? Begin exploring our 
                     exquisite array of 
                     <span className='text-secondary'> premium and durable tiles and 
