@@ -8,7 +8,7 @@ const HeroCheckout = () => {
     <section className='relative w-full md:min-h-[50px] ss:min-h-[50px] 
     items-center flex'>
         <div className='relative items-center w-full max-w-[86rem]
-        md:mt-24 ss:mt-56 mt-12 flex'
+        md:mt-28 ss:mt-56 mt-12 flex'
         >
             <motion.div variants={textVariant()}
             className='flex md:gap-4 ss:gap-2 gap-2 
