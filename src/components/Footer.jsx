@@ -8,7 +8,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <section className='relative w-full md:min-h-[800px] ss:min-h-[7000px] 
+    <section className='relative w-full md:min-h-[800px] ss:min-h-[700px] 
     min-h-[450px] flex items-center flex-col'>
       <div className='flex items-center w-full relative'>
         <motion.div variants={textVariant()} className='flex flex-col w-full'>
@@ -16,8 +16,8 @@ const Footer = () => {
             <img src={logoalt} alt='logo' className='md:w-[200px] 
             ss:w-[180px] w-[160px] h-auto' />
 
-            <p className='text-white md:text-[15px] ss:text-[14px] 
-            text-[12px] md:leading-[25px] ss:leading-[22px] leading-[18px]'>
+            <p className='text-white md:text-[15px] ss:text-[15px] 
+            text-[12px] md:leading-[25px] ss:leading-[25px] leading-[18px]'>
               Shoptiles.ng is a registered company and certified
               retailer of tiles and other home/sanitation materials in
               Nigeria.
@@ -27,30 +27,30 @@ const Footer = () => {
                 {socialMedia.map((social, index) => (
                     <a target='_blank' href={social.link} rel="noreferrer" key={index}>
                         <img src={social.image} alt='social'
-                            className='md:w-6 ss:w-5 w-5 h-auto'
+                            className='md:w-6 ss:w-6 w-5 h-auto'
                         />
                     </a>
                 ))}
             </div>
           </div>
           
-          <div className='w-full flex md:flex-row ss:flex-row flex-col 
-          md:mt-8 ss:mt-8 mt-6'>
+          <div className='w-full flex md:flex-row flex-col md:mt-8 
+          ss:mt-8 mt-6'>
             {footerLinks.map((footerLink, index) => (
               <div key={index} className='flex flex-col md:my-4 ss:my-4
               my-3 w-full'>
-                <h4 className={`font-bold md:text-[17px] ss:text-[15px] 
+                <h4 className={`font-bold md:text-[17px] ss:text-[17px] 
                 text-[14px] text-white 
                   ${index !== footerLinks.length - 1 ? 'md:mr-10 ss:mr-8 mr-8' : 'mr-12'}`}>
                   {footerLink.title}
                 </h4>
 
-                <ul className='list-none md:mt-5 ss:mt-3 mt-3 w-full 
+                <ul className='list-none md:mt-5 ss:mt-4 mt-3 w-full 
                 justify-between flex flex-col'>
                   {footerLink.links.map((Link, index) => (
                     <a target='blank' href={Link.route} key={Link.name}>
                       <li className={`md:text-[14px] ss:text-[15px] grow2
-                      text-[12px] md:leading-[22px] ss:leading-[15px] leading-[12px]
+                      text-[12px] md:leading-[22px] ss:leading-[20px] leading-[12px]
                       text-white hover:text-secondary cursor-pointer 
                       ${index !== footerLink.links.length - 1 ? 'md:mb-2.5 ss:mb-2 mb-2.5' : 'mb-0'}`}>
                         {Link.name}
