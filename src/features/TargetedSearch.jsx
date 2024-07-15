@@ -73,10 +73,10 @@ const TargetedSearch = () => {
   return (
     <div className='items-center w-full flex flex-col'>
         <div className='flex flex-col bg-white md:p-8 ss:p-8 p-5 
-        md:rounded-[20px] rounded-[12px] md:gap-3 ss:gap-3 gap-2 
-        border-[1px] border-main3'>
+        md:rounded-[20px] ss:rounded-[20px] rounded-[12px] md:gap-3 
+        ss:gap-3 gap-2 border-[1px] border-main3'>
             <h2 className='text-primary font-bold md:text-[22px]
-            ss:text-[20px] text-[18px] tracking-tight  md:leading-[30px] 
+            ss:text-[22px] text-[18px] tracking-tight md:leading-[30px] 
             ss:leading-[25px] leading-[25px]'>
                 Let us know exactly what you want
             </h2>
@@ -374,12 +374,12 @@ const TargetedSearch = () => {
                 <div className='flex w-full gap-3 md:mt-4 ss:mt-4 mt-3
                 items-center'>
                     <RiInformationFill 
-                        className='text-main3 ss:text-[57px]
+                        className='text-main3 ss:text-[40px]
                         text-[55px]'
                     />
 
-                    <h3 className='text-main3 md:text-[13px] ss:text-[12px]
-                    text-[11px] md:leading-[18px] ss:leading-[17px]
+                    <h3 className='text-main3 md:text-[13px] ss:text-[13px]
+                    text-[11px] md:leading-[18px] ss:leading-[18px]
                     leading-[14px] tracking-tight'>
                         If you have any special requests or orders you may
                         want to place, do well to switch to the "Message
@@ -390,10 +390,10 @@ const TargetedSearch = () => {
 
                 <div className='flex w-full gap-3 mt-1 items-center
                 cursor-pointer grow5'>
-                    <ImPlay className='text-secondary ss:text-[27px] 
+                    <ImPlay className='text-secondary ss:text-[25px] 
                         md:ml-1 text-[27px]'
                     />
-                    <h3 className='text-primary md:text-[13px] ss:text-[12px]
+                    <h3 className='text-primary md:text-[13px] ss:text-[13px]
                     text-[11px] font-bold md:leading-[17px] ss:leading-[17px]
                     leading-[14px] tracking-tight'>
                         Click here to watch our help video if you want to
@@ -403,7 +403,7 @@ const TargetedSearch = () => {
             </form>
         </div>
     </div>
-  )
+  );
 };
 
 export default TargetedSearch;

@@ -98,7 +98,7 @@ const Hero = () => {
                 </motion.div>
 
                 <motion.div variants={fadeIn('down', 'spring', 0.3)} 
-                className='flex flex-1 relative'>
+                className='flex flex-1 ss:w-full relative'>
                     <div className="absolute md:-top-56 ss:top-6 top-6 
                     z-10">
                         <TargetedSearch />
