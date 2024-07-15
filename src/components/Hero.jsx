@@ -28,7 +28,8 @@ const Hero = () => {
     <section className='relative w-full md:min-h-[700px] ss:min-h-[800px] 
     items-center flex md:mb-0 ss:mb-0 mb-36'>
         <div className='relative items-center w-full max-w-[86rem]
-        md:mt-28 ss:mt-56 mt-16 md:rounded-[30px] flex md:p-12 ss:p-10 p-6'
+        md:mt-28 ss:mt-24 mt-16 md:rounded-[30px] ss:rounded-[26px] flex 
+        md:p-12 ss:p-10 p-6'
             style={{
                 backgroundImage: `url(${images[currentImageIndex]})`,
                 objectFit: 'cover',
