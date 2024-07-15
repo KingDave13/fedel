@@ -90,7 +90,7 @@ const TargetedSearch = () => {
 
             <div className='flex flex-row w-full md:mt-3 ss:mt-3 mt-2
             justify-center items-center'>
-                <h2 className={`text-main md:text-[15px] ss:text-[14px] text-[13px]
+                <h2 className={`text-main md:text-[15px] ss:text-[15px] text-[13px]
                 ${selectedTab === 'targetedSearch' 
                 ? 'text-primary font-bold border-b-primary border-b-[3px]' : ''} 
                     md:pb-2 ss:pb-2 pb-1 text-center w-full cursor-pointer
@@ -100,7 +100,7 @@ const TargetedSearch = () => {
                     Targeted Search
                 </h2>
 
-                <h2 className={`text-main md:text-[15px] ss:text-[14px] text-[13px]
+                <h2 className={`text-main md:text-[15px] ss:text-[15px] text-[13px]
                 text-center hover:text-primary
                     w-full cursor-pointer ${selectedTab === 'messageUs' 
                     ? 'text-primary font-bold border-b-primary border-b-[3px]' : ''}

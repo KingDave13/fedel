@@ -30,8 +30,8 @@ const CatCard = (category, index) => {
                     {category.productCount}+
                 </div>
 
-                <div className='flex flex-col md:gap-1 ss:gap-1 gap-1 
-                absolute md:p-6 ss:p-6 p-4 bottom-0'>
+                <div className='flex flex-col gap-1 absolute md:p-6 
+                ss:p-6 p-4 bottom-0'>
                     <h1 className='text-secondary md:text-[19px] ss:text-[18px] 
                     text-[15px] font-bold'>
                         {category.name}
@@ -39,7 +39,7 @@ const CatCard = (category, index) => {
 
                     <p className='text-white md:leading-[19px]
                     ss:leading-[19px] leading-[16px] md:text-[14px] 
-                    ss:text-[14px] text-[12px]'>
+                    ss:text-[13px] text-[12px]'>
                         {category.description}
                     </p>
 
@@ -83,7 +83,7 @@ const Categories = () => {
 
   return (
     <section className='relative w-full md:min-h-[1000px] ss:min-h-[1000px] 
-    min-h-[2500px] mx-auto flex items-center md:mt-0 ss:mt-0 mt-80'>
+    min-h-[2500px] mx-auto flex items-center md:mt-0 ss:mt-76 mt-80'>
         <div className='max-w-[86rem] mx-auto flex flex-col w-full'>
             <motion.div variants={textVariant()}
             className=''>
@@ -94,8 +94,8 @@ const Categories = () => {
                 </h1>  
             </motion.div>
 
-            <div className='grid md:gap-14 ss:gap-12 gap-8 md:mt-16 
-            md:grid-cols-3 ss:mt-12 mt-8'>
+            <div className='grid md:gap-14 ss:gap-10 gap-8 md:mt-16 
+            md:grid-cols-3 ss:grid-cols-2 ss:mt-12 mt-8'>
                 {categories.map((category, index) => (
                     <CatCard 
                         key={index} 
