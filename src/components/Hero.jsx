@@ -26,10 +26,10 @@ const Hero = () => {
 
   return (
     <section className='relative w-full md:min-h-[700px] ss:min-h-[800px] 
-    items-center flex md:mb-0 ss:mb-0 mb-36'>
+    items-center flex md:mb-0 ss:mb-52 mb-36'>
         <div className='relative items-center w-full max-w-[86rem]
-        md:mt-28 ss:mt-24 mt-16 md:rounded-[30px] ss:rounded-[26px] flex 
-        md:p-12 ss:p-10 p-6'
+        md:mt-28 ss:mt-20 mt-16 md:rounded-[30px] flex md:p-12 ss:p-10 
+        p-6'
             style={{
                 backgroundImage: `url(${images[currentImageIndex]})`,
                 objectFit: 'cover',
@@ -40,14 +40,14 @@ const Hero = () => {
         >
             <div className='relative md:items-center ss:items-center 
             justify-between w-full flex md:flex-row flex-col md:gap-44 
-            ss:gap-40 gap-6'>
+            ss:gap-6 gap-6'>
                 <motion.div variants={textVariant()}
                 className='flex justify-center items-start md:gap-6
                 ss:gap-6 gap-4 flex-col'
                 >
                     <h1 className='text-white font-bold md:text-[60px]
                     ss:text-[50px] text-[33px] md:leading-[73px] 
-                    ss:leading-[55px] leading-[38px]
+                    ss:leading-[65px] leading-[38px]
                     md:max-w-[650px]'>
                         Buy your <span className='text-secondary'>
                         tiles, marble, granite, sanitary wares,
@@ -56,7 +56,7 @@ const Hero = () => {
                     </h1>
 
                     <p className='text-white md:text-[19px] md:leading-[28px] 
-                    ss:leading-[55px] leading-[18px] ss:text-[20px] 
+                    ss:leading-[28px] leading-[18px] ss:text-[19px] 
                     text-[14px] md:max-w-[630px] ss:max-w-[620px]
                     max-w-[320px]'>
                         Buy your desired tiles, marble, granite, sanitary
@@ -99,7 +99,7 @@ const Hero = () => {
 
                 <motion.div variants={fadeIn('down', 'spring', 0.3)} 
                 className='flex flex-1 relative'>
-                    <div className="absolute md:-top-56 ss:-top-56 top-6 
+                    <div className="absolute md:-top-56 ss:top-6 top-6 
                     z-10">
                         <TargetedSearch />
                     </div>
