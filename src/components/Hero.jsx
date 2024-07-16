@@ -45,7 +45,7 @@ const Hero = () => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 1060);
       const viewportHeight = window.innerHeight;
-      if (viewportHeight >= 700 && viewportHeight <= 850) {
+      if (viewportHeight >= 700 && viewportHeight <= 810) {
         setHeroHeight('100vh');
       } else {
         setHeroHeight(isMobile ? '65vh' : '80vh');

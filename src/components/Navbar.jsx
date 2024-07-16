@@ -74,7 +74,7 @@ useEffect(() => {
                                 onMouseEnter={() => toggleMenu(link.id)}
                                 onMouseLeave={() => toggleMenu(null)}
                             >
-                                <h3 className='text-main text-[16px] font-medium'>
+                                <h3 className='text-main text-[15px] font-medium'>
                                     {link.title}
                                 </h3>
                                 
@@ -95,7 +95,7 @@ useEffect(() => {
                                                 <a
                                                     key={index}
                                                     href={subLink.route}
-                                                    className="flex text-[15px] text-main
+                                                    className="flex text-[14px] text-main
                                                     hover:font-medium"
                                                 >
                                                     {subLink.name}
