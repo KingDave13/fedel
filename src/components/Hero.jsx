@@ -29,7 +29,7 @@ const Hero = () => {
     items-center flex md:mb-0 ss:mb-52 mb-36'>
         <div className='relative items-center w-full max-w-[86rem]
         md:mt-28 ss:mt-20 mt-16 md:rounded-[30px] flex md:p-12 ss:p-10 
-        p-6 hero'
+        p-6'
             style={{
                 backgroundImage: `url(${images[currentImageIndex]})`,
                 objectFit: 'cover',

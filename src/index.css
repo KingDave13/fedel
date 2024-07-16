@@ -79,11 +79,11 @@ body, html {
   height: 80vh;
 } */
 
-@media (min-height: 700px) and (max-height: 810px) {
+/* @media (min-height: 700px) and (max-height: 810px) {
   .hero {
     height: 90vh;
   }
-}
+} */
 
 @keyframes slide {
   0% {
