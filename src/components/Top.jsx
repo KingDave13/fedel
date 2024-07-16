@@ -5,6 +5,7 @@ import { fadeIn, textVariant } from '../utils/motion';
 import { client, urlFor } from '../sanity';
 import { whatsapplogo, gmaillogo } from "../assets";
 import { GoArrowRight } from "react-icons/go";
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 const TopCard = ({ product, index }) => {
     const imageUrl = product.images && product.images[0] ? urlFor(product.images[0]).url() : '';
@@ -125,6 +126,129 @@ const TopCard = ({ product, index }) => {
     );
 };
 
+const TopCard2 = ({ products }) => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const product = products[currentIndex];
+    const imageUrl = product.images && product.images[0] ? urlFor(product.images[0]).url() : '';
+
+    const handlePrev = () => {
+        setCurrentIndex((prevIndex) => (prevIndex === 0 ? products.length - 1 : prevIndex - 1));
+    };
+
+    const handleNext = () => {
+        setCurrentIndex((prevIndex) => (prevIndex === products.length - 1 ? 0 : prevIndex + 1));
+    };
+
+    return (
+        <div className='cursor-pointer'>
+            <div className='flex items-center justify-center relative'>
+                <div className='relative w-full'>
+                    {imageUrl ? (
+                        <img
+                            src={imageUrl}
+                            alt={product.name}
+                            className='h-[280px] w-full object-cover 
+                            rounded-lg'
+                        />
+                    ) : (
+                        <div className='flex items-center justify-center 
+                        bg-gray-200 rounded-lg w-full h-[250px]'>
+                            <span>No Image</span>
+                        </div>
+                    )}
+
+                    <div className='absolute inset-0 flex items-center 
+                    justify-between px-4'>
+                        <button onClick={handlePrev} className='bg-white 
+                        p-2 rounded-full'>
+                            <FaArrowLeft className='text-black' />
+                        </button>
+                        <button onClick={handleNext} className='bg-white 
+                        -2 rounded-full'>
+                            <FaArrowRight className='text-black' />
+                        </button>
+                    </div>
+
+                    <div className='p-4 bg-white rounded-lg'>
+                        <h3 className="text-[20px] font-bold mb-1">
+                            {product.name}
+                        </h3>
+
+                        {product.attributes.map((attribute, index) => (
+                            <div key={index} className='text-[14px] flex 
+                            flex-col gap-1 mb-1'>
+                                {attribute.dimensions && 
+                                    <div>
+                                        {attribute.dimensions}
+                                    </div>
+                                }
+
+                                <div className="flex gap-2">
+                                    {attribute.material && <div>{attribute.material}</div>} •
+                                    {attribute.manufacturer && <div>{attribute.manufacturer}</div>}
+                                </div>
+                            </div>
+                        ))}
+
+                        {product.attributes.map((attribute, index) => (
+                            <div key={index}>
+                                {attribute.price !== null ? (
+                                    <div className='flex gap-2 
+                                    items-center'>
+                                        {attribute.price && (
+                                            <h1 className='text-greenBright 
+                                            text-[20px] font-bold'>
+                                                <div>
+                                                    <span className='line-through'>N</span>
+                                                    {attribute.price}.00
+                                                </div>
+                                            </h1>
+                                        )}
+
+                                        {attribute.OriginalPrice && (
+                                            <h1 className='text-main3 
+                                            text-[14px] font-medium 
+                                            line-through'>
+                                                <div>N{attribute.OriginalPrice}.00</div>
+                                            </h1>
+                                        )}
+                                    </div>
+                                ) : (
+                                    <div className="bg-white rounded-md 
+                                    px-3 py-1.5 flex items-center gap-2 
+                                    mt-2 justify-between">
+                                        <p className="text-primary 
+                                        font-bold text-[15px]">
+                                            REQUEST PRICE
+                                        </p>
+
+                                        <img 
+                                            src={gmaillogo} 
+                                            alt="gmail" 
+                                            className="w-5 h-auto" 
+                                        />
+
+                                        <img 
+                                            src={whatsapplogo} 
+                                            alt="whatsapp" 
+                                            className="w-4 h-auto" 
+                                        />
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+
+                        <div className="text-[13px] text-black mt-1">
+                            Click for more details &rarr;
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+
 const Top = () => {
     const [topProducts, setTopProducts] = useState([]);
 
@@ -196,13 +320,12 @@ const Top = () => {
                                 />
                             </div>
 
-                            {/* <div className='md:hidden ss:hidden flex'>
-                                <TopCard 
-                                    key={product._id} 
-                                    index={index} 
-                                    product={product}
+                            <div className='md:hidden ss:hidden flex'>
+                                <TopCard2 
+                                    key={product._id}
+                                    products={product}
                                 />
-                            </div> */}
+                            </div>
                         </>
                     ))}
                 </div>
@@ -217,8 +340,8 @@ const Top = () => {
                         </p>
 
                         <GoArrowRight 
-                            className='text-white m
-                            d:text-[18px] ss:text-[18px] text-[20px]' 
+                            className='text-white md:text-[18px] 
+                            ss:text-[18px] text-[20px]' 
                         />
                     </a>
                 </div>
