@@ -12,29 +12,67 @@ const Hero = () => {
   const navigate = useNavigate();
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const isMobile = window.innerWidth <= 1060;
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1060);
+  const [heroHeight, setHeroHeight] = useState('80vh');
+  const [loaded, setLoaded] = useState(false);
 
   const images = isMobile ? heroImagesMobile : heroImages;
+
+  useEffect(() => {
+    const preloadImages = (srcArray) => {
+      const promises = srcArray.map((src) => {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.src = src;
+          img.onload = resolve;
+          img.onerror = reject;
+        });
+      });
+
+      Promise.all(promises)
+        .then(() => setLoaded(true))
+        .catch(() => console.error("Failed to preload images"));
+    };
+
+    preloadImages(images);
+  }, [images]);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 3000);
 
-    return () => clearInterval(intervalId);
-  }, []);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1060);
+      const viewportHeight = window.innerHeight;
+      if (viewportHeight >= 700 && viewportHeight <= 850) {
+        setHeroHeight('100vh');
+      } else {
+        setHeroHeight(isMobile ? '65vh' : '80vh');
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    handleResize();
+
+    return () => {
+      clearInterval(intervalId);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [isMobile]);
 
   return (
     <section className='relative w-full md:min-h-[700px] ss:min-h-[800px] 
     items-center flex md:mb-0 ss:mb-52 mb-36'>
-        <div className='relative items-center w-full max-w-[86rem]
+        <div className={`relative items-center w-full max-w-[86rem] p-6
         md:mt-28 ss:mt-20 mt-16 md:rounded-[30px] flex md:p-12 ss:p-10 
-        p-6'
+        ${loaded ? 'opacity-100' : 'opacity-0 transition-opacity duration-500'}`}
             style={{
                 backgroundImage: `url(${images[currentImageIndex]})`,
                 objectFit: 'cover',
                 backgroundPosition: isMobile ? 'bottom' : 'center',
-                height: isMobile ? '65vh' : '80vh',
+                height: heroHeight,
                 transition: 'background-image 1s ease-in-out',
             }}
         >

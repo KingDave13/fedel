@@ -22,7 +22,7 @@ const ScrollToTopButton = () => {
   };
 
   return (
-    <div className={`bg-main py-3 px-3 fixed md:bottom-10
+    <div className={`bg-main py-3 px-3 fixed md:bottom-10 z-20
     ss:bottom-8 bottom-6 md:right-10 ss:right-8 right-6 rounded-full 
     transition-opacity duration-400 cursor-pointer grow2
     ${isVisible ? 'opacity-90' : 'opacity-0 pointer-events-none'}`}
