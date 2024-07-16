@@ -77,16 +77,13 @@ body, html {
   object-fit: cover;
   background-position: center;
   height: 80vh;
-}
-
-@media (max-width: 1060px) {
-  .hero {
-    background-image: url('./assets/heroImageMobile.jpg');
-    object-fit: cover;
-    background-position: bottom;
-    max-height: 65vh;
-  }
 } */
+
+@media (min-height: 700px) and (max-height: 810px) {
+  .hero {
+    height: 90vh;
+  }
+}
 
 @keyframes slide {
   0% {
