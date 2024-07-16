@@ -185,13 +185,25 @@ const Top = () => {
                 </motion.div>
 
                 <div className='grid md:gap-12 ss:gap-12 gap-8 md:mt-16 
-                md:grid-cols-4 ss:mt-12 mt-8'>
+                md:grid-cols-4 ss:grid-cols-2 ss:mt-12 mt-8'>
                     {topProducts.map((product, index) => (
-                        <TopCard 
-                            key={product._id} 
-                            index={index} 
-                            product={product}
-                        />
+                        <>
+                            <div className='md:flex ss:flex hidden'>
+                                <TopCard 
+                                    key={product._id} 
+                                    index={index} 
+                                    product={product}
+                                />
+                            </div>
+
+                            {/* <div className='md:hidden ss:hidden flex'>
+                                <TopCard 
+                                    key={product._id} 
+                                    index={index} 
+                                    product={product}
+                                />
+                            </div> */}
+                        </>
                     ))}
                 </div>
                 
