@@ -7,13 +7,30 @@ import { whatsapplogo, gmaillogo } from "../assets";
 import { GoArrowRight } from "react-icons/go";
 import { CgArrowLeft } from "react-icons/cg";
 
+const useIsMobile = () => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 1060);
+        };
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    return isMobile;
+};
+
 const TopCard = ({ product, index }) => {
     const imageUrl = product.images && product.images[0] ? urlFor(product.images[0]).url() : '';
     const [showAttributes, setShowAttributes] = useState(false);
+    const isMobile = useIsMobile();
 
     return (
         <motion.div
-            variants={fadeIn('', 'spring', index * 0.3, 0.75)}
+            variants={!isMobile ? fadeIn('', 'spring', index * 0.3, 0.75) : {}}
             className='cursor-pointer'
         >
             <a href={`/products/${product.categorySlug}/${product.slug.current}`}>
