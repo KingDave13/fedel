@@ -5,7 +5,7 @@ import { fadeIn, textVariant } from '../utils/motion';
 import { client, urlFor } from '../sanity';
 import { whatsapplogo, gmaillogo } from "../assets";
 import { GoArrowRight } from "react-icons/go";
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { CgArrowLeft } from "react-icons/cg";
 
 const TopCard = ({ product, index }) => {
     const imageUrl = product.images && product.images[0] ? urlFor(product.images[0]).url() : '';
