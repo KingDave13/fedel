@@ -33,7 +33,8 @@ const TopCard = ({ product, index }) => {
             variants={!isMobile ? fadeIn('', 'spring', index * 0.3, 0.75) : {}}
             className='cursor-pointer'
         >
-            <a href={`/products/${product.categorySlug}/${product.slug.current}`}>
+            <a href={`/products/${product.categorySlug}/${product.slug.current}`}
+            className='hidden md:block'>
                 <div className='flex items-center justify-center relative'
                     onMouseEnter={() => setShowAttributes(true)} 
                     onMouseLeave={() => setShowAttributes(false)}
@@ -139,6 +140,22 @@ const TopCard = ({ product, index }) => {
                     </div>
                 </div>
             </a>
+
+            <div className='md:hidden block'>
+                <div className='bg-white p-5 rounded-lg'>
+                    <div className='flex flex-col gap-3'>
+                        <img
+                            src=''
+                        />
+
+                        <div className='flex flex-col gap-2'>
+                            <h1>
+                                Product Name
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </motion.div>
     );
 };
@@ -183,7 +200,7 @@ const Top = () => {
         <section className='relative w-full md:min-h-[900px] 
         ss:min-h-[1000px] min-h-[800px] mx-auto flex items-center'>
             <div className='max-w-[86rem] mx-auto flex flex-col w-full
-             items-center'>
+             md:items-center'>
                 <motion.div variants={textVariant()} className='md:gap-4 
                 ss:gap-3 gap-3 flex flex-col items-center'>
                     <h1 className='text-secondary font-bold 
