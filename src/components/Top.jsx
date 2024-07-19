@@ -23,7 +23,7 @@ const useIsMobile = () => {
     return isMobile;
 };
 
-const TopCard = ({ product, index }) => {
+const TopCard = ({ product, index, mobileProduct, onNext, onPrev }) => {
     const imageUrl = product.images && product.images[0] ? urlFor(product.images[0]).url() : '';
     const [showAttributes, setShowAttributes] = useState(false);
     const isMobile = useIsMobile();
@@ -35,18 +35,7 @@ const TopCard = ({ product, index }) => {
         >
             {isMobile ? (
                 <div className='bg-white p-5 rounded-lg'>
-                    <div className='flex flex-col gap-3'>
-                        <img
-                            src=''
-                        />
-
-                        <div className='flex flex-col gap-2 text-main'>
-                            <h1 className='ss:text-[18px] text-[15px]
-                            font-semibold'>
-                                Product Name
-                            </h1>
-                        </div>
-                    </div>
+                    Hlo
                 </div>
             ) : (
                 <a href={`/products/${product.categorySlug}/${product.slug.current}`}>
@@ -230,7 +219,7 @@ const Top = () => {
                     </p>
                 </motion.div>
 
-                <div className='grid md:gap-12 ss:gap-12 gap-8 md:mt-16 
+                <div className='md:grid md:gap-12 ss:gap-12 gap-8 md:mt-16 
                 md:grid-cols-4 ss:grid-cols-2 ss:mt-12 mt-8'>
                     {topProducts.map((product, index) => (
                         <TopCard 
