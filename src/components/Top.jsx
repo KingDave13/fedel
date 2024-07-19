@@ -26,122 +26,14 @@ const useIsMobile = () => {
 const TopCard = ({ product, index }) => {
     const imageUrl = product.images && product.images[0] ? urlFor(product.images[0]).url() : '';
     const [showAttributes, setShowAttributes] = useState(false);
-   
+    const isMobile = useIsMobile();
 
     return (
         <motion.div
-            variants={fadeIn('', 'spring', index * 0.3, 0.75)}
+            variants={!isMobile ? fadeIn('', 'spring', index * 0.3, 0.75) : {}}
             className='cursor-pointer'
         >
-            <a href={`/products/${product.categorySlug}/${product.slug.current}`}
-            className='hidden md:block'>
-                <div className='flex items-center justify-center relative'
-                    onMouseEnter={() => setShowAttributes(true)} 
-                    onMouseLeave={() => setShowAttributes(false)}
-                >
-                    <div className='flex items-center justify-center relative
-                    w-full'>
-                        {imageUrl ? (
-                            <img
-                                src={imageUrl}
-                                alt={product.name}
-                                className='h-[280px] w-full object-cover 
-                                rounded-lg'
-                            />
-                        ) : (
-                            <div className='flex items-center justify-center 
-                            bg-gray-200 rounded-lg w-full h-[250px]'>
-                                <span>No Image</span>
-                            </div>
-                        )}
-
-                        <AnimatePresence>
-                            {showAttributes && (
-                                <motion.div 
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                transition={{ duration: 0.2 }}
-                                className="absolute inset-0 bg-black bg-opacity-80 
-                                p-4 rounded-lg flex flex-col">
-                                    <div className='text-white absolute bottom-4'>
-                                        <h3 className="text-[20px] font-bold mb-1">
-                                            {product.name}
-                                        </h3>
-
-                                        {product.attributes.map((attribute, index) => (
-                                            <div key={index} className='text-[14px] flex flex-col 
-                                            gap-1 mb-1'>
-                                                {attribute.dimensions && <div>{attribute.dimensions}</div>}
-
-                                                <div className="flex gap-2">
-                                                    {attribute.material && <div>{attribute.material}</div>} •
-                                                    {attribute.manufacturer && <div>{attribute.manufacturer}</div>}
-                                                </div>
-                                                
-                                            </div>
-                                        ))}
-
-                                        {product.attributes.map((attribute, index) => (
-                                            <div key={index}>
-                                                {attribute.price !== null ? (
-                                                    <div className='flex gap-2 items-center'>
-                                                        {attribute.price && (
-                                                            <h1 
-                                                            className='text-greenBright text-[20px]
-                                                            font-bold'>
-                                                                <div>
-                                                                    <span className='line-through'>
-                                                                        N
-                                                                    </span>
-                                                                    {attribute.price}.00
-                                                                </div>
-                                                            </h1>
-                                                        )}
-                                                        
-                                                        {attribute.OriginalPrice && (
-                                                            <h1 className='text-main3 text-[14px]
-                                                            font-medium line-through'>
-                                                                <div>
-                                                                    N{attribute.OriginalPrice}.00
-                                                                </div>
-                                                            </h1>
-                                                        )}
-                                                    </div>
-                                                ) : (
-                                                    <div className="bg-white rounded-md px-3 py-1.5 flex 
-                                                    items-center gap-2 mt-2 justify-between">
-                                                        <p className="text-primary font-bold
-                                                        text-[15px]">
-                                                            REQUEST PRICE
-                                                        </p>
-
-                                                        <img src={gmaillogo}
-                                                            alt="gmail"
-                                                            className="w-5 h-auto" 
-                                                        />
-
-                                                        <img src={whatsapplogo}
-                                                            alt="whatsapp"
-                                                            className="w-4 h-auto" 
-                                                        />
-                                                    </div>
-                                                )}
-                                            </div>
-                                        ))}
-
-                                        <div className="text-[13px] text-white mt-1">
-                                            Click for more details &rarr;
-                                        </div>
-                                    </div>
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
-                    </div>
-                </div>
-            </a>
-
-            <div className='md:hidden block'>
+            {isMobile ? (
                 <div className='bg-white p-5 rounded-lg'>
                     <div className='flex flex-col gap-3'>
                         <img
@@ -156,7 +48,114 @@ const TopCard = ({ product, index }) => {
                         </div>
                     </div>
                 </div>
-            </div>
+            ) : (
+                <a href={`/products/${product.categorySlug}/${product.slug.current}`}>
+                    <div className='flex items-center justify-center relative'
+                        onMouseEnter={() => setShowAttributes(true)} 
+                        onMouseLeave={() => setShowAttributes(false)}
+                    >
+                        <div className='flex items-center justify-center relative
+                        w-full'>
+                            {imageUrl ? (
+                                <img
+                                    src={imageUrl}
+                                    alt={product.name}
+                                    className='h-[280px] w-full object-cover 
+                                    rounded-lg'
+                                />
+                            ) : (
+                                <div className='flex items-center justify-center 
+                                bg-gray-200 rounded-lg w-full h-[250px]'>
+                                    <span>No Image</span>
+                                </div>
+                            )}
+
+                            <AnimatePresence>
+                                {showAttributes && (
+                                    <motion.div 
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    transition={{ duration: 0.2 }}
+                                    className="absolute inset-0 bg-black bg-opacity-80 
+                                    p-4 rounded-lg flex flex-col">
+                                        <div className='text-white absolute bottom-4'>
+                                            <h3 className="text-[20px] font-bold mb-1">
+                                                {product.name}
+                                            </h3>
+
+                                            {product.attributes.map((attribute, index) => (
+                                                <div key={index} className='text-[14px] flex flex-col 
+                                                gap-1 mb-1'>
+                                                    {attribute.dimensions && <div>{attribute.dimensions}</div>}
+
+                                                    <div className="flex gap-2">
+                                                        {attribute.material && <div>{attribute.material}</div>} •
+                                                        {attribute.manufacturer && <div>{attribute.manufacturer}</div>}
+                                                    </div>
+                                                    
+                                                </div>
+                                            ))}
+
+                                            {product.attributes.map((attribute, index) => (
+                                                <div key={index}>
+                                                    {attribute.price !== null ? (
+                                                        <div className='flex gap-2 items-center'>
+                                                            {attribute.price && (
+                                                                <h1 
+                                                                className='text-greenBright text-[20px]
+                                                                font-bold'>
+                                                                    <div>
+                                                                        <span className='line-through'>
+                                                                            N
+                                                                        </span>
+                                                                        {attribute.price}.00
+                                                                    </div>
+                                                                </h1>
+                                                            )}
+                                                            
+                                                            {attribute.OriginalPrice && (
+                                                                <h1 className='text-main3 text-[14px]
+                                                                font-medium line-through'>
+                                                                    <div>
+                                                                        N{attribute.OriginalPrice}.00
+                                                                    </div>
+                                                                </h1>
+                                                            )}
+                                                        </div>
+                                                    ) : (
+                                                        <div className="bg-white rounded-md px-3 py-1.5 flex 
+                                                        items-center gap-2 mt-2 justify-between">
+                                                            <p className="text-primary font-bold
+                                                            text-[15px]">
+                                                                REQUEST PRICE
+                                                            </p>
+
+                                                            <img src={gmaillogo}
+                                                                alt="gmail"
+                                                                className="w-5 h-auto" 
+                                                            />
+
+                                                            <img src={whatsapplogo}
+                                                                alt="whatsapp"
+                                                                className="w-4 h-auto" 
+                                                            />
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            ))}
+
+                                            <div className="text-[13px] text-white mt-1">
+                                                Click for more details &rarr;
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </div>
+                    </div>
+                </a>
+            )}
         </motion.div>
     );
 };
@@ -164,7 +163,6 @@ const TopCard = ({ product, index }) => {
 
 const Top = () => {
     const [topProducts, setTopProducts] = useState([]);
-    const isMobile = useIsMobile();
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const onNext = () => {
