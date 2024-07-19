@@ -30,24 +30,21 @@ const TopCard = ({ product, index, isMobile }) => {
     return (
         <motion.div
             variants={!isMobile ? fadeIn('', 'spring', index * 0.3, 0.75) : {}}
-            className='cursor-pointer'
+            className='cursor-pointer w-full'
         >
             {isMobile ? (
-                <div className='bg-white p-4 rounded-lg'>
+                <div className='bg-white p-4 rounded-lg w-full'>
                     <div className='flex flex-col justify-center w-full
                     ss:gap-5 gap-3'>
                         <div className='flex items-center justify-center 
                         relative w-full'>
                             {imageUrl ? (
-                                <div className='w-full h-auto'>
-                                    <img
-                                        src={imageUrl}
-                                        alt={product.name}
-                                        className='h-full w-full 
-                                        object-cover rounded-lg'
-                                    />
-                                </div>
-                                
+                                <img
+                                    src={imageUrl}
+                                    alt={product.name}
+                                    className='h-[280px] w-full
+                                    object-cover rounded-lg'
+                                />
                             ) : (
                                 <div className='flex items-center 
                                 justify-center bg-gray-200 rounded-lg 
@@ -269,7 +266,7 @@ const Top = () => {
 
     return (
         <section className='relative w-full md:min-h-[900px] 
-        ss:min-h-[1000px] min-h-[650px] mx-auto flex items-center'>
+        ss:min-h-[1000px] min-h-[750px] mx-auto flex items-center'>
             <div className='max-w-[86rem] mx-auto flex flex-col w-full 
             md:items-center'>
                 <motion.div variants={textVariant()} className='md:gap-4 
@@ -333,7 +330,7 @@ const Top = () => {
 
                 <div>
                     <a href='/products' className='inline-flex gap-3 
-                    md:mt-16 ss:mt-14 mt-10 items-center justify-center 
+                    md:mt-16 ss:mt-14 mt-8 items-center justify-center 
                     grow4'>
                         <p className='text-white md:text-[16px] 
                         ss:text-[15px] text-[13px]'>
