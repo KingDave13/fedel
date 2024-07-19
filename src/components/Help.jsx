@@ -66,7 +66,7 @@ const Help = () => {
 
     return (
         <section className="w-full md:min-h-[550px] ss:min-h-[600px] 
-        min-h-[900px] flex items-center">
+        min-h-[850px] flex items-center">
             <div className='relative items-center w-full max-w-[86rem]'>
             <motion.div variants={fadeIn('down', 'spring', 0.3)}
                 className="flex md:flex-row flex-col md:gap-20 
