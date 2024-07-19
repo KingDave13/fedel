@@ -4,7 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
 import { client, urlFor } from '../sanity';
 import { whatsapplogo, gmaillogo } from "../assets";
-import { GoArrowRight, GoArrowLeft } from "react-icons/go"; // Import GoArrowLeft
+import { CgArrowLeft } from "react-icons/cg";
+import { GoArrowRight } from "react-icons/go";
 
 const useIsMobile = () => {
     const [isMobile, setIsMobile] = useState(false);
@@ -196,8 +197,13 @@ const Top = () => {
                 <div className='md:grid md:gap-12 ss:gap-12 gap-8 md:mt-16 md:grid-cols-4 ss:grid-cols-2 ss:mt-12 mt-8'>
                     {isMobile ? (
                         <div className='flex items-center justify-between w-full'>
-                            <button onClick={onPrev} className='p-2'>
-                                <GoArrowLeft className='text-white md:text-[18px] ss:text-[18px] text-[20px]' />
+                            <button 
+                                className='absolute left-6 z-10 bg-main 
+                                text-white p-3 rounded-full opacity-90 
+                                hover:opacity-100 navsmooth'
+                                onClick={onPrev}
+                            >
+                                <CgArrowLeft size={18} />
                             </button>
                             {topProducts.length > 0 && (
                                 <TopCard
@@ -207,8 +213,15 @@ const Top = () => {
                                     isMobile={isMobile}
                                 />
                             )}
-                            <button onClick={onNext} className='p-2'>
-                                <GoArrowRight className='text-white md:text-[18px] ss:text-[18px] text-[20px]' />
+                            <button 
+                                className='absolute right-6 z-10 bg-main 
+                                text-white p-3 rounded-full opacity-90 
+                                hover:opacity-100 navsmooth'
+                                onClick={onNext}
+                            >
+                                <CgArrowLeft size={18} 
+                                    className="transform rotate-180"
+                                />
                             </button>
                         </div>
                     ) : (
