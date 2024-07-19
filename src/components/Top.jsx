@@ -33,18 +33,21 @@ const TopCard = ({ product, index, isMobile }) => {
             className='cursor-pointer'
         >
             {isMobile ? (
-                <div className='bg-white p-5 rounded-lg'>
-                    <div className='flex items-center justify-center 
-                    relative'>
+                <div className='bg-white p-4 rounded-lg'>
+                    <div className='flex flex-col justify-center w-full
+                    ss:gap-5 gap-3'>
                         <div className='flex items-center justify-center 
                         relative w-full'>
                             {imageUrl ? (
-                                <img
-                                    src={imageUrl}
-                                    alt={product.name}
-                                    className='h-[280px] w-full 
-                                    object-cover rounded-lg'
-                                />
+                                <div className='w-full h-auto'>
+                                    <img
+                                        src={imageUrl}
+                                        alt={product.name}
+                                        className='h-full w-full 
+                                        object-cover rounded-lg'
+                                    />
+                                </div>
+                                
                             ) : (
                                 <div className='flex items-center 
                                 justify-center bg-gray-200 rounded-lg 
@@ -52,12 +55,65 @@ const TopCard = ({ product, index, isMobile }) => {
                                     <span>No Image</span>
                                 </div>
                             )}
-                            <div className="absolute bottom-4 text-white">
-                                <h3 className="text-[20px] font-bold 
-                                mb-1">
-                                    {product.name}
-                                </h3>
-                            </div>
+                        </div>
+
+                        <div className="text-main flex flex-col ss:gap-2
+                        gap-1">
+                            <h3 className="ss:text-[17px] text-[16px] 
+                            font-bold">
+                                {product.name}
+                            </h3>
+
+                            {product.attributes.map((attribute, index) => (
+                                <div key={index} 
+                                className='ss:text-[14px] text-[12px]
+                                flex flex-col gap-1 font-medium'>
+                                    {attribute.dimensions && 
+                                    <div>
+                                        {attribute.dimensions}
+                                    </div>}
+                                    <div className="flex flex-col
+                                    gap-1">
+                                        {attribute.material && <div>{attribute.material}</div>}
+                                        {attribute.manufacturer && <div>{attribute.manufacturer}</div>}
+                                    </div>
+                                </div>
+                            ))}
+
+                            {product.attributes.map((attribute, index) => (
+                                <div key={index}>
+                                    {attribute.price !== null ? (
+                                        <div className='flex gap-2 
+                                        items-center'>
+                                            {attribute.price && (
+                                                <h1 className='text-greenBright 
+                                                ss:text-[20px] text-[18px] font-bold'>
+                                                    <div>
+                                                        <span className='line-through'>N</span>
+                                                        {attribute.price}.00
+                                                    </div>
+                                                </h1>
+                                            )}
+                                            {attribute.OriginalPrice && (
+                                                <h1 className='text-main3 
+                                                text-[14px] font-medium 
+                                                line-through'>
+                                                    <div>N{attribute.OriginalPrice}.00</div>
+                                                </h1>
+                                            )}
+                                        </div>
+                                    ) : (
+                                        <div className="bg-white rounded-md px-3 py-1.5 flex 
+                                        items-center gap-2 mt-2 justify-between">
+                                            <p className="text-primary font-bold text-[15px]">
+                                                REQUEST PRICE
+                                            </p>
+                                            <img src={gmaillogo} alt="gmail" className="w-5 h-auto" />
+                                            <img src={whatsapplogo} alt="whatsapp" className="w-4 h-auto" />
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -234,15 +290,13 @@ const Top = () => {
                     </p>
                 </motion.div>
 
-                <div className='md:grid md:gap-12 ss:gap-12 md:mt-16 
-                md:grid-cols-4 ss:grid-cols-2 ss:mt-12 mt-8'>
+                <div className='md:grid md:gap-12 md:mt-16 ss:mt-12 mt-8
+                md:grid-cols-4'>
                     {isMobile ? (
-                        <div className='flex items-center justify-center 
-                        w-full'>
+                        <div className='flex items-center w-full'>
                             <button 
-                                className='absolute left-6 z-10 bg-main 
-                                text-white p-3 rounded-full opacity-90 
-                                hover:opacity-100 navsmooth'
+                                className='absolute left-6 z-10 bg-black 
+                                text-white p-3 rounded-full bg-opacity-80'
                                 onClick={onPrev}
                             >
                                 <CgArrowLeft size={18} />
@@ -256,9 +310,8 @@ const Top = () => {
                                 />
                             )}
                             <button 
-                                className='absolute right-6 z-10 bg-main 
-                                text-white p-3 rounded-full opacity-90 
-                                hover:opacity-100 navsmooth'
+                                className='absolute right-6 z-10 bg-black 
+                                text-white p-3 rounded-full bg-opacity-80'
                                 onClick={onNext}
                             >
                                 <CgArrowLeft size={18} 
@@ -283,7 +336,7 @@ const Top = () => {
                     md:mt-16 ss:mt-14 mt-10 items-center justify-center 
                     grow4'>
                         <p className='text-white md:text-[16px] 
-                        ss:text-[15px] text-[12px]'>
+                        ss:text-[15px] text-[13px]'>
                             See all products
                         </p>
                         <GoArrowRight className='text-white 
