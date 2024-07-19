@@ -234,10 +234,10 @@ const Top = () => {
                     </p>
                 </motion.div>
 
-                <div className='md:grid md:gap-12 ss:gap-12 gap-8 
-                md:mt-16 md:grid-cols-4 ss:grid-cols-2 ss:mt-12 mt-8'>
+                <div className='md:grid md:gap-12 ss:gap-12 md:mt-16 
+                md:grid-cols-4 ss:grid-cols-2 ss:mt-12 mt-8'>
                     {isMobile ? (
-                        <div className='flex items-center justify-between 
+                        <div className='flex items-center justify-center 
                         w-full'>
                             <button 
                                 className='absolute left-6 z-10 bg-main 
