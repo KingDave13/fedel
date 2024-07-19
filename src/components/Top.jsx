@@ -213,7 +213,7 @@ const Top = () => {
 
     return (
         <section className='relative w-full md:min-h-[900px] 
-        ss:min-h-[1000px] min-h-[800px] mx-auto flex items-center'>
+        ss:min-h-[1000px] min-h-[650px] mx-auto flex items-center'>
             <div className='max-w-[86rem] mx-auto flex flex-col w-full 
             md:items-center'>
                 <motion.div variants={textVariant()} className='md:gap-4 
