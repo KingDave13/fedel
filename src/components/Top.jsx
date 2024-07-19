@@ -26,11 +26,11 @@ const useIsMobile = () => {
 const TopCard = ({ product, index }) => {
     const imageUrl = product.images && product.images[0] ? urlFor(product.images[0]).url() : '';
     const [showAttributes, setShowAttributes] = useState(false);
-    const isMobile = useIsMobile();
+   
 
     return (
         <motion.div
-            variants={!isMobile ? fadeIn('', 'spring', index * 0.3, 0.75) : {}}
+            variants={fadeIn('', 'spring', index * 0.3, 0.75)}
             className='cursor-pointer'
         >
             <a href={`/products/${product.categorySlug}/${product.slug.current}`}
@@ -164,6 +164,17 @@ const TopCard = ({ product, index }) => {
 
 const Top = () => {
     const [topProducts, setTopProducts] = useState([]);
+    const isMobile = useIsMobile();
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const onNext = () => {
+        setCurrentIndex(currentIndex + 1);
+    };
+    
+    const onPrev = () => {
+        setCurrentIndex(currentIndex - 1);
+    };
+      
 
     useEffect(() => {
         const query = `
@@ -228,6 +239,9 @@ const Top = () => {
                             key={product._id} 
                             index={index} 
                             product={product}
+                            mobileProduct={product[currentIndex]}
+                            onNext={onNext}
+                            onPrev={onPrev}
                         /> 
                     ))}
                 </div>
