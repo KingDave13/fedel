@@ -23,8 +23,9 @@ const useIsMobile = () => {
     return isMobile;
 };
 
-const TopCard = ({ product, index, showAttributes, setShowAttributes }) => {
+const TopCard = ({ product, index }) => {
     const imageUrl = product.images && product.images[0] ? urlFor(product.images[0]).url() : '';
+    const [showAttributes, setShowAttributes] = useState(false);
     const isMobile = useIsMobile();
 
     return (
@@ -144,9 +145,7 @@ const TopCard = ({ product, index, showAttributes, setShowAttributes }) => {
                 <div className='bg-white p-5 rounded-lg'>
                     <div className='flex flex-col gap-3'>
                         <img
-                            src={imageUrl}
-                            alt={product.name}
-                            className='h-[280px] w-full object-cover rounded-md'
+                            src=''
                         />
 
                         <div className='flex flex-col gap-2 text-main'>
@@ -154,8 +153,6 @@ const TopCard = ({ product, index, showAttributes, setShowAttributes }) => {
                             font-semibold'>
                                 Product Name
                             </h1>
-
-
                         </div>
                     </div>
                 </div>
