@@ -186,7 +186,6 @@ const Cart = () => {
                         Clear Cart
                     </button>
                 </div>
-                
             </div>
         </section>
     );

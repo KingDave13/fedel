@@ -13,7 +13,6 @@ const Hero = () => {
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1060);
-  const [heroHeight, setHeroHeight] = useState('80vh');
   const [loaded, setLoaded] = useState(false);
 
   const images = isMobile ? heroImagesMobile : heroImages;
@@ -45,15 +44,10 @@ const Hero = () => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 1060);
       const viewportHeight = window.innerHeight;
-      if (viewportHeight >= 700 && viewportHeight <= 810) {
-        setHeroHeight('100vh');
-      } else {
-        setHeroHeight(isMobile ? '65vh' : '80vh');
-      }
+      document.documentElement.style.setProperty('--vh', `${viewportHeight * 0.01}px`);
     };
 
     window.addEventListener('resize', handleResize);
-
     handleResize();
 
     return () => {
@@ -61,6 +55,14 @@ const Hero = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, [isMobile]);
+
+  const getHeroHeight = () => {
+    const viewportHeight = window.innerHeight;
+    if (viewportHeight >= 700 && viewportHeight <= 810) {
+      return '100vh';
+    }
+    return isMobile ? '65vh' : '80vh';
+  };
 
   return (
     <section className='relative w-full md:min-h-[700px] ss:min-h-[800px] 
@@ -72,7 +74,7 @@ const Hero = () => {
                 backgroundImage: `url(${images[currentImageIndex]})`,
                 objectFit: 'cover',
                 backgroundPosition: isMobile ? 'bottom' : 'center',
-                height: heroHeight,
+                height: getHeroHeight(),
                 transition: 'background-image 1s ease-in-out',
             }}
         >
