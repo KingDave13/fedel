@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { Filter } from '../features';
 import { urlFor } from '../sanity';
-import { Link } from 'react-router-dom';
 import { TiArrowSortedDown } from "react-icons/ti";
 import { motion, AnimatePresence } from 'framer-motion';
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
@@ -22,7 +21,7 @@ const ItemCard = ({ item, categorySlug, attributes, isMobile }) => {
     }, [item.images]);
   
     return (
-      <Link to={`/products/${categorySlug}/${item.slug.current}`}>
+      <a href={`/products/${categorySlug}/${item.slug.current}`}>
         {isMobile ? (
             <div className='bg-main2 p-4 rounded-lg w-full'>
                 <div className='flex flex-col justify-center w-full
@@ -216,7 +215,7 @@ const ItemCard = ({ item, categorySlug, attributes, isMobile }) => {
                 </div>
             </div>
         )}
-      </Link>
+      </a>
     );
 };
 
