@@ -132,8 +132,30 @@ const Product = ({ products, categorySlug }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [filteredProducts, setFilteredProducts] = useState([...products]);
     const [isFilterVisible, setIsFilterVisible] = useState(true);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 1060);
 
-    const productsPerPage = 28;
+    useEffect(() => {
+        if (window.innerWidth <= 1060) {
+            setIsFilterVisible(false);
+        }
+
+        const handleResize = () => {
+            const isMobile = window.innerWidth <= 1060;
+            setIsMobile(isMobile);
+            if (isMobile) {
+                setIsFilterVisible(false);
+            }
+        };
+
+        // Add event listener for window resize
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [isMobile]);
+
+    const productsPerPage = isMobile ? 8 : 28;
   
     const indexOfLastProduct = currentPage * productsPerPage;
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
