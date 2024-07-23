@@ -174,8 +174,9 @@ const Product = ({ products, categorySlug }) => {
         pageButtons.push(
             <button
                 key={currentPage}
-                className={`px-4 py-1 text-white text-[14px] rounded-md 
-                    bg-primary`}
+                className={`md:px-4 ss:px-4 px-3 py-1 text-white
+                md:text-[14px] ss:text-[14px] text-[13px] rounded-md 
+                bg-primary`}
             >
                 {currentPage}
             </button>
@@ -187,7 +188,8 @@ const Product = ({ products, categorySlug }) => {
                 pageButtons.push(
                     <button
                         key={nextPage}
-                        className={`px-4 py-1 text-white text-[14px] rounded-md 
+                        className={`md:px-4 ss:px-4 px-3 py-1 text-white
+                        md:text-[14px] ss:text-[14px] text-[13px] rounded-md
                             ${currentPage === nextPage ? 'bg-primary' : 'bg-main3'}`}
                         onClick={() => setCurrentPage(nextPage)}
                     >
@@ -207,7 +209,8 @@ const Product = ({ products, categorySlug }) => {
             pageButtons.push(
                 <button
                     key={totalPages}
-                    className={`px-4 py-1 text-white text-[14px] rounded-md 
+                    className={`md:px-4 ss:px-4 px-3 py-1 text-white
+                    md:text-[14px] ss:text-[14px] text-[13px] rounded-md 
                         ${currentPage === totalPages ? 'bg-primary' : 'bg-main3'}`}
                     onClick={() => setCurrentPage(totalPages)}
                 >
@@ -341,21 +344,23 @@ const Product = ({ products, categorySlug }) => {
                     </div>
 
                     <div className="flex justify-end mt-8 items-center
-                    gap-5">
+                    md:gap-5 ss:gap-4 gap-3">
                         <div
                             onClick={handlePreviousPage}
                             className='flex items-center gap-3
                             cursor-pointer'
                         >
                             <MdOutlineKeyboardArrowLeft 
-                                className={`text-[25px] text-white p-1
-                                rounded-lg font-semibold
+                                className={`md:text-[25px] ss:text-[25px] 
+                                text-[23px] text-white p-1 md:rounded-lg 
+                                rounded-md font-semibold
                                 ${currentPage === 1 
                                 ? 'bg-main3' 
                                 : 'bg-primary'}`}
                             />
 
-                            <p className={`text-[14px]
+                            <p className={`md:text-[14px] ss:text-[14px]
+                            text-[13px]
                             ${currentPage === 1 
                                 ? 'text-main3' 
                                 : 'text-primary'}`}>
@@ -370,7 +375,8 @@ const Product = ({ products, categorySlug }) => {
                             className='flex items-center gap-3
                             cursor-pointer'
                         >
-                            <p className={`text-[14px]
+                            <p className={`md:text-[14px] ss:text-[14px]
+                            text-[13px]
                             ${currentPage === 1 
                                 ? 'text-main3' 
                                 : 'text-primary'}`}>
@@ -378,8 +384,9 @@ const Product = ({ products, categorySlug }) => {
                             </p>
 
                             <MdOutlineKeyboardArrowRight
-                                className={`text-[25px] text-white p-1
-                                rounded-lg font-semibold
+                                className={`md:text-[25px] ss:text-[25px] 
+                                text-[23px] text-white p-1 md:rounded-lg 
+                                rounded-md font-semibold
                                 ${currentPage === 1 
                                 ? 'bg-main3' 
                                 : 'bg-primary'}`}
