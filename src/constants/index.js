@@ -1,4 +1,4 @@
-import { search, select, place, speed, twitter, instagram, facebook, whatsapp, youtube, tiktok } from '../assets';
+import { search, select, place, speed, instagram, facebook, whatsapp, tiktok, pinterest, threads } from '../assets';
 
 export const navLinks = [
     {
@@ -290,32 +290,32 @@ export const steps = [
     {
         id: "facebook",
         image: facebook,
-        link: ""
+        link: "https://facebook.com/shoptiles.ng"
     },
     {
         id: "instagram",
         image: instagram,
-        link: ""
+        link: "https://instagram.com/shoptiles.ng"
     },
     {
-        id: "twitter",
-        image: twitter,
-        link: ""
+        id: "pinterest",
+        image: pinterest,
+        link: "https://pinterest.com/shoptiles.ng"
     },
     {
         id: "whatsapp",
         image: whatsapp,
-        link: ""
+        link: "https://wa.me/2349169861311"
     },
     {
-        id: "youtube",
-        image: youtube,
-        link: ""
+        id: "thread",
+        image: threads,
+        link: "https://threads.net/shoptiles.ng"
     },
     {
         id: "tiktok",
         image: tiktok,
-        link: ""
+        link: "https://tiktok.com/fedeltiles"
     },
   ];
   
