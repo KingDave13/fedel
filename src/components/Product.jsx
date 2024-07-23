@@ -297,22 +297,24 @@ const Product = ({ products, categorySlug }) => {
                             Showing:
                         </p>
 
-                        <div className='relative flex items-center'>
-                            <select
-                                type="text"
-                                className="py-1 px-2 md:mr-2 mr-3
-                                text-main cursor-pointer md:text-[14px]
-                                ss:text-[13px] text-[13px] 
-                                bg-transparent w-full custom-select
-                                font-bold"
-                            >
-                                <option value="" disabled hidden>Most Popular</option>
-                                <option value="social_media">Most Relevant</option>
-                            </select>
-                            <div className='absolute right-0'>
-                                <TiArrowSortedDown 
-                                    className='text-main text-[17px]'
-                                />
+                        <div className="relative">
+                            <div className='relative flex items-center'>
+                                <select
+                                    type="text"
+                                    className="py-1 px-2 pr-6 md:mr-2 mr-3
+                                    text-main cursor-pointer md:text-[14px]
+                                    ss:text-[13px] text-[13px]
+                                    bg-transparent w-full custom-select
+                                    font-bold"
+                                >
+                                    <option value="" disabled hidden>Most Popular</option>
+                                    <option value="">Most Relevant</option>
+                                </select>
+                                <div className='absolute right-3'>
+                                    <TiArrowSortedDown 
+                                        className='text-main text-[17px]'
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
