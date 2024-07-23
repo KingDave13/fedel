@@ -40,7 +40,8 @@ const StepCard = ({ index, title, image, description }) => {
                                 Browse products
                             </h1>
                             
-                            <img src={arrowRight} alt='arrow'/>
+                            <img src={arrowRight} alt='arrow'
+                            className='md:w-5 w-4 md:h-5 h-4'/>
                         </a>
                     </div>
                 </div>

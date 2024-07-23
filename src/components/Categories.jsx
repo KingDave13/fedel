@@ -53,7 +53,7 @@ const CatCard = (category, index) => {
                             </h1>
                             
                             <img src={arrowRight} alt='arrow' 
-                            className='w-5 h-5'/>
+                            className='md:w-5 w-4 md:h-5 h-4'/>
                         </a>
                     </div>
                 </div>
