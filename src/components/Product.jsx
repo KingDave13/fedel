@@ -245,9 +245,10 @@ const Product = ({ products, categorySlug }) => {
     <section className='relative w-full md:min-h-[500px] ss:min-h-[2000px] 
     min-h-[800px] mx-auto flex items-center'>
         <div className='max-w-[86rem] mx-auto flex flex-col w-full'>
-            <div className="flex w-full items-center justify-between
-            mb-6">
-                <div className="flex-start flex gap-8 items-center">
+            <div className="flex md:flex-row flex-col w-full md:items-center 
+            justify-between mb-6">
+                <div className="flex-start flex gap-8 items-center md:mb-0
+                ss:mb-5 mb-3">
                     <div className={`${isFilterVisible ? 'bg-main3' 
                     : 'bg-main2'}
                     flex gap-4 items-center cursor-pointer rounded-md 
@@ -259,12 +260,13 @@ const Product = ({ products, categorySlug }) => {
                             alt="filter"
                             className="w-4"
                         />
-                        <p className="text-main font-semibold text-[14px]">
-                            Filters
+                        <p className="text-main font-semibold md:text-[14px]
+                        ss:text-[13px] text-[12px]">
+                            {`${isMobile ? 'Open Filters' : 'Filters'}`}
                         </p>
                     </div>
 
-                    <div className="flex gap-3 items-center cursor-pointer
+                    <div className="md:flex hidden gap-3 items-center cursor-pointer
                     hover:bg-main2 rounded-md px-4 py-2.5"
                         onMouseEnter={(e) => e.currentTarget.querySelector('img').style.transform = 'rotate(270deg)'}
                         onMouseLeave={(e) => e.currentTarget.querySelector('img').style.transform = 'rotate(0deg)'}
@@ -281,20 +283,23 @@ const Product = ({ products, categorySlug }) => {
                 </div>
 
                 <div className="flex-end flex gap-8 items-center">
-                    <p className="text-main3 font-semibold text-[14px]">
+                    <p className="text-main3 font-semibold md:text-[14px]
+                        ss:text-[13px] text-[13px]">
                         {`${filteredProducts.length} results`}
                     </p>
 
                     <div className="flex gap-1 items-center">
-                        <p className="text-main3 font-medium text-[14px]">
+                        <p className="text-main3 font-medium md:text-[14px]
+                        ss:text-[13px] text-[13px]">
                             Showing:
                         </p>
 
                         <div className='relative flex items-center'>
                             <select
                                 type="text"
-                                className="py-1 px-2 mr-2
-                                text-main cursor-pointer text-[14px] 
+                                className="py-1 px-2 md:mr-2 mr-3
+                                text-main cursor-pointer md:text-[14px]
+                                ss:text-[13px] text-[13px] 
                                 bg-transparent w-full custom-select
                                 font-bold"
                             >
