@@ -8,7 +8,7 @@ const HeroProductEach = ( {category} ) => {
     <section className='relative w-full md:min-h-[100px] ss:min-h-[100px] 
     items-center flex md:px-0 ss:px-16 px-6 md:py-0 ss:py-4 py-4'>
         <div className='relative items-center w-full max-w-[86rem] heroProducts
-        md:mt-44 ss:mt-28 mt-24 md:rounded-[18px] ss:rounded-[18px] 
+        md:mt-44 ss:mt-28 mt-20 md:rounded-[18px] ss:rounded-[18px] 
         rounded-[12px] flex md:p-12 ss:p-10 p-6'
         >
             <div className='w-full flex flex-col gap-1'>
