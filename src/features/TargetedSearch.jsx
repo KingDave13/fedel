@@ -24,7 +24,6 @@ const TargetedSearch = () => {
         validationSchema: Yup.object({
             product: Yup.string().required('Product is required.'),
             category: Yup.string().required('Category is required.'),
-            price: Yup.string().required('Price is required.'),
             numbermail: Yup.string().required('Phone Number or Email is required.'),
         }),
 
@@ -213,11 +212,6 @@ const TargetedSearch = () => {
                                 />
                             </div>
                         </div>
-
-                        <p className="text-mainRed md:text-[12px] 
-                        ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
-                            {formik.touched.price && formik.errors.price}
-                        </p>
                     </div>
 
                     <div className="relative">

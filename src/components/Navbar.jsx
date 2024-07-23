@@ -126,13 +126,18 @@ useEffect(() => {
                                 className='text-main text-[23px] grow4 cursor-pointer'
                             />
 
-                            <FiMail 
-                                className='text-main text-[23px] grow4 cursor-pointer'
-                            />
-
-                            <RiWhatsappLine 
-                                className='text-main text-[23px] grow4 cursor-pointer'
-                            />
+                            <a href='mailto:fedeltileslimited@gmail.com'>
+                                <FiMail 
+                                    className='text-main text-[23px] grow4 cursor-pointer'
+                                />
+                            </a>
+                            
+                            <a href='https://wa.me/2349169861311' 
+                            target='_blank' rel="noreferrer">
+                                <RiWhatsappLine 
+                                    className='text-main text-[23px] grow4 cursor-pointer'
+                                />
+                            </a>
                         </div>
                         
                         <div className='relative'>

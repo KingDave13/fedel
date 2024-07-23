@@ -68,7 +68,7 @@ const Footer = () => {
         <div className='flex md:mt-16 ss:mt-10 mt-8 border-t-[1px] 
         border-main md:pt-10 ss:pt-8 pt-6 items-center'>
           <BiCopyright className='sm:mr-2 mr-1 md:text-[20px] 
-          ss:text-[18px] text-[15px] md:mt-1 ss:mt-1 mt-0 text-white' />
+          ss:text-[18px] text-[15px] mt-1 text-white' />
 
           <p className='md:text-[14px] ss:text-[16px] text-[12px] 
           text-white md:mt-1 ss:mt-1 mt-0.5'>
