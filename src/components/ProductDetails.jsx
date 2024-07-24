@@ -11,7 +11,6 @@ import { useSwipeable } from 'react-swipeable';
 import { useFormik } from "formik";
 import { TiArrowSortedDown } from "react-icons/ti";
 import * as Yup from 'yup';
-import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/cartSlice';
 import { useSelector } from 'react-redux';
@@ -435,9 +434,10 @@ const CartModal = ({ onClose, cartModalMessage }) => {
                 transition={{ duration: 0.1 }}
                 className="bg-white md:p-8 ss:p-8 p-6 rounded-2xl 
                 shadow-xl flex flex-col justify-center w-auto h-auto 
-                items-center">
+                items-center md:m-0 ss:m-16 m-6">
                     <button
-                        className='text-main md:text-[20px] cursor-pointer
+                        className='text-main md:text-[20px] ss:text-[20px]
+                        text-[17px] cursor-pointer
                         flex justify-end w-full'
                         onClick={closeCartModal}
                     >
@@ -451,20 +451,20 @@ const CartModal = ({ onClose, cartModalMessage }) => {
                         />
 
                         <h1 className='font-semibold text-primary md:text-[27px]
-                        ss:text-[20px] text-[15px] mb-2'>
+                        ss:text-[23px] text-[20px] mb-2'>
                             {cartModalMessage}
                         </h1>
 
-                        <p className='text-main md:text-[14px] ss:text-[13px] 
-                        text-[11px] font-medium md:mb-8 ss:mb-8 mb-6'>
+                        <p className='text-main md:text-[14px] ss:text-[14px] 
+                        text-[12px] font-medium md:mb-8 ss:mb-8 mb-6 text-center'>
                             The product you selected has been added to your
                             cart successfully.
                         </p>
 
-                        <Link to='/cart' 
+                        <a href='/cart' 
                         className='bg-primary text-[13px] py-3.5 flex
                         items-center justify-center text-white rounded-lg grow2 
-                        cursor-pointer w-[150px] gap-3'>
+                        cursor-pointer md:w-[150px] ss:w-[150px] w-full gap-3'>
                             <img src={shopping} 
                                 alt='cart'
                                 className='text-white 
@@ -474,7 +474,7 @@ const CartModal = ({ onClose, cartModalMessage }) => {
                             <p>
                                 See cart
                             </p>
-                        </Link>
+                        </a>
                     </div>
                 </motion.div>
             </motion.div>
@@ -905,10 +905,15 @@ const ProductDetails = ({ product }) => {
         {isModalOpen && (
             <div className='fixed inset-0 z-50 flex items-center 
             justify-center bg-black bg-opacity-80'>
-                <div className='relative w-full max-w-3xl' {...handlers} ref={modalRef}>
+                <div className='relative w-full max-w-3xl md:m-0 ss:m-16
+                m-6' 
+                {...handlers} 
+                ref={modalRef}>
                     <button
-                        className='absolute top-6 right-6 text-white 
-                        md:text-[20px] hover:bg-main3 rounded-full p-3
+                        className='absolute md:top-6 ss:top-6 top-3 
+                        md:right-6 ss:right-6 right-3 text-white 
+                        md:text-[20px] ss:text-[20px] text-[16px] 
+                        hover:bg-main3 rounded-full md:p-3 ss:p-3 p-2
                         hover:bg-opacity-50 navsmooth'
                         onClick={closeModal}
                     >
@@ -917,9 +922,9 @@ const ProductDetails = ({ product }) => {
 
                     <button
                         className='absolute left-2 top-1/2 transform 
-                        -translate-y-1/2 md:text-[23px] bg-main3 ml-6
-                        rounded-full p-3 bg-opacity-50 navsmooth
-                        text-white hover:bg-opacity-80'
+                        -translate-y-1/2 md:text-[23px] bg-main3 md:ml-6
+                        ss:ml-6 ml-3 rounded-full p-3 bg-opacity-50 
+                        text-white hover:bg-opacity-80 navsmooth'
                         onClick={() => navigateImage('prev')}
                     >
                         <HiChevronLeft />
@@ -927,9 +932,9 @@ const ProductDetails = ({ product }) => {
 
                     <button
                         className='absolute right-2 top-1/2 transform 
-                        -translate-y-1/2 md:text-[23px] bg-main3 mr-6
-                        rounded-full p-3 bg-opacity-50 navsmooth
-                        text-white hover:bg-opacity-80'
+                        -translate-y-1/2 md:text-[23px] bg-main3 md:mr-6
+                        ss:mr-6 mr-3 rounded-full p-3 bg-opacity-50 
+                        text-white hover:bg-opacity-80 navsmooth'
                         onClick={() => navigateImage('next')}
                     >
                         <HiChevronRight />
@@ -946,7 +951,8 @@ const ProductDetails = ({ product }) => {
                         {product.images.map((_, index) => (
                             <span
                                 key={index}
-                                className={`w-3 h-3 rounded-full 
+                                className={`md:w-3 ss:w-3 w-2 md:h-3 ss:h-3
+                                h-2 rounded-full 
                                 ${index === currentImageIndex ? 
                                     'bg-secondary' : 
                                     'bg-main2'} cursor-pointer navsmooth`}
