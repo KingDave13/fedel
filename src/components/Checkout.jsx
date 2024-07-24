@@ -71,7 +71,7 @@ const Checkout = () => {
                             </div>
 
                             <form onSubmit={formik.handleSubmit}
-                            className='flex flex-col md:gap-5 ss:gap-5 
+                            className='flex flex-col md:gap-5 ss:gap-4 
                             gap-3 w-full'>
                                 <div className="flex flex-col">
                                     <label className="text-main mb-2 
