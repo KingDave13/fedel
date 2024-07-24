@@ -394,8 +394,10 @@ const RequestModal = ({ onClose, product, image }) => {
                             </form>
                         </div>
 
-                        <div className='w-full flex justify-between'>
-                            <div className='flex items-center gap-2'>
+                        <div className='w-full flex md:flex-row ss:flex-row 
+                        flex-col justify-between phone'>
+                            <div className='flex items-center md:gap-2
+                            ss:gap-3 gap-3 md:mb-0 ss:mb-0 mb-3'>
                                 <input
                                     type='checkbox'
                                     className='cursor-pointer'
@@ -413,9 +415,11 @@ const RequestModal = ({ onClose, product, image }) => {
                                 </p>
                             </div>
 
-                            <button className='bg-primary text-[14px] py-3.5 
+                            <button className='bg-primary md:text-[14px] 
+                            ss:text-[14px] text-[12px] py-3.5 
                             text-center text-white rounded-lg grow2 
-                            cursor-pointer w-[180px]'>
+                            cursor-pointer md:w-[180px] ss:w-[170px]
+                            w-full'>
                                 Request Price
                             </button>
                         </div>
