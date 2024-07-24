@@ -136,9 +136,9 @@ const RequestModal = ({ onClose, product, image }) => {
                 exit={{ y: 10, opacity: 0 }}
                 transition={{ duration: 0.1 }}
                 className="bg-white md:p-8 ss:p-8 p-4 rounded-2xl 
-                shadow-xl flex flex-col justify-center w-auto md:h-auto 
-                ss:h-auto h-[80%] overflow-auto items-center relative 
-                md:m-0 ss:m-16 m-6">
+                shadow-xl flex flex-col md:justify-center ss:justify-center 
+                w-auto md:h-auto ss:h-auto h-[80%] overflow-auto 
+                items-center relative md:m-0 ss:m-16 m-6">
                     <button
                         className='absolute md:top-8 ss:top-8 top-4 
                         md:right-8 ss:right-8 right-4 text-main 
@@ -149,7 +149,8 @@ const RequestModal = ({ onClose, product, image }) => {
                         <HiX />
                     </button>
 
-                    <div className='flex flex-col w-full gap-8'>
+                    <div className='flex flex-col w-full md:gap-8
+                    ss:gap-8 gap-5'>
                         <h1 className='text-primary md:text-[20px]
                         ss:text-[20px] text-[18px] font-semibold'>
                             Request Price
@@ -232,7 +233,7 @@ const RequestModal = ({ onClose, product, image }) => {
                         </div>
                         
                         <div className='md:w-4/5 ss:w-4/5 w-full md:mt-0
-                        ss:mt-0 mt-3'>
+                        ss:mt-0 mt-8'>
                             <form onSubmit={formik.handleSubmit}
                             className='grid md:grid-cols-2 ss:grid-cols-2
                             md:gap-5 ss:gap-4 gap-2'>
