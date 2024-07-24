@@ -18,12 +18,26 @@ import { useSelector } from 'react-redux';
 
 const ImageCard = ({ index, image, product, handleImageClick, remaining }) => {
     const imageUrl = urlFor(image).url();
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 480);
+
+    useEffect(() => {
+        const handleResize = () => {
+            const isMobile = window.innerWidth <= 480;
+            setIsMobile(isMobile);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [isMobile]);
 
     return (
         <motion.div
             variants={fadeIn('', 'spring', index * 0.2, 0.75)}
-            className='cursor-pointer relative'
+            className={`cursor-pointer relative ${isMobile ? (index === 0 ? 'col-span-3' : '') : ''}`}
             onClick={() => handleImageClick(index)}
+            style={{ gridColumn: isMobile && index === 0 ? 'span 3' : '' }}
         >
             <div className='square-container'>
                 <img
