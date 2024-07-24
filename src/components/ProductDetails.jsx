@@ -692,7 +692,8 @@ const ProductDetails = ({ product }) => {
                                 <div>
                                     {product.attributes.map((attribute, index) => (
                                         <div
-                                        className='flex flex-wrap gap-3
+                                        className='flex flex-wrap md:gap-3
+                                        ss:gap-3 gap-2
                                         md:max-w-[400px] ss:max-w-[300px]'
                                         key={index}>
                                             {attribute.variations && attribute.variations.map((variation, varIndex) => (
@@ -709,7 +710,7 @@ const ProductDetails = ({ product }) => {
                                 </div>
 
                                 {product.attributes.map((attribute) => (
-                                    <div>
+                                    <div className='md:mt-0 ss:mt-0 mt-4'>
                                         <div className='bg-primary flex items-center grow2 py-3.5 
                                         rounded-lg cursor-pointer justify-center gap-3'
                                         onClick={
@@ -746,12 +747,13 @@ const ProductDetails = ({ product }) => {
                                             )}
                                         </div>
 
-                                        <div className={` mt-5 gap-3
+                                        <div className={`md:mt-5 ss:mt-5 mt-3 gap-3
                                         ${attribute.price === null 
                                         ? 'flex'
                                         : 'hidden'}`}>
                                             <HiOutlineInformationCircle 
-                                                className='text-mainalt text-[35px]'
+                                                className='text-mainalt md:text-[35px]
+                                                ss:text-[35px] text-[60px]'
                                             />
 
                                             <p className='text-mainalt md:text-[13px]
