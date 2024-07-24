@@ -43,7 +43,7 @@ const ImageCard = ({ index, image, product, handleImageClick, remaining }) => {
                 <img
                     src={imageUrl}
                     alt={product.name}
-                    className='rounded-xl'
+                    className='md:rounded-xl ss:rounded-xl rounded-lg'
                 />
                 {remaining > 0 && index === 3 && (
                     <div className='absolute inset-0 bg-black 
@@ -636,8 +636,9 @@ const ProductDetails = ({ product }) => {
                 <div className='w-full flex flex-col md:gap-8 ss:gap-8
                 gap-5'>
                     <div className='w-full flex md:flex-row ss:flex-row 
-                    flex-col md:gap-16 gap-10'>
-                        <div className='grid md:grid-cols-2 w-full gap-5'>
+                    flex-col md:gap-16 gap-8'>
+                        <div className='grid md:grid-cols-2 w-full 
+                        md:gap-5 ss:gap-5 gap-2'>
                             {imagesToShow.map((item, index) => (
                                 <ImageCard
                                     key={index}
