@@ -594,7 +594,7 @@ const ProductDetails = ({ product }) => {
 
   return (
     <section className='relative w-full min-h-[600px] mx-auto flex
-    items-center'>
+    items-center md:px-0 ss:px-16 px-6 md:py-0 ss:py-6 py-4'>
         <div className='max-w-[86rem] mx-auto flex flex-col gap-10'>
             <div className='flex items-center w-full bg-main2
             rounded-[20px] flex md:p-8 ss:p-8 p-6'>

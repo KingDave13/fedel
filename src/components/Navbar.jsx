@@ -9,7 +9,6 @@ import { RiWhatsappLine } from "react-icons/ri";
 import { PiLineVerticalThin } from "react-icons/pi";
 import { IoCartOutline, IoSearchOutline, IoMenu } from "react-icons/io5";
 import { FiMail } from "react-icons/fi";
-import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 // import { useNavigate } from 'react-router-dom';
@@ -204,7 +203,7 @@ useEffect(() => {
                         <div className='flex gap-10 items-center'>
                             <div className='flex justify-center items-center
                             relative'>
-                                <Link to='/cart'>
+                                <a href='/cart'>
                                     <IoCartOutline
                                         className='text-primary text-[35px] grow4 
                                         cursor-pointer'
@@ -217,7 +216,7 @@ useEffect(() => {
                                             {itemCount}
                                         </span>
                                     )}
-                                </Link>
+                                </a>
                             </div>
 
                             <button className='bg-primary text-[15px] py-3 px-5
@@ -239,7 +238,7 @@ useEffect(() => {
                         gap-5">
                             <div className='flex justify-center 
                             items-center relative'>
-                                <Link to='/cart'>
+                                <a href='/cart'>
                                     <IoCartOutline
                                     className='text-primary ss:text-[35px] 
                                     text-[30px]'
@@ -252,7 +251,7 @@ useEffect(() => {
                                         {itemCount}
                                     </span>
                                     )}
-                                </Link>
+                                </a>
                             </div>
                             
                             {toggle ? (
