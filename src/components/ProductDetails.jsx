@@ -599,7 +599,8 @@ const ProductDetails = ({ product }) => {
             <div className='flex items-center w-full bg-main2
             rounded-[20px] flex md:p-8 ss:p-8 p-6'>
                 <div className='w-full flex flex-col gap-8'>
-                    <div className='w-full flex gap-16'>
+                    <div className='w-full flex md:flex-row ss:flex-row 
+                    flex-col md:gap-16 ss:gap-14 gap-10'>
                         <div className='grid md:grid-cols-2 w-full gap-5'>
                             {imagesToShow.map((item, index) => (
                                 <ImageCard
@@ -613,7 +614,8 @@ const ProductDetails = ({ product }) => {
                             ))}
                         </div>
 
-                        <div className='w-full flex flex-col gap-4'>
+                        <div className='w-full flex flex-col md:gap-4
+                        ss:gap-4 gap-3'>
                             <h1 className='text-main font-bold md:text-[30px]
                             ss:text-[30px] text-[20px]'>
                                 {product.name}
@@ -628,8 +630,8 @@ const ProductDetails = ({ product }) => {
                                 {product.attributes.map((attribute, index) => (
                                     <div 
                                     className='md:text-[16px]
-                                    ss:text-[15px] text-[13px]
-                                    flex flex-col gap-1.5'
+                                    ss:text-[15px] text-[13px] flex
+                                    flex-col md:gap-1.5 ss:gap-1.5 gap-1'
                                     key={index}>
                                         {attribute.type && <div><span className='font-semibold mr-1'>Type:</span> {attribute.type}</div>}
                                         {attribute.material && <div><span className='font-semibold mr-1'>Material:</span> {attribute.material}</div>}
@@ -646,10 +648,12 @@ const ProductDetails = ({ product }) => {
                                 h-[1px]' />
                             </div>
 
-                            <div className='flex flex-col gap-4'>
+                            <div className='flex flex-col md:gap-4
+                            ss:gap-4 gap-2'>
                                 {product.attributes.map((attribute, index) => (
                                     <div 
-                                        className='flex gap-4 items-center' 
+                                        className='flex md:gap-4 ss:gap-4 gap-3 
+                                        items-center md:mb-0 ss:mb-0 mb-1' 
                                         key={index}
                                     >
                                         {attribute.price && (
