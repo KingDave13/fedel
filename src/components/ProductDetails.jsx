@@ -135,7 +135,7 @@ const RequestModal = ({ onClose, product, image }) => {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: 10, opacity: 0 }}
                 transition={{ duration: 0.1 }}
-                className="bg-white md:p-8 ss:p-8 p-4 rounded-2xl 
+                className="bg-white md:p-8 ss:p-8 p-4 padphone rounded-2xl 
                 shadow-xl flex flex-col md:justify-center ss:justify-center 
                 w-auto md:h-auto ss:h-auto h-[80%] overflow-auto 
                 items-center relative md:m-0 ss:m-16 m-6">
