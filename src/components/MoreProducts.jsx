@@ -77,9 +77,10 @@ const MoreProducts = () => {
 
     return (
         <section className='relative w-full md:min-h-[300px] 
-        ss:min-h-[300px] min-h-[800px] mx-auto flex items-center'>
+        ss:min-h-[300px] min-h-[300px] mx-auto flex items-center
+        md:mb-0 ss:mb-0 mb-5'>
             <div className='max-w-[86rem] mx-auto flex flex-col w-full 
-            md:gap-10'>
+            md:gap-10 ss:gap-8 gap-6'>
                 <motion.div variants={textVariant()}>
                     <h1 className='text-primary font-bold md:text-[30px] 
                     ss:text-[30px] text-[20px] tracking-tight'>
