@@ -3,7 +3,6 @@ import { fadeIn } from '../utils/motion';
 import { SectionWrapperAlt } from '../hoc';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart, clearCart, incrementQuantity, decrementQuantity } from '../redux/cartSlice';
-import { Link } from 'react-router-dom';
 import { add, subtract, trash } from '../assets';
 import { urlFor } from '../sanity';
 
@@ -13,7 +12,8 @@ const ItemCard = ({ item, index, image }) => {
 
     return (
         <motion.div variants={fadeIn('', 'spring', index * 0.5, 0.75)}>
-            <div className='bg-main2 rounded-2xl p-7 flex flex-col gap-3'>
+            <div className='bg-main2 md:rounded-2xl ss:rounded-2xl 
+            rounded-xl md:p-7 ss:p-7 p-4 flex flex-col gap-3'>
                 <div className='flex w-full justify-between'>
                     <div className='flex gap-6'>
                         <img 
@@ -124,8 +124,10 @@ const Cart = () => {
                         No items in cart
                     </p>
                 ) : (
-                    <div className='w-full flex gap-6'>
-                        <div className='flex flex-col w-full gap-6'>
+                    <div className='w-full flex md:flex-row ss:flex-row 
+                    flex-col gap-6'>
+                        <div className='flex flex-col w-full md:gap-6\
+                        ss:gap-6 gap-4'>
                             {cartItems.map((item, index) => (
                                 <ItemCard 
                                     key={item.id}
@@ -137,16 +139,18 @@ const Cart = () => {
                         </div>
                         
                         <div>
-                            <div className='bg-main2 p-7 flex flex-col gap-3
-                            rounded-2xl'>
+                            <div className='bg-main2 md:p-7 ss:p-7 p-4 
+                            flex flex-col md:gap-3 ss:gap-3 gap-2 
+                            md:rounded-2xl ss:rounded-2xl rounded-xl'>
                                 <h2 className='text-main font-bold 
-                                text-[18px]'>
+                                md:text-[18px] ss:text-[18px] text-[15px]'>
                                     Cart Summary
                                 </h2>
 
                                 <div className='flex w-full justify-between
                                 items-center'>
-                                    <p className='text-mainalt text-[16px]'>
+                                    <p className='text-mainalt md:text-[16px]
+                                    ss:text-[16px] text-[13px]'>
                                         Subtotal:
                                     </p>
 
@@ -159,30 +163,34 @@ const Cart = () => {
                                     </p>
                                 </div>
                                 
-                                <p className='text-main3 text-[14px]
-                                border-t-[1px] border-primaryalt pt-4 mt-2'>
+                                <p className='text-main3 md:text-[14px]
+                                ss:text-[14px] text-[11px] border-t-[1px] 
+                                border-primaryalt md:pt-4 ss:pt-4 pt-3 
+                                md:mt-2 ss:mt-2 mt-1'>
                                     This figure does not include any other 
                                     extra fees that may be incurred via 
                                     logistics, etc.
                                 </p>
 
-                                <Link to='/cart/checkout' 
-                                className='bg-primary text-[14px] py-3.5 flex
+                                <a href='/cart/checkout' 
+                                className='bg-primary md:text-[14px] 
+                                ss:text-[14px] text-[12px] py-3.5 flex
                                 items-center justify-center text-white rounded-lg 
-                                grow2 cursor-pointer w-full mt-3'>
+                                grow2 cursor-pointer w-full md:mt-3
+                                ss:mt-3 mt-2'>
                                     <p>
                                         Checkout
                                     </p>
-                                </Link>
+                                </a>
                             </div>
                         </div>
                     </div>
                 )}
 
-                <div className='mt-6'>
+                <div className='md:mt-6 ss:mt-6 mt-4'>
                     <button onClick={() => dispatch(clearCart())}
                     className='text-white bg-primary py-2.5 px-10 grow2
-                    rounded-lg text-[14px]'>
+                    rounded-lg md:text-[14px] ss:text-[14px] text-[12px]'>
                         Clear Cart
                     </button>
                 </div>
