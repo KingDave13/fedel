@@ -593,14 +593,17 @@ const ProductDetails = ({ product }) => {
     const remainingImages = product.images.length - 4;
 
   return (
-    <section className='relative w-full min-h-[600px] mx-auto flex
-    items-center md:px-0 ss:px-16 px-6 md:py-0 ss:py-6 py-4'>
+    <section className='relative w-full md:min-h-[600px] ss:min-h-[500px]
+    min-h-[500px] mx-auto flex items-center md:px-0 ss:px-16 px-6 
+    md:py-0 ss:py-0 py-4'>
         <div className='max-w-[86rem] mx-auto flex flex-col gap-10'>
             <div className='flex items-center w-full bg-main2
-            rounded-[20px] flex md:p-8 ss:p-8 p-6'>
-                <div className='w-full flex flex-col gap-8'>
+            md:rounded-[20px] ss:rounded-[20px] rounded-2xl flex 
+            md:p-8 ss:p-8 p-4'>
+                <div className='w-full flex flex-col md:gap-8 ss:gap-8
+                gap-5'>
                     <div className='w-full flex md:flex-row ss:flex-row 
-                    flex-col md:gap-16 ss:gap-14 gap-10'>
+                    flex-col md:gap-16 gap-10'>
                         <div className='grid md:grid-cols-2 w-full gap-5'>
                             {imagesToShow.map((item, index) => (
                                 <ImageCard
@@ -747,13 +750,14 @@ const ProductDetails = ({ product }) => {
                                             )}
                                         </div>
 
-                                        <div className={`md:mt-5 ss:mt-5 mt-3 gap-3
+                                        <div className={`md:mt-5 ss:mt-5 
+                                        mt-3 gap-3 items-center
                                         ${attribute.price === null 
                                         ? 'flex'
                                         : 'hidden'}`}>
                                             <HiOutlineInformationCircle 
                                                 className='text-mainalt md:text-[35px]
-                                                ss:text-[35px] text-[60px]'
+                                                ss:text-[60px] text-[60px]'
                                             />
 
                                             <p className='text-mainalt md:text-[13px]
@@ -773,29 +777,34 @@ const ProductDetails = ({ product }) => {
                         </div>
                     </div>
 
-                    <div className='flex items-center gap-6'>
+                    <div className='flex items-center md:gap-6 ss:gap-6
+                    gap-3'>
                         <div className='flex flex-col border-primaryalt
-                        border-[1px] rounded-xl gap-2 items-center
-                        w-[150px] py-3.5'>
+                        border-[1px] md:rounded-xl ss:rounded-xl rounded-lg
+                        gap-2 items-center md:w-[150px] ss:w-[150px] 
+                        w-[110px] md:py-3.5 ss:py-3.5 py-2.5'>
                             <TbWorldCheck 
-                                className='text-primary text-[35px]'
+                                className='text-primary md:text-[35px]
+                                ss:text-[35px] text-[28px]'
                             />
 
                             <p className='text-primary font-semibold
-                            text-[12px]'>
+                            md:text-[12px] ss:text-[12px] text-[10px]'>
                                 Worldwide Delivery
                             </p>
                         </div>
 
                         <div className='flex flex-col border-primaryalt
-                        border-[1px] rounded-xl gap-2 items-center
-                        w-[150px] py-3.5'>
+                        border-[1px] md:rounded-xl ss:rounded-xl rounded-lg
+                        gap-2 items-center md:w-[150px] ss:w-[150px] 
+                        w-[110px] md:py-3.5 ss:py-3.5 py-2.5'>
                             <TbShieldCheck 
-                                className='text-primary text-[35px]'
+                                className='text-primary md:text-[35px]
+                                ss:text-[35px] text-[28px]'
                             />
 
                             <p className='text-primary font-semibold
-                            text-[12px]'>
+                            md:text-[12px] ss:text-[12px] text-[10px]'>
                                 1-Year Warranty
                             </p>
                         </div>
@@ -804,9 +813,10 @@ const ProductDetails = ({ product }) => {
             </div>
 
             <div className='flex items-center w-full bg-main2
-            rounded-[20px] flex md:p-8 ss:p-8 p-6'>
+            md:rounded-[20px] ss:rounded-[20px] rounded-2xl flex md:p-8 
+            ss:p-8 p-4'>
                 <motion.div variants={textVariant()}
-                className='flex flex-col md:gap-6 ss:gap-5 gap-4'>
+                className='flex flex-col md:gap-6 ss:gap-5 gap-3'>
                     <h1 className='text-main font-bold md:text-[20px]
                     ss:text-[20px] text-[18px] tracking-tight'>
                         Product Description
@@ -817,7 +827,7 @@ const ProductDetails = ({ product }) => {
                     </div>
                     
                     <p className='text-main md:text-[17px] ss:text-[17px] 
-                    text-[14px] tracking-tight md:leading-[25px] 
+                    text-[12px] tracking-tight md:leading-[25px] 
                     ss:leading-[26px] leading-[20px] font-medium'>
                         {product.description}
                     </p>
@@ -865,16 +875,19 @@ const ProductDetails = ({ product }) => {
                                 )}
                             </div>
 
-                            <div className={` mt-5 gap-3 items-center
+                            <div className={`md:mt-5 ss:mt-5 mt-3 gap-3 
+                            items-center
                             ${attribute.price === null 
                             ? 'flex'
                             : 'hidden'}`}>
                                 <HiOutlineInformationCircle 
-                                    className='text-mainalt text-[20px]'
+                                    className='text-mainalt md:text-[20px]
+                                    ss:text-[40px] text-[60px]'
                                 />
 
                                 <p className='text-mainalt md:text-[14px]
-                                ss:text-[13px] text-[12px]'>
+                                ss:text-[14px] text-[12px] md:leading-[18px]
+                                ss:leading-[18px] leading-[16px]'>
                                     To get the price for this product, 
                                     select your desired variation and 
                                     click on the request quote button 
