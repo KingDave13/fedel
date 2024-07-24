@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { textVariant } from '../utils/motion';
 import { client, urlFor } from '../sanity';
 import { CgArrowLeft } from "react-icons/cg";
-import { Link } from 'react-router-dom';
 
 const ImageCard = ({ image, name, slug, categorySlug }) => {
     const imageUrl = image ? urlFor(image).url() : '';
@@ -123,13 +122,14 @@ const MoreProducts = () => {
                 </div>
                 
                 <div className='w-full flex items-center justify-center'>
-                    <Link to={`/products`}
-                        className='bg-primary text-[14px] py-3.5 
-                        text-center text-white rounded-lg grow2 
-                        cursor-pointer w-[180px]'
+                    <a href={`/products`}
+                        className='bg-primary md:text-[14px] ss:text-[14px] 
+                        text-[12px] py-3.5 text-center text-white 
+                        rounded-lg grow2 cursor-pointer md:w-[180px] 
+                        ss:w-[180px] w-full'
                     >
                         See more products
-                    </Link>
+                    </a>
                 </div>
             </div>
         </section>

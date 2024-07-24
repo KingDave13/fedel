@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { textVariant } from '../utils/motion';
 import { client, urlFor } from '../sanity';
 import { CgArrowLeft } from "react-icons/cg";
-import { Link } from 'react-router-dom';
 
 const ImageCard = ({ image, name, slug, categorySlug }) => {
     const imageUrl = image ? urlFor(image).url() : '';
@@ -76,9 +75,9 @@ const RelatedProducts = ({ categoryId, categorySlug }) => {
 
     return (
         <section className='relative w-full md:min-h-[300px] 
-        ss:min-h-[300px] min-h-[800px] mx-auto flex items-center'>
+        ss:min-h-[300px] min-h-[300px] mx-auto flex items-center'>
             <div className='max-w-[86rem] mx-auto flex flex-col w-full
-             md:gap-10'>
+             md:gap-10 ss:gap-8 gap-6'>
                 <motion.div variants={textVariant()}>
                     <h1 className='text-primary font-bold md:text-[30px] 
                     ss:text-[30px] text-[20px] tracking-tight'>
@@ -125,13 +124,14 @@ const RelatedProducts = ({ categoryId, categorySlug }) => {
                 </div>
                 
                 <div className='w-full flex items-center justify-center'>
-                    <Link to={`/products/${categorySlug}`}
-                        className='bg-primary text-[14px] py-3.5 
-                        text-center text-white rounded-lg grow2 
-                        cursor-pointer w-[180px]'
+                    <a href={`/products/${categorySlug}`}
+                        className='bg-primary md:text-[14px] ss:text-[14px] 
+                        text-[12px] py-3.5 text-center text-white 
+                        rounded-lg grow2 cursor-pointer md:w-[180px] 
+                        ss:w-[180px] w-full'
                     >
                         See more products
-                    </Link>
+                    </a>
                 </div>
             </div>
         </section>
