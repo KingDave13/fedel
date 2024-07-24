@@ -135,13 +135,13 @@ const RequestModal = ({ onClose, product, image }) => {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: 10, opacity: 0 }}
                 transition={{ duration: 0.1 }}
-                className="bg-white md:p-8 ss:p-8 p-6 rounded-2xl 
+                className="bg-white md:p-8 ss:p-8 p-4 rounded-2xl 
                 shadow-xl flex flex-col justify-center w-auto md:h-auto 
                 ss:h-auto h-[80%] overflow-auto items-center relative 
                 md:m-0 ss:m-16 m-6">
                     <button
-                        className='absolute md:top-8 ss:top-8 top-6 
-                        md:right-8 ss:right-8 right-6 text-main 
+                        className='absolute md:top-8 ss:top-8 top-4 
+                        md:right-8 ss:right-8 right-4 text-main 
                         md:text-[20px] ss:text-[20px] text-[18px] 
                         cursor-pointer'
                         onClick={closeRequestModal}
@@ -158,7 +158,8 @@ const RequestModal = ({ onClose, product, image }) => {
                         <div className='flex md:flex-row ss:flex-row flex-col w-full 
                         md:justify-between ss:justify-between md:gap-36
                         ss:gap-10 gap-6'>
-                            <div className='flex flex-col gap-6'>
+                            <div className='flex flex-col md:gap-6 ss:gap-6
+                            gap-5'>
                                 <div className='bg-main2 p-3 flex items-center
                                 gap-3 rounded-lg w-auto'>
                                     <HiOutlineInformationCircle 
@@ -166,9 +167,10 @@ const RequestModal = ({ onClose, product, image }) => {
                                         ss:text-[60px] text-[60px]'
                                     />
 
-                                    <p className='text-mainalt text-[14px]
+                                    <p className='text-mainalt md:text-[14px]
+                                    ss:text-[14px] text-[12px] 
                                     md:leading-[19px] ss:leading-[19px]
-                                    leading-[18px] md:max-w-[550px]
+                                    leading-[17px] md:max-w-[550px]
                                     ss:max-w-[400px]'>
                                         Fill in the form to request a quote
                                         for the selected product. Confirm
@@ -179,8 +181,8 @@ const RequestModal = ({ onClose, product, image }) => {
                                 </div>
 
                                 <div className='flex flex-col gap-3'>
-                                    <h1 className='text-main text-[15px]
-                                    font-semibold'>
+                                    <h1 className='text-main md:text-[15px]
+                                    ss:text-[15px] text-[14px] font-semibold'>
                                         Select Variation
                                     </h1>
 
@@ -211,25 +213,29 @@ const RequestModal = ({ onClose, product, image }) => {
                                     src={imageUrl}
                                     alt={product.name}
                                     className='rounded-xl md:h-[200px]
-                                    ss:h-[150px] md:w-[200px] w-auto 
+                                    ss:h-[150px] h-[100px] md:w-[200px] 
+                                    ss:w-auto w-[130px] 
                                     object-cover'
                                 />
 
-                                <div className='absolute bg-main2 w-full
-                                md:bottom-0 ss:bottom-10 flex items-center justify-center
+                                <div className='absolute bg-main2 md:w-full
+                                ss:w-full w-[130px] md:bottom-0 ss:bottom-10 
+                                bottom-[-25px] flex 
+                                items-center justify-center
                                 md:p-3 ss:p-3 p-2 rounded-b-xl'>
-                                    <h1 className='text-main text-[15px]
-                                    font-bold'>
+                                    <h1 className='text-main md:text-[15px]
+                                    ss:text-[15px] text-[12px] font-bold'>
                                         {product.name}
                                     </h1>
                                 </div>
                             </div>
                         </div>
                         
-                        <div className='w-4/5'>
+                        <div className='md:w-4/5 ss:w-4/5 w-full md:mt-0
+                        ss:mt-0 mt-3'>
                             <form onSubmit={formik.handleSubmit}
-                            className='grid grid-cols-2 md:gap-5 ss:gap-4 
-                            gap-4'>
+                            className='grid md:grid-cols-2 ss:grid-cols-2
+                            md:gap-5 ss:gap-4 gap-2'>
                                 <div className="flex flex-col">
                                     <label className="text-main mb-2 
                                     md:text-[14px] font-semibold
