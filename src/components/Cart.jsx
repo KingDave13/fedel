@@ -129,7 +129,7 @@ const Cart = () => {
             <div className='max-w-[86rem] mx-auto flex flex-col md:gap-8
             ss:gap-8 gap-6 w-full'>
                 <h1 className='text-primary font-bold md:text-[22px]
-                ss:text-[20px] text-[16px]'>
+                ss:text-[20px] text-[17px]'>
                     Cart {`(${itemCount})`}
                 </h1>
                 

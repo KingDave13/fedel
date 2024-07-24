@@ -1,8 +1,5 @@
-import { motion } from 'framer-motion';
-import { fadeIn } from '../utils/motion';
 import { SectionWrapperAlt } from '../hoc';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { useFormik } from "formik";
 import { TiArrowSortedDown } from "react-icons/ti";
 import * as Yup from 'yup';
@@ -37,11 +34,11 @@ const Checkout = () => {
 
     return (
         <section className='relative w-full min-h-[60px] mx-auto flex
-        items-center md:mb-14'>
+        items-center md:mb-14 md:px-0 ss:px-16 px-6 md:py-0 ss:py-0 py-3'>
             <div className='max-w-[86rem] mx-auto flex flex-col md:gap-8
             ss:gap-8 gap-6 w-full'>
                 <h1 className='text-primary font-bold md:text-[22px]
-                ss:text-[20px] text-[16px]'>
+                ss:text-[20px] text-[17px]'>
                     Checkout
                 </h1>
                 
@@ -50,17 +47,21 @@ const Checkout = () => {
                         No items in cart
                     </p>
                 ) : (
-                    <div className='w-full flex justify-between gap-24'>
-                        <div className='flex flex-col w-3/5 gap-6'>
-                            <div className='bg-main2 rounded-xl p-5 
+                    <div className='w-full flex md:flex-row flex-col 
+                    justify-between md:gap-24 ss:gap-20 gap-8'>
+                        <div className='flex flex-col md:w-3/5 ss:w-3/4 
+                        w-full md:gap-6 ss:gap-6 gap-5'>
+                            <div className='bg-main2 md:rounded-xl 
+                            ss:rounded-xl rounded-lg md:p-5 ss:p-5 p-3 
                             flex gap-3 items-center'>
                                 <HiOutlineInformationCircle
-                                    className='text-mainalt text-[30px]'
+                                    className='text-mainalt md:text-[30px]
+                                    ss:text-[60px] text-[60px]'
                                 />
 
-                                <p className='text-mainalt text-[14px]
-                                md:leading-[19px] ss:leading-[19px]
-                                leading-[18px] font-medium'>
+                                <p className='text-mainalt md:text-[14px]
+                                ss:text-[14px] text-[12px] md:leading-[19px] 
+                                ss:leading-[19px] leading-[18px] font-medium'>
                                     Fill in the form to complete your 
                                     order for the selected product(s). 
                                     Confirm your orders, submit the form
@@ -71,7 +72,7 @@ const Checkout = () => {
 
                             <form onSubmit={formik.handleSubmit}
                             className='flex flex-col md:gap-5 ss:gap-5 
-                            gap-4 w-full'>
+                            gap-3 w-full'>
                                 <div className="flex flex-col">
                                     <label className="text-main mb-2 
                                     md:text-[15px] font-semibold
@@ -86,8 +87,7 @@ const Checkout = () => {
                                             value={formik.values.state}
                                             onChange={formik.handleChange}
                                             onBlur={formik.handleBlur}
-                                            className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
-                                            ss:px-3 px-2 border-search 
+                                            className="py-2.5 px-3 border-search 
                                             text-main3 md:rounded-lg rounded-md 
                                             cursor-pointer md:text-[13px]
                                             ss:text-[13px] text-[11px] 
@@ -161,8 +161,7 @@ const Checkout = () => {
                                         value={formik.values.name}
                                         onChange={formik.handleChange}
                                         onBlur={formik.handleBlur}
-                                        className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
-                                        ss:px-3 px-2 border-search 
+                                        className="py-2.5 px-3 border-search 
                                         text-black md:rounded-lg rounded-md md:text-[13px]
                                         ss:text-[13px] text-[11px]
                                         bg-transparent w-full placeholder:text-main3"
@@ -188,8 +187,7 @@ const Checkout = () => {
                                         value={formik.values.email}
                                         onChange={formik.handleChange}
                                         onBlur={formik.handleBlur}
-                                        className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
-                                        ss:px-3 px-2 border-search 
+                                        className="py-2.5 px-3 border-search 
                                         text-black md:rounded-lg rounded-md md:text-[13px]
                                         ss:text-[13px] text-[11px]
                                         bg-transparent w-full placeholder:text-main3"
@@ -215,8 +213,7 @@ const Checkout = () => {
                                         value={formik.values.phone}
                                         onChange={formik.handleChange}
                                         onBlur={formik.handleBlur}
-                                        className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
-                                        ss:px-3 px-2 border-search 
+                                        className="py-2.5 px-3 border-search 
                                         text-black md:rounded-lg rounded-md md:text-[13px]
                                         ss:text-[13px] text-[11px]
                                         bg-transparent w-full placeholder:text-main3"
@@ -229,8 +226,10 @@ const Checkout = () => {
                                 </div>
                             </form>
 
-                            <div className='w-full flex flex-col gap-4'>
-                                <div className='flex items-center gap-2'>
+                            <div className='w-full flex flex-col md:gap-4 
+                            ss:gap-4 gap-3'>
+                                <div className='flex items-center md:gap-2\
+                                ss:gap-2 gap-3'>
                                     <input
                                         type='checkbox'
                                         className='cursor-pointer'
@@ -248,38 +247,42 @@ const Checkout = () => {
                                     </p>
                                 </div>
 
-                                <button className='bg-primary text-[14px] 
-                                text-center text-white rounded-lg grow2 
-                                cursor-pointer w-[200px]  py-3.5'>
+                                <button className='bg-primary md:text-[14px] 
+                                ss:text-[14px] text-[12px] text-center 
+                                text-white rounded-lg grow2 cursor-pointer 
+                                md:w-[200px] ss:w-[200px] w-full py-3.5'>
                                     Place Order
                                 </button>
 
-                                <button className='bg-greenDeep text-[14px]
-                                text-center text-white rounded-lg grow2 
-                                cursor-pointer w-[200px] py-3.5'>
+                                <button className='bg-greenDeep md:text-[14px] 
+                                ss:text-[14px] text-[12px] text-center 
+                                text-white rounded-lg grow2 cursor-pointer 
+                                md:w-[200px] ss:w-[200px] w-full py-3.5'>
                                     Place via WhatsApp
                                 </button>
                             </div>
                         </div>
                         
-                        <div className='w-1/4'>
-                            <div className='bg-main2 p-7 flex flex-col gap-3
-                            rounded-xl'>
+                        <div className='md:w-1/4 ss:w-3/4 w-full'>
+                            <div className='bg-main2 md:p-7 ss:p-7 p-4 
+                            flex flex-col md:gap-3 ss:gap-3 gap-2 
+                            md:rounded-xl ss:rounded-xl rounded-lg'>
                                 <h2 className='text-main font-bold 
-                                text-[18px]'>
+                                md:text-[18px] ss:text-[20px] text-[15px]'>
                                     Order Summary
                                 </h2>
 
                                 <div className='flex flex-col w-full
-                                gap-2'>
+                                md:gap-2 ss:gap-2 gap-1'>
                                     <div className='flex w-full justify-between
                                     items-center'>
-                                        <p className='text-mainalt text-[16px]'>
+                                        <p className='text-mainalt md:text-[16px]
+                                        ss:text-[17px] text-[14px]'>
                                             Items total {`(${itemCount})`}:
                                         </p>
 
                                         <p className='text-main md:text-[18px] 
-                                        font-semibold'>
+                                        ss:text-[18px] text-[15px] font-semibold'>
                                             <span className='line-through'>
                                                 N
                                             </span>
@@ -289,11 +292,13 @@ const Checkout = () => {
 
                                     <div className='flex w-full justify-between
                                     items-center'>
-                                        <p className='text-mainalt text-[16px]'>
+                                        <p className='text-mainalt md:text-[16px]
+                                        ss:text-[17px] text-[14px]'>
                                             VAT (7.5%)
                                         </p>
 
                                         <p className='text-main md:text-[18px] 
+                                        ss:text-[18px] text-[15px] 
                                         font-semibold'>
                                             <span className='line-through'>
                                                 N
@@ -304,11 +309,13 @@ const Checkout = () => {
 
                                     <div className='flex w-full justify-between
                                     items-center'>
-                                        <p className='text-mainalt text-[16px]'>
+                                        <p className='text-mainalt md:text-[16px]
+                                        ss:text-[17px] text-[14px]'>
                                             Subtotal:
                                         </p>
 
                                         <p className='text-greenDeep md:text-[20px] 
+                                        ss:text-[20px] text-[16px] 
                                         font-bold'>
                                             <span className='line-through'>
                                                 N
@@ -318,20 +325,23 @@ const Checkout = () => {
                                     </div>
                                 </div>
                                 
-                                <p className='text-main3 text-[14px]
-                                border-t-[1px] border-primaryalt pt-4 mt-2'>
+                                <p className='text-main3 md:text-[14px]
+                                ss:text-[14px] text-[11px] border-t-[1px] 
+                                border-primaryalt md:pt-4 ss:pt-4 pt-3 
+                                md:mt-2 ss:mt-2 mt-1 md:leading-0
+                                ss:leading-[20px] leading-[17px]'>
                                     This figure does not include any other 
                                     extra fees that may be incurred via 
                                     logistics, etc.
                                 </p>
                             </div>
 
-                            <Link to='/cart'
-                            className='flex justify-end gap-2 mt-4
-                            cursor-pointer items-center'
+                            <a href='/cart'
+                            className='flex md:justify-end gap-2 md:mt-4
+                            mt-5 cursor-pointer items-center'
                             >
                                 <p className='text-primary font-semibold
-                                text-[14px]'>
+                                md:text-[14px] ss:text-[14px] text-[12px]'>
                                     Go back to cart to review items
                                 </p>
 
@@ -340,7 +350,7 @@ const Checkout = () => {
                                     alt='arrow'
                                     className='w-4 h-4'
                                 />
-                            </Link>
+                            </a>
                         </div>
                     </div>
                 )}
