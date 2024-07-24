@@ -143,7 +143,7 @@ const RequestModal = ({ onClose, product, image }) => {
                         className='absolute md:top-8 ss:top-8 top-4 
                         md:right-8 ss:right-8 right-4 text-main 
                         md:text-[20px] ss:text-[20px] text-[18px] 
-                        cursor-pointer'
+                        cursor-pointer phone2'
                         onClick={closeRequestModal}
                     >
                         <HiX />
