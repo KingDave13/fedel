@@ -134,7 +134,7 @@ const Checkout = () => {
                                     ss:text-[14px] text-[11px] border-t-[1px] 
                                     border-primaryalt md:pt-4 ss:pt-4 pt-3 
                                     md:mt-2 ss:mt-2 mt-1 md:leading-0
-                                    ss:leading-[20px] leading-[17px]'>
+                                    ss:leading-[20px] leading-[16px]'>
                                         This figure does not include any other 
                                         extra fees that may be incurred via 
                                         logistics, etc.
@@ -655,7 +655,7 @@ const Checkout = () => {
                                     ss:text-[14px] text-[11px] border-t-[1px] 
                                     border-primaryalt md:pt-4 ss:pt-4 pt-3 
                                     md:mt-2 ss:mt-2 mt-1 md:leading-0
-                                    ss:leading-[20px] leading-[17px]'>
+                                    ss:leading-[20px] leading-[16px]'>
                                         This figure does not include any other 
                                         extra fees that may be incurred via 
                                         logistics, etc.

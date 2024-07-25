@@ -11,7 +11,7 @@ const Footer = () => {
     <section className='relative w-full md:min-h-[800px] ss:min-h-[700px] 
     min-h-[450px] flex items-center flex-col'>
       <div className='flex items-center w-full relative'>
-        <div variants={textVariant()} className='flex flex-col w-full'>
+        <div className='flex flex-col w-full'>
           <div className='flex flex-col w-full md:gap-6 ss:gap-5 gap-5'>
             <img src={logoalt} alt='logo' className='md:w-[200px] 
             ss:w-[180px] w-[160px] h-auto' />
@@ -66,7 +66,7 @@ const Footer = () => {
 
       <motion.div variants={textVariant()} className='flex flex-col w-full'>
         <div className='flex md:mt-16 ss:mt-10 mt-8 border-t-[1px] 
-        border-main md:pt-10 ss:pt-8 pt-6 items-center'>
+        border-main md:pt-10 ss:pt-8 pt-4 items-center'>
           <BiCopyright className='sm:mr-2 mr-1 md:text-[20px] 
           ss:text-[18px] text-[15px] mt-1 text-white' />
 
