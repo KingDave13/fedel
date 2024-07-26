@@ -669,7 +669,8 @@ const ProductDetails = ({ product }) => {
                                     className='md:text-[16px]
                                     ss:text-[15px] text-[13px] flex
                                     flex-col md:gap-1.5 ss:gap-1.5 gap-1'
-                                    key={index}>
+                                    key={`${index}-${attribute.type || ''}-${attribute.material || ''}`}
+                                    >
                                         {attribute.type && <div><span className='font-semibold mr-1'>Type:</span> {attribute.type}</div>}
                                         {attribute.material && <div><span className='font-semibold mr-1'>Material:</span> {attribute.material}</div>}
                                         {attribute.dimensions && <div><span className='font-semibold mr-1'>Dimensions:</span> {attribute.dimensions}</div>}
