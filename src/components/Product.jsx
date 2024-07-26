@@ -264,9 +264,10 @@ const Product = ({ products, categorySlug }) => {
         const createPageButton = (page) => (
             <button
             key={page}
-            className={`md:px-4 ss:px-4 px-3 py-1 text-white
+            className={`md:px-4 ss:px-4 px-3 py-1 
             md:text-[14px] ss:text-[14px] text-[13px] rounded-md 
-            ${currentPage === page ? 'bg-primary' : 'bg-main3'}`}
+            ${currentPage === page ? 'bg-primary text-white' 
+            : 'bg-main2 text-main'}`}
             onClick={() => setCurrentPage(page)}
             >
                 {page}
