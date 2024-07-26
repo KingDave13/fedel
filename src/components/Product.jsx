@@ -260,60 +260,44 @@ const Product = ({ products, categorySlug }) => {
 
     const renderPageNumbers = () => {
         const pageButtons = [];
-
-        // Always show the current page
-        pageButtons.push(
-            <button
-                key={currentPage}
-                className={`md:px-4 ss:px-4 px-3 py-1 text-white
-                md:text-[14px] ss:text-[14px] text-[13px] rounded-md 
-                bg-primary`}
-            >
-                {currentPage}
-            </button>
+    
+        const createPageButton = (page) => (
+          <button
+            key={page}
+            className={`md:px-4 ss:px-4 px-3 py-1 text-white
+            md:text-[14px] ss:text-[14px] text-[13px] rounded-md 
+            ${currentPage === page ? 'bg-primary' : 'bg-main3'}`}
+            onClick={() => setCurrentPage(page)}
+          >
+            {page}
+          </button>
         );
-
-        for (let i = 1; i <= 2; i++) {
-            const nextPage = currentPage + i;
-            if (nextPage <= totalPages - 1) {
-                pageButtons.push(
-                    <button
-                        key={nextPage}
-                        className={`md:px-4 ss:px-4 px-3 py-1 text-white
-                        md:text-[14px] ss:text-[14px] text-[13px] rounded-md
-                            ${currentPage === nextPage ? 'bg-primary' : 'bg-main3'}`}
-                        onClick={() => setCurrentPage(nextPage)}
-                    >
-                        {nextPage}
-                    </button>
-                );
-            }
+    
+        pageButtons.push(createPageButton(1));
+    
+        if (currentPage > 3) {
+          pageButtons.push(<span key="ellipsis-start">...</span>);
         }
-
-        if (currentPage + 2 < totalPages - 1) {
-            // Show ellipsis if there are more pages
-            pageButtons.push(<span key="ellipsis">...</span>);
+    
+        const startPage = Math.max(2, currentPage - 1);
+        const endPage = Math.min(totalPages - 1, currentPage + 1);
+    
+        for (let i = startPage; i <= endPage; i++) {
+          pageButtons.push(createPageButton(i));
         }
-
-        // Always show the last page
+    
+        if (currentPage < totalPages - 2) {
+          pageButtons.push(<span key="ellipsis-end">...</span>);
+        }
+    
         if (totalPages > 1) {
-            pageButtons.push(
-                <button
-                    key={totalPages}
-                    className={`md:px-4 ss:px-4 px-3 py-1 text-white
-                    md:text-[14px] ss:text-[14px] text-[13px] rounded-md 
-                        ${currentPage === totalPages ? 'bg-primary' : 'bg-main3'}`}
-                    onClick={() => setCurrentPage(totalPages)}
-                >
-                    {totalPages}
-                </button>
-            );
+          pageButtons.push(createPageButton(totalPages));
         }
-
+    
         return pageButtons;
-    };
-  
-    const handlePreviousPage = () => {
+      };
+    
+      const handlePreviousPage = () => {
         if (currentPage > 1) {
           setCurrentPage(currentPage - 1);
         }
@@ -437,27 +421,26 @@ const Product = ({ products, categorySlug }) => {
                         ))}
                     </div>
 
-                    <div className="flex justify-end mt-8 items-center
+                    <div className="flex justify-end mt-8 items-center 
                     md:gap-5 ss:gap-4 gap-3">
                         <div
                             onClick={handlePreviousPage}
-                            className='flex items-center gap-3
-                            cursor-pointer'
+                            className={`flex items-center gap-3 
+                            cursor-pointer
+                            ${currentPage === 1 ? 'pointer-events-none' : ''}`}
                         >
                             <MdOutlineKeyboardArrowLeft 
                                 className={`md:text-[25px] ss:text-[25px] 
                                 text-[23px] text-white p-1 md:rounded-lg 
                                 rounded-md font-semibold
-                                ${currentPage === 1 
-                                ? 'bg-main3' 
+                                ${currentPage === 1 ? 'bg-main3' 
                                 : 'bg-primary'}`}
                             />
 
-                            <p className={`md:text-[14px] ss:text-[14px]
+                            <p className={`md:text-[14px] ss:text-[14px] 
                             text-[13px]
-                            ${currentPage === 1 
-                                ? 'text-main3' 
-                                : 'text-primary'}`}>
+                            ${currentPage === 1 ? 'text-main3' 
+                            : 'text-primary'}`}>
                                 Previous
                             </p>
                         </div>
@@ -466,14 +449,15 @@ const Product = ({ products, categorySlug }) => {
 
                         <div
                             onClick={handleNextPage}
-                            className='flex items-center gap-3
-                            cursor-pointer'
+                            className={`flex items-center gap-3 
+                            cursor-pointer
+                            ${currentPage === totalPages 
+                            ? 'pointer-events-none' : ''}`}
                         >
-                            <p className={`md:text-[14px] ss:text-[14px]
+                            <p className={`md:text-[14px] ss:text-[14px] 
                             text-[13px]
-                            ${currentPage === 1 
-                                ? 'text-main3' 
-                                : 'text-primary'}`}>
+                            ${currentPage === totalPages ? 'text-main3' 
+                            : 'text-primary'}`}>
                                 Next
                             </p>
 
@@ -481,8 +465,7 @@ const Product = ({ products, categorySlug }) => {
                                 className={`md:text-[25px] ss:text-[25px] 
                                 text-[23px] text-white p-1 md:rounded-lg 
                                 rounded-md font-semibold
-                                ${currentPage === 1 
-                                ? 'bg-main3' 
+                                ${currentPage === totalPages ? 'bg-main3' 
                                 : 'bg-primary'}`}
                             />
                         </div>
