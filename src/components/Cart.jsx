@@ -89,8 +89,7 @@ const ItemCard = ({ item, index, image }) => {
                         </p>
                     </div>
 
-                    <div className='flex items-center md:gap-3 ss:gap-3
-                    gap-2.5'>
+                    <div className='flex items-center gap-3'>
                         <img
                             src={add}
                             alt='add'
@@ -99,7 +98,7 @@ const ItemCard = ({ item, index, image }) => {
                             onClick={() => dispatch(incrementQuantity(item.id))}
                         />
 
-                        <p className='text-primary font-semibold text-[14px]'>
+                        <p className='text-main font-semibold text-[14px]'>
                             {item.quantity}
                         </p>
 
