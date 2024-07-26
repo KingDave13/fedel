@@ -95,7 +95,7 @@ const ItemCard = ({ item, index, image }) => {
                             src={add}
                             alt='add'
                             className='cursor-pointer grow2 md:w-7 ss:w-7 
-                            w-5 md:h-7 ss:h-7 h-5'
+                            w-6 md:h-7 ss:h-7 h-6'
                             onClick={() => dispatch(incrementQuantity(item.id))}
                         />
 
@@ -107,7 +107,7 @@ const ItemCard = ({ item, index, image }) => {
                             src={subtract}
                             alt='subtract'
                             className='cursor-pointer grow2 md:w-7 ss:w-7 
-                            w-5 md:h-7 ss:h-7 h-5'
+                            w-6 md:h-7 ss:h-7 h-6'
                             onClick={() => dispatch(decrementQuantity(item.id))}
                         />
                     </div>
