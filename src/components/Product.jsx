@@ -262,15 +262,16 @@ const Product = ({ products, categorySlug }) => {
         const pageButtons = [];
     
         const createPageButton = (page) => (
-          <button
-            key={page}
-            className={`md:px-4 ss:px-4 px-3 py-1 text-white
-            md:text-[14px] ss:text-[14px] text-[13px] rounded-md 
-            ${currentPage === page ? 'bg-primary' : 'bg-main3'}`}
-            onClick={() => setCurrentPage(page)}
-          >
-            {page}
-          </button>
+            <a href="#top" key={page}>
+                <button
+                className={`md:px-4 ss:px-4 px-3 py-1 text-white
+                md:text-[14px] ss:text-[14px] text-[13px] rounded-md 
+                ${currentPage === page ? 'bg-primary' : 'bg-main3'}`}
+                onClick={() => setCurrentPage(page)}
+                >
+                    {page}
+                </button>
+            </a>
         );
     
         pageButtons.push(createPageButton(1));
@@ -423,7 +424,7 @@ const Product = ({ products, categorySlug }) => {
 
                     <div className="flex justify-end mt-8 items-center 
                     md:gap-5 ss:gap-4 gap-3">
-                        <div
+                        <a href="#top"
                             onClick={handlePreviousPage}
                             className={`flex items-center gap-3 
                             cursor-pointer
@@ -443,11 +444,11 @@ const Product = ({ products, categorySlug }) => {
                             : 'text-primary'}`}>
                                 Previous
                             </p>
-                        </div>
+                        </a>
 
                         {renderPageNumbers()}
 
-                        <div
+                        <a href="#top"
                             onClick={handleNextPage}
                             className={`flex items-center gap-3 
                             cursor-pointer
@@ -468,7 +469,7 @@ const Product = ({ products, categorySlug }) => {
                                 ${currentPage === totalPages ? 'bg-main3' 
                                 : 'bg-primary'}`}
                             />
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
