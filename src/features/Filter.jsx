@@ -88,64 +88,78 @@ const Filter = ({ products, updateFilteredProducts }) => {
   return (
     <div className="flex flex-col w-full gap-6">
       <div className="">
-        <h3 className="text-[17px] font-bold mb-4 text-main">
+        <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
+        md:mb-4 ss:mb-4 mb-3 text-main">
           Type
         </h3>
-        <div className="overflow-y-auto max-h-52">
+        <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
           {attributes.types.map(type => (
-            <label key={type} className="flex items-center gap-1">
+            <label key={type} className="flex items-center gap-1 mb-0.5">
               <input
                 type="checkbox"
                 checked={filterValues.types.includes(type)}
                 onChange={() => handleFilterChange('types', type)}
                 className="mr-2 cursor-pointer"
               />
-              <span className="">{type}</span>
+              <span className="md:text-[15px] ss:text-[15px] text-[14px] 
+              font-medium">
+                {type}
+              </span>
             </label>
           ))}
         </div>
       </div>
 
       <div className="">
-        <h3 className="text-[17px] font-bold mb-4 text-main">
+        <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
+        md:mb-4 ss:mb-4 mb-3 text-main">
           Material
         </h3>
-        <div className="overflow-y-auto max-h-52">
+        <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
           {attributes.materials.map(material => (
-            <label key={material} className="flex items-center gap-1">
+            <label key={material} className="flex items-center gap-1 mb-0.5">
               <input
                 type="checkbox"
                 checked={filterValues.materials.includes(material)}
                 onChange={() => handleFilterChange('materials', material)}
                 className="mr-2 cursor-pointer"
               />
-              {material}
+             <span className="md:text-[15px] ss:text-[15px] text-[14px] 
+              font-medium">
+                {material}
+              </span>
             </label>
           ))}
         </div>
       </div>
 
       <div className="">
-        <h3 className="text-[17px] font-bold mb-4 text-main">
+        <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
+        md:mb-4 ss:mb-4 mb-3 text-main">
           Application
         </h3>
-        <div className="overflow-y-auto max-h-52">
+        <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
           {attributes.applications.map(application => (
-            <label key={application} className="flex items-center gap-1">
+            <label key={application} className="flex items-center gap-1 
+            mb-0.5">
               <input
                 type="checkbox"
                 checked={filterValues.applications.includes(application)}
                 onChange={() => handleFilterChange('applications', application)}
                 className="mr-2 cursor-pointer"
               />
-              {application}
+              <span className="md:text-[15px] ss:text-[15px] text-[14px] 
+              font-medium">
+                {application}
+              </span>
             </label>
           ))}
         </div>
       </div>
 
       <div className="">
-        <h3 className="text-[17px] font-bold mb-4 text-main">
+        <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
+        md:mb-4 ss:mb-4 mb-3 text-main">
           Price
         </h3>
         <div className="flex flex-col bg-main2 p-4 rounded-lg">
@@ -166,10 +180,11 @@ const Filter = ({ products, updateFilteredProducts }) => {
       </div>
 
       <div className="">
-        <h3 className="text-[17px] font-bold mb-4 text-main">
+        <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
+        md:mb-4 ss:mb-4 mb-3 text-main">
           Color
         </h3>
-        <div className="overflow-y-auto max-h-52">
+        <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
           {attributes.colors.map(color => (
             <label key={color} className="flex items-center gap-1">
               <input
@@ -185,38 +200,47 @@ const Filter = ({ products, updateFilteredProducts }) => {
       </div>
 
       <div className="">
-        <h3 className="text-[17px] font-bold mb-4 text-main">
+        <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
+        md:mb-4 ss:mb-4 mb-3 text-main">
           Size
         </h3>
-        <div className="overflow-y-auto max-h-52">
+        <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
           {attributes.sizes.map(size => (
-            <label key={size} className="flex items-center gap-1">
+            <label key={size} className="flex items-center gap-1 mb-0.5">
               <input
                 type="checkbox"
                 checked={filterValues.sizes.includes(size)}
                 onChange={() => handleFilterChange('sizes', size)}
                 className="mr-2 cursor-pointer"
               />
-              {size}
+             <span className="md:text-[15px] ss:text-[15px] text-[14px] 
+              font-medium">
+                {size}
+              </span>
             </label>
           ))}
         </div>
       </div>
 
       <div className="">
-        <h3 className="text-[17px] font-bold mb-4 text-main">
+        <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
+        md:mb-4 ss:mb-4 mb-3 text-main">
           Style and Pattern
         </h3>
-        <div className="overflow-y-auto max-h-52">
+        <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
           {attributes.stylesAndPatterns.map(styleAndPattern => (
-            <label key={styleAndPattern} className="flex items-center gap-1">
+            <label key={styleAndPattern} className="flex items-center 
+            gap-1 mb-0.5">
               <input
                 type="checkbox"
                 checked={filterValues.stylesAndPatterns.includes(styleAndPattern)}
                 onChange={() => handleFilterChange('stylesAndPatterns', styleAndPattern)}
                 className="mr-2 cursor-pointer"
               />
-              {styleAndPattern}
+              <span className="md:text-[15px] ss:text-[15px] text-[14px] 
+              font-medium">
+                {styleAndPattern}
+              </span>
             </label>
           ))}
         </div>
