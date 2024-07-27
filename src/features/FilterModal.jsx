@@ -38,6 +38,24 @@ const FilterModal = ({ isOpen, onClose, children }) => {
                         <div className='ss:p-8 p-4 w-full'>
                             {children}
                         </div>
+
+                        <div className='w-full flex flex-col phone4
+                        gap-2 p-4'>
+                            <button className='bg-primary 
+                            ss:text-[14px] text-[12px] py-3.5 
+                            text-center text-white rounded-md
+                            cursor-pointer ss:w-[170px] w-full'>
+                                Save and refresh results
+                            </button>
+
+                            <button className='bg-secondary font-semibold
+                            ss:text-[14px] text-[13px] py-3.5 
+                            text-center text-main rounded-md
+                            cursor-pointer ss:w-[170px] w-full'
+                            onClick={onClose}>
+                                Close
+                            </button>
+                        </div>
                     </motion.div>
                 </motion.div>
             )}

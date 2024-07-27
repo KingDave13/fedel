@@ -149,6 +149,16 @@ body, html {
 }
 
 @media (max-width: 480px) {
+  .phone4 {
+    position: sticky;
+    bottom: 0;
+    background-color: white;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}
+
+@media (max-width: 480px) {
   .padphone {
     padding-bottom: 0;
   }
