@@ -140,6 +140,14 @@ body, html {
   }
 }
 
+@media (max-width: 820px) {
+  .phone3 {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+  }
+}
+
 @media (max-width: 480px) {
   .padphone {
     padding-bottom: 0;
