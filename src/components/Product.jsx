@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { Filter } from '../features';
+import { Filter, FilterModal } from '../features';
 import { urlFor } from '../sanity';
 import { TiArrowSortedDown } from "react-icons/ti";
 import { motion, AnimatePresence } from 'framer-motion';
@@ -226,6 +226,8 @@ const Product = ({ products, categorySlug }) => {
     const [isFilterVisible, setIsFilterVisible] = useState(true);
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 1060);
 
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     useEffect(() => {
         if (window.innerWidth <= 1060) {
             setIsFilterVisible(false);
@@ -236,6 +238,8 @@ const Product = ({ products, categorySlug }) => {
             setIsMobile(isMobile);
             if (isMobile) {
                 setIsFilterVisible(false);
+            } else {
+                setIsModalOpen(false);
             }
         };
 
@@ -255,6 +259,9 @@ const Product = ({ products, categorySlug }) => {
     const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
   
     const toggleFilterVisibility = () => {
+        if (isMobile) {
+            setIsModalOpen(true);
+        }
         setIsFilterVisible(prev => !prev);
     };
 
@@ -400,13 +407,22 @@ const Product = ({ products, categorySlug }) => {
 
             <div className="flex w-full">
                 {isFilterVisible && (
-                    <div className="flex w-1/4 pr-1 mr-5 border-r-[1.5px]
-                    border-main3">
-                        <Filter 
-                            products={products} 
-                            updateFilteredProducts={updateFilteredProducts} 
-                        />
-                    </div>
+                    isMobile ? (
+                        <FilterModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+                            <Filter
+                                products={products} 
+                                updateFilteredProducts={updateFilteredProducts} 
+                            />
+                        </FilterModal>
+                    ) : (
+                        <div className="flex w-1/4 pr-1 mr-5 border-r-[1.5px]
+                        border-main3">
+                            <Filter 
+                                products={products} 
+                                updateFilteredProducts={updateFilteredProducts} 
+                            />
+                        </div>
+                    )
                 )}
                 
                 <div className="flex w-full flex-col">
