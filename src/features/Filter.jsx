@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
+import { TiArrowSortedDown } from "react-icons/ti";
 
 
 const Filter = ({ products, updateFilteredProducts }) => {
@@ -88,10 +89,17 @@ const Filter = ({ products, updateFilteredProducts }) => {
   return (
     <div className="flex flex-col w-full md:gap-6 ss:gap-5 gap-4">
       <div className="">
-        <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
-        md:mb-4 ss:mb-3 mb-2 text-main">
-          Type
-        </h3>
+        <div className="flex justify-between items-center">
+          <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
+          md:mb-4 ss:mb-3 mb-2 text-main">
+            Type
+          </h3>
+
+          <TiArrowSortedDown 
+            className='text-main text-[18px]'
+          />
+        </div>
+        
         <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
           {attributes.types.map(type => (
             <label key={type} className="flex items-center gap-1 mb-0.5">
@@ -111,10 +119,17 @@ const Filter = ({ products, updateFilteredProducts }) => {
       </div>
 
       <div className="">
-        <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
-        md:mb-4 ss:mb-3 mb-2 text-main">
-          Material
-        </h3>
+        <div className="flex justify-between items-center">
+          <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
+          md:mb-4 ss:mb-3 mb-2 text-main">
+            Material
+          </h3>
+
+          <TiArrowSortedDown 
+            className='text-main text-[18px]'
+          />
+        </div>
+
         <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
           {attributes.materials.map(material => (
             <label key={material} className="flex items-center gap-1 mb-0.5">
@@ -134,10 +149,17 @@ const Filter = ({ products, updateFilteredProducts }) => {
       </div>
 
       <div className="">
-        <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
-        md:mb-4 ss:mb-3 mb-2 text-main">
-          Application
-        </h3>
+        <div className="flex justify-between items-center">
+          <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
+          md:mb-4 ss:mb-3 mb-2 text-main">
+            Application
+          </h3>
+
+          <TiArrowSortedDown 
+            className='text-main text-[18px]'
+          />
+        </div>
+
         <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
           {attributes.applications.map(application => (
             <label key={application} className="flex items-center gap-1 
@@ -158,10 +180,17 @@ const Filter = ({ products, updateFilteredProducts }) => {
       </div>
 
       <div className="">
-        <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
-        md:mb-4 ss:mb-3 mb-2 text-main">
-          Price
-        </h3>
+        <div className="flex justify-between items-center">
+          <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
+          md:mb-4 ss:mb-3 mb-2 text-main">
+            Price
+          </h3>
+
+          <TiArrowSortedDown 
+            className='text-main text-[18px]'
+          />
+        </div>
+
         <div className="flex flex-col bg-main2 p-4 rounded-lg">
           <div className="">
             <Slider
@@ -180,10 +209,17 @@ const Filter = ({ products, updateFilteredProducts }) => {
       </div>
 
       <div className="">
-        <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
-        md:mb-4 ss:mb-3 mb-2 text-main">
-          Color
-        </h3>
+        <div className="flex justify-between items-center">
+          <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
+          md:mb-4 ss:mb-3 mb-2 text-main">
+            Colour
+          </h3>
+
+          <TiArrowSortedDown 
+            className='text-main text-[18px]'
+          />
+        </div>
+
         <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
           {attributes.colors.map(color => (
             <label key={color} className="flex items-center gap-1">
@@ -200,10 +236,17 @@ const Filter = ({ products, updateFilteredProducts }) => {
       </div>
 
       <div className="">
-        <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
-        md:mb-4 ss:mb-3 mb-2 text-main">
-          Size
-        </h3>
+        <div className="flex justify-between items-center">
+          <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
+          md:mb-4 ss:mb-3 mb-2 text-main">
+            Size
+          </h3>
+
+          <TiArrowSortedDown 
+            className='text-main text-[18px]'
+          />
+        </div>
+
         <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
           {attributes.sizes.map(size => (
             <label key={size} className="flex items-center gap-1 mb-0.5">
@@ -223,10 +266,17 @@ const Filter = ({ products, updateFilteredProducts }) => {
       </div>
 
       <div className="">
-        <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
-        md:mb-4 ss:mb-3 mb-2 text-main">
-          Style and Pattern
-        </h3>
+        <div className="flex justify-between items-center">
+          <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
+          md:mb-4 ss:mb-3 mb-2 text-main">
+            Style and Pattern
+          </h3>
+
+          <TiArrowSortedDown 
+            className='text-main text-[18px]'
+          />
+        </div>
+
         <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
           {attributes.stylesAndPatterns.map(styleAndPattern => (
             <label key={styleAndPattern} className="flex items-center 
