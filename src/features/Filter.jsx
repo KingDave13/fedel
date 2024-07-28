@@ -89,9 +89,10 @@ const Filter = ({ products, updateFilteredProducts }) => {
   return (
     <div className="flex flex-col w-full md:gap-6 ss:gap-5 gap-4">
       <div className="">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center md:mb-4 ss:mb-3 
+        mb-2">
           <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
-          md:mb-4 ss:mb-3 mb-2 text-main">
+          text-main">
             Type
           </h3>
 
@@ -119,9 +120,10 @@ const Filter = ({ products, updateFilteredProducts }) => {
       </div>
 
       <div className="">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center md:mb-4 ss:mb-3 
+        mb-2">
           <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
-          md:mb-4 ss:mb-3 mb-2 text-main">
+          text-main">
             Material
           </h3>
 
@@ -149,9 +151,10 @@ const Filter = ({ products, updateFilteredProducts }) => {
       </div>
 
       <div className="">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center md:mb-4 ss:mb-3 
+        mb-2">
           <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
-          md:mb-4 ss:mb-3 mb-2 text-main">
+          text-main">
             Application
           </h3>
 
@@ -180,9 +183,10 @@ const Filter = ({ products, updateFilteredProducts }) => {
       </div>
 
       <div className="">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center md:mb-4 ss:mb-3 
+        mb-2">
           <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
-          md:mb-4 ss:mb-3 mb-2 text-main">
+          text-main">
             Price
           </h3>
 
@@ -209,9 +213,10 @@ const Filter = ({ products, updateFilteredProducts }) => {
       </div>
 
       <div className="">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center md:mb-4 ss:mb-3 
+        mb-2">
           <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
-          md:mb-4 ss:mb-3 mb-2 text-main">
+          text-main">
             Colour
           </h3>
 
@@ -236,9 +241,10 @@ const Filter = ({ products, updateFilteredProducts }) => {
       </div>
 
       <div className="">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center md:mb-4 ss:mb-3 
+        mb-2">
           <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
-          md:mb-4 ss:mb-3 mb-2 text-main">
+          text-main">
             Size
           </h3>
 
@@ -266,9 +272,10 @@ const Filter = ({ products, updateFilteredProducts }) => {
       </div>
 
       <div className="">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center md:mb-4 ss:mb-3 
+        mb-2">
           <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
-          md:mb-4 ss:mb-3 mb-2 text-main">
+          text-main">
             Style and Pattern
           </h3>
 
