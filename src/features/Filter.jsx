@@ -90,7 +90,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
     <div className="flex flex-col w-full md:gap-6 ss:gap-5 gap-4">
       <div className="">
         <div className="flex justify-between items-center">
-          <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
+          <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
           md:mb-4 ss:mb-3 mb-2 text-main">
             Type
           </h3>
@@ -107,9 +107,9 @@ const Filter = ({ products, updateFilteredProducts }) => {
                 type="checkbox"
                 checked={filterValues.types.includes(type)}
                 onChange={() => handleFilterChange('types', type)}
-                className="mr-2 cursor-pointer"
+                className="md:mr-2 ss:mr-2 mr-1 cursor-pointer"
               />
-              <span className="md:text-[15px] ss:text-[15px] text-[14px] 
+              <span className="md:text-[15px] ss:text-[15px] text-[13px] 
               font-medium">
                 {type}
               </span>
@@ -120,7 +120,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
 
       <div className="">
         <div className="flex justify-between items-center">
-          <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
+          <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
           md:mb-4 ss:mb-3 mb-2 text-main">
             Material
           </h3>
@@ -137,9 +137,9 @@ const Filter = ({ products, updateFilteredProducts }) => {
                 type="checkbox"
                 checked={filterValues.materials.includes(material)}
                 onChange={() => handleFilterChange('materials', material)}
-                className="mr-2 cursor-pointer"
+                className="md:mr-2 ss:mr-2 mr-1 cursor-pointer"
               />
-             <span className="md:text-[15px] ss:text-[15px] text-[14px] 
+             <span className="md:text-[15px] ss:text-[15px] text-[13px] 
               font-medium">
                 {material}
               </span>
@@ -150,7 +150,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
 
       <div className="">
         <div className="flex justify-between items-center">
-          <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
+          <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
           md:mb-4 ss:mb-3 mb-2 text-main">
             Application
           </h3>
@@ -168,9 +168,9 @@ const Filter = ({ products, updateFilteredProducts }) => {
                 type="checkbox"
                 checked={filterValues.applications.includes(application)}
                 onChange={() => handleFilterChange('applications', application)}
-                className="mr-2 cursor-pointer"
+                className="md:mr-2 ss:mr-2 mr-1 cursor-pointer"
               />
-              <span className="md:text-[15px] ss:text-[15px] text-[14px] 
+              <span className="md:text-[15px] ss:text-[15px] text-[13px] 
               font-medium">
                 {application}
               </span>
@@ -181,7 +181,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
 
       <div className="">
         <div className="flex justify-between items-center">
-          <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
+          <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
           md:mb-4 ss:mb-3 mb-2 text-main">
             Price
           </h3>
@@ -210,7 +210,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
 
       <div className="">
         <div className="flex justify-between items-center">
-          <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
+          <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
           md:mb-4 ss:mb-3 mb-2 text-main">
             Colour
           </h3>
@@ -237,7 +237,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
 
       <div className="">
         <div className="flex justify-between items-center">
-          <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
+          <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
           md:mb-4 ss:mb-3 mb-2 text-main">
             Size
           </h3>
@@ -254,9 +254,9 @@ const Filter = ({ products, updateFilteredProducts }) => {
                 type="checkbox"
                 checked={filterValues.sizes.includes(size)}
                 onChange={() => handleFilterChange('sizes', size)}
-                className="mr-2 cursor-pointer"
+                className="md:mr-2 ss:mr-2 mr-1 cursor-pointer"
               />
-             <span className="md:text-[15px] ss:text-[15px] text-[14px] 
+             <span className="md:text-[15px] ss:text-[15px] text-[13px] 
               font-medium">
                 {size}
               </span>
@@ -267,7 +267,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
 
       <div className="">
         <div className="flex justify-between items-center">
-          <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
+          <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
           md:mb-4 ss:mb-3 mb-2 text-main">
             Style and Pattern
           </h3>
@@ -285,9 +285,9 @@ const Filter = ({ products, updateFilteredProducts }) => {
                 type="checkbox"
                 checked={filterValues.stylesAndPatterns.includes(styleAndPattern)}
                 onChange={() => handleFilterChange('stylesAndPatterns', styleAndPattern)}
-                className="mr-2 cursor-pointer"
+                className="md:mr-2 ss:mr-2 mr-1 cursor-pointer"
               />
-              <span className="md:text-[15px] ss:text-[15px] text-[14px] 
+              <span className="md:text-[15px] ss:text-[15px] text-[13px] 
               font-medium">
                 {styleAndPattern}
               </span>
