@@ -27,7 +27,7 @@ const FilterModal = ({ isOpen, onClose, children }) => {
                             <img 
                                 src={filter}
                                 alt="filter"
-                                className="w-5"
+                                className="w-4"
                             />
                             <p className="text-main font-bold
                             ss:text-[16px] text-[15px]">
@@ -40,7 +40,7 @@ const FilterModal = ({ isOpen, onClose, children }) => {
                         </div>
 
                         <div className='w-full flex flex-col phone4
-                        gap-2 p-4'>
+                        gap-2 p-4 z-20'>
                             <button className='bg-primary 
                             ss:text-[14px] text-[12px] py-3.5 
                             text-center text-white rounded-md
@@ -49,7 +49,7 @@ const FilterModal = ({ isOpen, onClose, children }) => {
                             </button>
 
                             <button className='bg-secondary font-semibold
-                            ss:text-[14px] text-[13px] py-3.5 
+                            ss:text-[14px] text-[12px] py-3.5 
                             text-center text-main rounded-md
                             cursor-pointer ss:w-[170px] w-full'
                             onClick={onClose}>
