@@ -23,14 +23,14 @@ const FilterModal = ({ isOpen, onClose, children }) => {
                     w-full ss:h-auto h-[75%] overflow-auto 
                     items-center relative ss:m-16 m-6">
                         <div className='flex bg-main2 w-full 
-                        top-0 ss:p-8 p-4 items-center gap-4 phone3'>
+                        top-0 ss:p-8 p-4 items-center gap-3 phone3'>
                             <img 
                                 src={filter}
                                 alt="filter"
                                 className="w-4"
                             />
                             <p className="text-main font-bold
-                            ss:text-[16px] text-[15px]">
+                            ss:text-[16px] text-[14px]">
                                 Filters
                             </p>
                         </div>

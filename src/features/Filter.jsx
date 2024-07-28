@@ -86,10 +86,10 @@ const Filter = ({ products, updateFilteredProducts }) => {
   }, [filterValues, products, updateFilteredProducts]);
 
   return (
-    <div className="flex flex-col w-full gap-6">
+    <div className="flex flex-col w-full md:gap-6 ss:gap-5 gap-4">
       <div className="">
         <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
-        md:mb-4 ss:mb-4 mb-3 text-main">
+        md:mb-4 ss:mb-3 mb-2 text-main">
           Type
         </h3>
         <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
@@ -112,7 +112,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
 
       <div className="">
         <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
-        md:mb-4 ss:mb-4 mb-3 text-main">
+        md:mb-4 ss:mb-3 mb-2 text-main">
           Material
         </h3>
         <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
@@ -135,7 +135,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
 
       <div className="">
         <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
-        md:mb-4 ss:mb-4 mb-3 text-main">
+        md:mb-4 ss:mb-3 mb-2 text-main">
           Application
         </h3>
         <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
@@ -159,7 +159,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
 
       <div className="">
         <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
-        md:mb-4 ss:mb-4 mb-3 text-main">
+        md:mb-4 ss:mb-3 mb-2 text-main">
           Price
         </h3>
         <div className="flex flex-col bg-main2 p-4 rounded-lg">
@@ -181,7 +181,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
 
       <div className="">
         <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
-        md:mb-4 ss:mb-4 mb-3 text-main">
+        md:mb-4 ss:mb-3 mb-2 text-main">
           Color
         </h3>
         <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
@@ -201,7 +201,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
 
       <div className="">
         <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
-        md:mb-4 ss:mb-4 mb-3 text-main">
+        md:mb-4 ss:mb-3 mb-2 text-main">
           Size
         </h3>
         <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
@@ -224,7 +224,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
 
       <div className="">
         <h3 className="md:text-[17px] ss:text-[17px] text-[15px] font-bold 
-        md:mb-4 ss:mb-4 mb-3 text-main">
+        md:mb-4 ss:mb-3 mb-2 text-main">
           Style and Pattern
         </h3>
         <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
