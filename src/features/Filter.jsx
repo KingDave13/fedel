@@ -315,7 +315,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
       <div className="">
         <div className="flex justify-between items-center md:mb-4 ss:mb-3 
         mb-2"
-        onClick={() => toggleVisibility('stylesandpatterns')}
+        onClick={() => toggleVisibility('stylesAndPatterns')}
         >
           <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
           text-main">
