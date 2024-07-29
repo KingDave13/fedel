@@ -132,8 +132,10 @@ body, html {
 .sticky-filter-main {
   position: -webkit-sticky; /* For Safari */
   position: sticky;
-  overflow-y: auto;
+  top: 0;
+  height: calc(100vh - 64px);
 }
+
 
 .sticky-filter {
   position: -webkit-sticky; /* For Safari */
