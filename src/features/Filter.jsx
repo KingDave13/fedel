@@ -142,7 +142,9 @@ const Filter = ({ products, updateFilteredProducts }) => {
 
       <div className="">
         <div className="flex justify-between items-center md:mb-4 ss:mb-3 
-        mb-2">
+        mb-2"
+        onClick={() => toggleVisibility('materials')}
+        >
           <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
           text-main">
             Material
@@ -153,27 +155,31 @@ const Filter = ({ products, updateFilteredProducts }) => {
           />
         </div>
 
-        <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
-          {attributes.materials.map(material => (
-            <label key={material} className="flex items-center gap-1 mb-0.5">
-              <input
-                type="checkbox"
-                checked={filterValues.materials.includes(material)}
-                onChange={() => handleFilterChange('materials', material)}
-                className="md:mr-2 ss:mr-2 mr-1 cursor-pointer"
-              />
-             <span className="md:text-[15px] ss:text-[15px] text-[13px] 
-              font-medium">
-                {material}
-              </span>
-            </label>
-          ))}
-        </div>
+        {visibility.materials && (
+          <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
+            {attributes.materials.map(material => (
+              <label key={material} className="flex items-center gap-1 mb-0.5">
+                <input
+                  type="checkbox"
+                  checked={filterValues.materials.includes(material)}
+                  onChange={() => handleFilterChange('materials', material)}
+                  className="md:mr-2 ss:mr-2 mr-1 cursor-pointer"
+                />
+              <span className="md:text-[15px] ss:text-[15px] text-[13px] 
+                font-medium">
+                  {material}
+                </span>
+              </label>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="">
         <div className="flex justify-between items-center md:mb-4 ss:mb-3 
-        mb-2">
+        mb-2"
+        onClick={() => toggleVisibility('applications')}
+        >
           <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
           text-main">
             Application
@@ -184,28 +190,32 @@ const Filter = ({ products, updateFilteredProducts }) => {
           />
         </div>
 
-        <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
-          {attributes.applications.map(application => (
-            <label key={application} className="flex items-center gap-1 
-            mb-0.5">
-              <input
-                type="checkbox"
-                checked={filterValues.applications.includes(application)}
-                onChange={() => handleFilterChange('applications', application)}
-                className="md:mr-2 ss:mr-2 mr-1 cursor-pointer"
-              />
-              <span className="md:text-[15px] ss:text-[15px] text-[13px] 
-              font-medium">
-                {application}
-              </span>
-            </label>
-          ))}
-        </div>
+        {visibility.applications && (
+          <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
+            {attributes.applications.map(application => (
+              <label key={application} className="flex items-center gap-1 
+              mb-0.5">
+                <input
+                  type="checkbox"
+                  checked={filterValues.applications.includes(application)}
+                  onChange={() => handleFilterChange('applications', application)}
+                  className="md:mr-2 ss:mr-2 mr-1 cursor-pointer"
+                />
+                <span className="md:text-[15px] ss:text-[15px] text-[13px] 
+                font-medium">
+                  {application}
+                </span>
+              </label>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="">
         <div className="flex justify-between items-center md:mb-4 ss:mb-3 
-        mb-2">
+        mb-2"
+        onClick={() => toggleVisibility('price')}
+        >
           <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
           text-main">
             Price
@@ -216,26 +226,30 @@ const Filter = ({ products, updateFilteredProducts }) => {
           />
         </div>
 
-        <div className="flex flex-col bg-main2 p-4 rounded-lg">
-          <div className="">
-            <Slider
-              range
-              min={0}
-              max={275000}
-              defaultValue={[filterValues.price.min, filterValues.price.max]}
-              onChange={(values) => handleFilterChange("price", { min: values[0], max: values[1] })}
-            />
+        {visibility.price && (
+          <div className="flex flex-col bg-main2 p-4 rounded-lg">
+            <div className="">
+              <Slider
+                range
+                min={0}
+                max={275000}
+                defaultValue={[filterValues.price.min, filterValues.price.max]}
+                onChange={(values) => handleFilterChange("price", { min: values[0], max: values[1] })}
+              />
+            </div>
+            <div className="flex justify-between text-[14px] mt-2">
+              <span>{`N${filterValues.price.min}`}</span>
+              <span>{`N${filterValues.price.max}`}</span>
+            </div>
           </div>
-          <div className="flex justify-between text-[14px] mt-2">
-            <span>{`N${filterValues.price.min}`}</span>
-            <span>{`N${filterValues.price.max}`}</span>
-          </div>
-        </div>
+        )}
       </div>
 
       <div className="">
         <div className="flex justify-between items-center md:mb-4 ss:mb-3 
-        mb-2">
+        mb-2"
+        onClick={() => toggleVisibility('colors')}
+        >
           <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
           text-main">
             Colour
@@ -245,25 +259,29 @@ const Filter = ({ products, updateFilteredProducts }) => {
             className='text-main text-[18px]'
           />
         </div>
-
-        <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
-          {attributes.colors.map(color => (
-            <label key={color} className="flex items-center gap-1">
-              <input
-                type="checkbox"
-                checked={filterValues.colors.includes(color)}
-                onChange={() => handleFilterChange('colors', color)}
-                className="mr-2 cursor-pointer"
-              />
-              {color}
-            </label>
-          ))}
-        </div>
+        
+        {visibility.colors && (
+          <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
+            {attributes.colors.map(color => (
+              <label key={color} className="flex items-center gap-1">
+                <input
+                  type="checkbox"
+                  checked={filterValues.colors.includes(color)}
+                  onChange={() => handleFilterChange('colors', color)}
+                  className="mr-2 cursor-pointer"
+                />
+                {color}
+              </label>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="">
         <div className="flex justify-between items-center md:mb-4 ss:mb-3 
-        mb-2">
+        mb-2"
+        onClick={() => toggleVisibility('sizes')}
+        >
           <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
           text-main">
             Size
@@ -274,27 +292,31 @@ const Filter = ({ products, updateFilteredProducts }) => {
           />
         </div>
 
-        <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
-          {attributes.sizes.map(size => (
-            <label key={size} className="flex items-center gap-1 mb-0.5">
-              <input
-                type="checkbox"
-                checked={filterValues.sizes.includes(size)}
-                onChange={() => handleFilterChange('sizes', size)}
-                className="md:mr-2 ss:mr-2 mr-1 cursor-pointer"
-              />
-             <span className="md:text-[15px] ss:text-[15px] text-[13px] 
-              font-medium">
-                {size}
-              </span>
-            </label>
-          ))}
-        </div>
+        {visibility.sizes && (
+          <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
+            {attributes.sizes.map(size => (
+              <label key={size} className="flex items-center gap-1 mb-0.5">
+                <input
+                  type="checkbox"
+                  checked={filterValues.sizes.includes(size)}
+                  onChange={() => handleFilterChange('sizes', size)}
+                  className="md:mr-2 ss:mr-2 mr-1 cursor-pointer"
+                />
+              <span className="md:text-[15px] ss:text-[15px] text-[13px] 
+                font-medium">
+                  {size}
+                </span>
+              </label>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="">
         <div className="flex justify-between items-center md:mb-4 ss:mb-3 
-        mb-2">
+        mb-2"
+        onClick={() => toggleVisibility('stylesandpatterns')}
+        >
           <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
           text-main">
             Style and Pattern
@@ -304,24 +326,26 @@ const Filter = ({ products, updateFilteredProducts }) => {
             className='text-main text-[18px]'
           />
         </div>
-
-        <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
-          {attributes.stylesAndPatterns.map(styleAndPattern => (
-            <label key={styleAndPattern} className="flex items-center 
-            gap-1 mb-0.5">
-              <input
-                type="checkbox"
-                checked={filterValues.stylesAndPatterns.includes(styleAndPattern)}
-                onChange={() => handleFilterChange('stylesAndPatterns', styleAndPattern)}
-                className="md:mr-2 ss:mr-2 mr-1 cursor-pointer"
-              />
-              <span className="md:text-[15px] ss:text-[15px] text-[13px] 
-              font-medium">
-                {styleAndPattern}
-              </span>
-            </label>
-          ))}
-        </div>
+        
+        {visibility.stylesAndPatterns && (
+          <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
+            {attributes.stylesAndPatterns.map(styleAndPattern => (
+              <label key={styleAndPattern} className="flex items-center 
+              gap-1 mb-0.5">
+                <input
+                  type="checkbox"
+                  checked={filterValues.stylesAndPatterns.includes(styleAndPattern)}
+                  onChange={() => handleFilterChange('stylesAndPatterns', styleAndPattern)}
+                  className="md:mr-2 ss:mr-2 mr-1 cursor-pointer"
+                />
+                <span className="md:text-[15px] ss:text-[15px] text-[13px] 
+                font-medium">
+                  {styleAndPattern}
+                </span>
+              </label>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
