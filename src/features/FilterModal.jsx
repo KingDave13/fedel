@@ -3,6 +3,11 @@ import { filter } from '../assets';
 
 const FilterModal = ({ isOpen, onClose, children }) => {
     if (!isOpen) return null;
+
+    const enableScroll = () => {
+        document.body.style.overflow = 'auto';
+        document.body.style.top = '0';
+    };
   
     return (
         <AnimatePresence>
@@ -13,7 +18,7 @@ const FilterModal = ({ isOpen, onClose, children }) => {
                 exit={{ opacity: 0 }}
                 className="fixed inset-0 flex items-center justify-center
                 bg-black bg-opacity-80 z-50">
-                    <motion.div 
+                    <motion.div
                     initial={{ y: 0, opacity: 0.7 }}
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: 10, opacity: 0 }}
@@ -52,7 +57,11 @@ const FilterModal = ({ isOpen, onClose, children }) => {
                             ss:text-[14px] text-[12px] py-3.5 
                             text-center text-main rounded-md
                             cursor-pointer ss:w-[170px] w-full'
-                            onClick={onClose}>
+                            onClick ={() => {
+                                onClose();
+                                enableScroll();
+                            }}
+                            >
                                 Close
                             </button>
                         </div>

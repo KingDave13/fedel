@@ -228,6 +228,14 @@ const Product = ({ products, categorySlug }) => {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
+    const [scrollPosition, setScrollPosition] = useState(0);
+
+    const disableScroll = () => {
+      setScrollPosition(window.pageYOffset);
+      document.body.style.overflow = 'hidden';
+      document.body.style.top = `-${scrollPosition}px`;
+    };
+
     useEffect(() => {
         if (window.innerWidth <= 1060) {
             setIsFilterVisible(false);
@@ -261,6 +269,7 @@ const Product = ({ products, categorySlug }) => {
     const toggleFilterVisibility = () => {
         if (isMobile) {
             setIsModalOpen(true);
+            disableScroll();
         }
         setIsFilterVisible(prev => !prev);
     };
