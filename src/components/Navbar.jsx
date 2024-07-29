@@ -26,7 +26,6 @@ const toggleMenu = (id) => {
     setOpenMenuId((prevId) => (prevId === id ? null : id));
 };
 
-
 useEffect(() => {
     const handleClickOutside = (event) => {
         if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -48,9 +47,9 @@ useEffect(() => {
           { pageLanguage: 'en' },
           'google_translate_element'
         );
-        clearInterval(intervalId); // Clear the interval once TranslateElement is initialized
+        clearInterval(intervalId);
       }
-    }, 1000); // Check every 1 second
+    }, 1000);
 
     return () => clearInterval(intervalId);
   }, []);
@@ -259,14 +258,18 @@ useEffect(() => {
                                     size={38}
                                     className="object-contain cursor-pointer"
                                     style={{ color: '#050759' }}
-                                    onClick={() => setToggle(!toggle)}
+                                    onClick={() => {
+                                        setToggle(!toggle);
+                                    }}
                                 />
                                 ) : (
                                 <IoMenu
                                     size={38}
                                     className="object-contain cursor-pointer"
                                     style={{ color: '#050759' }}
-                                    onClick={() => setToggle(!toggle)}
+                                    onClick={() => {
+                                        setToggle(!toggle);
+                                    }}
                                 />
                             )}
                         </div>
