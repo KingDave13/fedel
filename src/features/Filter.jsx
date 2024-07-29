@@ -24,6 +24,16 @@ const Filter = ({ products, updateFilteredProducts }) => {
     price: { min: 0, max: 275000 },
   });
 
+  const [visibility, setVisibility] = useState({
+    types: true,
+    materials: true,
+    applications: true,
+    colors: true,
+    sizes: true,
+    stylesAndPatterns: true,
+    price: true,
+  });
+  
   useEffect(() => {
     const uniqueAttributes = {
       types: new Set(),
@@ -86,11 +96,20 @@ const Filter = ({ products, updateFilteredProducts }) => {
     applyFilters();
   }, [filterValues, products, updateFilteredProducts]);
 
+  const toggleVisibility = (section) => {
+    setVisibility((prevVisibility) => ({
+      ...prevVisibility,
+      [section]: !prevVisibility[section],
+    }));
+  };
+
   return (
     <div className="flex flex-col w-full md:gap-6 ss:gap-5 gap-4">
       <div className="">
         <div className="flex justify-between items-center md:mb-4 ss:mb-3 
-        mb-2">
+        mb-2"
+        onClick={() => toggleVisibility('types')}
+        >
           <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
           text-main">
             Type
@@ -101,22 +120,24 @@ const Filter = ({ products, updateFilteredProducts }) => {
           />
         </div>
         
-        <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
-          {attributes.types.map(type => (
-            <label key={type} className="flex items-center gap-1 mb-0.5">
-              <input
-                type="checkbox"
-                checked={filterValues.types.includes(type)}
-                onChange={() => handleFilterChange('types', type)}
-                className="md:mr-2 ss:mr-2 mr-1 cursor-pointer"
-              />
-              <span className="md:text-[15px] ss:text-[15px] text-[13px] 
-              font-medium">
-                {type}
-              </span>
-            </label>
-          ))}
-        </div>
+        {visibility.types && (
+          <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
+            {attributes.types.map(type => (
+              <label key={type} className="flex items-center gap-1 mb-0.5">
+                <input
+                  type="checkbox"
+                  checked={filterValues.types.includes(type)}
+                  onChange={() => handleFilterChange('types', type)}
+                  className="md:mr-2 ss:mr-2 mr-1 cursor-pointer"
+                />
+                <span className="md:text-[15px] ss:text-[15px] text-[13px] 
+                font-medium">
+                  {type}
+                </span>
+              </label>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="">
