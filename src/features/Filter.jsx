@@ -107,7 +107,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
     <div className="flex flex-col w-full md:gap-6 ss:gap-5 gap-4">
       <div className="">
         <div className="flex justify-between items-center md:mb-4 ss:mb-3 
-        mb-2"
+        mb-2 cursor-pointer"
         onClick={() => toggleVisibility('types')}
         >
           <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
@@ -142,7 +142,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
 
       <div className="">
         <div className="flex justify-between items-center md:mb-4 ss:mb-3 
-        mb-2"
+        mb-2 cursor-pointer"
         onClick={() => toggleVisibility('materials')}
         >
           <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
@@ -177,7 +177,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
 
       <div className="">
         <div className="flex justify-between items-center md:mb-4 ss:mb-3 
-        mb-2"
+        mb-2 cursor-pointer"
         onClick={() => toggleVisibility('applications')}
         >
           <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
@@ -213,7 +213,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
 
       <div className="">
         <div className="flex justify-between items-center md:mb-4 ss:mb-3 
-        mb-2"
+        mb-2 cursor-pointer"
         onClick={() => toggleVisibility('price')}
         >
           <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
@@ -247,7 +247,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
 
       <div className="">
         <div className="flex justify-between items-center md:mb-4 ss:mb-3 
-        mb-2"
+        mb-2 cursor-pointer"
         onClick={() => toggleVisibility('colors')}
         >
           <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
@@ -279,7 +279,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
 
       <div className="">
         <div className="flex justify-between items-center md:mb-4 ss:mb-3 
-        mb-2"
+        mb-2 cursor-pointer"
         onClick={() => toggleVisibility('sizes')}
         >
           <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
@@ -314,7 +314,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
 
       <div className="">
         <div className="flex justify-between items-center md:mb-4 ss:mb-3 
-        mb-2"
+        mb-2 cursor-pointer"
         onClick={() => toggleVisibility('stylesAndPatterns')}
         >
           <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
