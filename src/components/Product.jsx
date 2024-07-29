@@ -341,8 +341,8 @@ const Product = ({ products, categorySlug }) => {
     <section className='relative w-full md:min-h-[500px] ss:min-h-[2000px] 
     min-h-[500px] mx-auto flex items-center md:mb-0 ss:mb-5 mb-5'>
         <div className='max-w-[86rem] mx-auto flex flex-col w-full'>
-            <div className="flex md:flex-row flex-col w-full md:items-center 
-            justify-between mb-6">
+            <div className={`flex md:flex-row flex-col w-full md:items-center 
+            justify-between mb-6 sticky-filter`}>
                 <div className="flex-start flex gap-8 items-center md:mb-0
                 ss:mb-5 mb-3">
                     <div className={`${isFilterVisible ? 'bg-main3' 

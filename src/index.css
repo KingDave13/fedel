@@ -121,6 +121,40 @@ body, html {
   background-size: cover;
 }
 
+.sticky-filter {
+  position: -webkit-sticky; /* For Safari */
+  position: sticky;
+  top: 160px;
+  z-index: 10;
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+@media (max-width: 1024px) {
+  .sticky-filter {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 100px;
+    z-index: 10;
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sticky-filter {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 85px;
+    z-index: 10;
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
 @media (max-width: 480px) {
   .phone {
     position: sticky;
