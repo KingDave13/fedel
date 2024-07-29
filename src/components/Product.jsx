@@ -414,7 +414,7 @@ const Product = ({ products, categorySlug }) => {
                 </div>
             </div>
 
-            <div className="flex w-full">
+            <div className="flex w-full relative">
                 {isFilterVisible && (
                     isMobile ? (
                         <FilterModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>

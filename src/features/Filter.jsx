@@ -104,7 +104,8 @@ const Filter = ({ products, updateFilteredProducts }) => {
   };
 
   return (
-    <div className="flex flex-col w-full md:gap-6 ss:gap-5 gap-4">
+    <div className="flex flex-col w-full md:gap-6 ss:gap-5 gap-4 
+    sticky-filter-main">
       <div className="">
         <div className="flex justify-between items-center md:mb-4 ss:mb-3 
         mb-2 cursor-pointer"
