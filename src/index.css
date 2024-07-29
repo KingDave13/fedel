@@ -121,6 +121,14 @@ body, html {
   background-size: cover;
 }
 
+@media (min-width: 1024px) {
+  .sticky-cart {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 175px;
+  }
+}
+
 .sticky-filter {
   position: -webkit-sticky; /* For Safari */
   position: sticky;

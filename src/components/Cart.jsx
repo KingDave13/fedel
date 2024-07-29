@@ -151,9 +151,9 @@ const Cart = () => {
                             ))}
                         </div>
                         
-                        <div>
+                        <div className=''>
                             <div className='bg-main2 md:p-7 ss:p-7 p-4 
-                            flex flex-col md:gap-3 ss:gap-3 gap-2 
+                            flex flex-col md:gap-3 ss:gap-3 gap-2 sticky-cart
                             md:rounded-2xl ss:rounded-2xl rounded-xl'>
                                 <h2 className='text-main font-bold 
                                 md:text-[18px] ss:text-[18px] text-[15px]'>
