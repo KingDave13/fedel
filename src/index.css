@@ -125,7 +125,7 @@ body, html {
   .sticky-cart {
     position: -webkit-sticky; /* For Safari */
     position: sticky;
-    top: 210px;
+    top: 175px;
   }
 }
 
