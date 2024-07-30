@@ -368,14 +368,19 @@ useEffect(() => {
                                         ss:text-[23px] text-[20px]' 
                                     />
 
-                                    <FiMail className='text-main 
-                                        ss:text-[23px] text-[20px]' 
-                                    />
+                                    <a href='mailto:fedeltileslimited@gmail.com'>
+                                        <FiMail className='text-main 
+                                            ss:text-[23px] text-[20px]' 
+                                        />
+                                    </a>
 
-                                    <RiWhatsappLine 
-                                        className='text-main ss:text-[23px] 
-                                        text-[20px]' 
-                                    />
+                                    <a href='https://wa.me/2349169861311' 
+                                    target='_blank' rel="noreferrer">
+                                        <RiWhatsappLine 
+                                            className='text-main ss:text-[23px] 
+                                            text-[20px]' 
+                                        />
+                                     </a>
                                 </div>
                             </div>
                         </div>
