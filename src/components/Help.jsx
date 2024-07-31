@@ -78,7 +78,7 @@ const Help = () => {
                 setLoading(true);
 
                 const message = `Name: ${formik.values.name}\nSubject: ${formik.values.subject}\nMessage: ${formik.values.message}`;
-                const whatsappLink = `https://wa.me/2349014452743?text=${encodeURIComponent(message)}`;
+                const whatsappLink = `https://wa.me/2349169861311?text=${encodeURIComponent(message)}`;
 
                 window.open(whatsappLink, "_blank");
 
