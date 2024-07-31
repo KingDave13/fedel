@@ -71,8 +71,8 @@ const Checkout = () => {
             }
         
             const cartItemsText = cartItems.map((item) => {
-                return `${item.name} x ${item.quantity} ${item.type} ${item.manufacturer} ${item.variations} - N${item.price.toLocaleString()}`;
-            }).join("\n");
+                return `Name: ${item.name} x ${item.quantity} \nType: ${item.type} \nManufacturer: ${item.manufacturer} \nVariations: ${item.variations} \nPrice- N${item.price.toLocaleString()}`;
+            }).join("\n\n");
             
             
             const formDataText = `Name: ${formik.values.name}\nEmail: ${formik.values.email}\nPhone: ${formik.values.phone}\nState: ${formik.values.state}`;
