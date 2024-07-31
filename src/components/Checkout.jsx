@@ -42,7 +42,8 @@ const OrderSuccessModal = ({ isVisible }) => {
 
                         <p className='text-main md:text-[14px] ss:text-[14px] 
                         text-[12px] font-medium md:mb-8 ss:mb-8 mb-6 text-center
-                        md:max-w-[400px] ss:max-w-[400px] max-w-[300px]'>
+                        md:max-w-[400px] ss:max-w-[400px] max-w-[300px]
+                        md:leading-[19px] ss:leading-[18px] leading-[17px]'>
                             Your order has been placed successfully! An 
                             email will be sent to you acknowledging this 
                             and we will then respond to you swiftly to 
@@ -51,8 +52,7 @@ const OrderSuccessModal = ({ isVisible }) => {
 
                         <p className='text-main3 md:text-[13px] ss:text-[13px] 
                         text-[11px] text-center'>
-                            Redirecting back to 
-                            <span className='text-secondary font-medium'>
+                            Redirecting back to <span className='text-secondary font-medium'>
                                 Products</span>...
                         </p>
                     </div>
