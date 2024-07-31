@@ -81,7 +81,7 @@ const Checkout = () => {
             const orderSummaryText = `Items total: N${totalAmount.toLocaleString()}\nVAT (7.5%): N${vat.toLocaleString()}\nSubtotal: N${subtotal.toLocaleString()}`;
             
             // Combine all the data into a single message
-            const message = `Order Details:\n\n${formDataText}\n\n${cartItemsText}\n\n${orderSummaryText}`;
+            const message = `Order Details:\n\nBuyer Information:\n${formDataText}\n\nItems:\n${cartItemsText}\n\nOrder Summary:\n${orderSummaryText}`;
         
             const whatsappLink = `https://wa.me/2349014452743?text=${encodeURIComponent(message)}`;
             
