@@ -12,6 +12,7 @@ import * as Yup from 'yup';
 const Help = () => {
     const formRef = useRef();
     const [Loading, setLoading] = useState(false);
+    const [buttonText, setButtonText] = useState('Send via WhatsApp');
 
     const formik = useFormik({
         initialValues: {
@@ -62,7 +63,37 @@ const Help = () => {
         //         }
         //     );
         // },
+        onSubmit: (values) => {
+            formik.validateForm().then((errors) => {
+                if (Object.keys(errors).length > 0) {
+                    formik.setTouched({
+                        name: true,
+                        subject: true,
+                        message: true,
+                    });
+                    alert("Please complete all required form fields.");
+                    return;
+                }
+
+                setLoading(true);
+
+                const message = `Name: ${formik.values.name}\nSubject: ${formik.values.subject}\nMessage: ${formik.values.message}`;
+                const whatsappLink = `https://wa.me/2349014452743?text=${encodeURIComponent(message)}`;
+
+                window.open(whatsappLink, "_blank");
+
+                setButtonText('Sent Message');
+                setLoading(false);
+
+                setTimeout(() => {
+                    formik.resetForm();
+                    setButtonText('Send via WhatsApp');
+                }, 3000);
+            });
+        },
     });
+
+  
 
     return (
         <section className="w-full md:min-h-[550px] ss:min-h-[600px] 
@@ -188,7 +219,7 @@ const Help = () => {
                                 ss:text-[14px] text-[12px] py-3
                                 text-white rounded-lg border-none"
                                 >
-                                    {Loading ? 'Sending...' : 'Send via WhatsApp'}
+                                    {Loading ? 'Sending...' : buttonText}
                                 </button>
                             </div>
                         </form>
