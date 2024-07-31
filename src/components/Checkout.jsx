@@ -15,6 +15,12 @@ const Checkout = () => {
     const vat = totalAmount * 0.075;
     const subtotal = totalAmount + vat;
 
+    const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
+
+    const handleCheckboxChange = (e) => {
+        setIsCheckboxChecked(e.target.checked);
+    };
+
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
 
     useEffect(() => {
@@ -43,9 +49,46 @@ const Checkout = () => {
             email: Yup.string().email('Invalid email address.').required('Email is required.'),
             phone: Yup.string().required('WhatsApp phone number is required.'),
         }),
-
-
     });
+
+    const handleWhatsAppOrder = () => {
+        formik.validateForm().then((errors) => {
+
+            if (Object.keys(errors).length > 0) {
+                formik.setTouched({
+                    state: true,
+                    name: true,
+                    email: true,
+                    phone: true,
+                });
+                alert("Please complete all required form fields.");
+                return;
+            }
+    
+            if (!isCheckboxChecked) {
+                alert("Please agree to the Privacy Policy and Terms of Usage.");
+                return;
+            }
+        
+            const cartItemsText = cartItems.map((item) => {
+                return `${item.name} x ${item.quantity} ${item.type} ${item.manufacturer} ${item.variations} - N${item.price.toLocaleString()}`;
+            }).join("\n");
+            
+            
+            const formDataText = `Name: ${formik.values.name}\nEmail: ${formik.values.email}\nPhone: ${formik.values.phone}\nState: ${formik.values.state}`;
+            
+            
+            const orderSummaryText = `Items total: N${totalAmount.toLocaleString()}\nVAT (7.5%): N${vat.toLocaleString()}\nSubtotal: N${subtotal.toLocaleString()}`;
+            
+            // Combine all the data into a single message
+            const message = `Order Details:\n\n${formDataText}\n\n${cartItemsText}\n\n${orderSummaryText}`;
+        
+            const whatsappLink = `https://wa.me/2349014452743?text=${encodeURIComponent(message)}`;
+            
+            window.open(whatsappLink, "_blank");
+        });
+    };
+
 
     return (
         <section className='relative w-full min-h-[60px] mx-auto flex
@@ -342,6 +385,8 @@ const Checkout = () => {
                                         <input
                                             type='checkbox'
                                             className='cursor-pointer'
+                                            checked={isCheckboxChecked}
+                                            onChange={handleCheckboxChange}
                                         />
                                         <p className='text-main md:text-[12px]
                                         ss:text-[12px] text-[11px]'>
@@ -366,7 +411,9 @@ const Checkout = () => {
                                     <button className='bg-greenDeep md:text-[14px] 
                                     ss:text-[14px] text-[12px] text-center 
                                     text-white rounded-lg grow2 cursor-pointer 
-                                    md:w-[200px] ss:w-[200px] w-full py-3.5'>
+                                    md:w-[200px] ss:w-[200px] w-full py-3.5'
+                                    onClick={handleWhatsAppOrder}
+                                    >
                                         Place via WhatsApp
                                     </button>
                                 </div>
@@ -559,6 +606,8 @@ const Checkout = () => {
                                         <input
                                             type='checkbox'
                                             className='cursor-pointer'
+                                            checked={isCheckboxChecked}
+                                            onChange={handleCheckboxChange}
                                         />
                                         <p className='text-main md:text-[12px]
                                         ss:text-[12px] text-[11px]'>
@@ -583,7 +632,9 @@ const Checkout = () => {
                                     <button className='bg-greenDeep md:text-[14px] 
                                     ss:text-[14px] text-[12px] text-center 
                                     text-white rounded-lg grow2 cursor-pointer 
-                                    md:w-[200px] ss:w-[200px] w-full py-3.5'>
+                                    md:w-[200px] ss:w-[200px] w-full py-3.5'
+                                    onClick={handleWhatsAppOrder}
+                                    >
                                         Place via WhatsApp
                                     </button>
                                 </div>
