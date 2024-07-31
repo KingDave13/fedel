@@ -68,8 +68,9 @@ const Filter = ({ products, updateFilteredProducts }) => {
   const handleFilterChange = (fieldName, value) => {
     setFilterValues((prevValues) => {
       if (fieldName === "price") {
-        return { ...prevValues, [fieldName]: value };
+        return { ...prevValues, [fieldName]: { min: value[0], max: value[1] } };
       }
+      
       const newValue = prevValues[fieldName].includes(value)
         ? prevValues[fieldName].filter((item) => item !== value)
         : [...prevValues[fieldName], value];

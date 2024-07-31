@@ -333,9 +333,9 @@ const Product = ({ products, categorySlug }) => {
     }, []);
     
     useEffect(() => {
-        setFilteredProducts([...products]);
+        setFilteredProducts(products);
     }, [products]);
-  
+      
 
   return (
     <section className='relative w-full md:min-h-[500px] ss:min-h-[2000px] 
