@@ -1,12 +1,66 @@
 import { useState, useEffect } from 'react';
 import { SectionWrapperAlt } from '../hoc';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useFormik } from "formik";
 import { TiArrowSortedDown } from "react-icons/ti";
 import * as Yup from 'yup';
-import { arrowRight } from '../assets';
+import { arrowRight, shoppingGood } from '../assets';
+import { clearCart  } from '../redux/cartSlice';
 import { HiOutlineInformationCircle } from 'react-icons/hi2';
+import { useNavigate } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 
+const OrderSuccessModal = ({ isVisible }) => {
+    if (!isVisible) return null;
+
+    return (
+        <AnimatePresence>
+            <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 flex items-center justify-center
+            bg-black bg-opacity-80 z-50">
+                <motion.div 
+                initial={{ y: 0, opacity: 0.7 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: 10, opacity: 0 }}
+                transition={{ duration: 0.1 }}
+                className="bg-white md:p-12 ss:p-10 p-6 rounded-2xl 
+                shadow-xl flex flex-col justify-center w-auto h-auto 
+                items-center md:m-0 ss:m-16 m-6">
+                    <div className='flex flex-col w-full items-center'>
+                        <img src={shoppingGood} 
+                            alt='orderSuccess'
+                            className='w-[60px] h-auto md:mb-6 ss:mb-6 mb-5' 
+                        />
+
+                        <h1 className='font-semibold text-primary md:text-[27px]
+                        ss:text-[23px] text-[20px] mb-2'>
+                            Order Placed Successfully
+                        </h1>
+
+                        <p className='text-main md:text-[14px] ss:text-[14px] 
+                        text-[12px] font-medium md:mb-8 ss:mb-8 mb-6 text-center
+                        md:max-w-[400px] ss:max-w-[400px] max-w-[300px]'>
+                            Your order has been placed successfully! An 
+                            email will be sent to you acknowledging this 
+                            and we will then respond to you swiftly to 
+                            discuss the next steps.
+                        </p>
+
+                        <p className='text-main3 md:text-[13px] ss:text-[13px] 
+                        text-[11px] text-center'>
+                            Redirecting back to 
+                            <span className='text-secondary font-medium'>
+                                Products</span>...
+                        </p>
+                    </div>
+                </motion.div>
+            </motion.div>
+        </AnimatePresence>
+    );
+};
 
 const Checkout = () => {
     const cartItems = useSelector((state) => state.cart.items);
@@ -16,6 +70,11 @@ const Checkout = () => {
     const subtotal = totalAmount + vat;
 
     const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const [orderSuccess, setOrderSuccess] = useState(false);
 
     const handleCheckboxChange = (e) => {
         setIsCheckboxChecked(e.target.checked);
@@ -77,7 +136,6 @@ const Checkout = () => {
             
             const formDataText = `Name: ${formik.values.name}\nEmail: ${formik.values.email}\nPhone: ${formik.values.phone}\nState: ${formik.values.state}`;
             
-            
             const orderSummaryText = `Items total: N${totalAmount.toLocaleString()}\nVAT (7.5%): N${vat.toLocaleString()}\nSubtotal: N${subtotal.toLocaleString()}`;
             
             // Combine all the data into a single message
@@ -86,6 +144,14 @@ const Checkout = () => {
             const whatsappLink = `https://wa.me/2349014452743?text=${encodeURIComponent(message)}`;
             
             window.open(whatsappLink, "_blank");
+
+            setOrderSuccess(true);
+
+            setTimeout(() => {
+                dispatch(clearCart());
+                setOrderSuccess(false);
+                navigate('/products');
+            }, 15000);
         });
     };
 
@@ -96,6 +162,13 @@ const Checkout = () => {
         md:mb-0 ss:mb-12 mb-4'>
             <div className='max-w-[86rem] mx-auto flex flex-col md:gap-8
             ss:gap-8 gap-6 w-full'>
+
+                {orderSuccess && (
+                    <OrderSuccessModal
+                        isVisible={orderSuccess}
+                    />
+                )}
+
                 <h1 className='text-primary font-bold md:text-[22px]
                 ss:text-[20px] text-[17px]'>
                     Checkout

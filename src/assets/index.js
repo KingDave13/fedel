@@ -38,6 +38,7 @@ import add from './add.png';
 import subtract from './subtract.png';
 import pinterest from './pinterest.png';
 import threads from './threads.png';
+import shoppingGood from './shoppingGood.png';
 
 export {
     logo,
@@ -80,6 +81,7 @@ export {
     subtract,
     pinterest,
     threads,
+    shoppingGood,
 }
 
 export const heroImages = [
