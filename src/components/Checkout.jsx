@@ -141,7 +141,7 @@ const Checkout = () => {
             // Combine all the data into a single message
             const message = `Order Details:\n\nBuyer Information:\n${formDataText}\n\nItems:\n${cartItemsText}\n\nOrder Summary:\n${orderSummaryText}`;
         
-            const whatsappLink = `https://wa.me/2349014452743?text=${encodeURIComponent(message)}`;
+            const whatsappLink = `https://wa.me/2349169861311?text=${encodeURIComponent(message)}`;
             
             window.open(whatsappLink, "_blank");
 
