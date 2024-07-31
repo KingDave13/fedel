@@ -43,7 +43,7 @@ const OrderSuccessModal = ({ isVisible }) => {
                         <p className='text-main md:text-[14px] ss:text-[14px] 
                         text-[12px] font-medium md:mb-8 ss:mb-8 mb-6 text-center
                         md:max-w-[400px] ss:max-w-[400px] max-w-[300px]
-                        md:leading-[19px] ss:leading-[18px] leading-[17px]'>
+                        md:leading-[19px] ss:leading-[18px] leading-[16px]'>
                             Your order has been placed successfully! An 
                             email will be sent to you acknowledging this 
                             and we will then respond to you swiftly to 
@@ -151,7 +151,7 @@ const Checkout = () => {
                 dispatch(clearCart());
                 setOrderSuccess(false);
                 navigate('/products');
-            }, 15000);
+            }, 4000);
         });
     };
 
