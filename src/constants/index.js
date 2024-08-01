@@ -206,6 +206,48 @@ export const navLinks = [
         ],
     },
     {
+        id: "floorandwall",
+        title: "Floor and Wall Materials",
+        links: [
+            {
+                name: "Hardwood",
+                route: "",
+            },
+            {
+                name: "Laminate",
+                route: "",
+            },
+            {
+                name: "Vinyl",
+                route: "",
+            },
+            {
+                name: "Carpet",
+                route: "",
+            },
+            {
+                name: "Urinals",
+                route: "",
+            },
+            {
+                name: "Paint",
+                route: "",
+            },
+            {
+                name: "Wallpaper",
+                route: "",
+            },
+            {
+                name: "Wood Panelling",
+                route: "",
+            },
+            {
+                name: "Wainscoting",
+                route: "",
+            },
+        ],
+    },
+    {
         id: "more",
         title: "More Products",
         links: [
