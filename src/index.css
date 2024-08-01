@@ -30,11 +30,15 @@ body, html {
 
 
 .goog-te-combo {
- padding: 5px;
+ padding: 3px;
 }
 
 .goog-te-gadget span {
   display: none; 
+}
+
+.goog-te-gadget {
+  font-size: 11px;
 }
 
 .custom-select {
