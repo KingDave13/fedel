@@ -34,8 +34,15 @@ const cartSlice = createSlice({
                 item.quantity -= 1;
             }
         },
+        updateQuantity: (state, action) => {
+            const { id, quantity } = action.payload;
+            const item = state.items.find(item => item.id === id);
+            if (item) {
+                item.quantity = Math.max(1, quantity);
+            }
+        },
     },
 });
 
-export const { addToCart, removeFromCart, clearCart, incrementQuantity, decrementQuantity } = cartSlice.actions;
+export const { addToCart, removeFromCart, clearCart, incrementQuantity, decrementQuantity, updateQuantity } = cartSlice.actions;
 export default cartSlice.reducer;

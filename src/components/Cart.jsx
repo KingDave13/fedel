@@ -1,14 +1,26 @@
 import { motion } from 'framer-motion';
 import { fadeIn } from '../utils/motion';
 import { SectionWrapperAlt } from '../hoc';
+import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeFromCart, clearCart, incrementQuantity, decrementQuantity } from '../redux/cartSlice';
+import { removeFromCart, clearCart, incrementQuantity, decrementQuantity, updateQuantity } from '../redux/cartSlice';
 import { add, subtract, trash } from '../assets';
 import { urlFor } from '../sanity';
 
 const ItemCard = ({ item, index, image }) => {
     const imageUrl = urlFor(image).url();
     const dispatch = useDispatch();
+    const [quantity, setQuantity] = useState(item.quantity);
+
+    useEffect(() => {
+        setQuantity(item.quantity);
+    }, [item.quantity]);
+
+    const handleQuantityChange = (e) => {
+        const newQuantity = Math.max(1, parseInt(e.target.value, 10 || 1));
+        setQuantity(newQuantity);
+        dispatch(updateQuantity({ id: item.id, quantity: newQuantity }));
+    };
 
     return (
         <motion.div variants={fadeIn('', 'spring', index * 0.5, 0.75)}>
@@ -98,9 +110,14 @@ const ItemCard = ({ item, index, image }) => {
                             onClick={() => dispatch(incrementQuantity(item.id))}
                         />
 
-                        <p className='text-main font-semibold text-[14px]'>
-                            {item.quantity}
-                        </p>
+                        <input
+                            type='number'
+                            min='1'
+                            value={quantity}
+                            onChange={handleQuantityChange}
+                            className='text-main font-semibold text-[14px] 
+                            border-search'>
+                        </input>
 
                         <img
                             src={subtract}
