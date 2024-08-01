@@ -130,9 +130,16 @@ const TargetedSearch = () => {
                                 bg-transparent w-full custom-select"
                             >
                                 <option value="" disabled hidden>Select a product</option>
-                                {/* <option value="social_media">Social Media</option>
-                                <option value="from_friend">From a friend</option>
-                                <option value="other">Other</option> */}
+                                <option value="Tiles">Tiles</option>
+                                <option value="Marble">Marble</option>
+                                <option value="Granite">Granite</option>
+                                <option value="MarbleSlab">Marble Slab</option>
+                                <option value="GraniteSlab">Granite Slab</option>
+                                <option value="Sanitary">Sanitary Wares</option>
+                                <option value="FloorWall">Floor and Wall Materials</option>
+                                <option value="Doors">Doors</option>
+                                <option value="Installation">Installation Services</option>
+                                <option value="Consultation">Consultation (Ask Questions)</option>
                             </select>
                             <div className='absolute md:right-3 
                             ss:right-3 right-2'>
