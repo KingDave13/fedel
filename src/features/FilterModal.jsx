@@ -25,7 +25,7 @@ const FilterModal = ({ isOpen, onClose, children }) => {
                     transition={{ duration: 0.1 }}
                     className="bg-white padphone rounded-md
                     shadow-xl flex flex-col ss:justify-center 
-                    w-full ss:h-auto h-[85%] overflow-auto 
+                    w-full ss:h-auto h-[90%] overflow-auto 
                     items-center relative ss:m-16 m-6">
                         <div className='flex bg-main2 w-full z-20
                         top-0 ss:p-8 p-4 items-center gap-3 phone3'>
