@@ -120,12 +120,12 @@ const ItemCard = ({ item, index, image }) => {
                         />
 
                         <input
-                            type='number'
+                            type='text'
                             min='1'
                             value={quantity}
                             onChange={handleQuantityChange}
                             className='text-main font-semibold text-[14px] 
-                            bg-transparent'>
+                            bg-transparent w-8 text-center'>
                         </input>
 
                         <img
