@@ -125,7 +125,7 @@ const ItemCard = ({ item, index, image }) => {
                             value={quantity}
                             onChange={handleQuantityChange}
                             className='text-main font-semibold text-[14px] 
-                            border-search'>
+                            bg-transparent'>
                         </input>
 
                         <img
