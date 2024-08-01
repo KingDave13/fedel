@@ -61,7 +61,7 @@ const Hero = () => {
       clearInterval(intervalId);
       window.removeEventListener('resize', handleResize);
     };
-  }, [isMobile]);
+  }, [images.length, isMobile]);
 
   return (
     <section className='relative w-full md:min-h-[700px] ss:min-h-[800px] 

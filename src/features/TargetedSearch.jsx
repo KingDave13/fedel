@@ -200,9 +200,13 @@ const TargetedSearch = () => {
                                 bg-transparent w-full custom-select"
                             >
                                 <option value="" disabled hidden>Select a price range</option>
-                                {/* <option value="social_media">Social Media</option>
-                                <option value="from_friend">From a friend</option>
-                                <option value="other">Other</option> */}
+                                <option value="0-10">0-10,000</option>
+                                <option value="10,000-20,000">10,000-20,000</option>
+                                <option value="20,000-50,000">20,000-50,000</option>
+                                <option value="50,000-100,000">50,000-100,000</option>
+                                <option value="100,000-500,000">100,000-500,000</option>
+                                <option value="500,000-1,000,000">500,000-1,000,000</option>
+                                <option value="1,000,000-5,000,000">1,000,000-5,000,000</option>
                             </select>
                             <div className='absolute md:right-3 
                             ss:right-3 right-2'>
