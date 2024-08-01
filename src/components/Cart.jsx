@@ -17,9 +17,18 @@ const ItemCard = ({ item, index, image }) => {
     }, [item.quantity]);
 
     const handleQuantityChange = (e) => {
-        const newQuantity = Math.max(1, parseInt(e.target.value, 10 || 1));
-        setQuantity(newQuantity);
-        dispatch(updateQuantity({ id: item.id, quantity: newQuantity }));
+        const value = e.target.value;
+        const newQuantity = parseInt(value, 10);
+    
+        // Update quantity if the input is a valid number greater than or equal to 1
+        if (!isNaN(newQuantity) && newQuantity >= 1) {
+            setQuantity(newQuantity);
+            dispatch(updateQuantity({ id: item.id, quantity: newQuantity }));
+        } else if (value === '') {
+            // Set quantity to 1 if the input is cleared
+            setQuantity(1);
+            dispatch(updateQuantity({ id: item.id, quantity: 1 }));
+        }
     };
 
     return (
