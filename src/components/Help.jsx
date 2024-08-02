@@ -3,7 +3,7 @@ import { layout } from '../styles';
 import { motion } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
 import { helpImg } from '../assets';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 // import emailjs from '@emailjs/browser';
 import { useFormik } from "formik";
 import { GrAttachment } from "react-icons/gr";
@@ -13,6 +13,8 @@ const Help = () => {
     const formRef = useRef();
     const [Loading, setLoading] = useState(false);
     const [buttonText, setButtonText] = useState('Send via WhatsApp');
+    const [files, setFiles] = useState([]);
+    const [previews, setPreviews] = useState([]);
 
     const formik = useFormik({
         initialValues: {
@@ -64,36 +66,55 @@ const Help = () => {
         //     );
         // },
         onSubmit: (values) => {
-            formik.validateForm().then((errors) => {
-                if (Object.keys(errors).length > 0) {
-                    formik.setTouched({
-                        name: true,
-                        subject: true,
-                        message: true,
-                    });
-                    alert("Please complete all required form fields.");
-                    return;
-                }
+            setLoading(true);
 
-                setLoading(true);
+            const message = `Name: ${values.name}\nSubject: ${values.subject}\nMessage: ${values.message}`;
+            const whatsappLink = `https://wa.me/2349014452743?text=${encodeURIComponent(message)}`;
 
-                const message = `Name: ${formik.values.name}\nSubject: ${formik.values.subject}\nMessage: ${formik.values.message}`;
-                const whatsappLink = `https://wa.me/2349169861311?text=${encodeURIComponent(message)}`;
+            // If there are files, handle the upload
+            if (files.length > 0) {
+                const formData = new FormData();
+                files.forEach(file => formData.append('files', file));
 
-                window.open(whatsappLink, "_blank");
+                // Add code here to upload files if needed
+                console.log('Files:', files);
+            }
 
-                setButtonText('Sent Message');
-                setLoading(false);
+            window.open(whatsappLink, "_blank");
 
-                setTimeout(() => {
-                    formik.resetForm();
-                    setButtonText('Send via WhatsApp');
-                }, 3000);
-            });
+            setButtonText('Sent Message');
+            setLoading(false);
+
+            setTimeout(() => {
+                formik.resetForm();
+                setFiles([]);
+                setButtonText('Send via WhatsApp');
+            }, 3000);
         },
     });
 
-  
+    const handleFileChange = (e) => {
+        const selectedFiles = Array.from(e.target.files);
+        const validFiles = selectedFiles.filter(file =>
+            (file.type === 'image/jpeg' || file.type === 'image/png') && file.size <= 2 * 1024 * 1024 // 2MB
+        );
+    
+        if (validFiles.length !== selectedFiles.length) {
+            alert('Some files are invalid. Only JPEG, JPG, and PNG files less than 2MB are allowed.');
+        }
+    
+        // Generate previews
+        const filePreviews = validFiles.map(file => URL.createObjectURL(file));
+        setFiles(validFiles);
+        setPreviews(filePreviews);
+    };
+
+    useEffect(() => {
+        // Cleanup function to revoke object URLs
+        return () => {
+            previews.forEach(preview => URL.revokeObjectURL(preview));
+        };
+    }, [previews]);
 
     return (
         <section className="w-full md:min-h-[550px] ss:min-h-[600px] 
@@ -185,21 +206,37 @@ const Help = () => {
                             </div>
 
                             <div className='flex flex-col'>
-                                <div>
-                                    <div className='inline-flex gap-2 cursor-pointer'>
-                                        <GrAttachment />
-
-                                        <h4 className='text-main font-medium tracking-tight
-                                        md:text-[13px] ss:text-[13px] text-[12px]'>
-                                            Attach Images
-                                        </h4>
-                                    </div>
-                                </div>
+                                <label className='inline-flex gap-2 cursor-pointer'>
+                                    <GrAttachment />
+                                    <input
+                                        type="file"
+                                        multiple
+                                        accept=".jpeg,.jpg,.png"
+                                        onChange={handleFileChange}
+                                        className="hidden"
+                                        id="fileInput"
+                                    />
+                                    <span className='text-main font-medium tracking-tight 
+                                    md:text-[13px] ss:text-[13px] text-[12px]'>
+                                        Attach Images
+                                    </span>
+                                </label>
 
                                 <h4 className='text-mainalt md:text-[12px] ss:text-[12px] 
                                 text-[11px] tracking-tight'>
                                     Only JPEG, JPG and PNG less than 2MB allowed
                                 </h4>
+
+                                <div className='mt-3 flex gap-3'>
+                                    {previews.map((preview, index) => (
+                                        <img
+                                            key={index}
+                                            src={preview}
+                                            alt={`Preview ${index}`}
+                                            className='w-10 h-auto object-cover rounded-md'
+                                        />
+                                    ))}
+                                </div>
                             </div>
 
                             <div className="flex flex-col md:gap-2.5 ss:gap-2.5 gap-2 
