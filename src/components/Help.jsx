@@ -69,7 +69,7 @@ const Help = () => {
             setLoading(true);
 
             const message = `Name: ${values.name}\nSubject: ${values.subject}\nMessage: ${values.message}`;
-            const whatsappLink = `https://wa.me/2349014452743?text=${encodeURIComponent(message)}`;
+            const whatsappLink = `https://wa.me/2349169861311?text=${encodeURIComponent(message)}`;
 
             // If there are files, handle the upload
             if (files.length > 0) {
