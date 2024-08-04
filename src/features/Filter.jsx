@@ -35,6 +35,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
   });
   
   useEffect(() => {
+    
     const uniqueAttributes = {
       types: new Set(),
       materials: new Set(),
