@@ -158,6 +158,10 @@ export const navLinks = [
                 route: "",
             },
             {
+                name: "Granite Slabs",
+                route: "",
+            },
+            {
                 name: "All and Others (Granites)",
                 route: "",
             },
@@ -515,6 +519,10 @@ export const steps = [
         {
               name: "Tiger Skin Granite",
               route: "",
+        },
+        {
+            name: "Granite Slabs",
+            route: "",
         },
         {
             name: "All and Others (Granite)",
