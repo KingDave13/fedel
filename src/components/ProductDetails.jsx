@@ -703,7 +703,6 @@ const ProductDetails = ({ product }) => {
                                                 <div>
                                                     <span className='line-through'>
                                                         N
-                                                        
                                                     </span>
                                                     {attribute.price}.00
                                                 </div>
