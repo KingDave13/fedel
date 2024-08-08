@@ -12,7 +12,7 @@ import { FiMail } from "react-icons/fi";
 import { useSelector } from 'react-redux';
 import { client } from '../sanity';
 
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
@@ -23,28 +23,47 @@ const Navbar = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const searchRef = useRef(null);
     const navigate = useNavigate();
+    const cartItems = useSelector((state) => state.cart.items);
+    const itemCount = cartItems.length;
+
+    const { categorySlug, productSlug } = useParams();
+    const location = useLocation();
+
+    const isProductPage = !!productSlug;
+    const isCategoryPage = location.pathname.startsWith('/products/');
 
     useEffect(() => {
         if (searchTerm) {
-          const fetchSuggestions = async () => {
-            const query = `
-              *[_type == "product" && name match "${searchTerm}*"] {
-                name,
-                slug,
-                "categorySlug": category->slug.current
-              }
-            `;
-            const results = await client.fetch(query);
-            setSuggestions(results);
-            setIsDropdownOpen(true);
-          };
-    
-          fetchSuggestions();
+            const query = isProductPage && categorySlug
+                ? `*[_type == "product" && category->slug.current == "${categorySlug}" && name match "${searchTerm}*"] {
+                     name,
+                     slug,
+                     "categorySlug": category->slug.current
+                   }`
+                : isCategoryPage && categorySlug
+                ? `*[_type == "product" && category->slug.current == "${categorySlug}" && name match "${searchTerm}*"] {
+                     name,
+                     slug,
+                     "categorySlug": category->slug.current
+                   }`
+                : `*[_type == "product" && name match "${searchTerm}*"] {
+                     name,
+                     slug,
+                     "categorySlug": category->slug.current
+                   }`;
+
+            const fetchSuggestions = async () => {
+                const results = await client.fetch(query);
+                setSuggestions(results);
+                setIsDropdownOpen(true);
+            };
+
+            fetchSuggestions();
         } else {
-          setSuggestions([]);
-          setIsDropdownOpen(false);
+            setSuggestions([]);
+            setIsDropdownOpen(false);
         }
-    }, [searchTerm]);
+    }, [searchTerm, categorySlug, isProductPage, isCategoryPage]);
 
     const handleSearchInput = (e) => {
         setSearchTerm(e.target.value);
@@ -68,8 +87,7 @@ const Navbar = () => {
         };
     }, []);
 
-    const cartItems = useSelector((state) => state.cart.items);
-    const itemCount = cartItems.length;
+    
 
     const toggleMenu = (id) => {
         setOpenMenuId((prevId) => (prevId === id ? null : id));
@@ -229,7 +247,9 @@ const Navbar = () => {
 
                                 <input
                                     type='search'
-                                    placeholder='Search for products'
+                                    placeholder={isProductPage && categorySlug 
+                                        ? `Search ${categorySlug}` 
+                                        : "Search for products"}
                                     className='w-full text-black text-[14px]
                                     placeholder:text-mainalt outline-none
                                     border-none bg-transparent'
