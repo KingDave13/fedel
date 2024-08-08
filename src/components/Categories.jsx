@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { SectionWrapper } from '../hoc';
 import { motion } from 'framer-motion';
-import { fadeIn, textVariant } from '../utils/motion';
+import { fadeIn } from '../utils/motion';
 import { client, urlFor } from '../sanity';
 import { arrowRight } from '../assets';
 
@@ -85,14 +85,13 @@ const Categories = () => {
     <section className='relative w-full md:min-h-[1000px] ss:min-h-[1000px] 
     min-h-[2500px] mx-auto flex items-center md:mt-0 ss:mt-76 mt-80'>
         <div className='max-w-[86rem] mx-auto flex flex-col w-full'>
-            <motion.div variants={textVariant()}
-            className=''>
+            <div>
                 <h1 className='text-primary font-bold md:text-[43px]
                 ss:text-[40px] text-[30px] tracking-tight md:leading-[60px] 
                 ss:leading-[45px] leading-[35px]'>
                     Explore Categories
                 </h1>  
-            </motion.div>
+            </div>
 
             <div className='grid md:gap-14 ss:gap-10 gap-8 md:mt-16 
             md:grid-cols-3 ss:grid-cols-2 ss:mt-12 mt-8'>
