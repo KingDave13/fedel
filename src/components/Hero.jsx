@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { heroImages, heroImagesMobile } from '../assets';
 import { motion } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
@@ -6,6 +6,7 @@ import { IoSearchOutline } from "react-icons/io5";
 import { SectionWrapper2 } from '../hoc';
 import { TargetedSearch } from '../features';
 import { useNavigate } from 'react-router-dom';
+import { client } from '../sanity';
 
 
 const Hero = () => {
@@ -15,6 +16,54 @@ const Hero = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1060);
   const [heroHeight, setHeroHeight] = useState('80vh');
   const [loaded, setLoaded] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [suggestions, setSuggestions] = useState([]);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const searchRef = useRef(null);
+
+  useEffect(() => {
+    if (searchTerm) {
+      const fetchSuggestions = async () => {
+        const query = `
+          *[_type == "product" && name match "${searchTerm}*"] {
+            name,
+            slug,
+            "categorySlug": category->slug.current
+          }
+        `;
+        const results = await client.fetch(query);
+        setSuggestions(results);
+        setIsDropdownOpen(true);
+      };
+
+      fetchSuggestions();
+    } else {
+      setSuggestions([]);
+      setIsDropdownOpen(false);
+    }
+  }, [searchTerm]);
+
+  const handleSearchInput = (e) => {
+      setSearchTerm(e.target.value);
+    };
+
+    const handleSuggestionClick = (categorySlug, productSlug) => {
+      navigate(`/products/${categorySlug}/${productSlug}`);
+      setSearchTerm('');
+      setIsDropdownOpen(false);
+    };
+
+    useEffect(() => {
+      const handleClickOutside = (event) => {
+        if (searchRef.current && !searchRef.current.contains(event.target)) {
+          setIsDropdownOpen(false);
+        }
+      };
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
+  }, []);
 
   const images = isMobile ? heroImagesMobile : heroImages;
 
@@ -107,32 +156,53 @@ const Hero = () => {
 
                     <div className='flex flex-row bg-main2 w-full
                     rounded-[10px] border-[1px] border-primaryalt py-2 
-                    px-2 gap-3 justify-between items-center'>
-                        <IoSearchOutline
-                            className='text-main md:text-[22px]
-                            ss:text-[22px] text-[25px]'
-                        />
+                    px-2 gap-3 justify-between items-center relative'>
+                      <IoSearchOutline
+                          className='text-main md:text-[22px]
+                          ss:text-[22px] text-[25px]'
+                      />
 
-                        <input
-                            type='search'
-                            placeholder='Search for tiles, marble, granite,
-                            floor and wall materials, etc.'
-                            className='w-full text-black text-[14px]
-                            placeholder:text-main3 outline-none
-                            border-none bg-transparent
-                            placeholder:text-[13px]'
-                        />
+                      <input
+                          type='search'
+                          placeholder='Search for tiles, marble, granite,
+                          floor and wall materials, etc.'
+                          className='w-full text-black text-[14px]
+                          placeholder:text-main3 outline-none
+                          border-none bg-transparent
+                          placeholder:text-[13px]'
+                          value={searchTerm}
+                          onChange={handleSearchInput}
+                      />
 
-                        <button className='bg-primary md:text-[14px]
-                        ss:text-[15px] text-[12px] 
-                        py-1.5 px-5 text-white rounded-[5px] grow4 
-                        cursor-pointer justify-end'
-                        // onClick={() => {
-                        //     setToggle(!toggle);
-                        // }}
-                        >
-                            Search
-                        </button>
+                      <button className='bg-primary md:text-[14px]
+                      ss:text-[15px] text-[12px] 
+                      py-1.5 px-5 text-white rounded-[5px] grow4 
+                      cursor-pointer justify-end'
+                      // onClick={() => {
+                      //     setToggle(!toggle);
+                      // }}
+                      >
+                          Search
+                      </button>
+
+                      {isDropdownOpen && suggestions.length > 0 && (
+                        <div className='absolute top-full mt-1 z-20
+                        bg-main2 shadow-lg left-0 right-0 p-3 max-h-60 
+                        overflow-y-auto rounded-md'>
+                          {suggestions.map((suggestion) => (
+                            <div
+                              key={suggestion.slug.current}
+                              className='md:p-1.5 ss:p-1.5 p-1 
+                              hover:bg-white font-medium
+                              cursor-pointer text-main md:text-[15px]
+                              ss:text-[15px] text-[13px]'
+                              onClick={() => handleSuggestionClick(suggestion.categorySlug, suggestion.slug.current)}
+                            >
+                              {suggestion.name}
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </div>     
                 </motion.div>
 
