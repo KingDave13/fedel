@@ -10,49 +10,99 @@ import { PiLineVerticalThin } from "react-icons/pi";
 import { IoCartOutline, IoSearchOutline, IoMenu } from "react-icons/io5";
 import { FiMail } from "react-icons/fi";
 import { useSelector } from 'react-redux';
+import { client } from '../sanity';
 
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
-const [toggle, setToggle] = useState(false);
-const menuRef = useRef(null);
-// const navigate = useNavigate();
-const [openMenuId, setOpenMenuId] = useState(null);
+    const [toggle, setToggle] = useState(false);
+    const menuRef = useRef(null);
+    // const navigate = useNavigate();
+    const [openMenuId, setOpenMenuId] = useState(null);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [suggestions, setSuggestions] = useState([]);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const searchRef = useRef(null);
+    const navigate = useNavigate();
 
-const cartItems = useSelector((state) => state.cart.items);
-const itemCount = cartItems.length;
-
-const toggleMenu = (id) => {
-    setOpenMenuId((prevId) => (prevId === id ? null : id));
-};
-
-useEffect(() => {
-    const handleClickOutside = (event) => {
-        if (menuRef.current && !menuRef.current.contains(event.target)) {
-            setToggle(false);
+    useEffect(() => {
+        if (searchTerm) {
+          const fetchSuggestions = async () => {
+            const query = `
+              *[_type == "product" && name match "${searchTerm}*"] {
+                name,
+                slug,
+                "categorySlug": category->slug.current
+              }
+            `;
+            const results = await client.fetch(query);
+            setSuggestions(results);
+            setIsDropdownOpen(true);
+          };
+    
+          fetchSuggestions();
+        } else {
+          setSuggestions([]);
+          setIsDropdownOpen(false);
         }
+    }, [searchTerm]);
+
+    const handleSearchInput = (e) => {
+        setSearchTerm(e.target.value);
+      };
+    
+      const handleSuggestionClick = (categorySlug, productSlug) => {
+        navigate(`/products/${categorySlug}/${productSlug}`);
+        setSearchTerm('');
+        setIsDropdownOpen(false);
+      };
+    
+      useEffect(() => {
+        const handleClickOutside = (event) => {
+          if (searchRef.current && !searchRef.current.contains(event.target)) {
+            setIsDropdownOpen(false);
+          }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+          document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
+    const cartItems = useSelector((state) => state.cart.items);
+    const itemCount = cartItems.length;
+
+    const toggleMenu = (id) => {
+        setOpenMenuId((prevId) => (prevId === id ? null : id));
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (menuRef.current && !menuRef.current.contains(event.target)) {
+                setToggle(false);
+            }
+        };
 
-    return () => {
-        document.removeEventListener('mousedown', handleClickOutside);
-    };
-}, []);
+        document.addEventListener('mousedown', handleClickOutside);
 
-useEffect(() => {
-    const intervalId = setInterval(() => {
-      if (window.google && window.google.translate && window.google.translate.TranslateElement) {
-        new window.google.translate.TranslateElement(
-          { pageLanguage: 'en' },
-          'google_translate_element'
-        );
-        clearInterval(intervalId);
-      }
-    }, 1000);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
 
-    return () => clearInterval(intervalId);
-  }, []);
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+        if (window.google && window.google.translate && window.google.translate.TranslateElement) {
+            new window.google.translate.TranslateElement(
+            { pageLanguage: 'en' },
+            'google_translate_element'
+            );
+            clearInterval(intervalId);
+        }
+        }, 1000);
+
+        return () => clearInterval(intervalId);
+    }, []);
 
   return (
     <nav className='w-full flex items-center fixed top-0 z-20 navsmooth'>
