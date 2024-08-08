@@ -66,7 +66,7 @@ const Hero = () => {
   return (
     <section className='relative w-full md:min-h-[700px] ss:min-h-[800px] 
     items-center flex md:mb-0 ss:mb-52 mb-36'>
-        <div className={`relative items-center w-full max-w-[86rem] p-6
+        <div className={`relative items-center w-full max-w-[82rem] p-6
         md:mt-28 ss:mt-20 mt-16 md:rounded-[30px] flex md:p-12 ss:p-10 
         ${loaded ? 'opacity-100' : 'opacity-0 transition-opacity duration-500'}`}
             style={{
@@ -78,7 +78,7 @@ const Hero = () => {
             }}
         >
             <div className='relative md:items-center ss:items-center 
-            justify-between w-full flex md:flex-row flex-col md:gap-44 
+            justify-between w-full flex md:flex-row flex-col md:gap-32 
             ss:gap-6 gap-6'>
                 <motion.div variants={textVariant()}
                 className='flex justify-center items-start md:gap-6
@@ -94,8 +94,8 @@ const Hero = () => {
                         and lots more.
                     </h1>
 
-                    <p className='text-white md:text-[19px] md:leading-[28px] 
-                    ss:leading-[28px] leading-[18px] ss:text-[19px] 
+                    <p className='text-white md:text-[18px] md:leading-[28px] 
+                    ss:leading-[28px] leading-[18px] ss:text-[18px] 
                     text-[14px] md:max-w-[630px] ss:max-w-[620px]
                     max-w-[320px]'>
                         Buy your desired tiles, marble, granite, sanitary
@@ -117,13 +117,13 @@ const Hero = () => {
                             type='search'
                             placeholder='Search for tiles, marble, granite,
                             floor and wall materials, etc.'
-                            className='w-full text-black text-[15px]
+                            className='w-full text-black text-[14px]
                             placeholder:text-main3 outline-none
                             border-none bg-transparent
                             placeholder:text-[13px]'
                         />
 
-                        <button className='bg-primary md:text-[15px]
+                        <button className='bg-primary md:text-[14px]
                         ss:text-[15px] text-[12px] 
                         py-1.5 px-5 text-white rounded-[5px] grow4 
                         cursor-pointer justify-end'

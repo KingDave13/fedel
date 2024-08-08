@@ -126,12 +126,12 @@ const Help = () => {
                     <motion.div variants={textVariant()}
                     className={`${layout.sectionInfo} md:gap-6 ss:gap-4
                     gap-4`}>
-                        <h1 className="text-primary font-bold md:text-[43px]
+                        <h1 className="text-primary font-bold md:text-[40px]
                         ss:text-[40px] text-[30px] tracking-tight">
                             Still need help?
                         </h1>
 
-                        <p className='text-main md:text-[18px] ss:text-[17px] 
+                        <p className='text-main md:text-[17px] ss:text-[17px] 
                         text-[14px] md:max-w-[550px] md:leading-[25px] 
                         ss:leading-[25px] leading-[20px] font-medium 
                         tracking-tight'>

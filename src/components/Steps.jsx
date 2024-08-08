@@ -26,7 +26,7 @@ const StepCard = ({ index, title, image, description }) => {
                     </h1>
 
                     <p className='text-main font-medium md:leading-[23px]
-                    ss:leading-[20px] leading-[18px] md:text-[17px] 
+                    ss:leading-[20px] leading-[18px] md:text-[16px] 
                     ss:text-[15px] text-[13px]'>
                         {description}
                     </p>
@@ -35,8 +35,8 @@ const StepCard = ({ index, title, image, description }) => {
                         <a href='/products' 
                         className='inline-flex gap-3 cursor-pointer grow5
                         items-center'>
-                            <h1 className='text-primary md:text-[15px] 
-                            ss:text-[15px] text-[13px] font-medium'>
+                            <h1 className='text-primary md:text-[14px] 
+                            ss:text-[14px] text-[13px] font-medium'>
                                 Browse products
                             </h1>
                             
@@ -57,13 +57,13 @@ const Steps = () => {
         <div className='max-w-[86rem] mx-auto flex flex-col'>
             <motion.div variants={textVariant()}
             className='flex flex-col md:gap-2 ss:gap-4 gap-4'>
-                <h1 className='text-primary font-bold md:text-[43px]
+                <h1 className='text-primary font-bold md:text-[40px]
                 ss:text-[40px] text-[30px] tracking-tight md:leading-[60px] 
                 ss:leading-[45px] leading-[35px]'>
                     Find and order from us in 4 easy steps
                 </h1>
                 
-                <p className='text-main font-medium md:text-[18px]
+                <p className='text-main font-medium md:text-[17px]
                 ss:text-[17px] text-[14px] tracking-tight md:max-w-[950px]
                 md:leading-[25px] ss:leading-[23px] leading-[20px]'>
                     You do not need to go through too much stress to find 

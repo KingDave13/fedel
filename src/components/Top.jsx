@@ -273,12 +273,12 @@ const Top = () => {
             md:items-center'>
                 <motion.div variants={textVariant()} className='md:gap-4 
                 ss:gap-3 gap-3 flex flex-col items-center'>
-                    <h1 className='text-secondary font-bold md:text-[43px] 
+                    <h1 className='text-secondary font-bold md:text-[40px] 
                     ss:text-[40px] text-[30px] tracking-tight 
                     md:leading-[60px] ss:leading-[45px] leading-[35px]'>
                         Top Floor and Wall Tiles for you
                     </h1>
-                    <p className='text-white md:text-[18px] 
+                    <p className='text-white md:text-[17px] 
                     ss:text-[17px] text-[14px] md:leading-[25px] 
                     ss:leading-[25px] leading-[20px] md:max-w-[1000px] 
                     ss:max-w-[700px] md:text-center'>

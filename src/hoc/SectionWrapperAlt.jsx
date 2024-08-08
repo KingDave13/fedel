@@ -8,7 +8,7 @@ const SectionWrapper = (Component) => function HOC(props) {
             initial='hidden'
             whileInView='show'
             viewport={{ once: true, amount: 0.25 }}
-            className={`max-w-[86rem] mx-auto`}
+            className={`max-w-[82rem] mx-auto`}
         >
             <Component {...props}/>
         </motion.section>

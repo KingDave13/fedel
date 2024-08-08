@@ -86,14 +86,14 @@ const Categories = () => {
     min-h-[2500px] mx-auto flex items-center md:mt-0 ss:mt-76 mt-80'>
         <div className='max-w-[86rem] mx-auto flex flex-col w-full'>
             <div>
-                <h1 className='text-primary font-bold md:text-[43px]
+                <h1 className='text-primary font-bold md:text-[40px]
                 ss:text-[40px] text-[30px] tracking-tight md:leading-[60px] 
                 ss:leading-[45px] leading-[35px]'>
                     Explore Categories
                 </h1>  
             </div>
 
-            <div className='grid md:gap-14 ss:gap-10 gap-8 md:mt-16 
+            <div className='grid md:gap-12 ss:gap-10 gap-8 md:mt-16 
             md:grid-cols-3 ss:grid-cols-2 ss:mt-12 mt-8'>
                 {categories.map((category, index) => (
                     <CatCard 

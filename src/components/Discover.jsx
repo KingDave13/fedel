@@ -16,13 +16,13 @@ const Discover = () => {
                     <motion.div variants={textVariant()}
                     className={`${layout.sectionInfo} md:gap-8 ss:gap-8
                     gap-4`}>
-                        <h1 className="text-primary font-bold md:text-[43px]
+                        <h1 className="text-primary font-bold md:text-[40px]
                         ss:text-[40px] text-[30px] md:leading-[50px] 
                         ss:leading-[45px] leading-[35px] tracking-tight">
                             Safe and secure delivery to wherever you are!
                         </h1>
 
-                        <p className='text-main md:text-[18px] ss:text-[17px] 
+                        <p className='text-main md:text-[17px] ss:text-[17px] 
                         text-[14px] md:max-w-[700px] ss:max-w-[400px]  
                         md:leading-[25px] ss:leading-[25px] leading-[20px] 
                         font-medium tracking-tight'>
@@ -36,7 +36,7 @@ const Discover = () => {
 
                         
                         <a href="/products" 
-                        className='bg-primary grow5 md:text-[15px] 
+                        className='bg-primary grow5 md:text-[14px] 
                         ss:text-[15px] text-[13px] md:py-4 ss:py-3 py-3 
                         md:px-10 ss:px-10 px-8 text-white rounded-lg'
                         >
