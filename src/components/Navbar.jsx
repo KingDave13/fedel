@@ -55,13 +55,12 @@ useEffect(() => {
   }, []);
 
   return (
-    <nav className='w-full flex items-center fixed 
-       top-0 z-20 navsmooth'>
+    <nav className='w-full flex items-center fixed top-0 z-20 navsmooth'>
         <div className='flex flex-col w-full items-center'>
             <div className={`w-full md:bg-main2 ${styles.paddingX}
             hidden md:flex`}>
                 <div className='w-full flex justify-between items-center 
-                max-w-[86rem] mx-auto md:py-3 ss:py-4 py-3'>
+                max-w-[82rem] mx-auto md:py-3 ss:py-4 py-3'>
                     <div className="flex items-center w-full">
                         <ul className="list-none flex flex-row gap-6">
                             {navLinks.map((link, index) => (
@@ -72,12 +71,12 @@ useEffect(() => {
                                 onMouseEnter={() => toggleMenu(link.id)}
                                 onMouseLeave={() => toggleMenu(null)}
                             >
-                                <h3 className='text-main text-[15px] font-medium'>
+                                <h3 className='text-main text-[14px] font-medium'>
                                     {link.title}
                                 </h3>
                                 
                                 <TiArrowSortedDown 
-                                    className='text-main text-[18px]'
+                                    className='text-main text-[16px]'
                                 />
 
                                 {openMenuId === link.id && (
@@ -86,14 +85,14 @@ useEffect(() => {
                                     : 'left-1/2 transform -translate-x-1/2'} 
                                     fade-in border-[1px] border-main2 z-10`}>
                                         <div className="bg-white shadow-xl p-6
-                                        flex flex-col gap-2 z-20"
+                                        flex flex-col gap-2.5 z-20"
                                         style={{whiteSpace: 'nowrap'}}
                                         >
                                             {link.links.map((subLink, index) => (
                                                 <a
                                                     key={index}
                                                     href={subLink.route}
-                                                    className="flex text-[14px] text-main
+                                                    className="flex text-[13px] text-main
                                                     hover:font-medium"
                                                 >
                                                     {subLink.name}
@@ -121,19 +120,19 @@ useEffect(() => {
                             <PiLineVerticalThin className='text-main text-[25px]'/>
 
                             <HiOutlineChat
-                                className='text-main text-[23px] grow4 cursor-pointer'
+                                className='text-main text-[22px] grow4 cursor-pointer'
                             />
 
                             <a href='mailto:fedeltileslimited@gmail.com'>
                                 <FiMail 
-                                    className='text-main text-[23px] grow4 cursor-pointer'
+                                    className='text-main text-[22px] grow4 cursor-pointer'
                                 />
                             </a>
                             
                             <a href='https://wa.me/2349169861311' 
                             target='_blank' rel="noreferrer">
                                 <RiWhatsappLine 
-                                    className='text-main text-[23px] grow4 cursor-pointer'
+                                    className='text-main text-[22px] grow4 cursor-pointer'
                                 />
                             </a>
                         </div>
@@ -160,11 +159,11 @@ useEffect(() => {
 
             <div className={`w-full flex bg-white ${styles.paddingX}`}>
                 <div className='w-full flex justify-between items-center 
-                max-w-[86rem] mx-auto md:py-3 ss:py-4 py-4'>
+                max-w-[82rem] mx-auto md:py-3 ss:py-4 py-4'>
                     <a href='/'>
                         <img
                             src={logo} alt='logo'
-                            className='md:w-[150px] ss:w-[130px] w-[100px] 
+                            className='md:w-[120px] ss:w-[120px] w-[100px] 
                             h-auto cursor-pointer'
                         />
                     </a>
@@ -176,18 +175,18 @@ useEffect(() => {
                             rounded-[10px] border-[1px] border-primaryalt 
                             py-2 px-2 gap-3 justify-between items-center'>
                                 <IoSearchOutline
-                                    className='text-main text-[22px]'
+                                    className='text-main text-[20px]'
                                 />
 
                                 <input
                                     type='search'
                                     placeholder='Search for products'
-                                    className='w-full text-black text-[15px]
+                                    className='w-full text-black text-[14px]
                                     placeholder:text-mainalt outline-none
                                     border-none bg-transparent'
                                 />
 
-                                <button className='bg-primary text-[15px] 
+                                <button className='bg-primary text-[13px] 
                                 py-1.5 px-5 text-white rounded-[5px] grow4 
                                 cursor-pointer justify-end'
                                 // onClick={() => {
@@ -218,7 +217,7 @@ useEffect(() => {
                                 </a>
                             </div>
 
-                            <button className='bg-primary text-[15px] py-3 px-5
+                            <button className='bg-primary text-[14px] py-3 px-5
                             text-white rounded-[10px] grow4 cursor-pointer w-[160px]'
                             // onClick={() => {
                             //     setToggle(!toggle);
