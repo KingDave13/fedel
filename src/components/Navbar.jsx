@@ -17,7 +17,6 @@ import { useNavigate } from 'react-router-dom';
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
     const menuRef = useRef(null);
-    // const navigate = useNavigate();
     const [openMenuId, setOpenMenuId] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
     const [suggestions, setSuggestions] = useState([]);
