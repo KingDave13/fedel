@@ -220,7 +220,7 @@ const Navbar = () => {
 
                     <div className="hidden md:flex items-center w-full
                     gap-10 ml-12">
-                        <div className='flex w-full justify-center'>
+                        <div className='flex w-full justify-center relative'>
                             <div className='flex flex-row bg-main2 w-full
                             rounded-[10px] border-[1px] border-primaryalt 
                             py-2 px-2 gap-3 justify-between items-center'>
@@ -234,6 +234,8 @@ const Navbar = () => {
                                     className='w-full text-black text-[14px]
                                     placeholder:text-mainalt outline-none
                                     border-none bg-transparent'
+                                    value={searchTerm}
+                                    onChange={handleSearchInput}
                                 />
 
                                 <button className='bg-primary text-[13px] 
@@ -245,6 +247,23 @@ const Navbar = () => {
                                 >
                                     Search
                                 </button>
+
+                                {isDropdownOpen && suggestions.length > 0 && (
+                                    <div className='absolute top-full mt-3 
+                                    bg-white shadow-lg left-0 right-0 p-3
+                                    rounded-md max-h-60 overflow-y-auto'>
+                                        {suggestions.map((suggestion) => (
+                                        <div
+                                            key={suggestion.slug.current}
+                                            className='p-1.5 hover:bg-main2 font-medium
+                                            cursor-pointer text-main text-[15px]'
+                                            onClick={() => handleSuggestionClick(suggestion.categorySlug, suggestion.slug.current)}
+                                        >
+                                            {suggestion.name}
+                                        </div>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
                         </div>
 
