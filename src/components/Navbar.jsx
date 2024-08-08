@@ -283,7 +283,7 @@ useEffect(() => {
                             style={{ maxHeight: '90vh', overflowY: 'auto' }} 
                         >
                             <ul className="list-none flex flex-col 
-                            ss:gap-6 gap-3 ss:mb-14 mb-10">
+                            ss:gap-6 gap-4 ss:mb-14 mb-10">
                             {navLinks.map((link) => (
                                 <li
                                 key={link.id}
@@ -310,7 +310,7 @@ useEffect(() => {
                                         style={{ maxHeight: '30vh', 
                                         overflowY: 'auto' }}>
                                             <div className='flex flex-col 
-                                            ss:gap-2 gap-1'>
+                                            ss:gap-2 gap-2'>
                                                 {link.links.map((subLink, index) => (
                                                 <a
                                                     key={index}
