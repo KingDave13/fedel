@@ -164,7 +164,7 @@ const Cart = () => {
                     </p>
                 ) : (
                     <div className='w-full flex md:flex-row ss:flex-row 
-                    flex-col gap-6'>
+                    flex-col md:gap-10 gap-6'>
                         <div className='flex flex-col w-full md:gap-6
                         ss:gap-6 gap-4'>
                             {cartItems.map((item, index) => (

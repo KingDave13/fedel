@@ -129,7 +129,7 @@ body, html {
   .sticky-cart {
     position: -webkit-sticky; /* For Safari */
     position: sticky;
-    top: 175px;
+    top: 146px;
   }
 }
 
@@ -144,7 +144,7 @@ body, html {
 .sticky-filter {
   position: -webkit-sticky; /* For Safari */
   position: sticky;
-  top: 160px;
+  top: 145px;
   z-index: 10;
   background-color: white;
   padding-top: 10px;
