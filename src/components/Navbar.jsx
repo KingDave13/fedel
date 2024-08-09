@@ -11,8 +11,7 @@ import { IoCartOutline, IoSearchOutline, IoMenu } from "react-icons/io5";
 import { FiMail } from "react-icons/fi";
 import { useSelector } from 'react-redux';
 import { client } from '../sanity';
-
-import { useNavigate, useParams, useLocation } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
@@ -26,31 +25,16 @@ const Navbar = () => {
     const cartItems = useSelector((state) => state.cart.items);
     const itemCount = cartItems.length;
 
-    const { categorySlug, productSlug } = useParams();
-    const location = useLocation();
-
-    const isProductPage = !!productSlug;
-    const isCategoryPage = location.pathname.startsWith('/products/');
+    const { slug, categorySlug } = useParams();
+    const currentCategory = slug || categorySlug || '';
 
     useEffect(() => {
         if (searchTerm) {
-            const query = isProductPage && categorySlug
-                ? `*[_type == "product" && category->slug.current == "${categorySlug}" && name match "${searchTerm}*"] {
-                     name,
-                     slug,
-                     "categorySlug": category->slug.current
-                   }`
-                : isCategoryPage && categorySlug
-                ? `*[_type == "product" && category->slug.current == "${categorySlug}" && name match "${searchTerm}*"] {
-                     name,
-                     slug,
-                     "categorySlug": category->slug.current
-                   }`
-                : `*[_type == "product" && name match "${searchTerm}*"] {
-                     name,
-                     slug,
-                     "categorySlug": category->slug.current
-                   }`;
+            const query = `*[_type == "product" && (category->slug.current == "${currentCategory}" || !defined("${currentCategory}")) && name match "${searchTerm}*"] {
+                name,
+                slug,
+                "categorySlug": category->slug.current
+            }`;
 
             const fetchSuggestions = async () => {
                 const results = await client.fetch(query);
@@ -63,19 +47,23 @@ const Navbar = () => {
             setSuggestions([]);
             setIsDropdownOpen(false);
         }
-    }, [searchTerm, categorySlug, isProductPage, isCategoryPage]);
+    }, [searchTerm, currentCategory]);
 
     const handleSearchInput = (e) => {
         setSearchTerm(e.target.value);
-      };
+    };
     
-      const handleSuggestionClick = (categorySlug, productSlug) => {
-        navigate(`/products/${categorySlug}/${productSlug}`);
-        setSearchTerm('');
-        setIsDropdownOpen(false);
-      };
-    
-      useEffect(() => {
+    const handleSuggestionClick = (categorySlug, productSlug) => {
+        if (categorySlug && productSlug) {
+            navigate(`/products/${categorySlug.current || categorySlug}/${productSlug.current || productSlug}`);
+            setSearchTerm('');
+            setIsDropdownOpen(false);
+        } else {
+            console.error('Invalid categorySlug or productSlug');
+        }
+    };
+
+    useEffect(() => {
         const handleClickOutside = (event) => {
           if (searchRef.current && !searchRef.current.contains(event.target)) {
             setIsDropdownOpen(false);
@@ -87,7 +75,6 @@ const Navbar = () => {
         };
     }, []);
 
-    
 
     const toggleMenu = (id) => {
         setOpenMenuId((prevId) => (prevId === id ? null : id));
@@ -247,9 +234,7 @@ const Navbar = () => {
 
                                 <input
                                     type='search'
-                                    placeholder={isProductPage && categorySlug 
-                                        ? `Search ${categorySlug}` 
-                                        : "Search for products"}
+                                    placeholder={currentCategory ? `Search ${currentCategory}` : 'Search for products'}
                                     className='w-full text-black text-[14px]
                                     placeholder:text-mainalt outline-none
                                     border-none bg-transparent'
@@ -273,10 +258,10 @@ const Navbar = () => {
                                     rounded-md max-h-60 overflow-y-auto'>
                                         {suggestions.map((suggestion) => (
                                         <div
-                                            key={suggestion.slug.current}
+                                            key={suggestion.slug}
                                             className='p-1.5 hover:bg-main2 font-medium
                                             cursor-pointer text-main text-[15px]'
-                                            onClick={() => handleSuggestionClick(suggestion.categorySlug, suggestion.slug.current)}
+                                            onClick={() => handleSuggestionClick(suggestion.categorySlug, suggestion.slug)}
                                         >
                                             {suggestion.name}
                                         </div>
