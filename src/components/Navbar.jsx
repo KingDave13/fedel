@@ -30,7 +30,7 @@ const Navbar = () => {
 
     useEffect(() => {
         if (searchTerm) {
-            const query = `*[_type == "product" && (category->slug.current == "${currentCategory}" || !defined("${currentCategory}")) && name match "${searchTerm}*"] {
+            const query = `*[_type == "product" && (category->slug.current == "${currentCategory}" || "${currentCategory}" == "") && name match "${searchTerm}*"] {
                 name,
                 slug,
                 "categorySlug": category->slug.current

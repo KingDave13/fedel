@@ -11,7 +11,6 @@ import { client } from '../sanity';
 
 const Hero = () => {
   const navigate = useNavigate();
-
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1060);
   const [heroHeight, setHeroHeight] = useState('80vh');
