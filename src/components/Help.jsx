@@ -206,36 +206,38 @@ const Help = () => {
                             </div>
 
                             <div className='flex flex-col'>
-                                <label className='inline-flex gap-2 cursor-pointer'>
-                                    <GrAttachment />
-                                    <input
-                                        type="file"
-                                        multiple
-                                        accept=".jpeg,.jpg,.png"
-                                        onChange={handleFileChange}
-                                        className="hidden"
-                                        id="fileInput"
-                                    />
-                                    <span className='text-main font-medium tracking-tight 
-                                    md:text-[13px] ss:text-[13px] text-[12px]'>
-                                        Attach Images
-                                    </span>
-                                </label>
-
-                                <h4 className='text-mainalt md:text-[12px] ss:text-[12px] 
-                                text-[11px] tracking-tight'>
-                                    Only JPEG, JPG and PNG less than 2MB allowed
-                                </h4>
-
-                                <div className='mt-3 flex gap-3'>
-                                    {previews.map((preview, index) => (
-                                        <img
-                                            key={index}
-                                            src={preview}
-                                            alt={`Preview ${index}`}
-                                            className='w-10 h-auto object-cover rounded-md'
+                                <div>
+                                    <label className='inline-flex gap-2 cursor-pointer'>
+                                        <GrAttachment />
+                                        <input
+                                            type="file"
+                                            multiple
+                                            accept=".jpeg,.jpg,.png"
+                                            onChange={handleFileChange}
+                                            className="hidden"
+                                            id="fileInput"
                                         />
-                                    ))}
+                                        <span className='text-main font-medium tracking-tight 
+                                        md:text-[13px] ss:text-[13px] text-[12px]'>
+                                            Attach Images
+                                        </span>
+                                    </label>
+
+                                    <h4 className='text-mainalt md:text-[12px] ss:text-[12px] 
+                                    text-[11px] tracking-tight'>
+                                        Only JPEG, JPG and PNG less than 2MB allowed
+                                    </h4>
+
+                                    <div className='mt-3 flex gap-3'>
+                                        {previews.map((preview, index) => (
+                                            <img
+                                                key={index}
+                                                src={preview}
+                                                alt={`Preview ${index}`}
+                                                className='w-10 h-auto object-cover rounded-md'
+                                            />
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
 

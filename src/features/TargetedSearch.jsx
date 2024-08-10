@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from 'react';
-// import emailjs from '@emailjs/browser';
 import { useFormik } from "formik";
 import { RiInformationFill } from "react-icons/ri";
 import { GrAttachment } from "react-icons/gr";
@@ -15,56 +14,35 @@ const TargetedSearch = () => {
     const [files, setFiles] = useState([]);
     const [previews, setPreviews] = useState([]);
 
+    const targetedSearchSchema = Yup.object().shape({
+        product: Yup.string().required('Product is required.'),
+        category: Yup.string().required('Category is required.'),
+        numbermail: Yup.string().required('Phone Number or Email is required.'),
+    });
+
+    const messageUsSchema = Yup.object().shape({
+        name: Yup.string().required('Name is required.'),
+        email: Yup.string().email('Invalid email address.').required('Email is required.'),
+        subject: Yup.string().required('Subject is required.'),
+        message: Yup.string().required('Message is required.'),
+    });
+
     const formik = useFormik({
         initialValues: {
             product: '',
             category: '',
             price: '',
             numbermail: '',
+            name: '',
+            email: '',
+            subject: '',
+            message: '',
         },
-
-        validationSchema: Yup.object({
-            product: Yup.string().required('Product is required.'),
-            category: Yup.string().required('Category is required.'),
-            numbermail: Yup.string().required('Phone Number or Email is required.'),
-        }),
-
-        // onSubmit: (values) => {
-        //     setLoading(true);
-
-        //     emailjs.send(
-        //         'service_1zam733',
-        //         'template_bjv8tlu',
-        //         {
-        //           from_name: `${values.firstname} ${values.lastname}`,
-        //           to_name: 'Elite Press Journals',
-        //           from_email: values.email,
-        //           to_email: 'contact@epjournals.com',
-        //           subject: values.subject,
-        //           message: values.message,
-        //         },
-        //         'UE-RzuF3c_ndNJ-Zw'
-        //       )
-        //       .then(
-        //         () => {
-        //           setLoading(false);
-        //           setModalOpen(true);
-        //           disableScroll();
-          
-        //           setTimeout(() => {
-        //             setModalOpen(false);
-        //             enableScroll();
-        //           }, 2000);
-          
-        //           formik.resetForm();
-        //         },
-                
-        //         (error) => {
-        //           setLoading(false);
-        //           console.log(error);
-        //         }
-        //     );
-        // },
+        validationSchema: selectedTab === 'targetedSearch' ? targetedSearchSchema : messageUsSchema,
+        onSubmit: (values) => {
+            setLoading(true);
+            // Implement your email sending logic here...
+        },
     });
 
     const handleFileChange = (e) => {
@@ -92,6 +70,26 @@ const TargetedSearch = () => {
 
     const handleTabChange = (tab) => {
         setSelectedTab(tab);
+        formik.resetForm();
+    };
+
+    const handleWhatsAppOrder = () => {
+        formik.validateForm().then((errors) => {
+            if (Object.keys(errors).length > 0) {
+                formik.setTouched({
+                    name: true,
+                    email: true,
+                    subject: true,
+                    message: true,
+                });
+                alert("Please complete all required form fields.");
+                return;
+            }
+
+            const formDataText = `Name: ${formik.values.name}\nEmail: ${formik.values.email}\nSubject: ${formik.values.subject}\nMessage: ${formik.values.message}`;
+            const whatsappLink = `https://wa.me/2349014452743?text=${encodeURIComponent(formDataText)}`;
+            window.open(whatsappLink, "_blank");
+        });
     };
 
   return (
@@ -250,7 +248,7 @@ const TargetedSearch = () => {
                         </div>
                     </div>
 
-                    <div className="relative">
+                    <div className="relative mt-1">
                         <input
                             type="text"
                             name="numbermail"
@@ -363,36 +361,38 @@ const TargetedSearch = () => {
                         </p>
                     </div>
 
-                    <div className='flex flex-col w-full gap-0.5'>
-                        <label className='inline-flex gap-2 cursor-pointer'>
-                            <GrAttachment />
-                            <input
-                                type="file"
-                                multiple
-                                accept=".jpeg,.jpg,.png"
-                                onChange={handleFileChange}
-                                className="hidden"
-                                id="fileInput"
-                            />
-                            <span className='text-main font-medium tracking-tight md:text-[13px] ss:text-[13px] text-[12px]'>
-                                Attach Images
-                            </span>
-                        </label>
-
-                        <h4 className='text-mainalt md:text-[12px] ss:text-[12px] 
-                        text-[11px] tracking-tight'>
-                            Only JPEG, JPG and PNG less than 2MB allowed
-                        </h4>
-
-                        <div className='mt-3 flex gap-3'>
-                            {previews.map((preview, index) => (
-                                <img
-                                    key={index}
-                                    src={preview}
-                                    alt={`Preview ${index}`}
-                                    className='w-10 h-auto object-cover rounded-md'
+                    <div className='flex flex-col gap-0.5'>
+                        <div>
+                            <label className='inline-flex gap-2 cursor-pointer'>
+                                <GrAttachment />
+                                <input
+                                    type="file"
+                                    multiple
+                                    accept=".jpeg,.jpg,.png"
+                                    onChange={handleFileChange}
+                                    className="hidden"
+                                    id="fileInput"
                                 />
-                            ))}
+                                <span className='text-main font-medium tracking-tight md:text-[13px] ss:text-[13px] text-[12px]'>
+                                    Attach Images
+                                </span>
+                            </label>
+
+                            <h4 className='text-mainalt md:text-[12px] ss:text-[12px] 
+                            text-[11px] tracking-tight'>
+                                Only JPEG, JPG and PNG less than 2MB allowed
+                            </h4>
+
+                            <div className='mt-3 flex gap-3'>
+                                {previews.map((preview, index) => (
+                                    <img
+                                        key={index}
+                                        src={preview}
+                                        alt={`Preview ${index}`}
+                                        className='w-10 h-auto object-cover rounded-md'
+                                    />
+                                ))}
+                            </div>
                         </div>
                     </div>
 
@@ -407,12 +407,13 @@ const TargetedSearch = () => {
                         </button>
 
                         <button
-                        type="submit"
+                        type="button"
                         className="bg-green grow5 md:text-[14px] w-full
                         ss:text-[14px] text-[11px] md:py-3 ss:py-3 py-2 
                         text-white md:rounded-lg rounded-md border-none"
+                        onClick={handleWhatsAppOrder}
                         >
-                            {Loading ? 'Sending...' : 'Send via WhatsApp'}
+                            Send via WhatsApp
                         </button>
                     </div>
                     </>
