@@ -5,6 +5,7 @@ import { GrAttachment } from "react-icons/gr";
 import { ImPlay } from "react-icons/im";
 import { TiArrowSortedDown } from "react-icons/ti";
 import * as Yup from 'yup';
+import { client } from '../sanity';
 
 const TargetedSearch = () => {
 
@@ -13,6 +14,8 @@ const TargetedSearch = () => {
     const [selectedTab, setSelectedTab] = useState('targetedSearch');
     const [files, setFiles] = useState([]);
     const [previews, setPreviews] = useState([]);
+    const [categories, setCategories] = useState([]);
+    const [subcategories, setSubcategories] = useState([]);
 
     const targetedSearchSchema = Yup.object().shape({
         product: Yup.string().required('Product is required.'),
@@ -45,6 +48,40 @@ const TargetedSearch = () => {
         },
     });
 
+    useEffect(() => {
+        const fetchCategories = async () => {
+            const query = `
+                *[_type == "category"] | order(_createdAt asc) {
+                    name,
+                    slug,
+                    "subcategories": *[_type == "subcategory" && references(^._id)]{
+                        name,
+                        slug
+                    }
+                }
+            `;
+
+            try {
+                const data = await client.fetch(query);
+                setCategories(data);
+            } catch (error) {
+                console.error("Error fetching categories:", error);
+            }
+        };
+
+        fetchCategories();
+    }, []);
+
+    useEffect(() => {
+        if (formik.values.product) {
+            const category = categories.find(cat => cat.slug === formik.values.product);
+            setSubcategories(category ? category.subcategories : []);
+        } else {
+            setSubcategories([]);
+        }
+    }, [formik.values.product, categories]);
+
+
     const handleFileChange = (e) => {
         const selectedFiles = Array.from(e.target.files);
         const validFiles = selectedFiles.filter(file =>
@@ -72,6 +109,7 @@ const TargetedSearch = () => {
         setSelectedTab(tab);
         formik.resetForm();
     };
+
 
     const handleWhatsAppOrder = () => {
         formik.validateForm().then((errors) => {
@@ -153,16 +191,11 @@ const TargetedSearch = () => {
                                 bg-transparent w-full custom-select"
                             >
                                 <option value="" disabled hidden>Select a product</option>
-                                <option value="Tiles">Tiles</option>
-                                <option value="Marble">Marble</option>
-                                <option value="Granite">Granite</option>
-                                <option value="MarbleSlab">Marble Slab</option>
-                                <option value="GraniteSlab">Granite Slab</option>
-                                <option value="Sanitary">Sanitary Wares</option>
-                                <option value="FloorWall">Floor and Wall Materials</option>
-                                <option value="Doors">Doors</option>
-                                <option value="Installation">Installation Services</option>
-                                <option value="Consultation">Consultation (Ask Questions)</option>
+                                {categories.map((category) => (
+                                    <option key={category.slug} value={category.slug}>
+                                        {category.name}
+                                    </option>
+                                ))}
                             </select>
                             <div className='absolute md:right-3 
                             ss:right-3 right-2'>
@@ -195,9 +228,11 @@ const TargetedSearch = () => {
                                 bg-transparent w-full custom-select"
                             >
                                 <option value="" disabled hidden>Select a category</option>
-                                {/* <option value="social_media">Social Media</option>
-                                <option value="from_friend">From a friend</option>
-                                <option value="other">Other</option> */}
+                                {subcategories.map((subcategory) => (
+                                    <option key={subcategory.slug} value={subcategory.slug}>
+                                        {subcategory.name}
+                                    </option>
+                                ))}
                             </select>
                             <div className='absolute md:right-3 
                             ss:right-3 right-2'>
