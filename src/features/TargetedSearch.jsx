@@ -180,8 +180,12 @@ const TargetedSearch = () => {
                             <select
                                 type="text"
                                 name="product"
-                                value={formik.values.product}
-                                onChange={formik.handleChange}
+                                value={formik.values.product} 
+                                onChange={(e) => {
+                                    formik.setFieldValue('product', e.target.value);
+                                    const category = categories.find(cat => cat.slug === e.target.value);
+                                    setSubcategories(category ? category.subcategories : []);
+                                }} 
                                 onBlur={formik.handleBlur}
                                 className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
                                 ss:px-3 px-2 border-search 

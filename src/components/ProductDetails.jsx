@@ -629,7 +629,8 @@ const ProductDetails = ({ product }) => {
     <section className='relative w-full md:min-h-[600px] ss:min-h-[500px]
     min-h-[500px] mx-auto flex items-center md:px-0 ss:px-16 px-6 
     md:py-0 ss:py-0 py-4'>
-        <div className='max-w-[86rem] mx-auto flex flex-col gap-10'>
+        <div className='max-w-[86rem] mx-auto flex flex-col gap-10
+        w-full'>
             <div className='flex items-center w-full bg-main2
             md:rounded-[20px] ss:rounded-[20px] rounded-2xl flex 
             md:p-8 ss:p-8 p-4'>
@@ -851,7 +852,7 @@ const ProductDetails = ({ product }) => {
             md:rounded-[20px] ss:rounded-[20px] rounded-2xl flex md:p-8 
             ss:p-8 p-4'>
                 <motion.div variants={textVariant()}
-                className='flex flex-col md:gap-6 ss:gap-5 gap-3'>
+                className='flex flex-col md:gap-6 ss:gap-5 gap-3 w-full'>
                     <h1 className='text-main font-bold md:text-[20px]
                     ss:text-[20px] text-[18px] tracking-tight'>
                         Product Description
