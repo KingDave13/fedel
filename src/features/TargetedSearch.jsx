@@ -5,7 +5,7 @@ import { GrAttachment } from "react-icons/gr";
 import { ImPlay } from "react-icons/im";
 import { TiArrowSortedDown } from "react-icons/ti";
 import * as Yup from 'yup';
-import { client } from '../sanity';
+import { searchLinks } from '../constants';
 
 const TargetedSearch = () => {
 
@@ -15,7 +15,15 @@ const TargetedSearch = () => {
     const [files, setFiles] = useState([]);
     const [previews, setPreviews] = useState([]);
     const [categories, setCategories] = useState([]);
-    const [subcategories, setSubcategories] = useState([]);
+
+    const handleProductChange = (e) => {
+        const product = e.target.value;
+        const selectedProductObj = searchLinks.find(link => link.title === product);
+        setCategories(selectedProductObj ? selectedProductObj.links : []);
+        
+        formik.setFieldValue('product', product);
+        formik.setFieldValue('category', '');
+    };
 
     const targetedSearchSchema = Yup.object().shape({
         product: Yup.string().required('Product is required.'),
@@ -48,40 +56,6 @@ const TargetedSearch = () => {
         },
     });
 
-    useEffect(() => {
-        const fetchCategories = async () => {
-            const query = `
-                *[_type == "category"] | order(_createdAt asc) {
-                    name,
-                    slug,
-                    "subcategories": *[_type == "subcategory" && references(^._id)]{
-                        name,
-                        slug
-                    }
-                }
-            `;
-
-            try {
-                const data = await client.fetch(query);
-                setCategories(data);
-            } catch (error) {
-                console.error("Error fetching categories:", error);
-            }
-        };
-
-        fetchCategories();
-    }, []);
-
-    useEffect(() => {
-        if (formik.values.product) {
-            const category = categories.find(cat => cat.slug === formik.values.product);
-            setSubcategories(category ? category.subcategories : []);
-        } else {
-            setSubcategories([]);
-        }
-    }, [formik.values.product, categories]);
-
-
     const handleFileChange = (e) => {
         const selectedFiles = Array.from(e.target.files);
         const validFiles = selectedFiles.filter(file =>
@@ -109,7 +83,6 @@ const TargetedSearch = () => {
         setSelectedTab(tab);
         formik.resetForm();
     };
-
 
     const handleWhatsAppOrder = () => {
         formik.validateForm().then((errors) => {
@@ -180,12 +153,8 @@ const TargetedSearch = () => {
                             <select
                                 type="text"
                                 name="product"
-                                value={formik.values.product} 
-                                onChange={(e) => {
-                                    formik.setFieldValue('product', e.target.value);
-                                    const category = categories.find(cat => cat.slug === e.target.value);
-                                    setSubcategories(category ? category.subcategories : []);
-                                }} 
+                                value={formik.values.product}
+                                onChange={handleProductChange}
                                 onBlur={formik.handleBlur}
                                 className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
                                 ss:px-3 px-2 border-search 
@@ -195,9 +164,11 @@ const TargetedSearch = () => {
                                 bg-transparent w-full custom-select"
                             >
                                 <option value="" disabled hidden>Select a product</option>
-                                {categories.map((category) => (
-                                    <option key={category.slug} value={category.slug}>
-                                        {category.name}
+                                {searchLinks.map(product => (
+                                    <option 
+                                    key={product.id} 
+                                    value={product.title}>
+                                        {product.title}
                                     </option>
                                 ))}
                             </select>
@@ -232,9 +203,11 @@ const TargetedSearch = () => {
                                 bg-transparent w-full custom-select"
                             >
                                 <option value="" disabled hidden>Select a category</option>
-                                {subcategories.map((subcategory) => (
-                                    <option key={subcategory.slug} value={subcategory.slug}>
-                                        {subcategory.name}
+                                {categories.map((category, index) => (
+                                    <option 
+                                    key={index} 
+                                    value={category.name}>
+                                        {category.name}
                                     </option>
                                 ))}
                             </select>
