@@ -115,7 +115,7 @@ const ItemCard = ({ item, categorySlug, attributes, isMobile }) => {
             </div>
         ) : (
             <div 
-            className='relative cursor-pointer ' 
+            className='relative cursor-pointer' 
             onMouseEnter={() => setShowAttributes(true)} 
             onMouseLeave={() => setShowAttributes(false)}
             >
@@ -138,8 +138,8 @@ const ItemCard = ({ item, categorySlug, attributes, isMobile }) => {
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.2 }}
                             className="absolute inset-0 bg-black bg-opacity-80 
-                            p-4 rounded-lg flex flex-col">
-                                <div className='text-white absolute bottom-4'>
+                            rounded-lg flex flex-col">
+                                <div className='text-white absolute bottom-0 p-4'>
                                     <h3 className="text-[19px] font-bold mb-1">
                                         {item.name}
                                     </h3>
