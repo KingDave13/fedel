@@ -81,19 +81,25 @@ const Filter = ({ products, updateFilteredProducts }) => {
   useEffect(() => {
     const applyFilters = () => {
       const filteredProducts = products.filter((product) => {
-        return Object.keys(filterValues).every((fieldName) => {
-          if (fieldName === "price") {
-            const priceAttribute = product.attributes.find((attr) => attr.price);
-            const price = priceAttribute ? priceAttribute.price : 0;
-            return price >= filterValues.price.min && price <= filterValues.price.max;
-          }
-          if (filterValues[fieldName].length === 0) return true;
-          return product.attributes.some((attr) => filterValues[fieldName].includes(attr[fieldName]));
-        });
+        
+        // Filter by types
+        if (filterValues.types.length > 0 && !product.attributes.some((attr) => filterValues.types.includes(attr.type))) {
+          return false;
+        }
+  
+        // Filter by materials
+        if (filterValues.materials.length > 0 && !product.attributes.some((attr) => filterValues.materials.includes(attr.material))) {
+          return false;
+        }
+  
+        // Add more filters here incrementally and test each
+        
+        return true;
       });
+      
       updateFilteredProducts(filteredProducts);
     };
-
+  
     applyFilters();
   }, [filterValues, products, updateFilteredProducts]);
 
