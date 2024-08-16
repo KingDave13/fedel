@@ -92,6 +92,13 @@ const Filter = ({ products, updateFilteredProducts }) => {
           return false;
         }
   
+        if (filterValues.applications.length > 0 && !product.attributes.some((attr) => filterValues.applications.includes(attr.application))) {
+          return false;
+        }
+
+        if (filterValues.stylesAndPatterns.length > 0 && !product.attributes.some((attr) => filterValues.stylesAndPatterns.includes(attr.styleAndPattern))) {
+          return false;
+        }
         // Add more filters here incrementally and test each
         
         return true;
