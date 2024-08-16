@@ -81,13 +81,11 @@ const Filter = ({ products, updateFilteredProducts }) => {
   useEffect(() => {
     const applyFilters = () => {
       const filteredProducts = products.filter((product) => {
-        
-        // Filter by types
+  
         if (filterValues.types.length > 0 && !product.attributes.some((attr) => filterValues.types.includes(attr.type))) {
           return false;
         }
   
-        // Filter by materials
         if (filterValues.materials.length > 0 && !product.attributes.some((attr) => filterValues.materials.includes(attr.material))) {
           return false;
         }
@@ -97,6 +95,10 @@ const Filter = ({ products, updateFilteredProducts }) => {
         }
 
         if (filterValues.stylesAndPatterns.length > 0 && !product.attributes.some((attr) => filterValues.stylesAndPatterns.includes(attr.styleAndPattern))) {
+          return false;
+        }
+
+        if (filterValues.sizes.length > 0 && !product.attributes.some((attr) => filterValues.sizes.includes(attr.dimensions))) {
           return false;
         }
         // Add more filters here incrementally and test each
