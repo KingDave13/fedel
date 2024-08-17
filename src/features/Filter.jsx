@@ -38,6 +38,10 @@ const Filter = ({ products, updateFilteredProducts }) => {
     Blue: "#0000FF",
     Green: "#008000",
     Yellow: "#FFFF00",
+    Orange: "#FFA500",
+    Purple: "#800080",
+    Pink: "#FFC0CB",
+    Teal: "#008080",
   };
   
   useEffect(() => {
@@ -105,7 +109,10 @@ const Filter = ({ products, updateFilteredProducts }) => {
           return false;
         }
 
-        if (filterValues.colors.length > 0 && !product.attributes.some((attr) => filterValues.colors.includes(attr.color))) {
+        
+        if (filterValues.colors.length > 0 && !product.attributes.some((attr) =>
+        attr.color && filterValues.colors.map(color => color.toLowerCase()).includes(attr.color.toLowerCase())
+        )) {
           return false;
         }
         // Add more filters here incrementally and test each
@@ -284,22 +291,17 @@ const Filter = ({ products, updateFilteredProducts }) => {
         </div>
         
         {visibility.colors && (
-          <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
+          <div className="grid grid-cols-5 gap-2 md:max-h-40 ss:max-h-32 
+          max-h-24 overflow-y-auto">
             {Object.keys(presetColors).map((colorName) => (
-              <label key={colorName} className="flex items-center gap-1">
-                <input
-                  type="checkbox"
-                  checked={filterValues.colors.includes(colorName)}
-                  onChange={() => handleFilterChange("colors", colorName)}
-                  className="mr-2 cursor-pointer"
-                />
-                <span style={{ backgroundColor: presetColors[colorName], 
-                  width: '20px',
-                  height: '20px', 
-                  display: 'inline-block', 
-                  marginRight: '10px' }} 
-                />
-              </label>
+              <div
+                key={colorName}
+                onClick={() => handleFilterChange("colors", colorName)}
+                className={`w-10 h-6 cursor-pointer rounded-md 
+                ${filterValues.colors.includes(colorName) ? 
+                  "ring-2 ring-offset-2 ring-main" : ""}`}
+                style={{ backgroundColor: presetColors[colorName] }}
+              />
             ))}
           </div>
         )}
