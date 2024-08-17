@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { filter } from '../assets';
 
-const FilterModal = ({ isOpen, onClose, children }) => {
+const FilterModal = ({ isOpen, onClose, children, handleSaveAndRefresh }) => {
     if (!isOpen) return null;
 
     const enableScroll = () => {
@@ -49,7 +49,13 @@ const FilterModal = ({ isOpen, onClose, children }) => {
                             <button className='bg-primary 
                             ss:text-[14px] text-[12px] py-3.5 
                             text-center text-white rounded-md
-                            cursor-pointer ss:w-[170px] w-full'>
+                            cursor-pointer ss:w-[170px] w-full'
+                            onClick={() => {
+                                handleSaveAndRefresh();
+                                onClose();
+                                enableScroll();
+                            }}
+                            >
                                 Save and refresh results
                             </button>
 

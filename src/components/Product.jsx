@@ -422,7 +422,14 @@ const Product = ({ products, categorySlug }) => {
             <div className="flex w-full">
                 {isFilterVisible && (
                     isMobile ? (
-                        <FilterModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+                        <FilterModal 
+                            isOpen={isModalOpen} 
+                            onClose={() => setIsModalOpen(false)}
+                            handleSaveAndRefresh={() => {
+                                updateFilteredProducts(filteredProducts); // Apply the filtering logic
+                                setIsModalOpen(false);
+                            }}
+                        >
                             <Filter
                                 products={products} 
                                 updateFilteredProducts={updateFilteredProducts} 
