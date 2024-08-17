@@ -5,7 +5,7 @@ import { TiArrowSortedDown } from "react-icons/ti";
 import { motion, AnimatePresence } from 'framer-motion';
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { filter, refresh, whatsapplogo, gmaillogo } from "../assets";
-import { SectionWrapper } from "../hoc";
+import { SectionWrapperAlt } from "../hoc";
 
 
 const ItemCard = ({ item, categorySlug, attributes, isMobile }) => {
@@ -342,8 +342,9 @@ const Product = ({ products, categorySlug }) => {
       
 
   return (
-    <section className='relative w-full md:min-h-[500px] ss:min-h-[2000px] 
-    min-h-[500px] mx-auto flex items-center md:mb-0 ss:mb-5 mb-5'>
+    <section className='relative w-full min-h-[500px] mx-auto flex 
+    items-center md:mb-0 ss:mb-5 mb-5 md:px-0 ss:px-16 px-6 md:py-8 
+    ss:py-8 py-6'>
         <div className='max-w-[86rem] mx-auto flex flex-col w-full'>
             <div className={`flex md:flex-row flex-col w-full md:items-center 
             justify-between mb-6 sticky-filter`}>
@@ -516,4 +517,4 @@ const Product = ({ products, categorySlug }) => {
   )
 };
 
-export default SectionWrapper(Product, '');
+export default SectionWrapperAlt(Product, '');

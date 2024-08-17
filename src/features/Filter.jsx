@@ -33,6 +33,13 @@ const Filter = ({ products, updateFilteredProducts }) => {
     stylesAndPatterns: true,
     price: true,
   });
+
+  const presetColors = {
+    red: "#928774",
+    blue: "#0058A3",
+    green: "#34A853",
+
+  };
   
   useEffect(() => {
     const uniqueAttributes = {
@@ -99,6 +106,10 @@ const Filter = ({ products, updateFilteredProducts }) => {
         }
 
         if (filterValues.sizes.length > 0 && !product.attributes.some((attr) => filterValues.sizes.includes(attr.dimensions))) {
+          return false;
+        }
+
+        if (filterValues.colors.length > 0 && !product.attributes.some((attr) => attr.color && attr.color.some(c => filterValues.colors.includes(c)))) {
           return false;
         }
         // Add more filters here incrementally and test each
@@ -286,7 +297,10 @@ const Filter = ({ products, updateFilteredProducts }) => {
                   onChange={() => handleFilterChange('colors', color)}
                   className="mr-2 cursor-pointer"
                 />
-                {color}
+                <div 
+                  className="w-5 h-5" 
+                  style={{ backgroundColor: presetColors[color] }}
+                />
               </label>
             ))}
           </div>
