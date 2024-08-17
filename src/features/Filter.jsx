@@ -11,6 +11,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
     applications: [],
     sizes: [],
     stylesAndPatterns: [],
+    colors: [],
   });
 
   const [filterValues, setFilterValues] = useState({
@@ -112,9 +113,12 @@ const Filter = ({ products, updateFilteredProducts }) => {
           return false;
         }
         
-        if (filterValues.colors.length > 0 && !product.attributes.some((attr) => attr.color && filterValues.colors.some(color => attr.color.includes(color)))) {
-          return false;
-        }
+        if (filterValues.colors.length > 0) {
+          const productColors = product.attributes.find(attr => attr.color)?.color || [];
+          if (!filterValues.colors.every(color => productColors.map(c => c.toLowerCase()).includes(color.toLowerCase()))) {
+            return false;
+          }
+        }     
         
         // Add more filters here incrementally and test each
         
@@ -292,14 +296,14 @@ const Filter = ({ products, updateFilteredProducts }) => {
         </div>
         
         {visibility.colors && (
-          <div className="grid grid-cols-5 gap-2 md:max-h-40 ss:max-h-32 
+          <div className="flex flex-wrap gap-2 md:max-h-40 ss:max-h-32 
           max-h-24 overflow-y-auto">
             {Object.keys(presetColors).map((colorName) => (
               <div
                 key={colorName}
-                onClick={() => handleFilterChange("colors", colorName)}
+                onClick={() => handleFilterChange("colors", colorName.toLowerCase())}
                 className={`w-10 h-6 cursor-pointer rounded-md 
-                ${filterValues.colors.includes(colorName) ? 
+                ${filterValues.colors.includes(colorName.toLowerCase()) ? 
                   "ring-2 ring-offset-2 ring-main" : ""}`}
                 style={{ backgroundColor: presetColors[colorName] }}
               />
