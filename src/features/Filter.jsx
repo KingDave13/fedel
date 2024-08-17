@@ -51,6 +51,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
       applications: new Set(),
       sizes: new Set(),
       stylesAndPatterns: new Set(),
+      colors: new Set(),
     };
 
     products.forEach((product) => {
@@ -60,6 +61,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
         if (attribute.application) uniqueAttributes.applications.add(attribute.application);
         if (attribute.dimensions) uniqueAttributes.sizes.add(attribute.dimensions);
         if (attribute.styleAndPattern) uniqueAttributes.stylesAndPatterns.add(attribute.styleAndPattern);
+        if (attribute.color) attribute.color.forEach((color) => uniqueAttributes.colors.add(color.toLowerCase()));
       });
     });
 
@@ -69,6 +71,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
       applications: [...uniqueAttributes.applications],
       sizes: [...uniqueAttributes.sizes],
       stylesAndPatterns: [...uniqueAttributes.stylesAndPatterns],
+      colors: [...uniqueAttributes.colors],
     });
   }, [products]);
 
@@ -108,13 +111,11 @@ const Filter = ({ products, updateFilteredProducts }) => {
         if (filterValues.sizes.length > 0 && !product.attributes.some((attr) => filterValues.sizes.includes(attr.dimensions))) {
           return false;
         }
-
         
-        if (filterValues.colors.length > 0 && !product.attributes.some((attr) =>
-        attr.color && filterValues.colors.map(color => color.toLowerCase()).includes(attr.color.toLowerCase())
-        )) {
+        if (filterValues.colors.length > 0 && !product.attributes.some((attr) => attr.color && filterValues.colors.some(color => attr.color.includes(color)))) {
           return false;
         }
+        
         // Add more filters here incrementally and test each
         
         return true;
