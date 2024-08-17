@@ -30,8 +30,8 @@ const ItemCard = ({ item, categorySlug, attributes, isMobile }) => {
                         <img
                             src={imageUrl}
                             alt={item.name}
-                            className="h-[300px] w-full
-                            object-cover rounded-lg"
+                            className="h-[300px] w-full object-cover 
+                            rounded-lg"
                         />
                     )}
 

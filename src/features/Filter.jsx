@@ -9,7 +9,6 @@ const Filter = ({ products, updateFilteredProducts }) => {
     types: [],
     materials: [],
     applications: [],
-    colors: [],
     sizes: [],
     stylesAndPatterns: [],
   });
@@ -35,10 +34,10 @@ const Filter = ({ products, updateFilteredProducts }) => {
   });
 
   const presetColors = {
-    red: "#928774",
-    blue: "#0058A3",
-    green: "#34A853",
-
+    Red: "#FF0000",
+    Blue: "#0000FF",
+    Green: "#008000",
+    Yellow: "#FFFF00",
   };
   
   useEffect(() => {
@@ -46,7 +45,6 @@ const Filter = ({ products, updateFilteredProducts }) => {
       types: new Set(),
       materials: new Set(),
       applications: new Set(),
-      colors: new Set(),
       sizes: new Set(),
       stylesAndPatterns: new Set(),
     };
@@ -56,7 +54,6 @@ const Filter = ({ products, updateFilteredProducts }) => {
         if (attribute.type) uniqueAttributes.types.add(attribute.type);
         if (attribute.material) uniqueAttributes.materials.add(attribute.material);
         if (attribute.application) uniqueAttributes.applications.add(attribute.application);
-        if (attribute.color) uniqueAttributes.colors.add(attribute.color);
         if (attribute.dimensions) uniqueAttributes.sizes.add(attribute.dimensions);
         if (attribute.styleAndPattern) uniqueAttributes.stylesAndPatterns.add(attribute.styleAndPattern);
       });
@@ -66,7 +63,6 @@ const Filter = ({ products, updateFilteredProducts }) => {
       types: [...uniqueAttributes.types],
       materials: [...uniqueAttributes.materials],
       applications: [...uniqueAttributes.applications],
-      colors: [...uniqueAttributes.colors],
       sizes: [...uniqueAttributes.sizes],
       stylesAndPatterns: [...uniqueAttributes.stylesAndPatterns],
     });
@@ -109,7 +105,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
           return false;
         }
 
-        if (filterValues.colors.length > 0 && !product.attributes.some((attr) => attr.color && attr.color.some(c => filterValues.colors.includes(c)))) {
+        if (filterValues.colors.length > 0 && !product.attributes.some((attr) => filterValues.colors.includes(attr.color))) {
           return false;
         }
         // Add more filters here incrementally and test each
@@ -289,17 +285,19 @@ const Filter = ({ products, updateFilteredProducts }) => {
         
         {visibility.colors && (
           <div className="overflow-y-auto md:max-h-40 ss:max-h-32 max-h-24">
-            {attributes.colors.map(color => (
-              <label key={color} className="flex items-center gap-1">
+            {Object.keys(presetColors).map((colorName) => (
+              <label key={colorName} className="flex items-center gap-1">
                 <input
                   type="checkbox"
-                  checked={filterValues.colors.includes(color)}
-                  onChange={() => handleFilterChange('colors', color)}
+                  checked={filterValues.colors.includes(colorName)}
+                  onChange={() => handleFilterChange("colors", colorName)}
                   className="mr-2 cursor-pointer"
                 />
-                <div 
-                  className="w-5 h-5" 
-                  style={{ backgroundColor: presetColors[color] }}
+                <span style={{ backgroundColor: presetColors[colorName], 
+                  width: '20px',
+                  height: '20px', 
+                  display: 'inline-block', 
+                  marginRight: '10px' }} 
                 />
               </label>
             ))}
