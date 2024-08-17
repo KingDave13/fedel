@@ -1,16 +1,12 @@
 import { useState, useEffect } from 'react';
 import { SectionWrapper } from '../hoc';
-import { motion } from 'framer-motion';
-import { fadeIn } from '../utils/motion';
 import { client, urlFor } from '../sanity';
 import { arrowRight } from '../assets';
 
-const CatCard = (category, index) => {
+const CatCard = (category) => {
     
     return (
-        <motion.div
-        variants={fadeIn('', 'spring', index * 0.5, 0.75)}
-        className='hover:shadow-xl'>
+        <div className='hover:shadow-xl'>
             <div className='flex items-center justify-center relative'
             >
                 <img 
@@ -58,7 +54,7 @@ const CatCard = (category, index) => {
                     </div>
                 </div>
             </div>
-        </motion.div>
+        </div>
     )
 };
 
