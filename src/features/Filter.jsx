@@ -35,6 +35,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
   });
 
   const presetColors = {
+    White: "ffffff",
     Red: "#FF0000",
     Blue: "#0000FF",
     Green: "#008000",
@@ -43,6 +44,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
     Purple: "#800080",
     Pink: "#FFC0CB",
     Teal: "#008080",
+    Black: "#000000",
   };
   
   useEffect(() => {
