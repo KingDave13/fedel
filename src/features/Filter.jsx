@@ -132,20 +132,30 @@ const Filter = ({ products, updateFilteredProducts }) => {
         
         if (filterValues.colors.length > 0) {
           const productColors = product.attributes.find(attr => attr.color)?.color || [];
-          if (!filterValues.colors.every(color => productColors.map(c => c.toLowerCase()).includes(color.toLowerCase()))) {
+          const normalizedProductColors = productColors.map(c => c.trim().toLowerCase());
+  
+          const matches = filterValues.colors.some(color => 
+            normalizedProductColors.includes(color)
+          );
+  
+          if (!matches) {
             return false;
           }
-        }     
+        }    
         
-        const productPriceStr = product.attributes.find(attr => attr.price)?.price;
-        const productPrice = cleanPrice(productPriceStr);
+        if (filterValues.price.min !== 0 || filterValues.price.max !== 275000) {
+          const productPriceStr = product.attributes.find(attr => attr.price)?.price;
+          const productPrice = cleanPrice(productPriceStr);
 
-        if (isNaN(productPrice)) {
-          return false;
+          if (isNaN(productPrice)) {
+            return false;
+          }
+
+          const isWithinRange = productPrice >= filterValues.price.min && productPrice <= filterValues.price.max;
+          return isWithinRange;
         }
 
-        const isWithinRange = productPrice >= filterValues.price.min && productPrice <= filterValues.price.max;
-        return isWithinRange;
+        return true;
       });
       
       updateFilteredProducts(filteredProducts);
