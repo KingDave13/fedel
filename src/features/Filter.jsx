@@ -304,9 +304,9 @@ const Filter = ({ products, updateFilteredProducts }) => {
               <div
                 key={colorName}
                 onClick={() => handleFilterChange("colors", colorName.toLowerCase())}
-                className={`w-10 h-6 cursor-pointer rounded-md 
+                className={`w-10 h-6 cursor-pointer rounded-md border-[0.5px]
                 ${filterValues.colors.includes(colorName.toLowerCase()) ? 
-                  "ring-2 ring-offset-2 ring-main" : ""}`}
+                  "border-main" : ""}`}
                 style={{ backgroundColor: presetColors[colorName] }}
               />
             ))}
