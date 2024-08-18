@@ -290,10 +290,9 @@ const Filter = ({ products, updateFilteredProducts }) => {
               }
             />
             </div>
-            <div className="flex justify-between mt-5">
-              <div>
-              <label className="block md:text-[13px] ss:text-[13px] 
-                text-[11px] font-semibold mb-1">
+            <div className="flex gap-3 justify-between mt-5 w-full">
+              <div className="w-full">
+                <label className="block text-[13px] font-semibold mb-1">
                   From (<span className="line-through">N</span>)
                 </label>
                 <input
@@ -308,9 +307,9 @@ const Filter = ({ products, updateFilteredProducts }) => {
                   max={275000}
                 />
               </div>
-              <div>
-                <label className="block md:text-[13px] ss:text-[13px] 
-                text-[11px] font-semibold mb-1">
+
+              <div className="w-full">
+                <label className="block text-[13px] font-semibold mb-1">
                   To (<span className="line-through">N</span>)
                 </label>
                 <input
