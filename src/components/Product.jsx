@@ -13,11 +13,13 @@ const ItemCard = ({ item, categorySlug, attributes, isMobile }) => {
     const [showAttributes, setShowAttributes] = useState(false);
   
     useEffect(() => {
-      if (item.images && item.images.length > 0) {
-        const assetId = item.images[0].asset._ref;
-        const imageUrl = urlFor(assetId).url();
-        setImageUrl(imageUrl);
-      }
+        if (item.images && item.images.length > 0 && item.images[0].asset) {
+            const assetId = item.images[0].asset._ref;
+            const imageUrl = urlFor(assetId).url();
+            setImageUrl(imageUrl);
+        } else {
+            setImageUrl(null);
+        }
     }, [item.images]);
   
     return (
