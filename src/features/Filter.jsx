@@ -81,7 +81,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
   const handleFilterChange = (fieldName, value) => {
     setFilterValues((prevValues) => {
       if (fieldName === "price") {
-        return { ...prevValues, [fieldName]: { min: value.min, max: value.max } };
+        return { ...prevValues, price: { ...prevValues.price, ...value } };
       }
       
       const newValue = prevValues[fieldName].includes(value)
@@ -284,7 +284,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
               range
               min={0}
               max={275000}
-              defaultValue={[filterValues.price.min, filterValues.price.max]}
+              value={[filterValues.price.min, filterValues.price.max]}
               onChange={(value) =>
                 handleFilterChange("price", { min: value[0], max: value[1] })
               }
