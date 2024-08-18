@@ -81,7 +81,7 @@ const Filter = ({ products, updateFilteredProducts }) => {
   const handleFilterChange = (fieldName, value) => {
     setFilterValues((prevValues) => {
       if (fieldName === "price") {
-        return { ...prevValues, [fieldName]: { min: value[0], max: value[1] } };
+        return { ...prevValues, [fieldName]: { min: value.min, max: value.max } };
       }
       
       const newValue = prevValues[fieldName].includes(value)
@@ -89,6 +89,16 @@ const Filter = ({ products, updateFilteredProducts }) => {
         : [...prevValues[fieldName], value];
       return { ...prevValues, [fieldName]: newValue };
     });
+  };
+
+  const handleInputChange = (field, value) => {
+    setFilterValues((prevValues) => ({
+      ...prevValues,
+      price: {
+        ...prevValues.price,
+        [field]: value
+      }
+    }));
   };
 
   useEffect(() => {
@@ -122,7 +132,11 @@ const Filter = ({ products, updateFilteredProducts }) => {
           }
         }     
         
-        // Add more filters here incrementally and test each
+        if (filterValues.price.min > 0 || filterValues.price.max < 275000) {
+          if (product.price < filterValues.price.min || product.price > filterValues.price.max) {
+            return false;
+          }
+        }
         
         return true;
       });
@@ -266,17 +280,51 @@ const Filter = ({ products, updateFilteredProducts }) => {
         {visibility.price && (
           <div className="flex flex-col bg-main2 p-4 rounded-lg">
             <div className="">
-              <Slider
-                range
-                min={0}
-                max={275000}
-                defaultValue={[filterValues.price.min, filterValues.price.max]}
-                onChange={(values) => handleFilterChange("price", { min: values[0], max: values[1] })}
-              />
+            <Slider
+              range
+              min={0}
+              max={275000}
+              defaultValue={[filterValues.price.min, filterValues.price.max]}
+              onChange={(value) =>
+                handleFilterChange("price", { min: value[0], max: value[1] })
+              }
+            />
             </div>
-            <div className="flex justify-between text-[14px] mt-2">
-              <span>{`N${filterValues.price.min}`}</span>
-              <span>{`N${filterValues.price.max}`}</span>
+            <div className="flex justify-between mt-5">
+              <div>
+              <label className="block md:text-[13px] ss:text-[13px] 
+                text-[11px] font-semibold mb-1">
+                  From (<span className="line-through">N</span>)
+                </label>
+                <input
+                  type="number"
+                  className="w-full px-3 py-1 border border-main3 rounded-lg 
+                  bg-transparent text-main3"
+                  value={filterValues.price.min}
+                  onChange={(e) =>
+                    handleInputChange("min", parseInt(e.target.value))
+                  }
+                  min={0}
+                  max={275000}
+                />
+              </div>
+              <div>
+                <label className="block md:text-[13px] ss:text-[13px] 
+                text-[11px] font-semibold mb-1">
+                  To (<span className="line-through">N</span>)
+                </label>
+                <input
+                  type="number"
+                  className="w-full px-3 py-1 border border-main3 rounded-lg 
+                  bg-transparent text-main3"
+                  value={filterValues.price.max}
+                  onChange={(e) =>
+                    handleInputChange("max", parseInt(e.target.value))
+                  }
+                  min={0}
+                  max={275000}
+                />
+              </div>
             </div>
           </div>
         )}
