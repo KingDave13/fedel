@@ -101,6 +101,11 @@ const Filter = ({ products, updateFilteredProducts }) => {
     }));
   };
 
+  const cleanPrice = (priceStr) => {
+    if (!priceStr) return NaN;
+    return parseFloat(priceStr.replace(/,/g, ''));
+  };
+
   useEffect(() => {
     const applyFilters = () => {
       const filteredProducts = products.filter((product) => {
@@ -132,13 +137,15 @@ const Filter = ({ products, updateFilteredProducts }) => {
           }
         }     
         
-        if (filterValues.price.min > 0 || filterValues.price.max < 275000) {
-          if (product.price < filterValues.price.min || product.price > filterValues.price.max) {
-            return false;
-          }
+        const productPriceStr = product.attributes.find(attr => attr.price)?.price;
+        const productPrice = cleanPrice(productPriceStr);
+
+        if (isNaN(productPrice)) {
+          return false;
         }
-        
-        return true;
+
+        const isWithinRange = productPrice >= filterValues.price.min && productPrice <= filterValues.price.max;
+        return isWithinRange;
       });
       
       updateFilteredProducts(filteredProducts);
