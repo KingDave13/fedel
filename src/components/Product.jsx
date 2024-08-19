@@ -440,7 +440,7 @@ const Product = ({ products, categorySlug }) => {
                         </FilterModal>
                     ) : (
                         <div className="flex w-1/4 pr-1 mr-5 border-r-[1.5px]
-                        border-main3">
+                        border-main3 sticky-filter-main">
                             <Filter 
                                 products={products} 
                                 updateFilteredProducts={updateFilteredProducts} 
