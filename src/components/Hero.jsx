@@ -115,7 +115,7 @@ const Hero = () => {
     <section className='relative w-full md:min-h-[700px] ss:min-h-[800px] 
     items-center flex md:mb-0 ss:mb-52 mb-36'>
         <div className={`relative items-center w-full max-w-[82rem] p-6
-        md:mt-28 ss:mt-20 mt-16 md:rounded-[30px] flex md:p-12 ss:p-10 
+        md:mt-28 ss:mt-20 mt-12 md:rounded-[30px] flex md:p-12 ss:p-10 
         ${loaded ? 'opacity-100' : 'opacity-0 transition-opacity duration-500'}`}
             style={{
                 backgroundImage: `url(${images[currentImageIndex]})`,
