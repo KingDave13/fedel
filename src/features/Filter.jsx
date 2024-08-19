@@ -360,7 +360,7 @@ const Filter = ({ products, updateFilteredProducts, filterValues, setFilterValue
                 onClick={() => handleFilterChange("colors", colorName.toLowerCase())}
                 className={`w-10 h-6 cursor-pointer rounded-md border-[0.5px]
                 ${filterValues.colors.includes(colorName.toLowerCase()) ? 
-                  "border-main" : ""}`}
+                  "border-main border-2" : ""}`}
                 style={{ backgroundColor: presetColors[colorName] }}
               />
             ))}
