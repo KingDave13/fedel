@@ -35,16 +35,16 @@ const Filter = ({ products, updateFilteredProducts }) => {
   });
 
   const presetColors = {
-    White: "ffffff",
-    Red: "#FF0000",
-    Blue: "#0000FF",
-    Green: "#008000",
-    Yellow: "#FFFF00",
-    Orange: "#FFA500",
-    Purple: "#800080",
-    Pink: "#FFC0CB",
-    Teal: "#008080",
-    Black: "#000000",
+    white: "#ffffff",
+    red: "#FF0000",
+    blue: "#0000FF",
+    green: "#008000",
+    yellow: "#FFFF00",
+    orange: "#FFA500",
+    purple: "#800080",
+    pink: "#FFC0CB",
+    teal: "#008080",
+    black: "#000000",
   };
   
   useEffect(() => {

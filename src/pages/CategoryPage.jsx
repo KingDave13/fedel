@@ -39,6 +39,7 @@ const CategoryPage = () => {
             application,
             material,
             styleAndPattern,
+            color,
           },
         }
       }
