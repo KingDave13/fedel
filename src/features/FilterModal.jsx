@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { filter } from '../assets';
 
-const FilterModal = ({ isOpen, onClose, children, handleSaveAndRefresh }) => {
+const FilterModal = ({ isOpen, onClose, children }) => {
     if (!isOpen) return null;
 
     const enableScroll = () => {
@@ -51,7 +51,6 @@ const FilterModal = ({ isOpen, onClose, children, handleSaveAndRefresh }) => {
                             text-center text-white rounded-md
                             cursor-pointer ss:w-[170px] w-full'
                             onClick={() => {
-                                handleSaveAndRefresh();
                                 onClose();
                                 enableScroll();
                             }}

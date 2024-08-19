@@ -460,10 +460,6 @@ const Product = ({ products, categorySlug }) => {
                         <FilterModal 
                             isOpen={isModalOpen} 
                             onClose={handleCloseModal}
-                            handleSaveAndRefresh={() => {
-                                updateFilteredProducts(filteredProducts);
-                                handleCloseModal();
-                            }}
                         >
                             <Filter
                                 products={products} 
