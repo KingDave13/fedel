@@ -276,6 +276,14 @@ const Product = ({ products, categorySlug }) => {
         setIsFilterVisible(prev => !prev);
     };
 
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+    
+        setTimeout(() => {
+            setIsFilterVisible(false);
+        }, 300);
+    };
+
     const renderPageNumbers = () => {
         const pageButtons = [];
     
@@ -427,10 +435,10 @@ const Product = ({ products, categorySlug }) => {
                     isMobile ? (
                         <FilterModal 
                             isOpen={isModalOpen} 
-                            onClose={() => setIsModalOpen(false)}
+                            onClose={handleCloseModal}
                             handleSaveAndRefresh={() => {
                                 updateFilteredProducts(filteredProducts); // Apply the filtering logic
-                                setIsModalOpen(false);
+                                handleCloseModal();
                             }}
                         >
                             <Filter
