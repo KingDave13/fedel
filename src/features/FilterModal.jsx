@@ -27,7 +27,7 @@ const FilterModal = ({ isOpen, onClose, children, handleSaveAndRefresh }) => {
                     shadow-xl flex flex-col ss:justify-center 
                     w-full ss:h-auto h-[100%] overflow-auto 
                     items-center relative ss:m-16">
-                        <div className='flex bg-main2 w-full z-20
+                        <div className='flex bg-main2 w-full z-10
                         top-0 ss:p-8 p-4 items-center gap-3 phone3'>
                             <img 
                                 src={filter}
