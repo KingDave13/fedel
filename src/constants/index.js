@@ -69,47 +69,47 @@ export const navLinks = [
         links: [
             {
                 name: "Carrara Marble",
-                route: "",
+                route: "/products/marble?type=Carrara Marble",
             },
             {
                 name: "Calacatta Marble",
-                route: "",
+                route: "/products/marble?type=Calacatta Marble",
             },
             {
                 name: "Statuario Marble",
-                route: "",
+                route: "/products/marble?type=Statuario Marble",
             },
             {
                 name: "Crema Marfill Marble",
-                route: "",
+                route: "/products/marble?type=Crema Marfill Marble",
             },
             {
                 name: "Emperador Marble",
-                route: "",
+                route: "/products/marble?type=Emperador Marble",
             },
             {
                 name: "Nero Marquina Marble",
-                route: "",
+                route: "/products/marble?type=Nero Marquina Marble",
             },
             {
                 name: "Travertine Marble",
-                route: "",
+                route: "/products/marble?type=Travertine Marble",
             },
             {
                 name: "Onyx Marble",
-                route: "",
+                route: "/products/marble?type=Onyx Marble",
             },
             {
                 name: "Marble Slabs",
-                route: "",
+                route: "/products/marble?type=Marble Slabs",
             },
             {
                 name: "Marble Tiles",
-                route: "",
+                route: "/products/marble?type=Marble Tiles",
             },
             {
                 name: "All and Others (Marble)",
-                route: "",
+                route: "/products/marble?type=Other Marble",
             },
         ],
     },
@@ -119,51 +119,51 @@ export const navLinks = [
         links: [
             {
                 name: "Absolute Black Granite",
-                route: "",
+                route: "/products/granite?type=Absolute Black Granite",
             },
             {
                 name: "Tan Brown Granite",
-                route: "",
+                route: "/products/granite?type=Tan Brown Granite",
             },
             {
                 name: "Giallo Ornamental Granite",
-                route: "",
+                route: "/products/granite?type=Giallo Ornamental Granite",
             },
             {
                 name: "Santa Cecilia Granite",
-                route: "",
+                route: "/products/granite?type=Santa Cecilia Granite",
             },
             {
                 name: "Ubatuba Granite",
-                route: "",
+                route: "/products/granite?type=Ubatuba Granite",
             },
             {
                 name: "Kashmir White Granite",
-                route: "",
+                route: "/products/granite?type=Kashmir White Granite",
             },
             {
                 name: "Baltic Brown Granite",
-                route: "",
+                route: "/products/granite?type=Baltic Brown Granite",
             },
             {
                 name: "Black Galaxy Granite",
-                route: "",
+                route: "/products/granite?type=Black Galaxy Granite",
             },
             {
                 name: "Blue Pearl Granite",
-                route: "",
+                route: "/products/granite?type=Blue Pearl Granite",
             },
             {
                 name: "Tiger Skin Granite",
-                route: "",
+                route: "/products/granite?type=Tiger Skin Granite",
             },
             {
                 name: "Granite Slabs",
-                route: "",
+                route: "/products/granite?type=Granite Slabs",
             },
             {
                 name: "All and Others (Granites)",
-                route: "",
+                route: "/products/granite?type=Other Granite",
             },
         ],
     },
@@ -173,39 +173,39 @@ export const navLinks = [
         links: [
             {
                 name: "Toilets",
-                route: "",
+                route: "/products/sanitary-wares?type=Toilets",
             },
             {
                 name: "Basins/Sinks",
-                route: "",
+                route: "/products/sanitary-wares?type=Basins/Sinks",
             },
             {
                 name: "Showers",
-                route: "",
+                route: "/products/sanitary-wares?type=Showers",
             },
             {
                 name: "Bidets",
-                route: "",
+                route: "/products/sanitary-wares?type=Bidets",
             },
             {
                 name: "Urinals",
-                route: "",
+                route: "/products/sanitary-wares?type=Urinals",
             },
             {
                 name: "Faucets and Taps",
-                route: "",
+                route: "/products/sanitary-wares?type=Faucets and Taps",
             },
             {
                 name: "Accessories",
-                route: "",
+                route: "/products/sanitary-wares?type=Accessories",
             },
             {
                 name: "Drainage and Plumbing Fittings",
-                route: "",
+                route: "/products/sanitary-wares?type=Drainage and Plumbing Fittings",
             },
             {
                 name: "Water Filtration/Purification Systems",
-                route: "",
+                route: "/products/sanitary-wares?type=Water Filtration/Purification Systems",
             },
         ],
     },
@@ -215,39 +215,39 @@ export const navLinks = [
         links: [
             {
                 name: "Hardwood",
-                route: "",
+                route: "/products/floor-and-wall-materials?type=Hardwood",
             },
             {
                 name: "Laminate",
-                route: "",
+                route: "/products/floor-and-wall-materials?type=Laminate",
             },
             {
                 name: "Vinyl",
-                route: "",
+                route: "/products/floor-and-wall-materials?type=Vinyl",
             },
             {
                 name: "Carpet",
-                route: "",
+                route: "/products/floor-and-wall-materials?type=Carpet",
             },
             {
                 name: "Urinals",
-                route: "",
+                route: "/products/floor-and-wall-materials?type=Urinals",
             },
             {
                 name: "Paint",
-                route: "",
+                route: "/products/floor-and-wall-materials?type=Paint",
             },
             {
                 name: "Wallpaper",
-                route: "",
+                route: "/products/floor-and-wall-materials?type=Wallpaper",
             },
             {
                 name: "Wood Panelling",
-                route: "",
+                route: "/products/floor-and-wall-materials?type=Wood Panelling",
             },
             {
                 name: "Wainscoting",
-                route: "",
+                route: "/products/floor-and-wall-materials?type=Wainscoting",
             },
         ],
     },
@@ -273,11 +273,11 @@ export const navLinks = [
             },
             {
                 name: "Installation Services",
-                route: "",
+                route: "/products/installation",
             },
             {
                 name: "Consultation",
-                route: "",
+                route: "/products/consultation",
             },
         ],
     },
@@ -707,210 +707,210 @@ export const socialMedia = [
   export const footerLinks = [
     {
       title: "Tiles",
-      links: [
-        {
-          name: "Ceramic Tiles",
-          route: "",
-        },
-        {
-          name: "Porcelain Tiles",
-          route: "",
-        },
-        {
-          name: "Floor Tiles",
-          route: "",
-        },
-        {
-          name: "Wall Tiles",
-          route: "",
-        },
-        {
-          name: "Backsplash Tiles",
-          route: "",
-        },
-        {
-          name: "Bathroom Tiles",
-          route: "",
-        },
-        {
-            name: "Kitchen Tiles",
-            route: "",
-        },
-        {
-            name: "Indoor Tiles",
-            route: "",
-        },
-        {
-            name: "Outdoor Tiles",
-            route: "",
-        },
-        {
-            name: "Pool Tiles",
-            route: "",
-        },
-        {
-            name: "Commercial Tiles",
-            route: "",
-        },
-        {
-            name: "Residential Tiles",
-            route: "",
-        },
-        {
-            name: "Brick Tiles",
-            route: "",
-        },
-        {
-            name: "All and Others (Tiles)",
-            route: "",
-        },
-      ],
+        links: [
+            {
+                name: "Ceramic Tiles",
+                route: "/products/tiles?type=Ceramic Tiles",
+            },
+            {
+                name: "Porcelain Tiles",
+                route: "/products/tiles?type=Porcelain Tiles",
+            },
+            {
+                name: "Floor Tiles",
+                route: "/products/tiles?type=Floor Tiles",
+            },
+            {
+                name: "Wall Tiles",
+                route: "/products/tiles?type=Wall Tiles",
+            },
+            {
+                name: "Backsplash Tiles",
+                route: "/products/tiles?type=Backsplash Tiles",
+            },
+            {
+                name: "Bathroom Tiles",
+                route: "/products/tiles?type=Bathroom Tiles",
+            },
+            {
+                name: "Kitchen Tiles",
+                route: "/products/tiles?type=Kitchen Tiles",
+            },
+            {
+                name: "Indoor Tiles",
+                route: "/products/tiles?type=Indoor Tiles",
+            },
+            {
+                name: "Outdoor Tiles",
+                route: "/products/tiles?type=Outdoor Tiles",
+            },
+            {
+                name: "Pool Tiles",
+                route: "/products/tiles?type=Pool Tiles",
+            },
+            {
+                name: "Commercial Tiles",
+                route: "/products/tiles?type=Commercial Tiles",
+            },
+            {
+                name: "Residential Tiles",
+                route: "/products/tiles?type=Residential Tiles",
+            },
+            {
+                name: "Brick Tiles",
+                route: "/products/tiles?type=Brick Tiles",
+            },
+            {
+                name: "All and Others (Tiles)",
+                route: "/products/tiles?type=Other Tiles",
+            },
+        ],
     },
     {
       title: "Marble",
-      links: [
-        {
-            name: "Carrara Marble",
-            route: "",
-        },
-        {
-            name: "Calacatta Marble",
-            route: "",
-        },
-        {
-            name: "Statuario Marble",
-            route: "",
-        },
-        {
-            name: "Crema Marfil Marble",
-            route: "",
-        },
-        {
-            name: "Emperador Marble",
-            route: "",
-        },
-        {
-            name: "Nero Marquina Marble",
-            route: "",
-        },
-        {
-            name: "Travertine Marble",
-            route: "",
-        },
-        {
-            name: "Onyx Marble",
-            route: "",
-        },
-        {
-            name: "Marble Slabs",
-            route: "",
-        },
-        {
-            name: "Marble Tiles",
-            route: "",
-        },
-        {
-            name: "All and Others (Marble)",
-            route: "",
-        },
-      ],
+        links: [
+            {
+                name: "Carrara Marble",
+                route: "/products/marble?type=Carrara Marble",
+            },
+            {
+                name: "Calacatta Marble",
+                route: "/products/marble?type=Calacatta Marble",
+            },
+            {
+                name: "Statuario Marble",
+                route: "/products/marble?type=Statuario Marble",
+            },
+            {
+                name: "Crema Marfill Marble",
+                route: "/products/marble?type=Crema Marfill Marble",
+            },
+            {
+                name: "Emperador Marble",
+                route: "/products/marble?type=Emperador Marble",
+            },
+            {
+                name: "Nero Marquina Marble",
+                route: "/products/marble?type=Nero Marquina Marble",
+            },
+            {
+                name: "Travertine Marble",
+                route: "/products/marble?type=Travertine Marble",
+            },
+            {
+                name: "Onyx Marble",
+                route: "/products/marble?type=Onyx Marble",
+            },
+            {
+                name: "Marble Slabs",
+                route: "/products/marble?type=Marble Slabs",
+            },
+            {
+                name: "Marble Tiles",
+                route: "/products/marble?type=Marble Tiles",
+            },
+            {
+                name: "All and Others (Marble)",
+                route: "/products/marble?type=Other Marble",
+            },
+        ],
     },
 
     {
         title: "Granite",
-        links: [
-        {
-              name: "Absolute Black Granite",
-              route: "",
+            links: [
+                {
+                    name: "Absolute Black Granite",
+                    route: "/products/granite?type=Absolute Black Granite",
+                },
+                {
+                    name: "Tan Brown Granite",
+                    route: "/products/granite?type=Tan Brown Granite",
+                },
+                {
+                    name: "Giallo Ornamental Granite",
+                    route: "/products/granite?type=Giallo Ornamental Granite",
+                },
+                {
+                    name: "Santa Cecilia Granite",
+                    route: "/products/granite?type=Santa Cecilia Granite",
+                },
+                {
+                    name: "Ubatuba Granite",
+                    route: "/products/granite?type=Ubatuba Granite",
+                },
+                {
+                    name: "Kashmir White Granite",
+                    route: "/products/granite?type=Kashmir White Granite",
+                },
+                {
+                    name: "Baltic Brown Granite",
+                    route: "/products/granite?type=Baltic Brown Granite",
+                },
+                {
+                    name: "Black Galaxy Granite",
+                    route: "/products/granite?type=Black Galaxy Granite",
+                },
+                {
+                    name: "Blue Pearl Granite",
+                    route: "/products/granite?type=Blue Pearl Granite",
+                },
+                {
+                    name: "Tiger Skin Granite",
+                    route: "/products/granite?type=Tiger Skin Granite",
+                },
+                {
+                    name: "Granite Slabs",
+                    route: "/products/granite?type=Granite Slabs",
+                },
+                {
+                    name: "All and Others (Granites)",
+                    route: "/products/granite?type=Other Granite",
+                },
+            ],
         },
-        {
-              name: "Tan Brown Granite",
-              route: "",
-        },
-        {
-              name: "Giallo Ornamental Granite",
-              route: "",
-        },
-        {
-              name: "Santa Cecilia Granite",
-              route: "",
-        },
-        {
-              name: "Ubatuba Granite",
-              route: "",
-        },
-        {
-              name: "Kashmir White Granite",
-              route: "",
-        },
-        {
-              name: "Baltic Brown Granite",
-              route: "",
-        },
-        {
-              name: "Black Galaxy Granite",
-              route: "",
-        },
-        {
-              name: "Blue Pearl Granite",
-              route: "",
-        },
-        {
-              name: "Tiger Skin Granite",
-              route: "",
-        },
-        {
-            name: "Granite Slabs",
-            route: "",
-        },
-        {
-            name: "All and Others (Granite)",
-            route: "",
-        },
-        ],
-      },
 
       {
         title: "Sanitary Wares",
-        links: [
-          {
-              name: "Toilets",
-              route: "",
-          },
-          {
-              name: "Basin/Sinks",
-              route: "",
-          },
-          {
-              name: "Showers",
-              route: "",
-          },
-          {
-              name: "Bidets",
-              route: "",
-          },
-          {
-              name: "Urinals",
-              route: "",
-          },
-          {
-              name: "Faucets and Taps",
-              route: "",
-          },
-          {
-              name: "Accessories",
-              route: "",
-          },
-          {
-              name: "Drainage and Plumbing Fittings",
-              route: "",
-          },
-          {
-              name: "Water Filtration and Purification Systems",
-              route: "",
-          },
-        ],
-      },
+            links: [
+                {
+                    name: "Toilets",
+                    route: "/products/sanitary-wares?type=Toilets",
+                },
+                {
+                    name: "Basins/Sinks",
+                    route: "/products/sanitary-wares?type=Basins/Sinks",
+                },
+                {
+                    name: "Showers",
+                    route: "/products/sanitary-wares?type=Showers",
+                },
+                {
+                    name: "Bidets",
+                    route: "/products/sanitary-wares?type=Bidets",
+                },
+                {
+                    name: "Urinals",
+                    route: "/products/sanitary-wares?type=Urinals",
+                },
+                {
+                    name: "Faucets and Taps",
+                    route: "/products/sanitary-wares?type=Faucets and Taps",
+                },
+                {
+                    name: "Accessories",
+                    route: "/products/sanitary-wares?type=Accessories",
+                },
+                {
+                    name: "Drainage and Plumbing Fittings",
+                    route: "/products/sanitary-wares?type=Drainage and Plumbing Fittings",
+                },
+                {
+                    name: "Water Filtration/Purification Systems",
+                    route: "/products/sanitary-wares?type=Water Filtration/Purification Systems",
+                },
+            ],
+        },
   
     {
       title: "More Products",
@@ -933,11 +933,11 @@ export const socialMedia = [
             },
             {
                 name: "Installation Services",
-                route: "",
+                route: "/products/installation",
             },
             {
                 name: "Consultation",
-                route: "",
+                route: "/products/consultation",
             },
         ],
     },
