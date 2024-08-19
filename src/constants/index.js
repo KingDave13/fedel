@@ -257,19 +257,19 @@ export const navLinks = [
         links: [
             {
                 name: "Marble Slabs",
-                route: "",
+                route: "/products/marble-slab",
             },
             {
                 name: "Granite Slabs",
-                route: "",
+                route: "/products/granite-slab",
             },
             {
                 name: "Doors",
-                route: "",
+                route: "/products/doors",
             },
             {
                 name: "Other Products",
-                route: "",
+                route: "/products/other-products",
             },
             {
                 name: "Installation Services",
@@ -914,32 +914,32 @@ export const socialMedia = [
   
     {
       title: "More Products",
-      links: [
-        {
-          name: "Marble Slabs",
-          route: "",
-        },
-        {
-          name: "Granite Slabs",
-          route: "",
-        },
-        {
-          name: "Doors",
-          route: "",
-        },
-        {
-          name: "Other Products",
-          route: "",
-        },
-        {
-            name: "Installation Services",
-            route: "",
-        },
-        {
-            name: "Consultation",
-            route: "",
-        },
-      ],
+        links: [
+            {
+                name: "Marble Slabs",
+                route: "/products/marble-slab",
+            },
+            {
+                name: "Granite Slabs",
+                route: "/products/granite-slab",
+            },
+            {
+                name: "Doors",
+                route: "/products/doors",
+            },
+            {
+                name: "Other Products",
+                route: "/products/other-products",
+            },
+            {
+                name: "Installation Services",
+                route: "",
+            },
+            {
+                name: "Consultation",
+                route: "",
+            },
+        ],
     },
     {
         title: "Company",
