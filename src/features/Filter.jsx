@@ -4,7 +4,7 @@ import "rc-slider/assets/index.css";
 import { TiArrowSortedDown } from "react-icons/ti";
 
 
-const Filter = ({ products, updateFilteredProducts }) => {
+const Filter = ({ products, updateFilteredProducts, filterValues, setFilterValues }) => {
   const [attributes, setAttributes] = useState({
     types: [],
     materials: [],
@@ -12,16 +12,6 @@ const Filter = ({ products, updateFilteredProducts }) => {
     sizes: [],
     stylesAndPatterns: [],
     colors: [],
-  });
-
-  const [filterValues, setFilterValues] = useState({
-    types: [],
-    materials: [],
-    applications: [],
-    colors: [],
-    sizes: [],
-    stylesAndPatterns: [],
-    price: { min: 0, max: 275000 },
   });
 
   const [visibility, setVisibility] = useState({

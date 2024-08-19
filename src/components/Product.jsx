@@ -232,6 +232,16 @@ const Product = ({ products, categorySlug }) => {
 
     const [scrollPosition, setScrollPosition] = useState(0);
 
+    const [filterValues, setFilterValues] = useState({
+        types: [],
+        materials: [],
+        applications: [],
+        colors: [],
+        sizes: [],
+        stylesAndPatterns: [],
+        price: { min: 0, max: 275000 },
+    });
+
     const disableScroll = () => {
       setScrollPosition(window.pageYOffset);
       document.body.style.overflow = 'hidden';
@@ -437,13 +447,15 @@ const Product = ({ products, categorySlug }) => {
                             isOpen={isModalOpen} 
                             onClose={handleCloseModal}
                             handleSaveAndRefresh={() => {
-                                updateFilteredProducts(filteredProducts); // Apply the filtering logic
+                                updateFilteredProducts(filteredProducts);
                                 handleCloseModal();
                             }}
                         >
                             <Filter
                                 products={products} 
-                                updateFilteredProducts={updateFilteredProducts} 
+                                updateFilteredProducts={updateFilteredProducts}
+                                filterValues={filterValues}
+                                setFilterValues={setFilterValues}
                             />
                         </FilterModal>
                     ) : (
@@ -451,7 +463,9 @@ const Product = ({ products, categorySlug }) => {
                         border-main3 sticky-filter-main">
                             <Filter 
                                 products={products} 
-                                updateFilteredProducts={updateFilteredProducts} 
+                                updateFilteredProducts={updateFilteredProducts}
+                                filterValues={filterValues}
+                                setFilterValues={setFilterValues}
                             />
                         </div>
                     )
