@@ -7,59 +7,59 @@ export const navLinks = [
         links: [
             {
                 name: "Ceramic Tiles",
-                route: "",
+                route: "/products/tiles?type=Ceramic Tiles",
             },
             {
                 name: "Porcelain Tiles",
-                route: "",
+                route: "/products/tiles?type=Porcelain Tiles",
             },
             {
                 name: "Floor Tiles",
-                route: "",
+                route: "/products/tiles?type=Floor Tiles",
             },
             {
                 name: "Wall Tiles",
-                route: "",
+                route: "/products/tiles?type=Wall Tiles",
             },
             {
                 name: "Backsplash Tiles",
-                route: "",
+                route: "/products/tiles?type=Backsplash Tiles",
             },
             {
                 name: "Bathroom Tiles",
-                route: "",
+                route: "/products/tiles?type=Bathroom Tiles",
             },
             {
                 name: "Kitchen Tiles",
-                route: "",
+                route: "/products/tiles?type=Kitchen Tiles",
             },
             {
                 name: "Indoor Tiles",
-                route: "",
+                route: "/products/tiles?type=Indoor Tiles",
             },
             {
                 name: "Outdoor Tiles",
-                route: "",
+                route: "/products/tiles?type=Outdoor Tiles",
             },
             {
                 name: "Pool Tiles",
-                route: "",
+                route: "/products/tiles?type=Pool Tiles",
             },
             {
                 name: "Commercial Tiles",
-                route: "",
+                route: "/products/tiles?type=Commercial Tiles",
             },
             {
                 name: "Residential Tiles",
-                route: "",
+                route: "/products/tiles?type=Residential Tiles",
             },
             {
                 name: "Brick Tiles",
-                route: "",
+                route: "/products/tiles?type=Brick Tiles",
             },
             {
                 name: "All and Others (Tiles)",
-                route: "",
+                route: "/products/tiles?type=Other Tiles",
             },
         ],
     },

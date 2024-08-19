@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { filter, refresh, whatsapplogo, gmaillogo } from "../assets";
 import { SectionWrapperAlt } from "../hoc";
+import { useLocation } from 'react-router-dom';
 
 
 const ItemCard = ({ item, categorySlug, attributes, isMobile }) => {
@@ -231,6 +232,19 @@ const Product = ({ products, categorySlug }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const [scrollPosition, setScrollPosition] = useState(0);
+    const location = useLocation();
+
+    useEffect(() => {
+        const queryParams = new URLSearchParams(location.search);
+        const typeFilter = queryParams.get('type');
+    
+        if (typeFilter) {
+          setFilterValues((prevValues) => ({
+            ...prevValues,
+            types: [...prevValues.types, typeFilter],
+          }));
+        }
+    }, [location.search]);
 
     const [filterValues, setFilterValues] = useState({
         types: [],
