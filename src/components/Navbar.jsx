@@ -24,6 +24,7 @@ const Navbar = () => {
     const navigate = useNavigate();
     const cartItems = useSelector((state) => state.cart.items);
     const itemCount = cartItems.length;
+    const [scrollPosition, setScrollPosition] = useState(0);
 
     const { slug, categorySlug } = useParams();
     const currentCategory = slug || categorySlug || '';
@@ -79,6 +80,23 @@ const Navbar = () => {
     const toggleMenu = (id) => {
         setOpenMenuId((prevId) => (prevId === id ? null : id));
     };
+
+    const disableScroll = () => {
+        setScrollPosition(window.pageYOffset);
+        document.body.style.overflow = 'hidden';
+        document.body.style.top = `-${scrollPosition}px`;
+    };
+
+    const enableScroll = () => {
+        document.body.style.overflow = 'auto';
+        document.body.style.top = '0';
+    };
+
+    useEffect(() => {
+        if (!toggle) {
+          enableScroll();
+        }
+    }, [toggle]);      
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -332,6 +350,7 @@ const Navbar = () => {
                                     style={{ color: '#050759' }}
                                     onClick={() => {
                                         setToggle(!toggle);
+                                        enableScroll();
                                     }}
                                 />
                                 ) : (
@@ -341,6 +360,7 @@ const Navbar = () => {
                                     style={{ color: '#050759' }}
                                     onClick={() => {
                                         setToggle(!toggle);
+                                        disableScroll();
                                     }}
                                 />
                             )}
