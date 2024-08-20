@@ -353,7 +353,7 @@ const Navbar = () => {
                             ${toggle 
                                 ? 'menu-slide-enter menu-slide-enter-active' 
                                 : 'menu-slide-exit menu-slide-exit-active'}`}
-                            style={{ maxHeight: '90vh', overflowY: 'auto' }} 
+                            style={{ height: '100vh', overflowY: 'auto' }} 
                         >
                             <ul className="list-none flex flex-col 
                             ss:gap-6 gap-4 ss:mb-14 mb-10">
@@ -450,18 +450,18 @@ const Navbar = () => {
                                 Get a Quote
                             </button>
 
-                            <div className='flex justify-center 
-                            ss:gap-8 gap-4 items-center mt-12 bg-main2 
-                            rounded-[8px] ss:py-3 py-2'>
+                            <div className='flex justify-center
+                            ss:gap-8 gap-5 items-center mt-12 bg-main2 
+                            rounded-[8px] ss:py-3 py-3'>
                                 <div className='flex justify-center 
                                 ss:gap-6 gap-5 items-center'>
                                     <HiOutlineChat className='text-main
-                                        ss:text-[23px] text-[20px]' 
+                                        ss:text-[23px] text-[21px]' 
                                     />
 
                                     <a href='mailto:fedeltileslimited@gmail.com'>
                                         <FiMail className='text-main 
-                                            ss:text-[23px] text-[20px]' 
+                                            ss:text-[23px] text-[21px]' 
                                         />
                                     </a>
 
@@ -469,7 +469,7 @@ const Navbar = () => {
                                     target='_blank' rel="noreferrer">
                                         <RiWhatsappLine 
                                             className='text-main ss:text-[23px] 
-                                            text-[20px]' 
+                                            text-[21px]' 
                                         />
                                      </a>
                                 </div>
