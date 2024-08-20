@@ -403,18 +403,20 @@ const Navbar = () => {
 
                             <div className='flex flex-row bg-main2 w-full 
                             rounded-[8px] border-[1px] border-primaryalt 
-                            py-2 px-2 gap-3 justify-between items-center'
+                            py-2 px-2 gap-3 justify-between items-center relative'
                             >
                                 <IoSearchOutline className='text-main 
                                     ss:text-[28px] text-[27px]' 
                                 />
                                 <input
                                     type='search'
-                                    placeholder='Search for products'
+                                    placeholder={currentCategory ? `Search ${currentCategory}` : 'Search for products'}
                                     className='w-full text-black 
                                     ss:text-[15px] text-[13px] 
                                     placeholder:text-mainalt outline-none 
                                     border-none bg-transparent'
+                                    value={searchTerm}
+                                    onChange={handleSearchInput}
                                 />
 
                                 <button className='bg-primary 
@@ -422,6 +424,23 @@ const Navbar = () => {
                                 py-1.5 px-5 text-white rounded-[5px]'>
                                     Search
                                 </button>
+
+                                {isDropdownOpen && suggestions.length > 0 && (
+                                    <div className='absolute top-full mt-1 
+                                    bg-main2 shadow-md left-0 right-0 ss:p-3 p-2
+                                    rounded-md max-h-30 overflow-y-auto'>
+                                        {suggestions.map((suggestion) => (
+                                        <div
+                                            key={suggestion.slug}
+                                            className='p-1.5 hover:bg-main2 font-medium
+                                            cursor-pointer text-main ss:text-[15px] text-[13px]'
+                                            onClick={() => handleSuggestionClick(suggestion.categorySlug, suggestion.slug)}
+                                        >
+                                            {suggestion.name}
+                                        </div>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
 
                             <button className='bg-primary ss:py-4 
