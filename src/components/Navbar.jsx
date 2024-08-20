@@ -369,11 +369,11 @@ const Navbar = () => {
                         <div ref={menuRef}
                             className={`p-6 ss:mt-24 mt-20 absolute top-0 
                             right-0 z-10 flex-col w-full bg-white shadow-lg
-                            ss:px-16
+                            ss:px-16 h-[90vh] overflow-y-auto
                             ${toggle 
                                 ? 'menu-slide-enter menu-slide-enter-active' 
-                                : 'menu-slide-exit menu-slide-exit-active'}`}
-                            style={{ height: '100vh', overflowY: 'auto' }} 
+                                : 'menu-slide-exit menu-slide-exit-active'}`
+                            }
                         >
                             <ul className="list-none flex flex-col 
                             ss:gap-6 gap-4 ss:mb-14 mb-10">
