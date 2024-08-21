@@ -1,12 +1,11 @@
 import { useState, useEffect, useCallback } from "react";
 import { Filter, FilterModal } from '../features';
-import { urlFor, client } from '../sanity';
+import { urlFor } from '../sanity';
 import { TiArrowSortedDown } from "react-icons/ti";
 import { motion, AnimatePresence } from 'framer-motion';
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { filter, refresh, whatsapplogo, gmaillogo } from "../assets";
 import { SectionWrapperAlt } from "../hoc";
-import { useLocation, useNavigate } from 'react-router-dom';
 
 
 const ItemCard = ({ item, categorySlug, attributes, isMobile }) => {
@@ -223,55 +222,15 @@ const ItemCard = ({ item, categorySlug, attributes, isMobile }) => {
 };
 
 
-const SearchResults = () => {
+const SearchResults = ({products, categorySlug}) => {
     const [currentPage, setCurrentPage] = useState(1);
-    const [filteredProducts, setFilteredProducts] = useState([...products]);
     const [isFilterVisible, setIsFilterVisible] = useState(true);
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 1060);
-
+    const [filteredProducts, setFilteredProducts] = useState([...products]);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const [scrollPosition, setScrollPosition] = useState(0);
-    const location = useLocation();
-    const navigate = useNavigate();
-
-
-    useEffect(() => {
-        const queryParams = new URLSearchParams(location.search);
-        const searchQuery = queryParams.get('query');
-        
-        if (searchQuery) {
-            const fetchSearchResults = async () => {
-              const query = `
-              *[_type == "category" && slug.current == $slug][0] {
-                name,
-                description,
-                "products": *[_type == "product" && references(^._id) && name match "${searchQuery}] {
-                  _id,
-                  name,
-                  images,
-                  slug,
-                  attributes[]->{
-                    price,
-                    isDiscounted,
-                    OriginalPrice,
-                    dimensions,
-                    manufacturer,
-                    type,
-                    application,
-                    material,
-                    styleAndPattern,
-                    color,
-                  },
-                }
-              }
-            `;
-              const results = await client.fetch(query);
-              setFilteredProducts(results);
-            };
-            fetchSearchResults();
-        }
-    }, [location.search]);
+   
 
     const [filterValues, setFilterValues] = useState({
         types: [],
