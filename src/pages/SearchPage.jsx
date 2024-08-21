@@ -12,7 +12,6 @@ import { useLocation } from 'react-router-dom';
 
 const SearchPage = () => {
     const location = useLocation();
-    const [categorySlug, setCategorySlug] = useState("");
     const [products, setProducts] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
 
@@ -21,42 +20,40 @@ const SearchPage = () => {
         const searchQuery = queryParams.get('query');
         
         if (searchQuery) {
-            setSearchTerm(searchQuery);
+            setSearchTerm(searchQuery.toLowerCase());
             const fetchSearchResults = async () => {
                 const query = `
-                    *[_type == "category" && count(*[_type == "product" && references(^._id) && name match $searchQuery]) > 0][0] {
-                        slug {
-                            current
+                    *[_type == "product" && name match "${searchQuery.toLowerCase()}*"] {
+                        _id,
+                        name,
+                        images,
+                        slug,
+                        category->{
+                            slug {
+                                current
+                            }
                         },
-                        "products": *[_type == "product" && references(^._id) && name match $searchQuery] {
-                            _id,
-                            name,
-                            images,
-                            slug,
-                            attributes[]->{
-                                price,
-                                isDiscounted,
-                                OriginalPrice,
-                                dimensions,
-                                manufacturer,
-                                type,
-                                application,
-                                material,
-                                styleAndPattern,
-                                color,
-                            },
+                        attributes[]->{
+                            price,
+                            isDiscounted,
+                            OriginalPrice,
+                            dimensions,
+                            manufacturer,
+                            type,
+                            application,
+                            material,
+                            styleAndPattern,
+                            color,
                         }
                     }
                 `;
 
-                const results = await client.fetch(query, { 
-                    searchQuery: `${searchQuery}*` 
-                });
-
-                if (results) {
-                    setCategorySlug(results.slug?.current || "");
-                    setProducts(results.products || []);
-                }
+                const results = await client.fetch(query);
+                const products = results.map(product => ({
+                    ...product,
+                    categorySlug: product.category?.slug?.current || ""
+                }));
+                setProducts(products);
             };
             fetchSearchResults();
         }
@@ -73,7 +70,8 @@ const SearchPage = () => {
 
             <HeroSearch query={searchTerm} />
             
-            <SearchResults products={products} categorySlug={categorySlug} />
+            <SearchResults products={products.map(product => ({ ...product, categorySlug: product.category?.slug?.current }))}
+ />
 
             <div className='footer'>
                 <Footer />
