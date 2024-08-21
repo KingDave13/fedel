@@ -18,6 +18,7 @@ import Top from './Top';
 import Help from './Help';
 import CTA from './CTA';
 import Footer from './Footer';
+import SearchResults from "./SearchResults";
 
 import Product from './Product';
 import Cart from './Cart';
@@ -45,4 +46,5 @@ export {
     Cart,
     Checkout,
     HeroCheckout,
+    SearchResults,
 }

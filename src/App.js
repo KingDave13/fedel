@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HomePage, ProductsPage } from './scenes';
 import ScrollToTopButton from './constants/ScrollToTop';
-import { CategoryPage, ProductPage, CartPage, CheckoutPage } from './pages';
+import { CategoryPage, ProductPage, CartPage, CheckoutPage, SearchPage } from './pages';
 
 
 const App = () => {
@@ -16,6 +16,7 @@ const App = () => {
           <Route path='/products/:categorySlug/:productSlug' element={<ProductPage />} />
           <Route path='/cart' element={<CartPage />} />
           <Route path='/cart/checkout' element={<CheckoutPage />} />
+          <Route path='/search' element={<SearchPage />} />
         </Routes>
 
         <ScrollToTopButton />

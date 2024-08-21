@@ -263,9 +263,9 @@ const Navbar = () => {
                                 <button className='bg-primary text-[13px] 
                                 py-1.5 px-5 text-white rounded-[5px] grow4 
                                 cursor-pointer justify-end'
-                                // onClick={() => {
-                                //     setToggle(!toggle);
-                                // }}
+                                onClick={() => 
+                                    navigate(`/search?query=${searchTerm}`)
+                                }
                                 >
                                     Search
                                 </button>
@@ -441,7 +441,10 @@ const Navbar = () => {
 
                                 <button className='bg-primary 
                                 ss:text-[15px] text-[12px] justify-end 
-                                py-1.5 px-5 text-white rounded-[5px]'>
+                                py-1.5 px-5 text-white rounded-[5px]'
+                                onClick={() => 
+                                    navigate(`/search?query=${searchTerm}`)
+                                }>
                                     Search
                                 </button>
 
