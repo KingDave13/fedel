@@ -363,11 +363,10 @@ const SearchResults = ({products, categorySlug}) => {
 
   return (
     <section className='relative w-full min-h-[500px] mx-auto flex 
-    items-center md:mb-0 ss:mb-5 mb-5 md:px-0 ss:px-16 px-6 md:py-8 
-    ss:py-8 py-6'>
+    items-center mb-5 md:px-0 ss:px-16 px-6'>
         <div className='max-w-[86rem] mx-auto flex flex-col w-full'>
-            <div className={`flex md:flex-row flex-col w-full md:items-center 
-            justify-between mb-6 sticky-filter`}>
+            <div className='flex md:flex-row flex-col w-full md:items-center 
+            justify-between mb-6 sticky-filter'>
                 <div className="flex-start flex gap-8 items-center md:mb-0
                 ss:mb-5 mb-3">
                     <div className={`${isFilterVisible ? 'bg-main3' 

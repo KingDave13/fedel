@@ -19,6 +19,7 @@ import Help from './Help';
 import CTA from './CTA';
 import Footer from './Footer';
 import SearchResults from "./SearchResults";
+import HeroSearch from "./HeroSearch";
 
 import Product from './Product';
 import Cart from './Cart';
@@ -47,4 +48,5 @@ export {
     Checkout,
     HeroCheckout,
     SearchResults,
+    HeroSearch,
 }

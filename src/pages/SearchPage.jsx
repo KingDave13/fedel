@@ -2,6 +2,7 @@ import {
     Navbar,
     Footer,
     SearchResults,
+    HeroSearch,
 } from '../components';
 
 import { Helmet } from 'react-helmet';
@@ -13,23 +14,20 @@ const SearchPage = () => {
     const location = useLocation();
     const [categorySlug, setCategorySlug] = useState("");
     const [products, setProducts] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
         const queryParams = new URLSearchParams(location.search);
         const searchQuery = queryParams.get('query');
         
         if (searchQuery) {
+            setSearchTerm(searchQuery);
             const fetchSearchResults = async () => {
-                if (!searchQuery) {
-                    // Handle cases where searchQuery is not provided
-                    console.log("Search query is missing");
-                    return;
-                }
-                
                 const query = `
-                    *[_type == "category" && slug.current == $slug][0] {
-                        name,
-                        description,
+                    *[_type == "category" && count(*[_type == "product" && references(^._id) && name match $searchQuery]) > 0][0] {
+                        slug {
+                            current
+                        },
                         "products": *[_type == "product" && references(^._id) && name match $searchQuery] {
                             _id,
                             name,
@@ -50,21 +48,20 @@ const SearchPage = () => {
                         }
                     }
                 `;
-            
+
                 const results = await client.fetch(query, { 
-                    slug: categorySlug, 
                     searchQuery: `${searchQuery}*` 
                 });
-            
+
                 if (results) {
+                    setCategorySlug(results.slug?.current || "");
                     setProducts(results.products || []);
-                    setCategorySlug(categorySlug);
                 }
             };
             fetchSearchResults();
         }
-    }, [location.search, categorySlug]);
-   
+    }, [location.search]);
+
     return (
         <div className='font-encode-sans'>
             <Helmet>
@@ -73,10 +70,12 @@ const SearchPage = () => {
             </Helmet>
 
             <Navbar />
-            
-            <SearchResults products={products}  categorySlug={categorySlug}/>
 
-           <div className='footer'>
+            <HeroSearch query={searchTerm} />
+            
+            <SearchResults products={products} categorySlug={categorySlug} />
+
+            <div className='footer'>
                 <Footer />
             </div>
         </div>
