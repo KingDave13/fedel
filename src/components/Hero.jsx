@@ -157,20 +157,27 @@ const Hero = () => {
                     rounded-[10px] border-[1px] border-primaryalt py-2 
                     px-2 gap-3 justify-between items-center relative'>
                       <IoSearchOutline
-                          className='text-main md:text-[22px]
-                          ss:text-[22px] text-[25px]'
+                        className='text-main md:text-[22px]
+                        ss:text-[22px] text-[25px]'
                       />
 
                       <input
-                          type='search'
-                          placeholder='Search for tiles, marble, granite,
-                          floor and wall materials, etc.'
-                          className='w-full text-black text-[14px]
-                          placeholder:text-main3 outline-none
-                          border-none bg-transparent
-                          placeholder:text-[13px]'
-                          value={searchTerm}
-                          onChange={handleSearchInput}
+                        type='search'
+                        placeholder='Search for tiles, marble, granite,
+                        floor and wall materials, etc.'
+                        className='w-full text-black text-[14px]
+                        placeholder:text-main3 outline-none
+                        border-none bg-transparent
+                        placeholder:text-[13px]'
+                        value={searchTerm}
+                        onChange={handleSearchInput}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter') {
+                            const anchor = document.createElement('a');
+                            anchor.href = `/search?query=${searchTerm}`;
+                            anchor.click();
+                          }
+                        }}
                       />
 
                       <a href={`/search?query=${searchTerm}`}
@@ -179,7 +186,7 @@ const Hero = () => {
                       py-1.5 px-5 text-white rounded-[5px] grow4 
                       cursor-pointer justify-end'
                       >
-                          Search
+                        Search
                       </a>
 
                       {isDropdownOpen && suggestions.length > 0 && (

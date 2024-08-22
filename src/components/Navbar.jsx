@@ -258,6 +258,13 @@ const Navbar = () => {
                                     border-none bg-transparent'
                                     value={searchTerm}
                                     onChange={handleSearchInput}
+                                    onKeyDown={(e) => {
+                                        if (e.key === 'Enter') {
+                                          const anchor = document.createElement('a');
+                                          anchor.href = `/search?query=${searchTerm}`;
+                                          anchor.click();
+                                        }
+                                    }}
                                 />
 
                                 <a href={`/search?query=${searchTerm}`} 
@@ -435,6 +442,14 @@ const Navbar = () => {
                                     border-none bg-transparent'
                                     value={searchTerm}
                                     onChange={handleSearchInput}
+                                    onKeyDown={(e) => {
+                                        if (e.key === 'Enter') {
+                                          const anchor = document.createElement('a');
+                                          anchor.href = `/search?query=${searchTerm}`;
+                                          anchor.click();
+                                          setToggle(!toggle);
+                                        }
+                                    }}
                                 />
 
                                 <a href={`/search?query=${searchTerm}`}
