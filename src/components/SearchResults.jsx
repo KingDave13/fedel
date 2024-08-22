@@ -222,7 +222,7 @@ const ItemCard = ({ item, categorySlug, attributes, isMobile }) => {
 };
 
 
-const SearchResults = ({products, categorySlug}) => {
+const SearchResults = ({ products }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [isFilterVisible, setIsFilterVisible] = useState(true);
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 1060);
@@ -473,7 +473,7 @@ const SearchResults = ({products, categorySlug}) => {
                             <ItemCard 
                                 key={`${item._id}-${index}`}
                                 item={item}
-                                categorySlug={categorySlug}
+                                categorySlug={item.categorySlug}
                                 attributes={item.attributes}
                                 isMobile={isMobile}
                             />

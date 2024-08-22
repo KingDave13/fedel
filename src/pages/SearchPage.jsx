@@ -49,10 +49,10 @@ const SearchPage = () => {
                 `;
 
                 const results = await client.fetch(query);
-                const products = results.map(product => ({
-                    ...product,
-                    categorySlug: product.category?.slug?.current || ""
-                }));
+                const products = results.map(product => {
+                    return { ...product, categorySlug: product.category?.slug?.current || "" };
+                  });
+                
                 setProducts(products);
             };
             fetchSearchResults();
@@ -70,7 +70,7 @@ const SearchPage = () => {
 
             <HeroSearch query={searchTerm} />
             
-            <SearchResults products={products.map(product => ({ ...product, categorySlug: product.category?.slug?.current }))} />
+            <SearchResults products={products} />
 
             <div className='footer'>
                 <Footer />
