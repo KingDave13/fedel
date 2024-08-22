@@ -265,6 +265,7 @@ const Navbar = () => {
                                           anchor.click();
                                         }
                                     }}
+                                    autoFocus
                                 />
 
                                 <a href={`/search?query=${searchTerm}`} 
