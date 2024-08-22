@@ -70,8 +70,7 @@ const SearchPage = () => {
 
             <HeroSearch query={searchTerm} />
             
-            <SearchResults products={products.map(product => ({ ...product, categorySlug: product.category?.slug?.current }))}
- />
+            <SearchResults products={products.map(product => ({ ...product, categorySlug: product.category?.slug?.current }))} />
 
             <div className='footer'>
                 <Footer />

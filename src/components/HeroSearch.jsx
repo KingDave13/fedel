@@ -1,4 +1,4 @@
-import { SectionWrapper } from '../hoc';
+import { SectionWrapper3 } from '../hoc';
 
 const HeroSearch = ({ query }) => {
   
@@ -17,4 +17,4 @@ const HeroSearch = ({ query }) => {
   )
 };
 
-export default SectionWrapper(HeroSearch, '');
+export default SectionWrapper3(HeroSearch, '');

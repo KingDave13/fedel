@@ -260,24 +260,21 @@ const Navbar = () => {
                                     onChange={handleSearchInput}
                                 />
 
-                                <button className='bg-primary text-[13px] 
+                                <a href={`/search?query=${searchTerm}`} 
+                                className='bg-primary text-[13px] 
                                 py-1.5 px-5 text-white rounded-[5px] grow4 
                                 cursor-pointer justify-end'
-                                onClick={() => {
-                                    navigate(`/search?query=${searchTerm}`);
-                                    setSearchTerm('');
-                                }}
                                 >
                                     Search
-                                </button>
+                                </a>
 
                                 {isDropdownOpen && suggestions.length > 0 && (
                                     <div className='absolute top-full mt-3 
                                     bg-white shadow-lg left-0 right-0 p-3
                                     rounded-md max-h-60 overflow-y-auto'>
-                                        {suggestions.map((suggestion) => (
+                                        {suggestions.map((suggestion, index) => (
                                         <div
-                                            key={suggestion.slug}
+                                            key={index}
                                             className='p-1.5 hover:bg-main2 font-medium
                                             cursor-pointer text-main text-[15px]'
                                             onClick={() => handleSuggestionClick(suggestion.categorySlug, suggestion.slug)}
@@ -440,25 +437,24 @@ const Navbar = () => {
                                     onChange={handleSearchInput}
                                 />
 
-                                <button className='bg-primary 
-                                ss:text-[15px] text-[12px] justify-end 
-                                py-1.5 px-5 text-white rounded-[5px]'
+                                <a href={`/search?query=${searchTerm}`}
+                                className='bg-primary ss:text-[15px] 
+                                text-[12px] justify-end py-1.5 px-5 
+                                text-white rounded-[5px]'
                                 onClick={() => {
                                     setToggle(!toggle);
-                                    navigate(`/search?query=${searchTerm}`);
-                                    setSearchTerm('');
                                 }}
                                 >
                                     Search
-                                </button>
+                                </a>
 
                                 {isDropdownOpen && suggestions.length > 0 && (
                                     <div className='absolute top-full mt-1 
                                     bg-main2 shadow-md left-0 right-0 ss:p-3 p-2
                                     rounded-md max-h-30 overflow-y-auto'>
-                                        {suggestions.map((suggestion) => (
+                                        {suggestions.map((suggestion, index) => (
                                         <div
-                                            key={suggestion.slug}
+                                            key={index}
                                             className='p-1.5 hover:bg-main2 font-medium
                                             cursor-pointer text-main ss:text-[15px] text-[13px]'
                                             onClick={() => handleSuggestionClick(suggestion.categorySlug, suggestion.slug)}

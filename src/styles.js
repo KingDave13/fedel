@@ -11,6 +11,7 @@ const styles = {
     paddingY: "sm:py-16 py-6",
     padding: "md:px-0 sm:px-16 px-6 sm:py-12 py-4",
     padding2: "md:px-0 sm:py-12 py-4",
+    padding3: "md:px-0 sm:px-16 px-6 sm:pt-12 sm:pb-6 py-4",
   
     marginX: "sm:mx-16 mx-6",
     marginY: "sm:my-16 my-6",
