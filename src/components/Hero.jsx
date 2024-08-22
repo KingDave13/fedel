@@ -173,16 +173,14 @@ const Hero = () => {
                           onChange={handleSearchInput}
                       />
 
-                      <button className='bg-primary md:text-[14px]
+                      <a href={`/search?query=${searchTerm}`}
+                      className='bg-primary md:text-[14px]
                       ss:text-[15px] text-[12px] 
                       py-1.5 px-5 text-white rounded-[5px] grow4 
                       cursor-pointer justify-end'
-                      // onClick={() => {
-                      //     setToggle(!toggle);
-                      // }}
                       >
                           Search
-                      </button>
+                      </a>
 
                       {isDropdownOpen && suggestions.length > 0 && (
                         <div className='absolute top-full mt-1 z-20
