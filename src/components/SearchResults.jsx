@@ -362,8 +362,8 @@ const SearchResults = ({ products }) => {
       
 
   return (
-    <section className='relative w-full min-h-[500px] mx-auto flex 
-    items-center mb-5 md:px-0 ss:px-16 px-6'>
+    <section className='relative w-full md:min-h-[500px] ss:min-h-[200px]
+    min-h-[100px] mx-auto flex items-center mb-5 md:px-0 ss:px-16 px-6'>
         <div className='max-w-[86rem] mx-auto flex flex-col w-full'>
             <div className='flex md:flex-row flex-col w-full md:items-center 
             justify-between mb-6 sticky-filter'>
