@@ -160,6 +160,7 @@ const Checkout = () => {
         <section className='relative w-full min-h-[60px] mx-auto flex
         items-center md:mb-14 md:px-0 ss:px-16 px-6 md:py-0 ss:py-0 py-3
         md:mb-0 ss:mb-12 mb-4'>
+            
             <div className='max-w-[86rem] mx-auto flex flex-col md:gap-8
             ss:gap-8 gap-6 w-full'>
 
