@@ -151,6 +151,7 @@ const Checkout = () => {
                 dispatch(clearCart());
                 setOrderSuccess(false);
                 navigate('/products');
+                
             }, 4000);
         });
     };
