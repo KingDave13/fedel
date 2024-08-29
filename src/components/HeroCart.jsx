@@ -11,10 +11,12 @@ const HeroCart = () => {
         md:mt-28 ss:mt-16 mt-12 flex'
         >
             <motion.div variants={textVariant()}
-            className='flex md:gap-4 ss:gap-2 gap-2 
-            text-main md:text-[16px] ss:text-[15px] text-[13px]'
+            className='flex md:gap-4 ss:gap-2 gap-2 text-main 
+            md:text-[16px] ss:text-[15px] text-[13px]'
             >
-                <p>Home</p>
+                <a href='/' className='hover:text-secondary'>
+                  Home
+                </a>
                 <p> {'>'} </p>
                 <p>Cart</p>
             </motion.div>
