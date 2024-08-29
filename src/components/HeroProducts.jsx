@@ -25,7 +25,9 @@ const HeroProducts = () => {
                 className='flex md:gap-4 ss:gap-2 gap-2 
                 text-white md:text-[16px] ss:text-[15px] text-[13px]'
                 >
-                    <p>Home</p>
+                    <a href='/' className='hover:text-secondary'>
+                        Home
+                    </a>
                     <p> {'>'} </p>
                     <p>Products</p>
                 </motion.div>           
