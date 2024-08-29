@@ -14,11 +14,17 @@ const HeroCheckout = () => {
             className='flex md:gap-4 ss:gap-2 gap-2 
             text-main md:text-[16px] ss:text-[15px] text-[13px]'
             >
-                <p>Home</p>
-                <p> {'>'} </p>
-                <p>Cart</p>
-                <p> {'>'} </p>
-                <p>Checkout</p>
+              <a href='/' className='hover:text-secondary'>
+                Home
+              </a>
+              <p> {'>'} </p>
+
+              <a href='/cart' className='hover:text-secondary'>
+                Cart
+              </a>
+
+              <p> {'>'} </p>
+              <p>Checkout</p>
             </motion.div>
         </div>
     </section>  
