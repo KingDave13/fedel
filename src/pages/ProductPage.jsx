@@ -59,7 +59,7 @@ const ProductPage = () => {
             </Helmet>
 
             <Navbar />
-            <HeroProduct category={product.category} product={product} />
+            <HeroProduct category={product.category} product={product} categorySlug={categorySlug} />
             
             <ProductDetails product={product} />
            
