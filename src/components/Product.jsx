@@ -236,7 +236,10 @@ const Product = ({ products, categorySlug }) => {
 
     useEffect(() => {
         const queryParams = new URLSearchParams(location.search);
-        const typeFilter = queryParams.get('type');
+        const typeFilter = queryParams.get('type') || queryParams.get('category');
+        const category = queryParams.get('product');
+        const priceRange = queryParams.get('price');
+
     
         if (typeFilter) {
           setFilterValues((prevValues) => ({
