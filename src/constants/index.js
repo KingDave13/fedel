@@ -366,6 +366,10 @@ export const searchLinks = [
                 name: "Brick Tiles",
                 route: "",
             },
+            {
+                name: "All and Other (Tiles)",
+                route: "",
+            },
         ],
     },
     {
@@ -410,6 +414,10 @@ export const searchLinks = [
             },
             {
                 name: "Marble Tiles",
+                route: "",
+            },
+            {
+                name: "All and Other (Marble)",
                 route: "",
             },
         ],
@@ -460,6 +468,10 @@ export const searchLinks = [
             },
             {
                 name: "Granite Slabs",
+                route: "",
+            },
+            {
+                name: "All and Other (Granite)",
                 route: "",
             },
         ],
