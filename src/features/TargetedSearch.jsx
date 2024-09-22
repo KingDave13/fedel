@@ -250,7 +250,7 @@ const TargetedSearch = () => {
                                 bg-transparent w-full custom-select"
                             >
                                 <option value="" disabled hidden>Select a price range</option>
-                                <option value="0-10">0-10,000</option>
+                                <option value="0-10,000">0-10,000</option>
                                 <option value="10,000-20,000">10,000-20,000</option>
                                 <option value="20,000-50,000">20,000-50,000</option>
                                 <option value="50,000-100,000">50,000-100,000</option>
