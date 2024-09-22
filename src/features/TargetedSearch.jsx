@@ -21,7 +21,7 @@ const TargetedSearch = () => {
 
     const handleProductChange = (e) => {
         const product = e.target.value;
-        const selectedProductObj = searchLinks.find(link => link.title === product);
+        const selectedProductObj = searchLinks.find(link => link.id === product);
         setCategories(selectedProductObj ? selectedProductObj.links : []);
         
         formik.setFieldValue('product', product);
