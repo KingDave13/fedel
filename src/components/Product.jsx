@@ -237,16 +237,23 @@ const Product = ({ products, categorySlug }) => {
     useEffect(() => {
         const queryParams = new URLSearchParams(location.search);
         const typeFilter = queryParams.get('type') || queryParams.get('category');
-        const categoryFilter = queryParams.get('product');
         const priceRangeFilter = queryParams.get('price');
 
     
         if (typeFilter) {
-          setFilterValues((prevValues) => ({
-            ...prevValues,
-            types: [...prevValues.types, typeFilter],
-          }));
+            setFilterValues((prevValues) => ({
+                ...prevValues,
+                types: [...prevValues.types, typeFilter],
+            }));
         }
+
+        if (priceRangeFilter) {
+            const [min, max] = priceRangeFilter.split('-');
+            setFilterValues((prevValues) => ({ 
+                ...prevValues, 
+                price: { min: parseInt(min), max: parseInt(max) } 
+            }));
+        }        
     }, [location.search]);
 
     const [filterValues, setFilterValues] = useState({
