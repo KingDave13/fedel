@@ -248,12 +248,12 @@ const Product = ({ products, categorySlug }) => {
         }
 
         if (priceRangeFilter) {
-            const [min, max] = priceRangeFilter.split('-');
-            setFilterValues((prevValues) => ({ 
-                ...prevValues, 
-                price: { min: parseInt(min), max: parseInt(max) } 
+            const [min, max] = priceRangeFilter.replace(/,/g, '').split('-');
+            setFilterValues((prevValues) => ({
+                ...prevValues,
+                price: { min: parseInt(min), max: parseInt(max) }
             }));
-        }        
+        }      
     }, [location.search]);
 
     const [filterValues, setFilterValues] = useState({
