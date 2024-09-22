@@ -312,7 +312,7 @@ export const navLinks = [
 export const searchLinks = [
     {
         id: "tiles",
-        title: "tiles",
+        title: "Tiles",
         links: [
             {
                 name: "Ceramic Tiles",
@@ -477,7 +477,7 @@ export const searchLinks = [
         ],
     },
     {
-        id: "marbleslab",
+        id: "marble-slab",
         title: "Marble Slab",
         links: [
             {
@@ -515,7 +515,7 @@ export const searchLinks = [
         ],
     },
     {
-        id: "graniteslab",
+        id: "granite-slab",
         title: "Granite Slab",
         links: [
             {
@@ -557,7 +557,7 @@ export const searchLinks = [
         ],
     },
     {
-        id: "sanitary",
+        id: "sanitary-wares",
         title: "Sanitary Wares",
         links: [
             {
@@ -599,7 +599,7 @@ export const searchLinks = [
         ],
     },
     {
-        id: "floorandwall",
+        id: "floor-and-wall-materials",
         title: "Floor and Wall Materials",
         links: [
             {
