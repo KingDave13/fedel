@@ -312,7 +312,7 @@ export const navLinks = [
 export const searchLinks = [
     {
         id: "tiles",
-        title: "Tiles",
+        title: "tiles",
         links: [
             {
                 name: "Ceramic Tiles",

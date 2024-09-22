@@ -61,7 +61,7 @@ const TargetedSearch = () => {
 
     const handleSearch = () => {
         const queryString = `?category=${formik.values.category}&price=${formik.values.price}`;
-        navigate(`/products/${formik.values.product}/${queryString}`);
+        navigate(`/products/${formik.values.product.toLowerCase}/${queryString}`);
     }
 
     const handleFileChange = (e) => {
