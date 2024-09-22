@@ -6,6 +6,8 @@ import { ImPlay } from "react-icons/im";
 import { TiArrowSortedDown } from "react-icons/ti";
 import * as Yup from 'yup';
 import { searchLinks } from '../constants';
+import { useNavigate } from 'react-router-dom';
+
 
 const TargetedSearch = () => {
 
@@ -15,6 +17,7 @@ const TargetedSearch = () => {
     const [files, setFiles] = useState([]);
     const [previews, setPreviews] = useState([]);
     const [categories, setCategories] = useState([]);
+    const navigate = useNavigate();
 
     const handleProductChange = (e) => {
         const product = e.target.value;
@@ -55,6 +58,11 @@ const TargetedSearch = () => {
             // Implement your email sending logic here...
         },
     });
+
+    const handleSearch = () => {
+        const queryString = `?category=${formik.values.category}&price=${formik.values.price}`;
+        navigate(`/products/product=${formik.values.product}/${queryString}`);
+    }
 
     const handleFileChange = (e) => {
         const selectedFiles = Array.from(e.target.files);
@@ -282,10 +290,11 @@ const TargetedSearch = () => {
 
                     <div className="w-full mt-1">
                         <button
-                        type="submit"
+                        type="button"
                         className="bg-primary grow5 md:text-[15px] w-full
                         ss:text-[16px] text-[12px] md:py-3 ss:py-3 py-2.5 
                         text-white md:rounded-lg rounded-md border-none"
+                        onClick={handleSearch}
                         >
                             {Loading ? 'Searching...' : 'Search'}
                         </button>
