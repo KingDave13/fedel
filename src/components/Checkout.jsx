@@ -726,12 +726,12 @@ const Checkout = () => {
                                     md:gap-1 ss:gap-2 gap-1'>
                                         <div className='flex w-full justify-between
                                         items-center'>
-                                            <p className='text-mainalt md:text-[15px]
+                                            <p className='text-mainalt md:text-[14px]
                                             ss:text-[17px] text-[14px]'>
                                                 Items total {`(${itemCount})`}:
                                             </p>
 
-                                            <p className='text-main md:text-[17px] 
+                                            <p className='text-main md:text-[16px] 
                                             ss:text-[18px] text-[15px] font-semibold'>
                                                 <span className='line-through'>
                                                     N
@@ -742,12 +742,12 @@ const Checkout = () => {
 
                                         <div className='flex w-full justify-between
                                         items-center'>
-                                            <p className='text-mainalt md:text-[15px]
+                                            <p className='text-mainalt md:text-[14px]
                                             ss:text-[17px] text-[14px]'>
                                                 VAT (7.5%)
                                             </p>
 
-                                            <p className='text-main md:text-[17px] 
+                                            <p className='text-main md:text-[16px] 
                                             ss:text-[18px] text-[15px] 
                                             font-semibold'>
                                                 <span className='line-through'>
@@ -759,12 +759,12 @@ const Checkout = () => {
 
                                         <div className='flex w-full justify-between
                                         items-center'>
-                                            <p className='text-mainalt md:text-[15px]
+                                            <p className='text-mainalt md:text-[14px]
                                             ss:text-[17px] text-[14px]'>
                                                 Subtotal:
                                             </p>
 
-                                            <p className='text-greenDeep md:text-[18px] 
+                                            <p className='text-greenDeep md:text-[17px] 
                                             ss:text-[20px] text-[16px] 
                                             font-bold'>
                                                 <span className='line-through'>
