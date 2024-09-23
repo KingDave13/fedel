@@ -10,7 +10,7 @@ const HeroText = ({ text }) => {
         <div className='items-center w-full max-w-[86rem]'>
             <motion.div variants={textVariant()}
             className='flex text-main md:text-[15px] ss:text-[15px] 
-            text-[12px] font-medium md:max-w-[800px] md:leading-[23px]
+            text-[12px] font-medium md:max-w-[800px] md:leading-[22px]
             ss:leading-[20px] leading-[17px]'
             >
                 <p>{text}</p>

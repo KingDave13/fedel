@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { SectionWrapper } from '../hoc';
+import { SectionWrapper, SectionWrapperAlt } from '../hoc';
 import { client, urlFor } from '../sanity';
 import { arrowRight } from '../assets';
 
@@ -79,7 +79,8 @@ const CategoriesProduct = () => {
 
   return (
     <section className='relative w-full md:min-h-[900px] ss:min-h-[1000px] 
-    min-h-[2400px] mx-auto flex items-center md:mb-8'>
+    min-h-[2400px] mx-auto flex items-center md:mb-12 md:px-0 ss:px-16 px-6 
+    md:py-4 ss:py-4 py-8'>
         <div className='max-w-[86rem] mx-auto flex flex-col w-full'>
             <div>
                 <h1 className='text-primary font-bold md:text-[35px]
@@ -90,7 +91,7 @@ const CategoriesProduct = () => {
             </div>
 
             <div className='grid md:gap-12 ss:gap-10 gap-8 md:mt-12 
-            md:grid-cols-3 ss:mt-12 mt-8'>
+            md:grid-cols-3 ss:grid-cols-2 ss:mt-12 mt-8'>
                 {categories.map((category, index) => (
                     <CatCard 
                         key={index} 
@@ -104,4 +105,4 @@ const CategoriesProduct = () => {
   )
 };
 
-export default SectionWrapper(CategoriesProduct, '');
+export default SectionWrapperAlt(CategoriesProduct, '');

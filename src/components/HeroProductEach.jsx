@@ -9,13 +9,13 @@ const HeroProductEach = ( {category} ) => {
     items-center flex md:px-0 ss:px-16 px-6 md:py-0 ss:py-4 py-4'>
         <div className='relative items-center w-full max-w-[86rem] heroProducts
         md:mt-44 ss:mt-24 mt-20 md:rounded-[18px] ss:rounded-[18px] 
-        rounded-[12px] flex md:p-12 ss:p-10 p-6'
+        rounded-[12px] flex md:p-10 ss:p-10 p-6'
         >
-            <div className='w-full flex flex-col gap-1'>
+            <div className='w-full flex flex-col md:gap-0 gap-1'>
                 <motion.div variants={textVariant()}
                 className='flex items-center'
                 >
-                    <h1 className='text-secondary font-bold md:text-[40px]
+                    <h1 className='text-secondary font-bold md:text-[35px]
                     ss:text-[40px] text-[30px]'>
                         {category.name}
                     </h1>
@@ -23,7 +23,7 @@ const HeroProductEach = ( {category} ) => {
 
                 <motion.div variants={textVariant()}
                 className='flex md:gap-4 ss:gap-2 gap-2 
-                text-white md:text-[16px] ss:text-[15px] text-[13px]'
+                text-white md:text-[15px] ss:text-[15px] text-[13px]'
                 >
                     <a href='/' className='hover:text-secondary'>
                         Home
