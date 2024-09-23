@@ -132,7 +132,7 @@ const Navbar = () => {
             <div className={`w-full md:bg-main2 ${styles.paddingX}
             hidden md:flex`}>
                 <div className='w-full flex justify-between items-center 
-                max-w-[82rem] mx-auto md:py-3 ss:py-4 py-3'>
+                max-w-[72rem] mx-auto md:py-3 ss:py-4 py-3'>
                     <div className="flex items-center w-full">
                         <ul className="list-none flex flex-row gap-6">
                             {navLinks.map((link, index) => (
@@ -231,7 +231,7 @@ const Navbar = () => {
 
             <div className={`w-full flex bg-white ${styles.paddingX}`}>
                 <div className='w-full flex justify-between items-center 
-                max-w-[82rem] mx-auto md:py-3 ss:py-4 py-4'>
+                max-w-[72rem] mx-auto md:py-3 ss:py-4 py-4'>
                     <a href='/'>
                         <img
                             src={logo} alt='logo'
