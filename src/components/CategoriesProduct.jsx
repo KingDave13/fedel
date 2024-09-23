@@ -21,20 +21,20 @@ const CatCard = (category) => {
                 </div>
 
                 <div className='rounded-full bg-white p-1.5 top-6 right-6
-                absolute text-primary md:text-[13px] ss:text-[13px] 
+                absolute text-primary md:text-[12px] ss:text-[13px] 
                 text-[12px] font-bold'>
                     {category.productCount}+
                 </div>
 
                 <div className='flex flex-col md:gap-1 ss:gap-1 gap-1 
                 absolute md:p-6 ss:p-6 p-4 bottom-0'>
-                    <h1 className='text-secondary md:text-[19px] ss:text-[18px] 
+                    <h1 className='text-secondary md:text-[16px] ss:text-[18px] 
                     text-[15px] font-bold'>
                         {category.name}
                     </h1>
 
-                    <p className='text-white md:leading-[19px]
-                    ss:leading-[19px] leading-[16px] md:text-[14px] 
+                    <p className='text-white md:leading-[18px]
+                    ss:leading-[19px] leading-[16px] md:text-[13px] 
                     ss:text-[14px] text-[12px]'>
                         {category.description}
                     </p>
@@ -43,13 +43,13 @@ const CatCard = (category) => {
                         <a href={`/products/${category.slug.current}`} 
                         className='inline-flex gap-3 cursor-pointer grow2
                         items-center mt-1.5'>
-                            <h1 className='text-white md:text-[14px] 
+                            <h1 className='text-white md:text-[13px] 
                             ss:text-[14px] text-[12px] font-medium'>
                                 See products
                             </h1>
                             
                             <img src={arrowRight} alt='arrow' 
-                            className='md:w-5 w-4 md:h-5 h-4'/>
+                            className='w-4 h-4'/>
                         </a>
                     </div>
                 </div>
@@ -82,14 +82,14 @@ const CategoriesProduct = () => {
     min-h-[2400px] mx-auto flex items-center md:mb-8'>
         <div className='max-w-[86rem] mx-auto flex flex-col w-full'>
             <div>
-                <h1 className='text-primary font-bold md:text-[40px]
-                ss:text-[40px] text-[30px] tracking-tight md:leading-[60px] 
+                <h1 className='text-primary font-bold md:text-[35px]
+                ss:text-[35px] text-[30px] tracking-tight md:leading-[60px] 
                 ss:leading-[45px] leading-[35px]'>
                     Explore Categories
                 </h1>  
             </div>
 
-            <div className='grid md:gap-12 ss:gap-10 gap-8 md:mt-16 
+            <div className='grid md:gap-12 ss:gap-10 gap-8 md:mt-12 
             md:grid-cols-3 ss:mt-12 mt-8'>
                 {categories.map((category, index) => (
                     <CatCard 
