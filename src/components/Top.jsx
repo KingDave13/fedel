@@ -153,13 +153,13 @@ const TopCard = ({ product, index, isMobile }) => {
                                     >
                                         <div className='text-white 
                                         absolute bottom-4'>
-                                            <h3 className="text-[20px] 
+                                            <h3 className="text-[17px] 
                                             font-bold mb-1">
                                                 {product.name}
                                             </h3>
                                             {product.attributes.map((attribute, index) => (
                                                 <div key={index} 
-                                                className='text-[14px] 
+                                                className='text-[13px] 
                                                 flex flex-col gap-1 mb-1'>
                                                     {attribute.dimensions && 
                                                     <div>
@@ -175,11 +175,10 @@ const TopCard = ({ product, index, isMobile }) => {
                                             {product.attributes.map((attribute, index) => (
                                                 <div key={index}>
                                                     {attribute.price !== null ? (
-                                                        <div className='flex gap-2 
-                                                        items-center'>
+                                                        <div className='flex gap-2 items-center'>
                                                             {attribute.price && (
                                                                 <h1 className='text-greenBright 
-                                                                text-[20px] font-bold'>
+                                                                text-[18px] font-bold'>
                                                                     <div>
                                                                         <span className='line-through'>N</span>
                                                                         {attribute.price}.00
@@ -188,7 +187,7 @@ const TopCard = ({ product, index, isMobile }) => {
                                                             )}
                                                             {attribute.OriginalPrice && (
                                                                 <h1 className='text-main3 
-                                                                text-[14px] font-medium 
+                                                                text-[13px] font-medium 
                                                                 line-through'>
                                                                     <div>N{attribute.OriginalPrice}.00</div>
                                                                 </h1>
@@ -196,7 +195,7 @@ const TopCard = ({ product, index, isMobile }) => {
                                                         </div>
                                                     ) : (
                                                         <div className="bg-white rounded-md px-3 py-1.5 flex items-center gap-2 mt-2 justify-between">
-                                                            <p className="text-primary font-bold text-[15px]">
+                                                            <p className="text-primary font-bold text-[14px]">
                                                                 REQUEST PRICE
                                                             </p>
                                                             <img src={gmaillogo} alt="gmail" className="w-5 h-auto" />
@@ -205,7 +204,7 @@ const TopCard = ({ product, index, isMobile }) => {
                                                     )}
                                                 </div>
                                             ))}
-                                            <div className="text-[13px] 
+                                            <div className="text-[12px] 
                                             text-white mt-1">
                                                 Click for more details &rarr;
                                             </div>
