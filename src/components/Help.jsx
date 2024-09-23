@@ -126,13 +126,13 @@ const Help = () => {
                     <motion.div variants={textVariant()}
                     className={`${layout.sectionInfo} md:gap-6 ss:gap-4
                     gap-4`}>
-                        <h1 className="text-primary font-bold md:text-[40px]
-                        ss:text-[40px] text-[30px] tracking-tight">
+                        <h1 className="text-primary font-bold md:text-[35px]
+                        ss:text-[35px] text-[30px] tracking-tight">
                             Still need help?
                         </h1>
 
-                        <p className='text-main md:text-[17px] ss:text-[17px] 
-                        text-[14px] md:max-w-[550px] md:leading-[25px] 
+                        <p className='text-main md:text-[16px] ss:text-[17px] 
+                        text-[14px] md:max-w-[550px] md:leading-[23px] 
                         ss:leading-[25px] leading-[20px] font-medium 
                         tracking-tight'>
                             Is there still something we haven't made 
@@ -143,7 +143,7 @@ const Help = () => {
                         </p>
 
                         <form ref={formRef} onSubmit={formik.handleSubmit}
-                        className="flex flex-col md:gap-2.5 ss:gap-2.5 
+                        className="flex flex-col md:gap-2 ss:gap-2.5 
                         md:mt-4 ss:mt-4 mt-3 gap-2 md:w-3/5 ss:w-2/3 w-full">
                             <div className="relative">
                                 <input
@@ -155,7 +155,7 @@ const Help = () => {
                                     onBlur={formik.handleBlur}
                                     className="py-2.5 md:px-3 
                                     ss:px-3 px-2 border-search 
-                                    text-black rounded-lg md:text-[14px]
+                                    text-black rounded-lg md:text-[13px]
                                     ss:text-[14px] text-[12px]
                                     bg-transparent w-full placeholder:text-main3"
                                 />
@@ -175,7 +175,7 @@ const Help = () => {
                                     onBlur={formik.handleBlur}
                                     className="py-2.5 md:px-3 
                                     ss:px-3 px-2 border-search 
-                                    text-black rounded-lg md:text-[14px]
+                                    text-black rounded-lg md:text-[13px]
                                     ss:text-[14px] text-[12px]
                                     bg-transparent w-full placeholder:text-main3"
                                 />
@@ -195,7 +195,7 @@ const Help = () => {
                                     placeholder="Enter your message"
                                     className="py-2.5 md:px-3 
                                     ss:px-3 px-2 border-search 
-                                    text-black rounded-lg md:text-[14px]
+                                    text-black rounded-lg md:text-[13px]
                                     ss:text-[14px] text-[12px]
                                     bg-transparent w-full placeholder:text-main3"
                                 />
@@ -218,7 +218,7 @@ const Help = () => {
                                             id="fileInput"
                                         />
                                         <span className='text-main font-medium tracking-tight 
-                                        md:text-[13px] ss:text-[13px] text-[12px]'>
+                                        md:text-[12px] ss:text-[13px] text-[12px]'>
                                             Attach Images
                                         </span>
                                     </label>
@@ -241,11 +241,11 @@ const Help = () => {
                                 </div>
                             </div>
 
-                            <div className="flex flex-col md:gap-2.5 ss:gap-2.5 gap-2 
+                            <div className="flex flex-col md:gap-2 ss:gap-2.5 gap-2 
                             md:mt-1 ss:mt-1 mt-2">
                                 <button
                                 type="submit"
-                                className="bg-primary grow5 md:text-[14px] px-3
+                                className="bg-primary grow5 md:text-[13px] px-3
                                 ss:text-[14px] text-[12px] py-3 
                                 text-white rounded-lg border-none"
                                 >
@@ -254,7 +254,7 @@ const Help = () => {
 
                                 <button
                                 type="submit"
-                                className="bg-green grow5 md:text-[14px] px-3
+                                className="bg-green grow5 md:text-[13px] px-3
                                 ss:text-[14px] text-[12px] py-3
                                 text-white rounded-lg border-none"
                                 >
