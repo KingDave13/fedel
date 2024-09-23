@@ -517,11 +517,11 @@ const Checkout = () => {
                                 </div>
 
                                 <form onSubmit={formik.handleSubmit}
-                                className='flex flex-col md:gap-5 ss:gap-4 
+                                className='flex flex-col md:gap-3 ss:gap-4 
                                 gap-3 w-full'>
                                     <div className="flex flex-col">
                                         <label className="text-main mb-2 
-                                        md:text-[15px] font-semibold
+                                        md:text-[13px] font-semibold
                                         ss:text-[14px] text-[13px]">
                                             State
                                         </label>
@@ -535,8 +535,8 @@ const Checkout = () => {
                                                 onBlur={formik.handleBlur}
                                                 className="py-2.5 px-3 border-search 
                                                 text-main3 md:rounded-lg rounded-md 
-                                                cursor-pointer md:text-[13px]
-                                                ss:text-[13px] text-[11px] 
+                                                cursor-pointer md:text-[12px]
+                                                ss:text-[13px] text-[11px]
                                                 bg-transparent w-full custom-select"
                                             >
                                                 <option value="" disabled hidden>Select your state of residence</option>
@@ -595,7 +595,7 @@ const Checkout = () => {
 
                                     <div className="flex flex-col">
                                         <label className="text-main mb-2 
-                                        md:text-[15px] font-semibold
+                                        md:text-[13px] font-semibold
                                         ss:text-[14px] text-[13px]">
                                             Enter your name
                                         </label>
@@ -608,7 +608,7 @@ const Checkout = () => {
                                             onChange={formik.handleChange}
                                             onBlur={formik.handleBlur}
                                             className="py-2.5 px-3 border-search 
-                                            text-black md:rounded-lg rounded-md md:text-[13px]
+                                            text-black md:rounded-lg rounded-md md:text-[12px]
                                             ss:text-[13px] text-[11px]
                                             bg-transparent w-full placeholder:text-main3"
                                         />
@@ -621,7 +621,7 @@ const Checkout = () => {
 
                                     <div className="flex flex-col">
                                         <label className="text-main mb-2 
-                                        md:text-[15px] font-semibold
+                                        md:text-[13px] font-semibold
                                         ss:text-[14px] text-[13px]">
                                             Enter your email
                                         </label>
@@ -634,7 +634,7 @@ const Checkout = () => {
                                             onChange={formik.handleChange}
                                             onBlur={formik.handleBlur}
                                             className="py-2.5 px-3 border-search 
-                                            text-black md:rounded-lg rounded-md md:text-[13px]
+                                            text-black md:rounded-lg rounded-md md:text-[12px]
                                             ss:text-[13px] text-[11px]
                                             bg-transparent w-full placeholder:text-main3"
                                         />
@@ -647,7 +647,7 @@ const Checkout = () => {
 
                                     <div className="flex flex-col">
                                         <label className="text-main mb-2 
-                                        md:text-[15px] font-semibold
+                                        md:text-[13px] font-semibold
                                         ss:text-[14px] text-[13px]">
                                             Enter your WhatsApp phone number
                                         </label>
@@ -660,7 +660,7 @@ const Checkout = () => {
                                             onChange={formik.handleChange}
                                             onBlur={formik.handleBlur}
                                             className="py-2.5 px-3 border-search 
-                                            text-black md:rounded-lg rounded-md md:text-[13px]
+                                            text-black md:rounded-lg rounded-md md:text-[12px]
                                             ss:text-[13px] text-[11px]
                                             bg-transparent w-full placeholder:text-main3"
                                         />
