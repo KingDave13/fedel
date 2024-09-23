@@ -133,7 +133,7 @@ body, html {
   .sticky-cart {
     position: -webkit-sticky; /* For Safari */
     position: sticky;
-    top: 158px;
+    top: 126px;
   }
 }
 
@@ -148,7 +148,7 @@ body, html {
 .sticky-filter {
   position: -webkit-sticky; /* For Safari */
   position: sticky;
-  top: 145px;
+  top: 120px;
   z-index: 10;
   background-color: white;
   padding-top: 20px;
@@ -159,7 +159,7 @@ body, html {
   .sticky-filter {
     position: -webkit-sticky; /* For Safari */
     position: sticky;
-    top: 100px;
+    top: 80px;
     z-index: 10;
     background-color: white;
     padding-top: 10px;
@@ -171,7 +171,7 @@ body, html {
   .sticky-filter {
     position: -webkit-sticky; /* For Safari */
     position: sticky;
-    top: 85px;
+    top: 80px;
     z-index: 10;
     background-color: white;
     padding-top: 10px;

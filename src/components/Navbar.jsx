@@ -132,7 +132,7 @@ const Navbar = () => {
             <div className={`w-full md:bg-main2 ${styles.paddingX}
             hidden md:flex`}>
                 <div className='w-full flex justify-between items-center 
-                max-w-[72rem] mx-auto md:py-3 ss:py-4 py-3'>
+                max-w-[72rem] mx-auto md:py-2 ss:py-3 py-3'>
                     <div className="flex items-center w-full">
                         <ul className="list-none flex flex-row gap-6">
                             {navLinks.map((link, index) => (
@@ -231,12 +231,11 @@ const Navbar = () => {
 
             <div className={`w-full flex bg-white ${styles.paddingX}`}>
                 <div className='w-full flex justify-between items-center 
-                max-w-[72rem] mx-auto md:py-3 ss:py-4 py-4'>
+                max-w-[72rem] mx-auto py-3'>
                     <a href='/'>
                         <img
                             src={logo} alt='logo'
-                            className='md:w-[120px] ss:w-[120px] w-[100px] 
-                            h-auto cursor-pointer'
+                            className='w-[100px] h-auto cursor-pointer'
                         />
                     </a>
 
@@ -245,7 +244,7 @@ const Navbar = () => {
                         <div className='flex w-full justify-center relative'>
                             <div className='flex flex-row bg-main2 w-full
                             rounded-[10px] border-[1px] border-primaryalt 
-                            py-2 px-2 gap-3 justify-between items-center'>
+                            py-1.5 px-2 gap-3 justify-between items-center'>
                                 <IoSearchOutline
                                     className='text-main text-[20px]'
                                 />
@@ -253,7 +252,7 @@ const Navbar = () => {
                                 <input
                                     type='search'
                                     placeholder={currentCategory ? `Search ${currentCategory}` : 'Search for products'}
-                                    className='w-full text-black text-[14px]
+                                    className='w-full text-black text-[13px]
                                     placeholder:text-mainalt outline-none
                                     border-none bg-transparent'
                                     value={searchTerm}
@@ -269,7 +268,7 @@ const Navbar = () => {
                                 />
 
                                 <a href={`/search?query=${searchTerm}`} 
-                                className='bg-primary text-[13px] 
+                                className='bg-primary text-[12px] 
                                 py-1.5 px-5 text-white rounded-[5px] grow4 
                                 cursor-pointer justify-end'
                                 >
@@ -277,14 +276,14 @@ const Navbar = () => {
                                 </a>
 
                                 {isDropdownOpen && suggestions.length > 0 && (
-                                    <div className='absolute top-full mt-3 
+                                    <div className='absolute top-full mt-1 
                                     bg-white shadow-lg left-0 right-0 p-3
-                                    rounded-md max-h-60 overflow-y-auto'>
+                                    rounded-md max-h-40 overflow-y-auto'>
                                         {suggestions.map((suggestion, index) => (
                                         <div
                                             key={index}
-                                            className='p-1.5 hover:bg-main2 font-medium
-                                            cursor-pointer text-main text-[15px]'
+                                            className='p-1 hover:bg-main2 font-medium
+                                            cursor-pointer text-main text-[13px]'
                                             onClick={() => handleSuggestionClick(suggestion.categorySlug, suggestion.slug)}
                                         >
                                             {suggestion.name}
@@ -300,7 +299,7 @@ const Navbar = () => {
                             relative'>
                                 <a href='/cart'>
                                     <IoCartOutline
-                                        className='text-primary text-[35px] grow4 
+                                        className='text-primary text-[30px] grow4 
                                         cursor-pointer'
                                     />
                                     {itemCount > 0 && (
@@ -314,7 +313,7 @@ const Navbar = () => {
                                 </a>
                             </div>
 
-                            <button className='bg-primary text-[14px] py-3 px-5
+                            <button className='bg-primary text-[13px] py-3 px-5
                             text-white rounded-[10px] grow4 cursor-pointer w-[160px]'
                             // onClick={() => {
                             //     setToggle(!toggle);
@@ -373,7 +372,7 @@ const Navbar = () => {
                         </div>
 
                         <div ref={menuRef}
-                            className={`p-6 ss:mt-24 mt-20 absolute top-0 
+                            className={`p-6 ss:mt-20 mt-20 absolute top-0 
                             right-0 z-10 flex-col w-full bg-white shadow-lg
                             ss:px-16 h-[80vh] overflow-y-auto
                             ${toggle 
@@ -382,7 +381,7 @@ const Navbar = () => {
                             }
                         >
                             <ul className="list-none flex flex-col 
-                            ss:gap-6 gap-4 ss:mb-14 mb-10">
+                            ss:gap-4 gap-4 ss:mb-14 mb-10">
                             {navLinks.map((link) => (
                                 <li
                                 key={link.id}
@@ -393,7 +392,7 @@ const Navbar = () => {
                                     <div className='flex flex-row 
                                     items-center ss:gap-2 gap-2'>
                                         <h3 className='text-main 
-                                        ss:text-[18px] text-[15px] 
+                                        ss:text-[16px] text-[15px] 
                                         font-medium'>
                                             {link.title}
                                         </h3>

@@ -8,7 +8,7 @@ const HeroProducts = () => {
     <section className='relative w-full md:min-h-[100px] ss:min-h-[100px] 
     items-center flex'>
         <div className='relative items-center w-full max-w-[86rem] heroProducts
-        md:mt-28 ss:mt-56 mt-16 md:rounded-[18px] ss:rounded-[18px] 
+        md:mt-28 ss:mt-12 mt-12 md:rounded-[18px] ss:rounded-[18px] 
         rounded-[12px] flex md:p-12 ss:p-10 p-6'
         >
             <div className='w-full flex flex-col gap-1'>
@@ -23,7 +23,7 @@ const HeroProducts = () => {
 
                 <motion.div variants={textVariant()}
                 className='flex md:gap-4 ss:gap-2 gap-2 
-                text-white md:text-[16px] ss:text-[15px] text-[13px]'
+                text-white md:text-[15px] ss:text-[15px] text-[13px]'
                 >
                     <a href='/' className='hover:text-secondary'>
                         Home
