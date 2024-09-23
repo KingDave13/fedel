@@ -164,11 +164,11 @@ const Filter = ({ products, updateFilteredProducts, filterValues, setFilterValue
   return (
     <div className="flex flex-col w-full md:gap-6 ss:gap-5 gap-4">
       <div className="">
-        <div className="flex justify-between items-center md:mb-4 ss:mb-3 
+        <div className="flex justify-between items-center md:mb-3 ss:mb-3 
         mb-2 cursor-pointer"
         onClick={() => toggleVisibility('types')}
         >
-          <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
+          <h3 className="md:text-[15px] ss:text-[17px] text-[14px] font-bold 
           text-main">
             Type
           </h3>
@@ -188,7 +188,7 @@ const Filter = ({ products, updateFilteredProducts, filterValues, setFilterValue
                   onChange={() => handleFilterChange('types', type)}
                   className="md:mr-2 ss:mr-2 mr-1 cursor-pointer"
                 />
-                <span className="md:text-[15px] ss:text-[15px] text-[13px] 
+                <span className="md:text-[14px] ss:text-[15px] text-[13px] 
                 font-medium">
                   {type}
                 </span>
@@ -199,11 +199,11 @@ const Filter = ({ products, updateFilteredProducts, filterValues, setFilterValue
       </div>
 
       <div className="">
-        <div className="flex justify-between items-center md:mb-4 ss:mb-3 
+        <div className="flex justify-between items-center md:mb-3 ss:mb-3 
         mb-2 cursor-pointer"
         onClick={() => toggleVisibility('materials')}
         >
-          <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
+          <h3 className="md:text-[15px] ss:text-[17px] text-[14px] font-bold 
           text-main">
             Material
           </h3>
@@ -223,7 +223,7 @@ const Filter = ({ products, updateFilteredProducts, filterValues, setFilterValue
                   onChange={() => handleFilterChange('materials', material)}
                   className="md:mr-2 ss:mr-2 mr-1 cursor-pointer"
                 />
-              <span className="md:text-[15px] ss:text-[15px] text-[13px] 
+              <span className="md:text-[14px] ss:text-[15px] text-[13px] 
                 font-medium">
                   {material}
                 </span>
@@ -234,11 +234,11 @@ const Filter = ({ products, updateFilteredProducts, filterValues, setFilterValue
       </div>
 
       <div className="">
-        <div className="flex justify-between items-center md:mb-4 ss:mb-3 
+        <div className="flex justify-between items-center md:mb-3 ss:mb-3 
         mb-2 cursor-pointer"
         onClick={() => toggleVisibility('applications')}
         >
-          <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
+          <h3 className="md:text-[15px] ss:text-[17px] text-[14px] font-bold 
           text-main">
             Application
           </h3>
@@ -259,7 +259,7 @@ const Filter = ({ products, updateFilteredProducts, filterValues, setFilterValue
                   onChange={() => handleFilterChange('applications', application)}
                   className="md:mr-2 ss:mr-2 mr-1 cursor-pointer"
                 />
-                <span className="md:text-[15px] ss:text-[15px] text-[13px] 
+                <span className="md:text-[14px] ss:text-[15px] text-[13px] 
                 font-medium">
                   {application}
                 </span>
@@ -270,11 +270,11 @@ const Filter = ({ products, updateFilteredProducts, filterValues, setFilterValue
       </div>
 
       <div className="">
-        <div className="flex justify-between items-center md:mb-4 ss:mb-3 
+        <div className="flex justify-between items-center md:mb-3 ss:mb-3 
         mb-2 cursor-pointer"
         onClick={() => toggleVisibility('price')}
         >
-          <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
+          <h3 className="md:text-[15px] ss:text-[17px] text-[14px] font-bold 
           text-main">
             Price
           </h3>
@@ -299,7 +299,7 @@ const Filter = ({ products, updateFilteredProducts, filterValues, setFilterValue
             </div>
             <div className="flex gap-3 justify-between mt-5 w-full">
               <div className="w-full">
-                <label className="block text-[13px] font-semibold mb-1">
+                <label className="block text-[12px] font-semibold mb-1">
                   From (<span className="line-through">N</span>)
                 </label>
                 <input
@@ -316,7 +316,7 @@ const Filter = ({ products, updateFilteredProducts, filterValues, setFilterValue
               </div>
 
               <div className="w-full">
-                <label className="block text-[13px] font-semibold mb-1">
+                <label className="block text-[12px] font-semibold mb-1">
                   To (<span className="line-through">N</span>)
                 </label>
                 <input
@@ -337,11 +337,11 @@ const Filter = ({ products, updateFilteredProducts, filterValues, setFilterValue
       </div>
 
       <div className="">
-        <div className="flex justify-between items-center md:mb-4 ss:mb-3 
+        <div className="flex justify-between items-center md:mb-3 ss:mb-3 
         mb-2 cursor-pointer"
         onClick={() => toggleVisibility('colors')}
         >
-          <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
+          <h3 className="md:text-[15px] ss:text-[17px] text-[14px] font-bold 
           text-main">
             Colour
           </h3>
@@ -358,7 +358,7 @@ const Filter = ({ products, updateFilteredProducts, filterValues, setFilterValue
               <div
                 key={colorName}
                 onClick={() => handleFilterChange("colors", colorName.toLowerCase())}
-                className={`w-10 h-6 cursor-pointer rounded-md border-[0.5px]
+                className={`w-9 h-6 cursor-pointer rounded-md border-[0.5px]
                 ${filterValues.colors.includes(colorName.toLowerCase()) ? 
                   "border-main border-2" : ""}`}
                 style={{ backgroundColor: presetColors[colorName] }}
@@ -369,11 +369,11 @@ const Filter = ({ products, updateFilteredProducts, filterValues, setFilterValue
       </div>
 
       <div className="">
-        <div className="flex justify-between items-center md:mb-4 ss:mb-3 
+        <div className="flex justify-between items-center md:mb-3 ss:mb-3 
         mb-2 cursor-pointer"
         onClick={() => toggleVisibility('sizes')}
         >
-          <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
+          <h3 className="md:text-[15px] ss:text-[17px] text-[14px] font-bold 
           text-main">
             Size
           </h3>
@@ -393,7 +393,7 @@ const Filter = ({ products, updateFilteredProducts, filterValues, setFilterValue
                   onChange={() => handleFilterChange('sizes', size)}
                   className="md:mr-2 ss:mr-2 mr-1 cursor-pointer"
                 />
-              <span className="md:text-[15px] ss:text-[15px] text-[13px] 
+              <span className="md:text-[14px] ss:text-[15px] text-[13px] 
                 font-medium">
                   {size}
                 </span>
@@ -408,7 +408,7 @@ const Filter = ({ products, updateFilteredProducts, filterValues, setFilterValue
         mb-2 cursor-pointer"
         onClick={() => toggleVisibility('stylesAndPatterns')}
         >
-          <h3 className="md:text-[17px] ss:text-[17px] text-[14px] font-bold 
+          <h3 className="md:text-[15px] ss:text-[17px] text-[14px] font-bold 
           text-main">
             Style and Pattern
           </h3>
@@ -429,7 +429,7 @@ const Filter = ({ products, updateFilteredProducts, filterValues, setFilterValue
                   onChange={() => handleFilterChange('stylesAndPatterns', styleAndPattern)}
                   className="md:mr-2 ss:mr-2 mr-1 cursor-pointer"
                 />
-                <span className="md:text-[15px] ss:text-[15px] text-[13px] 
+                <span className="md:text-[14px] ss:text-[15px] text-[13px] 
                 font-medium">
                   {styleAndPattern}
                 </span>
