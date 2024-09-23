@@ -139,16 +139,16 @@ const Navbar = () => {
                             <li
                                 key={link.id}
                                 className='text-decoration-none cursor-pointer 
-                                py-2 flex flex-row gap-2 items-center relative'
+                                py-2 flex flex-row gap-1 items-center relative'
                                 onMouseEnter={() => toggleMenu(link.id)}
                                 onMouseLeave={() => toggleMenu(null)}
                             >
-                                <h3 className='text-main text-[14px] font-medium'>
+                                <h3 className='text-main text-[13px] font-medium'>
                                     {link.title}
                                 </h3>
                                 
                                 <TiArrowSortedDown 
-                                    className='text-main text-[16px]'
+                                    className='text-main text-[15px]'
                                 />
 
                                 {openMenuId === link.id && (
@@ -157,7 +157,7 @@ const Navbar = () => {
                                     : 'left-1/2 transform -translate-x-1/2'} 
                                     fade-in border-[1px] border-main2 z-10`}>
                                         <div className="bg-white shadow-xl p-6
-                                        flex flex-col gap-2.5 z-20"
+                                        flex flex-col gap-1.5 z-20"
                                         style={{whiteSpace: 'nowrap'}}
                                         >
                                             {link.links.map((subLink, index) => (
@@ -184,27 +184,27 @@ const Navbar = () => {
                         </ul>
                     </div>
 
-                    <div className='flex justify-center gap-8 flex-row
+                    <div className='flex justify-center gap-6 flex-row
                     items-center'
                     >
-                        <div className='flex justify-center gap-6 flex-row
+                        <div className='flex justify-center gap-5 flex-row
                         items-center'>
                             <PiLineVerticalThin className='text-main text-[25px]'/>
 
                             <HiOutlineChat
-                                className='text-main text-[22px] grow4 cursor-pointer'
+                                className='text-main text-[20px] grow4 cursor-pointer'
                             />
 
                             <a href='mailto:fedeltileslimited@gmail.com'>
                                 <FiMail 
-                                    className='text-main text-[22px] grow4 cursor-pointer'
+                                    className='text-main text-[20px] grow4 cursor-pointer'
                                 />
                             </a>
                             
                             <a href='https://wa.me/2349169861311' 
                             target='_blank' rel="noreferrer">
                                 <RiWhatsappLine 
-                                    className='text-main text-[22px] grow4 cursor-pointer'
+                                    className='text-main text-[20px] grow4 cursor-pointer'
                                 />
                             </a>
                         </div>
