@@ -192,19 +192,19 @@ const Navbar = () => {
                             <PiLineVerticalThin className='text-main text-[25px]'/>
 
                             <HiOutlineChat
-                                className='text-main text-[20px] grow4 cursor-pointer'
+                                className='text-main text-[18px] grow4 cursor-pointer'
                             />
 
                             <a href='mailto:fedeltileslimited@gmail.com'>
                                 <FiMail 
-                                    className='text-main text-[20px] grow4 cursor-pointer'
+                                    className='text-main text-[18px] grow4 cursor-pointer'
                                 />
                             </a>
                             
                             <a href='https://wa.me/2349169861311' 
                             target='_blank' rel="noreferrer">
                                 <RiWhatsappLine 
-                                    className='text-main text-[20px] grow4 cursor-pointer'
+                                    className='text-main text-[18px] grow4 cursor-pointer'
                                 />
                             </a>
                         </div>
