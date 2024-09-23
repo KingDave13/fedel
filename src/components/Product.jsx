@@ -324,8 +324,8 @@ const Product = ({ products, categorySlug }) => {
         const createPageButton = (page) => (
             <a href='#top' key={page}>
                 <button
-                className={`md:px-4 ss:px-4 px-3 py-1 
-                md:text-[14px] ss:text-[14px] text-[13px] rounded-md 
+                className={`md:px-3.5 ss:px-4 px-3 py-1 
+                md:text-[13px] ss:text-[14px] text-[13px] rounded-md 
                 ${currentPage === page ? 'bg-primary text-white' 
                 : 'bg-main2 text-main'}`}
                 onClick={() => setCurrentPage(page)}
@@ -389,7 +389,7 @@ const Product = ({ products, categorySlug }) => {
     <section className='relative w-full min-h-[500px] mx-auto flex 
     items-center md:mb-0 ss:mb-5 mb-5 md:px-0 ss:px-16 px-6 md:py-8 
     ss:py-8 py-6'>
-        <div className='max-w-[86rem] mx-auto flex flex-col w-full'>
+        <div className='max-w-[72rem] mx-auto flex flex-col w-full'>
             <div className={`flex md:flex-row flex-col w-full md:items-center 
             justify-between mb-6 sticky-filter`}>
                 <div className="flex-start flex gap-8 items-center md:mb-0
@@ -397,7 +397,7 @@ const Product = ({ products, categorySlug }) => {
                     <div className={`${isFilterVisible ? 'bg-main3' 
                     : 'bg-main2'}
                     flex gap-4 items-center cursor-pointer rounded-md 
-                    px-4 py-2.5 hover:bg-main3 navsmooth`}
+                    px-4 py-2 hover:bg-main3 navsmooth`}
                     onClick={toggleFilterVisibility}
                     >
                         <img 
@@ -405,14 +405,14 @@ const Product = ({ products, categorySlug }) => {
                             alt="filter"
                             className="w-4"
                         />
-                        <p className="text-main font-semibold md:text-[14px]
+                        <p className="text-main font-semibold md:text-[13px]
                         ss:text-[13px] text-[12px]">
                             {`${isMobile ? 'Open Filters' : 'Filters'}`}
                         </p>
                     </div>
 
                     <div className="md:flex hidden gap-3 items-center cursor-pointer
-                    hover:bg-main2 rounded-md px-4 py-2.5"
+                    hover:bg-main2 rounded-md px-4 py-2"
                         onClick={handleRefresh}
                         onMouseEnter={(e) => e.currentTarget.querySelector('img').style.transform = 'rotate(270deg)'}
                         onMouseLeave={(e) => e.currentTarget.querySelector('img').style.transform = 'rotate(0deg)'}
@@ -422,20 +422,20 @@ const Product = ({ products, categorySlug }) => {
                             alt="refresh"
                             className="w-4 transition-transform duration-300"
                         />
-                        <p className="text-main font-semibold text-[14px]">
+                        <p className="text-main font-semibold text-[13px]">
                             Refresh results
                         </p>
                     </div>
                 </div>
 
                 <div className="flex-end flex gap-8 items-center">
-                    <p className="text-main3 font-semibold md:text-[14px]
+                    <p className="text-main3 font-semibold md:text-[13px]
                         ss:text-[13px] text-[13px]">
                         {`${filteredProducts.length} results`}
                     </p>
 
                     <div className="flex gap-1 items-center">
-                        <p className="text-main3 font-medium md:text-[14px]
+                        <p className="text-main3 font-medium md:text-[13px]
                         ss:text-[13px] text-[13px]">
                             Showing:
                         </p>
@@ -445,7 +445,7 @@ const Product = ({ products, categorySlug }) => {
                                 <select
                                     type="text"
                                     className="py-1 px-2 pr-6 md:mr-2 mr-3
-                                    text-main cursor-pointer md:text-[14px]
+                                    text-main cursor-pointer md:text-[13px]
                                     ss:text-[13px] text-[13px]
                                     bg-transparent w-full custom-select
                                     font-bold"
@@ -514,14 +514,14 @@ const Product = ({ products, categorySlug }) => {
                             ${currentPage === 1 ? 'pointer-events-none' : ''}`}
                         >
                             <MdOutlineKeyboardArrowLeft 
-                                className={`md:text-[25px] ss:text-[25px] 
+                                className={`md:text-[23px] ss:text-[25px] 
                                 text-[23px] text-white p-1 md:rounded-lg 
                                 rounded-md font-semibold
                                 ${currentPage === 1 ? 'bg-main3' 
                                 : 'bg-primary'}`}
                             />
 
-                            <p className={`md:text-[14px] ss:text-[14px] 
+                            <p className={`md:text-[13px] ss:text-[14px] 
                             text-[13px]
                             ${currentPage === 1 ? 'text-main3' 
                             : 'text-primary'}`}>
@@ -538,7 +538,7 @@ const Product = ({ products, categorySlug }) => {
                             ${currentPage === totalPages 
                             ? 'pointer-events-none' : ''}`}
                         >
-                            <p className={`md:text-[14px] ss:text-[14px] 
+                            <p className={`md:text-[13px] ss:text-[14px] 
                             text-[13px]
                             ${currentPage === totalPages ? 'text-main3' 
                             : 'text-primary'}`}>
@@ -546,7 +546,7 @@ const Product = ({ products, categorySlug }) => {
                             </p>
 
                             <MdOutlineKeyboardArrowRight
-                                className={`md:text-[25px] ss:text-[25px] 
+                                className={`md:text-[23px] ss:text-[25px] 
                                 text-[23px] text-white p-1 md:rounded-lg 
                                 rounded-md font-semibold
                                 ${currentPage === totalPages ? 'bg-main3' 
