@@ -14,19 +14,19 @@ const StepCard = ({ index, title, image, description }) => {
                 <img 
                     src={image}
                     alt='product step'
-                    className='md:w-[170px] ss:w-[150px] w-[140px] 
-                    md:h-[170px] ss:h-[150px] h-[140px] object-cover'
+                    className='md:w-[150px] ss:w-[150px] w-[140px] 
+                    md:h-[150px] ss:h-[150px] h-[140px] object-cover'
                 />
 
-                <div className='flex flex-col md:gap-3 ss:gap-3
+                <div className='flex flex-col md:gap-2.5 ss:gap-2.5
                 gap-2 tracking-tight'>
-                    <h1 className='text-primary md:text-[22px] ss:text-[20px] 
-                    text-[16px] font-bold'>
+                    <h1 className='text-primary md:text-[18px] ss:text-[18px] 
+                    text-[15px] font-bold'>
                         {title}
                     </h1>
 
-                    <p className='text-main font-medium md:leading-[23px]
-                    ss:leading-[20px] leading-[18px] md:text-[16px] 
+                    <p className='text-main font-medium md:leading-[20px]
+                    ss:leading-[20px] leading-[18px] md:text-[14px] 
                     ss:text-[15px] text-[13px]'>
                         {description}
                     </p>
@@ -35,8 +35,8 @@ const StepCard = ({ index, title, image, description }) => {
                         <a href='/products' 
                         className='inline-flex gap-3 cursor-pointer grow5
                         items-center'>
-                            <h1 className='text-primary md:text-[14px] 
-                            ss:text-[14px] text-[13px] font-medium'>
+                            <h1 className='text-primary md:text-[13px] 
+                            ss:text-[13px] text-[12px] font-medium'>
                                 Browse products
                             </h1>
                             
@@ -54,18 +54,18 @@ const Steps = () => {
   return (
     <section className='relative w-full min-h-[700px] mx-auto flex
     items-center'>
-        <div className='max-w-[86rem] mx-auto flex flex-col'>
+        <div className='max-w-[72rem] mx-auto flex flex-col'>
             <motion.div variants={textVariant()}
             className='flex flex-col md:gap-2 ss:gap-4 gap-4'>
-                <h1 className='text-primary font-bold md:text-[40px]
-                ss:text-[40px] text-[30px] tracking-tight md:leading-[60px] 
+                <h1 className='text-primary font-bold md:text-[35px]
+                ss:text-[35px] text-[30px] tracking-tight md:leading-[60px] 
                 ss:leading-[45px] leading-[35px]'>
                     Find and order from us in 4 easy steps
                 </h1>
                 
-                <p className='text-main font-medium md:text-[17px]
+                <p className='text-main font-medium md:text-[16px]
                 ss:text-[17px] text-[14px] tracking-tight md:max-w-[950px]
-                md:leading-[25px] ss:leading-[23px] leading-[20px]'>
+                md:leading-[23px] ss:leading-[23px] leading-[20px]'>
                     You do not need to go through too much stress to find 
                     exactly what you're looking for on our website. We've 
                     outlined these simple steps to understand how to 
@@ -73,7 +73,7 @@ const Steps = () => {
                 </p>                
             </motion.div>
 
-            <div className='grid md:gap-16 ss:gap-14 gap-10 md:mt-20 
+            <div className='grid md:gap-16 ss:gap-14 gap-10 md:mt-16 
             md:grid-cols-2 ss:mt-12 mt-8 w-full'>
                 {steps.map((step, index) => (
                     <StepCard 
@@ -84,9 +84,9 @@ const Steps = () => {
                 ))}
             </div>
 
-            <p className='text-mainalt md:text-[16px] ss:text-[15px] 
+            <p className='text-mainalt md:text-[14px] ss:text-[14px] 
             text-[12px] tracking-tight w-full font-medium md:text-center
-            md:mt-16 ss:mt-10 mt-6 md:leading-[25px] ss:leading-[23px]
+            md:mt-16 ss:mt-10 mt-6 md:leading-[25px] ss:leading-[20px]
             leading-[16px]'>
                 Note that some items may have their prices displayed, 
                 some may not but not to worry, you can request for 

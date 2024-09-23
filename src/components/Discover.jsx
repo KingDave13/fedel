@@ -7,7 +7,7 @@ import { discoverImg } from '../assets';
 const Discover = () => {
 
     return (
-        <section className="w-full md:min-h-[500px] ss:min-h-[500px] 
+        <section className="w-full md:min-h-[450px] ss:min-h-[500px] 
         min-h-[650px] flex items-center">
             <div className='relative items-center w-full max-w-[86rem]'>
             <motion.div variants={fadeIn('down', 'spring', 0.3)}
@@ -16,15 +16,15 @@ const Discover = () => {
                     <motion.div variants={textVariant()}
                     className={`${layout.sectionInfo} md:gap-8 ss:gap-8
                     gap-4`}>
-                        <h1 className="text-primary font-bold md:text-[40px]
-                        ss:text-[40px] text-[30px] md:leading-[50px] 
+                        <h1 className="text-primary font-bold md:text-[35px]
+                        ss:text-[35px] text-[30px] md:leading-[40px] 
                         ss:leading-[45px] leading-[35px] tracking-tight">
                             Safe and secure delivery to wherever you are!
                         </h1>
 
-                        <p className='text-main md:text-[17px] ss:text-[17px] 
+                        <p className='text-main md:text-[16px] ss:text-[17px] 
                         text-[14px] md:max-w-[700px] ss:max-w-[400px]  
-                        md:leading-[25px] ss:leading-[25px] leading-[20px] 
+                        md:leading-[23px] ss:leading-[25px] leading-[20px] 
                         font-medium tracking-tight'>
                             Ensuring your satisfaction from start to finish, 
                             Shoptiles.ng offers safe and secure 
@@ -36,7 +36,7 @@ const Discover = () => {
 
                         
                         <a href="/products" 
-                        className='bg-primary grow5 md:text-[14px] 
+                        className='bg-primary grow5 md:text-[13px] 
                         ss:text-[15px] text-[13px] md:py-4 ss:py-3 py-3 
                         md:px-10 ss:px-10 px-8 text-white rounded-lg'
                         >
