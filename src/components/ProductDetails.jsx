@@ -652,24 +652,25 @@ const ProductDetails = ({ product }) => {
                             ))}
                         </div>
 
-                        <div className='w-full flex flex-col md:gap-4
+                        <div className='w-full flex flex-col md:gap-3
                         ss:gap-4 gap-3'>
-                            <h1 className='text-main font-bold md:text-[25px]
+                            <h1 className='text-main font-bold md:text-[20px]
                             ss:text-[30px] text-[20px]'>
                                 {product.name}
                             </h1>
 
                             <div className="items-center">
                                 <div className='bg-primaryalt w-full 
-                                h-[1px]' />
+                                    h-[1px]'
+                                />
                             </div>
 
                             <div>
                                 {product.attributes.map((attribute, index) => (
                                     <div 
-                                    className='md:text-[15px]
+                                    className='md:text-[14px]
                                     ss:text-[15px] text-[13px] flex
-                                    flex-col md:gap-1.5 ss:gap-1.5 gap-1'
+                                    flex-col md:gap-1 ss:gap-1.5 gap-1'
                                     key={`${index}-${attribute.type || ''}-${attribute.material || ''}`}
                                     >
                                         {attribute.type && <div><span className='font-semibold mr-1'>Type:</span> {attribute.type}</div>}
@@ -698,7 +699,7 @@ const ProductDetails = ({ product }) => {
                                         {attribute.price && (
                                             <h1 
                                             className='text-greenDeep 
-                                            md:text-[27px] 
+                                            md:text-[23px] 
                                             ss:text-[30px] text-[20px] 
                                             font-bold'>
                                                 <div>
@@ -712,7 +713,7 @@ const ProductDetails = ({ product }) => {
                                         
                                         {attribute.OriginalPrice && (
                                             <h1 className='text-main3 
-                                            font-medium md:text-[18px] 
+                                            font-medium md:text-[16px] 
                                             ss:text-[20px] text-[15px] 
                                             line-through'>
                                                 <div>
@@ -774,7 +775,7 @@ const ProductDetails = ({ product }) => {
                                                     <img src={shopping} 
                                                         alt='cart'
                                                         className='text-white 
-                                                        w-[20px] h-auto' 
+                                                        w-[18px] h-auto' 
                                                     />
                                                     <p className='text-white
                                                         md:text-[13px] 
@@ -852,8 +853,8 @@ const ProductDetails = ({ product }) => {
             md:rounded-[20px] ss:rounded-[20px] rounded-2xl flex md:p-8 
             ss:p-8 p-4'>
                 <motion.div variants={textVariant()}
-                className='flex flex-col md:gap-6 ss:gap-5 gap-3 w-full'>
-                    <h1 className='text-main font-bold md:text-[20px]
+                className='flex flex-col md:gap-5 ss:gap-5 gap-3 w-full'>
+                    <h1 className='text-main font-bold md:text-[17px]
                     ss:text-[20px] text-[18px] tracking-tight'>
                         Product Description
                     </h1>
@@ -862,8 +863,8 @@ const ProductDetails = ({ product }) => {
                         <div className='bg-primaryalt w-full h-[1px]' />
                     </div>
                     
-                    <p className='text-main md:text-[17px] ss:text-[17px] 
-                    text-[12px] tracking-tight md:leading-[25px] 
+                    <p className='text-main md:text-[15px] ss:text-[17px] 
+                    text-[12px] tracking-tight md:leading-[23px] 
                     ss:leading-[26px] leading-[20px] font-medium'>
                         {product.description}
                     </p>
@@ -885,7 +886,7 @@ const ProductDetails = ({ product }) => {
                                 {attribute.price === null ? (
                                     <div className='flex items center gap-3'>
                                         <p className='text-white 
-                                        md:text-[14px] ss:text-[14px]
+                                        md:text-[13px] ss:text-[14px]
                                         text-[12px]'>
                                             Request Price
                                         </p>
@@ -899,10 +900,10 @@ const ProductDetails = ({ product }) => {
                                         <img src={shopping} 
                                         alt='cart'
                                             className='text-white 
-                                            w-[20px] h-auto' 
+                                            w-[18px] h-auto' 
                                         />
                                         <p className='text-white
-                                            md:text-[14px] 
+                                            md:text-[13px] 
                                             ss:text-[14px] 
                                             text-[12px]'>
                                             Add to Cart
@@ -928,7 +929,7 @@ const ProductDetails = ({ product }) => {
                                     select your desired variation and 
                                     click on the request quote button 
                                     above, fill in the contact form and 
-                                    we'll get back to you in light's 
+                                    we'll get back to you in light's
                                     speed.
                                 </p>
                             </div>
@@ -941,7 +942,7 @@ const ProductDetails = ({ product }) => {
         {isModalOpen && (
             <div className='fixed inset-0 z-50 flex items-center 
             justify-center bg-black bg-opacity-80'>
-                <div className='relative w-full max-w-3xl md:m-0 ss:m-16
+                <div className='relative w-full max-w-2xl md:m-0 ss:m-16
                 m-6' 
                 {...handlers} 
                 ref={modalRef}>
@@ -958,7 +959,7 @@ const ProductDetails = ({ product }) => {
 
                     <button
                         className='absolute left-2 top-1/2 transform 
-                        -translate-y-1/2 md:text-[23px] bg-main3 md:ml-6
+                        -translate-y-1/2 md:text-[20px] bg-main3 md:ml-6
                         ss:ml-6 ml-3 rounded-full p-3 bg-opacity-50 
                         text-white hover:bg-opacity-80 navsmooth'
                         onClick={() => navigateImage('prev')}
@@ -968,7 +969,7 @@ const ProductDetails = ({ product }) => {
 
                     <button
                         className='absolute right-2 top-1/2 transform 
-                        -translate-y-1/2 md:text-[23px] bg-main3 md:mr-6
+                        -translate-y-1/2 md:text-[20px] bg-main3 md:mr-6
                         ss:mr-6 mr-3 rounded-full p-3 bg-opacity-50 
                         text-white hover:bg-opacity-80 navsmooth'
                         onClick={() => navigateImage('next')}
