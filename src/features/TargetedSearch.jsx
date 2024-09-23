@@ -152,7 +152,7 @@ const TargetedSearch = () => {
                 </h2>
             </div>
             <form ref={formRef} onSubmit={formik.handleSubmit}
-            className="flex flex-col md:gap-2 ss:gap-2.5 md:mt-3 ss:mt-4
+            className="flex flex-col md:gap-1.5 ss:gap-2.5 md:mt-3 ss:mt-4
             mt-3 gap-2">
                 {selectedTab === 'targetedSearch' ? (
                     <>
@@ -291,7 +291,7 @@ const TargetedSearch = () => {
                     <div className="w-full mt-1">
                         <button
                         type="button"
-                        className="bg-primary grow5 md:text-[14px] w-full
+                        className="bg-primary grow5 md:text-[13px] w-full
                         ss:text-[16px] text-[12px] md:py-3 ss:py-3 py-2.5 
                         text-white md:rounded-lg rounded-md border-none"
                         onClick={handleSearch}
