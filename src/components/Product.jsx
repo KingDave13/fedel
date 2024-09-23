@@ -143,12 +143,12 @@ const ItemCard = ({ item, categorySlug, attributes, isMobile }) => {
                             className="absolute inset-0 bg-black bg-opacity-80 
                             rounded-lg flex flex-col">
                                 <div className='text-white absolute bottom-0 p-4'>
-                                    <h3 className="text-[19px] font-bold mb-1">
+                                    <h3 className="text-[15px] font-bold mb-1">
                                         {item.name}
                                     </h3>
 
                                     {attributes && attributes.map((attribute, index) => (
-                                        <div key={index} className='text-[13px] flex flex-col 
+                                        <div key={index} className='text-[12px] flex flex-col 
                                         gap-0.5 mb-0.5'>
                                             {attribute.dimensions && <div>{attribute.dimensions}</div>}
 
@@ -166,7 +166,7 @@ const ItemCard = ({ item, categorySlug, attributes, isMobile }) => {
                                                 <div className='flex gap-2 items-center'>
                                                     {attribute.price && (
                                                         <h1 
-                                                        className='text-greenBright text-[19px]
+                                                        className='text-greenBright text-[15px]
                                                         font-bold'>
                                                             <div>
                                                                 <span className='line-through'>
@@ -178,7 +178,7 @@ const ItemCard = ({ item, categorySlug, attributes, isMobile }) => {
                                                     )}
                                                     
                                                     {attribute.OriginalPrice && (
-                                                        <h1 className='text-main3 text-[14px]
+                                                        <h1 className='text-main3 text-[12px]
                                                         font-medium line-through'>
                                                             <div>
                                                                 N{attribute.OriginalPrice}.00
@@ -187,16 +187,16 @@ const ItemCard = ({ item, categorySlug, attributes, isMobile }) => {
                                                     )}
                                                 </div>
                                             ) : (
-                                                <div className="bg-white rounded-md px-3 py-1.5 flex 
-                                                items-center gap-2 mt-2 justify-between">
+                                                <div className="bg-white rounded-md px-2 py-1.5 flex 
+                                                items-center gap-1 mt-2 justify-between">
                                                     <p className="text-primary font-bold
-                                                    text-[14px]">
+                                                    text-[12px]">
                                                         REQUEST PRICE
                                                     </p>
 
                                                     <img src={gmaillogo}
                                                         alt="gmail"
-                                                        className="w-5 h-auto" 
+                                                        className="w-4 h-auto" 
                                                     />
 
                                                     <img src={whatsapplogo}
@@ -208,7 +208,7 @@ const ItemCard = ({ item, categorySlug, attributes, isMobile }) => {
                                         </div>
                                     ))}
 
-                                    <div className="text-[12px] text-white mt-1.5">
+                                    <div className="text-[11px] text-white mt-1.5">
                                         Click for more details &rarr;
                                     </div>
                                 </div>
