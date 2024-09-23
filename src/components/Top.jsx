@@ -130,7 +130,7 @@ const TopCard = ({ product, index, isMobile }) => {
                                 <img
                                     src={imageUrl}
                                     alt={product.name}
-                                    className='h-[280px] w-full 
+                                    className='h-[250px] w-full 
                                     object-cover rounded-lg'
                                 />
                             ) : (
@@ -267,19 +267,19 @@ const Top = () => {
     }, []);
 
     return (
-        <section className='relative w-full md:min-h-[900px] 
+        <section className='relative w-full md:min-h-[800px] 
         ss:min-h-[800px] min-h-[750px] mx-auto flex items-center'>
             <div className='max-w-[86rem] mx-auto flex flex-col w-full 
             md:items-center'>
-                <motion.div variants={textVariant()} className='md:gap-4 
+                <motion.div variants={textVariant()} className='md:gap-2 
                 ss:gap-3 gap-3 flex flex-col items-center'>
-                    <h1 className='text-secondary font-bold md:text-[40px] 
-                    ss:text-[40px] text-[30px] tracking-tight 
+                    <h1 className='text-secondary font-bold md:text-[35px] 
+                    ss:text-[35px] text-[30px] tracking-tight 
                     md:leading-[60px] ss:leading-[45px] leading-[35px]'>
                         Top Floor and Wall Tiles for you
                     </h1>
-                    <p className='text-white md:text-[17px] 
-                    ss:text-[17px] text-[14px] md:leading-[25px] 
+                    <p className='text-white md:text-[16px] 
+                    ss:text-[17px] text-[14px] md:leading-[24px] 
                     ss:leading-[25px] leading-[20px] md:max-w-[1000px] 
                     ss:max-w-[700px] md:text-center'>
                         Explore the top rated tiles from this week 
@@ -289,7 +289,7 @@ const Top = () => {
                     </p>
                 </motion.div>
 
-                <div className='md:grid md:gap-12 md:mt-16 ss:mt-12 mt-8
+                <div className='md:grid md:gap-10 md:mt-12 ss:mt-12 mt-8
                 md:grid-cols-4'>
                     {isMobile ? (
                         <div className='flex items-center w-full'>
@@ -334,12 +334,12 @@ const Top = () => {
                     <a href='/products' className='inline-flex gap-3 
                     md:mt-16 ss:mt-14 mt-8 items-center justify-center 
                     grow4'>
-                        <p className='text-white md:text-[16px] 
+                        <p className='text-white md:text-[15px] 
                         ss:text-[15px] text-[13px]'>
                             See all products
                         </p>
                         <GoArrowRight className='text-white 
-                            md:text-[18px] ss:text-[18px] text-[20px]' 
+                            md:text-[17px] ss:text-[18px] text-[20px]' 
                         />
                     </a>
                 </div>
