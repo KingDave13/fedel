@@ -48,7 +48,7 @@ const ImageCard = ({ index, image, product, handleImageClick, remaining }) => {
                 {remaining > 0 && index === 3 && (
                     <div className='absolute inset-0 bg-black 
                     bg-opacity-70 rounded-xl flex items-center 
-                    justify-center text-white font-bold md:text-[30px]'>
+                    justify-center text-white font-bold md:text-[25px]'>
                         + {remaining}
                     </div>
                 )}
@@ -66,7 +66,7 @@ const Variation = ({ variation, index, selected, onSelect }) => {
       <motion.div variants={fadeIn('', 'spring', index * 0.5, 0.75)} 
       className='cursor-pointer'>
         <div className={`border-[1px] border-primaryalt rounded-lg px-3.5
-        py-2 hover:bg-primary text-main md:text-[14px] ss:text-[14px] 
+        py-2 hover:bg-primary text-main md:text-[13px] ss:text-[14px] 
         text-[12px] font-medium hover:text-white navsmooth
         ${selected ? 'bg-primary text-white' : ''}`}
         onClick={handleClick}
@@ -483,7 +483,7 @@ const CartModal = ({ onClose, cartModalMessage }) => {
                             className='w-[60px] h-auto md:mb-6 ss:mb-6 mb-5' 
                         />
 
-                        <h1 className='font-semibold text-primary md:text-[27px]
+                        <h1 className='font-semibold text-primary md:text-[25px]
                         ss:text-[23px] text-[20px] mb-2'>
                             {cartModalMessage}
                         </h1>
@@ -629,7 +629,7 @@ const ProductDetails = ({ product }) => {
     <section className='relative w-full md:min-h-[600px] ss:min-h-[500px]
     min-h-[500px] mx-auto flex items-center md:px-0 ss:px-16 px-6 
     md:py-0 ss:py-0 py-4'>
-        <div className='max-w-[86rem] mx-auto flex flex-col gap-10
+        <div className='max-w-[72rem] mx-auto flex flex-col gap-10
         w-full'>
             <div className='flex items-center w-full bg-main2
             md:rounded-[20px] ss:rounded-[20px] rounded-2xl flex 
@@ -654,7 +654,7 @@ const ProductDetails = ({ product }) => {
 
                         <div className='w-full flex flex-col md:gap-4
                         ss:gap-4 gap-3'>
-                            <h1 className='text-main font-bold md:text-[30px]
+                            <h1 className='text-main font-bold md:text-[25px]
                             ss:text-[30px] text-[20px]'>
                                 {product.name}
                             </h1>
@@ -667,7 +667,7 @@ const ProductDetails = ({ product }) => {
                             <div>
                                 {product.attributes.map((attribute, index) => (
                                     <div 
-                                    className='md:text-[16px]
+                                    className='md:text-[15px]
                                     ss:text-[15px] text-[13px] flex
                                     flex-col md:gap-1.5 ss:gap-1.5 gap-1'
                                     key={`${index}-${attribute.type || ''}-${attribute.material || ''}`}
@@ -698,7 +698,7 @@ const ProductDetails = ({ product }) => {
                                         {attribute.price && (
                                             <h1 
                                             className='text-greenDeep 
-                                            md:text-[32px] 
+                                            md:text-[27px] 
                                             ss:text-[30px] text-[20px] 
                                             font-bold'>
                                                 <div>
@@ -712,7 +712,7 @@ const ProductDetails = ({ product }) => {
                                         
                                         {attribute.OriginalPrice && (
                                             <h1 className='text-main3 
-                                            font-medium md:text-[22px] 
+                                            font-medium md:text-[18px] 
                                             ss:text-[20px] text-[15px] 
                                             line-through'>
                                                 <div>
@@ -724,16 +724,16 @@ const ProductDetails = ({ product }) => {
                                 ))}
                                 
                                 <p className='text-main font-bold
-                                md:text-[16px] ss:text-[15px] text-[13px]'>
+                                md:text-[15px] ss:text-[15px] text-[13px]'>
                                     Select Variation
                                 </p>
 
                                 <div>
                                     {product.attributes.map((attribute, index) => (
                                         <div
-                                        className='flex flex-wrap md:gap-3
-                                        ss:gap-3 gap-2
-                                        md:max-w-[400px] ss:max-w-[300px]'
+                                        className='flex flex-wrap md:gap-2.5
+                                        ss:gap-3 gap-2 md:max-w-[400px] 
+                                        ss:max-w-[300px]'
                                         key={index}>
                                             {attribute.variations && attribute.variations.map((variation, varIndex) => (
                                                 <Variation 
@@ -761,7 +761,7 @@ const ProductDetails = ({ product }) => {
                                             {attribute.price === null ? (
                                                 <div className='flex items center gap-3'>
                                                     <p className='text-white 
-                                                    md:text-[14px] ss:text-[14px]
+                                                    md:text-[13px] ss:text-[14px]
                                                     text-[12px]'>
                                                         Request Price
                                                     </p>
@@ -777,7 +777,7 @@ const ProductDetails = ({ product }) => {
                                                         w-[20px] h-auto' 
                                                     />
                                                     <p className='text-white
-                                                        md:text-[14px] 
+                                                        md:text-[13px] 
                                                         ss:text-[14px] 
                                                         text-[12px]'>
                                                         Add to Cart
