@@ -37,31 +37,31 @@ const ItemCard = ({ item, index, image }) => {
             rounded-xl md:p-7 ss:p-7 p-4 flex flex-col gap-3'>
                 <div className='flex md:flex-row flex-col w-full 
                 justify-between'>
-                    <div className='flex md:gap-6 ss:gap-6 gap-3'>
+                    <div className='flex md:gap-5 ss:gap-6 gap-3'>
                         <img 
                             src={imageUrl}
                             alt={item.name}
                             className='md:rounded-xl ss:rounded-xl
-                            rounded-lg md:w-32 ss:w-32 w-20 md:h-32 ss:h-32 
+                            rounded-lg md:w-30 ss:w-32 w-20 md:h-30 ss:h-32 
                             h-20 object-cover'
                         />
 
                         <div className='flex flex-col md:gap-1 ss:gap-1
                         gap-0.5'>
-                            <h2 className='text-main font-bold md:text-[20px]
+                            <h2 className='text-main font-bold md:text-[17px]
                             ss:text-[20px] text-[15px]'>
                                 {item.name}
                             </h2>
-                            <p className='text-mainalt md:text-[16px]
+                            <p className='text-mainalt md:text-[14px]
                             ss:text-[16px] text-[12px]'>
                                 {item.type}
                             </p>
-                            <p className='text-mainalt md:text-[16px]
+                            <p className='text-mainalt md:text-[14px]
                             ss:text-[16px] text-[12px]'>
                                 {item.manufacturer}
                             </p>
                             <p className='text-main font-semibold 
-                            md:text-[14px] ss:text-[14px] text-[12px] 
+                            md:text-[13px] ss:text-[14px] text-[12px] 
                             flex flex-wrap md:gap-3 ss:gap-3 gap-2'>
                                 {item.variations.map((variation, index) => (
                                     <span key={index}>
@@ -74,7 +74,7 @@ const ItemCard = ({ item, index, image }) => {
 
                     <div className='flex flex-col md:gap-1 gap-0 
                     md:text-right md:mt-0 ss:mt-3 mt-3'>
-                        <h1 className='text-greenDeep md:text-[22px] 
+                        <h1 className='text-greenDeep md:text-[19px] 
                         ss:text-[21px] text-[17px] font-bold'>
                             <div>
                                 <span className='line-through'>
@@ -84,7 +84,7 @@ const ItemCard = ({ item, index, image }) => {
                             </div>
                         </h1>
 
-                        <h1 className='text-main3 font-medium md:text-[18px] 
+                        <h1 className='text-main3 font-medium md:text-[16px] 
                         ss:text-[17px] text-[14px] line-through'>
                             <div>
                                 N{item.OriginalPrice}.00
@@ -101,8 +101,8 @@ const ItemCard = ({ item, index, image }) => {
                         <img
                             src={trash}
                             alt='delete'
-                            className='text-brightRed md:w-6 ss:w-6 w-5 
-                            md:h-6 ss:h-6 h-5'
+                            className='text-brightRed md:w-5 ss:w-6 w-5 
+                            md:h-5 ss:h-6 h-5'
                         />
                         <p className='text-main md:text-[13px] ss:text-[13px]
                         text-[12px] mt-1'>
@@ -114,8 +114,8 @@ const ItemCard = ({ item, index, image }) => {
                         <img
                             src={add}
                             alt='add'
-                            className='cursor-pointer grow2 md:w-7 ss:w-7 
-                            w-6 md:h-7 ss:h-7 h-6'
+                            className='cursor-pointer grow2 md:w-6 ss:w-7 
+                            w-6 md:h-6 ss:h-7 h-6'
                             onClick={() => dispatch(incrementQuantity(item.id))}
                         />
 
@@ -131,8 +131,8 @@ const ItemCard = ({ item, index, image }) => {
                         <img
                             src={subtract}
                             alt='subtract'
-                            className='cursor-pointer grow2 md:w-7 ss:w-7 
-                            w-6 md:h-7 ss:h-7 h-6'
+                            className='cursor-pointer grow2 md:w-6 ss:w-7 
+                            w-6 md:h-6 ss:h-7 h-6'
                             onClick={() => dispatch(decrementQuantity(item.id))}
                         />
                     </div>
@@ -153,13 +153,13 @@ const Cart = () => {
         items-center md:px-0 ss:px-16 px-6 md:py-0 ss:py-0 py-3'>
             <div className='max-w-[86rem] mx-auto flex flex-col md:gap-8
             ss:gap-8 gap-6 w-full'>
-                <h1 className='text-primary font-bold md:text-[22px]
+                <h1 className='text-primary font-bold md:text-[20px]
                 ss:text-[20px] text-[17px]'>
                     Cart {`(${itemCount})`}
                 </h1>
                 
                 {cartItems.length === 0 ? (
-                    <p className='text-primary font-medium text-[17px]'>
+                    <p className='text-primary font-medium text-[16px]'>
                         No items in cart
                     </p>
                 ) : (
@@ -182,18 +182,18 @@ const Cart = () => {
                             flex flex-col md:gap-3 ss:gap-3 gap-2 sticky-cart
                             md:rounded-2xl ss:rounded-2xl rounded-xl'>
                                 <h2 className='text-main font-bold 
-                                md:text-[18px] ss:text-[18px] text-[15px]'>
+                                md:text-[16px] ss:text-[15px] text-[15px]'>
                                     Cart Summary
                                 </h2>
 
                                 <div className='flex w-full justify-between
                                 items-center'>
-                                    <p className='text-mainalt md:text-[16px]
+                                    <p className='text-mainalt md:text-[15px]
                                     ss:text-[16px] text-[13px]'>
                                         Subtotal:
                                     </p>
 
-                                    <p className='text-greenDeep md:text-[20px] 
+                                    <p className='text-greenDeep md:text-[18px] 
                                     font-bold'>
                                         <span className='line-through'>
                                             N
@@ -202,10 +202,10 @@ const Cart = () => {
                                     </p>
                                 </div>
                                 
-                                <p className='text-main3 md:text-[14px]
+                                <p className='text-main3 md:text-[13px]
                                 ss:text-[14px] text-[11px] border-t-[1px] 
                                 border-primaryalt md:pt-4 ss:pt-4 pt-3 
-                                md:mt-2 ss:mt-2 mt-1 md:leading-0
+                                md:mt-2 ss:mt-2 mt-1 md:leading-[18px]
                                 ss:leading-[20px] leading-[16px]'>
                                     This figure does not include any other 
                                     extra fees that may be incurred via 
@@ -213,8 +213,8 @@ const Cart = () => {
                                 </p>
 
                                 <a href='/cart/checkout' 
-                                className='bg-primary md:text-[14px] 
-                                ss:text-[14px] text-[12px] py-3.5 flex
+                                className='bg-primary md:text-[13px] 
+                                ss:text-[14px] text-[12px] py-3 flex
                                 items-center justify-center text-white rounded-lg 
                                 grow2 cursor-pointer w-full md:mt-3
                                 ss:mt-3 mt-2'>
@@ -230,7 +230,7 @@ const Cart = () => {
                 <div className='md:mt-6 ss:mt-6 mt-4'>
                     <button onClick={() => dispatch(clearCart())}
                     className='text-white bg-primary py-2.5 px-10 grow2
-                    rounded-lg md:text-[14px] ss:text-[14px] text-[12px]'>
+                    rounded-lg md:text-[13px] ss:text-[14px] text-[12px]'>
                         Clear Cart
                     </button>
                 </div>

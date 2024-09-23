@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { SectionWrapper, SectionWrapperAlt } from '../hoc';
+import { SectionWrapperAlt } from '../hoc';
 import { client, urlFor } from '../sanity';
 import { arrowRight } from '../assets';
 
