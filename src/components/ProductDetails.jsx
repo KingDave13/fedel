@@ -165,7 +165,7 @@ const RequestModal = ({ onClose, product, image }) => {
 
                     <div className='flex flex-col w-full md:gap-8
                     ss:gap-8 gap-5'>
-                        <h1 className='text-primary md:text-[20px]
+                        <h1 className='text-primary md:text-[18px]
                         ss:text-[20px] text-[18px] font-semibold'>
                             Request Price
                         </h1>
@@ -182,7 +182,7 @@ const RequestModal = ({ onClose, product, image }) => {
                                         ss:text-[60px] text-[60px]'
                                     />
 
-                                    <p className='text-mainalt md:text-[14px]
+                                    <p className='text-mainalt md:text-[13px]
                                     ss:text-[14px] text-[12px] 
                                     md:leading-[19px] ss:leading-[19px]
                                     leading-[17px] md:max-w-[550px]
@@ -250,7 +250,7 @@ const RequestModal = ({ onClose, product, image }) => {
                         ss:mt-0 mt-8'>
                             <form onSubmit={formik.handleSubmit}
                             className='grid md:grid-cols-2 ss:grid-cols-2
-                            md:gap-5 ss:gap-4 gap-2'>
+                            md:gap-4 ss:gap-4 gap-2'>
                                 <div className="flex flex-col">
                                     <label className="text-main mb-2 
                                     md:text-[14px] font-semibold
@@ -430,8 +430,8 @@ const RequestModal = ({ onClose, product, image }) => {
                                 </p>
                             </div>
 
-                            <button className='bg-primary md:text-[14px] 
-                            ss:text-[14px] text-[12px] py-3.5 
+                            <button className='bg-primary md:text-[13px] 
+                            ss:text-[14px] text-[12px] py-3 
                             text-center text-white rounded-lg grow2 
                             cursor-pointer md:w-[180px] ss:w-[170px]
                             w-full'>

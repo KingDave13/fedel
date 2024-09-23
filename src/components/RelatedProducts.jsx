@@ -77,11 +77,11 @@ const RelatedProducts = ({ categoryId, categorySlug }) => {
         <section className='relative w-full md:min-h-[300px] 
         ss:min-h-[300px] min-h-[300px] mx-auto flex items-
         md:mb-0 ss:mb-0 mb-5'>
-            <div className='max-w-[86rem] mx-auto flex flex-col w-full
-             md:gap-10 ss:gap-8 gap-6'>
+            <div className='max-w-[72rem] mx-auto flex flex-col w-full
+             md:gap-8 ss:gap-8 gap-6'>
                 <motion.div variants={textVariant()}>
-                    <h1 className='text-primary font-bold md:text-[30px] 
-                    ss:text-[30px] text-[20px] tracking-tight'>
+                    <h1 className='text-primary font-bold md:text-[25px] 
+                    ss:text-[25px] text-[20px] tracking-tight'>
                         Explore related products
                     </h1>
                 </motion.div>
@@ -128,7 +128,7 @@ const RelatedProducts = ({ categoryId, categorySlug }) => {
                 
                 <div className='w-full flex items-center justify-center'>
                     <a href={`/products/${categorySlug}`}
-                        className='bg-primary md:text-[14px] ss:text-[14px] 
+                        className='bg-primary md:text-[13px] ss:text-[14px] 
                         text-[12px] py-3.5 text-center text-white 
                         rounded-lg grow2 cursor-pointer md:w-[180px] 
                         ss:w-[180px] w-full'
