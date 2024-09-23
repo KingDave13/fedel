@@ -169,13 +169,13 @@ const Checkout = () => {
                     />
                 )}
 
-                <h1 className='text-primary font-bold md:text-[22px]
+                <h1 className='text-primary font-bold md:text-[20px]
                 ss:text-[20px] text-[17px]'>
                     Checkout
                 </h1>
                 
                 {cartItems.length === 0 ? (
-                    <p className='text-primary font-medium text-[17px]'>
+                    <p className='text-primary font-medium text-[16px]'>
                         No items in cart
                     </p>
                 ) : (
@@ -672,9 +672,9 @@ const Checkout = () => {
                                     </div>
                                 </form>
 
-                                <div className='w-full flex flex-col md:gap-4 
+                                <div className='w-full flex flex-col md:gap-3 
                                 ss:gap-4 gap-3'>
-                                    <div className='flex items-center md:gap-2\
+                                    <div className='flex items-center md:gap-2
                                     ss:gap-2 gap-3'>
                                         <input
                                             type='checkbox'
@@ -695,14 +695,14 @@ const Checkout = () => {
                                         </p>
                                     </div>
 
-                                    <button className='bg-primary md:text-[14px] 
+                                    <button className='bg-primary md:text-[13px] 
                                     ss:text-[14px] text-[12px] text-center 
                                     text-white rounded-lg grow2 cursor-pointer 
                                     md:w-[200px] ss:w-[200px] w-full py-3.5'>
                                         Place Order
                                     </button>
 
-                                    <button className='bg-greenDeep md:text-[14px] 
+                                    <button className='bg-greenDeep md:text-[13px] 
                                     ss:text-[14px] text-[12px] text-center 
                                     text-white rounded-lg grow2 cursor-pointer 
                                     md:w-[200px] ss:w-[200px] w-full py-3.5'
@@ -718,20 +718,20 @@ const Checkout = () => {
                                 flex flex-col md:gap-3 ss:gap-3 gap-2 
                                 md:rounded-xl ss:rounded-xl rounded-lg'>
                                     <h2 className='text-main font-bold 
-                                    md:text-[18px] ss:text-[20px] text-[15px]'>
+                                    md:text-[17px] ss:text-[20px] text-[15px]'>
                                         Order Summary
                                     </h2>
 
                                     <div className='flex flex-col w-full
-                                    md:gap-2 ss:gap-2 gap-1'>
+                                    md:gap-1 ss:gap-2 gap-1'>
                                         <div className='flex w-full justify-between
                                         items-center'>
-                                            <p className='text-mainalt md:text-[16px]
+                                            <p className='text-mainalt md:text-[15px]
                                             ss:text-[17px] text-[14px]'>
                                                 Items total {`(${itemCount})`}:
                                             </p>
 
-                                            <p className='text-main md:text-[18px] 
+                                            <p className='text-main md:text-[17px] 
                                             ss:text-[18px] text-[15px] font-semibold'>
                                                 <span className='line-through'>
                                                     N
@@ -742,12 +742,12 @@ const Checkout = () => {
 
                                         <div className='flex w-full justify-between
                                         items-center'>
-                                            <p className='text-mainalt md:text-[16px]
+                                            <p className='text-mainalt md:text-[15px]
                                             ss:text-[17px] text-[14px]'>
                                                 VAT (7.5%)
                                             </p>
 
-                                            <p className='text-main md:text-[18px] 
+                                            <p className='text-main md:text-[17px] 
                                             ss:text-[18px] text-[15px] 
                                             font-semibold'>
                                                 <span className='line-through'>
@@ -759,12 +759,12 @@ const Checkout = () => {
 
                                         <div className='flex w-full justify-between
                                         items-center'>
-                                            <p className='text-mainalt md:text-[16px]
+                                            <p className='text-mainalt md:text-[15px]
                                             ss:text-[17px] text-[14px]'>
                                                 Subtotal:
                                             </p>
 
-                                            <p className='text-greenDeep md:text-[20px] 
+                                            <p className='text-greenDeep md:text-[18px] 
                                             ss:text-[20px] text-[16px] 
                                             font-bold'>
                                                 <span className='line-through'>
@@ -775,10 +775,10 @@ const Checkout = () => {
                                         </div>
                                     </div>
                                     
-                                    <p className='text-main3 md:text-[14px]
+                                    <p className='text-main3 md:text-[12px]
                                     ss:text-[14px] text-[11px] border-t-[1px] 
                                     border-primaryalt md:pt-4 ss:pt-4 pt-3 
-                                    md:mt-2 ss:mt-2 mt-1 md:leading-0
+                                    md:mt-2 ss:mt-2 mt-1 md:leading-[17px]
                                     ss:leading-[20px] leading-[16px]'>
                                         This figure does not include any other 
                                         extra fees that may be incurred via 
@@ -791,7 +791,7 @@ const Checkout = () => {
                                 mt-5 cursor-pointer items-center'
                                 >
                                     <p className='text-primary font-semibold
-                                    md:text-[14px] ss:text-[14px] text-[12px]'>
+                                    md:text-[13px] ss:text-[14px] text-[12px]'>
                                         Go back to cart to review items
                                     </p>
 
