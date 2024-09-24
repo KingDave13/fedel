@@ -489,14 +489,14 @@ const SearchResults = ({ products }) => {
                             ${currentPage === 1 ? 'pointer-events-none' : ''}`}
                         >
                             <MdOutlineKeyboardArrowLeft 
-                                className={`md:text-[25px] ss:text-[25px] 
+                                className={`md:text-[23px] ss:text-[25px] 
                                 text-[23px] text-white p-1 md:rounded-lg 
                                 rounded-md font-semibold
                                 ${currentPage === 1 ? 'bg-main3' 
                                 : 'bg-primary'}`}
                             />
 
-                            <p className={`md:text-[14px] ss:text-[14px] 
+                            <p className={`md:text-[13px] ss:text-[14px] 
                             text-[13px]
                             ${currentPage === 1 ? 'text-main3' 
                             : 'text-primary'}`}>
@@ -513,7 +513,7 @@ const SearchResults = ({ products }) => {
                             ${currentPage === totalPages 
                             ? 'pointer-events-none' : ''}`}
                         >
-                            <p className={`md:text-[14px] ss:text-[14px] 
+                            <p className={`md:text-[13px] ss:text-[14px] 
                             text-[13px]
                             ${currentPage === totalPages ? 'text-main3' 
                             : 'text-primary'}`}>
@@ -521,7 +521,7 @@ const SearchResults = ({ products }) => {
                             </p>
 
                             <MdOutlineKeyboardArrowRight
-                                className={`md:text-[25px] ss:text-[25px] 
+                                className={`md:text-[23px] ss:text-[25px] 
                                 text-[23px] text-white p-1 md:rounded-lg 
                                 rounded-md font-semibold
                                 ${currentPage === totalPages ? 'bg-main3' 
