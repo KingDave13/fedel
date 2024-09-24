@@ -5,10 +5,10 @@ const HeroSearch = ({ query }) => {
   return (
     <section className='relative w-full md:min-h-[50px] ss:min-h-[50px] 
     items-center flex'>
-        <div className='relative items-center w-full max-w-[86rem]
+        <div className='relative items-center w-full max-w-[72rem]
         md:mt-28 ss:mt-16 mt-16 flex'
         >
-          <h1 className="text-primary font-bold md:text-[22px]
+          <h1 className="text-primary font-bold md:text-[19px]
           ss:text-[20px] text-[15px]">
               Showing results for "{query}"
           </h1>
