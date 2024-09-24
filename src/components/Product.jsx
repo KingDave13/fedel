@@ -435,8 +435,7 @@ const Product = ({ products, categorySlug }) => {
                     </p>
 
                     <div className="flex gap-1 items-center">
-                        <p className="text-main3 font-medium md:text-[13px]
-                        ss:text-[13px] text-[13px]">
+                        <p className="text-main3 font-medium text-[13px]">
                             Showing:
                         </p>
 

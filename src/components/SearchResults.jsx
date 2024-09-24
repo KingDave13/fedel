@@ -142,12 +142,12 @@ const ItemCard = ({ item, categorySlug, attributes, isMobile }) => {
                             className="absolute inset-0 bg-black bg-opacity-80 
                             rounded-lg flex flex-col">
                                 <div className='text-white absolute bottom-0 p-4'>
-                                    <h3 className="text-[19px] font-bold mb-1">
+                                    <h3 className="text-[15px] font-bold mb-1">
                                         {item.name}
                                     </h3>
 
                                     {attributes && attributes.map((attribute, index) => (
-                                        <div key={index} className='text-[13px] flex flex-col 
+                                        <div key={index} className='text-[12px] flex flex-col 
                                         gap-0.5 mb-0.5'>
                                             {attribute.dimensions && <div>{attribute.dimensions}</div>}
 
@@ -165,7 +165,7 @@ const ItemCard = ({ item, categorySlug, attributes, isMobile }) => {
                                                 <div className='flex gap-2 items-center'>
                                                     {attribute.price && (
                                                         <h1 
-                                                        className='text-greenBright text-[19px]
+                                                        className='text-greenBright text-[15px]
                                                         font-bold'>
                                                             <div>
                                                                 <span className='line-through'>
@@ -177,7 +177,7 @@ const ItemCard = ({ item, categorySlug, attributes, isMobile }) => {
                                                     )}
                                                     
                                                     {attribute.OriginalPrice && (
-                                                        <h1 className='text-main3 text-[14px]
+                                                        <h1 className='text-main3 text-[12px]
                                                         font-medium line-through'>
                                                             <div>
                                                                 N{attribute.OriginalPrice}.00
@@ -186,16 +186,16 @@ const ItemCard = ({ item, categorySlug, attributes, isMobile }) => {
                                                     )}
                                                 </div>
                                             ) : (
-                                                <div className="bg-white rounded-md px-3 py-1.5 flex 
-                                                items-center gap-2 mt-2 justify-between">
+                                                <div className="bg-white rounded-md px-2 py-1.5 flex 
+                                                items-center gap-1 mt-2 justify-between">
                                                     <p className="text-primary font-bold
-                                                    text-[14px]">
+                                                    text-[12px]">
                                                         REQUEST PRICE
                                                     </p>
 
                                                     <img src={gmaillogo}
                                                         alt="gmail"
-                                                        className="w-5 h-auto" 
+                                                        className="w-4 h-auto" 
                                                     />
 
                                                     <img src={whatsapplogo}
@@ -207,7 +207,7 @@ const ItemCard = ({ item, categorySlug, attributes, isMobile }) => {
                                         </div>
                                     ))}
 
-                                    <div className="text-[12px] text-white mt-1.5">
+                                    <div className="text-[11px] text-white mt-1.5">
                                         Click for more details &rarr;
                                     </div>
                                 </div>
@@ -300,8 +300,8 @@ const SearchResults = ({ products }) => {
         const createPageButton = (page) => (
             <a href='#top' key={page}>
                 <button
-                className={`md:px-4 ss:px-4 px-3 py-1 
-                md:text-[14px] ss:text-[14px] text-[13px] rounded-md 
+                className={`md:px-3.5 ss:px-4 px-3 py-1 
+                md:text-[13px] ss:text-[14px] text-[13px] rounded-md 
                 ${currentPage === page ? 'bg-primary text-white' 
                 : 'bg-main2 text-main'}`}
                 onClick={() => setCurrentPage(page)}
@@ -364,7 +364,7 @@ const SearchResults = ({ products }) => {
   return (
     <section className='relative w-full md:min-h-[500px] ss:min-h-[200px]
     min-h-[100px] mx-auto flex items-center mb-5 md:px-0 ss:px-16 px-6'>
-        <div className='max-w-[86rem] mx-auto flex flex-col w-full'>
+        <div className='max-w-[72rem] mx-auto flex flex-col w-full'>
             <div className='flex md:flex-row flex-col w-full md:items-center 
             justify-between mb-6 sticky-filter'>
                 <div className="flex-start flex gap-8 items-center md:mb-0
@@ -372,7 +372,7 @@ const SearchResults = ({ products }) => {
                     <div className={`${isFilterVisible ? 'bg-main3' 
                     : 'bg-main2'}
                     flex gap-4 items-center cursor-pointer rounded-md 
-                    px-4 py-2.5 hover:bg-main3 navsmooth`}
+                    px-4 py-2 hover:bg-main3 navsmooth`}
                     onClick={toggleFilterVisibility}
                     >
                         <img 
@@ -380,14 +380,14 @@ const SearchResults = ({ products }) => {
                             alt="filter"
                             className="w-4"
                         />
-                        <p className="text-main font-semibold md:text-[14px]
+                        <p className="text-main font-semibold md:text-[13px]
                         ss:text-[13px] text-[12px]">
                             {`${isMobile ? 'Open Filters' : 'Filters'}`}
                         </p>
                     </div>
 
                     <div className="md:flex hidden gap-3 items-center cursor-pointer
-                    hover:bg-main2 rounded-md px-4 py-2.5"
+                    hover:bg-main2 rounded-md px-4 py-2"
                         onClick={handleRefresh}
                         onMouseEnter={(e) => e.currentTarget.querySelector('img').style.transform = 'rotate(270deg)'}
                         onMouseLeave={(e) => e.currentTarget.querySelector('img').style.transform = 'rotate(0deg)'}
@@ -397,20 +397,20 @@ const SearchResults = ({ products }) => {
                             alt="refresh"
                             className="w-4 transition-transform duration-300"
                         />
-                        <p className="text-main font-semibold text-[14px]">
+                        <p className="text-main font-semibold text-[13px]">
                             Refresh results
                         </p>
                     </div>
                 </div>
 
                 <div className="flex-end flex gap-8 items-center">
-                    <p className="text-main3 font-semibold md:text-[14px]
+                    <p className="text-main3 font-semibold md:text-[13px]
                         ss:text-[13px] text-[13px]">
                         {`${filteredProducts.length} results`}
                     </p>
 
                     <div className="flex gap-1 items-center">
-                        <p className="text-main3 font-medium md:text-[14px]
+                        <p className="text-main3 font-medium md:text-[13px]
                         ss:text-[13px] text-[13px]">
                             Showing:
                         </p>
@@ -420,7 +420,7 @@ const SearchResults = ({ products }) => {
                                 <select
                                     type="text"
                                     className="py-1 px-2 pr-6 md:mr-2 mr-3
-                                    text-main cursor-pointer md:text-[14px]
+                                    text-main cursor-pointer md:text-[13px]
                                     ss:text-[13px] text-[13px]
                                     bg-transparent w-full custom-select
                                     font-bold"
