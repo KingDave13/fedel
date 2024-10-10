@@ -133,7 +133,6 @@ const Checkout = () => {
                 return `Name: ${item.name} x ${item.quantity} \nType: ${item.type} \nManufacturer: ${item.manufacturer} \nVariations: ${item.variations} \nPrice- N${item.price.toLocaleString()}`;
             }).join("\n\n");
             
-            
             const formDataText = `Name: ${formik.values.name}\nEmail: ${formik.values.email}\nPhone: ${formik.values.phone}\nState: ${formik.values.state}`;
             
             const orderSummaryText = `Items total: N${totalAmount.toLocaleString()}\nVAT (7.5%): N${vat.toLocaleString()}\nSubtotal: N${subtotal.toLocaleString()}`;
