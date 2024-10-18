@@ -265,7 +265,6 @@ const Navbar = () => {
                                         }
                                     }}
                                     autoFocus
-                                    
                                 />
 
                                 <a href={`/search?query=${searchTerm}`} 
