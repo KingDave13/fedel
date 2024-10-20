@@ -9,6 +9,7 @@ const sendGridTransport = {
       user: 'apikey',
       pass: 'YOUR_SENDGRID_API_KEY',
     },
+    
   };
   
   const transporter = CreateTransport(sendGridTransport);
