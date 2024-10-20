@@ -1,7 +1,6 @@
 const nodemailer = require('nodemailer');
 const { CreateTransport } = nodemailer;
 
-
 const sendGridTransport = {
     host: '(link unavailable)',
     port: 587,
@@ -10,7 +9,7 @@ const sendGridTransport = {
       user: 'apikey',
       pass: 'YOUR_SENDGRID_API_KEY',
     },
-
+    
   };
   
   const transporter = CreateTransport(sendGridTransport);
