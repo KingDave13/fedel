@@ -20,7 +20,6 @@ const sendGridTransport = {
         from: 'YOUR_EMAIL_ADDRESS',
         to,
         subject,
-        
         html: body,
       };
       await transporter.sendMail(mailOptions);
