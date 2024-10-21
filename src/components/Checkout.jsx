@@ -9,7 +9,7 @@ import { clearCart  } from '../redux/cartSlice';
 import { HiOutlineInformationCircle } from 'react-icons/hi2';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import MailerSend from 'mailersend';
+
 
 const OrderSuccessModal = ({ isVisible }) => {
     if (!isVisible) return null;
@@ -95,6 +95,11 @@ const Checkout = () => {
         };
     }, [isMobile]);
 
+
+    const Recipient = require("mailersend").Recipient;
+    const EmailParams = require("mailersend").EmailParams;
+    const MailerSend = require("mailersend");
+
     const mailersend = new MailerSend({
         api_key: process.env.MAILER_API,
     });
@@ -162,12 +167,7 @@ const Checkout = () => {
     const handleEmailOrder = async () => {
         formik.validateForm().then(async (errors) => {
             if (Object.keys(errors).length > 0) {
-                formik.setTouched({
-                    state: true,
-                    name: true,
-                    email: true,
-                    phone: true,
-                });
+                formik.setTouched({ state: true, name: true, email: true, phone: true });
                 alert("Please complete all required form fields.");
                 return;
             }
@@ -195,41 +195,38 @@ const Checkout = () => {
                 <p>${orderSummaryText}</p>
             `;
 
-            const message = {
-                from: {
-                    email: 'sales@shoptiles.ng',
-                },
-                to: [
-                    {
-                        email: formik.values.email, // Customer email
-                    },
-                    {
-                        email: 'sales@shoptiles.ng', // Your email
-                    },
-                ],
-                subject: `Order Confirmation for ${formik.values.name}`,
-                html: emailTemplate,
-            };
+            // Set up recipients
+            const recipients = [
+                new Recipient(formik.values.email, formik.values.name),
+                new Recipient("sales@shoptiles.ng", "Shop Tiles"),
+            ];
+
+            // Set up email parameters
+            const emailParams = new EmailParams()
+                .setFrom("sales@shoptiles.ng")
+                .setFromName("Shop Tiles")
+                .setRecipients(recipients)
+                .setSubject(`Order Confirmation for ${formik.values.name}`)
+                .setHtml(emailTemplate)
+                .setText("Order confirmation email");
 
             try {
-                const response = await mailersend.email.send(message);
-                console.log('Email sent:', response);
-
+            // Send email using mailersend
+            const response = await mailersend.send(emailParams);
+                console.log("Email sent:", response);
                 setOrderSuccess(true);
 
-                // Clear the cart after successful submission and navigate
-                setTimeout(() => {
-                    dispatch(clearCart());
-                    setOrderSuccess(false);
-                    navigate('/products');
-                }, 4000);
-
-            } catch (error) {
-                console.error('Failed to send email:', error);
+            // Clear cart and navigate after successful submission
+            setTimeout(() => {
+                dispatch(clearCart());
+                setOrderSuccess(false);
+                navigate("/products");
+            }, 4000);
+            }   catch (error) {
+                console.error("Failed to send email:", error);
             }
         });
     };
-
 
     return (
         <section className='relative w-full min-h-[60px] mx-auto flex
