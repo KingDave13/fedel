@@ -9,6 +9,7 @@ import { clearCart  } from '../redux/cartSlice';
 import { HiOutlineInformationCircle } from 'react-icons/hi2';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import MailerSend from 'mailersend';
 
 const OrderSuccessModal = ({ isVisible }) => {
     if (!isVisible) return null;
@@ -94,6 +95,10 @@ const Checkout = () => {
         };
     }, [isMobile]);
 
+    const mailersend = new MailerSend({
+        api_key: process.env.MAILER_API,
+    });
+
     const formik = useFormik({
         initialValues: {
             state: '',
@@ -151,6 +156,77 @@ const Checkout = () => {
                 setOrderSuccess(false);
                 navigate('/products');
             }, 4000);
+        });
+    };
+
+    const handleEmailOrder = async () => {
+        formik.validateForm().then(async (errors) => {
+            if (Object.keys(errors).length > 0) {
+                formik.setTouched({
+                    state: true,
+                    name: true,
+                    email: true,
+                    phone: true,
+                });
+                alert("Please complete all required form fields.");
+                return;
+            }
+
+            if (!isCheckboxChecked) {
+                alert("Please agree to the Privacy Policy and Terms of Usage.");
+                return;
+            }
+
+            const cartItemsText = cartItems.map((item) => {
+                return `Name: ${item.name} x ${item.quantity} \nType: ${item.type} \nManufacturer: ${item.manufacturer} \nVariations: ${item.variations} \nPrice- N${item.price.toLocaleString()}`;
+            }).join("\n\n");
+
+            const formDataText = `Name: ${formik.values.name}\nEmail: ${formik.values.email}\nPhone: ${formik.values.phone}\nState: ${formik.values.state}`;
+
+            const orderSummaryText = `Items total: N${totalAmount.toLocaleString()}\nVAT (7.5%): N${vat.toLocaleString()}\nSubtotal: N${subtotal.toLocaleString()}`;
+
+            const emailTemplate = `
+                <h2>Order Confirmation</h2>
+                <p>Customer Information:</p>
+                <p>${formDataText}</p>
+                <h3>Order Items:</h3>
+                <pre>${cartItemsText}</pre>
+                <h3>Order Summary:</h3>
+                <p>${orderSummaryText}</p>
+            `;
+
+            const message = {
+                from: {
+                    email: 'sales@shoptiles.ng',
+                },
+                to: [
+                    {
+                        email: formik.values.email, // Customer email
+                    },
+                    {
+                        email: 'sales@shoptiles.ng', // Your email
+                    },
+                ],
+                subject: `Order Confirmation for ${formik.values.name}`,
+                html: emailTemplate,
+            };
+
+            try {
+                const response = await mailersend.email.send(message);
+                console.log('Email sent:', response);
+
+                setOrderSuccess(true);
+
+                // Clear the cart after successful submission and navigate
+                setTimeout(() => {
+                    dispatch(clearCart());
+                    setOrderSuccess(false);
+                    navigate('/products');
+                }, 4000);
+
+            } catch (error) {
+                console.error('Failed to send email:', error);
+            }
         });
     };
 
@@ -476,7 +552,9 @@ const Checkout = () => {
                                     <button className='bg-primary md:text-[14px] 
                                     ss:text-[14px] text-[12px] text-center 
                                     text-white rounded-lg grow2 cursor-pointer 
-                                    md:w-[200px] ss:w-[200px] w-full py-3.5'>
+                                    md:w-[200px] ss:w-[200px] w-full py-3.5'
+                                    onClick={handleEmailOrder}
+                                    >
                                         Place Order
                                     </button>
 
@@ -697,7 +775,9 @@ const Checkout = () => {
                                     <button className='bg-primary md:text-[13px] 
                                     ss:text-[14px] text-[12px] text-center 
                                     text-white rounded-lg grow2 cursor-pointer 
-                                    md:w-[200px] ss:w-[200px] w-full py-3.5'>
+                                    md:w-[200px] ss:w-[200px] w-full py-3.5'
+                                    onClick={handleEmailOrder}
+                                    >
                                         Place Order
                                     </button>
 
