@@ -9,6 +9,11 @@ const port = EMAIL_PORT;
 export const transporter = nodemailer.createTransport({
   host: host,
   port: port,
+  secure: true,
+  auth: {
+    user: adminEmail,
+    pass: adminPassword
+  }
 });
 
 export const mailOptions = {
