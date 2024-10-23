@@ -96,14 +96,6 @@ const Checkout = () => {
     }, [isMobile]);
 
 
-    const Recipient = require("mailersend").Recipient;
-    const EmailParams = require("mailersend").EmailParams;
-    const MailerSend = require("mailersend");
-
-    const mailersend = new MailerSend({
-        api_key: process.env.MAILER_API,
-    });
-
     const formik = useFormik({
         initialValues: {
             state: '',
@@ -165,67 +157,7 @@ const Checkout = () => {
     };
 
     const handleEmailOrder = async () => {
-        formik.validateForm().then(async (errors) => {
-            if (Object.keys(errors).length > 0) {
-                formik.setTouched({ state: true, name: true, email: true, phone: true });
-                alert("Please complete all required form fields.");
-                return;
-            }
-
-            if (!isCheckboxChecked) {
-                alert("Please agree to the Privacy Policy and Terms of Usage.");
-                return;
-            }
-
-            const cartItemsText = cartItems.map((item) => {
-                return `Name: ${item.name} x ${item.quantity} \nType: ${item.type} \nManufacturer: ${item.manufacturer} \nVariations: ${item.variations} \nPrice- N${item.price.toLocaleString()}`;
-            }).join("\n\n");
-
-            const formDataText = `Name: ${formik.values.name}\nEmail: ${formik.values.email}\nPhone: ${formik.values.phone}\nState: ${formik.values.state}`;
-
-            const orderSummaryText = `Items total: N${totalAmount.toLocaleString()}\nVAT (7.5%): N${vat.toLocaleString()}\nSubtotal: N${subtotal.toLocaleString()}`;
-
-            const emailTemplate = `
-                <h2>Order Confirmation</h2>
-                <p>Customer Information:</p>
-                <p>${formDataText}</p>
-                <h3>Order Items:</h3>
-                <pre>${cartItemsText}</pre>
-                <h3>Order Summary:</h3>
-                <p>${orderSummaryText}</p>
-            `;
-
-            // Set up recipients
-            const recipients = [
-                new Recipient(formik.values.email, formik.values.name),
-                new Recipient("sales@shoptiles.ng", "Shop Tiles"),
-            ];
-
-            // Set up email parameters
-            const emailParams = new EmailParams()
-                .setFrom("sales@shoptiles.ng")
-                .setFromName("Shop Tiles")
-                .setRecipients(recipients)
-                .setSubject(`Order Confirmation for ${formik.values.name}`)
-                .setHtml(emailTemplate)
-                .setText("Order confirmation email");
-
-            try {
-            // Send email using mailersend
-            const response = await mailersend.send(emailParams);
-                console.log("Email sent:", response);
-                setOrderSuccess(true);
-
-            // Clear cart and navigate after successful submission
-            setTimeout(() => {
-                dispatch(clearCart());
-                setOrderSuccess(false);
-                navigate("/products");
-            }, 4000);
-            }   catch (error) {
-                console.error("Failed to send email:", error);
-            }
-        });
+      
     };
 
     return (
