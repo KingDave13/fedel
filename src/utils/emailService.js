@@ -6,6 +6,11 @@ const host = process.env.ADMIN_HOST;
 const adminPassword = process.env.ADMIN_PASSWORD;
 const port = EMAIL_PORT;
 
+export const mailOptions = {
+  from: adminName,
+  to: adminName,
+};
+
 // const mailersend = require('mailersend')({
 //   apiKey: MAILER_API,
 // });
