@@ -6,6 +6,11 @@ const host = process.env.ADMIN_HOST;
 const adminPassword = process.env.ADMIN_PASSWORD;
 const port = EMAIL_PORT;
 
+export const transporter = nodemailer.createTransport({
+  host: host,
+  port: port,
+});
+
 export const mailOptions = {
   from: adminName,
   to: adminName,
