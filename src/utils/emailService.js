@@ -1,5 +1,10 @@
 import nodemailer from 'nodemailer'
 
+const adminEmail = process.env.ADMIN_EMAIL;
+const adminName = process.env.ADMIN_NAME;
+const host = process.env.ADMIN_HOST;
+const adminPassword = process.env.ADMIN_PASSWORD;
+const port = EMAIL_PORT;
 
 // const mailersend = require('mailersend')({
 //   apiKey: MAILER_API,
