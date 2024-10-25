@@ -21,7 +21,6 @@ export const mailOptions = {
   to: adminName,
 };
 
-
 // const mailersend = require('mailersend')({
 //   apiKey: MAILER_API,
 // });
