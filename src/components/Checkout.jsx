@@ -203,7 +203,6 @@ const Checkout = () => {
             });
     
             if (response.ok) {
-                alert('Email sent successfully');
                 setOrderSuccess(true);
                 
                 setTimeout(() => {
