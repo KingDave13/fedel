@@ -6,15 +6,6 @@ const host = process.env.ADMIN_HOST;
 const adminPassword = process.env.ADMIN_PASSWORD;
 const port = EMAIL_PORT;
 
-export const transporter = nodemailer.createTransport({
-  host: host,
-  port: port,
-  secure: true,
-  auth: {
-    user: adminEmail,
-    pass: adminPassword
-  }
-});
 
 
 // const mailersend = require('mailersend')({
