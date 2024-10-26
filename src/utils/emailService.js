@@ -16,10 +16,6 @@ export const transporter = nodemailer.createTransport({
   }
 });
 
-export const mailOptions = {
-  from: adminName,
-  to: adminName,
-};
 
 // const mailersend = require('mailersend')({
 //   apiKey: MAILER_API,
