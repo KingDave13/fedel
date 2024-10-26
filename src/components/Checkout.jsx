@@ -183,7 +183,6 @@ const Checkout = () => {
     
         const orderSummaryText = `Items total: N${totalAmount.toLocaleString()}\nVAT (7.5%): N${vat.toLocaleString()}\nSubtotal: N${subtotal.toLocaleString()}`;
     
-        // Combine all the data into a single email message
         const message = `Order Details:\n\nBuyer Information:\n${formDataText}\n\nItems:\n${cartItemsText}\n\nOrder Summary:\n${orderSummaryText}`;
         
         // Prepare email data to send to server
@@ -207,7 +206,6 @@ const Checkout = () => {
                 alert('Email sent successfully');
                 setOrderSuccess(true);
                 
-                // Clear cart and redirect user
                 setTimeout(() => {
                     dispatch(clearCart());
                     setOrderSuccess(false);
