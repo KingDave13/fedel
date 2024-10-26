@@ -157,8 +157,71 @@ const Checkout = () => {
     };
 
     const handleEmailOrder = async () => {
-      
+        const errors = await formik.validateForm();
+    
+        if (Object.keys(errors).length > 0) {
+            formik.setTouched({
+                state: true,
+                name: true,
+                email: true,
+                phone: true,
+            });
+            alert("Please complete all required form fields.");
+            return;
+        }
+    
+        if (!isCheckboxChecked) {
+            alert("Please agree to the Privacy Policy and Terms of Usage.");
+            return;
+        }
+    
+        const cartItemsText = cartItems.map((item) => {
+            return `Name: ${item.name} x ${item.quantity} \nType: ${item.type} \nManufacturer: ${item.manufacturer} \nVariations: ${item.variations} \nPrice- N${item.price.toLocaleString()}`;
+        }).join("\n\n");
+    
+        const formDataText = `Name: ${formik.values.name}\nEmail: ${formik.values.email}\nPhone: ${formik.values.phone}\nState: ${formik.values.state}`;
+    
+        const orderSummaryText = `Items total: N${totalAmount.toLocaleString()}\nVAT (7.5%): N${vat.toLocaleString()}\nSubtotal: N${subtotal.toLocaleString()}`;
+    
+        // Combine all the data into a single email message
+        const message = `Order Details:\n\nBuyer Information:\n${formDataText}\n\nItems:\n${cartItemsText}\n\nOrder Summary:\n${orderSummaryText}`;
+        
+        // Prepare email data to send to server
+        const emailData = {
+            to: formik.values.email,
+            subject: "Order Confirmation",
+            body: message.replace(/\n/g, '<br>') // Convert line breaks to HTML for the email body
+        };
+    
+        // Send email data to server
+        try {
+            const response = await fetch('http://localhost:3002/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ emailData }),
+            });
+    
+            if (response.ok) {
+                alert('Email sent successfully');
+                setOrderSuccess(true);
+                
+                // Clear cart and redirect user
+                setTimeout(() => {
+                    dispatch(clearCart());
+                    setOrderSuccess(false);
+                    navigate('/products');
+                }, 4000);
+            } else {
+                alert('Failed to send email');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred while sending the email');
+        }
     };
+    
 
     return (
         <section className='relative w-full min-h-[60px] mx-auto flex
