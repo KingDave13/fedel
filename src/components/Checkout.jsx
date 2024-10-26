@@ -187,7 +187,7 @@ const Checkout = () => {
         
         // Prepare email data to send to server
         const emailData = {
-            to: formik.values.email,
+            from: formik.values.email,
             subject: "Order Confirmation",
             body: message.replace(/\n/g, '<br>') // Convert line breaks to HTML for the email body
         };
