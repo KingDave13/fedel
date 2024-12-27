@@ -278,11 +278,11 @@ const Navbar = () => {
                                 {isDropdownOpen && suggestions.length > 0 && (
                                     <div className='absolute top-full mt-1 
                                     bg-white shadow-lg left-0 right-0 p-3
-                                    rounded-md max-h-40 overflow-y-auto'>
+                                    rounded-md max-h-60 overflow-y-auto'>
                                         {suggestions.map((suggestion, index) => (
                                         <div
                                             key={index}
-                                            className='p-1 hover:bg-main2 font-medium
+                                            className='p-2 hover:bg-main2 font-medium
                                             cursor-pointer text-main text-[13px]'
                                             onClick={() => handleSuggestionClick(suggestion.categorySlug, suggestion.slug)}
                                         >
