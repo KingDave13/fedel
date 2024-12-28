@@ -174,9 +174,7 @@ const RequestModal = ({ onClose, product, image }) => {
             `Manufacturer: ${itemObject.manufacturer}`,
             `Variations: ${itemObject.variations.join(', ')}`,
         ].join('\n');
-          
-        console.log(productDetails);
-        
+
         const formDataText = `Name: ${formik.values.name}\nEmail: ${formik.values.email}\nPhone: ${formik.values.phone}\nState: ${formik.values.state}`;
     
         const message = `Product Details: \nSender Information:\n${formDataText}\n\nItem:\n${productDetails}`;
