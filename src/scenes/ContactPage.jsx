@@ -17,7 +17,9 @@ const ContactPage = () => {
 
             <Navbar />
 
-            <Contact />
+            <div className='help2'>
+                <Contact />
+            </div>
             
             <div className='footer'>
                 <Footer />
