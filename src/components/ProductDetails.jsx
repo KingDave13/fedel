@@ -181,6 +181,7 @@ const RequestModal = ({ onClose, product, image }) => {
         
         // Prepare email data to send to server
         const emailData = {
+            name: formik.values.name,
             from: formik.values.email,
             subject: "Product Price Request",
             body: message.replace(/\n/g, '<br>') // Convert line breaks to HTML for the email body
