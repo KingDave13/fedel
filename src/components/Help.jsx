@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
 import { helpImg } from '../assets';
 import { useState, useRef, useEffect } from 'react';
-// import emailjs from '@emailjs/browser';
 import { useFormik } from "formik";
 import { GrAttachment } from "react-icons/gr";
 import * as Yup from 'yup';
@@ -28,43 +27,6 @@ const Help = () => {
             subject: Yup.string().required('Subject is required.'),
             message: Yup.string().required('Message is required.'),
         }),
-
-        // onSubmit: (values) => {
-        //     setLoading(true);
-
-        //     emailjs.send(
-        //         'service_1zam733',
-        //         'template_bjv8tlu',
-        //         {
-        //           from_name: `${values.firstname} ${values.lastname}`,
-        //           to_name: 'Elite Press Journals',
-        //           from_email: values.email,
-        //           to_email: 'contact@epjournals.com',
-        //           subject: values.subject,
-        //           message: values.message,
-        //         },
-        //         'UE-RzuF3c_ndNJ-Zw'
-        //       )
-        //       .then(
-        //         () => {
-        //           setLoading(false);
-        //           setModalOpen(true);
-        //           disableScroll();
-          
-        //           setTimeout(() => {
-        //             setModalOpen(false);
-        //             enableScroll();
-        //           }, 2000);
-          
-        //           formik.resetForm();
-        //         },
-                
-        //         (error) => {
-        //           setLoading(false);
-        //           console.log(error);
-        //         }
-        //     );
-        // },
         onSubmit: (values) => {
             setLoading(true);
 
@@ -92,6 +54,54 @@ const Help = () => {
             }, 3000);
         },
     });
+
+    const handleEmailSend = async () => {
+        const errors = await formik.validateForm();
+
+        if (Object.keys(errors).length > 0) {
+            formik.setTouched({
+                name: true,
+                subject: true,
+                message: true,
+            });
+            alert("Please complete all required form fields.");
+            return;
+        }
+      
+        const formDataText = `Name: ${formik.values.name}\nSubject: ${formik.values.subject}\nMessage: ${formik.values.message}`;
+      
+        // Prepare email data to send to server
+        const emailData = {
+            name:formik.values.name,
+            subject: formik.values.subject,
+            body: formDataText.replace(/\n/g, '<br>'), // Convert line breaks to HTML for the email body
+            attachments: files,
+        };
+      
+        // Send email data to server
+        try {
+            const formData = new FormData();
+            formData.append('emailData', JSON.stringify(emailData));
+            files.forEach((file) => {
+                formData.append('attachments', file);
+            });
+        
+            const response = await fetch('http://localhost:3002/send-help-email', {
+                method: 'POST',
+                body: formData,
+            });
+        
+            if (response.ok) {
+                alert('Email sent successfully!');
+            } else {
+                alert('Failed to send email');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred while sending the email');
+        }
+        formik.resetForm();        
+    };
 
     const handleFileChange = (e) => {
         const selectedFiles = Array.from(e.target.files);
@@ -244,10 +254,11 @@ const Help = () => {
                             <div className="flex flex-col md:gap-2 ss:gap-2.5 gap-2 
                             md:mt-1 ss:mt-1 mt-2">
                                 <button
-                                type="submit"
+                                type="button"
                                 className="bg-primary grow5 md:text-[13px] px-3
                                 ss:text-[14px] text-[12px] py-3 
                                 text-white rounded-lg border-none"
+                                onClick={handleEmailSend}
                                 >
                                     {Loading ? 'Sending...' : 'Send Email'}
                                 </button>
