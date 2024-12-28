@@ -743,7 +743,7 @@ const ProductDetails = ({ product }) => {
                                 />
                             </div>
 
-                            <div>
+                            <div key="product-attributes">
                                 {product.attributes.map((attribute, index) => (
                                     <div 
                                     className='md:text-[14px]
@@ -772,7 +772,7 @@ const ProductDetails = ({ product }) => {
                                     <div 
                                         className='flex md:gap-4 ss:gap-4 gap-3 
                                         items-center md:mb-0 ss:mb-0 mb-1' 
-                                        key={index}
+                                        key={`${attribute.price}-${attribute.OriginalPrice}-${index}`}
                                     >
                                         {attribute.price && (
                                             <h1 
