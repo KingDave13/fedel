@@ -92,7 +92,7 @@ const TargetedSearch = () => {
         formik.resetForm();
     };
 
-    const handleWhatsAppOrder = () => {
+    const handleWhatsAppSend = () => {
         formik.validateForm().then((errors) => {
             if (Object.keys(errors).length > 0) {
                 formik.setTouched({
@@ -110,6 +110,55 @@ const TargetedSearch = () => {
             window.open(whatsappLink, "_blank");
         });
     };
+
+    const handleEmailSend = async () => {
+        const errors = await formik.validateForm();
+
+        if (Object.keys(errors).length > 0) {
+            formik.setTouched({
+                name: true,
+                email: true,
+                subject: true,
+                message: true,
+            });
+            alert("Please complete all required form fields.");
+            return;
+        }
+      
+        const formDataText = `Name: ${formik.values.name}\nEmail: ${formik.values.email}\nSubject: ${formik.values.subject}\nMessage: ${formik.values.message}`;
+      
+        // Prepare email data to send to server
+        const emailData = {
+            from: formik.values.email,
+            subject: formik.values.subject,
+            body: formDataText.replace(/\n/g, '<br>'), // Convert line breaks to HTML for the email body
+            attachments: files,
+        };
+      
+        // Send email data to server
+        try {
+            const formData = new FormData();
+            formData.append('emailData', JSON.stringify(emailData));
+            files.forEach((file) => {
+                formData.append('attachments', file);
+            });
+        
+            const response = await fetch('https://fedel-server.vercel.app/send-email-targeted', {
+                method: 'POST',
+                body: formData,
+            });
+        
+            if (response.ok) {
+                alert('Email sent successfully!');
+            } else {
+                alert('Failed to send email');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred while sending the email');
+        }        
+    };
+      
 
   return (
     <div className='items-center w-full flex flex-col'>
@@ -419,10 +468,11 @@ const TargetedSearch = () => {
 
                     <div className="flex gap-2 w-full mt-1">
                         <button
-                        type="submit"
+                        type="button"
                         className="bg-primary grow5 md:text-[13px] w-full
                         ss:text-[14px] text-[11px] md:py-3 ss:py-3 py-2 
                         text-white md:rounded-lg rounded-md border-none"
+                        onClick={handleEmailSend}
                         >
                             {Loading ? 'Sending...' : 'Send Email'}
                         </button>
@@ -432,7 +482,7 @@ const TargetedSearch = () => {
                         className="bg-green grow5 md:text-[13px] w-full
                         ss:text-[14px] text-[11px] md:py-3 ss:py-3 py-2 
                         text-white md:rounded-lg rounded-md border-none"
-                        onClick={handleWhatsAppOrder}
+                        onClick={handleWhatsAppSend}
                         >
                             Send via WhatsApp
                         </button>
