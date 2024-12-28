@@ -141,7 +141,7 @@ const Contact = () => {
               Contact Us
             </h1>
 
-            <p className='text-main md:text-[16px] ss:text-[17px] 
+            <p className='text-main md:text-[18px] ss:text-[17px] 
             text-[14px] md:max-w-[550px] md:leading-[23px] 
             ss:leading-[25px] leading-[20px] font-medium 
             tracking-tight'>
