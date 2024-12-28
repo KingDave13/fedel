@@ -132,8 +132,6 @@ const RequestModal = ({ onClose, product, image }) => {
             email: Yup.string().email('Invalid email address.').required('Email is required.'),
             phone: Yup.string().required('WhatsApp phone number is required.'),
         }),
-
-
     });
 
     return (
