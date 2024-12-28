@@ -24,6 +24,9 @@ import HeroSearch from "./HeroSearch";
 import Product from './Product';
 import Cart from './Cart';
 
+import About from './About';
+import Contact from './Contact';
+
 export {
     Navbar,
     Hero,
@@ -49,4 +52,6 @@ export {
     HeroCheckout,
     SearchResults,
     HeroSearch,
+    About,
+    Contact,
 }
