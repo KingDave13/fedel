@@ -103,11 +103,16 @@ const Variation2 = ({ variation, index, selected, onSelect }) => {
 
 const RequestModal = ({ onClose, product, image }) => {
     const [selectedVariations, setSelectedVariations] = useState([]);
+    const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
 
     const handleSelectVariation = (index) => {
         setSelectedVariations((prev) =>
-          prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+            prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
         );
+    };
+
+    const handleCheckboxChange = (e) => {
+        setIsCheckboxChecked(e.target.checked);
     };
 
     const imageUrl = urlFor(image).url();
@@ -133,6 +138,78 @@ const RequestModal = ({ onClose, product, image }) => {
             phone: Yup.string().required('WhatsApp phone number is required.'),
         }),
     });
+    
+
+    const handleRequestPriceEmail = async () => {
+        const errors = await formik.validateForm();
+    
+        if (Object.keys(errors).length > 0) {
+            formik.setTouched({
+                state: true,
+                name: true,
+                email: true,
+                phone: true,
+            });
+            alert("Please complete all required form fields.");
+            return;
+        }
+    
+        if (!isCheckboxChecked) {
+            alert("Please agree to the Privacy Policy and Terms of Usage.");
+            return;
+        }
+    
+        const attribute = product.attributes[0];
+
+        const itemObject = {
+            name: product.name,
+            type: attribute.type,
+            manufacturer: attribute.manufacturer,
+            variations: selectedVariations.map(index => attribute.variations[index]),
+        };
+
+        const productDetails = [
+            `Name: ${itemObject.name}`,
+            `Type: ${itemObject.type}`,
+            `Manufacturer: ${itemObject.manufacturer}`,
+            `Variations: ${itemObject.variations.join(', ')}`,
+        ].join('\n');
+          
+        console.log(productDetails);
+        
+        const formDataText = `Name: ${formik.values.name}\nEmail: ${formik.values.email}\nPhone: ${formik.values.phone}\nState: ${formik.values.state}`;
+    
+        const message = `Product Details: \nSender Information:\n${formDataText}\n\nItem:\n${productDetails}`;
+        
+        // Prepare email data to send to server
+        const emailData = {
+            from: formik.values.email,
+            subject: "Product Price Request",
+            body: message.replace(/\n/g, '<br>') // Convert line breaks to HTML for the email body
+        };
+        
+        // Send email data to server
+        try {
+            const response = await fetch('http://localhost:3002/send-request-price-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ emailData }),
+            });
+    
+            if (response.ok) {
+                alert('Price Request Successful');
+            } else {
+                alert('Failed to send email');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred while sending the email');
+        }
+        formik.resetForm();
+        closeRequestModal();
+    };
 
     return (
         <AnimatePresence>
@@ -414,6 +491,8 @@ const RequestModal = ({ onClose, product, image }) => {
                                 <input
                                     type='checkbox'
                                     className='cursor-pointer'
+                                    checked={isCheckboxChecked}
+                                    onChange={handleCheckboxChange}
                                 />
                                 <p className='text-main md:text-[12px]
                                 ss:text-[12px] text-[11px]'>
@@ -432,7 +511,9 @@ const RequestModal = ({ onClose, product, image }) => {
                             ss:text-[14px] text-[12px] py-3 
                             text-center text-white rounded-lg grow2 
                             cursor-pointer md:w-[180px] ss:w-[170px]
-                            w-full'>
+                            w-full'
+                            onClick={handleRequestPriceEmail}
+                            >
                                 Request Price
                             </button>
                         </div>
