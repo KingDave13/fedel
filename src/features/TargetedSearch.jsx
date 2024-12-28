@@ -109,6 +109,7 @@ const TargetedSearch = () => {
             const whatsappLink = `https://wa.me/2349014452743?text=${encodeURIComponent(formDataText)}`;
             window.open(whatsappLink, "_blank");
         });
+        formik.resetForm();
     };
 
     const handleEmailSend = async () => {
@@ -129,6 +130,7 @@ const TargetedSearch = () => {
       
         // Prepare email data to send to server
         const emailData = {
+            name:formik.values.name,
             from: formik.values.email,
             subject: formik.values.subject,
             body: formDataText.replace(/\n/g, '<br>'), // Convert line breaks to HTML for the email body
@@ -143,7 +145,7 @@ const TargetedSearch = () => {
                 formData.append('attachments', file);
             });
         
-            const response = await fetch('https://fedel-server.vercel.app/send-email-targeted', {
+            const response = await fetch('http://localhost:3002/send-targeted-email', {
                 method: 'POST',
                 body: formData,
             });
@@ -156,7 +158,8 @@ const TargetedSearch = () => {
         } catch (error) {
             console.error('Error:', error);
             alert('An error occurred while sending the email');
-        }        
+        }
+        formik.resetForm();        
     };
       
 
