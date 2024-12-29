@@ -152,22 +152,29 @@ const QuoteModal = ({ onClose }) => {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: 10, opacity: 0 }}
                 transition={{ duration: 0.1 }}
-                className="bg-white md:p-8 ss:p-8 p-4 padphone rounded-2xl 
+                className="bg-white md:p-8 ss:p-8 p-5 rounded-2xl 
                 shadow-xl flex flex-col md:justify-center ss:justify-center 
-                w-auto md:h-auto ss:h-auto h-[80%] overflow-auto 
-                items-center relative md:m-0 ss:m-16 m-6">
-                    <button
-                        className='absolute md:top-8 ss:top-8 top-4 
-                        md:right-8 ss:right-8 right-4 text-main 
-                        md:text-[20px] ss:text-[20px] text-[18px] 
-                        cursor-pointer phone2'
-                        onClick={closeQuoteModal}
-                    >
-                        <HiX />
-                    </button>
+                md:w-[35%] ss:w-[70%] w-full h-auto items-center relative 
+                md:m-0 ss:m-16 m-6">
+                    <div className='flex justify-between items-center w-full
+                    absolute md:top-12 ss:top-12 top-10'>
+                        <h2 className='text-primary font-semibold md:text-[25px]
+                        ss:text-[25px] text-[21px] tracking-tight absolute
+                        md:left-8 ss:left-8 left-5'>
+                            Get a Quote
+                        </h2>
 
-                    <div className='flex flex-col w-full md:gap-8
-                    ss:gap-8 gap-5'>
+                        <button
+                        className='absolute md:right-8 ss:right-8 right-5 
+                        text-primary text-[25px] md:cursor-pointer'
+                        onClick={closeQuoteModal}
+                        >
+                            <HiX />
+                        </button>
+                    </div>
+
+                    <div className='flex flex-col w-full mt-16 md:gap-3
+                    ss:gap-3 gap-2.5'>
                         <div className="relative">
                             <input
                                 type="text"
@@ -176,14 +183,13 @@ const QuoteModal = ({ onClose }) => {
                                 value={formik.values.name}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
-                                className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
-                                ss:px-3 px-2 border-search 
-                                text-black md:rounded-lg rounded-md md:text-[13px]
-                                ss:text-[14px] text-[12px]
+                                className="py-3 px-3 border-search 
+                                text-black md:rounded-lg rounded-md md:text-[15px]
+                                ss:text-[15px] text-[13px]
                                 bg-transparent w-full placeholder:text-main3"
                             />
-                            <p className="text-mainRed md:text-[12px] 
-                            ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                            <p className="text-mainRed md:text-[13px] 
+                            ss:text-[13px] text-[12px] md:mt-2 ss:mt-2 mt-1">
                                 {formik.touched.name && formik.errors.name}
                             </p>
                         </div>
@@ -196,14 +202,13 @@ const QuoteModal = ({ onClose }) => {
                                 value={formik.values.email}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
-                                className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
-                                ss:px-3 px-2 border-search 
-                                text-black md:rounded-lg rounded-md md:text-[13px]
-                                ss:text-[14px] text-[12px]
+                                className="py-3 px-3 border-search 
+                                text-black md:rounded-lg rounded-md md:text-[15px]
+                                ss:text-[15px] text-[13px]
                                 bg-transparent w-full placeholder:text-main3"
                             />
-                            <p className="text-mainRed md:text-[12px] 
-                            ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                            <p className="text-mainRed md:text-[13px] 
+                            ss:text-[13px] text-[12px] md:mt-2 ss:mt-2 mt-1">
                                 {formik.touched.email && formik.errors.email}
                             </p>
                         </div>
@@ -212,18 +217,17 @@ const QuoteModal = ({ onClose }) => {
                             <input
                                 type="text"
                                 name="subject"
-                                placeholder='Enter a subject (e.g. Inquiry for Glass Marble Tile)'
+                                placeholder='Enter a specific product name'
                                 value={formik.values.subject}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
-                                className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
-                                ss:px-3 px-2 border-search 
-                                text-black md:rounded-lg rounded-md md:text-[13px]
-                                ss:text-[14px] text-[12px]
+                                className="py-3 px-3 border-search 
+                                text-black md:rounded-lg rounded-md md:text-[15px]
+                                ss:text-[15px] text-[13px]
                                 bg-transparent w-full placeholder:text-main3"
                             />
-                            <p className="text-mainRed md:text-[12px] 
-                            ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                            <p className="text-mainRed md:text-[13px] 
+                            ss:text-[13px] text-[12px] md:mt-2 ss:mt-2 mt-1">
                                 {formik.touched.subject && formik.errors.subject}
                             </p>
                         </div>
@@ -235,22 +239,21 @@ const QuoteModal = ({ onClose }) => {
                                 value={formik.values.message}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
-                                placeholder="Enter your message"
-                                className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
-                                ss:px-3 px-2 border-search 
-                                text-black md:rounded-lg rounded-md md:text-[13px]
-                                ss:text-[14px] text-[12px]
+                                placeholder="Enter your message- describe the product in detail"
+                                className="py-3 px-3 border-search 
+                                text-black md:rounded-lg rounded-md md:text-[15px]
+                                ss:text-[15px] text-[13px]
                                 bg-transparent w-full placeholder:text-main3"
                             />
-                            <p className="text-mainRed md:text-[12px] 
-                            ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                            <p className="text-mainRed md:text-[13px] 
+                            ss:text-[13px] text-[12px] md:mt-2 ss:mt-2 mt-1">
                                 {formik.touched.message && formik.errors.message}
                             </p>
                         </div>
 
                         <div className='flex flex-col gap-0.5'>
                             <div>
-                                <label className='inline-flex gap-2 cursor-pointer'>
+                                <label className='inline-flex gap-2 cursor-pointer items-center'>
                                     <GrAttachment />
                                     <input
                                         type="file"
@@ -260,13 +263,13 @@ const QuoteModal = ({ onClose }) => {
                                         className="hidden"
                                         id="fileInput"
                                     />
-                                    <span className='text-main font-medium tracking-tight md:text-[12px] ss:text-[13px] text-[12px]'>
+                                    <span className='text-main font-medium tracking-tight md:text-[14px] ss:text-[14px] text-[13px]'>
                                         Attach Images
                                     </span>
                                 </label>
 
-                                <h4 className='text-mainalt md:text-[12px] ss:text-[12px] 
-                                text-[11px] tracking-tight'>
+                                <h4 className='text-mainalt md:text-[13px] ss:text-[13px] 
+                                text-[12px] tracking-tight'>
                                     Only JPEG, JPG and PNG less than 2MB allowed
                                 </h4>
 
@@ -283,11 +286,12 @@ const QuoteModal = ({ onClose }) => {
                             </div>
                         </div>
 
-                        <div className="flex gap-2 w-full mt-1">
+                        <div className="flex md:gap-4 ss:gap-4 gap-3 w-full 
+                        mt-2">
                             <button
                             type="button"
-                            className="bg-primary grow5 md:text-[13px] w-full
-                            ss:text-[14px] text-[11px] md:py-3 ss:py-3 py-2 
+                            className="bg-primary grow5 md:text-[14px] w-full
+                            ss:text-[14px] text-[12px] md:py-3.5 ss:py-3.5 py-3
                             text-white md:rounded-lg rounded-md border-none"
                             onClick={handleEmailSend}
                             >
@@ -296,8 +300,8 @@ const QuoteModal = ({ onClose }) => {
 
                             <button
                             type="button"
-                            className="bg-green grow5 md:text-[13px] w-full
-                            ss:text-[14px] text-[11px] md:py-3 ss:py-3 py-2 
+                            className="bg-green grow5 md:text-[14px] w-full
+                            ss:text-[14px] text-[12px] md:py-3.5 ss:py-3.5 py-3 
                             text-white md:rounded-lg rounded-md border-none"
                             onClick={handleWhatsAppSend}
                             >
