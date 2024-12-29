@@ -2,29 +2,17 @@ import { discoverImg } from '../assets';
 import { layout } from '../styles';
 import { motion } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
-import { SectionWrapper } from '../hoc';
 
 const About = () => {
   return (
-    <section className='w-full min-h-[500px] items-center flex flex-col
-    md:mt-24 ss:mt-12 mt-3'>
-        <div className='w-full'>
-            <div className='justify-between w-full flex md:flex-row 
-            ss:flex-wrap flex-col items-start md:gap-10 ss:gap-8 gap-5 
+    <section className='w-full min-h-[200px] items-center flex flex-col
+    md:px-0 ss:px-16 ss:pb-12 px-6 py-6'>
+        <div className='w-full max-w-[72rem] mx-auto'>
+            <div className='justify-between w-full flex flex-row gap-10 
             items-center'>
                 <motion.div variants={textVariant(0.3)}
                 className={`${layout.sectionInfo}`}
                 >
-                    <h1 className='text-primary font-bold md:text-[40px]
-                    ss:text-[35px] text-[25px]'>
-                        About Us
-                    </h1>
-                    
-                    <div className='flex relative'>
-                        <div className='bg-secondary md:w-[120px] ss:w-[120px]
-                    w-[80px] h-[3px]' />
-                    </div>
-
                     <p className='md:mt-8 ss:mt-8 mt-5 text-main md:text-[16px] 
                     ss:text-[15px] text-[13px] md:max-w-[650px] ss:max-w-[700px]
                     md:leading-[27px] ss:leading-[25px] leading-[20px]'>
@@ -55,9 +43,9 @@ const About = () => {
 
                 <motion.div 
                 variants={fadeIn('right', 'tween', 0.2, 0.5)}
-                className='md:mt-0 ss:mt-6 mt-2'>
-                    <img src={discoverImg} alt='doctors'
-                    className='md:h-[350px] ss:h-[350px] h-[220px] w-auto rounded-3xl'
+                className='md:flex hidden'>
+                    <img src={discoverImg} alt='aboutImage'
+                    className='h-[350px] w-full rounded-3xl object-cover'
                     />
                 </motion.div>
             </div>
@@ -66,4 +54,4 @@ const About = () => {
   )
 };
 
-export default SectionWrapper(About, '');
+export default About;

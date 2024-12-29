@@ -1,8 +1,8 @@
 import {
     Navbar,
     Contact,
-    HeroProducts,
     Footer,
+    HeroContact,
 } from '../components';
 
 import { Helmet } from 'react-helmet';
@@ -17,7 +17,7 @@ const ContactPage = () => {
             </Helmet>
 
             <Navbar />
-            <HeroProducts />
+            <HeroContact />
             <Contact />
             
             <div className='footer'>

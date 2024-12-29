@@ -3,6 +3,7 @@ import {
     About,
     CTA,
     Footer,
+    HeroAbout,
 } from '../components';
 
 import { Helmet } from 'react-helmet';
@@ -17,9 +18,8 @@ const AboutPage = () => {
             </Helmet>
 
             <Navbar />
-
+            <HeroAbout />
             <About />
-            
             <CTA />
 
             <div className='footer'>

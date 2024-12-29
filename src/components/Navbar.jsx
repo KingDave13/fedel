@@ -129,7 +129,7 @@ const Navbar = () => {
   return (
     <nav className='w-full flex items-center fixed top-0 z-20 navsmooth'>
         <div className='flex flex-col w-full items-center'>
-            <div className={`w-full md:bg-main2 ${styles.paddingX}
+            <div className={`w-full bg-main2 ${styles.paddingX}
             hidden md:flex`}>
                 <div className='w-full flex justify-between items-center 
                 max-w-[72rem] mx-auto md:py-2 ss:py-3 py-3'>
