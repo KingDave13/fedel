@@ -230,17 +230,16 @@ const RequestModal = ({ onClose, product, image }) => {
                     <button
                         className='absolute md:top-8 ss:top-8 top-4 
                         md:right-8 ss:right-8 right-4 text-main 
-                        md:text-[20px] ss:text-[20px] text-[18px] 
-                        cursor-pointer phone2'
+                        text-[25px] cursor-pointer phone2'
                         onClick={closeRequestModal}
                     >
                         <HiX />
                     </button>
 
                     <div className='flex flex-col w-full md:gap-8
-                    ss:gap-8 gap-5'>
-                        <h1 className='text-primary md:text-[18px]
-                        ss:text-[20px] text-[18px] font-semibold'>
+                    ss:gap-8 gap-5 '>
+                        <h1 className='text-primary md:text-[20px]
+                        ss:text-[20px] text-[19px] font-semibold'>
                             Request Price
                         </h1>
 
@@ -279,7 +278,7 @@ const RequestModal = ({ onClose, product, image }) => {
                                         {product.attributes.map((attribute, index) => (
                                             <div
                                             className='flex flex-wrap md:gap-3
-                                            ss:gap-3 gap-2
+                                            ss:gap-3 gap-3
                                             md:max-w-[400px] ss:max-w-[400px]'
                                             key={index}>
                                                 {attribute.variations && attribute.variations.map((variation, varIndex) => (
@@ -320,15 +319,15 @@ const RequestModal = ({ onClose, product, image }) => {
                             </div>
                         </div>
                         
-                        <div className='md:w-4/5 ss:w-4/5 w-full md:mt-0
+                        <div className='md:w-4/5 ss:w-[90%] w-full md:mt-0
                         ss:mt-0 mt-8'>
                             <form onSubmit={formik.handleSubmit}
                             className='grid md:grid-cols-2 ss:grid-cols-2
                             md:gap-4 ss:gap-4 gap-2'>
                                 <div className="flex flex-col">
                                     <label className="text-main mb-2 
-                                    md:text-[14px] font-semibold
-                                    ss:text-[14px] text-[13px]">
+                                    md:text-[15px] font-semibold
+                                    ss:text-[15px] text-[14px]">
                                         State
                                     </label>
 
@@ -339,11 +338,10 @@ const RequestModal = ({ onClose, product, image }) => {
                                             value={formik.values.state}
                                             onChange={formik.handleChange}
                                             onBlur={formik.handleBlur}
-                                            className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
-                                            ss:px-3 px-2 border-search 
+                                            className="px-3 py-3 border-search 
                                             text-main3 md:rounded-lg rounded-md 
-                                            cursor-pointer md:text-[13px]
-                                            ss:text-[13px] text-[11px] 
+                                            cursor-pointer md:text-[14px]
+                                            ss:text-[14px] text-[13px] 
                                             bg-transparent w-full custom-select"
                                         >
                                             <option value="" disabled hidden>Select your state of residence</option>
@@ -394,16 +392,16 @@ const RequestModal = ({ onClose, product, image }) => {
                                         </div>
                                     </div>
 
-                                    <p className="text-mainRed md:text-[12px] 
-                                    ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                                    <p className="text-mainRed md:text-[13px] 
+                                    ss:text-[13px] text-[12px] md:mt-2 ss:mt-2 mt-1">
                                         {formik.touched.state && formik.errors.state}
                                     </p>
                                 </div>
 
                                 <div className="flex flex-col">
                                     <label className="text-main mb-2 
-                                    md:text-[14px] font-semibold
-                                    ss:text-[14px] text-[13px]">
+                                    md:text-[15px] font-semibold
+                                    ss:text-[15px] text-[14px]">
                                         Enter your name
                                     </label>
 
@@ -414,23 +412,22 @@ const RequestModal = ({ onClose, product, image }) => {
                                         value={formik.values.name}
                                         onChange={formik.handleChange}
                                         onBlur={formik.handleBlur}
-                                        className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
-                                        ss:px-3 px-2 border-search 
-                                        text-black md:rounded-lg rounded-md md:text-[13px]
-                                        ss:text-[13px] text-[11px]
+                                        className="px-3 py-3 border-search 
+                                        text-black md:rounded-lg rounded-md md:text-[14px]
+                                        ss:text-[14px] text-[13px]
                                         bg-transparent w-full placeholder:text-main3"
                                     />
 
-                                    <p className="text-mainRed md:text-[12px] 
-                                    ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                                    <p className="text-mainRed md:text-[13px] 
+                                    ss:text-[13px] text-[12px] md:mt-2 ss:mt-2 mt-1">
                                         {formik.touched.name && formik.errors.name}
                                     </p>
                                 </div>
 
                                 <div className="flex flex-col">
                                     <label className="text-main mb-2 
-                                    md:text-[14px] font-semibold
-                                    ss:text-[14px] text-[13px]">
+                                    md:text-[15px] font-semibold
+                                    ss:text-[15px] text-[14px]">
                                         Enter your email
                                     </label>
 
@@ -441,23 +438,22 @@ const RequestModal = ({ onClose, product, image }) => {
                                         value={formik.values.email}
                                         onChange={formik.handleChange}
                                         onBlur={formik.handleBlur}
-                                        className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
-                                        ss:px-3 px-2 border-search 
-                                        text-black md:rounded-lg rounded-md md:text-[13px]
-                                        ss:text-[13px] text-[11px]
+                                        className="px-3 py-3 border-search 
+                                        text-black md:rounded-lg rounded-md md:text-[14px]
+                                        ss:text-[14px] text-[13px]
                                         bg-transparent w-full placeholder:text-main3"
                                     />
 
-                                    <p className="text-mainRed md:text-[12px] 
-                                    ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                                    <p className="text-mainRed md:text-[13px] 
+                                    ss:text-[13px] text-[12px] md:mt-2 ss:mt-2 mt-1">
                                         {formik.touched.email && formik.errors.email}
                                     </p>
                                 </div>
 
                                 <div className="flex flex-col">
                                     <label className="text-main mb-2 
-                                    md:text-[14px] font-semibold
-                                    ss:text-[14px] text-[13px]">
+                                    md:text-[15px] font-semibold
+                                    ss:text-[15px] text-[14px]">
                                         Enter your WhatsApp phone number
                                     </label>
 
@@ -468,15 +464,14 @@ const RequestModal = ({ onClose, product, image }) => {
                                         value={formik.values.phone}
                                         onChange={formik.handleChange}
                                         onBlur={formik.handleBlur}
-                                        className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
-                                        ss:px-3 px-2 border-search 
-                                        text-black md:rounded-lg rounded-md md:text-[13px]
-                                        ss:text-[13px] text-[11px]
+                                        className="px-3 py-3 border-search 
+                                        text-black md:rounded-lg rounded-md md:text-[14px]
+                                        ss:text-[14px] text-[13px]
                                         bg-transparent w-full placeholder:text-main3"
                                     />
 
-                                    <p className="text-mainRed md:text-[12px] 
-                                    ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                                    <p className="text-mainRed md:text-[13px] 
+                                    ss:text-[13px] text-[12px] md:mt-2 ss:mt-2 mt-1">
                                         {formik.touched.phone && formik.errors.phone}
                                     </p>
                                 </div>
@@ -484,7 +479,7 @@ const RequestModal = ({ onClose, product, image }) => {
                         </div>
 
                         <div className='w-full flex md:flex-row ss:flex-row 
-                        flex-col justify-between phone'>
+                        flex-col justify-between phone md:gap-0 ss:gap-5'>
                             <div className='flex items-center md:gap-2
                             ss:gap-3 gap-3 md:mb-0 ss:mb-0 mb-3'>
                                 <input
@@ -493,8 +488,8 @@ const RequestModal = ({ onClose, product, image }) => {
                                     checked={isCheckboxChecked}
                                     onChange={handleCheckboxChange}
                                 />
-                                <p className='text-main md:text-[12px]
-                                ss:text-[12px] text-[11px]'>
+                                <p className='text-main md:text-[14px]
+                                ss:text-[14px] text-[12px]'>
                                     I have read and agreed to Fedel Tiles 
                                     Limited's <a href='/privacypolicy' 
                                     className='font-bold cursor-pointer'>
@@ -506,8 +501,8 @@ const RequestModal = ({ onClose, product, image }) => {
                                 </p>
                             </div>
 
-                            <button className='bg-primary md:text-[13px] 
-                            ss:text-[14px] text-[12px] py-3 
+                            <button className='bg-primary md:text-[14px] 
+                            ss:text-[14px] text-[13px] py-3 
                             text-center text-white rounded-lg grow2 
                             cursor-pointer md:w-[180px] ss:w-[170px]
                             w-full'
