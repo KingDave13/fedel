@@ -6,14 +6,14 @@ import { fadeIn, textVariant } from '../utils/motion';
 const About = () => {
   return (
     <section className='w-full min-h-[200px] items-center flex flex-col
-    md:px-0 ss:px-16 ss:pb-12 px-6 py-6'>
+    md:px-0 ss:px-16 px-6 py-6 md:mt-5'>
         <div className='w-full max-w-[72rem] mx-auto'>
             <div className='justify-between w-full flex flex-row gap-10 
             items-center'>
                 <motion.div variants={textVariant(0.3)}
                 className={`${layout.sectionInfo}`}
                 >
-                    <p className='md:mt-8 ss:mt-8 mt-5 text-main md:text-[16px] 
+                    <p className='text-main md:text-[16px] 
                     ss:text-[15px] text-[13px] md:max-w-[650px] ss:max-w-[700px]
                     md:leading-[27px] ss:leading-[25px] leading-[20px]'>
                     Lifeline Journals is dedicated to the pursuit of 
@@ -25,7 +25,7 @@ const About = () => {
                     respective fields.
                     </p>
 
-                    <p className='md:mt-5 ss:mt-5 mt-3 text-main md:text-[16px] 
+                    <p className='md:mt-6 ss:mt-5 mt-4 text-main md:text-[16px] 
                     ss:text-[15px] text-[13px] md:max-w-[650px] ss:max-w-[700px]
                     md:leading-[27px] ss:leading-[25px] leading-[20px]'>
                     Our mission is to empower knowledge and foster 
