@@ -16,12 +16,39 @@ const Announcement = () => {
     }, []);
     
   return (
-    <div className='w-full bg-primary sticky top-0 z-50'>
+    <div className='w-full bg-primary sticky top-0 z-50 font-encode-sans'>
         {bannerText.length > 0 && (
-            <div className='md:py-4 ss:py-5 py-4'>
-                <h2 className="text-white animate-slide-left">
-                    {bannerText[0].text}
-                </h2>
+            <div className='md:py-4 ss:py-5 py-4 overflow-hidden flex gap-3'>
+                <div className='flex justify-between gap-3 animate-slide-left'>
+                    <h2 className="text-white whitespace-nowrap 
+                    md:text-[15px] ss:text-[16px] text-[14px]">
+                        {bannerText[0].text}
+                    </h2>
+                    <h2 className="text-white whitespace-nowrap
+                    md:text-[15px] ss:text-[16px] text-[14px]">
+                        {bannerText[0].text}
+                    </h2>
+                    <h2 className="text-white whitespace-nowrap
+                    md:text-[15px] ss:text-[16px] text-[14px]">
+                        {bannerText[0].text}
+                    </h2>
+                </div>
+
+                <div className='flex justify-between gap-3 animate-slide-left'
+                aria-hidden="true">
+                    <h2 className="text-white whitespace-nowrap
+                    md:text-[15px] ss:text-[16px] text-[14px]">
+                        {bannerText[0].text}
+                    </h2>
+                    <h2 className="text-white whitespace-nowrap
+                    md:text-[15px] ss:text-[16px] text-[14px]">
+                        {bannerText[0].text}
+                    </h2>
+                    <h2 className="text-white whitespace-nowrap
+                    md:text-[15px] ss:text-[16px] text-[14px]">
+                        {bannerText[0].text}
+                    </h2>
+                </div>
             </div>
         )}
     </div>

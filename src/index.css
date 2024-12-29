@@ -270,14 +270,11 @@ body, html {
 }
 
 .animate-slide-left {
-  animation: slide-left 20s linear infinite;
+  animation: slide-left 30s linear infinite;
 }
 
 @keyframes slide-left {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
+  to {
     transform: translateX(-100%);
   }
 }
