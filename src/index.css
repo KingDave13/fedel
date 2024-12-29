@@ -146,6 +146,30 @@ body, html {
   .sticky-cart {
     position: -webkit-sticky; /* For Safari */
     position: sticky;
+    top: 150px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sticky-cart-alt {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 140px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .sticky-cart {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 185px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .sticky-cart-alt {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
     top: 140px;
   }
 }

@@ -8,7 +8,7 @@ import {
 
 import { Helmet } from 'react-helmet';
 
-const CartPage = () => {
+const CartPage = ({ bannerTextPresent }) => {
    
     return (
         <div className='font-encode-sans'>
@@ -20,7 +20,7 @@ const CartPage = () => {
             <Navbar />
             <HeroCart />
             
-            <Cart />
+            <Cart bannerTextPresent={bannerTextPresent}/>
 
             <MoreProducts />
 

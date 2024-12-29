@@ -222,7 +222,7 @@ const ItemCard = ({ item, categorySlug, attributes, isMobile }) => {
 };
 
 
-const SearchResults = ({ products }) => {
+const SearchResults = ({ products, bannerTextPresent }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [isFilterVisible, setIsFilterVisible] = useState(true);
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 1060);
@@ -365,8 +365,8 @@ const SearchResults = ({ products }) => {
     <section className='relative w-full md:min-h-[500px] ss:min-h-[200px]
     min-h-[100px] mx-auto flex items-center mb-5 md:px-0 ss:px-16 px-6'>
         <div className='max-w-[72rem] mx-auto flex flex-col w-full'>
-            <div className='flex md:flex-row flex-col w-full md:items-center 
-            justify-between mb-6 sticky-filter'>
+            <div className={`flex md:flex-row flex-col w-full md:items-center 
+            justify-between mb-6 ${bannerTextPresent ? 'sticky-filter' : 'sticky-filter-alt'}`}>
                 <div className="flex-start flex gap-8 items-center md:mb-0
                 ss:mb-5 mb-3">
                     <div className={`${isFilterVisible ? 'bg-main3' 

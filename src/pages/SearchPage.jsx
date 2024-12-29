@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react';
 import { client } from '../sanity';
 import { useLocation } from 'react-router-dom';
 
-const SearchPage = () => {
+const SearchPage = ( {bannerTextPresent} ) => {
     const location = useLocation();
     const [products, setProducts] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
@@ -70,7 +70,7 @@ const SearchPage = () => {
 
             <HeroSearch query={searchTerm} />
             
-            <SearchResults products={products} />
+            <SearchResults products={products} bannerTextPresent={bannerTextPresent}/>
 
             <div className='footer'>
                 <Footer />
