@@ -437,7 +437,7 @@ const Navbar = () => {
     }, []);
 
   return (
-    <nav className='w-full flex items-center fixed top-0 z-20 navsmooth'>
+    <nav className='w-full flex items-center fixed z-20 navsmooth'>
         <div className='flex flex-col w-full items-center'>
             <div className={`w-full bg-main2 ${styles.paddingX}
             hidden md:flex`}>
@@ -680,7 +680,7 @@ const Navbar = () => {
                         </div>
 
                         {toggle && (
-                            <div className="fixed top-20 left-0 w-full h-screen 
+                            <div className="fixed top-36 left-0 w-full h-screen 
                             bg-black bg-opacity-50 z-10 navsmooth" 
                             onClick={() => setToggle(false)} />
                         )}

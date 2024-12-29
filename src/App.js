@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AboutPage, ContactPage, HomePage, ProductsPage } from './scenes';
 import ScrollToTopButton from './constants/ScrollToTop';
 import { CategoryPage, ProductPage, CartPage, CheckoutPage, SearchPage } from './pages';
+import Announcement from './features/Announcement';
 
 
 const App = () => {
@@ -9,6 +10,8 @@ const App = () => {
   return (
     <BrowserRouter>
       <div>
+        <Announcement />
+
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/products' element={<ProductsPage />} />
