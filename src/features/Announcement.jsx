@@ -18,8 +18,10 @@ const Announcement = () => {
   return (
     <div className='w-full bg-primary sticky top-0 z-50'>
         {bannerText.length > 0 && (
-            <div className='md:py-4 ss:py-5 py-4 text-white'>
-                {bannerText[0].text}
+            <div className='md:py-4 ss:py-5 py-4'>
+                <h2 className="text-white animate-slide-left">
+                    {bannerText[0].text}
+                </h2>
             </div>
         )}
     </div>
