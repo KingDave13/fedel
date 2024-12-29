@@ -146,7 +146,7 @@ const QuoteModal = ({ onClose }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 flex items-center justify-center
-            bg-black bg-opacity-80 z-50">
+            bg-black bg-opacity-50 z-50">
                 <motion.div 
                 initial={{ y: 0, opacity: 0.7 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -675,10 +675,16 @@ const Navbar = () => {
                             )}
                         </div>
 
+                        {toggle && (
+                            <div className="fixed top-20 left-0 w-full h-screen 
+                            bg-black bg-opacity-50 z-10 navsmooth" 
+                            onClick={() => setToggle(false)} />
+                        )}
+
                         <div ref={menuRef}
                             className={`p-6 ss:mt-20 mt-20 absolute top-0 
-                            right-0 z-10 flex-col w-full bg-white shadow-lg
-                            ss:px-16 h-[80vh] overflow-y-auto
+                            right-0 z-10 flex-col ss:w-[70%] w-full bg-white 
+                            shadow-lg ss:px-16 h-[80vh] overflow-y-auto
                             ${toggle 
                                 ? 'menu-slide-enter menu-slide-enter-active' 
                                 : 'menu-slide-exit menu-slide-exit-active'}`

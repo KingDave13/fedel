@@ -217,7 +217,7 @@ const RequestModal = ({ onClose, product, image }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 flex items-center justify-center
-            bg-black bg-opacity-80 z-50">
+            bg-black bg-opacity-50 z-50">
                 <motion.div 
                 initial={{ y: 0, opacity: 0.7 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -537,7 +537,7 @@ const CartModal = ({ onClose, cartModalMessage }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 flex items-center justify-center
-            bg-black bg-opacity-80 z-50">
+            bg-black bg-opacity-50 z-50">
                 <motion.div 
                 initial={{ y: 0, opacity: 0.7 }}
                 animate={{ y: 0, opacity: 1 }}
