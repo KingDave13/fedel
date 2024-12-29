@@ -24,13 +24,13 @@ const Footer = () => {
             </p>
             
             <div className='flex md:gap-4 ss:gap-5 gap-3 items-center'>
-                {socialMedia.map((social, index) => (
-                    <a target='_blank' href={social.link} rel="noreferrer" key={index}>
-                        <img src={social.image} alt='social'
-                            className='md:w-6 ss:w-6 w-5 h-auto'
-                        />
-                    </a>
-                ))}
+              {socialMedia.map((social, index) => (
+                <a target='_blank' href={social.link} rel="noreferrer" key={index}>
+                  <img src={social.image} alt='social'
+                      className='md:w-6 ss:w-6 w-5 h-auto'
+                  />
+                </a>
+              ))}
             </div>
           </div>
           
@@ -48,14 +48,18 @@ const Footer = () => {
                 <ul className='list-none md:mt-5 ss:mt-4 mt-3 w-full 
                 justify-between flex flex-col'>
                   {footerLink.links.map((Link, index) => (
-                    <a target='blank' href={Link.route} key={Link.name}>
-                      <li className={`md:text-[14px] ss:text-[15px] grow2
-                      text-[13px] md:leading-[20px] ss:leading-[20px] leading-[15px]
-                      text-white hover:text-secondary cursor-pointer 
-                      ${index !== footerLink.links.length - 1 ? 'mb-3' : 'mb-0'}`}>
-                        {Link.name}
-                      </li>
-                    </a>
+                    <div>
+                      <a target='blank' href={Link.route} key={Link.name}
+                      className='inline-flex'
+                      >
+                        <li className={`md:text-[14px] ss:text-[15px] grow2
+                        text-[13px] md:leading-[21px] ss:leading-[20px] leading-[14px]
+                        text-white hover:text-secondary cursor-pointer 
+                        ${index !== footerLink.links.length - 1 ? 'mb-2.5' : 'mb-0'}`}>
+                          {Link.name}
+                        </li>
+                      </a>
+                    </div>
                   ))}
                 </ul>
               </div>
