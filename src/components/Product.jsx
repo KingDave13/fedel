@@ -223,7 +223,7 @@ const ItemCard = ({ item, categorySlug, attributes, isMobile }) => {
 };
 
 
-const Product = ({ products, categorySlug }) => {
+const Product = ({ products, categorySlug, bannerTextPresent }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [filteredProducts, setFilteredProducts] = useState([...products]);
     const [isFilterVisible, setIsFilterVisible] = useState(true);
@@ -391,7 +391,7 @@ const Product = ({ products, categorySlug }) => {
     ss:py-8 py-6'>
         <div className='max-w-[72rem] mx-auto flex flex-col w-full'>
             <div className={`flex md:flex-row flex-col w-full md:items-center 
-            justify-between mb-6 sticky-filter`}>
+            justify-between mb-6 ${bannerTextPresent ? 'sticky-filter' : 'sticker-filter-alt'}`}>
                 <div className="flex-start flex gap-8 items-center md:mb-0
                 ss:mb-5 mb-3">
                     <div className={`${isFilterVisible ? 'bg-main3' 

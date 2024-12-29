@@ -160,6 +160,16 @@ body, html {
 .sticky-filter {
   position: -webkit-sticky; /* For Safari */
   position: sticky;
+  top: 185px;
+  z-index: 10;
+  background-color: white;
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+
+.sticky-filter-alt {
+  position: -webkit-sticky; /* For Safari */
+  position: sticky;
   top: 120px;
   z-index: 10;
   background-color: white;
@@ -169,6 +179,18 @@ body, html {
 
 @media (max-width: 1024px) {
   .sticky-filter {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 145px;
+    z-index: 10;
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .sticky-filter-alt {
     position: -webkit-sticky; /* For Safari */
     position: sticky;
     top: 80px;
@@ -181,6 +203,18 @@ body, html {
 
 @media (max-width: 480px) {
   .sticky-filter {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 130px;
+    z-index: 10;
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sticky-filter-alt {
     position: -webkit-sticky; /* For Safari */
     position: sticky;
     top: 80px;

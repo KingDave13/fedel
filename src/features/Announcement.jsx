@@ -1,23 +1,12 @@
-import { useState, useEffect } from 'react';
-import { client } from '../sanity';
 
-const Announcement = () => {
-    const [bannerText, setBannerText] = useState([]);
+const Announcement = ({ bannerText }) => {
 
-    useEffect(() => {
-        const query = `
-            *[_type == "banner"] | {
-                text,
-            }
-        `;
-    
-        client.fetch(query)
-            .then((data) => setBannerText(data))
-    }, []);
+
+    const bannerTextPresent = bannerText.length > 0
     
   return (
     <div className='w-full bg-primary sticky top-0 z-50 font-encode-sans'>
-        {bannerText.length > 0 && (
+        {bannerTextPresent && (
             <div className='md:py-4 ss:py-5 py-4 overflow-hidden flex gap-3'>
                 <div className='flex justify-between gap-3 animate-slide-left'>
                     <h2 className="text-white whitespace-nowrap 

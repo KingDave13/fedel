@@ -12,7 +12,7 @@ import { client } from '../sanity';
 
 import { Helmet } from 'react-helmet';
 
-const CategoryPage = () => {
+const CategoryPage = ({ bannerTextPresent }) => {
 
     const { slug } = useParams();
     const [category, setCategory] = useState(null);
@@ -64,7 +64,7 @@ const CategoryPage = () => {
             <HeroProductEach category={category} />
             <HeroText text={category.herotext} />
             
-            <Product products={category.products} categorySlug={slug} />
+            <Product products={category.products} categorySlug={slug} bannerTextPresent={bannerTextPresent} />
             <div className='footer'>
                 <Footer />
             </div>
