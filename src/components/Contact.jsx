@@ -126,8 +126,8 @@ const Contact = () => {
   }, [previews]);
 
   return (
-    <section className="w-full md:min-h-[550px] ss:min-h-[600px] 
-    min-h-[500px] flex items-center md:px-0 ss:px-16 ss:pb-12 px-6 py-6">
+    <section className="w-full md:min-h-[600px] ss:min-h-[600px]
+    min-h-[800px] flex items-center md:px-0 ss:px-16 ss:pb-12 px-6 py-6">
       <div className='relative items-center w-full max-w-[72rem] mx-auto'>
         <motion.div variants={fadeIn('down', 'spring', 0.3)}
         className="flex md:flex-row flex-col md:gap-20 ss:gap-16 gap-12 
