@@ -23,7 +23,7 @@ const About = () => {
 
   return (
     <section className='w-full min-h-[200px] items-center flex flex-col
-    md:px-0 ss:px-16 px-6 py-6'>
+    md:px-0 md:py-10 ss:px-16 px-6 py-8'>
         <div className='w-full max-w-[72rem] mx-auto'>
             <div className='justify-between w-full flex flex-row gap-16 
             items-center'>

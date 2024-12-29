@@ -109,6 +109,10 @@ body, html {
   background-size: cover;
 }
 
+.about {
+  background-color:#F3F3F3;
+}
+
 @media (min-width: 1060px) {
   .help {
     background-image: url('./assets/helpImg.png');

@@ -19,7 +19,11 @@ const AboutPage = () => {
 
             <Navbar />
             <HeroAbout />
-            <About />
+
+            <div className='about'>
+                <About />
+            </div>
+           
             <CTA />
 
             <div className='footer'>
