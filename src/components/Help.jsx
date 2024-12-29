@@ -163,10 +163,9 @@ const Help = () => {
                                     value={formik.values.name}
                                     onChange={formik.handleChange}
                                     onBlur={formik.handleBlur}
-                                    className="py-2.5 md:px-3 
-                                    ss:px-3 px-2 border-search 
-                                    text-black rounded-lg md:text-[13px]
-                                    ss:text-[14px] text-[12px]
+                                    className="py-3 px-3 border-search 
+                                    text-black rounded-lg md:text-[14px]
+                                    ss:text-[14px] text-[13px]
                                     bg-transparent w-full placeholder:text-main3"
                                 />
                                 <p className="text-mainRed md:text-[12px] 
@@ -183,10 +182,9 @@ const Help = () => {
                                     value={formik.values.subject}
                                     onChange={formik.handleChange}
                                     onBlur={formik.handleBlur}
-                                    className="py-2.5 md:px-3 
-                                    ss:px-3 px-2 border-search 
-                                    text-black rounded-lg md:text-[13px]
-                                    ss:text-[14px] text-[12px]
+                                    className="py-3 px-3 border-search 
+                                    text-black rounded-lg md:text-[14px]
+                                    ss:text-[14px] text-[13px]
                                     bg-transparent w-full placeholder:text-main3"
                                 />
                                 <p className="text-mainRed md:text-[12px] 
@@ -203,10 +201,9 @@ const Help = () => {
                                     onChange={formik.handleChange}
                                     onBlur={formik.handleBlur}
                                     placeholder="Enter your message"
-                                    className="py-2.5 md:px-3 
-                                    ss:px-3 px-2 border-search 
-                                    text-black rounded-lg md:text-[13px]
-                                    ss:text-[14px] text-[12px]
+                                    className="py-3 px-3 border-search 
+                                    text-black rounded-lg md:text-[14px]
+                                    ss:text-[14px] text-[13px]
                                     bg-transparent w-full placeholder:text-main3"
                                 />
                                 <p className="text-mainRed md:text-[12px] 
@@ -217,7 +214,7 @@ const Help = () => {
 
                             <div className='flex flex-col'>
                                 <div>
-                                    <label className='inline-flex gap-2 cursor-pointer'>
+                                    <label className='inline-flex gap-2 cursor-pointer items-center'>
                                         <GrAttachment />
                                         <input
                                             type="file"
@@ -228,13 +225,13 @@ const Help = () => {
                                             id="fileInput"
                                         />
                                         <span className='text-main font-medium tracking-tight 
-                                        md:text-[12px] ss:text-[13px] text-[12px]'>
+                                        md:text-[14px] ss:text-[14px] text-[13px]'>
                                             Attach Images
                                         </span>
                                     </label>
 
-                                    <h4 className='text-mainalt md:text-[12px] ss:text-[12px] 
-                                    text-[11px] tracking-tight'>
+                                    <h4 className='text-mainalt md:text-[13px] ss:text-[13px] 
+                                    text-[12px] tracking-tight'>
                                         Only JPEG, JPG and PNG less than 2MB allowed
                                     </h4>
 

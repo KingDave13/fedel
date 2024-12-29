@@ -216,11 +216,10 @@ const TargetedSearch = () => {
                                 value={formik.values.product}
                                 onChange={handleProductChange}
                                 onBlur={formik.handleBlur}
-                                className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
-                                ss:px-3 px-2 border-search 
+                                className="py-3 px-3 border-search 
                                 text-main3 md:rounded-lg rounded-md 
-                                cursor-pointer md:text-[13px]
-                                ss:text-[14px] text-[12px] 
+                                cursor-pointer md:text-[14px]
+                                ss:text-[14px] text-[13px] 
                                 bg-transparent w-full custom-select"
                             >
                                 <option value="" disabled hidden>Select a product</option>
@@ -241,8 +240,8 @@ const TargetedSearch = () => {
                             </div>
                         </div>
                         
-                        <p className="text-mainRed md:text-[12px] 
-                        ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                        <p className="text-mainRed md:text-[13px] 
+                        ss:text-[13px] text-[12px] md:mt-2 ss:mt-2 mt-1">
                             {formik.touched.product && formik.errors.product}
                         </p>
                     </div>
@@ -255,11 +254,10 @@ const TargetedSearch = () => {
                                 value={formik.values.category}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
-                                className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
-                                ss:px-3 px-2 border-search 
+                                className="py-3 px-3 border-search 
                                 text-main3 md:rounded-lg rounded-md 
-                                cursor-pointer md:text-[13px]
-                                ss:text-[14px] text-[12px] 
+                                cursor-pointer md:text-[14px]
+                                ss:text-[14px] text-[13px] 
                                 bg-transparent w-full custom-select"
                             >
                                 <option value="" disabled hidden>Select a category</option>
@@ -280,8 +278,8 @@ const TargetedSearch = () => {
                             </div>
                         </div>
 
-                        <p className="text-mainRed md:text-[12px] 
-                        ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                        <p className="text-mainRed md:text-[13px] 
+                        ss:text-[13px] text-[12px] md:mt-2 ss:mt-2 mt-1">
                             {formik.touched.category && formik.errors.category}
                         </p>
                     </div>
@@ -294,11 +292,10 @@ const TargetedSearch = () => {
                                 value={formik.values.price}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
-                                className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
-                                ss:px-3 px-2 border-search 
+                                className="py-3 px-3 border-search 
                                 text-main3 md:rounded-lg rounded-md 
-                                cursor-pointer md:text-[13px]
-                                ss:text-[14px] text-[12px] 
+                                cursor-pointer md:text-[14px]
+                                ss:text-[14px] text-[13px] 
                                 bg-transparent w-full custom-select"
                             >
                                 <option value="" disabled hidden>Select a price range</option>
@@ -328,14 +325,13 @@ const TargetedSearch = () => {
                             value={formik.values.numbermail}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
-                            ss:px-3 px-2 border-search 
-                            text-black md:rounded-lg rounded-md md:text-[13px]
-                            ss:text-[14px] text-[12px]
+                            className="py-3 px-3 border-search 
+                            text-black md:rounded-lg rounded-md md:text-[14px]
+                            ss:text-[14px] text-[13px]
                             bg-transparent w-full placeholder:text-main3"
                         />
-                        <p className="text-mainRed md:text-[12px] 
-                        ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                        <p className="text-mainRed md:text-[13px] 
+                        ss:text-[13px] text-[12px] md:mt-2 ss:mt-2 mt-1">
                             {formik.touched.numbermail && formik.errors.numbermail}
                         </p>
                     </div>
@@ -343,9 +339,9 @@ const TargetedSearch = () => {
                     <div className="w-full mt-1">
                         <button
                         type="button"
-                        className="bg-primary grow5 md:text-[13px] w-full
-                        ss:text-[16px] text-[12px] md:py-3 ss:py-3 py-2.5 
-                        text-white md:rounded-lg rounded-md border-none"
+                        className="bg-primary grow5 md:text-[14px] w-full
+                        ss:text-[16px] text-[13px] py-3 text-white 
+                        md:rounded-lg rounded-md border-none"
                         onClick={handleSearch}
                         >
                             {Loading ? 'Searching...' : 'Search'}
@@ -362,14 +358,13 @@ const TargetedSearch = () => {
                             value={formik.values.name}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
-                            ss:px-3 px-2 border-search 
-                            text-black md:rounded-lg rounded-md md:text-[13px]
-                            ss:text-[14px] text-[12px]
+                            className="py-3 px-3 border-search 
+                            text-black md:rounded-lg rounded-md md:text-[14px]
+                            ss:text-[14px] text-[13px]
                             bg-transparent w-full placeholder:text-main3"
                         />
-                        <p className="text-mainRed md:text-[12px] 
-                        ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                        <p className="text-mainRed md:text-[13px] 
+                        ss:text-[13px] text-[12px] md:mt-2 ss:mt-2 mt-1">
                             {formik.touched.name && formik.errors.name}
                         </p>
                     </div>
@@ -382,14 +377,13 @@ const TargetedSearch = () => {
                             value={formik.values.email}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
-                            ss:px-3 px-2 border-search 
-                            text-black md:rounded-lg rounded-md md:text-[13px]
-                            ss:text-[14px] text-[12px]
+                            className="py-3 px-3 border-search 
+                            text-black md:rounded-lg rounded-md md:text-[14px]
+                            ss:text-[14px] text-[13px]
                             bg-transparent w-full placeholder:text-main3"
                         />
-                        <p className="text-mainRed md:text-[12px] 
-                        ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                        <p className="text-mainRed md:text-[13px] 
+                        ss:text-[13px] text-[12px] md:mt-2 ss:mt-2 mt-1">
                             {formik.touched.email && formik.errors.email}
                         </p>
                     </div>
@@ -402,14 +396,13 @@ const TargetedSearch = () => {
                             value={formik.values.subject}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
-                            ss:px-3 px-2 border-search 
-                            text-black md:rounded-lg rounded-md md:text-[13px]
-                            ss:text-[14px] text-[12px]
+                            className="py-3 px-3 border-search 
+                            text-black md:rounded-lg rounded-md md:text-[14px]
+                            ss:text-[14px] text-[13px]
                             bg-transparent w-full placeholder:text-main3"
                         />
-                        <p className="text-mainRed md:text-[12px] 
-                        ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                        <p className="text-mainRed md:text-[13px] 
+                        ss:text-[13px] text-[12px] md:mt-2 ss:mt-2 mt-1">
                             {formik.touched.subject && formik.errors.subject}
                         </p>
                     </div>
@@ -422,21 +415,20 @@ const TargetedSearch = () => {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             placeholder="Enter your message"
-                            className="md:py-2.5 ss:py-2 py-1.5 md:px-3 
-                            ss:px-3 px-2 border-search 
-                            text-black md:rounded-lg rounded-md md:text-[13px]
-                            ss:text-[14px] text-[12px]
+                            className="py-3 px-3 border-search 
+                            text-black md:rounded-lg rounded-md md:text-[14px]
+                            ss:text-[14px] text-[13px]
                             bg-transparent w-full placeholder:text-main3"
                         />
-                        <p className="text-mainRed md:text-[12px] 
-                        ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                        <p className="text-mainRed md:text-[13px] 
+                        ss:text-[13px] text-[12px] md:mt-2 ss:mt-2 mt-1">
                             {formik.touched.message && formik.errors.message}
                         </p>
                     </div>
 
                     <div className='flex flex-col gap-0.5'>
                         <div>
-                            <label className='inline-flex gap-2 cursor-pointer'>
+                            <label className='inline-flex gap-2 cursor-pointer items-center'>
                                 <GrAttachment />
                                 <input
                                     type="file"
@@ -446,13 +438,13 @@ const TargetedSearch = () => {
                                     className="hidden"
                                     id="fileInput"
                                 />
-                                <span className='text-main font-medium tracking-tight md:text-[12px] ss:text-[13px] text-[12px]'>
+                                <span className='text-main font-medium tracking-tight md:text-[13px] ss:text-[14px] text-[13px]'>
                                     Attach Images
                                 </span>
                             </label>
 
-                            <h4 className='text-mainalt md:text-[12px] ss:text-[12px] 
-                            text-[11px] tracking-tight'>
+                            <h4 className='text-mainalt md:text-[13px] ss:text-[13px] 
+                            text-[12px] tracking-tight'>
                                 Only JPEG, JPG and PNG less than 2MB allowed
                             </h4>
 
@@ -472,9 +464,9 @@ const TargetedSearch = () => {
                     <div className="flex gap-2 w-full mt-1">
                         <button
                         type="button"
-                        className="bg-primary grow5 md:text-[13px] w-full
-                        ss:text-[14px] text-[11px] md:py-3 ss:py-3 py-2 
-                        text-white md:rounded-lg rounded-md border-none"
+                        className="bg-primary grow5 md:text-[14px] w-full
+                        ss:text-[14px] text-[12px] py-3 text-white md:rounded-lg 
+                        rounded-md border-none"
                         onClick={handleEmailSend}
                         >
                             {Loading ? 'Sending...' : 'Send Email'}
@@ -482,9 +474,9 @@ const TargetedSearch = () => {
 
                         <button
                         type="button"
-                        className="bg-green grow5 md:text-[13px] w-full
-                        ss:text-[14px] text-[11px] md:py-3 ss:py-3 py-2 
-                        text-white md:rounded-lg rounded-md border-none"
+                        className="bg-green grow5 md:text-[14px] w-full
+                        ss:text-[14px] text-[12px] py-3 text-white 
+                        md:rounded-lg rounded-md border-none"
                         onClick={handleWhatsAppSend}
                         >
                             Send via WhatsApp
@@ -496,13 +488,13 @@ const TargetedSearch = () => {
                 <div className='flex w-full gap-3 md:mt-3 ss:mt-4 mt-3
                 items-center'>
                     <RiInformationFill 
-                        className='text-main3 ss:text-[40px]
+                        className='text-main3 ss:text-[60px]
                         text-[55px]'
                     />
 
-                    <h3 className='text-main3 md:text-[12px] ss:text-[13px]
-                    text-[11px] md:leading-[16px] ss:leading-[18px]
-                    leading-[14px] tracking-tight'>
+                    <h3 className='text-main3 md:text-[13px] ss:text-[14px]
+                    text-[12px] md:leading-[17px] ss:leading-[20px]
+                    leading-[17px] tracking-tight'>
                         If you have any special requests or orders you may
                         want to place, do well to switch to the "Message
                         Us" tab to send an email or WhatsApp message 
@@ -515,9 +507,9 @@ const TargetedSearch = () => {
                     <ImPlay className='text-secondary ss:text-[25px] 
                         md:ml-1 text-[27px]'
                     />
-                    <h3 className='text-primary md:text-[12px] ss:text-[13px]
-                    text-[11px] font-bold md:leading-[16px] ss:leading-[17px]
-                    leading-[14px] tracking-tight'>
+                    <h3 className='text-primary md:text-[13px] ss:text-[14px]
+                    text-[12px] font-bold md:leading-[17px] ss:leading-[17px]
+                    leading-[17px] tracking-tight'>
                         Click here to watch our help video if you want to
                         know how to use our website better.
                     </h3>

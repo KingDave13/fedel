@@ -33,9 +33,9 @@ const CatCard = (category) => {
                         {category.name}
                     </h1>
 
-                    <p className='text-white md:leading-[18px]
-                    ss:leading-[19px] leading-[16px] md:text-[13px] 
-                    ss:text-[13px] text-[12px]'>
+                    <p className='text-white md:leading-[19px]
+                    ss:leading-[19px] leading-[18px] md:text-[14px] 
+                    ss:text-[14px] text-[13px]'>
                         {category.description}
                     </p>
 
@@ -43,8 +43,8 @@ const CatCard = (category) => {
                         <a href={`/products/${category.slug.current}`} 
                         className='inline-flex gap-3 cursor-pointer grow2
                         items-center mt-1.5'>
-                            <h1 className='text-white md:text-[13px] 
-                            ss:text-[14px] text-[12px] font-medium'>
+                            <h1 className='text-white md:text-[14px] 
+                            ss:text-[14px] text-[13px] font-medium'>
                                 See products
                             </h1>
                             

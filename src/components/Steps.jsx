@@ -35,8 +35,8 @@ const StepCard = ({ index, title, image, description }) => {
                         <a href='/products' 
                         className='inline-flex gap-3 cursor-pointer grow5
                         items-center'>
-                            <h1 className='text-primary md:text-[13px] 
-                            ss:text-[13px] text-[12px] font-medium'>
+                            <h1 className='text-primary md:text-[14px] 
+                            ss:text-[14px] text-[13px] font-medium'>
                                 Browse products
                             </h1>
                             
