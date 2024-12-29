@@ -16,8 +16,8 @@ const Footer = () => {
             <img src={logoalt} alt='logo' className='md:w-[150px] 
             ss:w-[180px] w-[160px] h-auto' />
 
-            <p className='text-white md:text-[14px] ss:text-[15px] 
-            text-[12px] md:leading-[25px] ss:leading-[25px] leading-[18px]'>
+            <p className='text-white md:text-[15px] ss:text-[15px] 
+            text-[13px] md:leading-[25px] ss:leading-[25px] leading-[20px]'>
               Shoptiles.ng is a registered company and certified
               retailer of tiles and other home/sanitation materials in
               Nigeria.
@@ -40,7 +40,7 @@ const Footer = () => {
               <div key={index} className='flex flex-col md:my-3 ss:my-4
               my-3 w-full'>
                 <h4 className={`font-bold md:text-[15px] ss:text-[17px] 
-                text-[14px] text-white 
+                text-[15px] text-white 
                   ${index !== footerLinks.length - 1 ? 'md:mr-10 ss:mr-8 mr-8' : 'mr-12'}`}>
                   {footerLink.title}
                 </h4>
@@ -49,10 +49,10 @@ const Footer = () => {
                 justify-between flex flex-col'>
                   {footerLink.links.map((Link, index) => (
                     <a target='blank' href={Link.route} key={Link.name}>
-                      <li className={`md:text-[13px] ss:text-[15px] grow2
-                      text-[12px] md:leading-[19px] ss:leading-[20px] leading-[12px]
+                      <li className={`md:text-[14px] ss:text-[15px] grow2
+                      text-[13px] md:leading-[20px] ss:leading-[20px] leading-[15px]
                       text-white hover:text-secondary cursor-pointer 
-                      ${index !== footerLink.links.length - 1 ? 'md:mb-2.5 ss:mb-2 mb-2.5' : 'mb-0'}`}>
+                      ${index !== footerLink.links.length - 1 ? 'mb-3' : 'mb-0'}`}>
                         {Link.name}
                       </li>
                     </a>
