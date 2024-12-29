@@ -1,4 +1,3 @@
-import { SectionWrapper } from "../hoc";
 import { layout } from '../styles';
 import { motion } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
@@ -128,21 +127,15 @@ const Contact = () => {
 
   return (
     <section className="w-full md:min-h-[550px] ss:min-h-[600px] 
-    min-h-[850px] flex items-center md:mt-0 ss:mt-12 mt-3">
-      <div className='relative items-center w-full max-w-[86rem]'>
+    min-h-[500px] flex items-center md:px-0 ss:px-16 ss:pb-12 px-6 py-6">
+      <div className='relative items-center w-full max-w-[72rem] mx-auto'>
         <motion.div variants={fadeIn('down', 'spring', 0.3)}
-        className="flex md:flex-row flex-col md:gap-20 
-        ss:gap-16 gap-12 md:w-1/2 w-full">
+        className="flex md:flex-row flex-col md:gap-20 ss:gap-16 gap-12 
+        w-full">
           <motion.div variants={textVariant()}
-          className={`${layout.sectionInfo} md:gap-6 ss:gap-4
-          gap-4`}>
-            <h1 className="text-primary font-bold md:text-[35px]
-            ss:text-[35px] text-[30px] tracking-tight">
-              Contact Us
-            </h1>
-
-            <p className='text-main md:text-[18px] ss:text-[17px] 
-            text-[14px] md:max-w-[550px] md:leading-[23px] 
+          className={`${layout.sectionInfo}`}>
+            <p className='text-main md:text-[18px] ss:text-[18px] 
+            text-[16px] md:max-w-[550px] md:leading-[23px] 
             ss:leading-[25px] leading-[20px] font-medium 
             tracking-tight'>
               Reach out to us and we'll get back 
@@ -150,8 +143,8 @@ const Contact = () => {
             </p>
 
             <form ref={formRef} onSubmit={formik.handleSubmit}
-            className="flex flex-col md:gap-2 ss:gap-2.5 
-            md:mt-4 ss:mt-4 mt-3 gap-2 md:w-4/5 ss:w-2/3 w-full">
+            className="flex flex-col md:gap-2 ss:gap-2.5 md:mt-10 ss:mt-10 
+            mt-8 gap-2 md:w-full ss:w-2/3 w-full">
               <div className="relative">
                 <input
                   type="text"
@@ -273,11 +266,11 @@ const Contact = () => {
           </motion.div>
 
           <motion.div variants={fadeIn('down', 'spring', 0.3)}
-          className="flex-1 w-full md:hidden flex">
+          className="flex-1 w-full flex">
             <img src={helpImg} 
               alt='contact'
               className='md:h-full ss:h-[300px] h-[200px] w-full
-              rounded-[15px]'
+              rounded-[15px] md:object-cover'
             />
           </motion.div>
         </motion.div>
@@ -286,4 +279,4 @@ const Contact = () => {
   );
 };
 
-export default SectionWrapper(Contact, '');
+export default Contact;

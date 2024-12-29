@@ -1,6 +1,7 @@
 import {
     Navbar,
     Contact,
+    HeroProducts,
     Footer,
 } from '../components';
 
@@ -16,10 +17,8 @@ const ContactPage = () => {
             </Helmet>
 
             <Navbar />
-
-            <div className='help2'>
-                <Contact />
-            </div>
+            <HeroProducts />
+            <Contact />
             
             <div className='footer'>
                 <Footer />
