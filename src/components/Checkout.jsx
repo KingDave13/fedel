@@ -311,7 +311,7 @@ const Checkout = () => {
                                     </div>
                                     
                                     <p className='text-main3 md:text-[14px]
-                                    ss:text-[14px] text-[11px] border-t-[1px] 
+                                    ss:text-[14px] text-[12px] border-t-[1px] 
                                     border-primaryalt md:pt-4 ss:pt-4 pt-3 
                                     md:mt-2 ss:mt-2 mt-1 md:leading-0
                                     ss:leading-[20px] leading-[16px]'>
@@ -326,7 +326,7 @@ const Checkout = () => {
                                 mt-5 cursor-pointer items-center'
                                 >
                                     <p className='text-primary font-semibold
-                                    md:text-[14px] ss:text-[14px] text-[12px]'>
+                                    md:text-[14px] ss:text-[14px] text-[13px]'>
                                         Go back to cart to review items
                                     </p>
 
@@ -376,10 +376,10 @@ const Checkout = () => {
                                                 value={formik.values.state}
                                                 onChange={formik.handleChange}
                                                 onBlur={formik.handleBlur}
-                                                className="py-2.5 px-3 border-search 
+                                                className="py-3 px-3 border-search 
                                                 text-main3 md:rounded-lg rounded-md 
                                                 cursor-pointer md:text-[13px]
-                                                ss:text-[13px] text-[11px] 
+                                                ss:text-[13px] text-[13px] 
                                                 bg-transparent w-full custom-select"
                                             >
                                                 <option value="" disabled hidden>Select your state of residence</option>
@@ -430,8 +430,8 @@ const Checkout = () => {
                                             </div>
                                         </div>
 
-                                        <p className="text-mainRed md:text-[12px] 
-                                        ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                                        <p className="text-mainRed md:text-[13px] 
+                                        ss:text-[13px] text-[12px] md:mt-2 ss:mt-2 mt-1">
                                             {formik.touched.state && formik.errors.state}
                                         </p>
                                     </div>
@@ -450,9 +450,9 @@ const Checkout = () => {
                                             value={formik.values.name}
                                             onChange={formik.handleChange}
                                             onBlur={formik.handleBlur}
-                                            className="py-2.5 px-3 border-search 
+                                            className="py-3 px-3 border-search 
                                             text-black md:rounded-lg rounded-md md:text-[13px]
-                                            ss:text-[13px] text-[11px]
+                                            ss:text-[13px] text-[13px]
                                             bg-transparent w-full placeholder:text-main3"
                                         />
 
@@ -476,14 +476,14 @@ const Checkout = () => {
                                             value={formik.values.email}
                                             onChange={formik.handleChange}
                                             onBlur={formik.handleBlur}
-                                            className="py-2.5 px-3 border-search 
+                                            className="py-3 px-3 border-search 
                                             text-black md:rounded-lg rounded-md md:text-[13px]
-                                            ss:text-[13px] text-[11px]
+                                            ss:text-[13px] text-[13px]
                                             bg-transparent w-full placeholder:text-main3"
                                         />
 
-                                        <p className="text-mainRed md:text-[12px] 
-                                        ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                                        <p className="text-mainRed md:text-[13px] 
+                                        ss:text-[13px] text-[12px] md:mt-2 ss:mt-2 mt-1">
                                             {formik.touched.email && formik.errors.email}
                                         </p>
                                     </div>
@@ -502,14 +502,14 @@ const Checkout = () => {
                                             value={formik.values.phone}
                                             onChange={formik.handleChange}
                                             onBlur={formik.handleBlur}
-                                            className="py-2.5 px-3 border-search 
+                                            className="py-3 px-3 border-search 
                                             text-black md:rounded-lg rounded-md md:text-[13px]
-                                            ss:text-[13px] text-[11px]
+                                            ss:text-[13px] text-[13px]
                                             bg-transparent w-full placeholder:text-main3"
                                         />
 
-                                        <p className="text-mainRed md:text-[12px] 
-                                        ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                                        <p className="text-mainRed md:text-[13px] 
+                                        ss:text-[13px] text-[12px] md:mt-2 ss:mt-2 mt-1">
                                             {formik.touched.phone && formik.errors.phone}
                                         </p>
                                     </div>
@@ -517,7 +517,7 @@ const Checkout = () => {
 
                                 <div className='w-full flex flex-col md:gap-4 
                                 ss:gap-4 gap-3'>
-                                    <div className='flex items-center md:gap-2\
+                                    <div className='flex items-center md:gap-2
                                     ss:gap-2 gap-3'>
                                         <input
                                             type='checkbox'
@@ -525,8 +525,8 @@ const Checkout = () => {
                                             checked={isCheckboxChecked}
                                             onChange={handleCheckboxChange}
                                         />
-                                        <p className='text-main md:text-[12px]
-                                        ss:text-[12px] text-[11px]'>
+                                        <p className='text-main md:text-[13px]
+                                        ss:text-[14px] text-[12px]'>
                                             I have read and agreed to Fedel Tiles 
                                             Limited's <a href='/privacypolicy' 
                                             className='font-bold cursor-pointer'>
@@ -599,10 +599,10 @@ const Checkout = () => {
                                                 value={formik.values.state}
                                                 onChange={formik.handleChange}
                                                 onBlur={formik.handleBlur}
-                                                className="py-2.5 px-3 border-search 
+                                                className="py-3 px-3 border-search 
                                                 text-main3 md:rounded-lg rounded-md 
-                                                cursor-pointer md:text-[12px]
-                                                ss:text-[13px] text-[11px]
+                                                cursor-pointer md:text-[14px]
+                                                ss:text-[14px] text-[11px]
                                                 bg-transparent w-full custom-select"
                                             >
                                                 <option value="" disabled hidden>Select your state of residence</option>
@@ -653,8 +653,8 @@ const Checkout = () => {
                                             </div>
                                         </div>
 
-                                        <p className="text-mainRed md:text-[12px] 
-                                        ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                                        <p className="text-mainRed md:text-[13px] 
+                                        ss:text-[13px] text-[11px] md:mt-2 ss:mt-2 mt-1">
                                             {formik.touched.state && formik.errors.state}
                                         </p>
                                     </div>
@@ -673,14 +673,14 @@ const Checkout = () => {
                                             value={formik.values.name}
                                             onChange={formik.handleChange}
                                             onBlur={formik.handleBlur}
-                                            className="py-2.5 px-3 border-search 
-                                            text-black md:rounded-lg rounded-md md:text-[12px]
-                                            ss:text-[13px] text-[11px]
+                                            className="py-3 px-3 border-search 
+                                            text-black md:rounded-lg rounded-md md:text-[14px]
+                                            ss:text-[14px] text-[11px]
                                             bg-transparent w-full placeholder:text-main3"
                                         />
 
-                                        <p className="text-mainRed md:text-[12px] 
-                                        ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                                        <p className="text-mainRed md:text-[13px] 
+                                        ss:text-[13px] text-[11px] md:mt-2 ss:mt-2 mt-1">
                                             {formik.touched.name && formik.errors.name}
                                         </p>
                                     </div>
@@ -699,14 +699,14 @@ const Checkout = () => {
                                             value={formik.values.email}
                                             onChange={formik.handleChange}
                                             onBlur={formik.handleBlur}
-                                            className="py-2.5 px-3 border-search 
-                                            text-black md:rounded-lg rounded-md md:text-[12px]
-                                            ss:text-[13px] text-[11px]
+                                            className="py-3 px-3 border-search 
+                                            text-black md:rounded-lg rounded-md md:text-[14px]
+                                            ss:text-[14px] text-[11px]
                                             bg-transparent w-full placeholder:text-main3"
                                         />
 
-                                        <p className="text-mainRed md:text-[12px] 
-                                        ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                                        <p className="text-mainRed md:text-[13px] 
+                                        ss:text-[13px] text-[11px] md:mt-2 ss:mt-2 mt-1">
                                             {formik.touched.email && formik.errors.email}
                                         </p>
                                     </div>
@@ -725,20 +725,20 @@ const Checkout = () => {
                                             value={formik.values.phone}
                                             onChange={formik.handleChange}
                                             onBlur={formik.handleBlur}
-                                            className="py-2.5 px-3 border-search 
-                                            text-black md:rounded-lg rounded-md md:text-[12px]
-                                            ss:text-[13px] text-[11px]
+                                            className="py-3 px-3 border-search 
+                                            text-black md:rounded-lg rounded-md md:text-[14px]
+                                            ss:text-[14px] text-[11px]
                                             bg-transparent w-full placeholder:text-main3"
                                         />
 
-                                        <p className="text-mainRed md:text-[12px] 
-                                        ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1">
+                                        <p className="text-mainRed md:text-[13px] 
+                                        ss:text-[13px] text-[12px] md:mt-2 ss:mt-2 mt-1">
                                             {formik.touched.phone && formik.errors.phone}
                                         </p>
                                     </div>
                                 </form>
 
-                                <div className='w-full flex flex-col md:gap-3 
+                                <div className='w-full flex flex-col md:gap-5 
                                 ss:gap-4 gap-3'>
                                     <div className='flex items-center md:gap-2
                                     ss:gap-2 gap-3'>
@@ -748,8 +748,8 @@ const Checkout = () => {
                                             checked={isCheckboxChecked}
                                             onChange={handleCheckboxChange}
                                         />
-                                        <p className='text-main md:text-[12px]
-                                        ss:text-[12px] text-[11px]'>
+                                        <p className='text-main md:text-[14px]
+                                        ss:text-[14px] text-[11px]'>
                                             I have read and agreed to Fedel Tiles 
                                             Limited's <a href='/privacypolicy' 
                                             className='font-bold cursor-pointer'>
@@ -761,7 +761,7 @@ const Checkout = () => {
                                         </p>
                                     </div>
 
-                                    <button className='bg-primary md:text-[13px] 
+                                    <button className='bg-primary md:text-[14px] 
                                     ss:text-[14px] text-[12px] text-center 
                                     text-white rounded-lg grow2 cursor-pointer 
                                     md:w-[200px] ss:w-[200px] w-full py-3.5'
@@ -770,7 +770,7 @@ const Checkout = () => {
                                         Place Order
                                     </button>
 
-                                    <button className='bg-greenDeep md:text-[13px] 
+                                    <button className='bg-greenDeep md:text-[14px] 
                                     ss:text-[14px] text-[12px] text-center 
                                     text-white rounded-lg grow2 cursor-pointer 
                                     md:w-[200px] ss:w-[200px] w-full py-3.5'
@@ -843,10 +843,10 @@ const Checkout = () => {
                                         </div>
                                     </div>
                                     
-                                    <p className='text-main3 md:text-[12px]
+                                    <p className='text-main3 md:text-[13px]
                                     ss:text-[14px] text-[11px] border-t-[1px] 
                                     border-primaryalt md:pt-4 ss:pt-4 pt-3 
-                                    md:mt-2 ss:mt-2 mt-1 md:leading-[17px]
+                                    md:mt-2 ss:mt-2 mt-1 md:leading-[19px]
                                     ss:leading-[20px] leading-[16px]'>
                                         This figure does not include any other 
                                         extra fees that may be incurred via 
