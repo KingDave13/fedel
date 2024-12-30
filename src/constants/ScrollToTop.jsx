@@ -22,14 +22,14 @@ const ScrollToTopButton = () => {
   };
 
   return (
-    <div className={`bg-main py-3 px-3 fixed md:bottom-10 z-20
+    <div className={`bg-main md:p-3.5 ss:p-3.5 p-3 fixed md:bottom-10 z-20
     ss:bottom-8 bottom-6 md:right-20 ss:right-8 right-6 rounded-full 
     transition-opacity duration-400 cursor-pointer grow2
     ${isVisible ? 'opacity-90' : 'opacity-0 pointer-events-none'}`}
     onClick={scrollToTop}
     >
-        <IoArrowUp className='text-white md:text-[18px] ss:text-[20px]
-        text-[16px]'/>
+        <IoArrowUp className='text-white md:text-[25px] ss:text-[25px]
+        text-[20px]'/>
     </div>
   );
 };

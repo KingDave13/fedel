@@ -89,12 +89,12 @@ const RelatedProducts = ({ categoryId, categorySlug }) => {
                 <div className='relative flex items-center'>
                     <button 
                         className='absolute md:left-6 ss:left-6 left-3 
-                        z-10 bg-main text-white md:p-3 ss:p-3 p-2 
+                        z-10 bg-main text-white md:p-3 ss:p-3 p-2.5 
                         rounded-full opacity-90 hover:opacity-100 
                         navsmooth'
                         onClick={scrollLeft}
                     >
-                        <CgArrowLeft size={18} />
+                        <CgArrowLeft size={20} />
                     </button>
                     <div 
                         className='overflow-hidden w-full flex'
@@ -115,12 +115,12 @@ const RelatedProducts = ({ categoryId, categorySlug }) => {
                     </div>
                     <button 
                         className='absolute md:right-6 ss:right-6 right-3 
-                        z-10 bg-main text-white md:p-3 ss:p-3 p-2 
+                        z-10 bg-main text-white md:p-3 ss:p-3 p-2.5 
                         rounded-full opacity-90 hover:opacity-100 
                         navsmooth'
                         onClick={scrollRight}
                     >
-                        <CgArrowLeft size={18} 
+                        <CgArrowLeft size={20} 
                             className="transform rotate-180"
                         />
                     </button>

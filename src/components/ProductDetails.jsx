@@ -1022,7 +1022,7 @@ const ProductDetails = ({ product }) => {
                     <button
                         className='absolute md:top-6 ss:top-6 top-3 
                         md:right-6 ss:right-6 right-3 text-white 
-                        md:text-[20px] ss:text-[20px] text-[16px] 
+                        md:text-[20px] ss:text-[20px] text-[22px] 
                         hover:bg-main3 rounded-full md:p-3 ss:p-3 p-2
                         hover:bg-opacity-50 navsmooth'
                         onClick={closeModal}
@@ -1032,7 +1032,7 @@ const ProductDetails = ({ product }) => {
 
                     <button
                         className='absolute left-2 top-1/2 transform 
-                        -translate-y-1/2 md:text-[20px] bg-main3 md:ml-6
+                        -translate-y-1/2 text-[20px] bg-main3 md:ml-6
                         ss:ml-6 ml-3 rounded-full p-3 bg-opacity-50 
                         text-white hover:bg-opacity-80 navsmooth'
                         onClick={() => navigateImage('prev')}
@@ -1042,7 +1042,7 @@ const ProductDetails = ({ product }) => {
 
                     <button
                         className='absolute right-2 top-1/2 transform 
-                        -translate-y-1/2 md:text-[20px] bg-main3 md:mr-6
+                        -translate-y-1/2 text-[20px] bg-main3 md:mr-6
                         ss:mr-6 mr-3 rounded-full p-3 bg-opacity-50 
                         text-white hover:bg-opacity-80 navsmooth'
                         onClick={() => navigateImage('next')}

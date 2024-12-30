@@ -297,7 +297,7 @@ const Top = () => {
                                 text-white p-3 rounded-full bg-opacity-80'
                                 onClick={onPrev}
                             >
-                                <CgArrowLeft size={18} />
+                                <CgArrowLeft size={20} />
                             </button>
                             {topProducts.length > 0 && (
                                 <TopCard
@@ -312,7 +312,7 @@ const Top = () => {
                                 text-white p-3 rounded-full bg-opacity-80'
                                 onClick={onNext}
                             >
-                                <CgArrowLeft size={18} 
+                                <CgArrowLeft size={20} 
                                     className="transform rotate-180"
                                 />
                             </button>
