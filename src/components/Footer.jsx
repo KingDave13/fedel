@@ -42,7 +42,7 @@ const Footer = () => {
                 <h4 className={`font-bold md:text-[15px] ss:text-[17px] 
                 text-[15px] text-white 
                   ${index !== footerLinks.length - 1 ? 'md:mr-10 ss:mr-8 mr-8' : 'mr-12'}`}>
-                  {footerLink.title}
+                    {footerLink.title}
                 </h4>
 
                 <ul className='list-none md:mt-5 ss:mt-4 mt-3 w-full 

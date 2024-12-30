@@ -157,7 +157,7 @@ const QuoteModal = ({ onClose }) => {
                 md:w-[35%] ss:w-[70%] w-full h-auto items-center relative 
                 md:m-0 ss:m-16 m-6">
                     <div className='flex justify-between items-center w-full
-                    absolute md:top-12 ss:top-12 top-10'>
+                    absolute md:top-12 ss:top-12 top-10 z-50'>
                         <h2 className='text-primary font-semibold md:text-[25px]
                         ss:text-[25px] text-[21px] tracking-tight absolute
                         md:left-8 ss:left-8 left-5'>
@@ -173,7 +173,7 @@ const QuoteModal = ({ onClose }) => {
                         </button>
                     </div>
 
-                    <div className='flex flex-col w-full mt-16 md:gap-3
+                    <div className='flex flex-col w-full mt-16 md:gap-1.5
                     ss:gap-3 gap-2.5'>
                         <div className="relative">
                             <input
