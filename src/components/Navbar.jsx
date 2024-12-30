@@ -392,14 +392,13 @@ const Navbar = () => {
     };
 
     const disableScroll = () => {
-        setScrollPosition(window.pageYOffset);
-        document.body.style.overflow = 'hidden';
-        document.body.style.top = `-${scrollPosition}px`;
-    };
+        document.body.style.position = 'fixed';
+        document.body.style.width = '100%';
+    };      
 
     const enableScroll = () => {
-        document.body.style.overflow = 'auto';
-        document.body.style.top = '0';
+        document.body.style.position = 'static';
+        document.body.style.width = 'auto';
     };
 
     useEffect(() => {
