@@ -22,9 +22,8 @@ const ScrollToTopButton = () => {
   };
 
   return (
-    <div className={`bg-main md:p-3.5 ss:p-3.5 p-3 fixed md:bottom-5 z-20
-    ss:bottom-4 bottom-4 md:right-5 ss:right-4 right-4 rounded-full 
-    transition-opacity duration-400 cursor-pointer grow2
+    <div className={`bg-main p-3.5 fixed bottom-5 right-5 rounded-full 
+    transition-opacity duration-400 cursor-pointer grow2 z-20
     ${isVisible ? 'opacity-90' : 'opacity-0 pointer-events-none'}`}
     onClick={scrollToTop}
     >
