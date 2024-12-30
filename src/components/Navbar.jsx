@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BsX } from 'react-icons/bs';
 import styles from '../styles';
-import { HiOutlineChat, HiX } from 'react-icons/hi';
+import { HiX } from 'react-icons/hi';
 import { navLinks } from '../constants';
 import { google, logo } from '../assets';
 import { TiArrowSortedDown } from "react-icons/ti";
@@ -496,24 +496,20 @@ const Navbar = () => {
                     <div className='flex justify-center gap-6 flex-row
                     items-center'
                     >
-                        <div className='flex justify-center gap-5 flex-row
+                        <div className='flex justify-center gap-6 flex-row
                         items-center'>
                             <PiLineVerticalThin className='text-main text-[25px]'/>
 
-                            <HiOutlineChat
-                                className='text-main text-[18px] grow4 cursor-pointer'
-                            />
-
                             <a href='mailto:fedeltileslimited@gmail.com'>
                                 <FiMail 
-                                    className='text-main text-[18px] grow4 cursor-pointer'
+                                    className='text-main text-[21px] grow4 cursor-pointer'
                                 />
                             </a>
                             
                             <a href='https://wa.me/2349169861311' 
                             target='_blank' rel="noreferrer">
                                 <RiWhatsappLine 
-                                    className='text-main text-[18px] grow4 cursor-pointer'
+                                    className='text-main text-[21px] grow4 cursor-pointer'
                                 />
                             </a>
                         </div>
@@ -809,22 +805,18 @@ const Navbar = () => {
                             ss:gap-8 gap-5 items-center mt-12 bg-main2 
                             rounded-[8px] ss:py-3 py-3'>
                                 <div className='flex justify-center 
-                                ss:gap-6 gap-5 items-center'>
-                                    <HiOutlineChat className='text-main
-                                        ss:text-[23px] text-[21px]' 
-                                    />
-
+                                ss:gap-6 gap-6 items-center'>
                                     <a href='mailto:fedeltileslimited@gmail.com'>
                                         <FiMail className='text-main 
-                                            ss:text-[23px] text-[21px]' 
+                                            ss:text-[25px] text-[23px]' 
                                         />
                                     </a>
 
                                     <a href='https://wa.me/2349169861311' 
                                     target='_blank' rel="noreferrer">
                                         <RiWhatsappLine 
-                                            className='text-main ss:text-[23px] 
-                                            text-[21px]' 
+                                            className='text-main ss:text-[25px] 
+                                            text-[23px]' 
                                         />
                                      </a>
                                 </div>
