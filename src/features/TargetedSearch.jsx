@@ -145,7 +145,7 @@ const TargetedSearch = () => {
                 formData.append('attachments', file);
             });
         
-            const response = await fetch('http://localhost:3002/send-targeted-email', {
+            const response = await fetch('https://fedel-server.vercel.app/send-targeted-email', {
                 method: 'POST',
                 body: formData,
             });

@@ -85,7 +85,7 @@ const Contact = () => {
         formData.append('attachments', file);
       });
   
-      const response = await fetch('http://localhost:3002/contact-email', {
+      const response = await fetch('https://fedel-server.vercel.app/contact-email', {
         method: 'POST',
         body: formData,
       });
