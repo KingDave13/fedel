@@ -138,7 +138,7 @@ const TargetedSearch = () => {
       
         // Send email data to server
         try {
-            const response = await fetch('http://localhost:3002/send-targeted-email', {
+            const response = await fetch('https://fedel-server.vercel.app/send-targeted-email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -157,7 +157,7 @@ const TargetedSearch = () => {
             console.error('Error:', error);
             alert('An error occurred while sending the email');
         }
-        
+
         formik.resetForm();
     };
     

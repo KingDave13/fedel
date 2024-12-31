@@ -78,7 +78,7 @@ const Contact = () => {
   
     // Send email data to server
     try {
-      const response = await fetch('http://localhost:3002/contact-email', {
+      const response = await fetch('https://fedel-server.vercel.app/contact-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

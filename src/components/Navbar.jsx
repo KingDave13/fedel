@@ -116,7 +116,7 @@ const QuoteModal = ({ onClose }) => {
         
         // Send email data to server
         try {
-            const response = await fetch('http://localhost:3002/get-quote-email', {
+            const response = await fetch('https://fedel-server.vercel.app/get-quote-email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
