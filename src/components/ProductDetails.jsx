@@ -189,7 +189,7 @@ const RequestModal = ({ onClose, product, image }) => {
         
         // Send email data to server
         try {
-            const response = await fetch('https://fedel-server.vercel.app/send-request-price-email', {
+            const response = await fetch('http://localhost:3002/send-request-price-email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -200,12 +200,15 @@ const RequestModal = ({ onClose, product, image }) => {
             if (response.ok) {
                 alert('Price Request Successful');
             } else {
-                alert('Failed to send email');
+                const errorResponse = await response.json();
+                console.error('Server Error:', errorResponse);
+                alert('Failed to send email: ' + errorResponse.message);
             }
         } catch (error) {
             console.error('Error:', error);
             alert('An error occurred while sending the email');
         }
+
         formik.resetForm();
         closeRequestModal();
     };
@@ -339,7 +342,7 @@ const RequestModal = ({ onClose, product, image }) => {
                                             onChange={formik.handleChange}
                                             onBlur={formik.handleBlur}
                                             className="px-3 py-3 border-search 
-                                            text-main3 md:rounded-lg rounded-md 
+                                            md:rounded-lg rounded-md text-main3
                                             cursor-pointer md:text-[14px]
                                             ss:text-[14px] text-[13px] 
                                             bg-transparent w-full custom-select"

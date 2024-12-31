@@ -194,7 +194,7 @@ const Checkout = () => {
     
         // Send email data to server
         try {
-            const response = await fetch('https://fedel-server.vercel.app/send-email', {
+            const response = await fetch('http://localhost:3002/send-email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -209,9 +209,11 @@ const Checkout = () => {
                     dispatch(clearCart());
                     setOrderSuccess(false);
                     navigate('/products');
-                }, 4000);
+                }, 3000);
             } else {
-                alert('Failed to send email');
+                const errorResponse = await response.json();
+                console.error('Server Error:', errorResponse);
+                alert('Failed to send email: ' + errorResponse.message);
             }
         } catch (error) {
             console.error('Error:', error);

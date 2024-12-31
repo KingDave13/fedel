@@ -47,12 +47,14 @@ body, html {
   appearance: none;
 }
 
-.custom-select option {
+.custom-select option { 
+  color: black; 
   padding: 0.5rem;
 }
 
-.custom-select option:checked {
-  color: black;
+/* Style the disabled option specifically */
+.custom-select option[disabled] { 
+  color: #B5B5B5; 
 }
 
   /* ol {

@@ -86,6 +86,7 @@ const QuoteModal = ({ onClose }) => {
             const whatsappLink = `https://wa.me/2349014452743?text=${encodeURIComponent(formDataText)}`;
             window.open(whatsappLink, "_blank");
         });
+
         formik.resetForm();
     };
     
@@ -111,32 +112,32 @@ const QuoteModal = ({ onClose }) => {
             from: formik.values.email,
             subject: formik.values.subject,
             body: formDataText.replace(/\n/g, '<br>'), // Convert line breaks to HTML for the email body
-            attachments: files,
         };
         
         // Send email data to server
         try {
-            const formData = new FormData();
-            formData.append('emailData', JSON.stringify(emailData));
-            files.forEach((file) => {
-                formData.append('attachments', file);
-            });
-        
-            const response = await fetch('https://fedel-server.vercel.app/get-quote-email', {
+            const response = await fetch('http://localhost:3002/get-quote-email', {
                 method: 'POST',
-                body: formData,
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ emailData }),
             });
         
             if (response.ok) {
                 alert('Email sent successfully!');
             } else {
-                alert('Failed to send email');
+                const errorResponse = await response.json();
+                console.error('Server Error:', errorResponse);
+                alert('Failed to send email: ' + errorResponse.message);
             }
         } catch (error) {
             console.error('Error:', error);
             alert('An error occurred while sending the email');
         }
-        formik.resetForm();        
+
+        formik.resetForm();
+        closeQuoteModal();
     };
 
     return (
