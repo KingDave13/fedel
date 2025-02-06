@@ -44,6 +44,7 @@ const App = () => {
         <ScrollToTopButton />
       </div>
     </BrowserRouter>
+    
   )
 };
 
